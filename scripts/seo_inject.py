@@ -9,6 +9,8 @@ kouryakulab.com 向けSEO/OGPメタデータ一括挿入スクリプト。
   - JSON-LD構造化データ（hub/privacyページ = WebSite、ゲームガイド = Article + BreadcrumbList）
   - フッターへのプライバシーポリシーへのリンク（hub/ゲームガイドページのみ。privacyページ自身には挿入しない）
   - Google AdSenseの広告コード（全ページ、<head>の先頭付近）
+  - hero内「更新日」ファクトタイル（ゲームガイドページのみ）
+  - フッター「他の攻略ガイド」相互リンク（ゲームガイドページのみ、自分自身は除外）
 
 対象ページは自動検出（ルート・ja/・ko/・zh/・de/・fr/・ar/ 配下の
 index.html、games/<slug>/index.html、privacy/index.html を全て走査）。
@@ -45,6 +47,42 @@ PRIVACY_LABEL = {
     "ar": "سياسة الخصوصية",
 }
 
+UPDATED_LABEL = {
+    "en": "Updated", "ja": "更新日", "ko": "업데이트",
+    "zh-Hans": "更新时间", "de": "Aktualisiert", "fr": "Mis à jour",
+    "ar": "آخر تحديث",
+}
+UPDATED_VALUE = "2026.09"
+
+MORE_GUIDES_LABEL = {
+    "en": "More Guides", "ja": "他の攻略ガイド", "ko": "다른 공략 가이드",
+    "zh-Hans": "更多攻略指南", "de": "Weitere Guides", "fr": "Plus de guides",
+    "ar": "المزيد من الأدلة",
+}
+
+# slug -> {lang: display name}. 新しいゲームを追加したらここに1行足す。
+GAME_NAMES = {
+    "haran-suisekai": {
+        "en": "Wild Water World", "ja": "波乱水世界", "ko": "Wild Water World",
+        "zh-Hans": "Wild Water World", "de": "Wild Water World", "fr": "Wild Water World",
+        "ar": "Wild Water World",
+    },
+    "kancolle": {
+        "en": "KanColle", "ja": "艦これ", "ko": "KanColle",
+        "zh-Hans": "KanColle", "de": "KanColle", "fr": "KanColle", "ar": "KanColle",
+    },
+    "srwdd": {
+        "en": "Super Robot Wars DD", "ja": "スパロボDD", "ko": "Super Robot Wars DD",
+        "zh-Hans": "Super Robot Wars DD", "de": "Super Robot Wars DD", "fr": "Super Robot Wars DD",
+        "ar": "Super Robot Wars DD",
+    },
+    "deresute": {
+        "en": "Deresute (CGSS)", "ja": "デレステ", "ko": "Deresute (CGSS)",
+        "zh-Hans": "Deresute (CGSS)", "de": "Deresute (CGSS)", "fr": "Deresute (CGSS)",
+        "ar": "Deresute (CGSS)",
+    },
+}
+
 
 def esc(s):
     return s.replace("&", "&amp;").replace('"', "&quot;")
@@ -75,6 +113,8 @@ def process(path):
 
     is_guide = "/games/" in rel or rel.startswith("games/")
     is_privacy = "/privacy/" in rel or rel.startswith("privacy/")
+    prefix_seg = rel.split("/")[0]
+    prefix = f"/{prefix_seg}/" if prefix_seg in LANG_DIRS and prefix_seg != "" else "/"
     site_name = "攻略ラボ" if lang == "ja" else "Kouryaku Lab"
     og_locale = LOCALE.get(lang, "en_US")
     all_locales = [v for v in LOCALE.values() if v != og_locale]
@@ -198,10 +238,35 @@ def process(path):
         content = content.replace("</head>", og_block + "\n" + ld_block + "\n</head>")
         changed = True
 
+    # --- "Updated" fact tile in the hero (guide pages only) ---
+    if is_guide and 'data-fact="updated"' not in content:
+        updated_label = UPDATED_LABEL.get(lang, "Updated")
+        fact_tile = f'        <div class="fact" data-fact="updated"><div class="k">{esc(updated_label)}</div><div class="v tag-mono">{UPDATED_VALUE}</div></div>\n'
+        marker = '\n      </div>\n    </div>\n  </div>\n</div>\n\n<nav class="tabs">'
+        assert marker in content, f"fact-strip closing marker not found in {rel}"
+        content = content.replace(marker, "\n" + fact_tile + marker.lstrip("\n"), 1)
+        changed = True
+
+    # --- "More Guides" cross-links to the other games (guide pages only) ---
+    if is_guide and "more-guides" not in content:
+        slug_self = rel.split("games/")[1].split("/")[0]
+        links = []
+        for other_slug, names in GAME_NAMES.items():
+            if other_slug == slug_self:
+                continue
+            name = names.get(lang, names["en"])
+            links.append(f'<a href="{prefix}games/{other_slug}/">{esc(name)}</a>')
+        more_guides_label = MORE_GUIDES_LABEL.get(lang, "More Guides")
+        more_guides_block = (
+            '  <div class="wrap more-guides">\n'
+            f'    <h3>{esc(more_guides_label)}</h3>\n'
+            '    <div class="more-guides-links">\n      ' + "\n      ".join(links) + "\n    </div>\n  </div>\n"
+        )
+        content = content.replace("<footer>\n  <div class=\"wrap\">\n", "<footer>\n" + more_guides_block + "  <div class=\"wrap\">\n", 1)
+        changed = True
+
     # --- footer privacy link (hub / guide pages only, not the privacy page itself) ---
     if not is_privacy and "privacy-wrap" not in content:
-        prefix_seg = rel.split("/")[0]
-        prefix = f"/{prefix_seg}/" if prefix_seg in LANG_DIRS and prefix_seg != "" else "/"
         privacy_url = prefix + "privacy/"
         privacy_label = PRIVACY_LABEL.get(lang, "Privacy Policy")
         privacy_block = f'  <div class="wrap privacy-wrap"><a href="{privacy_url}">{esc(privacy_label)}</a></div>\n'

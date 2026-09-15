@@ -192,6 +192,13 @@ footer .wrap { display: grid; gap: 14px; }
 .privacy-wrap { padding-block-start: 4px; }
 .privacy-wrap a { font-size: .78rem; color: var(--ink-faint); text-decoration: underline; text-decoration-color: var(--line-strong); }
 
+/* ---------- More Guides cross-links ---------- */
+.more-guides { padding-block: 20px; border-bottom: 1px solid var(--line); }
+.more-guides h3 { font-size: .72rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 10px; }
+.more-guides-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.more-guides-links a { font-size: .85rem; background: var(--surface); border: 1px solid var(--line); padding: 7px 14px; border-radius: 999px; text-decoration: none; color: var(--ink); }
+.more-guides-links a:hover { border-color: var(--accent); color: var(--accent); }
+
 @media (max-width: 480px) {
   section { padding-block: 32px; }
   .hero { padding-block: 30px 22px; }
