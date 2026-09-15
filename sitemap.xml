@@ -181,4 +181,22 @@
   <url><loc>https://kouryakulab.com/de/games/deresute/access/</loc></url>
   <url><loc>https://kouryakulab.com/fr/games/deresute/access/</loc></url>
   <url><loc>https://kouryakulab.com/ar/games/deresute/access/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/about/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/about/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/about/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/about/</loc></url>
+  <url><loc>https://kouryakulab.com/ko/about/</loc></url>
+  <url><loc>https://kouryakulab.com/zh/about/</loc></url>
+  <url><loc>https://kouryakulab.com/de/about/</loc></url>
+  <url><loc>https://kouryakulab.com/fr/about/</loc></url>
+  <url><loc>https://kouryakulab.com/ar/about/</loc></url>
 </urlset>

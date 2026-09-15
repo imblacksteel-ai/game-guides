@@ -8,6 +8,7 @@ kouryakulab.com 向けSEO/OGPメタデータ一括挿入スクリプト。
   - Open Graph / Twitter Card メタタグ（7言語分の og:locale:alternate 込み）
   - JSON-LD構造化データ（hub/privacyページ = WebSite、ゲームガイド = Article + BreadcrumbList）
   - フッターへのプライバシーポリシーへのリンク（hub/ゲームガイドページのみ。privacyページ自身には挿入しない）
+  - フッターへの「サイトについて(About)」リンク（aboutページ自身以外の全ページ）
   - Google AdSenseの広告コード（全ページ、<head>の先頭付近）
   - hero内「更新日」ファクトタイル（ゲームガイドページのみ）
   - フッター「他の攻略ガイド」相互リンク（ゲームガイドページのみ、自分自身は除外）
@@ -45,6 +46,12 @@ PRIVACY_LABEL = {
     "en": "Privacy Policy", "ja": "プライバシーポリシー", "ko": "개인정보처리방침",
     "zh-Hans": "隐私政策", "de": "Datenschutzerklärung", "fr": "Politique de confidentialité",
     "ar": "سياسة الخصوصية",
+}
+
+ABOUT_LABEL = {
+    "en": "About", "ja": "サイトについて", "ko": "사이트 소개",
+    "zh-Hans": "关于本站", "de": "Über uns", "fr": "À propos",
+    "ar": "حول الموقع",
 }
 
 UPDATED_LABEL = {
@@ -100,6 +107,9 @@ def find_pages():
         privacy = os.path.join(base, "privacy", "index.html")
         if os.path.isfile(privacy):
             pages.append(privacy)
+        about = os.path.join(base, "about", "index.html")
+        if os.path.isfile(about):
+            pages.append(about)
     return pages
 
 
@@ -114,6 +124,7 @@ def process(path):
 
     is_guide = "/games/" in rel or rel.startswith("games/")
     is_privacy = "/privacy/" in rel or rel.startswith("privacy/")
+    is_about = "/about/" in rel or rel.startswith("about/")
     # トップレベルのゲームガイド（games/<slug>/index.html）か、その下のクラスターページ（games/<slug>/<topic>/index.html）かを判定。
     # クラスターページには More Guides / Updated タイル は付けない（独自の「フルガイドに戻る」導線を手書きするため）。
     games_tail = rel.split("games/")[1] if is_guide else ""
@@ -276,6 +287,20 @@ def process(path):
         privacy_label = PRIVACY_LABEL.get(lang, "Privacy Policy")
         privacy_block = f'  <div class="wrap privacy-wrap"><a href="{privacy_url}">{esc(privacy_label)}</a></div>\n'
         content = content.replace("</footer>", privacy_block + "</footer>")
+        changed = True
+
+    # --- footer About link (every page except the About page itself) ---
+    if not is_about and 'class="about-link"' not in content:
+        about_url = prefix + "about/"
+        about_label = ABOUT_LABEL.get(lang, "About")
+        about_anchor = f'<a class="about-link" href="{about_url}">{esc(about_label)}</a>'
+        m = re.search(r'<div class="wrap privacy-wrap">(.*?)</div>', content, re.S)
+        if m:
+            content = content[:m.start(1)] + about_anchor + " · " + m.group(1) + content[m.end(1):]
+        else:
+            # privacy page itself has no privacy-wrap div (it skips self-linking) — add a standalone one
+            block = f'  <div class="wrap privacy-wrap">{about_anchor}</div>\n'
+            content = content.replace("</footer>", block + "</footer>")
         changed = True
 
     if changed:
