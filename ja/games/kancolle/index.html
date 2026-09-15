@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="description" content="艦隊これくしょん-艦これ-の攻略ガイド：初心者向け用語集・序盤攻略・制空値計算機をまとめた。">
+<title>艦これ 攻略ガイド</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/kancolle/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/">
+<link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/kancolle/">
+<link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/kancolle/">
+<link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/kancolle/">
+<link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/kancolle/">
+<link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/kancolle/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:title" content="艦これ 攻略ガイド">
+<meta property="og:description" content="艦隊これくしょん-艦これ-の攻略ガイド：初心者向け用語集・序盤攻略・制空値計算機をまとめた。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/kancolle/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="艦これ 攻略ガイド">
+<meta name="twitter:description" content="艦隊これくしょん-艦これ-の攻略ガイド：初心者向け用語集・序盤攻略・制空値計算機をまとめた。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "艦これ 攻略ガイド",
+      "description": "艦隊これくしょん-艦これ-の攻略ガイド：初心者向け用語集・序盤攻略・制空値計算機をまとめた。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/kancolle/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "艦これ 攻略ガイド",
+          "item": "https://kouryakulab.com/ja/games/kancolle/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/"><span class="arrow">←</span> 攻略ラボ</a>
+    <div>
+      <span class="eyebrow">角川ゲームス／DMM ・ 2013.04.23 サービス開始</span>
+      <h1>艦これ 攻略ガイド</h1>
+      <p class="sub">『艦隊これくしょん』はサービス開始から10年以上、一度も公式の海外版が出ていない生粋の国産ブラウザゲーム。序盤の進め方と、面倒な制空値計算をツール化してまとめた。</p>
+      <div class="fact-strip">
+        <div class="fact"><div class="k">ジャンル</div><div class="v tag-mono">艦隊育成シミュレーション</div></div>
+        <div class="fact"><div class="k">対応環境</div><div class="v tag-mono">PCブラウザ（DMM）</div></div>
+        <div class="fact"><div class="k">対応言語</div><div class="v tag-mono">日本語のみ</div></div>
+        <div class="fact"><div class="k">開発</div><div class="v tag-mono">角川ゲームス</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links" id="tabs">
+      <a href="#overview">概要</a>
+      <a href="#glossary">用語集</a>
+      <a href="#early">序盤攻略</a>
+      <a href="#calculator">制空値計算機</a>
+    </div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="overview">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>ゲーム概要</h2></div>
+    <p class="sec-desc">『艦これ』は「艦娘」ブームの元祖であり、10年以上経った今も国内限定のブラウザゲームとして根強い人気を誇る。</p>
+    <div class="pillars">
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z"/></svg>
+        <h3>艦娘を集める</h3>
+        <p>駆逐艦から戦艦まで、実在した艦をモチーフにした「艦娘」を集めて艦隊を育てる。</p>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-7h6v7"/></svg>
+        <h3>艦隊を運用する</h3>
+        <p>燃料・弾薬・鋼材・ボーキサイトの4資源を管理しながら、出撃・遠征・入渠を回す。</p>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l9-5 9 5-9 5-9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
+        <h3>海域を攻略する</h3>
+        <p>深海棲艦との航空戦・砲雷撃戦を経て、ボスマスを撃破しマップを攻略する。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="glossary">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>初心者向け用語集</h2></div>
+    <p class="sec-desc">艦これ特有の用語は最初は分かりにくい。よく使う言葉をまとめた。</p>
+    <div class="panel table-scroll">
+      <table class="glossary">
+        <thead><tr><th>用語</th><th>読み</th><th>意味</th></tr></thead>
+        <tbody>
+          <tr><td class="jp">出撃</td><td class="romaji">しゅつげき</td><td>艦隊をマップに送り込んで戦うこと。</td></tr>
+          <tr><td class="jp">遠征</td><td class="romaji">えんせい</td><td>艦隊を派遣して資源を回収すること。戦闘やダメージはない。</td></tr>
+          <tr><td class="jp">入渠</td><td class="romaji">にゅうきょ</td><td>大破・中破した艦娘を修理すること。時間と鋼材を消費する。</td></tr>
+          <tr><td class="jp">工廠</td><td class="romaji">こうしょう</td><td>艦娘の建造や装備の開発を行う施設。</td></tr>
+          <tr><td class="jp">演習</td><td class="romaji">えんしゅう</td><td>他提督とのPvP。艦娘を失うリスクはない。</td></tr>
+          <tr><td class="jp">編成</td><td class="romaji">へんせい</td><td>艦隊の編成・装備を設定する画面。</td></tr>
+          <tr><td class="jp">近代化改修</td><td class="romaji">きんだいかかいしゅう</td><td>素材艦を消費して艦娘のステータスを強化すること。</td></tr>
+          <tr><td class="jp">改造</td><td class="romaji">かいぞう</td><td>一定のレベルに達した艦娘をより強い姿に進化させること（通称「改」）。</td></tr>
+          <tr><td class="jp">疲労度</td><td class="romaji">ひろうど</td><td>艦娘の疲れ具合。低いと戦闘力が下がり、高い（キラ状態）と上がる。</td></tr>
+          <tr><td class="jp">燃料</td><td class="romaji">ねんりょう</td><td>4大資源のひとつ。</td></tr>
+          <tr><td class="jp">弾薬</td><td class="romaji">だんやく</td><td>4大資源のひとつ。</td></tr>
+          <tr><td class="jp">鋼材</td><td class="romaji">こうざい</td><td>4大資源のひとつ。</td></tr>
+          <tr><td class="jp">ボーキサイト</td><td class="romaji">ぼーきさいと</td><td>4大資源のひとつ。艦載機の消費に使う。</td></tr>
+          <tr><td class="jp">艦娘</td><td class="romaji">かんむす</td><td>プレイヤーが操作するキャラクター。</td></tr>
+          <tr><td class="jp">深海棲艦</td><td class="romaji">しんかいせいかん</td><td>敵勢力の総称。</td></tr>
+          <tr><td class="jp">母港</td><td class="romaji">ぼこう</td><td>所持艦娘の一覧画面。</td></tr>
+          <tr><td class="jp">小破</td><td class="romaji">しょうは</td><td>軽度のダメージ状態。</td></tr>
+          <tr><td class="jp">中破</td><td class="romaji">ちゅうは</td><td>中程度のダメージ状態。</td></tr>
+          <tr><td class="jp">大破</td><td class="romaji">たいは</td><td>重度のダメージ状態。危険なのですぐ撤退させること。</td></tr>
+          <tr><td class="jp">轟沈</td><td class="romaji">ごうちん</td><td>艦娘のロスト（喪失）。大破状態でのみ発生しうる。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="early">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>序盤攻略</h2></div>
+    <p class="sec-desc">最初の流れさえ分かれば迷わない。</p>
+    <div class="panel">
+      <ol class="steps">
+        <li><span class="n">1</span>提督名を決める。後から変更できないので、慎重に、でも気負いすぎずに。</li>
+        <li><span class="n">2</span>初期艦を選ぶ。性能差はほぼ無いので好みで選んでOK。</li>
+        <li><span class="n">3</span>画面上部の「任務」を確認する。資源や機能開放につながる任務はこなしておく。</li>
+        <li><span class="n">4</span>「6隻編成」の編成任務を達成する。第二艦隊が解放される最初の目標。</li>
+        <li><span class="n">5</span>1-1など低難易度海域を周回し、駆逐艦を集める。</li>
+        <li><span class="n">6</span>第二艦隊開放任務を達成し、遠征を解放する。出撃と並行して資源を稼げるようになる。</li>
+        <li><span class="n">7</span>デイリー任務やランキングを無理に全部こなす必要はない。自分のペースで進めればいい。</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="calculator">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>制空値計算機</h2></div>
+    <p class="sec-desc">スロットごとの制空値 = floor(対空値 × √搭載数) + 熟練度補正。艦隊全体で合計し、敵制空値と比較して制空状態を判定する。</p>
+
+    <div class="panel calc-panel">
+      <div class="calc-header">
+        <span>対空</span><span>搭載数</span><span>補正</span><span>制空値</span><span></span>
+      </div>
+      <div id="calc-rows"></div>
+      <button type="button" class="btn-add" id="add-row">+ スロット追加</button>
+
+      <div class="calc-enemy">
+        敵制空値
+        <input type="number" id="enemy-power" min="0" value="90">
+      </div>
+
+      <div class="calc-result">
+        <div>
+          <div class="result-label">自軍合計</div>
+          <div class="result-value tag-mono" id="own-total">0</div>
+        </div>
+        <div class="result-state" id="air-state">—</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <b>判定基準</b>（自軍制空値と敵制空値の比較）：制空権確保＝敵の3倍以上（または敵0）／航空優勢＝1.5倍〜3倍未満／航空均衡＝2/3超〜1.5倍未満／航空劣勢＝1/3超〜2/3以下／制空権喪失＝1/3以下。
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは公開情報を基にした非公式のファンメイド攻略まとめです。計算式はコミュニティで検証された近似値であり、実際のゲーム内挙動と完全に一致しない場合があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://wikiwiki.jp/kancolle/%E8%88%AA%E7%A9%BA%E6%88%A6" target="_blank" rel="noopener">艦これ攻略Wiki（航空戦）</a>
+      <a href="https://wikiwiki.jp/kancolle/%E6%96%B0%E7%B1%B3%E6%8F%90%E7%9D%A3%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D" target="_blank" rel="noopener">艦これ攻略Wiki（新米提督の手引き）</a>
+      <a href="https://ja.wikipedia.org/wiki/%E8%89%A6%E9%9A%8A%E3%81%93%E3%82%8C%E3%81%8F%E3%81%97%E3%82%87%E3%82%93_-%E8%89%A6%E3%81%93%E3%82%8C-" target="_blank" rel="noopener">Wikipedia（艦隊これくしょん）</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+<script>
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.tabs-links a'));
+    var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+    function setActive(id) {
+      links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + id); });
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) setActive(e.target.id); });
+      }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+      sections.forEach(function (s) { if (s) io.observe(s); });
+    }
+  })();
+
+  (function () {
+    var STATES = [
+      { id: 'supremacy',   label: '制空権確保', test: function (r, e) { return e === 0 || r >= 3; } },
+      { id: 'superiority', label: '航空優勢',   test: function (r) { return r >= 1.5; } },
+      { id: 'parity',      label: '航空均衡',   test: function (r) { return r > 2 / 3; } },
+      { id: 'denial',      label: '航空劣勢',   test: function (r) { return r > 1 / 3; } },
+      { id: 'incapability',label: '制空権喪失', test: function () { return true; } }
+    ];
+
+    var rowsEl = document.getElementById('calc-rows');
+    var ownTotalEl = document.getElementById('own-total');
+    var stateEl = document.getElementById('air-state');
+    var enemyInput = document.getElementById('enemy-power');
+
+    function rowTemplate(aa, count, bonus) {
+      var row = document.createElement('div');
+      row.className = 'calc-row';
+      row.innerHTML =
+        '<input type="number" class="r-aa" min="0" value="' + aa + '">' +
+        '<input type="number" class="r-count" min="0" value="' + count + '">' +
+        '<input type="number" class="r-bonus" min="0" value="' + bonus + '">' +
+        '<span class="r-value tag-mono">0</span>' +
+        '<button type="button" class="r-remove" aria-label="スロットを削除">×</button>';
+      return row;
+    }
+
+    function addRow(aa, count, bonus) {
+      var row = rowTemplate(aa, count, bonus);
+      rowsEl.appendChild(row);
+      row.querySelector('.r-remove').addEventListener('click', function () {
+        row.remove();
+        recalc();
+      });
+      row.querySelectorAll('input').forEach(function (inp) {
+        inp.addEventListener('input', recalc);
+      });
+    }
+
+    function rowValue(row) {
+      var aa = parseFloat(row.querySelector('.r-aa').value) || 0;
+      var count = parseFloat(row.querySelector('.r-count').value) || 0;
+      var bonus = parseFloat(row.querySelector('.r-bonus').value) || 0;
+      var value = Math.floor(aa * Math.sqrt(count)) + bonus;
+      row.querySelector('.r-value').textContent = value;
+      return value;
+    }
+
+    function recalc() {
+      var total = 0;
+      rowsEl.querySelectorAll('.calc-row').forEach(function (row) {
+        total += rowValue(row);
+      });
+      var enemy = parseFloat(enemyInput.value) || 0;
+      ownTotalEl.textContent = total;
+
+      var ratio = enemy === 0 ? Infinity : total / enemy;
+      var state = STATES.find(function (s) { return s.test(ratio, enemy); });
+
+      stateEl.textContent = state.label;
+      stateEl.className = 'result-state state-' + state.id;
+    }
+
+    document.getElementById('add-row').addEventListener('click', function () {
+      addRow(0, 0, 0);
+    });
+    enemyInput.addEventListener('input', recalc);
+
+    addRow(10, 18, 9);
+    addRow(8, 12, 3);
+    recalc();
+  })();
+</script>
+</body>
+</html>

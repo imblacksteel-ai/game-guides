@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="description" content="KanColle (Kantai Collection) guide for international players: a Japanese UI glossary, a beginner roadmap, and an air superiority calculator.">
+<title>KanColle Guide</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/games/kancolle/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/">
+<link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/kancolle/">
+<link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/kancolle/">
+<link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/kancolle/">
+<link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/kancolle/">
+<link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/kancolle/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:title" content="KanColle Guide">
+<meta property="og:description" content="KanColle (Kantai Collection) guide for international players: a Japanese UI glossary, a beginner roadmap, and an air superiority calculator.">
+<meta property="og:url" content="https://kouryakulab.com/games/kancolle/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KanColle Guide">
+<meta name="twitter:description" content="KanColle (Kantai Collection) guide for international players: a Japanese UI glossary, a beginner roadmap, and an air superiority calculator.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "KanColle Guide",
+      "description": "KanColle (Kantai Collection) guide for international players: a Japanese UI glossary, a beginner roadmap, and an air superiority calculator.",
+      "inLanguage": "en",
+      "url": "https://kouryakulab.com/games/kancolle/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "KanColle Guide",
+          "item": "https://kouryakulab.com/games/kancolle/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/"><span class="arrow">←</span> Kouryaku Lab</a>
+    <div>
+      <span class="eyebrow">KADOKAWA GAMES / DMM · Since 2013.04.23</span>
+      <h1>KanColle Guide</h1>
+      <p class="sub">Kantai Collection has never had an official global release — everything in the game is in Japanese. This page is a UI glossary, a beginner roadmap, and an air superiority calculator, built for players who don't read Japanese.</p>
+      <div class="fact-strip">
+        <div class="fact"><div class="k">Genre</div><div class="v tag-mono">Naval Fleet Sim</div></div>
+        <div class="fact"><div class="k">Platform</div><div class="v tag-mono">PC Browser (DMM)</div></div>
+        <div class="fact"><div class="k">Language</div><div class="v tag-mono">Japanese Only</div></div>
+        <div class="fact"><div class="k">Developer</div><div class="v tag-mono">Kadokawa Games</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links" id="tabs">
+      <a href="#overview">Overview</a>
+      <a href="#glossary">UI Glossary</a>
+      <a href="#early">Getting Started</a>
+      <a href="#calculator">Air Power Calculator</a>
+    </div>
+    <nav id="lang-switch" aria-label="Language"></nav>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="overview">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Overview</h2></div>
+    <p class="sec-desc">KanColle popularized the "girls representing warships" genre years before it had any real competition. It's still Japanese-only over a decade later, but a large unofficial English-speaking community has kept it alive the whole time — this page exists because that demand never went away.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z"/></svg>
+        <h3>Collect Kanmusu</h3>
+        <p>Recruit shipgirls (kanmusu) representing real WWII-era vessels, from destroyers up to battleships, and grow your fleet.</p>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-7h6v7"/></svg>
+        <h3>Manage a Fleet</h3>
+        <p>Balance four resources — fuel, ammo, steel, and bauxite — across sorties, expeditions, and repairs.</p>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l9-5 9 5-9 5-9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
+        <h3>Fight in Waves</h3>
+        <p>Sortie through map nodes against the Abyssal Fleet, resolve air and shelling phases, and clear boss nodes to complete an area.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="glossary">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>Japanese UI Glossary</h2></div>
+    <p class="sec-desc">Every menu in the game is Japanese-only. These are the terms you'll run into constantly — bookmark this table.</p>
+    <div class="panel table-scroll">
+      <table class="glossary">
+        <thead><tr><th>Japanese</th><th>Romaji</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="jp">出撃</td><td class="romaji">Shutsugeki</td><td>Sortie — send your fleet into a map to fight.</td></tr>
+          <tr><td class="jp">遠征</td><td class="romaji">Ensei</td><td>Expedition — send a fleet to gather resources; no combat, no damage.</td></tr>
+          <tr><td class="jp">入渠</td><td class="romaji">Nyuukyo</td><td>Docking — repair damaged ships. Costs time and steel.</td></tr>
+          <tr><td class="jp">工廠</td><td class="romaji">Koushou</td><td>Arsenal — build new ships and develop equipment here.</td></tr>
+          <tr><td class="jp">演習</td><td class="romaji">Enshuu</td><td>Exercise — practice PvP against other admirals; no risk of losing ships.</td></tr>
+          <tr><td class="jp">編成</td><td class="romaji">Hensei</td><td>Organize — the screen for fleet composition and equipment loadout.</td></tr>
+          <tr><td class="jp">近代化改修</td><td class="romaji">Kindaika Kaishuu</td><td>Modernization — feed ships to another ship to raise its stats.</td></tr>
+          <tr><td class="jp">改造</td><td class="romaji">Kaizou</td><td>Remodel — evolve a ship at a level threshold into a stronger form ("Kai").</td></tr>
+          <tr><td class="jp">疲労度</td><td class="romaji">Hiroudo</td><td>Morale — low morale hurts combat performance; high morale ("sparkle") boosts it.</td></tr>
+          <tr><td class="jp">燃料</td><td class="romaji">Nenryou</td><td>Fuel — one of the four core resources.</td></tr>
+          <tr><td class="jp">弾薬</td><td class="romaji">Dan'yaku</td><td>Ammo — one of the four core resources.</td></tr>
+          <tr><td class="jp">鋼材</td><td class="romaji">Kouzai</td><td>Steel — one of the four core resources.</td></tr>
+          <tr><td class="jp">ボーキサイト</td><td class="romaji">Bauxite</td><td>One of the four core resources; consumed by aircraft.</td></tr>
+          <tr><td class="jp">艦娘</td><td class="romaji">Kanmusu</td><td>Shipgirl — the playable characters.</td></tr>
+          <tr><td class="jp">深海棲艦</td><td class="romaji">Shinkaiseikan</td><td>Abyssal — the enemy faction you fight.</td></tr>
+          <tr><td class="jp">母港</td><td class="romaji">Bokou</td><td>Homeport — your main fleet roster screen.</td></tr>
+          <tr><td class="jp">小破</td><td class="romaji">Shouha</td><td>Lightly Damaged — minor damage state.</td></tr>
+          <tr><td class="jp">中破</td><td class="romaji">Chuuha</td><td>Moderately Damaged — noticeable damage state.</td></tr>
+          <tr><td class="jp">大破</td><td class="romaji">Taiha</td><td>Heavily Damaged — critical; retreat this ship immediately.</td></tr>
+          <tr><td class="jp">轟沈</td><td class="romaji">Gouchin</td><td>Sunk — permanent loss. Only a risk when a ship is already Heavily Damaged.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="early">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>Getting Started</h2></div>
+    <p class="sec-desc">The menus are all in Japanese, but the early flow is simple once you know the shape of it.</p>
+    <div class="panel">
+      <ol class="steps">
+        <li><span class="n">1</span>Pick your Admiral name. It can't be changed later — don't overthink it, but don't be careless either.</li>
+        <li><span class="n">2</span>Choose a starter ship. The four choices are close enough in stats; pick whichever destroyer you like the look of.</li>
+        <li><span class="n">3</span>Check your Quests (任務) at the top of the screen — they reward resources and unlock features. Do the ones you can.</li>
+        <li><span class="n">4</span>Complete the 6-ship fleet organization quest. This is your first real milestone and unlocks your second fleet slot.</li>
+        <li><span class="n">5</span>Farm early nodes like map 1-1 for destroyers — it's the standard early spot to build up your roster.</li>
+        <li><span class="n">6</span>Unlock Expeditions (遠征) by clearing the 2nd fleet quest, so you can gather resources in parallel with sorties.</li>
+        <li><span class="n">7</span>Don't rush every daily quest or ranking board. You don't need to clear everything from day one — pace yourself.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="calculator">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>Air Superiority Calculator</h2></div>
+    <p class="sec-desc">Fighter power per aircraft slot = floor(AA stat × √aircraft count) + proficiency bonus. Sum every slot in your fleet, then compare against the enemy's total to see what air state you'll fight under.</p>
+
+    <div class="panel calc-panel">
+      <div class="calc-header">
+        <span>AA</span><span>Count</span><span>Bonus</span><span>Power</span><span></span>
+      </div>
+      <div id="calc-rows"></div>
+      <button type="button" class="btn-add" id="add-row">+ Add slot</button>
+
+      <div class="calc-enemy">
+        Enemy Air Power
+        <input type="number" id="enemy-power" min="0" value="90">
+      </div>
+
+      <div class="calc-result">
+        <div>
+          <div class="result-label">Your Total</div>
+          <div class="result-value tag-mono" id="own-total">0</div>
+        </div>
+        <div class="result-state" id="air-state">—</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <b>Thresholds</b> (your power vs. enemy power): Air Supremacy ≥ 3× (or enemy = 0) · Air Superiority 1.5×–3× · Air Parity ⅔×–1.5× · Air Denial ⅓×–⅔× · Air Incapability ≤ ⅓×.
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">This is an unofficial, fan-made guide based on publicly available information about a game with no official English localization. Formulas are community-documented approximations — always sortie with a safety margin.</div>
+    <div class="sources">
+      Sources:
+      <a href="https://wikiwiki.jp/kancolle/%E8%88%AA%E7%A9%BA%E6%88%A6" target="_blank" rel="noopener">KanColle Wiki (Air Combat)</a>
+      <a href="https://wikiwiki.jp/kancolle/%E6%96%B0%E7%B1%B3%E6%8F%90%E7%9D%A3%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D" target="_blank" rel="noopener">KanColle Wiki (Beginner FAQ)</a>
+      <a href="https://ja.wikipedia.org/wiki/%E8%89%A6%E9%9A%8A%E3%81%93%E3%82%8C%E3%81%8F%E3%81%97%E3%82%87%E3%82%93_-%E8%89%A6%E3%81%93%E3%82%8C-" target="_blank" rel="noopener">Wikipedia (Kantai Collection)</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+<script>
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.tabs-links a'));
+    var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+    function setActive(id) {
+      links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + id); });
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) setActive(e.target.id); });
+      }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+      sections.forEach(function (s) { if (s) io.observe(s); });
+    }
+  })();
+
+  (function () {
+    var STATES = [
+      { id: 'supremacy',   label: 'Air Supremacy',   test: function (r, e) { return e === 0 || r >= 3; } },
+      { id: 'superiority', label: 'Air Superiority', test: function (r) { return r >= 1.5; } },
+      { id: 'parity',      label: 'Air Parity',      test: function (r) { return r > 2 / 3; } },
+      { id: 'denial',      label: 'Air Denial',      test: function (r) { return r > 1 / 3; } },
+      { id: 'incapability',label: 'Air Incapability', test: function () { return true; } }
+    ];
+
+    var rowsEl = document.getElementById('calc-rows');
+    var ownTotalEl = document.getElementById('own-total');
+    var stateEl = document.getElementById('air-state');
+    var enemyInput = document.getElementById('enemy-power');
+
+    function rowTemplate(aa, count, bonus) {
+      var row = document.createElement('div');
+      row.className = 'calc-row';
+      row.innerHTML =
+        '<input type="number" class="r-aa" min="0" value="' + aa + '">' +
+        '<input type="number" class="r-count" min="0" value="' + count + '">' +
+        '<input type="number" class="r-bonus" min="0" value="' + bonus + '">' +
+        '<span class="r-value tag-mono">0</span>' +
+        '<button type="button" class="r-remove" aria-label="Remove slot">×</button>';
+      return row;
+    }
+
+    function addRow(aa, count, bonus) {
+      var row = rowTemplate(aa, count, bonus);
+      rowsEl.appendChild(row);
+      row.querySelector('.r-remove').addEventListener('click', function () {
+        row.remove();
+        recalc();
+      });
+      row.querySelectorAll('input').forEach(function (inp) {
+        inp.addEventListener('input', recalc);
+      });
+    }
+
+    function rowValue(row) {
+      var aa = parseFloat(row.querySelector('.r-aa').value) || 0;
+      var count = parseFloat(row.querySelector('.r-count').value) || 0;
+      var bonus = parseFloat(row.querySelector('.r-bonus').value) || 0;
+      var value = Math.floor(aa * Math.sqrt(count)) + bonus;
+      row.querySelector('.r-value').textContent = value;
+      return value;
+    }
+
+    function recalc() {
+      var total = 0;
+      rowsEl.querySelectorAll('.calc-row').forEach(function (row) {
+        total += rowValue(row);
+      });
+      var enemy = parseFloat(enemyInput.value) || 0;
+      ownTotalEl.textContent = total;
+
+      var ratio = enemy === 0 ? Infinity : total / enemy;
+      var state = STATES.find(function (s) { return s.test(ratio, enemy); });
+
+      stateEl.textContent = state.label;
+      stateEl.className = 'result-state state-' + state.id;
+    }
+
+    document.getElementById('add-row').addEventListener('click', function () {
+      addRow(0, 0, 0);
+    });
+    enemyInput.addEventListener('input', recalc);
+
+    addRow(10, 18, 9);
+    addRow(8, 12, 3);
+    recalc();
+  })();
+</script>
+</body>
+</html>

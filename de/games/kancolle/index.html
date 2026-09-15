@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="description" content="KanColle (Kantai Collection) Leitfaden für internationale Spieler: japanisches UI-Glossar, Einsteiger-Roadmap und Luftüberlegenheits-Rechner.">
+<title>KanColle-Leitfaden</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/de/games/kancolle/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/">
+<link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/kancolle/">
+<link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/kancolle/">
+<link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/kancolle/">
+<link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/kancolle/">
+<link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/kancolle/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:title" content="KanColle-Leitfaden">
+<meta property="og:description" content="KanColle (Kantai Collection) Leitfaden für internationale Spieler: japanisches UI-Glossar, Einsteiger-Roadmap und Luftüberlegenheits-Rechner.">
+<meta property="og:url" content="https://kouryakulab.com/de/games/kancolle/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KanColle-Leitfaden">
+<meta name="twitter:description" content="KanColle (Kantai Collection) Leitfaden für internationale Spieler: japanisches UI-Glossar, Einsteiger-Roadmap und Luftüberlegenheits-Rechner.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "KanColle-Leitfaden",
+      "description": "KanColle (Kantai Collection) Leitfaden für internationale Spieler: japanisches UI-Glossar, Einsteiger-Roadmap und Luftüberlegenheits-Rechner.",
+      "inLanguage": "de",
+      "url": "https://kouryakulab.com/de/games/kancolle/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/de/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "KanColle-Leitfaden",
+          "item": "https://kouryakulab.com/de/games/kancolle/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/de/"><span class="arrow">←</span> Kouryaku Lab</a>
+    <div>
+      <span class="eyebrow">KADOKAWA GAMES / DMM · Seit 2013.04.23</span>
+      <h1>KanColle-Leitfaden</h1>
+      <p class="sub">Kantai Collection hatte nie eine offizielle globale Veröffentlichung — alles im Spiel ist auf Japanisch. Diese Seite ist ein UI-Glossar, eine Einsteiger-Roadmap und ein Luftüberlegenheits-Rechner für Spieler, die kein Japanisch lesen.</p>
+      <div class="fact-strip">
+        <div class="fact"><div class="k">Genre</div><div class="v tag-mono">Marineflotten-Sim</div></div>
+        <div class="fact"><div class="k">Plattform</div><div class="v tag-mono">PC-Browser (DMM)</div></div>
+        <div class="fact"><div class="k">Sprache</div><div class="v tag-mono">Nur Japanisch</div></div>
+        <div class="fact"><div class="k">Entwickler</div><div class="v tag-mono">Kadokawa Games</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links" id="tabs">
+      <a href="#overview">Übersicht</a>
+      <a href="#glossary">UI-Glossar</a>
+      <a href="#early">Erste Schritte</a>
+      <a href="#calculator">Luftmacht-Rechner</a>
+    </div>
+    <nav id="lang-switch" aria-label="Sprache"></nav>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="overview">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Übersicht</h2></div>
+    <p class="sec-desc">KanColle machte das Genre „Mädchen als Kriegsschiffe" populär, Jahre bevor es echte Konkurrenz gab. Über ein Jahrzehnt später ist es immer noch nur auf Japanisch verfügbar, aber eine große inoffizielle englischsprachige Community hat es die ganze Zeit am Leben erhalten — diese Seite existiert, weil diese Nachfrage nie verschwunden ist.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z"/></svg>
+        <h3>Kanmusu sammeln</h3>
+        <p>Rekrutiere Schiffsmädchen (Kanmusu), die echte Schiffe aus dem Zweiten Weltkrieg darstellen, von Zerstörern bis zu Schlachtschiffen, und baue deine Flotte auf.</p>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-7h6v7"/></svg>
+        <h3>Eine Flotte verwalten</h3>
+        <p>Balanciere vier Ressourcen — Treibstoff, Munition, Stahl und Bauxit — zwischen Einsätzen, Expeditionen und Reparaturen.</p>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l9-5 9 5-9 5-9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
+        <h3>In Wellen kämpfen</h3>
+        <p>Kämpfe dich durch Kartenknoten gegen die Abyssal-Flotte, bestreite Luft- und Beschussphasen und besiege Boss-Knoten, um ein Gebiet abzuschließen.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="glossary">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>Japanisches UI-Glossar</h2></div>
+    <p class="sec-desc">Jedes Menü im Spiel ist nur auf Japanisch. Das sind die Begriffe, denen du ständig begegnen wirst — merk dir diese Tabelle.</p>
+    <div class="panel table-scroll">
+      <table class="glossary">
+        <thead><tr><th>Japanisch</th><th>Romaji</th><th>Bedeutung</th></tr></thead>
+        <tbody>
+          <tr><td class="jp">出撃</td><td class="romaji">Shutsugeki</td><td>Ausfahrt — schicke deine Flotte auf eine Karte, um zu kämpfen.</td></tr>
+          <tr><td class="jp">遠征</td><td class="romaji">Ensei</td><td>Expedition — schicke eine Flotte los, um Ressourcen zu sammeln; kein Kampf, kein Schaden.</td></tr>
+          <tr><td class="jp">入渠</td><td class="romaji">Nyuukyo</td><td>Dockung — repariere beschädigte Schiffe. Kostet Zeit und Stahl.</td></tr>
+          <tr><td class="jp">工廠</td><td class="romaji">Koushou</td><td>Arsenal — hier baust du neue Schiffe und entwickelst Ausrüstung.</td></tr>
+          <tr><td class="jp">演習</td><td class="romaji">Enshuu</td><td>Übung — PvP-Training gegen andere Admirale; kein Risiko, Schiffe zu verlieren.</td></tr>
+          <tr><td class="jp">編成</td><td class="romaji">Hensei</td><td>Formation — der Bildschirm für Flottenzusammenstellung und Ausrüstung.</td></tr>
+          <tr><td class="jp">近代化改修</td><td class="romaji">Kindaika Kaishuu</td><td>Modernisierung — verfüttere Schiffe an ein anderes Schiff, um dessen Werte zu erhöhen.</td></tr>
+          <tr><td class="jp">改造</td><td class="romaji">Kaizou</td><td>Umbau — ein Schiff entwickelt sich bei einer bestimmten Stufe zu einer stärkeren Form ("Kai").</td></tr>
+          <tr><td class="jp">疲労度</td><td class="romaji">Hiroudo</td><td>Moral — niedrige Moral schadet der Kampfleistung; hohe Moral ("Glitzern") stärkt sie.</td></tr>
+          <tr><td class="jp">燃料</td><td class="romaji">Nenryou</td><td>Treibstoff — eine der vier Kernressourcen.</td></tr>
+          <tr><td class="jp">弾薬</td><td class="romaji">Dan'yaku</td><td>Munition — eine der vier Kernressourcen.</td></tr>
+          <tr><td class="jp">鋼材</td><td class="romaji">Kouzai</td><td>Stahl — eine der vier Kernressourcen.</td></tr>
+          <tr><td class="jp">ボーキサイト</td><td class="romaji">Bauxite</td><td>Eine der vier Kernressourcen; wird von Flugzeugen verbraucht.</td></tr>
+          <tr><td class="jp">艦娘</td><td class="romaji">Kanmusu</td><td>Schiffsmädchen — die spielbaren Charaktere.</td></tr>
+          <tr><td class="jp">深海棲艦</td><td class="romaji">Shinkaiseikan</td><td>Abyssal — die feindliche Fraktion, gegen die du kämpfst.</td></tr>
+          <tr><td class="jp">母港</td><td class="romaji">Bokou</td><td>Heimathafen — der Bildschirm mit deiner gesamten Flottenliste.</td></tr>
+          <tr><td class="jp">小破</td><td class="romaji">Shouha</td><td>Leicht beschädigt — geringer Schadenszustand.</td></tr>
+          <tr><td class="jp">中破</td><td class="romaji">Chuuha</td><td>Mittelschwer beschädigt — spürbarer Schadenszustand.</td></tr>
+          <tr><td class="jp">大破</td><td class="romaji">Taiha</td><td>Schwer beschädigt — kritisch; zieh dieses Schiff sofort zurück.</td></tr>
+          <tr><td class="jp">轟沈</td><td class="romaji">Gouchin</td><td>Versenkt — dauerhafter Verlust. Nur ein Risiko, wenn ein Schiff bereits schwer beschädigt ist.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="early">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>Erste Schritte</h2></div>
+    <p class="sec-desc">Die Menüs sind alle auf Japanisch, aber der Ablauf am Anfang ist einfach, sobald du das Muster kennst.</p>
+    <div class="panel">
+      <ol class="steps">
+        <li><span class="n">1</span>Wähle deinen Admiralsnamen. Er kann später nicht geändert werden — überlege nicht zu lange, aber sei auch nicht unüberlegt.</li>
+        <li><span class="n">2</span>Wähle ein Startschiff. Die vier Optionen sind statistisch nah beieinander; nimm den Zerstörer, der dir optisch am besten gefällt.</li>
+        <li><span class="n">3</span>Prüfe deine Aufträge (任務) oben auf dem Bildschirm — sie belohnen Ressourcen und schalten Funktionen frei. Erledige, was du kannst.</li>
+        <li><span class="n">4</span>Schließe den Auftrag für eine 6-Schiffe-Flottenformation ab. Das ist dein erster echter Meilenstein und schaltet deinen zweiten Flottenplatz frei.</li>
+        <li><span class="n">5</span>Farme frühe Knoten wie Karte 1-1 für Zerstörer — das ist der Standardort, um früh deinen Bestand aufzubauen.</li>
+        <li><span class="n">6</span>Schalte Expeditionen (遠征) frei, indem du den Auftrag für die 2. Flotte abschließt, damit du parallel zu Einsätzen Ressourcen sammeln kannst.</li>
+        <li><span class="n">7</span>Beeile dich nicht mit jedem täglichen Auftrag oder jeder Rangliste. Du musst nicht von Tag eins an alles schaffen — geh dein eigenes Tempo.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="calculator">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>Luftüberlegenheits-Rechner</h2></div>
+    <p class="sec-desc">Jägerstärke pro Flugzeugslot = abrunden(Flak-Wert × √Flugzeuganzahl) + Erfahrungsbonus. Summiere alle Slots deiner Flotte und vergleiche dann mit der Gesamtstärke des Gegners, um zu sehen, unter welchem Luftzustand du kämpfst.</p>
+
+    <div class="panel calc-panel">
+      <div class="calc-header">
+        <span>Flak</span><span>Anzahl</span><span>Bonus</span><span>Stärke</span><span></span>
+      </div>
+      <div id="calc-rows"></div>
+      <button type="button" class="btn-add" id="add-row">+ Slot hinzufügen</button>
+
+      <div class="calc-enemy">
+        Feindliche Luftstärke
+        <input type="number" id="enemy-power" min="0" value="90">
+      </div>
+
+      <div class="calc-result">
+        <div>
+          <div class="result-label">Deine Gesamtstärke</div>
+          <div class="result-value tag-mono" id="own-total">0</div>
+        </div>
+        <div class="result-state" id="air-state">—</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <b>Schwellenwerte</b> (deine Stärke vs. feindliche Stärke): Luftherrschaft ≥ 3× (oder Feind = 0) · Luftüberlegenheit 1,5×–3× · Luftgleichgewicht ⅔×–1,5× · Luftunterlegenheit ⅓×–⅔× · Luftohnmacht ≤ ⅓×.
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">Dies ist ein inoffizieller, von Fans erstellter Leitfaden, der auf öffentlich zugänglichen Informationen über ein Spiel ohne offizielle deutsche Lokalisierung basiert. Die Formeln sind von der Community dokumentierte Näherungswerte — fahre immer mit einer Sicherheitsmarge aus.</div>
+    <div class="sources">
+      Quellen:
+      <a href="https://wikiwiki.jp/kancolle/%E8%88%AA%E7%A9%BA%E6%88%A6" target="_blank" rel="noopener">KanColle-Wiki (Luftkampf)</a>
+      <a href="https://wikiwiki.jp/kancolle/%E6%96%B0%E7%B1%B3%E6%8F%90%E7%9D%A3%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D" target="_blank" rel="noopener">KanColle-Wiki (Einsteiger-FAQ)</a>
+      <a href="https://ja.wikipedia.org/wiki/%E8%89%A6%E9%9A%8A%E3%81%93%E3%82%8C%E3%81%8F%E3%81%97%E3%82%87%E3%82%93_-%E8%89%A6%E3%81%93%E3%82%8C-" target="_blank" rel="noopener">Wikipedia (Kantai Collection)</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+<script>
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.tabs-links a'));
+    var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+    function setActive(id) {
+      links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + id); });
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) setActive(e.target.id); });
+      }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+      sections.forEach(function (s) { if (s) io.observe(s); });
+    }
+  })();
+
+  (function () {
+    var STATES = [
+      { id: 'supremacy',   label: 'Luftherrschaft',     test: function (r, e) { return e === 0 || r >= 3; } },
+      { id: 'superiority', label: 'Luftüberlegenheit',  test: function (r) { return r >= 1.5; } },
+      { id: 'parity',      label: 'Luftgleichgewicht',  test: function (r) { return r > 2 / 3; } },
+      { id: 'denial',      label: 'Luftunterlegenheit', test: function (r) { return r > 1 / 3; } },
+      { id: 'incapability',label: 'Luftohnmacht',       test: function () { return true; } }
+    ];
+
+    var rowsEl = document.getElementById('calc-rows');
+    var ownTotalEl = document.getElementById('own-total');
+    var stateEl = document.getElementById('air-state');
+    var enemyInput = document.getElementById('enemy-power');
+
+    function rowTemplate(aa, count, bonus) {
+      var row = document.createElement('div');
+      row.className = 'calc-row';
+      row.innerHTML =
+        '<input type="number" class="r-aa" min="0" value="' + aa + '">' +
+        '<input type="number" class="r-count" min="0" value="' + count + '">' +
+        '<input type="number" class="r-bonus" min="0" value="' + bonus + '">' +
+        '<span class="r-value tag-mono">0</span>' +
+        '<button type="button" class="r-remove" aria-label="Slot entfernen">×</button>';
+      return row;
+    }
+
+    function addRow(aa, count, bonus) {
+      var row = rowTemplate(aa, count, bonus);
+      rowsEl.appendChild(row);
+      row.querySelector('.r-remove').addEventListener('click', function () {
+        row.remove();
+        recalc();
+      });
+      row.querySelectorAll('input').forEach(function (inp) {
+        inp.addEventListener('input', recalc);
+      });
+    }
+
+    function rowValue(row) {
+      var aa = parseFloat(row.querySelector('.r-aa').value) || 0;
+      var count = parseFloat(row.querySelector('.r-count').value) || 0;
+      var bonus = parseFloat(row.querySelector('.r-bonus').value) || 0;
+      var value = Math.floor(aa * Math.sqrt(count)) + bonus;
+      row.querySelector('.r-value').textContent = value;
+      return value;
+    }
+
+    function recalc() {
+      var total = 0;
+      rowsEl.querySelectorAll('.calc-row').forEach(function (row) {
+        total += rowValue(row);
+      });
+      var enemy = parseFloat(enemyInput.value) || 0;
+      ownTotalEl.textContent = total;
+
+      var ratio = enemy === 0 ? Infinity : total / enemy;
+      var state = STATES.find(function (s) { return s.test(ratio, enemy); });
+
+      stateEl.textContent = state.label;
+      stateEl.className = 'result-state state-' + state.id;
+    }
+
+    document.getElementById('add-row').addEventListener('click', function () {
+      addRow(0, 0, 0);
+    });
+    enemyInput.addEventListener('input', recalc);
+
+    addRow(10, 18, 9);
+    addRow(8, 12, 3);
+    recalc();
+  })();
+</script>
+</body>
+</html>
