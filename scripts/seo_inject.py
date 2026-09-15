@@ -8,6 +8,7 @@ kouryakulab.com 向けSEO/OGPメタデータ一括挿入スクリプト。
   - Open Graph / Twitter Card メタタグ（7言語分の og:locale:alternate 込み）
   - JSON-LD構造化データ（hub/privacyページ = WebSite、ゲームガイド = Article + BreadcrumbList）
   - フッターへのプライバシーポリシーへのリンク（hub/ゲームガイドページのみ。privacyページ自身には挿入しない）
+  - Google AdSenseの広告コード（全ページ、<head>の先頭付近）
 
 対象ページは自動検出（ルート・ja/・ko/・zh/・de/・fr/・ar/ 配下の
 index.html、games/<slug>/index.html、privacy/index.html を全て走査）。
@@ -35,6 +36,8 @@ LOCALE = {
     "de": "de_DE", "fr": "fr_FR", "ar": "ar_AR",
 }
 LANG_DIRS = ["", "ja", "ko", "zh", "de", "fr", "ar"]  # "" = ルート(英語)
+
+ADSENSE_CLIENT = "ca-pub-2939651190150074"
 
 PRIVACY_LABEL = {
     "en": "Privacy Policy", "ja": "プライバシーポリシー", "ko": "개인정보처리방침",
@@ -94,6 +97,20 @@ def process(path):
         home_url = canonical
 
     changed = False
+
+    # --- Google AdSense (as close to the top of <head> as possible) ---
+    if "pagead2.googlesyndication.com" not in content:
+        adsense = (
+            f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE_CLIENT}" '
+            'crossorigin="anonymous"></script>\n'
+        )
+        content = re.sub(
+            r'(<meta charset="UTF-8">\n)',
+            r"\1" + adsense,
+            content,
+            count=1,
+        )
+        changed = True
 
     # --- favicon ---
     if 'rel="icon"' not in content:
