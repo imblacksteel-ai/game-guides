@@ -199,4 +199,77 @@
   <url><loc>https://kouryakulab.com/de/about/</loc></url>
   <url><loc>https://kouryakulab.com/fr/about/</loc></url>
   <url><loc>https://kouryakulab.com/ar/about/</loc></url>
+
+
+  <url>
+    <loc>https://kouryakulab.com/authors/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/authors/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/authors/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/authors/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/authors/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/authors/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/authors/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/authors/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/authors/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/authors/</loc></url>
+  <url><loc>https://kouryakulab.com/ko/authors/</loc></url>
+  <url><loc>https://kouryakulab.com/zh/authors/</loc></url>
+  <url><loc>https://kouryakulab.com/de/authors/</loc></url>
+  <url><loc>https://kouryakulab.com/fr/authors/</loc></url>
+  <url><loc>https://kouryakulab.com/ar/authors/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/editorial-policy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/editorial-policy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/editorial-policy/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/editorial-policy/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/editorial-policy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/editorial-policy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/editorial-policy/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/editorial-policy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/editorial-policy/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/editorial-policy/</loc></url>
+  <url><loc>https://kouryakulab.com/ko/editorial-policy/</loc></url>
+  <url><loc>https://kouryakulab.com/zh/editorial-policy/</loc></url>
+  <url><loc>https://kouryakulab.com/de/editorial-policy/</loc></url>
+  <url><loc>https://kouryakulab.com/fr/editorial-policy/</loc></url>
+  <url><loc>https://kouryakulab.com/ar/editorial-policy/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/contact/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/contact/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/contact/</loc></url>
+  <url><loc>https://kouryakulab.com/ko/contact/</loc></url>
+  <url><loc>https://kouryakulab.com/zh/contact/</loc></url>
+  <url><loc>https://kouryakulab.com/de/contact/</loc></url>
+  <url><loc>https://kouryakulab.com/fr/contact/</loc></url>
+  <url><loc>https://kouryakulab.com/ar/contact/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/terms/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/terms/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/terms/</loc></url>
+  <url><loc>https://kouryakulab.com/ko/terms/</loc></url>
+  <url><loc>https://kouryakulab.com/zh/terms/</loc></url>
+  <url><loc>https://kouryakulab.com/de/terms/</loc></url>
+  <url><loc>https://kouryakulab.com/fr/terms/</loc></url>
+  <url><loc>https://kouryakulab.com/ar/terms/</loc></url>
 </urlset>

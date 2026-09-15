@@ -102,6 +102,6 @@ footer p { font-size: .78rem; color: var(--ink-dim); margin: 0; }
 .prose a { color: var(--accent); text-decoration: underline; text-decoration-color: var(--line); }
 .updated { font-size: .78rem; color: var(--ink-faint); margin-bottom: 26px; }
 
-/* ---------- Footer privacy link (shared across hub + game pages) ---------- */
-.privacy-wrap { padding-block-start: 10px; }
-.privacy-wrap a { font-size: .78rem; color: var(--ink-faint); text-decoration: underline; text-decoration-color: var(--line); }
+/* ---------- Footer site-links nav (shared across hub + game + prose pages) ---------- */
+.site-links { display: block; padding-block-start: 10px; line-height: 1.9; }
+.site-links a { font-size: .78rem; color: var(--ink-faint); text-decoration: underline; text-decoration-color: var(--line); }

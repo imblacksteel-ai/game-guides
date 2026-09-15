@@ -7,8 +7,8 @@ kouryakulab.com 向けSEO/OGPメタデータ一括挿入スクリプト。
   - Google Fonts の <link rel="preconnect">
   - Open Graph / Twitter Card メタタグ（7言語分の og:locale:alternate 込み）
   - JSON-LD構造化データ（hub/privacyページ = WebSite、ゲームガイド = Article + BreadcrumbList）
-  - フッターへのプライバシーポリシーへのリンク（hub/ゲームガイドページのみ。privacyページ自身には挿入しない）
-  - フッターへの「サイトについて(About)」リンク（aboutページ自身以外の全ページ）
+  - フッターへの横断リンク行（About / Authors / Editorial Policy / Contact / Terms of Use /
+    Privacy Policy。各ページは自分自身をリンク一覧から除外する）
   - Google AdSenseの広告コード（全ページ、<head>の先頭付近）
   - hero内「更新日」ファクトタイル（ゲームガイドページのみ）
   - フッター「他の攻略ガイド」相互リンク（ゲームガイドページのみ、自分自身は除外）
@@ -52,6 +52,47 @@ ABOUT_LABEL = {
     "en": "About", "ja": "サイトについて", "ko": "사이트 소개",
     "zh-Hans": "关于本站", "de": "Über uns", "fr": "À propos",
     "ar": "حول الموقع",
+}
+
+AUTHORS_LABEL = {
+    "en": "Authors", "ja": "執筆者について", "ko": "필자 소개",
+    "zh-Hans": "作者信息", "de": "Autoren", "fr": "Auteurs",
+    "ar": "الكتّاب",
+}
+
+EDITORIAL_POLICY_LABEL = {
+    "en": "Editorial Policy", "ja": "編集方針", "ko": "편집 방침",
+    "zh-Hans": "编辑方针", "de": "Redaktionelle Richtlinien", "fr": "Charte éditoriale",
+    "ar": "السياسة التحريرية",
+}
+
+CONTACT_LABEL = {
+    "en": "Contact", "ja": "お問い合わせ", "ko": "문의하기",
+    "zh-Hans": "联系我们", "de": "Kontakt", "fr": "Contact",
+    "ar": "تواصل معنا",
+}
+
+TERMS_LABEL = {
+    "en": "Terms of Use", "ja": "利用規約", "ko": "이용약관",
+    "zh-Hans": "使用条款", "de": "Nutzungsbedingungen", "fr": "Conditions d'utilisation",
+    "ar": "شروط الاستخدام",
+}
+
+SITE_LINKS_ARIA = {
+    "en": "Site links", "ja": "サイトリンク", "ko": "사이트 링크",
+    "zh-Hans": "网站链接", "de": "Website-Links", "fr": "Liens du site",
+    "ar": "روابط الموقع",
+}
+
+# フッターの横断リンク行に表示する順番。各ページは自分自身をこの中から除外して表示する。
+SITE_LINK_ORDER = ["about", "authors", "editorial-policy", "contact", "terms", "privacy"]
+SITE_LINK_LABELS = {
+    "about": ABOUT_LABEL,
+    "authors": AUTHORS_LABEL,
+    "editorial-policy": EDITORIAL_POLICY_LABEL,
+    "contact": CONTACT_LABEL,
+    "terms": TERMS_LABEL,
+    "privacy": PRIVACY_LABEL,
 }
 
 UPDATED_LABEL = {
@@ -107,9 +148,10 @@ def find_pages():
         privacy = os.path.join(base, "privacy", "index.html")
         if os.path.isfile(privacy):
             pages.append(privacy)
-        about = os.path.join(base, "about", "index.html")
-        if os.path.isfile(about):
-            pages.append(about)
+        for slug in ("about", "authors", "editorial-policy", "contact", "terms"):
+            p = os.path.join(base, slug, "index.html")
+            if os.path.isfile(p):
+                pages.append(p)
     return pages
 
 
@@ -123,8 +165,11 @@ def process(path):
     canonical = re.search(r'<link rel="canonical" href="([^"]+)"', content).group(1)
 
     is_guide = "/games/" in rel or rel.startswith("games/")
-    is_privacy = "/privacy/" in rel or rel.startswith("privacy/")
-    is_about = "/about/" in rel or rel.startswith("about/")
+    self_slug = None
+    for slug in SITE_LINK_ORDER:
+        if f"/{slug}/" in rel or rel.startswith(f"{slug}/"):
+            self_slug = slug
+            break
     # トップレベルのゲームガイド（games/<slug>/index.html）か、その下のクラスターページ（games/<slug>/<topic>/index.html）かを判定。
     # クラスターページには More Guides / Updated タイル は付けない（独自の「フルガイドに戻る」導線を手書きするため）。
     games_tail = rel.split("games/")[1] if is_guide else ""
@@ -281,26 +326,20 @@ def process(path):
         content = content.replace("<footer>\n  <div class=\"wrap\">\n", "<footer>\n" + more_guides_block + "  <div class=\"wrap\">\n", 1)
         changed = True
 
-    # --- footer privacy link (hub / guide pages only, not the privacy page itself) ---
-    if not is_privacy and "privacy-wrap" not in content:
-        privacy_url = prefix + "privacy/"
-        privacy_label = PRIVACY_LABEL.get(lang, "Privacy Policy")
-        privacy_block = f'  <div class="wrap privacy-wrap"><a href="{privacy_url}">{esc(privacy_label)}</a></div>\n'
-        content = content.replace("</footer>", privacy_block + "</footer>")
-        changed = True
-
-    # --- footer About link (every page except the About page itself) ---
-    if not is_about and 'class="about-link"' not in content:
-        about_url = prefix + "about/"
-        about_label = ABOUT_LABEL.get(lang, "About")
-        about_anchor = f'<a class="about-link" href="{about_url}">{esc(about_label)}</a>'
-        m = re.search(r'<div class="wrap privacy-wrap">(.*?)</div>', content, re.S)
-        if m:
-            content = content[:m.start(1)] + about_anchor + " · " + m.group(1) + content[m.end(1):]
-        else:
-            # privacy page itself has no privacy-wrap div (it skips self-linking) — add a standalone one
-            block = f'  <div class="wrap privacy-wrap">{about_anchor}</div>\n'
-            content = content.replace("</footer>", block + "</footer>")
+    # --- footer site-links nav (About / Authors / Editorial Policy / Contact / Terms / Privacy Policy,
+    #     excluding whichever of those the current page itself is) ---
+    if "site-links" not in content:
+        link_htmls = []
+        for slug in SITE_LINK_ORDER:
+            if slug == self_slug:
+                continue
+            label = SITE_LINK_LABELS[slug].get(lang, SITE_LINK_LABELS[slug]["en"])
+            link_htmls.append(f'<a href="{prefix}{slug}/">{esc(label)}</a>')
+        aria_label = SITE_LINKS_ARIA.get(lang, "Site links")
+        block = f'  <nav class="wrap site-links" aria-label="{esc(aria_label)}">' + " · ".join(link_htmls) + "</nav>\n"
+        # 旧バージョン（class="wrap privacy-wrap"）が残っていれば削除してから差し替える
+        content = re.sub(r'[ \t]*<div class="wrap privacy-wrap">.*?</div>\n?', "", content, flags=re.S)
+        content = content.replace("</footer>", block + "</footer>")
         changed = True
 
     if changed:
