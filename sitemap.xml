@@ -75,6 +75,24 @@
   <url><loc>https://kouryakulab.com/ar/games/srwdd/</loc></url>
 
   <url>
+    <loc>https://kouryakulab.com/games/deresute/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/deresute/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/deresute/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/deresute/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/deresute/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/deresute/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/deresute/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/deresute/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/deresute/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/deresute/</loc></url>
+  <url><loc>https://kouryakulab.com/ko/games/deresute/</loc></url>
+  <url><loc>https://kouryakulab.com/zh/games/deresute/</loc></url>
+  <url><loc>https://kouryakulab.com/de/games/deresute/</loc></url>
+  <url><loc>https://kouryakulab.com/fr/games/deresute/</loc></url>
+  <url><loc>https://kouryakulab.com/ar/games/deresute/</loc></url>
+
+  <url>
     <loc>https://kouryakulab.com/privacy/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/privacy/"/>
