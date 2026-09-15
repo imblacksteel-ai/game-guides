@@ -80,10 +80,16 @@ footer p { font-size: .78rem; color: var(--ink-dim); margin: 0; }
 #lang-switch .lang-menu {
   display: none; position: absolute; top: calc(100% + 6px); inset-inline-end: 0;
   background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
-  padding: 6px; min-width: 140px; box-shadow: 0 8px 24px -8px rgba(0,0,0,.25);
+  padding: 6px; min-width: 140px; max-width: calc(100vw - 40px); box-shadow: 0 8px 24px -8px rgba(0,0,0,.25);
   list-style: none; margin: 0; z-index: 30;
 }
 #lang-switch.open .lang-menu { display: block; }
+/* Below ~480px, .top-row wraps and #lang-switch lands flush against the left
+   edge — right-anchoring the menu there pushes it off the left edge of the
+   screen, so anchor it to the left (growing into the page) instead. */
+@media (max-width: 480px) {
+  #lang-switch .lang-menu { inset-inline-end: auto; inset-inline-start: 0; }
+}
 #lang-switch .lang-menu a {
   display: block; text-decoration: none; color: var(--ink);
   font-size: .85rem; padding: 8px 10px; border-radius: 6px;
