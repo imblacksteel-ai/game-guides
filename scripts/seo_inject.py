@@ -96,6 +96,7 @@ def find_pages():
         if os.path.isfile(hub):
             pages.append(hub)
         pages += sorted(glob.glob(os.path.join(base, "games", "*", "index.html")))
+        pages += sorted(glob.glob(os.path.join(base, "games", "*", "*", "index.html")))
         privacy = os.path.join(base, "privacy", "index.html")
         if os.path.isfile(privacy):
             pages.append(privacy)
@@ -113,6 +114,10 @@ def process(path):
 
     is_guide = "/games/" in rel or rel.startswith("games/")
     is_privacy = "/privacy/" in rel or rel.startswith("privacy/")
+    # トップレベルのゲームガイド（games/<slug>/index.html）か、その下のクラスターページ（games/<slug>/<topic>/index.html）かを判定。
+    # クラスターページには More Guides / Updated タイル は付けない（独自の「フルガイドに戻る」導線を手書きするため）。
+    games_tail = rel.split("games/")[1] if is_guide else ""
+    is_top_level_guide = is_guide and games_tail.count("/") == 1
     prefix_seg = rel.split("/")[0]
     prefix = f"/{prefix_seg}/" if prefix_seg in LANG_DIRS and prefix_seg != "" else "/"
     site_name = "攻略ラボ" if lang == "ja" else "Kouryaku Lab"
@@ -238,8 +243,8 @@ def process(path):
         content = content.replace("</head>", og_block + "\n" + ld_block + "\n</head>")
         changed = True
 
-    # --- "Updated" fact tile in the hero (guide pages only) ---
-    if is_guide and 'data-fact="updated"' not in content:
+    # --- "Updated" fact tile in the hero (top-level guide pages only) ---
+    if is_top_level_guide and 'data-fact="updated"' not in content:
         updated_label = UPDATED_LABEL.get(lang, "Updated")
         fact_tile = f'        <div class="fact" data-fact="updated"><div class="k">{esc(updated_label)}</div><div class="v tag-mono">{UPDATED_VALUE}</div></div>\n'
         marker = '\n      </div>\n    </div>\n  </div>\n</div>\n\n<nav class="tabs">'
@@ -247,8 +252,8 @@ def process(path):
         content = content.replace(marker, "\n" + fact_tile + marker.lstrip("\n"), 1)
         changed = True
 
-    # --- "More Guides" cross-links to the other games (guide pages only) ---
-    if is_guide and "more-guides" not in content:
+    # --- "More Guides" cross-links to the other games (top-level guide pages only) ---
+    if is_top_level_guide and "more-guides" not in content:
         slug_self = rel.split("games/")[1].split("/")[0]
         links = []
         for other_slug, names in GAME_NAMES.items():

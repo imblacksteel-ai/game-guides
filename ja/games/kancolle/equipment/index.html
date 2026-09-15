@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="description" content="艦これの装備開発レシピ：オールラウンド・艦載機・電探・大口径砲それぞれの燃料/弾薬/鋼材/ボーキサイト比率と、開発の仕組みを解説。">
+<title>艦これ 装備開発レシピ</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/kancolle/equipment/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/equipment/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/equipment/">
+<link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/kancolle/equipment/">
+<link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/kancolle/equipment/">
+<link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/kancolle/equipment/">
+<link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/kancolle/equipment/">
+<link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/kancolle/equipment/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/equipment/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:title" content="艦これ 装備開発レシピ">
+<meta property="og:description" content="艦これの装備開発レシピ：オールラウンド・艦載機・電探・大口径砲それぞれの燃料/弾薬/鋼材/ボーキサイト比率と、開発の仕組みを解説。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/kancolle/equipment/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="艦これ 装備開発レシピ">
+<meta name="twitter:description" content="艦これの装備開発レシピ：オールラウンド・艦載機・電探・大口径砲それぞれの燃料/弾薬/鋼材/ボーキサイト比率と、開発の仕組みを解説。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "艦これ 装備開発レシピ",
+      "description": "艦これの装備開発レシピ：オールラウンド・艦載機・電探・大口径砲それぞれの燃料/弾薬/鋼材/ボーキサイト比率と、開発の仕組みを解説。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/kancolle/equipment/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "艦これ 装備開発レシピ",
+          "item": "https://kouryakulab.com/ja/games/kancolle/equipment/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/kancolle/"><span class="arrow">←</span> 艦これ 攻略ガイド全体</a>
+    <div>
+      <span class="eyebrow">艦これ ・ 装備開発</span>
+      <h1>装備開発レシピ</h1>
+      <p class="sub">工廠は艦娘の建造だけでなく、装備の開発にも使う。同じ4資源を違う比率で投入するだけで、狙った系統の装備が出やすくなる。よく聞かれる4系統のレシピをまとめた。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+
+  <div class="panel">
+    <h2 style="font-size:1.1rem;margin-bottom:10px;">「建造」と「開発」の違いは？</h2>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:0;">どちらも燃料・弾薬・鋼材・ボーキサイトの同じ4資源を使うが、別々の画面・別々の結果になる。<b>建造</b>は新しい艦娘を生産する。このページで扱う<b>開発</b>は装備（砲・電探・艦載機など）を生産し、それを艦娘に装備させる。初心者が間違えて建造画面に資源を入れてしまい、艦娘が欲しかったのに装備が出て戸惑うことがあるので、資源を投入する前にどちらの画面か確認すること。</p>
+  </div>
+
+  <div class="panel" style="margin-top:16px;">
+    <h2 style="font-size:1.1rem;margin-bottom:14px;">4つの標準レシピ</h2>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>狙い</th><th>燃料</th><th>弾薬</th><th>鋼材</th><th>ボーキサイト</th><th>用途</th></tr></thead>
+        <tbody>
+          <tr><td>オールラウンド（序盤の基本）</td><td class="tag-mono">10</td><td class="tag-mono">10</td><td class="tag-mono">10</td><td class="tag-mono">10</td><td>資源が乏しい序盤に、系統を問わず安く回す用。</td></tr>
+          <tr><td>艦載機狙い</td><td class="tag-mono">20</td><td class="tag-mono">60</td><td class="tag-mono">10</td><td class="tag-mono">110</td><td>制空値を上げる艦戦・艦爆狙い。</td></tr>
+          <tr><td>電探狙い</td><td class="tag-mono">10</td><td class="tag-mono">11</td><td class="tag-mono">251</td><td class="tag-mono">250</td><td>夜戦カットイン・対空カットインに必須の水上電探・対空電探狙い。</td></tr>
+          <tr><td>大口径砲狙い</td><td class="tag-mono">10</td><td class="tag-mono">251</td><td class="tag-mono">250</td><td class="tag-mono">10</td><td>戦艦の昼戦火力を伸ばす大口径主砲狙い。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:16px;"><b>確定ではない：</b>レシピはその系統の排出率を上げるだけで、特定のアイテムやレアリティを確約しない。「当たり」レシピを回しても外れは出る。また開発には上記4資源に加えて開発資材も消費するので、常に在庫を確保しておくこと。</div>
+
+  <div class="panel" style="margin-top:16px;">
+    <h2 style="font-size:1.1rem;margin-bottom:10px;">どれくらい資源を貯めておけばいい？</h2>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 12px;">電探・大口径砲レシピはどちらも鋼材または弾薬が250以上必要で、序盤の提督にはかなり重い。現実的な進め方としては、レベリング・遠征で資源を貯めている間はオールラウンドレシピを回し、複数回連続で試せるだけの余裕ができてから専門レシピに切り替えるとよい。一発で狙った物が出ることは稀。</p>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:0;">特定の1つの電探・主砲だけが欲しい場合は、開発より先にその装備がドロップする海域が無いか確認した方が安く済むこともある。開発は「特定の1個」より「その系統の装備を継続的に確保したい」時に向いている。</p>
+  </div>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/kancolle/">艦これ 攻略ガイド全体</a>
+      <a href="/ja/games/kancolle/#early">序盤攻略</a>
+      <a href="/ja/games/kancolle/#calculator">制空値計算機</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは公開情報を基にした非公式のファンメイド攻略まとめです。レシピの比率はコミュニティで検証された値であり、公式発表ではありません。実際の排出率と差異がある場合があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://wikiwiki.jp/kancolle/%E9%96%8B%E7%99%BA%E3%83%AC%E3%82%B7%E3%83%94" target="_blank" rel="noopener">艦これ攻略Wiki（開発レシピ）</a>
+    </div>
+  </div>
+  <div class="wrap privacy-wrap"><a href="/ja/privacy/">プライバシーポリシー</a></div>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

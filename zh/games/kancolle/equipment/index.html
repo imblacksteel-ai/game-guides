@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="description" content="KanColle装备开发配方：全能、舰载机、电探、大口径炮装备的燃料/弹药/钢材/铝土矿比例，以及开发系统的原理。">
+<title>KanColle 装备开发配方</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/zh/games/kancolle/equipment/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/equipment/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/equipment/">
+<link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/kancolle/equipment/">
+<link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/kancolle/equipment/">
+<link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/kancolle/equipment/">
+<link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/kancolle/equipment/">
+<link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/kancolle/equipment/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/equipment/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:title" content="KanColle 装备开发配方">
+<meta property="og:description" content="KanColle装备开发配方：全能、舰载机、电探、大口径炮装备的燃料/弹药/钢材/铝土矿比例，以及开发系统的原理。">
+<meta property="og:url" content="https://kouryakulab.com/zh/games/kancolle/equipment/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KanColle 装备开发配方">
+<meta name="twitter:description" content="KanColle装备开发配方：全能、舰载机、电探、大口径炮装备的燃料/弹药/钢材/铝土矿比例，以及开发系统的原理。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "KanColle 装备开发配方",
+      "description": "KanColle装备开发配方：全能、舰载机、电探、大口径炮装备的燃料/弹药/钢材/铝土矿比例，以及开发系统的原理。",
+      "inLanguage": "zh-Hans",
+      "url": "https://kouryakulab.com/zh/games/kancolle/equipment/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/zh/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "KanColle 装备开发配方",
+          "item": "https://kouryakulab.com/zh/games/kancolle/equipment/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/zh/games/kancolle/"><span class="arrow">←</span> KanColle 完整攻略指南</a>
+    <div>
+      <span class="eyebrow">KANCOLLE · 装备</span>
+      <h1>装备开发配方</h1>
+      <p class="sub">工厂不仅能建造舰船，也能用来开发装备——只是把同样四种资源按不同比例投入而已。这里整理了新手提督最常问的几类装备配方，均经过社区验证。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="语言"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+
+  <div class="panel">
+    <h2 style="font-size:1.1rem;margin-bottom:10px;">开发和建造有什么区别？</h2>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:0;">两者都使用燃料、弹药、钢材、铝土矿这同样四种资源，但属于不同界面、产出也不同。<b>建造（建造）</b>产出新的舰船。本页介绍的<b>开发（開発）</b>产出装备：舰炮、电探、舰载机等可以装到舰船上的东西。新手有时会把资源投进错误的界面，本想要一艘船，结果得到一门炮——投入资源前请先确认自己在哪个界面。</p>
+  </div>
+
+  <div class="panel" style="margin-top:16px;">
+    <h2 style="font-size:1.1rem;margin-bottom:14px;">四种标准配方</h2>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>目标</th><th>燃料</th><th>弹药</th><th>钢材</th><th>铝土矿</th><th>适合</th></tr></thead>
+        <tbody>
+          <tr><td>全能型（新手初始）</td><td class="tag-mono">10</td><td class="tag-mono">10</td><td class="tag-mono">10</td><td class="tag-mono">10</td><td>资源紧张的前期，用来低成本获取各类装备。</td></tr>
+          <tr><td>舰载机向</td><td class="tag-mono">20</td><td class="tag-mono">60</td><td class="tag-mono">10</td><td class="tag-mono">110</td><td>提升制空值的舰载战斗机与舰载轰炸机。</td></tr>
+          <tr><td>电探向</td><td class="tag-mono">10</td><td class="tag-mono">11</td><td class="tag-mono">251</td><td class="tag-mono">250</td><td>夜战CI、对空CI必备的水上电探与对空电探。</td></tr>
+          <tr><td>大口径炮向</td><td class="tag-mono">10</td><td class="tag-mono">251</td><td class="tag-mono">250</td><td class="tag-mono">10</td><td>提升战列舰昼战炮击阶段火力的大口径主炮。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:16px;"><b>并非100%保证。</b>配方只是提高抽到该类装备的概率，不锁定具体物品或稀有度——即使用"好"配方，也可能开出平庸的结果。开发除了上述四种资源外，还会消耗开发资材，请保留一定库存。</div>
+
+  <div class="panel" style="margin-top:16px;">
+    <h2 style="font-size:1.1rem;margin-bottom:10px;">需要囤多少资源？</h2>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 12px;">电探配方和大口径炮配方每次都需要250以上的钢材或弹药，对新手提督来说压力不小。实用做法是：在升级、跑远征积累资源的阶段先用全能型配方，等储备足够连续开发好几次时再切换到专精配方——单次开发很少能直接开出你想要的东西。</p>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:0;">如果只是需要某件电探或主炮装到某一艘船上，通常先查该装备在哪张可刷图掉落会更省资源——开发更适合需要持续补给某一类装备的情况，而不是只想要一件。</p>
+  </div>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>继续阅读</h3>
+    <div class="more-guides-links">
+      <a href="/zh/games/kancolle/">KanColle 完整攻略指南</a>
+      <a href="/zh/games/kancolle/#early">新手攻略</a>
+      <a href="/zh/games/kancolle/#calculator">制空权计算器</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本页是根据公开信息整理的非官方粉丝攻略，所涉游戏没有官方英文本地化版本。配方比例为社区验证数据，并非官方公布数值——实际概率可能有所不同。</div>
+    <div class="sources">
+      信息来源：
+      <a href="https://wikiwiki.jp/kancolle/%E9%96%8B%E7%99%BA%E3%83%AC%E3%82%B7%E3%83%94" target="_blank" rel="noopener">KanColle攻略Wiki（开发配方）</a>
+    </div>
+  </div>
+  <div class="wrap privacy-wrap"><a href="/zh/privacy/">隐私政策</a></div>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>
