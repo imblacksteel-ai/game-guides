@@ -103,6 +103,7 @@
       <a href="#overview">개요</a>
       <a href="#glossary">UI 용어집</a>
       <a href="#early">초반 공략</a>
+      <a href="#development">장비 개발</a>
       <a href="#calculator">제공권 계산기</a>
     </div>
     <nav id="lang-switch" aria-label="언어"></nav>
@@ -178,11 +179,30 @@
         <li><span class="n">6</span>제2함대 해금 임무를 달성해 원정(遠征)을 열면, 출격과 동시에 자원을 벌 수 있습니다.</li>
         <li><span class="n">7</span>모든 일일 임무나 랭킹을 무리하게 다 할 필요는 없습니다. 자신의 속도로 진행하세요.</li>
       </ol>
+      <div class="callout"><b>남길 함선, 해체할 함선:</b> 개조(改) 계보가 좋고 연료·탄약 소모가 적은 함선을 우선적으로 남기세요 — 저연비 함선은 원정에서 제 몫을 합니다. 마음에 드는 함선을 이미 확보했다면, 초반에 겹치는 함선은 해체해도 괜찮습니다.</div>
+      <div class="callout"><b>이벤트 전 준비:</b> 이벤트 해역은 난이도(丙/乙/甲, 쉬움→어려움)가 여러 개이며, 난이도가 높을수록 보상도 좋습니다. 미리 기지항공대를 편성해 두세요 — 함대당 최소 4기, 이상적으로는 8~9기를 목표로 하고, 정찰 보너스를 위해 2식 관측기 개발도 고려해 보세요.</div>
     </div>
   </section>
 
+  <section id="development">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>장비 개발</h2></div>
+    <p class="sec-desc">공창(工廠)은 건조뿐 아니라 설계도 실험실 역할도 합니다: 연료·탄약·강재·보크사이트를 정해진 비율로 투입하면 무작위 결과 대신 특정 장비가 나올 확률이 높아집니다. 커뮤니티에서 검증된 표준 레시피입니다.</p>
+    <div class="panel table-scroll">
+      <table class="glossary">
+        <thead><tr><th>목표</th><th>연료</th><th>탄약</th><th>강재</th><th>보크사이트</th></tr></thead>
+        <tbody>
+          <tr><td>올라운드 (기본)</td><td class="tag-mono">10</td><td class="tag-mono">10</td><td class="tag-mono">10</td><td class="tag-mono">10</td></tr>
+          <tr><td>함재기 지향</td><td class="tag-mono">20</td><td class="tag-mono">60</td><td class="tag-mono">10</td><td class="tag-mono">110</td></tr>
+          <tr><td>전탐(레이더) 지향</td><td class="tag-mono">10</td><td class="tag-mono">11</td><td class="tag-mono">251</td><td class="tag-mono">250</td></tr>
+          <tr><td>대구경포 지향</td><td class="tag-mono">10</td><td class="tag-mono">251</td><td class="tag-mono">250</td><td class="tag-mono">10</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout"><b>확정은 아닙니다:</b> 레시피는 해당 계열 장비가 나올 확률을 높일 뿐, 결과를 보장하지는 않습니다. 개발에는 위 4자원 외에도 개발 자재(開発資材)가 함께 소모됩니다.</div>
+  </section>
+
   <section id="calculator">
-    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>제공권 계산기</h2></div>
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>제공권 계산기</h2></div>
     <p class="sec-desc">함재기 슬롯별 전투력 = floor(대공값 × √탑재수) + 숙련도 보정. 함대 내 모든 슬롯을 더한 뒤 적 제공값과 비교하면 어떤 제공 상태로 전투를 치르게 될지 알 수 있습니다.</p>
 
     <div class="panel calc-panel">
