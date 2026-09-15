@@ -34,8 +34,27 @@ CNAME, robots.txt, sitemap.xml       ドメイン・SEO設定
 3. 英語版を先に正本として書く（事実の翻訳元）。他言語はそこから翻訳する。
 4. 7言語ぶんのファイルを新規作成する必要がある場合のみforkサブエージェントを使う（2言語ずつ束ねるなど）。**1〜2ファイルの軽微な修正・誤字修正・追記にforkは使わない** — 自分で直接Editする。
 5. 各言語ページの`<head>`にhreflangブロックを追加する（7言語 + x-default、既存ページのブロックをコピーしてcanonicalだけ差し替え）。
-6. `sitemap.xml`に新ページのURLを追記する。
-7. 全言語ぶん揃ってから一括でgit commit・push（言語ごとに小分けでコミットしない）。
+6. `sitemap.xml`に新ページのURLを追記する（hreflang alternate込み、既存の`games/haran-suisekai`のブロックをコピーしてURLだけ差し替え）。
+7. `assets/og/og-<slug>.svg`をゲームのテーマ色で作り、`rsvg-convert -w 1200 -h 630 assets/og/og-<slug>.svg -o assets/og/og-<slug>.png`でOG画像を生成する（`assets/og/og-haran-suisekai.svg`が参考例）。
+8. `python3 scripts/seo_inject.py`を実行する。favicon・preconnect・OGP/Twitterタグ・JSON-LDを全ページに自動挿入する（冪等なので既存ページは自動でスキップされる）。**このタグ群を手で書かない。**
+9. 全言語ぶん揃ってから一括でgit commit・push（言語ごとに小分けでコミットしない）。
+
+## SEO設定（実装済み・新ページにも自動適用される）
+
+- **hreflang**：各ページの`<head>`に7言語+x-defaultの`<link rel="alternate" hreflang="...">`を設置済み。新ページも手順5参照。
+- **canonical / meta description**：全ページに設定済み。新ページ作成時に必ず書くこと（`scripts/seo_inject.py`はこれらを既存の値から読み取って他のタグを組み立てるので、無いとスクリプトがエラーになる）。
+- **OGP / Twitter Card**：`scripts/seo_inject.py`が自動生成する。手動で書かない。
+- **JSON-LD構造化データ**：hubページ=`WebSite`、ゲームガイド=`Article`+`BreadcrumbList`。`scripts/seo_inject.py`が生成する。
+- **OG画像**：ゲームごとに`assets/og/og-<slug>.png`（1200x630）が必要。無いと`og-hub.png`に自動フォールバックする（`scripts/seo_inject.py`実行時に警告が出る）。
+- **favicon**：`assets/favicon.svg`ほかをサイト共通で使用。ゲームごとに変える必要はない。
+- **sitemap.xml / robots.txt**：ルート直下に設置済み。新ページ追加時は`sitemap.xml`にURLを追記する（手順6）。
+- **フォントpreconnect**：`scripts/seo_inject.py`が自動挿入する。
+
+新しいゲームを追加した後の確認コマンド（このAGENTS.mdのやり方に沿っていれば全部pass するはず）:
+```bash
+python3 scripts/seo_inject.py   # 未挿入ページにOGP/JSON-LD/favicon/preconnectを追加
+git diff --stat                 # 想定した言語数ぶんのファイルが変更されているか確認
+```
 
 ## トークン節約ルール
 
