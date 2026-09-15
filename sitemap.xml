@@ -290,4 +290,22 @@
   <url><loc>https://kouryakulab.com/de/games/srwdd/tier-list/</loc></url>
   <url><loc>https://kouryakulab.com/fr/games/srwdd/tier-list/</loc></url>
   <url><loc>https://kouryakulab.com/ar/games/srwdd/tier-list/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/games/srwdd/chain-system/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/srwdd/chain-system/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/srwdd/chain-system/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/srwdd/chain-system/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/srwdd/chain-system/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/srwdd/chain-system/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/srwdd/chain-system/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/srwdd/chain-system/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/srwdd/chain-system/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/srwdd/chain-system/</loc></url>
+  <url><loc>https://kouryakulab.com/ko/games/srwdd/chain-system/</loc></url>
+  <url><loc>https://kouryakulab.com/zh/games/srwdd/chain-system/</loc></url>
+  <url><loc>https://kouryakulab.com/de/games/srwdd/chain-system/</loc></url>
+  <url><loc>https://kouryakulab.com/fr/games/srwdd/chain-system/</loc></url>
+  <url><loc>https://kouryakulab.com/ar/games/srwdd/chain-system/</loc></url>
 </urlset>

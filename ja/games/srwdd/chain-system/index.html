@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="description" content="スパロボDDのチェインによるダメージ補正が実際どう変化するか、何で途切れるか、繋げ続けるコミュニティのコツをまとめた。バグの可能性がある小ネタも含む。">
+<title>スパロボDD チェインシステム徹底解説</title>
+<link rel="stylesheet" href="/assets/games/srwdd.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/srwdd/chain-system/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:title" content="スパロボDD チェインシステム徹底解説">
+<meta property="og:description" content="スパロボDDのチェインによるダメージ補正が実際どう変化するか、何で途切れるか、繋げ続けるコミュニティのコツをまとめた。バグの可能性がある小ネタも含む。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/srwdd/chain-system/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-srwdd.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="スパロボDD チェインシステム徹底解説">
+<meta name="twitter:description" content="スパロボDDのチェインによるダメージ補正が実際どう変化するか、何で途切れるか、繋げ続けるコミュニティのコツをまとめた。バグの可能性がある小ネタも含む。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-srwdd.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "スパロボDD チェインシステム徹底解説",
+      "description": "スパロボDDのチェインによるダメージ補正が実際どう変化するか、何で途切れるか、繋げ続けるコミュニティのコツをまとめた。バグの可能性がある小ネタも含む。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/srwdd/chain-system/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "スパロボDD チェインシステム徹底解説",
+          "item": "https://kouryakulab.com/ja/games/srwdd/chain-system/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/srwdd/"><span class="arrow">←</span> スパロボDD 攻略ガイド全体</a>
+    <div>
+      <span class="eyebrow">スパロボDD ・ チェインシステム</span>
+      <h1>チェインシステム徹底解説</h1>
+      <p class="sub">途切れず攻撃を続けることで、チーム全体のダメージが上昇する「チェイン」が繋がる。実際のダメージ補正の変化、何で途切れるか、繋げ続けるためのコミュニティのコツ――バグの可能性がある小ネタも含めてまとめた。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+
+  <div class="panel">
+    <h2 style="font-size:1.1rem;margin-bottom:14px;">ダメージ補正の実際の変化</h2>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">公式に発表された計算式ではない（バンダイナムコは公表していない）が、複数のコミュニティ攻略サイトで一致している段階的な補正カーブがある。これまで参考値として示していた3点（チェイン1・50・100）とも矛盾しない：</p>
+    <div class="table-scroll">
+      <table class="chaintable">
+        <thead><tr><th>チェイン数</th><th>ダメージ補正</th></tr></thead>
+        <tbody>
+          <tr><td class="chain-n">1〜9</td><td>+5%</td></tr>
+          <tr><td class="chain-n">10〜19</td><td>+10%</td></tr>
+          <tr><td class="chain-n">20〜29</td><td>+20%</td></tr>
+          <tr><td class="chain-n">30〜39</td><td>+30%</td></tr>
+          <tr><td class="chain-n">…</td><td>以降10ごとに+10%</td></tr>
+          <tr><td class="chain-n">90〜99</td><td>+90%</td></tr>
+          <tr><td class="chain-n">100</td><td>+100%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--ink-faint);font-size:.85rem;margin:14px 0 0;">チェイン100を超えても補正が伸び続けるのか、そこで頭打ちになるのかは、調べた限りどこにも記載がなかった。100は「確認できている最大値」であって、必ずしも上限とは限らない点に注意してほしい。</p>
+  </div>
+
+  <div class="panel" style="margin-top:16px;">
+    <h2 style="font-size:1.1rem;margin-bottom:10px;">何でチェインが途切れるか</h2>
+    <ul style="color:var(--ink-dim);font-size:.93rem;margin:0;padding-inline-start:20px;">
+      <li>自機体のターンで<b>待機</b>を選択したとき</li>
+      <li>攻撃せず<b>防御</b>を選択したとき</li>
+      <li>攻撃が敵に<b>回避</b>されたとき</li>
+    </ul>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:14px 0 0;">コミュニティでは「攻撃を当て続けること」が維持の条件とされており、これは攻撃が外れた（ミスした）場合も途切れることを強く示唆している。ただし「ミス」が回避とは別の独立した途切れ条件として明記されているソースは見つからなかった。確度は高いが確定情報ではない、として扱ってほしい。</p>
+  </div>
+
+  <div class="panel" style="margin-top:16px;">
+    <h2 style="font-size:1.1rem;margin-bottom:14px;">コミュニティの小ワザ2つ</h2>
+    <div class="two-col">
+      <div class="panel">
+        <h3 style="font-size:.95rem;margin-bottom:10px;">動かしたくない機体はAI「防御のみ」設定</h3>
+        <p style="color:var(--ink-dim);font-size:.93rem;margin:0;">敵の射程内にいるが今ターンは動かしたくない味方機体は、AI設定を「防御のみ」にするとチェインが途切れないと報告されている。手動で待機を選ぶより有効とされる。ただし詳しい仕組みまで踏み込んで説明しているソースは見つからず、確定ルールというより報告ベースの小ワザとして扱ってほしい。</p>
+      </div>
+      <div class="panel">
+        <h3 style="font-size:.95rem;margin-bottom:10px;">射程外の機体はオート操作に切り替え</h3>
+        <p style="color:var(--ink-dim);font-size:.93rem;margin:0;">どの敵にも攻撃が届かない機体を手動でターン終了すると「待機」扱いになりチェインが途切れる。そのターンだけオート操作に切り替えると回避できると報告されている。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:16px;"><b>バグの可能性がある小ネタ：</b>スパロボDDのコミュニティwikiの小ネタ・バグページによると、オート操作中の機体が行う無駄な・意味のない行動は、同じ行動を手動で行った場合とは異なりチェインを途切れさせないことがあると報告されている。このページ自体、意図された仕様ではなくバグの可能性があるとして掲載している。今後のアップデートで修正される可能性もあるため、これを前提とした戦略を組むのは避けた方がよい。</div>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/srwdd/">スパロボDD 攻略ガイド全体</a>
+      <a href="/ja/games/srwdd/tier-list/">ティアリスト</a>
+      <a href="/ja/games/srwdd/#early">序盤攻略</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは公開情報を基にした非公式のファンメイド攻略まとめです。海外向けの公式ローカライズがないゲームを対象としています。掲載しているチェインの数値・仕様はコミュニティ側で確認された情報であり、公式発表の計算式ではありません。正確性を欠く場合や、今後のアップデートで変更される可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://mottosiritaisuparobodd.com/2022/03/14/%E3%83%81%E3%82%A7%E3%82%A4%E3%83%B3%E3%83%BB%E3%83%87%E3%82%AB%E3%83%83%E3%82%BF%E3%83%BC%E3%81%AE%E8%80%83%E5%AF%9F/" target="_blank" rel="noopener">チェイン・デカッターの考察</a>
+      <a href="https://falokn.org/super-robot-wars-dd-guide-for-beginners-rerolling-to-chain-system/" target="_blank" rel="noopener">序盤攻略・チェインシステム解説</a>
+      <a href="https://w.atwiki.jp/srwdd/pages/58.html" target="_blank" rel="noopener">小ネタ・バグ（スパロボDD攻略Wiki）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

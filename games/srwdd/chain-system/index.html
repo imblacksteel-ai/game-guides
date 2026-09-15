@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="description" content="How Super Robot Wars DD's Chain damage bonus actually scales, what breaks it, and community tricks for keeping it alive — including one quirk that might be a bug.">
+<title>Super Robot Wars DD Chain System Explained</title>
+<link rel="stylesheet" href="/assets/games/srwdd.css">
+<link rel="canonical" href="https://kouryakulab.com/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/srwdd/chain-system/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:title" content="Super Robot Wars DD Chain System Explained">
+<meta property="og:description" content="How Super Robot Wars DD's Chain damage bonus actually scales, what breaks it, and community tricks for keeping it alive — including one quirk that might be a bug.">
+<meta property="og:url" content="https://kouryakulab.com/games/srwdd/chain-system/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-srwdd.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Super Robot Wars DD Chain System Explained">
+<meta name="twitter:description" content="How Super Robot Wars DD's Chain damage bonus actually scales, what breaks it, and community tricks for keeping it alive — including one quirk that might be a bug.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-srwdd.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Super Robot Wars DD Chain System Explained",
+      "description": "How Super Robot Wars DD's Chain damage bonus actually scales, what breaks it, and community tricks for keeping it alive — including one quirk that might be a bug.",
+      "inLanguage": "en",
+      "url": "https://kouryakulab.com/games/srwdd/chain-system/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Super Robot Wars DD Chain System Explained",
+          "item": "https://kouryakulab.com/games/srwdd/chain-system/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/games/srwdd/"><span class="arrow">←</span> Full Super Robot Wars DD Guide</a>
+    <div>
+      <span class="eyebrow">SRW DD · CHAIN SYSTEM</span>
+      <h1>Chain System Explained</h1>
+      <p class="sub">Attacking without breaking the sequence builds a Chain that boosts your whole team's damage. Here's the actual bonus curve, what breaks it, and a couple of community tricks for keeping it alive — including one that might be a bug.</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="Language"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+
+  <div class="panel">
+    <h2 style="font-size:1.1rem;margin-bottom:14px;">How the damage bonus actually scales</h2>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">This isn't an official formula — Bandai Namco hasn't published one — but it's a stepped curve documented consistently across multiple community sources, and it lines up with the 3 reference points we'd previously only had (Chain 1, 50, and 100):</p>
+    <div class="table-scroll">
+      <table class="chaintable">
+        <thead><tr><th>Chain Count</th><th>Damage Bonus</th></tr></thead>
+        <tbody>
+          <tr><td class="chain-n">1–9</td><td>+5%</td></tr>
+          <tr><td class="chain-n">10–19</td><td>+10%</td></tr>
+          <tr><td class="chain-n">20–29</td><td>+20%</td></tr>
+          <tr><td class="chain-n">30–39</td><td>+30%</td></tr>
+          <tr><td class="chain-n">…</td><td>+10% per additional 10</td></tr>
+          <tr><td class="chain-n">90–99</td><td>+90%</td></tr>
+          <tr><td class="chain-n">100</td><td>+100%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--ink-faint);font-size:.85rem;margin:14px 0 0;">Whether the bonus keeps scaling past a 100-chain, or caps there, isn't documented anywhere we could find — treat 100 as the highest confirmed value, not necessarily a hard ceiling.</p>
+  </div>
+
+  <div class="panel" style="margin-top:16px;">
+    <h2 style="font-size:1.1rem;margin-bottom:10px;">What breaks it</h2>
+    <ul style="color:var(--ink-dim);font-size:.93rem;margin:0;padding-inline-start:20px;">
+      <li>Choosing <b>Wait</b> instead of acting on a unit's turn</li>
+      <li>Choosing <b>Guard</b> instead of attacking</li>
+      <li>Having your attack <b>evaded</b> by the enemy</li>
+    </ul>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:14px 0 0;">The community shorthand for maintaining it is "keep landing hits" — which strongly implies a missed attack breaks it too, though no source explicitly confirms that as a separate trigger from being evaded. Treat it as likely, not certain.</p>
+  </div>
+
+  <div class="panel" style="margin-top:16px;">
+    <h2 style="font-size:1.1rem;margin-bottom:14px;">Two community tricks</h2>
+    <div class="two-col">
+      <div class="panel">
+        <h3 style="font-size:.95rem;margin-bottom:10px;">Guard-only AI for units you don't want acting</h3>
+        <p style="color:var(--ink-dim);font-size:.93rem;margin:0;">If an ally is within enemy range but you'd rather it not act this turn, setting that unit's AI directive to Guard-only is reported to avoid breaking the chain — cleaner than manually choosing Wait. The exact mechanism isn't well-documented across sources, so treat this as a reported trick rather than a guaranteed rule.</p>
+      </div>
+      <div class="panel">
+        <h3 style="font-size:.95rem;margin-bottom:10px;">Auto mode for units out of range</h3>
+        <p style="color:var(--ink-dim);font-size:.93rem;margin:0;">If a unit simply can't reach any target, manually ending its turn counts as Wait and breaks the chain. Switching that unit to Auto mode for the turn is reported to sidestep this.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:16px;"><b>A quirk that might be a bug:</b> the SRW DD community tips/bugs wiki notes that redundant or "wasted" actions taken while a unit is in Auto mode reportedly don't break the chain, even in situations where the same action taken manually would. This is flagged there as a possible bug rather than intended design — don't build your entire strategy around it, since it could get patched without notice.</div>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>Continue reading</h3>
+    <div class="more-guides-links">
+      <a href="/games/srwdd/">Full Super Robot Wars DD Guide</a>
+      <a href="/games/srwdd/tier-list/">Tier List</a>
+      <a href="/games/srwdd/#early">Getting Started</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">This is an unofficial, fan-made guide based on publicly available community information about a game with no official English localization. The Chain bonus figures and mechanics described here are community-documented, not an officially published formula, and may not be fully accurate or may change with future updates.</div>
+    <div class="sources">
+      Sources:
+      <a href="https://mottosiritaisuparobodd.com/2022/03/14/%E3%83%81%E3%82%A7%E3%82%A4%E3%83%B3%E3%83%BB%E3%83%87%E3%82%AB%E3%83%83%E3%82%BF%E3%83%BC%E3%81%AE%E8%80%83%E5%AF%9F/" target="_blank" rel="noopener">Chain &amp; Damage Mechanics Discussion</a>
+      <a href="https://falokn.org/super-robot-wars-dd-guide-for-beginners-rerolling-to-chain-system/" target="_blank" rel="noopener">Beginner &amp; Chain System Guide</a>
+      <a href="https://w.atwiki.jp/srwdd/pages/58.html" target="_blank" rel="noopener">Tips &amp; Bugs Wiki (SRW DD)</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="Site links"><a href="/about/">About</a> · <a href="/authors/">Authors</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>
