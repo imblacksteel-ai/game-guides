@@ -230,3 +230,7 @@ footer .wrap { display: grid; gap: 14px; }
   .hero { padding-block: 30px 22px; }
   .calc-header, .calc-row { grid-template-columns: 1fr 1fr 1fr 1fr 28px; }
 }
+
+/* ---------- Footer privacy link ---------- */
+.privacy-wrap { padding-block-start: 4px; }
+.privacy-wrap a { font-size: .78rem; color: var(--ink-faint); text-decoration: underline; text-decoration-color: var(--line-strong); }

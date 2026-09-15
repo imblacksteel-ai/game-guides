@@ -6,10 +6,11 @@ kouryakulab.com 向けSEO/OGPメタデータ一括挿入スクリプト。
   - favicon / apple-touch-icon の <link>
   - Google Fonts の <link rel="preconnect">
   - Open Graph / Twitter Card メタタグ（7言語分の og:locale:alternate 込み）
-  - JSON-LD構造化データ（hubページ = WebSite、ゲームガイド = Article + BreadcrumbList）
+  - JSON-LD構造化データ（hub/privacyページ = WebSite、ゲームガイド = Article + BreadcrumbList）
+  - フッターへのプライバシーポリシーへのリンク（hub/ゲームガイドページのみ。privacyページ自身には挿入しない）
 
 対象ページは自動検出（ルート・ja/・ko/・zh/・de/・fr/・ar/ 配下の
-index.html と games/<slug>/index.html を全て走査）。
+index.html、games/<slug>/index.html、privacy/index.html を全て走査）。
 新しいゲームを追加した時は、7言語ぶんのHTMLを作った後にこのスクリプトを実行するだけでよい。
 
 OG画像について:
@@ -35,6 +36,12 @@ LOCALE = {
 }
 LANG_DIRS = ["", "ja", "ko", "zh", "de", "fr", "ar"]  # "" = ルート(英語)
 
+PRIVACY_LABEL = {
+    "en": "Privacy Policy", "ja": "プライバシーポリシー", "ko": "개인정보처리방침",
+    "zh-Hans": "隐私政策", "de": "Datenschutzerklärung", "fr": "Politique de confidentialité",
+    "ar": "سياسة الخصوصية",
+}
+
 
 def esc(s):
     return s.replace("&", "&amp;").replace('"', "&quot;")
@@ -48,6 +55,9 @@ def find_pages():
         if os.path.isfile(hub):
             pages.append(hub)
         pages += sorted(glob.glob(os.path.join(base, "games", "*", "index.html")))
+        privacy = os.path.join(base, "privacy", "index.html")
+        if os.path.isfile(privacy):
+            pages.append(privacy)
     return pages
 
 
@@ -61,6 +71,7 @@ def process(path):
     canonical = re.search(r'<link rel="canonical" href="([^"]+)"', content).group(1)
 
     is_guide = "/games/" in rel or rel.startswith("games/")
+    is_privacy = "/privacy/" in rel or rel.startswith("privacy/")
     site_name = "攻略ラボ" if lang == "ja" else "Kouryaku Lab"
     og_locale = LOCALE.get(lang, "en_US")
     all_locales = [v for v in LOCALE.values() if v != og_locale]
@@ -168,6 +179,16 @@ def process(path):
 
         ld_block = f'<script type="application/ld+json">\n{json.dumps(ld, ensure_ascii=False, indent=2)}\n</script>'
         content = content.replace("</head>", og_block + "\n" + ld_block + "\n</head>")
+        changed = True
+
+    # --- footer privacy link (hub / guide pages only, not the privacy page itself) ---
+    if not is_privacy and "privacy-wrap" not in content:
+        prefix_seg = rel.split("/")[0]
+        prefix = f"/{prefix_seg}/" if prefix_seg in LANG_DIRS and prefix_seg != "" else "/"
+        privacy_url = prefix + "privacy/"
+        privacy_label = PRIVACY_LABEL.get(lang, "Privacy Policy")
+        privacy_block = f'  <div class="wrap privacy-wrap"><a href="{privacy_url}">{esc(privacy_label)}</a></div>\n'
+        content = content.replace("</footer>", privacy_block + "</footer>")
         changed = True
 
     if changed:

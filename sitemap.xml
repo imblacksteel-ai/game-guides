@@ -56,4 +56,22 @@
   <url><loc>https://kouryakulab.com/fr/games/kancolle/</loc></url>
   <url><loc>https://kouryakulab.com/ar/games/kancolle/</loc></url>
 
+  <url>
+    <loc>https://kouryakulab.com/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/privacy/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/privacy/</loc></url>
+  <url><loc>https://kouryakulab.com/ko/privacy/</loc></url>
+  <url><loc>https://kouryakulab.com/zh/privacy/</loc></url>
+  <url><loc>https://kouryakulab.com/de/privacy/</loc></url>
+  <url><loc>https://kouryakulab.com/fr/privacy/</loc></url>
+  <url><loc>https://kouryakulab.com/ar/privacy/</loc></url>
+
 </urlset>
