@@ -1,553 +1,251 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="海上サバイバルゲーム『波乱水世界』の攻略まとめ：リセマラ・最強キャラランキング・序盤攻略・ギフトコード">
-<title>波乱水世界 攻略ガイド</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap');
-
-  :root {
-    --bg: #eef4f2;
-    --bg-deep: #dfeae6;
-    --surface: #ffffff;
-    --surface-2: #f4f9f7;
-    --ink: #0d2a2f;
-    --ink-dim: #4d666a;
-    --ink-faint: #7c9195;
-    --line: #cfdcd8;
-    --line-strong: #b7c9c5;
-    --accent: #e85f2e;
-    --accent-ink: #ffffff;
-    --accent-soft: #ffe4d6;
-    --water: #12414d;
-    --tier-ss: #b8860a;
-    --tier-ss-bg: #fbf0d6;
-    --tier-s: #2f8f9e;
-    --tier-s-bg: #dff1f3;
-    --tier-a: #5b7c99;
-    --tier-a-bg: #e6ecf2;
-    --tier-b: #7d8b8a;
-    --tier-b-bg: #eaeeed;
-    --shadow: 0 1px 2px rgba(13,42,47,.06), 0 8px 24px -12px rgba(13,42,47,.18);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #08191c;
-      --bg-deep: #061418;
-      --surface: #0f2529;
-      --surface-2: #132b30;
-      --ink: #e7f1ef;
-      --ink-dim: #9fb9bb;
-      --ink-faint: #6d8689;
-      --line: #1d383d;
-      --line-strong: #294a4f;
-      --accent: #ff8452;
-      --accent-ink: #1a0a04;
-      --accent-soft: #3a2013;
-      --water: #bfe3e8;
-      --tier-ss: #f0c14b;
-      --tier-ss-bg: #2e2510;
-      --tier-s: #5fc4d3;
-      --tier-s-bg: #123338;
-      --tier-a: #8fb0cf;
-      --tier-a-bg: #1a2b38;
-      --tier-b: #9fadac;
-      --tier-b-bg: #1c2726;
-      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
-    }
-  }
-
-  :root[data-theme="dark"] {
-    --bg: #08191c;
-    --bg-deep: #061418;
-    --surface: #0f2529;
-    --surface-2: #132b30;
-    --ink: #e7f1ef;
-    --ink-dim: #9fb9bb;
-    --ink-faint: #6d8689;
-    --line: #1d383d;
-    --line-strong: #294a4f;
-    --accent: #ff8452;
-    --accent-ink: #1a0a04;
-    --accent-soft: #3a2013;
-    --water: #bfe3e8;
-    --tier-ss: #f0c14b;
-    --tier-ss-bg: #2e2510;
-    --tier-s: #5fc4d3;
-    --tier-s-bg: #123338;
-    --tier-a: #8fb0cf;
-    --tier-a-bg: #1a2b38;
-    --tier-b: #9fadac;
-    --tier-b-bg: #1c2726;
-    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
-  }
-
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Zen Kaku Gothic New', 'Space Grotesk', sans-serif;
-    font-weight: 400;
-    line-height: 1.85;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .tag-mono { font-family: 'Space Grotesk', 'Zen Kaku Gothic New', sans-serif; font-variant-numeric: tabular-nums; }
-  .code-mono { font-family: 'JetBrains Mono', monospace; }
-
-  a { color: inherit; }
-
-  h1, h2, h3 { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; text-wrap: balance; margin: 0; }
-
-  .wrap { max-width: 960px; margin: 0 auto; padding-inline: 20px; }
-
-  /* ---------- Hero ---------- */
-  .hero {
-    background:
-      repeating-linear-gradient(180deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 26px),
-      linear-gradient(180deg, var(--water) 0%, #0a2a32 100%);
-    color: #eaf6f5;
-    padding-block: 40px 28px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::after {
-    content: "";
-    position: absolute;
-    left: 0; right: 0; bottom: 0;
-    height: 10px;
-    background: repeating-linear-gradient(135deg, var(--accent) 0 14px, #12414d 14px 28px);
-    opacity: .9;
-  }
-  .hero-inner { position: relative; z-index: 1; }
-  .eyebrow {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
-    color: #bfe3e8;
-    background: rgba(255,255,255,.08);
-    border: 1px solid rgba(255,255,255,.18);
-    padding: 5px 12px;
-    border-radius: 999px;
-  }
-  .hero h1 {
-    font-size: clamp(2.2rem, 6vw, 3.4rem);
-    margin-top: 16px;
-    letter-spacing: .01em;
-  }
-  .hero .sub {
-    color: #cfe9e7;
-    font-size: 1rem;
-    margin-top: 10px;
-    max-width: 34em;
-  }
-  .fact-strip {
-    display: flex; flex-wrap: wrap; gap: 10px;
-    margin-top: 24px;
-  }
-  .fact {
-    background: rgba(255,255,255,.07);
-    border: 1px solid rgba(255,255,255,.16);
-    border-radius: 10px;
-    padding: 9px 14px;
-    min-width: 118px;
-  }
-  .fact .k { font-size: .68rem; color: #a9d3d1; letter-spacing: .06em; }
-  .fact .v { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .95rem; margin-top: 2px; }
-
-  /* ---------- Nav ---------- */
-  nav.tabs {
-    position: sticky; top: 0; z-index: 20;
-    background: color-mix(in srgb, var(--bg) 92%, transparent);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--line);
-  }
-  .tabs-inner {
-    max-width: 960px; margin: 0 auto; padding-inline: 20px;
-    display: flex; gap: 4px; overflow-x: auto;
-    scrollbar-width: none;
-  }
-  .tabs-inner::-webkit-scrollbar { display: none; }
-  nav.tabs a {
-    flex: 0 0 auto;
-    text-decoration: none;
-    font-size: .88rem; font-weight: 700;
-    color: var(--ink-dim);
-    padding: 13px 14px 11px;
-    border-bottom: 3px solid transparent;
-    white-space: nowrap;
-    transition: color .15s ease, border-color .15s ease;
-  }
-  nav.tabs a.active { color: var(--accent); border-bottom-color: var(--accent); }
-  nav.tabs a:hover { color: var(--ink); }
-
-  /* ---------- Sections ---------- */
-  section { padding-block: 44px; scroll-margin-top: 54px; }
-  section + section { border-top: 1px solid var(--line); }
-
-  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 22px; }
-  .sec-num { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--accent); font-size: .85rem; }
-  .sec-head h2 { font-size: clamp(1.4rem, 3.4vw, 1.8rem); }
-  .sec-desc { color: var(--ink-dim); font-size: .93rem; max-width: 42em; margin-top: -8px; margin-bottom: 22px; }
-
-  /* ---------- Pillars ---------- */
-  .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 14px; }
-  .pillar {
-    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
-    padding: 20px; box-shadow: var(--shadow);
-  }
-  .pillar svg { width: 26px; height: 26px; color: var(--accent); }
-  .pillar h3 { font-size: 1.02rem; margin-top: 12px; }
-  .pillar p { font-size: .87rem; color: var(--ink-dim); margin: 8px 0 0; }
-
-  /* ---------- Cards / lists generic ---------- */
-  .panel {
-    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
-    padding: 22px; box-shadow: var(--shadow);
-  }
-
-  .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-  .steps li {
-    display: flex; gap: 12px; align-items: flex-start;
-    font-size: .92rem;
-  }
-  .steps .n {
-    flex: 0 0 auto;
-    width: 24px; height: 24px; border-radius: 50%;
-    background: var(--accent-soft); color: var(--accent);
-    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .78rem;
-    display: flex; align-items: center; justify-content: center;
-    margin-top: 2px;
-  }
-
-  .check { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
-  .check li { display: flex; gap: 12px; align-items: flex-start; font-size: .92rem; }
-  .check li::before {
-    content: "";
-    flex: 0 0 auto;
-    width: 18px; height: 18px; margin-top: 3px;
-    border-radius: 5px;
-    border: 2px solid var(--accent);
-    background: var(--accent-soft);
-  }
-  .check b { display: block; margin-bottom: 2px; }
-  .check span.d { color: var(--ink-dim); font-size: .86rem; }
-
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  @media (max-width: 620px) { .two-col { grid-template-columns: 1fr; } }
-
-  .callout {
-    border-left: 3px solid var(--accent);
-    background: var(--surface-2);
-    border-radius: 0 10px 10px 0;
-    padding: 12px 16px;
-    font-size: .87rem;
-    color: var(--ink-dim);
-    margin-top: 16px;
-  }
-  .callout b { color: var(--ink); }
-
-  /* ---------- Tier badges ---------- */
-  .tier {
-    display: inline-flex; align-items: center; justify-content: center;
-    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .74rem;
-    width: 32px; height: 22px; border-radius: 6px; letter-spacing: .02em;
-    flex: 0 0 auto;
-  }
-  .tier-ss { color: var(--tier-ss); background: var(--tier-ss-bg); }
-  .tier-s  { color: var(--tier-s);  background: var(--tier-s-bg); }
-  .tier-a  { color: var(--tier-a);  background: var(--tier-a-bg); }
-  .tier-b  { color: var(--tier-b);  background: var(--tier-b-bg); }
-
-  .tier-row { display: grid; gap: 10px; }
-  .tier-line { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px dashed var(--line); }
-  .tier-line:last-child { border-bottom: none; }
-  .tier-names { display: flex; flex-wrap: wrap; gap: 6px 10px; font-size: .87rem; }
-  .tier-names span { white-space: nowrap; }
-  .tier-names span:not(:last-child)::after { content: "・"; color: var(--ink-faint); }
-
-  /* ---------- Character cards ---------- */
-  .char-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(258px,1fr)); gap: 14px; }
-  .char-card {
-    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
-    padding: 18px; box-shadow: var(--shadow);
-    display: flex; flex-direction: column; gap: 10px;
-  }
-  .char-top { display: flex; align-items: center; gap: 10px; }
-  .role-pill {
-    font-size: .7rem; font-weight: 700; color: var(--ink-dim);
-    background: var(--surface-2); border: 1px solid var(--line);
-    padding: 3px 9px; border-radius: 999px;
-  }
-  .char-card h3 { font-size: 1rem; }
-  .char-card p { margin: 0; font-size: .85rem; color: var(--ink-dim); }
-
-  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
-  .chip {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: .83rem;
-    background: var(--surface-2); border: 1px solid var(--line);
-    padding: 6px 10px 6px 6px; border-radius: 999px;
-  }
-
-  /* ---------- Table ---------- */
-  table.codes { width: 100%; border-collapse: collapse; font-size: .9rem; }
-  table.codes th, table.codes td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); }
-  table.codes th { color: var(--ink-faint); font-weight: 700; font-size: .74rem; letter-spacing: .05em; text-transform: uppercase; }
-  table.codes code { font-family: 'JetBrains Mono', monospace; background: var(--surface-2); padding: 3px 8px; border-radius: 6px; font-size: .85rem; }
-
-  /* ---------- Footer ---------- */
-  footer { padding-block: 30px 46px; }
-  footer .wrap { display: grid; gap: 14px; }
-  .disclaimer { font-size: .82rem; color: var(--ink-dim); background: var(--surface-2); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
-  .sources { font-size: .78rem; color: var(--ink-faint); display: flex; flex-wrap: wrap; gap: 6px 14px; }
-  .sources a { text-decoration: underline; text-decoration-color: var(--line-strong); }
-
-  @media (max-width: 480px) {
-    section { padding-block: 32px; }
-    .hero { padding-block: 30px 22px; }
-  }
-
-  .back-link {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: .78rem; color: #bfe3e8; text-decoration: none;
-    opacity: .8; margin-bottom: 14px;
-  }
-  .back-link:hover { opacity: 1; }
-</style>
+<meta name="description" content="Wild Water World guide: reroll tier list, best characters, early-game checklist, and gift codes.">
+<title>Wild Water World Guide</title>
+<link rel="stylesheet" href="/assets/games/haran-suisekai.css">
+<link rel="canonical" href="https://kouryakulab.com/games/haran-suisekai/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/haran-suisekai/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/haran-suisekai/">
+<link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/haran-suisekai/">
+<link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/haran-suisekai/">
+<link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/haran-suisekai/">
+<link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/haran-suisekai/">
+<link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/haran-suisekai/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/haran-suisekai/">
 </head>
 <body>
 
 <div class="hero">
   <div class="wrap hero-inner">
-    <a class="back-link" href="../../">← 攻略ラボ</a><br>
-    <span class="eyebrow">EWORLDGAME ・ 2026.09.01 配信</span>
-    <h1>波乱水世界 攻略ガイド</h1>
-    <p class="sub">水没した世界でイカダを拠点に生き延びる海上サバイバル。リセマラ・最強キャラ・序盤の進め方・ギフトコードを一枚に整理。</p>
-    <div class="fact-strip">
-      <div class="fact"><div class="k">ジャンル</div><div class="v tag-mono">海上サバイバル</div></div>
-      <div class="fact"><div class="k">対応OS</div><div class="v tag-mono">iOS / Android</div></div>
-      <div class="fact"><div class="k">戦闘方式</div><div class="v tag-mono">クルー自動戦闘</div></div>
-      <div class="fact"><div class="k">配信</div><div class="v tag-mono">IYA Games Japan</div></div>
+    <a class="back-link" href="/"><span class="arrow">←</span> Kouryaku Lab</a>
+    <div>
+      <span class="eyebrow">EWORLDGAME · Released 2026.09.01</span>
+      <h1>Wild Water World Guide</h1>
+      <p class="sub">A raft survival game where you rebuild civilization on the water. Reroll tiers, best characters, early progression, and gift codes — all in one page.</p>
+      <div class="fact-strip">
+        <div class="fact"><div class="k">Genre</div><div class="v tag-mono">Ocean Survival</div></div>
+        <div class="fact"><div class="k">Platforms</div><div class="v tag-mono">iOS / Android</div></div>
+        <div class="fact"><div class="k">Combat</div><div class="v tag-mono">Auto-Battling Crew</div></div>
+        <div class="fact"><div class="k">Publisher</div><div class="v tag-mono">IYA Games Japan</div></div>
+      </div>
     </div>
   </div>
 </div>
 
 <nav class="tabs">
-  <div class="tabs-inner" id="tabs">
-    <a href="#overview">概要</a>
-    <a href="#reroll">リセマラ</a>
-    <a href="#characters">最強キャラ</a>
-    <a href="#early">序盤攻略</a>
-    <a href="#codes">ギフトコード</a>
+  <div class="tabs-inner">
+    <div class="tabs-links" id="tabs">
+      <a href="#overview">Overview</a>
+      <a href="#reroll">Reroll</a>
+      <a href="#characters">Best Characters</a>
+      <a href="#early">Early Game</a>
+      <a href="#codes">Gift Codes</a>
+    </div>
+    <nav id="lang-switch" aria-label="Language"></nav>
   </div>
 </nav>
 
 <main class="wrap">
 
   <section id="overview">
-    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>ゲーム概要</h2></div>
-    <p class="sec-desc">文明が水没した世界で、漂流物を集めてイカダを拡張し海上拠点を作る。進行の軸は「拠点シミュレーション」と「クルーによる自動戦闘」の二本立て。</p>
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Game Overview</h2></div>
+    <p class="sec-desc">Civilization has sunk beneath the waves. Gather driftwood and salvage to expand your raft into a floating base. Progress splits into two tracks: base simulation and auto-battling crew combat.</p>
     <div class="pillars">
       <div class="pillar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l9-5 9 5-9 5-9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
-        <h3>資源収集</h3>
-        <p>イカダ周辺の漂流物のほか、サメに追われながらのサルベージ船、沈没物を探るダイビングで木材・金属・食料を確保する。</p>
+        <h3>Gather Resources</h3>
+        <p>Collect debris floating around your raft, or risk shark-infested waters on a salvage boat and diving expeditions to pull wood, metal, and food from sunken wrecks.</p>
       </div>
       <div class="pillar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-7h6v7"/></svg>
-        <h3>拠点建設</h3>
-        <p>海水精製所や釣り場などの施設を建築・強化。クルーの適性に応じた配置で生産効率が上がる。</p>
+        <h3>Build Your Base</h3>
+        <p>Construct and upgrade facilities like water purifiers and fishing spots. Assigning crew suited to each job boosts production efficiency.</p>
       </div>
       <div class="pillar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z"/></svg>
-        <h3>クルー戦闘</h3>
-        <p>最大5体前後のクルーを並べて自動で戦わせる。ステージ・世界ボス・対人戦は編成と陣形が勝敗を分ける。</p>
+        <h3>Crew Combat</h3>
+        <p>Line up roughly five crew members to fight automatically. Formation and composition decide the outcome in stages, world bosses, and PvP.</p>
       </div>
     </div>
   </section>
 
   <section id="reroll">
-    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>リセマラ当たりランキング</h2></div>
-    <p class="sec-desc">所要時間の目安は約20分。ラジオ局（ガチャ）開放までの最短ルートと、狙うべきキャラのランクをまとめた。</p>
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>Reroll Tier List</h2></div>
+    <p class="sec-desc">Rerolling takes about 20 minutes. Here's the fastest route to unlocking the gacha, and which characters are worth holding out for.</p>
 
     <div class="two-col">
       <div class="panel">
-        <h3 style="font-size:.95rem;margin-bottom:14px;">やり方</h3>
+        <h3 style="font-size:.95rem;margin-bottom:14px;">How to Reroll</h3>
         <ol class="steps">
-          <li><span class="n">1</span>チュートリアルを進め、ラジオ局（ガチャ機能）を開放する</li>
-          <li><span class="n">2</span>右上「水世界の新生」から受け取れる報酬をすべて回収する</li>
-          <li><span class="n">3</span>ラジオ局でガチャを実行する</li>
-          <li><span class="n">4</span>目当てのキャラが出なければアプリを削除して再インストール</li>
+          <li><span class="n">1</span>Play through the tutorial until the Radio Station (gacha) unlocks.</li>
+          <li><span class="n">2</span>Claim every reward available from "Rebirth of the Water World" in the top right.</li>
+          <li><span class="n">3</span>Pull on the Radio Station.</li>
+          <li><span class="n">4</span>If you don't get who you want, delete and reinstall the app.</li>
         </ol>
       </div>
 
       <div class="panel">
-        <h3 style="font-size:.95rem;margin-bottom:14px;">狙い目キャラ（SS）</h3>
+        <h3 style="font-size:.95rem;margin-bottom:14px;">Top Picks (SS)</h3>
         <div class="chip-row">
-          <span class="chip"><span class="tier tier-ss">SS</span>マシンブッチャー・サイレス</span>
-          <span class="chip"><span class="tier tier-ss">SS</span>ぴょんぴょん・ボブ</span>
-          <span class="chip"><span class="tier tier-ss">SS</span>ネオンウィザード・サミュエル</span>
-          <span class="chip"><span class="tier tier-ss">SS</span>メカニックガール・ゾーイ</span>
+          <span class="chip"><span class="tier tier-ss">SS</span>Machine Butcher Silas</span>
+          <span class="chip"><span class="tier tier-ss">SS</span>Bouncy Bob</span>
+          <span class="chip"><span class="tier tier-ss">SS</span>Neon Wizard Samuel</span>
+          <span class="chip"><span class="tier tier-ss">SS</span>Mechanic Girl Zoey</span>
         </div>
-        <p style="margin-top:12px;">上記4体のいずれかが出たら止め時。位置操作・タンク・バフ・召喚と役割が分散しており、どれも初動の編成の軸になる。</p>
+        <p style="margin-top:12px;">Any of these four is worth stopping for. Between crowd control, tanking, buffs, and summons, each one anchors a different early team.</p>
       </div>
     </div>
 
     <div class="panel" style="margin-top:16px;">
-      <h3 style="font-size:.95rem;margin-bottom:14px;">全ランク一覧</h3>
+      <h3 style="font-size:.95rem;margin-bottom:14px;">All Tiers</h3>
       <div class="tier-row">
         <div class="tier-line">
           <span class="tier tier-ss">SS</span>
           <div class="tier-names">
-            <span>マシンブッチャー・サイレス</span><span>ぴょんぴょん・ボブ</span><span>ネオンウィザード・サミュエル</span><span>メカニックガール・ゾーイ</span>
+            <span>Machine Butcher Silas</span><span>Bouncy Bob</span><span>Neon Wizard Samuel</span><span>Mechanic Girl Zoey</span>
           </div>
         </div>
         <div class="tier-line">
           <span class="tier tier-s">S</span>
           <div class="tier-names">
-            <span>スチールマン・コール</span><span>リザードマン・カーティス</span><span>テックハウンド・リー</span><span>スクラップハゲタカ・オリバー</span><span>ジョリー・ジャック</span><span>ダイアナ</span><span>ほろ酔い喧嘩屋・カン</span>
+            <span>Steelman Cole</span><span>Lizardman Curtis</span><span>Techhound Lee</span><span>Scrap Vulture Oliver</span><span>Jolly Jack</span><span>Diana</span><span>Tipsy Brawler Kang</span>
           </div>
         </div>
         <div class="tier-line">
           <span class="tier tier-a">A</span>
-          <div class="tier-names"><span>ラヴェジャー・ベッキー</span></div>
+          <div class="tier-names"><span>Ravager Becky</span></div>
         </div>
         <div class="tier-line">
           <span class="tier tier-b">B</span>
-          <div class="tier-names"><span>無敗の王・ケン</span><span>レックス</span></div>
+          <div class="tier-names"><span>Undefeated King Ken</span><span>Rex</span></div>
         </div>
       </div>
     </div>
   </section>
 
   <section id="characters">
-    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>最強キャラランキング</h2></div>
-    <p class="sec-desc">育成優先度をベースにした戦力評価。上のリセマラ表とは評価軸が異なるため、順位が入れ替わるキャラもいる。</p>
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>Best Characters</h2></div>
+    <p class="sec-desc">A power ranking based on investment priority. The axis is different from the reroll list above, so a few characters swap places.</p>
 
     <div class="char-grid">
       <div class="char-card">
-        <div class="char-top"><span class="tier tier-ss">SS</span><span class="role-pill">メイジ</span></div>
-        <h3>スクラップハゲタカ・オリバー</h3>
-        <p>全味方のHPを回復しつつ、攻撃力が最も高い味方の会心率を上げる。パーティの安定性を底上げする万能サポート。</p>
+        <div class="char-top"><span class="tier tier-ss">SS</span><span class="role-pill">Mage</span></div>
+        <h3>Scrap Vulture Oliver</h3>
+        <p>Heals the whole team and boosts the crit rate of your highest-attack ally. An all-round support that stabilizes the party.</p>
       </div>
       <div class="char-card">
-        <div class="char-top"><span class="tier tier-ss">SS</span><span class="role-pill">シューター</span></div>
-        <h3>スチールマン・コール</h3>
-        <p>最後列に瞬間移動し、敵が最も密集したエリアへ幅3列のエネルギー波を放つ広範囲アタッカー。</p>
+        <div class="char-top"><span class="tier tier-ss">SS</span><span class="role-pill">Shooter</span></div>
+        <h3>Steelman Cole</h3>
+        <p>Teleports to the back line and fires an energy wave three columns wide at the densest cluster of enemies. Broad-range damage.</p>
       </div>
       <div class="char-card">
-        <div class="char-top"><span class="tier tier-s">S</span><span class="role-pill">タンク</span></div>
-        <h3>ぴょんぴょん・ボブ</h3>
-        <p>広範囲の挑発に加え、被ダメージを約1/3に軽減し残りをカウンター反射。タンクとしてトップクラスの性能。</p>
+        <div class="char-top"><span class="tier tier-s">S</span><span class="role-pill">Tank</span></div>
+        <h3>Bouncy Bob</h3>
+        <p>Wide-area taunt, plus roughly one-third damage reduction with the rest reflected back as a counter. Top-tier tanking.</p>
       </div>
       <div class="char-card">
-        <div class="char-top"><span class="tier tier-s">S</span><span class="role-pill">シューター</span></div>
-        <h3>テックハウンド・リー</h3>
-        <p>ロボドックを2体召喚して継続的に戦線を支える。手数を増やしたい編成の中核。</p>
+        <div class="char-top"><span class="tier tier-s">S</span><span class="role-pill">Shooter</span></div>
+        <h3>Techhound Lee</h3>
+        <p>Summons two robo-dogs that keep chipping away at the front line. A core pick for teams that want more bodies on the field.</p>
       </div>
       <div class="char-card">
-        <div class="char-top"><span class="tier tier-s">S</span><span class="role-pill">メイジ</span></div>
-        <h3>リザードマン・カーティス</h3>
-        <p>変身スキルで攻撃範囲を拡大。乱戦になりやすい終盤ステージで真価を発揮する。</p>
+        <div class="char-top"><span class="tier tier-s">S</span><span class="role-pill">Mage</span></div>
+        <h3>Lizardman Curtis</h3>
+        <p>A transformation skill widens his attack range — shines once fights turn chaotic in the late game.</p>
       </div>
       <div class="char-card">
-        <div class="char-top"><span class="tier tier-s">S</span><span class="role-pill">メイジ</span></div>
-        <h3>メカニックガール・ゾーイ</h3>
-        <p>巨大ロボを召喚し継続範囲ダメージを与える。長期戦・放置オート戦闘との相性が良い。</p>
+        <div class="char-top"><span class="tier tier-s">S</span><span class="role-pill">Mage</span></div>
+        <h3>Mechanic Girl Zoey</h3>
+        <p>Summons a giant robot for sustained area damage. Pairs well with long fights and idle auto-battling.</p>
       </div>
       <div class="char-card">
-        <div class="char-top"><span class="tier tier-a">A</span><span class="role-pill">シューター</span></div>
-        <h3>マシンブッチャー・サイレス</h3>
-        <p>最も遠い敵を強制的に自陣へ引き寄せる位置操作で、敵の後衛を孤立させ集中攻撃を狙える。</p>
+        <div class="char-top"><span class="tier tier-a">A</span><span class="role-pill">Shooter</span></div>
+        <h3>Machine Butcher Silas</h3>
+        <p>Forcibly yanks the farthest enemy into your side of the field, isolating their back line for a focused kill.</p>
       </div>
       <div class="char-card">
-        <div class="char-top"><span class="tier tier-a">A</span><span class="role-pill">メイジ</span></div>
-        <h3>ネオンウィザード・サミュエル</h3>
-        <p>攻撃速度と会心率を上げるバフ役。敵シールドを破壊した際にスタンを付与できる。</p>
+        <div class="char-top"><span class="tier tier-a">A</span><span class="role-pill">Mage</span></div>
+        <h3>Neon Wizard Samuel</h3>
+        <p>A buffer who raises attack speed and crit rate, and stuns enemies whenever their shield breaks.</p>
       </div>
     </div>
 
-    <div class="callout"><b>A・B帯の主要キャラ：</b>レックス、ラヴェンジャー・ベッキーもA評価。B〜C帯はウォリアー系・メイジ系の補助キャラが中心。</div>
+    <div class="callout"><b>Also A/B tier:</b> Rex and Ravager Becky also rate A. B–C tiers lean on supporting Warrior- and Mage-type characters.</div>
   </section>
 
   <section id="early">
-    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>序盤攻略</h2></div>
-    <p class="sec-desc">序盤で迷ったら、まず船長レベルを上げることを最優先に動く。</p>
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>Early Game</h2></div>
+    <p class="sec-desc">If you're not sure what to do next, prioritize raising your Captain Level above everything else.</p>
 
     <div class="panel">
       <ul class="check">
         <li>
           <div>
-            <b>住民依頼を最優先でこなす</b>
-            <span class="d">クリアで船長レベルEXPを獲得。船長レベルはコンテンツ解放とキャラLv上限に直結する。魚・衣類・水などは各施設の予約生産で効率よく用意する。</span>
+            <b>Prioritize resident requests</b>
+            <span class="d">Completing them grants Captain XP. Captain Level gates new content and each character's level cap. Use scheduled production at your facilities to keep fish, cloth, and water flowing efficiently.</span>
           </div>
         </li>
         <li>
           <div>
-            <b>デイリー任務を毎日消化</b>
-            <span class="d">船長EXPやアイテムがまとまって手に入る。</span>
+            <b>Clear daily quests every day</b>
+            <span class="d">A reliable batch of Captain XP and items.</span>
           </div>
         </li>
         <li>
           <div>
-            <b>ステージ攻略は勝てる限界ラインまで進める</b>
-            <span class="d">進行度に応じて放置報酬が豪華になる。</span>
+            <b>Push stages as far as you can win</b>
+            <span class="d">Idle rewards scale with how far you've progressed.</span>
           </div>
         </li>
         <li>
           <div>
-            <b>釣り・廃品回収・ダイビングで資源を確保</b>
-            <span class="d">建築と生産に必要な材料を集める手段。並行して回すと効率が良い。</span>
+            <b>Gather resources by fishing, scavenging, and diving</b>
+            <span class="d">Your main sources of building and crafting materials — run them in parallel for efficiency.</span>
           </div>
         </li>
         <li>
           <div>
-            <b>名品ガチャを解放して所持するだけで強化</b>
-            <span class="d">船長レベルが上がると解放。所持するだけでキャラのステータスが底上げされる。</span>
+            <b>Unlock the Relic Gacha and let it work passively</b>
+            <span class="d">Unlocks as Captain Level rises. Just owning a relic boosts your characters' stats.</span>
           </div>
         </li>
       </ul>
-      <div class="callout"><b>育成のコツ：</b>全キャラを育てる必要はない。編成交代時に「無損失交代」を選べばレベルを引き継げる。詰まったら個々のキャラLvより船長レベル上げを優先する。</div>
+      <div class="callout"><b>Training tip:</b> you don't need to level everyone. Use "lossless swap" when changing your lineup to carry levels over. If you're stuck, raise Captain Level before individual character levels.</div>
     </div>
   </section>
 
   <section id="codes">
-    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>ギフトコード</h2></div>
-    <p class="sec-desc">報酬はゲーム内メールに届く（受け取りには船長レベル9が必要）。最新コードは公式Facebook／X（@playWWW_JP）で随時発表される。</p>
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>Gift Codes</h2></div>
+    <p class="sec-desc">Rewards arrive by in-game mail (requires Captain Level 9 to claim). New codes are announced on the official Facebook and X account (@playWWW_JP).</p>
 
     <div class="panel">
       <table class="codes">
-        <thead><tr><th>コード</th><th>期限</th></tr></thead>
+        <thead><tr><th>Code</th><th>Expires</th></tr></thead>
         <tbody>
-          <tr><td><code>FLOTDISCORD2026</code></td><td class="tag-mono">なし</td></tr>
+          <tr><td><code>FLOTDISCORD2026</code></td><td class="tag-mono">None</td></tr>
         </tbody>
       </table>
     </div>
 
     <div class="two-col" style="margin-top:16px;">
       <div class="panel">
-        <h3 style="font-size:.95rem;margin-bottom:14px;">入力方法（iOS）</h3>
+        <h3 style="font-size:.95rem;margin-bottom:14px;">How to Redeem (iOS)</h3>
         <ol class="steps">
-          <li><span class="n">1</span>ホーム画面左上のキャラアイコンをタップ</li>
-          <li><span class="n">2</span>「設定」→「ユーザーセンター」を開く</li>
-          <li><span class="n">3</span>ユーザーIDをコピー</li>
-          <li><span class="n">4</span>ギフトコード入力ページでIDとコードを入力して交換</li>
+          <li><span class="n">1</span>Tap the character icon in the top-left of the home screen.</li>
+          <li><span class="n">2</span>Open Settings → User Center.</li>
+          <li><span class="n">3</span>Copy your User ID.</li>
+          <li><span class="n">4</span>Enter your ID and the code on the gift code redemption page.</li>
         </ol>
       </div>
       <div class="panel">
-        <h3 style="font-size:.95rem;margin-bottom:14px;">入力方法（Android）</h3>
+        <h3 style="font-size:.95rem;margin-bottom:14px;">How to Redeem (Android)</h3>
         <ol class="steps">
-          <li><span class="n">1</span>ホーム画面左上のキャラアイコンをタップ</li>
-          <li><span class="n">2</span>「ギフトコード」を選択</li>
-          <li><span class="n">3</span>コードを入力して交換</li>
+          <li><span class="n">1</span>Tap the character icon in the top-left of the home screen.</li>
+          <li><span class="n">2</span>Select "Gift Code."</li>
+          <li><span class="n">3</span>Enter the code to redeem.</li>
         </ol>
       </div>
     </div>
@@ -557,22 +255,23 @@
 
 <footer>
   <div class="wrap">
-    <div class="disclaimer">本ページは公開情報を基にした非公式のファンメイド攻略まとめです。ゲーム内容・キャラ評価は今後のアップデートで変わる可能性があります。</div>
+    <div class="disclaimer">This page is an unofficial, fan-made guide based on publicly available information. Game content and character ratings may change with future updates.</div>
     <div class="sources">
-      情報源：
-      <a href="https://gamewith.jp/gamedb/17986/articles/61884" target="_blank" rel="noopener">ゲームウィズ①</a>
-      <a href="https://gamewith.jp/gamedb/17986/articles/62407" target="_blank" rel="noopener">ゲームウィズ②</a>
-      <a href="https://gamerch.com/flotshelter/1004899" target="_blank" rel="noopener">波乱水世界攻略Wiki(Gamerch)</a>
-      <a href="https://ahiru0923-gameroom.com/27985/" target="_blank" rel="noopener">あひるのゲーム部屋(序盤攻略)</a>
-      <a href="https://ahiru0923-gameroom.com/27954/" target="_blank" rel="noopener">あひるのゲーム部屋(最強キャラ)</a>
-      <a href="https://ahiru0923-gameroom.com/27939/" target="_blank" rel="noopener">あひるのゲーム部屋(ギフトコード)</a>
+      Sources:
+      <a href="https://gamewith.jp/gamedb/17986/articles/61884" target="_blank" rel="noopener">GameWith①</a>
+      <a href="https://gamewith.jp/gamedb/17986/articles/62407" target="_blank" rel="noopener">GameWith②</a>
+      <a href="https://gamerch.com/flotshelter/1004899" target="_blank" rel="noopener">Wild Water World Wiki (Gamerch)</a>
+      <a href="https://ahiru0923-gameroom.com/27985/" target="_blank" rel="noopener">Ahiru0923 Game Room (Early Game)</a>
+      <a href="https://ahiru0923-gameroom.com/27954/" target="_blank" rel="noopener">Ahiru0923 Game Room (Best Characters)</a>
+      <a href="https://ahiru0923-gameroom.com/27939/" target="_blank" rel="noopener">Ahiru0923 Game Room (Gift Codes)</a>
     </div>
   </div>
 </footer>
 
+<script src="/assets/lang-switch.js"></script>
 <script>
   (function () {
-    var links = Array.prototype.slice.call(document.querySelectorAll('nav.tabs a'));
+    var links = Array.prototype.slice.call(document.querySelectorAll('.tabs-links a'));
     var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
 
     function setActive(id) {
