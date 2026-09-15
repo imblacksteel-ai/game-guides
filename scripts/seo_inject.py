@@ -10,6 +10,7 @@ kouryakulab.com 向けSEO/OGPメタデータ一括挿入スクリプト。
   - フッターへの横断リンク行（About / Authors / Editorial Policy / Contact / Terms of Use /
     Privacy Policy。各ページは自分自身をリンク一覧から除外する）
   - Google AdSenseの広告コード（全ページ、<head>の先頭付近）
+  - Google Analytics (gtag.js)のトラッキングコード（全ページ、<head>の先頭付近）
   - hero内「更新日」ファクトタイル（ゲームガイドページのみ）
   - フッター「他の攻略ガイド」相互リンク（ゲームガイドページのみ、自分自身は除外）
 
@@ -41,6 +42,7 @@ LOCALE = {
 LANG_DIRS = ["", "ja", "ko", "zh", "de", "fr", "ar"]  # "" = ルート(英語)
 
 ADSENSE_CLIENT = "ca-pub-2939651190150074"
+GA_MEASUREMENT_ID = "G-2DMV4KX041"
 
 PRIVACY_LABEL = {
     "en": "Privacy Policy", "ja": "プライバシーポリシー", "ko": "개인정보처리방침",
@@ -208,6 +210,25 @@ def process(path):
         content = re.sub(
             r'(<meta charset="UTF-8">\n)',
             r"\1" + adsense,
+            content,
+            count=1,
+        )
+        changed = True
+
+    # --- Google Analytics (gtag.js) ---
+    if GA_MEASUREMENT_ID not in content:
+        ga = (
+            f'<script async src="https://www.googletagmanager.com/gtag/js?id={GA_MEASUREMENT_ID}"></script>\n'
+            "<script>\n"
+            "  window.dataLayer = window.dataLayer || [];\n"
+            "  function gtag(){dataLayer.push(arguments);}\n"
+            "  gtag('js', new Date());\n"
+            f"  gtag('config', '{GA_MEASUREMENT_ID}');\n"
+            "</script>\n"
+        )
+        content = re.sub(
+            r'(<meta charset="UTF-8">\n)',
+            r"\1" + ga,
             content,
             count=1,
         )
