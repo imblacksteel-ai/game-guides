@@ -246,6 +246,31 @@ table.glossary .romaji { color: var(--ink-faint); font-size: .78rem; font-family
 }
 .exp-calc-row .r-remove:hover { border-color: var(--state-incapability); color: var(--state-incapability); }
 
+/* ---------- Fleet Builder ---------- */
+.fleet-picker { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.fleet-picker select#ship-picker {
+  flex: 1 1 260px; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: .88rem;
+  padding: 9px 10px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--surface-2); color: var(--ink);
+}
+.fleet-calc-header, .fleet-calc-row {
+  display: grid; grid-template-columns: 1.6fr .6fr .6fr .6fr .6fr .6fr .9fr 28px; gap: 8px; align-items: center;
+}
+.fleet-calc-header span { font-size: .68rem; font-weight: 700; color: var(--ink-faint); letter-spacing: .04em; text-transform: uppercase; }
+.fleet-calc-row { padding-block: 4px; }
+.fleet-calc-row input, .fleet-calc-row select {
+  width: 100%; font-family: 'Space Grotesk', sans-serif; font-size: .86rem;
+  padding: 7px 8px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--surface-2); color: var(--ink);
+}
+.fleet-calc-row input.r-name, .fleet-calc-row input.r-type { font-family: 'Zen Kaku Gothic New', sans-serif; }
+.fleet-calc-row input:focus, .fleet-calc-row select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.fleet-calc-row .r-remove {
+  width: 28px; height: 28px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--surface-2); color: var(--ink-dim); cursor: pointer; font-size: 1rem; line-height: 1;
+}
+.fleet-calc-row .r-remove:hover { border-color: var(--state-incapability); color: var(--state-incapability); }
+
 /* ---------- Footer ---------- */
 footer { padding-block: 30px 46px; }
 footer .wrap { display: grid; gap: 14px; }
