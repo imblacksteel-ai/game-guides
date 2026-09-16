@@ -129,6 +129,24 @@
   <url><loc>https://kouryakulab.com/ar/games/kancolle/equipment/</loc></url>
 
   <url>
+    <loc>https://kouryakulab.com/games/kancolle/expeditions/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/expeditions/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/expeditions/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/kancolle/expeditions/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/kancolle/expeditions/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/kancolle/expeditions/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/kancolle/expeditions/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/kancolle/expeditions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/expeditions/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/kancolle/expeditions/</loc></url>
+  <url><loc>https://kouryakulab.com/ko/games/kancolle/expeditions/</loc></url>
+  <url><loc>https://kouryakulab.com/zh/games/kancolle/expeditions/</loc></url>
+  <url><loc>https://kouryakulab.com/de/games/kancolle/expeditions/</loc></url>
+  <url><loc>https://kouryakulab.com/fr/games/kancolle/expeditions/</loc></url>
+  <url><loc>https://kouryakulab.com/ar/games/kancolle/expeditions/</loc></url>
+
+  <url>
     <loc>https://kouryakulab.com/games/haran-suisekai/codes/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/haran-suisekai/codes/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/haran-suisekai/codes/"/>

@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="description" content="艦これの遠征効率計算機：燃料/弾薬/鋼材/ボーキサイトの時間あたり獲得量をボーキサイト加重スコアでランク付け、覚えておきたい遠征5選も紹介。">
+<title>艦これ 遠征効率計算機</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/expeditions/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:title" content="艦これ 遠征効率計算機">
+<meta property="og:description" content="艦これの遠征効率計算機：燃料/弾薬/鋼材/ボーキサイトの時間あたり獲得量をボーキサイト加重スコアでランク付け、覚えておきたい遠征5選も紹介。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/kancolle/expeditions/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="艦これ 遠征効率計算機">
+<meta name="twitter:description" content="艦これの遠征効率計算機：燃料/弾薬/鋼材/ボーキサイトの時間あたり獲得量をボーキサイト加重スコアでランク付け、覚えておきたい遠征5選も紹介。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "艦これ 遠征効率計算機",
+      "description": "艦これの遠征効率計算機：燃料/弾薬/鋼材/ボーキサイトの時間あたり獲得量をボーキサイト加重スコアでランク付け、覚えておきたい遠征5選も紹介。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/kancolle/expeditions/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "艦これ 遠征効率計算機",
+          "item": "https://kouryakulab.com/ja/games/kancolle/expeditions/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/kancolle/"><span class="arrow">←</span> 艦これ 攻略ガイド全体</a>
+    <div>
+      <span class="eyebrow">艦これ ・ 遠征</span>
+      <h1>遠征効率計算機</h1>
+      <p class="sub">遠征は出撃せずに燃料・弾薬・鋼材・ボーキサイトを稼げる手段だが、どの遠征も同じだけ艦隊枠に見合うわけではない。時間と報酬を入力すればボーキサイト加重の効率スコアが出るので、実際にどれが「回す価値がある」遠征か一目で分かる。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+
+  <div class="panel">
+    <h2 style="font-size:1.1rem;margin-bottom:6px;">覚えておきたい遠征5選</h2>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">新米提督が真っ先に勧められる定番の遠征。低コストで安定しており、下の計算機にもあらかじめ登録済み。</p>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>No.</th><th>名前</th><th>時間</th><th>艦隊</th><th>報酬</th></tr></thead>
+        <tbody>
+          <tr><td class="tag-mono">2</td><td>長距離練習航海<br><span class="romaji">長距離練習航海</span></td><td class="tag-mono">30分</td><td>艦4隻、艦種問わず</td><td>弾薬100・鋼材30</td></tr>
+          <tr><td class="tag-mono">3</td><td>警備任務<br><span class="romaji">警備任務</span></td><td class="tag-mono">20分</td><td>艦3隻、艦種問わず</td><td>燃料30・弾薬30・鋼材40</td></tr>
+          <tr><td class="tag-mono">5</td><td>海上護衛任務<br><span class="romaji">海上護衛任務</span></td><td class="tag-mono">1時間30分</td><td>軽巡×1、駆逐×2、残り1隻自由</td><td>燃料200・弾薬200・鋼材20・ボーキサイト20</td></tr>
+          <tr><td class="tag-mono">37</td><td>東京急行<br><span class="romaji">東京急行</span></td><td class="tag-mono">2時間45分</td><td>軽巡×1、駆逐×5（大発動艇4隻を3隻に搭載）、旗艦Lv50以上、艦隊合計Lv200以上</td><td>弾薬380・鋼材270</td></tr>
+          <tr><td class="tag-mono">38</td><td>東京急行(弐)<br><span class="romaji">東京急行(弐)</span></td><td class="tag-mono">2時間55分</td><td>駆逐×5、残り1隻自由（大発動艇8個以上）、旗艦Lv65以上、艦隊合計Lv240以上</td><td>燃料420・鋼材200</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <section id="calculator" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>効率計算機</h2></div>
+    <p class="sec-desc">スコア/時 = (燃料 + 弾薬 + 鋼材 + ボーキサイト×3) ÷ 時間。不足している資源で並べ替えるか、総合スコアで並べ替えれば艦隊枠の最良の使い道が分かる。</p>
+
+    <div class="panel calc-panel">
+      <div class="sort-btns" id="sort-btns">
+        <button type="button" class="sort-btn active" data-sort="score">並べ替え：スコア</button>
+        <button type="button" class="sort-btn" data-sort="fuel">並べ替え：燃料/時</button>
+        <button type="button" class="sort-btn" data-sort="ammo">並べ替え：弾薬/時</button>
+        <button type="button" class="sort-btn" data-sort="steel">並べ替え：鋼材/時</button>
+        <button type="button" class="sort-btn" data-sort="bauxite">並べ替え：ボーキサイト/時</button>
+      </div>
+
+      <div class="table-scroll">
+        <div style="min-width:640px;">
+          <div class="exp-calc-header">
+            <span>名前</span><span>分</span><span>燃料</span><span>弾薬</span><span>鋼材</span><span>ボーキサイト</span><span>スコア/時</span><span></span>
+          </div>
+          <div id="exp-rows"></div>
+        </div>
+      </div>
+      <button type="button" class="btn-add" id="exp-add-row">+ 遠征を追加</button>
+    </div>
+
+    <div class="callout"><b>なぜボーキサイトを3倍で計算するのか。</b> 燃料・弾薬・鋼材はほぼ同じ速度で自然回復するが、ボーキサイトの回復はそれよりずっと遅い。そのため同じ数量でも、ボーキサイト報酬の方が価値が高い。この1:1:1:3の重み付け（通称「GS値」）は、資源構成がまったく異なる遠征同士を公平に比較するためのコミュニティ標準の手法。</div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;padding-block-start:20px;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/kancolle/">艦これ 攻略ガイド全体</a>
+      <a href="/ja/games/kancolle/#calculator">制空値計算機</a>
+      <a href="/ja/games/kancolle/equipment/">装備開発レシピ</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは公開情報を基にした非公式のファンメイド攻略まとめです。遠征の必要条件・報酬はコミュニティによって検証された情報であり、開発元の公式発表ではありません。艦隊を送る前に、必ずゲーム内の表示で確認してください。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://kamigame.jp/%E8%89%A6%E3%81%93%E3%82%8C/%E9%81%A0%E5%BE%81/index.html" target="_blank" rel="noopener">Kamigame（遠征一覧）</a>
+      <a href="https://wikiwiki.jp/kancolle/%E9%81%A0%E5%BE%81" target="_blank" rel="noopener">艦これ攻略Wiki（遠征）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+
+<script>
+  (function () {
+    var rowsEl = document.getElementById('exp-rows');
+
+    function rowTemplate(name, min, fuel, ammo, steel, bauxite) {
+      var row = document.createElement('div');
+      row.className = 'exp-calc-row';
+      row.innerHTML =
+        '<input type="text" class="r-name" value="' + name + '">' +
+        '<input type="number" class="r-min" min="1" value="' + min + '">' +
+        '<input type="number" class="r-fuel" min="0" value="' + fuel + '">' +
+        '<input type="number" class="r-ammo" min="0" value="' + ammo + '">' +
+        '<input type="number" class="r-steel" min="0" value="' + steel + '">' +
+        '<input type="number" class="r-bauxite" min="0" value="' + bauxite + '">' +
+        '<span class="r-value tag-mono">0</span>' +
+        '<button type="button" class="r-remove" aria-label="遠征を削除">×</button>';
+      return row;
+    }
+
+    function addRow(name, min, fuel, ammo, steel, bauxite) {
+      var row = rowTemplate(name, min, fuel, ammo, steel, bauxite);
+      rowsEl.appendChild(row);
+      row.querySelector('.r-remove').addEventListener('click', function () {
+        row.remove();
+      });
+      row.querySelectorAll('input').forEach(function (inp) {
+        inp.addEventListener('input', function () { updateScore(row); });
+      });
+      updateScore(row);
+    }
+
+    function readRow(row) {
+      return {
+        min: parseFloat(row.querySelector('.r-min').value) || 0,
+        fuel: parseFloat(row.querySelector('.r-fuel').value) || 0,
+        ammo: parseFloat(row.querySelector('.r-ammo').value) || 0,
+        steel: parseFloat(row.querySelector('.r-steel').value) || 0,
+        bauxite: parseFloat(row.querySelector('.r-bauxite').value) || 0
+      };
+    }
+
+    function metric(row, key) {
+      var v = readRow(row);
+      if (v.min <= 0) return 0;
+      var perHour = 60 / v.min;
+      if (key === 'fuel') return v.fuel * perHour;
+      if (key === 'ammo') return v.ammo * perHour;
+      if (key === 'steel') return v.steel * perHour;
+      if (key === 'bauxite') return v.bauxite * perHour;
+      return (v.fuel + v.ammo + v.steel + v.bauxite * 3) * perHour;
+    }
+
+    function updateScore(row) {
+      row.querySelector('.r-value').textContent = Math.round(metric(row, 'score'));
+    }
+
+    document.getElementById('exp-add-row').addEventListener('click', function () {
+      addRow('新しい遠征', 60, 0, 0, 0, 0);
+    });
+
+    var sortBtns = document.querySelectorAll('.sort-btn');
+    sortBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        sortBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var key = btn.getAttribute('data-sort');
+        var rows = Array.prototype.slice.call(rowsEl.querySelectorAll('.exp-calc-row'));
+        rows.sort(function (a, b) { return metric(b, key) - metric(a, key); });
+        rows.forEach(function (row) { rowsEl.appendChild(row); });
+      });
+    });
+
+    addRow('2 ・ 長距離練習航海', 30, 0, 100, 30, 0);
+    addRow('3 ・ 警備任務', 20, 30, 30, 40, 0);
+    addRow('5 ・ 海上護衛任務', 90, 200, 200, 20, 20);
+    addRow('37 ・ 東京急行', 165, 0, 380, 270, 0);
+    addRow('38 ・ 東京急行(弐)', 175, 420, 0, 200, 0);
+  })();
+</script>
+</body>
+</html>

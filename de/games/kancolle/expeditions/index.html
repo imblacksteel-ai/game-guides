@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="description" content="Ein KanColle-Expeditionseffizienzrechner: bewerte den Treibstoff-/Munitions-/Stahl-/Bauxit-Ertrag pro Stunde jeder Expedition mit einem bauxit-gewichteten Score, plus die 5 Expeditionen, die man sich merken sollte.">
+<title>KanColle Expeditionseffizienz-Rechner</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/de/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/expeditions/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:title" content="KanColle Expeditionseffizienz-Rechner">
+<meta property="og:description" content="Ein KanColle-Expeditionseffizienzrechner: bewerte den Treibstoff-/Munitions-/Stahl-/Bauxit-Ertrag pro Stunde jeder Expedition mit einem bauxit-gewichteten Score, plus die 5 Expeditionen, die man sich merken sollte.">
+<meta property="og:url" content="https://kouryakulab.com/de/games/kancolle/expeditions/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KanColle Expeditionseffizienz-Rechner">
+<meta name="twitter:description" content="Ein KanColle-Expeditionseffizienzrechner: bewerte den Treibstoff-/Munitions-/Stahl-/Bauxit-Ertrag pro Stunde jeder Expedition mit einem bauxit-gewichteten Score, plus die 5 Expeditionen, die man sich merken sollte.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "KanColle Expeditionseffizienz-Rechner",
+      "description": "Ein KanColle-Expeditionseffizienzrechner: bewerte den Treibstoff-/Munitions-/Stahl-/Bauxit-Ertrag pro Stunde jeder Expedition mit einem bauxit-gewichteten Score, plus die 5 Expeditionen, die man sich merken sollte.",
+      "inLanguage": "de",
+      "url": "https://kouryakulab.com/de/games/kancolle/expeditions/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/de/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "KanColle Expeditionseffizienz-Rechner",
+          "item": "https://kouryakulab.com/de/games/kancolle/expeditions/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/de/games/kancolle/"><span class="arrow">←</span> Vollständiger KanColle-Leitfaden</a>
+    <div>
+      <span class="eyebrow">KANCOLLE · EXPEDITIONEN</span>
+      <h1>Expeditionseffizienz-Rechner</h1>
+      <p class="sub">Expeditionen (遠征) sind der Weg, um Treibstoff, Munition, Stahl und Bauxit zu sammeln, ohne auszulaufen — aber sie sind nicht alle gleich viel wert für einen Flottenplatz. Gib die Zeit und die Belohnungen einer beliebigen Expedition ein, um einen bauxit-gewichteten Effizienz-Score zu erhalten, damit du auf einen Blick erkennst, welche sich wirklich lohnt.</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="Sprache"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+
+  <div class="panel">
+    <h2 style="font-size:1.1rem;margin-bottom:6px;">5 Expeditionen, die man sich merken sollte</h2>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Das sind die von der Community empfohlenen Standardauswahlen für neue Admirale — günstig, zuverlässig und bereits in den Rechner unten eingetragen.</p>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>Nr.</th><th>Name</th><th>Zeit</th><th>Flotte</th><th>Belohnungen</th></tr></thead>
+        <tbody>
+          <tr><td class="tag-mono">2</td><td>Langstreckentraining<br><span class="romaji">長距離練習航海</span></td><td class="tag-mono">30 Min</td><td>4 Schiffe, beliebig</td><td>Munition 100 · Stahl 30</td></tr>
+          <tr><td class="tag-mono">3</td><td>Wachdienst<br><span class="romaji">警備任務</span></td><td class="tag-mono">20 Min</td><td>3 Schiffe, beliebig</td><td>Treibstoff 30 · Munition 30 · Stahl 40</td></tr>
+          <tr><td class="tag-mono">5</td><td>Konvoi-Eskorte<br><span class="romaji">海上護衛任務</span></td><td class="tag-mono">1 Std. 30 Min</td><td>CL×1, DD×2, 1 frei</td><td>Treibstoff 200 · Munition 200 · Stahl 20 · Bauxit 20</td></tr>
+          <tr><td class="tag-mono">37</td><td>Tokyo-Express<br><span class="romaji">東京急行</span></td><td class="tag-mono">2 Std. 45 Min</td><td>CL×1, DD×5 (4 Daihatsu auf 3 Schiffe verteilt), Flaggschiff Lv50+, Flottengesamtlevel Lv200+</td><td>Munition 380 · Stahl 270</td></tr>
+          <tr><td class="tag-mono">38</td><td>Tokyo-Express Mark II<br><span class="romaji">東京急行(弐)</span></td><td class="tag-mono">2 Std. 55 Min</td><td>DD×5, 1 frei (8+ Daihatsu), Flaggschiff Lv65+, Flottengesamtlevel Lv240+</td><td>Treibstoff 420 · Stahl 200</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <section id="calculator" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Effizienzrechner</h2></div>
+    <p class="sec-desc">Score/Std. = (Treibstoff + Munition + Stahl + Bauxit×3) ÷ Stunden. Sortiere nach der Ressource, die dir gerade fehlt, oder nach dem Gesamt-Score, um die beste Allround-Nutzung eines Flottenplatzes zu sehen.</p>
+
+    <div class="panel calc-panel">
+      <div class="sort-btns" id="sort-btns">
+        <button type="button" class="sort-btn active" data-sort="score">Sortieren: Score</button>
+        <button type="button" class="sort-btn" data-sort="fuel">Sortieren: Treibstoff/Std.</button>
+        <button type="button" class="sort-btn" data-sort="ammo">Sortieren: Munition/Std.</button>
+        <button type="button" class="sort-btn" data-sort="steel">Sortieren: Stahl/Std.</button>
+        <button type="button" class="sort-btn" data-sort="bauxite">Sortieren: Bauxit/Std.</button>
+      </div>
+
+      <div class="table-scroll">
+        <div style="min-width:640px;">
+          <div class="exp-calc-header">
+            <span>Name</span><span>Min</span><span>Treibstoff</span><span>Munition</span><span>Stahl</span><span>Bauxit</span><span>Score/Std.</span><span></span>
+          </div>
+          <div id="exp-rows"></div>
+        </div>
+      </div>
+      <button type="button" class="btn-add" id="exp-add-row">+ Expedition hinzufügen</button>
+    </div>
+
+    <div class="callout"><b>Warum Bauxit 3× zählt.</b> Treibstoff, Munition und Stahl regenerieren sich von selbst über die Zeit mit ähnlichen Raten; Bauxit regeneriert sich viel langsamer, daher ist eine Bauxit-Belohnung mehr wert als die gleiche Menge jeder anderen Ressource. Diese 1:1:1:3-Gewichtung (manchmal „GSweight" genannt) ist die von der Community etablierte Methode, um Expeditionen mit völlig unterschiedlichen Ressourcenmischungen fair miteinander zu vergleichen.</div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;padding-block-start:20px;">
+    <h3>Weiterlesen</h3>
+    <div class="more-guides-links">
+      <a href="/de/games/kancolle/">Vollständiger KanColle-Leitfaden</a>
+      <a href="/de/games/kancolle/#calculator">Luftüberlegenheits-Rechner</a>
+      <a href="/de/games/kancolle/equipment/">Ausrüstungsentwicklung-Rezepte</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">Dies ist ein inoffizieller, von Fans erstellter Leitfaden basierend auf öffentlich verfügbaren Informationen über ein Spiel ohne offizielle englische Lokalisierung. Expeditionsanforderungen und -belohnungen sind von der Community dokumentiert und nicht offiziell vom Entwickler veröffentlicht — überprüfe immer die tatsächlichen Werte im Spiel, bevor du eine Flotte losschickst.</div>
+    <div class="sources">
+      Quellen:
+      <a href="https://kamigame.jp/%E8%89%A6%E3%81%93%E3%82%8C/%E9%81%A0%E5%BE%81/index.html" target="_blank" rel="noopener">Kamigame (Expeditionsliste)</a>
+      <a href="https://wikiwiki.jp/kancolle/%E9%81%A0%E5%BE%81" target="_blank" rel="noopener">KanColle-Wiki (Expeditionen)</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="Website-Links"><a href="/de/about/">Über uns</a> · <a href="/de/authors/">Autoren</a> · <a href="/de/editorial-policy/">Redaktionelle Richtlinien</a> · <a href="/de/contact/">Kontakt</a> · <a href="/de/terms/">Nutzungsbedingungen</a> · <a href="/de/privacy/">Datenschutzerklärung</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+
+<script>
+  (function () {
+    var rowsEl = document.getElementById('exp-rows');
+
+    function rowTemplate(name, min, fuel, ammo, steel, bauxite) {
+      var row = document.createElement('div');
+      row.className = 'exp-calc-row';
+      row.innerHTML =
+        '<input type="text" class="r-name" value="' + name + '">' +
+        '<input type="number" class="r-min" min="1" value="' + min + '">' +
+        '<input type="number" class="r-fuel" min="0" value="' + fuel + '">' +
+        '<input type="number" class="r-ammo" min="0" value="' + ammo + '">' +
+        '<input type="number" class="r-steel" min="0" value="' + steel + '">' +
+        '<input type="number" class="r-bauxite" min="0" value="' + bauxite + '">' +
+        '<span class="r-value tag-mono">0</span>' +
+        '<button type="button" class="r-remove" aria-label="Expedition entfernen">×</button>';
+      return row;
+    }
+
+    function addRow(name, min, fuel, ammo, steel, bauxite) {
+      var row = rowTemplate(name, min, fuel, ammo, steel, bauxite);
+      rowsEl.appendChild(row);
+      row.querySelector('.r-remove').addEventListener('click', function () {
+        row.remove();
+      });
+      row.querySelectorAll('input').forEach(function (inp) {
+        inp.addEventListener('input', function () { updateScore(row); });
+      });
+      updateScore(row);
+    }
+
+    function readRow(row) {
+      return {
+        min: parseFloat(row.querySelector('.r-min').value) || 0,
+        fuel: parseFloat(row.querySelector('.r-fuel').value) || 0,
+        ammo: parseFloat(row.querySelector('.r-ammo').value) || 0,
+        steel: parseFloat(row.querySelector('.r-steel').value) || 0,
+        bauxite: parseFloat(row.querySelector('.r-bauxite').value) || 0
+      };
+    }
+
+    function metric(row, key) {
+      var v = readRow(row);
+      if (v.min <= 0) return 0;
+      var perHour = 60 / v.min;
+      if (key === 'fuel') return v.fuel * perHour;
+      if (key === 'ammo') return v.ammo * perHour;
+      if (key === 'steel') return v.steel * perHour;
+      if (key === 'bauxite') return v.bauxite * perHour;
+      return (v.fuel + v.ammo + v.steel + v.bauxite * 3) * perHour;
+    }
+
+    function updateScore(row) {
+      row.querySelector('.r-value').textContent = Math.round(metric(row, 'score'));
+    }
+
+    document.getElementById('exp-add-row').addEventListener('click', function () {
+      addRow('Neue Expedition', 60, 0, 0, 0, 0);
+    });
+
+    var sortBtns = document.querySelectorAll('.sort-btn');
+    sortBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        sortBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var key = btn.getAttribute('data-sort');
+        var rows = Array.prototype.slice.call(rowsEl.querySelectorAll('.exp-calc-row'));
+        rows.sort(function (a, b) { return metric(b, key) - metric(a, key); });
+        rows.forEach(function (row) { rowsEl.appendChild(row); });
+      });
+    });
+
+    addRow('2 · Langstreckentraining', 30, 0, 100, 30, 0);
+    addRow('3 · Wachdienst', 20, 30, 30, 40, 0);
+    addRow('5 · Konvoi-Eskorte', 90, 200, 200, 20, 20);
+    addRow('37 · Tokyo-Express', 165, 0, 380, 270, 0);
+    addRow('38 · Tokyo-Express II', 175, 420, 0, 200, 0);
+  })();
+</script>
+</body>
+</html>

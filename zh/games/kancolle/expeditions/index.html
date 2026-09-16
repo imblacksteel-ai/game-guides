@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="description" content="KanColle远征效率计算器：通过铝土矿加权评分，比较任意远征每小时的燃料/弹药/钢材/铝土矿产出，附5个值得记住的远征。">
+<title>KanColle 远征效率计算器</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/zh/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/kancolle/expeditions/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/expeditions/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:title" content="KanColle 远征效率计算器">
+<meta property="og:description" content="KanColle远征效率计算器：通过铝土矿加权评分，比较任意远征每小时的燃料/弹药/钢材/铝土矿产出，附5个值得记住的远征。">
+<meta property="og:url" content="https://kouryakulab.com/zh/games/kancolle/expeditions/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KanColle 远征效率计算器">
+<meta name="twitter:description" content="KanColle远征效率计算器：通过铝土矿加权评分，比较任意远征每小时的燃料/弹药/钢材/铝土矿产出，附5个值得记住的远征。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "KanColle 远征效率计算器",
+      "description": "KanColle远征效率计算器：通过铝土矿加权评分，比较任意远征每小时的燃料/弹药/钢材/铝土矿产出，附5个值得记住的远征。",
+      "inLanguage": "zh-Hans",
+      "url": "https://kouryakulab.com/zh/games/kancolle/expeditions/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/zh/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "KanColle 远征效率计算器",
+          "item": "https://kouryakulab.com/zh/games/kancolle/expeditions/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/zh/games/kancolle/"><span class="arrow">←</span> KanColle 完整攻略指南</a>
+    <div>
+      <span class="eyebrow">KANCOLLE · 远征</span>
+      <h1>远征效率计算器</h1>
+      <p class="sub">远征（遠征）是不出击也能获取燃料、弹药、钢材、铝土矿的方式——但并非每个远征都同样值得占用一个舰队槽位。输入任意远征的耗时与奖励，即可得到铝土矿加权的效率评分，一眼看出哪个远征真正值得跑。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="语言"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+
+  <div class="panel">
+    <h2 style="font-size:1.1rem;margin-bottom:6px;">5个值得记住的远征</h2>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">这些是社区推荐给新手提督的标准远征——花费低、稳定可靠，并且已经预置在下方计算器中。</p>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>编号</th><th>名称</th><th>耗时</th><th>舰队</th><th>奖励</th></tr></thead>
+        <tbody>
+          <tr><td class="tag-mono">2</td><td>长距离训练航行<br><span class="romaji">長距離練習航海</span></td><td class="tag-mono">30分钟</td><td>4艘，任意舰种</td><td>弹药100 · 钢材30</td></tr>
+          <tr><td class="tag-mono">3</td><td>警备任务<br><span class="romaji">警備任務</span></td><td class="tag-mono">20分钟</td><td>3艘，任意舰种</td><td>燃料30 · 弹药30 · 钢材40</td></tr>
+          <tr><td class="tag-mono">5</td><td>海上护卫任务<br><span class="romaji">海上護衛任務</span></td><td class="tag-mono">1小时30分</td><td>CL×1，DD×2，1自由位</td><td>燃料200 · 弹药200 · 钢材20 · 铝土矿20</td></tr>
+          <tr><td class="tag-mono">37</td><td>东京急行<br><span class="romaji">東京急行</span></td><td class="tag-mono">2小时45分</td><td>CL×1，DD×5（3艘搭载共4艇大发），旗舰Lv50+，舰队总等级Lv200+</td><td>弹药380 · 钢材270</td></tr>
+          <tr><td class="tag-mono">38</td><td>东京急行 Mark II<br><span class="romaji">東京急行(弐)</span></td><td class="tag-mono">2小时55分</td><td>DD×5，1自由位（8艇以上大发），旗舰Lv65+，舰队总等级Lv240+</td><td>燃料420 · 钢材200</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <section id="calculator" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>效率计算器</h2></div>
+    <p class="sec-desc">每小时评分 = (燃料 + 弹药 + 钢材 + 铝土矿×3) ÷ 小时数。可按你目前缺乏的资源排序，或按总评分查看该舰队槽位的最佳综合利用方式。</p>
+
+    <div class="panel calc-panel">
+      <div class="sort-btns" id="sort-btns">
+        <button type="button" class="sort-btn active" data-sort="score">排序：评分</button>
+        <button type="button" class="sort-btn" data-sort="fuel">排序：燃料/时</button>
+        <button type="button" class="sort-btn" data-sort="ammo">排序：弹药/时</button>
+        <button type="button" class="sort-btn" data-sort="steel">排序：钢材/时</button>
+        <button type="button" class="sort-btn" data-sort="bauxite">排序：铝土矿/时</button>
+      </div>
+
+      <div class="table-scroll">
+        <div style="min-width:640px;">
+          <div class="exp-calc-header">
+            <span>名称</span><span>分钟</span><span>燃料</span><span>弹药</span><span>钢材</span><span>铝土矿</span><span>评分/时</span><span></span>
+          </div>
+          <div id="exp-rows"></div>
+        </div>
+      </div>
+      <button type="button" class="btn-add" id="exp-add-row">+ 添加远征</button>
+    </div>
+
+    <div class="callout"><b>为什么铝土矿要×3计算。</b>燃料、弹药、钢材都会以相近的速度随时间自然恢复；铝土矿的恢复速度慢得多，所以同样数量的铝土矿奖励比其他任何一种资源都更有价值。这种1:1:1:3的加权方式（有时称为"GSweight"）是社区标准做法，用于在同一基准上比较资源组合完全不同的远征。</div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;padding-block-start:20px;">
+    <h3>继续阅读</h3>
+    <div class="more-guides-links">
+      <a href="/zh/games/kancolle/">KanColle 完整攻略指南</a>
+      <a href="/zh/games/kancolle/#calculator">制空权计算器</a>
+      <a href="/zh/games/kancolle/equipment/">装备开发配方</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本页是根据公开信息整理的非官方粉丝攻略，所涉游戏没有官方英文本地化版本。远征的条件与奖励为社区整理数据，并非官方公布——出征前请务必与游戏内显示的实际数值核对。</div>
+    <div class="sources">
+      信息来源：
+      <a href="https://kamigame.jp/%E8%89%A6%E3%81%93%E3%82%8C/%E9%81%A0%E5%BE%81/index.html" target="_blank" rel="noopener">Kamigame（远征列表）</a>
+      <a href="https://wikiwiki.jp/kancolle/%E9%81%A0%E5%BE%81" target="_blank" rel="noopener">KanColle Wiki（远征）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="网站链接"><a href="/zh/about/">关于本站</a> · <a href="/zh/authors/">作者信息</a> · <a href="/zh/editorial-policy/">编辑方针</a> · <a href="/zh/contact/">联系我们</a> · <a href="/zh/terms/">使用条款</a> · <a href="/zh/privacy/">隐私政策</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+
+<script>
+  (function () {
+    var rowsEl = document.getElementById('exp-rows');
+
+    function rowTemplate(name, min, fuel, ammo, steel, bauxite) {
+      var row = document.createElement('div');
+      row.className = 'exp-calc-row';
+      row.innerHTML =
+        '<input type="text" class="r-name" value="' + name + '">' +
+        '<input type="number" class="r-min" min="1" value="' + min + '">' +
+        '<input type="number" class="r-fuel" min="0" value="' + fuel + '">' +
+        '<input type="number" class="r-ammo" min="0" value="' + ammo + '">' +
+        '<input type="number" class="r-steel" min="0" value="' + steel + '">' +
+        '<input type="number" class="r-bauxite" min="0" value="' + bauxite + '">' +
+        '<span class="r-value tag-mono">0</span>' +
+        '<button type="button" class="r-remove" aria-label="删除远征">×</button>';
+      return row;
+    }
+
+    function addRow(name, min, fuel, ammo, steel, bauxite) {
+      var row = rowTemplate(name, min, fuel, ammo, steel, bauxite);
+      rowsEl.appendChild(row);
+      row.querySelector('.r-remove').addEventListener('click', function () {
+        row.remove();
+      });
+      row.querySelectorAll('input').forEach(function (inp) {
+        inp.addEventListener('input', function () { updateScore(row); });
+      });
+      updateScore(row);
+    }
+
+    function readRow(row) {
+      return {
+        min: parseFloat(row.querySelector('.r-min').value) || 0,
+        fuel: parseFloat(row.querySelector('.r-fuel').value) || 0,
+        ammo: parseFloat(row.querySelector('.r-ammo').value) || 0,
+        steel: parseFloat(row.querySelector('.r-steel').value) || 0,
+        bauxite: parseFloat(row.querySelector('.r-bauxite').value) || 0
+      };
+    }
+
+    function metric(row, key) {
+      var v = readRow(row);
+      if (v.min <= 0) return 0;
+      var perHour = 60 / v.min;
+      if (key === 'fuel') return v.fuel * perHour;
+      if (key === 'ammo') return v.ammo * perHour;
+      if (key === 'steel') return v.steel * perHour;
+      if (key === 'bauxite') return v.bauxite * perHour;
+      return (v.fuel + v.ammo + v.steel + v.bauxite * 3) * perHour;
+    }
+
+    function updateScore(row) {
+      row.querySelector('.r-value').textContent = Math.round(metric(row, 'score'));
+    }
+
+    document.getElementById('exp-add-row').addEventListener('click', function () {
+      addRow('新远征', 60, 0, 0, 0, 0);
+    });
+
+    var sortBtns = document.querySelectorAll('.sort-btn');
+    sortBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        sortBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var key = btn.getAttribute('data-sort');
+        var rows = Array.prototype.slice.call(rowsEl.querySelectorAll('.exp-calc-row'));
+        rows.sort(function (a, b) { return metric(b, key) - metric(a, key); });
+        rows.forEach(function (row) { rowsEl.appendChild(row); });
+      });
+    });
+
+    addRow('2 · 长距离训练航行', 30, 0, 100, 30, 0);
+    addRow('3 · 警备任务', 20, 30, 30, 40, 0);
+    addRow('5 · 海上护卫任务', 90, 200, 200, 20, 20);
+    addRow('37 · 东京急行', 165, 0, 380, 270, 0);
+    addRow('38 · 东京急行 II', 175, 420, 0, 200, 0);
+  })();
+</script>
+</body>
+</html>

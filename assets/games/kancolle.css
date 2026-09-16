@@ -218,6 +218,34 @@ table.glossary .romaji { color: var(--ink-faint); font-size: .78rem; font-family
 .state-denial { color: var(--state-denial); background: var(--state-bg-denial); }
 .state-incapability { color: var(--state-incapability); background: var(--state-bg-incapability); }
 
+/* ---------- Expedition Calculator ---------- */
+.sort-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.sort-btn {
+  font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 700; font-size: .78rem;
+  background: var(--surface-2); color: var(--ink-dim); border: 1px solid var(--line);
+  border-radius: 999px; padding: 7px 14px; cursor: pointer;
+}
+.sort-btn:hover { border-color: var(--accent); }
+.sort-btn.active { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+.exp-calc-header, .exp-calc-row {
+  display: grid; grid-template-columns: 1.4fr .6fr .6fr .6fr .6fr .7fr .8fr 28px; gap: 8px; align-items: center;
+}
+.exp-calc-header span { font-size: .68rem; font-weight: 700; color: var(--ink-faint); letter-spacing: .04em; text-transform: uppercase; }
+.exp-calc-row { padding-block: 4px; }
+.exp-calc-row input {
+  width: 100%; font-family: 'Space Grotesk', sans-serif; font-size: .88rem;
+  padding: 7px 8px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--surface-2); color: var(--ink);
+}
+.exp-calc-row input.r-name { font-family: 'Zen Kaku Gothic New', sans-serif; }
+.exp-calc-row input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.exp-calc-row .r-value { font-family: 'Space Grotesk', sans-serif; font-weight: 700; text-align: end; }
+.exp-calc-row .r-remove {
+  width: 28px; height: 28px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--surface-2); color: var(--ink-dim); cursor: pointer; font-size: 1rem; line-height: 1;
+}
+.exp-calc-row .r-remove:hover { border-color: var(--state-incapability); color: var(--state-incapability); }
+
 /* ---------- Footer ---------- */
 footer { padding-block: 30px 46px; }
 footer .wrap { display: grid; gap: 14px; }
