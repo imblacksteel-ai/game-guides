@@ -187,6 +187,12 @@ table.chaintable td.chain-n, table.chaintable th.chain-n { font-family: 'Space G
 /* ---------- Footer ---------- */
 footer { padding-block: 30px 46px; }
 footer .wrap { display: grid; gap: 14px; }
+footer nav.site-links {
+  display: block; padding-block-start: 4px; line-height: 2;
+  font-size: .78rem; color: var(--ink-faint);
+}
+footer nav.site-links a { color: var(--ink-faint); text-decoration: underline; text-decoration-color: var(--line-strong); white-space: nowrap; }
+footer nav.site-links a:hover { color: var(--ink-dim); }
 .disclaimer { font-size: .82rem; color: var(--ink-dim); background: var(--surface-2); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
 .sources { font-size: .78rem; color: var(--ink-faint); display: flex; flex-wrap: wrap; gap: 6px 14px; }
 .sources a { text-decoration: underline; text-decoration-color: var(--line-strong); }
