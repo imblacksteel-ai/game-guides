@@ -16,7 +16,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<meta name="description" content="KanColle 함대 편성 시뮬레이터: 유명한 16척 중에서 불러오거나 직접 스탯을 입력해, 출격 전 함대의 화력·대공·대잠·색적 합계와 속력 등급을 한눈에 확인하세요. 저장도 계정도 필요 없습니다.">
+<meta name="description" content="칸코레 함대 편성 시뮬레이터 겸 함선 데이터베이스. 게임 마스터 데이터로 생성한 전체 862척을 수록했으며, 출격 전에 함대의 화력·대공·대잠·색적 합계와 함대 속력을 확인할 수 있습니다.">
 <title>KanColle 함대 편성 시뮬레이터</title>
 <link rel="stylesheet" href="/assets/games/kancolle.css">
 <link rel="canonical" href="https://kouryakulab.com/ko/games/kancolle/fleet-builder/">
@@ -38,14 +38,14 @@
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="ar_AR">
 <meta property="og:title" content="KanColle 함대 편성 시뮬레이터">
-<meta property="og:description" content="KanColle 함대 편성 시뮬레이터: 유명한 16척 중에서 불러오거나 직접 스탯을 입력해, 출격 전 함대의 화력·대공·대잠·색적 합계와 속력 등급을 한눈에 확인하세요. 저장도 계정도 필요 없습니다.">
+<meta property="og:description" content="칸코레 함대 편성 시뮬레이터 겸 함선 데이터베이스. 게임 마스터 데이터로 생성한 전체 862척을 수록했으며, 출격 전에 함대의 화력·대공·대잠·색적 합계와 함대 속력을 확인할 수 있습니다.">
 <meta property="og:url" content="https://kouryakulab.com/ko/games/kancolle/fleet-builder/">
 <meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="KanColle 함대 편성 시뮬레이터">
-<meta name="twitter:description" content="KanColle 함대 편성 시뮬레이터: 유명한 16척 중에서 불러오거나 직접 스탯을 입력해, 출격 전 함대의 화력·대공·대잠·색적 합계와 속력 등급을 한눈에 확인하세요. 저장도 계정도 필요 없습니다.">
+<meta name="twitter:description" content="칸코레 함대 편성 시뮬레이터 겸 함선 데이터베이스. 게임 마스터 데이터로 생성한 전체 862척을 수록했으며, 출격 전에 함대의 화력·대공·대잠·색적 합계와 함대 속력을 확인할 수 있습니다.">
 <meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
 <meta name="theme-color" content="#12414d">
 <script type="application/ld+json">
@@ -55,7 +55,7 @@
     {
       "@type": "Article",
       "headline": "KanColle 함대 편성 시뮬레이터",
-      "description": "KanColle 함대 편성 시뮬레이터: 유명한 16척 중에서 불러오거나 직접 스탯을 입력해, 출격 전 함대의 화력·대공·대잠·색적 합계와 속력 등급을 한눈에 확인하세요. 저장도 계정도 필요 없습니다.",
+      "description": "칸코레 함대 편성 시뮬레이터 겸 함선 데이터베이스. 게임 마스터 데이터로 생성한 전체 862척을 수록했으며, 출격 전에 함대의 화력·대공·대잠·색적 합계와 함대 속력을 확인할 수 있습니다.",
       "inLanguage": "ko",
       "url": "https://kouryakulab.com/ko/games/kancolle/fleet-builder/",
       "isPartOf": {
@@ -93,7 +93,7 @@
     <div>
       <span class="eyebrow">KANCOLLE · 편성</span>
       <h1>함대 편성 시뮬레이터</h1>
-      <p class="sub">아래 목록에 있는 유명한 16척 중에서 함선을 불러오거나 직접 스탯을 입력하면, 함대의 화력·대공·대잠·색적 합계와 가장 느린 함선 기준의 함대 속력을 한눈에 확인할 수 있습니다. 아무것도 저장되지 않습니다 — 출격 전 빠르게 확인하는 도구일 뿐, 계정 기능이 아닙니다.</p>
+      <p class="sub">게임에 등장하는 862척 전체에서 함선을 검색해 함대에 추가하고(수치 직접 입력도 가능), 화력·대공·대잠·색적 합계와 가장 느린 함선이 결정하는 함대 속력을 한눈에 확인하세요. 저장은 하지 않습니다. 출격 전에 가볍게 점검하는 도구입니다.</p>
     </div>
   </div>
 </div>
@@ -107,41 +107,14 @@
 
 <main class="wrap" style="padding-block:36px 60px;">
 
-  <div class="panel">
-    <h2 style="font-size:1.1rem;margin-bottom:6px;">꼭 기억해둘 함선 16척</h2>
-    <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Lv99, 표준 개조("改") 상태, 근대화 개수 미적용 수치입니다 — 소재를 투입하기 전 현실적인 기준값입니다. 이 함선들은 아래 선택창에 이미 등록되어 있습니다.</p>
-    <div class="table-scroll">
-      <table class="glossary">
-        <thead><tr><th>이름</th><th>함종</th><th>내구</th><th>화력</th><th>뇌장</th><th>대공</th><th>장갑</th><th>대잠</th><th>색적</th><th>운</th><th>속력</th><th>슬롯</th></tr></thead>
-        <tbody>
-          <tr><td>Yukikaze Kai<br><span class="romaji">雪風改</span></td><td class="tag-mono">DD</td><td class="tag-mono">32</td><td class="tag-mono">59</td><td class="tag-mono">89</td><td class="tag-mono">59</td><td class="tag-mono">59</td><td class="tag-mono">59</td><td class="tag-mono">39</td><td class="tag-mono">60</td><td>고속</td><td class="tag-mono">3</td></tr>
-          <tr><td>Shimakaze Kai<br><span class="romaji">島風改</span></td><td class="tag-mono">DD</td><td class="tag-mono">36</td><td class="tag-mono">59</td><td class="tag-mono">99</td><td class="tag-mono">59</td><td class="tag-mono">59</td><td class="tag-mono">59</td><td class="tag-mono">39</td><td class="tag-mono">12</td><td>고속</td><td class="tag-mono">3</td></tr>
-          <tr><td>Ayanami Kai<br><span class="romaji">綾波改</span></td><td class="tag-mono">DD</td><td class="tag-mono">30</td><td class="tag-mono">49</td><td class="tag-mono">79</td><td class="tag-mono">49</td><td class="tag-mono">49</td><td class="tag-mono">59</td><td class="tag-mono">39</td><td class="tag-mono">12</td><td>고속</td><td class="tag-mono">3</td></tr>
-          <tr><td>Yuudachi Kai<br><span class="romaji">夕立改</span></td><td class="tag-mono">DD</td><td class="tag-mono">30</td><td class="tag-mono">49</td><td class="tag-mono">79</td><td class="tag-mono">49</td><td class="tag-mono">49</td><td class="tag-mono">59</td><td class="tag-mono">39</td><td class="tag-mono">12</td><td>고속</td><td class="tag-mono">3</td></tr>
-          <tr><td>Shigure Kai<br><span class="romaji">時雨改</span></td><td class="tag-mono">DD</td><td class="tag-mono">30</td><td class="tag-mono">49</td><td class="tag-mono">79</td><td class="tag-mono">49</td><td class="tag-mono">49</td><td class="tag-mono">59</td><td class="tag-mono">39</td><td class="tag-mono">12</td><td>고속</td><td class="tag-mono">3</td></tr>
-          <tr><td>Sendai Kai<br><span class="romaji">川内改</span></td><td class="tag-mono">CL</td><td class="tag-mono">44</td><td class="tag-mono">59</td><td class="tag-mono">79</td><td class="tag-mono">69</td><td class="tag-mono">69</td><td class="tag-mono">79</td><td class="tag-mono">49</td><td class="tag-mono">12</td><td>고속</td><td class="tag-mono">3</td></tr>
-          <tr><td>Yuubari Kai<br><span class="romaji">夕張改</span></td><td class="tag-mono">CL</td><td class="tag-mono">36</td><td class="tag-mono">63</td><td class="tag-mono">79</td><td class="tag-mono">69</td><td class="tag-mono">49</td><td class="tag-mono">69</td><td class="tag-mono">44</td><td class="tag-mono">17</td><td>고속</td><td class="tag-mono">4</td></tr>
-          <tr><td>Naka Kai<br><span class="romaji">那珂改</span></td><td class="tag-mono">CL</td><td class="tag-mono">44</td><td class="tag-mono">59</td><td class="tag-mono">79</td><td class="tag-mono">59</td><td class="tag-mono">59</td><td class="tag-mono">79</td><td class="tag-mono">49</td><td class="tag-mono">12</td><td>고속</td><td class="tag-mono">3</td></tr>
-          <tr><td>Chōkai Kai<br><span class="romaji">鳥海改</span></td><td class="tag-mono">CA</td><td class="tag-mono">57</td><td class="tag-mono">78</td><td class="tag-mono">69</td><td class="tag-mono">69</td><td class="tag-mono">75</td><td class="tag-mono">0</td><td class="tag-mono">49</td><td class="tag-mono">10</td><td>고속</td><td class="tag-mono">4</td></tr>
-          <tr><td>Chitose Kai<br><span class="romaji">千歳改</span></td><td class="tag-mono">CVL</td><td class="tag-mono">41</td><td class="tag-mono">29</td><td class="tag-mono">29</td><td class="tag-mono">29</td><td class="tag-mono">39</td><td class="tag-mono">0</td><td class="tag-mono">69</td><td class="tag-mono">10</td><td>고속</td><td class="tag-mono">3</td></tr>
-          <tr><td>Zuihou Kai<br><span class="romaji">瑞鳳改</span></td><td class="tag-mono">CVL</td><td class="tag-mono">45</td><td class="tag-mono">29</td><td class="tag-mono">0</td><td class="tag-mono">39</td><td class="tag-mono">59</td><td class="tag-mono">0</td><td class="tag-mono">79</td><td class="tag-mono">40</td><td>고속</td><td class="tag-mono">4</td></tr>
-          <tr><td>Akagi Kai<br><span class="romaji">赤城改</span></td><td class="tag-mono">CV</td><td class="tag-mono">77</td><td class="tag-mono">55</td><td class="tag-mono">0</td><td class="tag-mono">79</td><td class="tag-mono">79</td><td class="tag-mono">0</td><td class="tag-mono">89</td><td class="tag-mono">12</td><td>고속</td><td class="tag-mono">4</td></tr>
-          <tr><td>Kaga Kai<br><span class="romaji">加賀改</span></td><td class="tag-mono">CV</td><td class="tag-mono">79</td><td class="tag-mono">50</td><td class="tag-mono">0</td><td class="tag-mono">79</td><td class="tag-mono">79</td><td class="tag-mono">0</td><td class="tag-mono">89</td><td class="tag-mono">12</td><td>고속</td><td class="tag-mono">4</td></tr>
-          <tr><td>Kongou Kai<br><span class="romaji">金剛改</span></td><td class="tag-mono">BB</td><td class="tag-mono">75</td><td class="tag-mono">94</td><td class="tag-mono">0</td><td class="tag-mono">79</td><td class="tag-mono">89</td><td class="tag-mono">0</td><td class="tag-mono">49</td><td class="tag-mono">12</td><td>고속</td><td class="tag-mono">4</td></tr>
-          <tr><td>Nagato Kai<br><span class="romaji">長門改</span></td><td class="tag-mono">BB</td><td class="tag-mono">90</td><td class="tag-mono">99</td><td class="tag-mono">0</td><td class="tag-mono">99</td><td class="tag-mono">98</td><td class="tag-mono">0</td><td class="tag-mono">49</td><td class="tag-mono">32</td><td>저속</td><td class="tag-mono">4</td></tr>
-          <tr><td>I-19 Kai<br><span class="romaji">伊19改</span></td><td class="tag-mono">SS</td><td class="tag-mono">18</td><td class="tag-mono">12</td><td class="tag-mono">89</td><td class="tag-mono">0</td><td class="tag-mono">19</td><td class="tag-mono">0</td><td class="tag-mono">39</td><td class="tag-mono">13</td><td>저속</td><td class="tag-mono">2</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
   <section id="builder" style="padding-block:32px 0;">
     <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>함대 편성 시뮬레이터</h2></div>
-    <p class="sec-desc">함선을 선택해 함대에 추가하거나, 빈 슬롯을 추가해 직접 수치를 입력하세요. 합계는 실시간으로 업데이트됩니다.</p>
+    <p class="sec-desc">함선 이름을 입력해 함대에 추가하거나, 빈 슬롯을 추가해 수치를 직접 입력하세요. 합계는 입력에 따라 바로 갱신됩니다.</p>
 
     <div class="panel calc-panel">
       <div class="fleet-picker">
-        <select id="ship-picker"></select>
+        <input type="text" id="ship-picker" list="ship-list" placeholder="함선 이름 입력…" autocomplete="off">
+        <datalist id="ship-list"></datalist>
         <button type="button" class="btn-add" id="picker-add">+ 함대에 추가</button>
       </div>
 
@@ -171,6 +144,22 @@
     <div class="callout"><b>함대 속력은 가장 느린 함선을 기준으로 정해집니다.</b> 저속 함선이 한 척이라도 있으면 함대 전체가 저속으로 떨어집니다 — 많은 원정과 이벤트 해역이 고속 이상을 요구하므로, 연료를 투입하기 전에 반드시 확인하세요. 함대의 대공 합계는 <a href="/ko/games/kancolle/#calculator" style="color:var(--accent);font-weight:700;">제공권 계산기</a>에 슬롯 1개 분의 입력값으로 사용할 수 있는 수치입니다 (실제 슬롯별 공식을 쓰려면 각 함선의 대공 슬롯 값을 개별적으로 합산해야 합니다 — 이 페이지는 함선 스탯 합계만 보여줍니다).</div>
   </section>
 
+  <div class="panel" style="margin-top:28px;">
+    <h2 style="font-size:1.1rem;margin-bottom:6px;">전체 함선 데이터</h2>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">게임 마스터 데이터로 생성한, 구현된 전체 862척(개장 후 포함). 영어·일본어로 검색하거나 함종으로 필터링할 수 있습니다.</p>
+    <div class="ship-filter">
+      <input type="search" id="ship-search" placeholder="함선 이름 검색 (예: Yukikaze, 雪風)" autocomplete="off">
+      <select id="ship-type-filter"><option value="">모든 함종</option></select>
+    </div>
+    <p class="ship-count" id="ship-count">함선 데이터 불러오는 중…</p>
+    <div class="table-scroll ship-table-scroll">
+      <table class="glossary">
+        <thead><tr><th>이름</th><th>함종</th><th>내구</th><th>화력</th><th>뇌장</th><th>대공</th><th>장갑</th><th>대잠</th><th>색적</th><th>운</th><th>속력</th><th>슬롯</th></tr></thead>
+        <tbody id="ship-table-body"></tbody>
+      </table>
+    </div>
+  </div>
+
   <div class="more-guides" style="border-bottom:none;padding-block-start:20px;">
     <h3>이어서 읽기</h3>
     <div class="more-guides-links">
@@ -184,127 +173,19 @@
 
 <footer>
   <div class="wrap">
-    <div class="disclaimer">이 페이지는 공식 영어 로컬라이제이션이 없는 게임에 대해 공개된 정보를 바탕으로 만든 비공식 팬메이드 가이드입니다. 함선 스탯은 Lv99, 표준 개조("改") 상태, 근대화 개수 미적용 수치로, 커뮤니티에서 정리한 정보이며 개발사의 공식 발표가 아닙니다. 특히 운 수치는 신뢰할 수 있는 출처를 찾기 어려우므로, 출격 계획에 활용하기 전 반드시 게임 내 실제 함선 스탯을 확인하세요.</div>
+    <div class="disclaimer">비공식 팬메이드 도구입니다. 내구·화력·뇌장·대공·장갑·운·슬롯 수·속력은 게임 자체의 마스터 데이터(api_start2)에서 가져왔습니다. 대잠과 색적은 마스터 데이터에 없어서 이 두 항목만 칸코레 위키에서 가져왔습니다. 내구와 운은 초기값(둘 다 레벨로는 오르지 않고 근대화 개수로만 상승)이며, 나머지는 Lv99 최대값입니다.</div>
     <div class="sources">
       출처:
-      <a href="https://kamigame.jp/%E8%89%A6%E3%81%93%E3%82%8C/index.html" target="_blank" rel="noopener">Kamigame (함선 데이터베이스)</a>
-      <a href="https://wikiwiki.jp/kancolle/" target="_blank" rel="noopener">KanColle 공략 Wiki</a>
+      <a href="https://github.com/kcwiki/kancolle-data" target="_blank" rel="noopener">kcwiki/kancolle-data (마스터 데이터·위키 내보내기)</a>
     </div>
   </div>
   <nav class="wrap site-links" aria-label="사이트 링크"><a href="/ko/about/">사이트 소개</a> · <a href="/ko/authors/">필자 소개</a> · <a href="/ko/editorial-policy/">편집 방침</a> · <a href="/ko/contact/">문의하기</a> · <a href="/ko/terms/">이용약관</a> · <a href="/ko/privacy/">개인정보처리방침</a></nav>
 </footer>
 
 <script src="/assets/lang-switch.js"></script>
-
 <script>
-  (function () {
-    var SHIPS = [
-      ['Yukikaze Kai (雪風改)', 'DD', 59, 59, 59, 39, 1],
-      ['Shimakaze Kai (島風改)', 'DD', 59, 59, 59, 39, 1],
-      ['Ayanami Kai (綾波改)', 'DD', 49, 49, 59, 39, 1],
-      ['Yuudachi Kai (夕立改)', 'DD', 49, 49, 59, 39, 1],
-      ['Shigure Kai (時雨改)', 'DD', 49, 49, 59, 39, 1],
-      ['Sendai Kai (川内改)', 'CL', 59, 69, 79, 49, 1],
-      ['Yuubari Kai (夕張改)', 'CL', 63, 69, 69, 44, 1],
-      ['Naka Kai (那珂改)', 'CL', 59, 59, 79, 49, 1],
-      ['Chōkai Kai (鳥海改)', 'CA', 78, 69, 0, 49, 1],
-      ['Chitose Kai (千歳改)', 'CVL', 29, 29, 0, 69, 1],
-      ['Zuihou Kai (瑞鳳改)', 'CVL', 29, 39, 0, 79, 1],
-      ['Akagi Kai (赤城改)', 'CV', 55, 79, 0, 89, 1],
-      ['Kaga Kai (加賀改)', 'CV', 50, 79, 0, 89, 1],
-      ['Kongou Kai (金剛改)', 'BB', 94, 79, 0, 49, 1],
-      ['Nagato Kai (長門改)', 'BB', 99, 99, 0, 49, 0],
-      ['I-19 Kai (伊19改)', 'SS', 12, 0, 0, 39, 0]
-    ];
-    var SPEED_LABELS = ['저속', '고속'];
-
-    var picker = document.getElementById('ship-picker');
-    SHIPS.forEach(function (s, i) {
-      var opt = document.createElement('option');
-      opt.value = i;
-      opt.textContent = s[0] + ' — ' + s[1];
-      picker.appendChild(opt);
-    });
-
-    var rowsEl = document.getElementById('fleet-rows');
-
-    function speedSelectHTML(speedIndex) {
-      var html = '<select class="r-speed">';
-      SPEED_LABELS.forEach(function (label, i) {
-        html += '<option value="' + i + '"' + (i === speedIndex ? ' selected' : '') + '>' + label + '</option>';
-      });
-      html += '</select>';
-      return html;
-    }
-
-    function rowTemplate(name, type, fire, aa, asw, los, speedIndex) {
-      var row = document.createElement('div');
-      row.className = 'fleet-calc-row';
-      row.innerHTML =
-        '<input type="text" class="r-name" value="' + name + '">' +
-        '<input type="text" class="r-type" value="' + type + '">' +
-        '<input type="number" class="r-fire" min="0" value="' + fire + '">' +
-        '<input type="number" class="r-aa" min="0" value="' + aa + '">' +
-        '<input type="number" class="r-asw" min="0" value="' + asw + '">' +
-        '<input type="number" class="r-los" min="0" value="' + los + '">' +
-        speedSelectHTML(speedIndex) +
-        '<button type="button" class="r-remove" aria-label="함선 삭제">×</button>';
-      return row;
-    }
-
-    function addRow(name, type, fire, aa, asw, los, speedIndex) {
-      var row = rowTemplate(name, type, fire, aa, asw, los, speedIndex);
-      rowsEl.appendChild(row);
-      row.querySelector('.r-remove').addEventListener('click', function () {
-        row.remove();
-        recalc();
-      });
-      row.querySelectorAll('input, select').forEach(function (inp) {
-        inp.addEventListener('input', recalc);
-        inp.addEventListener('change', recalc);
-      });
-      recalc();
-    }
-
-    function recalc() {
-      var rows = rowsEl.querySelectorAll('.fleet-calc-row');
-      var fire = 0, aa = 0, asw = 0, los = 0, minSpeed = null;
-      var types = {};
-      rows.forEach(function (row) {
-        fire += parseFloat(row.querySelector('.r-fire').value) || 0;
-        aa += parseFloat(row.querySelector('.r-aa').value) || 0;
-        asw += parseFloat(row.querySelector('.r-asw').value) || 0;
-        los += parseFloat(row.querySelector('.r-los').value) || 0;
-        var sp = parseInt(row.querySelector('.r-speed').value, 10);
-        if (minSpeed === null || sp < minSpeed) minSpeed = sp;
-        var t = row.querySelector('.r-type').value.trim() || '?';
-        types[t] = (types[t] || 0) + 1;
-      });
-      document.getElementById('f-count').textContent = rows.length;
-      document.getElementById('f-fire').textContent = fire;
-      document.getElementById('f-aa').textContent = aa;
-      document.getElementById('f-asw').textContent = asw;
-      document.getElementById('f-los').textContent = los;
-      document.getElementById('f-speed').textContent = minSpeed === null ? '—' : SPEED_LABELS[minSpeed];
-      var typeStr = Object.keys(types).map(function (t) { return t + '×' + types[t]; }).join(', ');
-      document.getElementById('f-types').textContent = typeStr || '—';
-    }
-
-    document.getElementById('picker-add').addEventListener('click', function () {
-      var s = SHIPS[parseInt(picker.value, 10)];
-      addRow(s[0], s[1], s[2], s[3], s[4], s[5], s[6]);
-    });
-    document.getElementById('fleet-add-row').addEventListener('click', function () {
-      addRow('새 함선', 'DD', 0, 0, 0, 0, 1);
-    });
-
-    addRow('Yukikaze Kai (雪風改)', 'DD', 59, 59, 59, 39, 1);
-    addRow('Ayanami Kai (綾波改)', 'DD', 49, 49, 59, 39, 1);
-    addRow('Yuudachi Kai (夕立改)', 'DD', 49, 49, 59, 39, 1);
-    addRow('Shigure Kai (時雨改)', 'DD', 49, 49, 59, 39, 1);
-    addRow('Sendai Kai (川内改)', 'CL', 59, 69, 79, 49, 1);
-    addRow('Naka Kai (那珂改)', 'CL', 59, 59, 79, 49, 1);
-  })();
+  window.FLEET_I18N = {"low": "저속", "high": "고속", "newShip": "새 함선", "remove": "함선 삭제", "showing": "{total}척 중 {shown}척 표시", "noResults": "검색 조건에 맞는 함선이 없습니다.", "notFound": "목록에서 함선을 선택하세요.", "loadError": "함선 데이터를 불러오지 못했습니다. 페이지를 새로고침하세요."};
 </script>
+<script src="/assets/games/kancolle-fleet-builder.js"></script>
 </body>
 </html>

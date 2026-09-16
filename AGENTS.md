@@ -67,6 +67,14 @@ git diff --stat                 # 想定した言語数ぶんのファイルが�
 - **hreflangブロックは使い回す。** 7言語+x-defaultのURLリストは機械的に生成できるので、1ページ分作ったら他はcanonicalの差し替えだけで済ませる。
 - **GitHub Pagesのビルド確認は`gh api .../pages/builds/latest`のポーリングで十分。** 無闇に`sleep`を連打しない、`ScheduleWakeup`で数分単位に間隔を空ける。
 
+## ゲームデータ（数値）の扱い
+
+- **攻略サイトから数値を手集めしない。** 艦これのFleet Builderで、調査エージェントが「運」の初期値と近代化改修の上限値を取り違え、8隻ぶん誤掲載した実例がある。ゲーム本体のマスターデータを正とする。
+- 艦これの艦娘データは `assets/data/kancolle-ships.json`（全言語共有）。**手編集禁止**。`python3 scripts/build_kancolle_ships.py` で `kcwiki/kancolle-data` の `api_start2`（マスターデータ）から再生成し、`python3 scripts/verify_kancolle_stats.py` で照合する（exit 0 で全一致）。
+- 対潜・索敵はマスターデータに存在しない（レベル成長で決まる）ため、この2項目だけWiki由来。Wikiデータはマスターデータと重複項目で99.7%一致を確認済みだが、重複項目は常にマスターデータを採用する。
+- Fleet BuilderのロジックとUIは `assets/games/kancolle-fleet-builder.js` に共有。各言語のHTMLは `window.FLEET_I18N` にUI文言だけを持つ。**JSや艦娘データを言語ごとのHTMLに埋め込まない。**
+- 新しいゲームを追加する前に、GitHubに抽出済みデータのリポジトリがあるか確認する（中国ゲームは中国語名で検索しないとヒットしない）。数値は事実なので掲載可、ただし画像・音声などのアセットや本文テキストの丸ごと転載はしない。
+
 ## 翻訳の一貫性ルール
 
 - ブランド名 `Kouryaku Lab` は全言語で英語表記のまま（ロゴ的な固有名詞として統一）。日本語版のみ「攻略ラボ」を使う（もともとの正式名）。

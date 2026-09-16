@@ -16,7 +16,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<meta name="description" content="KanColle舰队编成计算器：加载16艘常见舰船（或输入自定义属性），出击前统计舰队总火力、对空、对潜、索敌与速力等级。无需保存，无需账号。">
+<meta name="description" content="舰C舰队编成计算器兼舰船数据库。收录由游戏主数据生成的全部862艘舰船，出击前即可确认舰队的火力、对空、对潜、索敌总值与舰队航速。">
 <title>KanColle 舰队编成计算器</title>
 <link rel="stylesheet" href="/assets/games/kancolle.css">
 <link rel="canonical" href="https://kouryakulab.com/zh/games/kancolle/fleet-builder/">
@@ -38,14 +38,14 @@
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="ar_AR">
 <meta property="og:title" content="KanColle 舰队编成计算器">
-<meta property="og:description" content="KanColle舰队编成计算器：加载16艘常见舰船（或输入自定义属性），出击前统计舰队总火力、对空、对潜、索敌与速力等级。无需保存，无需账号。">
+<meta property="og:description" content="舰C舰队编成计算器兼舰船数据库。收录由游戏主数据生成的全部862艘舰船，出击前即可确认舰队的火力、对空、对潜、索敌总值与舰队航速。">
 <meta property="og:url" content="https://kouryakulab.com/zh/games/kancolle/fleet-builder/">
 <meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="KanColle 舰队编成计算器">
-<meta name="twitter:description" content="KanColle舰队编成计算器：加载16艘常见舰船（或输入自定义属性），出击前统计舰队总火力、对空、对潜、索敌与速力等级。无需保存，无需账号。">
+<meta name="twitter:description" content="舰C舰队编成计算器兼舰船数据库。收录由游戏主数据生成的全部862艘舰船，出击前即可确认舰队的火力、对空、对潜、索敌总值与舰队航速。">
 <meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
 <meta name="theme-color" content="#12414d">
 <script type="application/ld+json">
@@ -55,7 +55,7 @@
     {
       "@type": "Article",
       "headline": "KanColle 舰队编成计算器",
-      "description": "KanColle舰队编成计算器：加载16艘常见舰船（或输入自定义属性），出击前统计舰队总火力、对空、对潜、索敌与速力等级。无需保存，无需账号。",
+      "description": "舰C舰队编成计算器兼舰船数据库。收录由游戏主数据生成的全部862艘舰船，出击前即可确认舰队的火力、对空、对潜、索敌总值与舰队航速。",
       "inLanguage": "zh-Hans",
       "url": "https://kouryakulab.com/zh/games/kancolle/fleet-builder/",
       "isPartOf": {
@@ -93,7 +93,7 @@
     <div>
       <span class="eyebrow">KANCOLLE · 舰队编成</span>
       <h1>舰队编成计算器</h1>
-      <p class="sub">从下方16艘常见舰船列表中挑选（或直接输入自定义属性），即可一目了然地看到舰队总火力、对空、对潜、索敌，以及由最慢舰船决定的速力等级。不会保存任何数据——这只是出击前的快速核对工具，不是账号系统。</p>
+      <p class="sub">从游戏全部862艘舰船中搜索并加入舰队（也可手动输入数值），一眼看清火力、对空、对潜、索敌总值，以及由最慢舰船决定的舰队航速。不保存任何数据，只是出击前的快速检查工具。</p>
     </div>
   </div>
 </div>
@@ -107,41 +107,14 @@
 
 <main class="wrap" style="padding-block:36px 60px;">
 
-  <div class="panel">
-    <h2 style="font-size:1.1rem;margin-bottom:6px;">16艘值得了解的舰船</h2>
-    <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Lv99属性，标准"改"造后，未进行近代化改修——在你投入资材强化一艘船之前的真实基准值。这些舰船已预置在下方选择器中。</p>
-    <div class="table-scroll">
-      <table class="glossary">
-        <thead><tr><th>名称</th><th>舰种</th><th>耐久</th><th>火力</th><th>雷装</th><th>对空</th><th>装甲</th><th>对潜</th><th>索敌</th><th>运</th><th>速力</th><th>槽位</th></tr></thead>
-        <tbody>
-          <tr><td>Yukikaze Kai<br><span class="romaji">雪風改</span></td><td class="tag-mono">DD</td><td class="tag-mono">32</td><td class="tag-mono">59</td><td class="tag-mono">89</td><td class="tag-mono">59</td><td class="tag-mono">59</td><td class="tag-mono">59</td><td class="tag-mono">39</td><td class="tag-mono">60</td><td>高速</td><td class="tag-mono">3</td></tr>
-          <tr><td>Shimakaze Kai<br><span class="romaji">島風改</span></td><td class="tag-mono">DD</td><td class="tag-mono">36</td><td class="tag-mono">59</td><td class="tag-mono">99</td><td class="tag-mono">59</td><td class="tag-mono">59</td><td class="tag-mono">59</td><td class="tag-mono">39</td><td class="tag-mono">12</td><td>高速</td><td class="tag-mono">3</td></tr>
-          <tr><td>Ayanami Kai<br><span class="romaji">綾波改</span></td><td class="tag-mono">DD</td><td class="tag-mono">30</td><td class="tag-mono">49</td><td class="tag-mono">79</td><td class="tag-mono">49</td><td class="tag-mono">49</td><td class="tag-mono">59</td><td class="tag-mono">39</td><td class="tag-mono">12</td><td>高速</td><td class="tag-mono">3</td></tr>
-          <tr><td>Yuudachi Kai<br><span class="romaji">夕立改</span></td><td class="tag-mono">DD</td><td class="tag-mono">30</td><td class="tag-mono">49</td><td class="tag-mono">79</td><td class="tag-mono">49</td><td class="tag-mono">49</td><td class="tag-mono">59</td><td class="tag-mono">39</td><td class="tag-mono">12</td><td>高速</td><td class="tag-mono">3</td></tr>
-          <tr><td>Shigure Kai<br><span class="romaji">時雨改</span></td><td class="tag-mono">DD</td><td class="tag-mono">30</td><td class="tag-mono">49</td><td class="tag-mono">79</td><td class="tag-mono">49</td><td class="tag-mono">49</td><td class="tag-mono">59</td><td class="tag-mono">39</td><td class="tag-mono">12</td><td>高速</td><td class="tag-mono">3</td></tr>
-          <tr><td>Sendai Kai<br><span class="romaji">川内改</span></td><td class="tag-mono">CL</td><td class="tag-mono">44</td><td class="tag-mono">59</td><td class="tag-mono">79</td><td class="tag-mono">69</td><td class="tag-mono">69</td><td class="tag-mono">79</td><td class="tag-mono">49</td><td class="tag-mono">12</td><td>高速</td><td class="tag-mono">3</td></tr>
-          <tr><td>Yuubari Kai<br><span class="romaji">夕張改</span></td><td class="tag-mono">CL</td><td class="tag-mono">36</td><td class="tag-mono">63</td><td class="tag-mono">79</td><td class="tag-mono">69</td><td class="tag-mono">49</td><td class="tag-mono">69</td><td class="tag-mono">44</td><td class="tag-mono">17</td><td>高速</td><td class="tag-mono">4</td></tr>
-          <tr><td>Naka Kai<br><span class="romaji">那珂改</span></td><td class="tag-mono">CL</td><td class="tag-mono">44</td><td class="tag-mono">59</td><td class="tag-mono">79</td><td class="tag-mono">59</td><td class="tag-mono">59</td><td class="tag-mono">79</td><td class="tag-mono">49</td><td class="tag-mono">12</td><td>高速</td><td class="tag-mono">3</td></tr>
-          <tr><td>Chōkai Kai<br><span class="romaji">鳥海改</span></td><td class="tag-mono">CA</td><td class="tag-mono">57</td><td class="tag-mono">78</td><td class="tag-mono">69</td><td class="tag-mono">69</td><td class="tag-mono">75</td><td class="tag-mono">0</td><td class="tag-mono">49</td><td class="tag-mono">10</td><td>高速</td><td class="tag-mono">4</td></tr>
-          <tr><td>Chitose Kai<br><span class="romaji">千歳改</span></td><td class="tag-mono">CVL</td><td class="tag-mono">41</td><td class="tag-mono">29</td><td class="tag-mono">29</td><td class="tag-mono">29</td><td class="tag-mono">39</td><td class="tag-mono">0</td><td class="tag-mono">69</td><td class="tag-mono">10</td><td>高速</td><td class="tag-mono">3</td></tr>
-          <tr><td>Zuihou Kai<br><span class="romaji">瑞鳳改</span></td><td class="tag-mono">CVL</td><td class="tag-mono">45</td><td class="tag-mono">29</td><td class="tag-mono">0</td><td class="tag-mono">39</td><td class="tag-mono">59</td><td class="tag-mono">0</td><td class="tag-mono">79</td><td class="tag-mono">40</td><td>高速</td><td class="tag-mono">4</td></tr>
-          <tr><td>Akagi Kai<br><span class="romaji">赤城改</span></td><td class="tag-mono">CV</td><td class="tag-mono">77</td><td class="tag-mono">55</td><td class="tag-mono">0</td><td class="tag-mono">79</td><td class="tag-mono">79</td><td class="tag-mono">0</td><td class="tag-mono">89</td><td class="tag-mono">12</td><td>高速</td><td class="tag-mono">4</td></tr>
-          <tr><td>Kaga Kai<br><span class="romaji">加賀改</span></td><td class="tag-mono">CV</td><td class="tag-mono">79</td><td class="tag-mono">50</td><td class="tag-mono">0</td><td class="tag-mono">79</td><td class="tag-mono">79</td><td class="tag-mono">0</td><td class="tag-mono">89</td><td class="tag-mono">12</td><td>高速</td><td class="tag-mono">4</td></tr>
-          <tr><td>Kongou Kai<br><span class="romaji">金剛改</span></td><td class="tag-mono">BB</td><td class="tag-mono">75</td><td class="tag-mono">94</td><td class="tag-mono">0</td><td class="tag-mono">79</td><td class="tag-mono">89</td><td class="tag-mono">0</td><td class="tag-mono">49</td><td class="tag-mono">12</td><td>高速</td><td class="tag-mono">4</td></tr>
-          <tr><td>Nagato Kai<br><span class="romaji">長門改</span></td><td class="tag-mono">BB</td><td class="tag-mono">90</td><td class="tag-mono">99</td><td class="tag-mono">0</td><td class="tag-mono">99</td><td class="tag-mono">98</td><td class="tag-mono">0</td><td class="tag-mono">49</td><td class="tag-mono">32</td><td>低速</td><td class="tag-mono">4</td></tr>
-          <tr><td>I-19 Kai<br><span class="romaji">伊19改</span></td><td class="tag-mono">SS</td><td class="tag-mono">18</td><td class="tag-mono">12</td><td class="tag-mono">89</td><td class="tag-mono">0</td><td class="tag-mono">19</td><td class="tag-mono">0</td><td class="tag-mono">39</td><td class="tag-mono">13</td><td>低速</td><td class="tag-mono">2</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
   <section id="builder" style="padding-block:32px 0;">
     <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>舰队编成计算器</h2></div>
-    <p class="sec-desc">挑选一艘舰船加入舰队，或添加一个空白栏位并手动输入数值。总计会随时更新。</p>
+    <p class="sec-desc">输入舰船名称将其加入舰队，或添加空槽位后自行输入数值。总值会随输入实时更新。</p>
 
     <div class="panel calc-panel">
       <div class="fleet-picker">
-        <select id="ship-picker"></select>
+        <input type="text" id="ship-picker" list="ship-list" placeholder="输入舰船名称…" autocomplete="off">
+        <datalist id="ship-list"></datalist>
         <button type="button" class="btn-add" id="picker-add">+ 加入舰队</button>
       </div>
 
@@ -171,6 +144,22 @@
     <div class="callout"><b>舰队速力由最慢的舰船决定。</b>哪怕只有一艘低速舰，也会把整个舰队拖到低速——许多远征和活动海图要求高速及以上，出击前务必确认。舰队的对空合计值，就是你在<a href="/zh/games/kancolle/#calculator" style="color:var(--accent);font-weight:700;">制空权计算器</a>中作为"一个槽位"输入的数值（该计算器需要把每艘舰每个槽位的对空值分别相加，才是真正的单槽公式——本页只是汇总舰船的对空属性）。</div>
   </section>
 
+  <div class="panel" style="margin-top:28px;">
+    <h2 style="font-size:1.1rem;margin-bottom:6px;">全部舰船数据</h2>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">由游戏主数据生成的全部已实装舰船，共862艘（含改造后形态）。支持中英日文名搜索，并可按舰种筛选。</p>
+    <div class="ship-filter">
+      <input type="search" id="ship-search" placeholder="搜索舰船名称（例：Yukikaze、雪風）" autocomplete="off">
+      <select id="ship-type-filter"><option value="">全部舰种</option></select>
+    </div>
+    <p class="ship-count" id="ship-count">正在加载舰船数据…</p>
+    <div class="table-scroll ship-table-scroll">
+      <table class="glossary">
+        <thead><tr><th>名称</th><th>舰种</th><th>耐久</th><th>火力</th><th>雷装</th><th>对空</th><th>装甲</th><th>对潜</th><th>索敌</th><th>运</th><th>速力</th><th>槽位</th></tr></thead>
+        <tbody id="ship-table-body"></tbody>
+      </table>
+    </div>
+  </div>
+
   <div class="more-guides" style="border-bottom:none;padding-block-start:20px;">
     <h3>继续阅读</h3>
     <div class="more-guides-links">
@@ -184,127 +173,19 @@
 
 <footer>
   <div class="wrap">
-    <div class="disclaimer">本页是根据公开信息整理的非官方粉丝攻略，所涉游戏没有官方英文本地化版本。舰船属性为Lv99、标准"改"造后、未进行近代化改修的数值——由社区整理，并非官方公布数据。运值尤其难以稳定获取来源，出击规划前请务必核对你自己舰船在游戏内的实际数值。</div>
+    <div class="disclaimer">本工具为非官方粉丝作品。耐久、火力、雷装、对空、装甲、运、槽位数、航速均取自游戏自身的主数据（api_start2）。对潜与索敌不在主数据中，因此仅这两项取自舰C Wiki。耐久与运为初始值（两者都不随等级提升，只能通过近代化改修提高），其余为Lv99最大值。</div>
     <div class="sources">
-      信息来源：
-      <a href="https://kamigame.jp/%E8%89%A6%E3%81%93%E3%82%8C/index.html" target="_blank" rel="noopener">Kamigame（舰船数据库）</a>
-      <a href="https://wikiwiki.jp/kancolle/" target="_blank" rel="noopener">KanColle Wiki</a>
+      数据来源：
+      <a href="https://github.com/kcwiki/kancolle-data" target="_blank" rel="noopener">kcwiki/kancolle-data（主数据与Wiki导出）</a>
     </div>
   </div>
   <nav class="wrap site-links" aria-label="网站链接"><a href="/zh/about/">关于本站</a> · <a href="/zh/authors/">作者信息</a> · <a href="/zh/editorial-policy/">编辑方针</a> · <a href="/zh/contact/">联系我们</a> · <a href="/zh/terms/">使用条款</a> · <a href="/zh/privacy/">隐私政策</a></nav>
 </footer>
 
 <script src="/assets/lang-switch.js"></script>
-
 <script>
-  (function () {
-    var SHIPS = [
-      ['Yukikaze Kai (雪風改)', 'DD', 59, 59, 59, 39, 1],
-      ['Shimakaze Kai (島風改)', 'DD', 59, 59, 59, 39, 1],
-      ['Ayanami Kai (綾波改)', 'DD', 49, 49, 59, 39, 1],
-      ['Yuudachi Kai (夕立改)', 'DD', 49, 49, 59, 39, 1],
-      ['Shigure Kai (時雨改)', 'DD', 49, 49, 59, 39, 1],
-      ['Sendai Kai (川内改)', 'CL', 59, 69, 79, 49, 1],
-      ['Yuubari Kai (夕張改)', 'CL', 63, 69, 69, 44, 1],
-      ['Naka Kai (那珂改)', 'CL', 59, 59, 79, 49, 1],
-      ['Chōkai Kai (鳥海改)', 'CA', 78, 69, 0, 49, 1],
-      ['Chitose Kai (千歳改)', 'CVL', 29, 29, 0, 69, 1],
-      ['Zuihou Kai (瑞鳳改)', 'CVL', 29, 39, 0, 79, 1],
-      ['Akagi Kai (赤城改)', 'CV', 55, 79, 0, 89, 1],
-      ['Kaga Kai (加賀改)', 'CV', 50, 79, 0, 89, 1],
-      ['Kongou Kai (金剛改)', 'BB', 94, 79, 0, 49, 1],
-      ['Nagato Kai (長門改)', 'BB', 99, 99, 0, 49, 0],
-      ['I-19 Kai (伊19改)', 'SS', 12, 0, 0, 39, 0]
-    ];
-    var SPEED_LABELS = ['低速', '高速'];
-
-    var picker = document.getElementById('ship-picker');
-    SHIPS.forEach(function (s, i) {
-      var opt = document.createElement('option');
-      opt.value = i;
-      opt.textContent = s[0] + ' — ' + s[1];
-      picker.appendChild(opt);
-    });
-
-    var rowsEl = document.getElementById('fleet-rows');
-
-    function speedSelectHTML(speedIndex) {
-      var html = '<select class="r-speed">';
-      SPEED_LABELS.forEach(function (label, i) {
-        html += '<option value="' + i + '"' + (i === speedIndex ? ' selected' : '') + '>' + label + '</option>';
-      });
-      html += '</select>';
-      return html;
-    }
-
-    function rowTemplate(name, type, fire, aa, asw, los, speedIndex) {
-      var row = document.createElement('div');
-      row.className = 'fleet-calc-row';
-      row.innerHTML =
-        '<input type="text" class="r-name" value="' + name + '">' +
-        '<input type="text" class="r-type" value="' + type + '">' +
-        '<input type="number" class="r-fire" min="0" value="' + fire + '">' +
-        '<input type="number" class="r-aa" min="0" value="' + aa + '">' +
-        '<input type="number" class="r-asw" min="0" value="' + asw + '">' +
-        '<input type="number" class="r-los" min="0" value="' + los + '">' +
-        speedSelectHTML(speedIndex) +
-        '<button type="button" class="r-remove" aria-label="删除舰船">×</button>';
-      return row;
-    }
-
-    function addRow(name, type, fire, aa, asw, los, speedIndex) {
-      var row = rowTemplate(name, type, fire, aa, asw, los, speedIndex);
-      rowsEl.appendChild(row);
-      row.querySelector('.r-remove').addEventListener('click', function () {
-        row.remove();
-        recalc();
-      });
-      row.querySelectorAll('input, select').forEach(function (inp) {
-        inp.addEventListener('input', recalc);
-        inp.addEventListener('change', recalc);
-      });
-      recalc();
-    }
-
-    function recalc() {
-      var rows = rowsEl.querySelectorAll('.fleet-calc-row');
-      var fire = 0, aa = 0, asw = 0, los = 0, minSpeed = null;
-      var types = {};
-      rows.forEach(function (row) {
-        fire += parseFloat(row.querySelector('.r-fire').value) || 0;
-        aa += parseFloat(row.querySelector('.r-aa').value) || 0;
-        asw += parseFloat(row.querySelector('.r-asw').value) || 0;
-        los += parseFloat(row.querySelector('.r-los').value) || 0;
-        var sp = parseInt(row.querySelector('.r-speed').value, 10);
-        if (minSpeed === null || sp < minSpeed) minSpeed = sp;
-        var t = row.querySelector('.r-type').value.trim() || '?';
-        types[t] = (types[t] || 0) + 1;
-      });
-      document.getElementById('f-count').textContent = rows.length;
-      document.getElementById('f-fire').textContent = fire;
-      document.getElementById('f-aa').textContent = aa;
-      document.getElementById('f-asw').textContent = asw;
-      document.getElementById('f-los').textContent = los;
-      document.getElementById('f-speed').textContent = minSpeed === null ? '—' : SPEED_LABELS[minSpeed];
-      var typeStr = Object.keys(types).map(function (t) { return t + '×' + types[t]; }).join(', ');
-      document.getElementById('f-types').textContent = typeStr || '—';
-    }
-
-    document.getElementById('picker-add').addEventListener('click', function () {
-      var s = SHIPS[parseInt(picker.value, 10)];
-      addRow(s[0], s[1], s[2], s[3], s[4], s[5], s[6]);
-    });
-    document.getElementById('fleet-add-row').addEventListener('click', function () {
-      addRow('新舰船', 'DD', 0, 0, 0, 0, 1);
-    });
-
-    addRow('Yukikaze Kai (雪風改)', 'DD', 59, 59, 59, 39, 1);
-    addRow('Ayanami Kai (綾波改)', 'DD', 49, 49, 59, 39, 1);
-    addRow('Yuudachi Kai (夕立改)', 'DD', 49, 49, 59, 39, 1);
-    addRow('Shigure Kai (時雨改)', 'DD', 49, 49, 59, 39, 1);
-    addRow('Sendai Kai (川内改)', 'CL', 59, 69, 79, 49, 1);
-    addRow('Naka Kai (那珂改)', 'CL', 59, 59, 79, 49, 1);
-  })();
+  window.FLEET_I18N = {"low": "低速", "high": "高速", "newShip": "新舰船", "remove": "删除舰船", "showing": "共 {total} 艘，显示 {shown} 艘", "noResults": "没有符合条件的舰船。", "notFound": "请从列表中选择舰船。", "loadError": "舰船数据加载失败，请刷新页面。"};
 </script>
+<script src="/assets/games/kancolle-fleet-builder.js"></script>
 </body>
 </html>

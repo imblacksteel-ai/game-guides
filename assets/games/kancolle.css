@@ -248,7 +248,16 @@ table.glossary .romaji { color: var(--ink-faint); font-size: .78rem; font-family
 
 /* ---------- Fleet Builder ---------- */
 .fleet-picker { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-.fleet-picker select#ship-picker {
+.ship-filter { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+.ship-filter input, .ship-filter select {
+  font-family: 'Zen Kaku Gothic New', sans-serif; font-size: .88rem;
+  padding: 9px 10px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--surface-2); color: var(--ink);
+}
+.ship-filter input { flex: 1 1 240px; }
+.ship-filter input:focus, .ship-filter select:focus, .fleet-picker input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.ship-count { font-size: .8rem; color: var(--ink-faint); margin: 0 0 8px; }
+.fleet-picker input#ship-picker {
   flex: 1 1 260px; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: .88rem;
   padding: 9px 10px; border-radius: 8px; border: 1px solid var(--line);
   background: var(--surface-2); color: var(--ink);
@@ -300,3 +309,7 @@ footer nav.site-links a:hover { color: var(--ink-dim); }
 .more-guides-links { display: flex; flex-wrap: wrap; gap: 8px; }
 .more-guides-links a { font-size: .85rem; background: var(--surface); border: 1px solid var(--line); padding: 7px 14px; border-radius: 999px; text-decoration: none; color: var(--ink); }
 .more-guides-links a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- Ship lookup table (bounded so it never buries the builder) ---------- */
+.ship-table-scroll { max-height: 460px; overflow: auto; border: 1px solid var(--line); border-radius: 10px; }
+.ship-table-scroll thead th { position: sticky; top: 0; background: var(--surface); z-index: 1; }
