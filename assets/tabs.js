@@ -1,6 +1,9 @@
 (function () {
   var links = Array.prototype.slice.call(document.querySelectorAll('.tabs-links a'));
-  var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  var sections = links.map(function (a) {
+    var href = a.getAttribute('href');
+    return href.charAt(0) === '#' ? document.querySelector(href) : null;
+  });
 
   function setActive(id) {
     links.forEach(function (a) {
