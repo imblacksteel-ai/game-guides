@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="超級機器人大戰DD 的連鎖傷害加成究竟如何增長、什麼會打斷連鎖，以及維持連鎖的社群技巧——包括一個可能是bug的小竅門。">
+<title>超級機器人大戰DD 連鎖系統詳解</title>
+<link rel="stylesheet" href="/assets/games/srwdd.css">
+<link rel="canonical" href="https://kouryakulab.com/zh-hant/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/srwdd/chain-system/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/srwdd/chain-system/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:title" content="超級機器人大戰DD 連鎖系統詳解">
+<meta property="og:description" content="超級機器人大戰DD 的連鎖傷害加成究竟如何增長、什麼會打斷連鎖，以及維持連鎖的社群技巧——包括一個可能是bug的小竅門。">
+<meta property="og:url" content="https://kouryakulab.com/zh-hant/games/srwdd/chain-system/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-srwdd.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="超級機器人大戰DD 連鎖系統詳解">
+<meta name="twitter:description" content="超級機器人大戰DD 的連鎖傷害加成究竟如何增長、什麼會打斷連鎖，以及維持連鎖的社群技巧——包括一個可能是bug的小竅門。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-srwdd.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "超級機器人大戰DD 連鎖系統詳解",
+      "description": "超級機器人大戰DD 的連鎖傷害加成究竟如何增長、什麼會打斷連鎖，以及維持連鎖的社群技巧——包括一個可能是bug的小竅門。",
+      "inLanguage": "zh-Hant",
+      "url": "https://kouryakulab.com/zh-hant/games/srwdd/chain-system/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/zh-hant/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/zh-hant/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "超級機器人大戰DD 連鎖系統詳解",
+          "item": "https://kouryakulab.com/zh-hant/games/srwdd/chain-system/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/zh-hant/games/srwdd/"><span class="arrow">←</span> 超級機器人大戰DD 完整攻略指南</a>
+    <div>
+      <span class="eyebrow">SRW DD · 連鎖系統</span>
+      <h1>連鎖系統詳解</h1>
+      <p class="sub">持續攻擊不中斷，可以累積提升全隊傷害的"連鎖"。這裡整理了實際的加成曲線、什麼會打斷連鎖，以及幾個維持連鎖的社群技巧——其中一個可能是bug。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="語言"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+
+  <div class="panel">
+    <h2 style="font-size:1.1rem;margin-bottom:14px;">傷害加成實際如何增長</h2>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">這不是官方公式——Bandai Namco 從未公佈過——但多個社群攻略網站一致記錄了一條階梯式曲線，並且與我們此前掌握的3個參考數值（連鎖1、50、100）完全吻合：</p>
+    <div class="table-scroll">
+      <table class="chaintable">
+        <thead><tr><th>連鎖數</th><th>傷害加成</th></tr></thead>
+        <tbody>
+          <tr><td class="chain-n">1–9</td><td>+5%</td></tr>
+          <tr><td class="chain-n">10–19</td><td>+10%</td></tr>
+          <tr><td class="chain-n">20–29</td><td>+20%</td></tr>
+          <tr><td class="chain-n">30–39</td><td>+30%</td></tr>
+          <tr><td class="chain-n">…</td><td>此後每+10連鎖再加+10%</td></tr>
+          <tr><td class="chain-n">90–99</td><td>+90%</td></tr>
+          <tr><td class="chain-n">100</td><td>+100%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--ink-faint);font-size:.85rem;margin:14px 0 0;">連鎖超過100後加成是否繼續增長，還是就此封頂，目前沒有找到任何相關記載。100只是"已確認的最高數值"，不代表一定是硬性上限。</p>
+  </div>
+
+  <div class="panel" style="margin-top:16px;">
+    <h2 style="font-size:1.1rem;margin-bottom:10px;">什麼會打斷連鎖</h2>
+    <ul style="color:var(--ink-dim);font-size:.93rem;margin:0;padding-inline-start:20px;">
+      <li>該機體回合選擇<b>待機</b>而非行動</li>
+      <li>選擇<b>防禦</b>而非攻擊</li>
+      <li>攻擊被敵人<b>閃避</b></li>
+    </ul>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:14px 0 0;">社群通常把維持連鎖的條件概括為"持續命中"——這很大程度上暗示攻擊落空（未命中）同樣會打斷連鎖，但沒有資訊來源明確將其列為區別於"被閃避"的獨立觸發條件。請將其視為高機率推測，而非已確認事實。</p>
+  </div>
+
+  <div class="panel" style="margin-top:16px;">
+    <h2 style="font-size:1.1rem;margin-bottom:14px;">兩個社群技巧</h2>
+    <div class="two-col">
+      <div class="panel">
+        <h3 style="font-size:.95rem;margin-bottom:10px;">不想行動的機體設為AI"僅防禦"</h3>
+        <p style="color:var(--ink-dim);font-size:.93rem;margin:0;">如果友方在敵方攻擊範圍內，但你這回合不想讓它行動，據反饋將該機體的AI指令設為"僅防禦"可以避免打斷連鎖——比手動選擇待機更乾淨。各來源對具體運作機制記載都不夠詳細，所以請把這當作有人反饋過的技巧，而非確定的規則。</p>
+      </div>
+      <div class="panel">
+        <h3 style="font-size:.95rem;margin-bottom:10px;">射程外的機體切換為自動模式</h3>
+        <p style="color:var(--ink-dim);font-size:.93rem;margin:0;">如果某臺機體根本夠不到任何目標，手動結束它的回合會被視為待機，從而打斷連鎖。據反饋，該回合把這臺機體切換為自動模式可以規避這個問題。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:16px;"><b>可能是bug的小竅門：</b>SRW DD 社群攻略Wiki的小知識/bug頁面提到，機體處於自動模式時做出的多餘或"無意義"行動，據反饋不會打斷連鎖，即便同樣的行動手動執行時會打斷。該頁面本身也將其標註為可能的bug而非有意為之的設計，所以不要把整套戰術建立在這個前提上——它隨時可能在未通知的情況下被修復。</div>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>繼續閱讀</h3>
+    <div class="more-guides-links">
+      <a href="/zh-hant/games/srwdd/">超級機器人大戰DD 完整攻略指南</a>
+      <a href="/zh-hant/games/srwdd/tier-list/">強度排行</a>
+      <a href="/zh-hant/games/srwdd/#early">新手上路</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本頁是根據公開的社群資訊整理的非官方粉絲攻略，所涉遊戲沒有官方英文在地化版本。文中描述的連鎖加成數值與機制均為社群記錄的資訊，並非官方公佈的公式，可能不完全準確，也可能隨未來更新而變化。</div>
+    <div class="sources">
+      資訊來源：
+      <a href="https://mottosiritaisuparobodd.com/2022/03/14/%E3%83%81%E3%82%A7%E3%82%A4%E3%83%B3%E3%83%BB%E3%83%87%E3%82%AB%E3%83%83%E3%82%BF%E3%83%BC%E3%81%AE%E8%80%83%E5%AF%9F/" target="_blank" rel="noopener">連鎖與傷害機制討論</a>
+      <a href="https://falokn.org/super-robot-wars-dd-guide-for-beginners-rerolling-to-chain-system/" target="_blank" rel="noopener">新手與連鎖系統攻略</a>
+      <a href="https://w.atwiki.jp/srwdd/pages/58.html" target="_blank" rel="noopener">小知識與Bug Wiki（SRW DD）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="網站連結"><a href="/zh-hant/about/">關於本站</a> · <a href="/zh-hant/authors/">作者資訊</a> · <a href="/zh-hant/editorial-policy/">編輯方針</a> · <a href="/zh-hant/contact/">聯絡我們</a> · <a href="/zh-hant/terms/">使用條款</a> · <a href="/zh-hant/privacy/">隱私政策</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

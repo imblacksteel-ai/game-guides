@@ -3,7 +3,8 @@
     { code: 'en', label: 'English', prefix: '' },
     { code: 'ja', label: '日本語', prefix: '/ja' },
     { code: 'ko', label: '한국어', prefix: '/ko' },
-    { code: 'zh', label: '中文', prefix: '/zh' },
+    { code: 'zh', label: '简体中文', prefix: '/zh' },
+    { code: 'zh-hant', label: '繁體中文', prefix: '/zh-hant' },
     { code: 'de', label: 'Deutsch', prefix: '/de' },
     { code: 'fr', label: 'Français', prefix: '/fr' },
     { code: 'ar', label: 'العربية', prefix: '/ar' }

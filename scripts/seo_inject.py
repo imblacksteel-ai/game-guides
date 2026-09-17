@@ -14,7 +14,7 @@ kouryakulab.com 向けSEO/OGPメタデータ一括挿入スクリプト。
   - hero内「更新日」ファクトタイル（ゲームガイドページのみ）
   - フッター「他の攻略ガイド」相互リンク（ゲームガイドページのみ、自分自身は除外）
 
-対象ページは自動検出（ルート・ja/・ko/・zh/・de/・fr/・ar/ 配下の
+対象ページは自動検出（ルート・ja/・ko/・zh/・zh-hant/・de/・fr/・ar/ 配下の
 index.html、games/<slug>/index.html、privacy/index.html を全て走査）。
 新しいゲームを追加した時は、7言語ぶんのHTMLを作った後にこのスクリプトを実行するだけでよい。
 
@@ -36,53 +36,53 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = "https://kouryakulab.com"
 
 LOCALE = {
-    "en": "en_US", "ja": "ja_JP", "ko": "ko_KR", "zh-Hans": "zh_CN",
+    "en": "en_US", "ja": "ja_JP", "ko": "ko_KR", "zh-Hans": "zh_CN", "zh-Hant": "zh_TW",
     "de": "de_DE", "fr": "fr_FR", "ar": "ar_AR",
 }
-LANG_DIRS = ["", "ja", "ko", "zh", "de", "fr", "ar"]  # "" = ルート(英語)
+LANG_DIRS = ["", "ja", "ko", "zh", "zh-hant", "de", "fr", "ar"]  # "" = ルート(英語)
 
 ADSENSE_CLIENT = "ca-pub-2939651190150074"
 GA_MEASUREMENT_ID = "G-2DMV4KX041"
 
 PRIVACY_LABEL = {
     "en": "Privacy Policy", "ja": "プライバシーポリシー", "ko": "개인정보처리방침",
-    "zh-Hans": "隐私政策", "de": "Datenschutzerklärung", "fr": "Politique de confidentialité",
+    "zh-Hans": "隐私政策", "zh-Hant": "隱私政策", "de": "Datenschutzerklärung", "fr": "Politique de confidentialité",
     "ar": "سياسة الخصوصية",
 }
 
 ABOUT_LABEL = {
     "en": "About", "ja": "サイトについて", "ko": "사이트 소개",
-    "zh-Hans": "关于本站", "de": "Über uns", "fr": "À propos",
+    "zh-Hans": "关于本站", "zh-Hant": "關於本站", "de": "Über uns", "fr": "À propos",
     "ar": "حول الموقع",
 }
 
 AUTHORS_LABEL = {
     "en": "Authors", "ja": "執筆者について", "ko": "필자 소개",
-    "zh-Hans": "作者信息", "de": "Autoren", "fr": "Auteurs",
+    "zh-Hans": "作者信息", "zh-Hant": "作者資訊", "de": "Autoren", "fr": "Auteurs",
     "ar": "الكتّاب",
 }
 
 EDITORIAL_POLICY_LABEL = {
     "en": "Editorial Policy", "ja": "編集方針", "ko": "편집 방침",
-    "zh-Hans": "编辑方针", "de": "Redaktionelle Richtlinien", "fr": "Charte éditoriale",
+    "zh-Hans": "编辑方针", "zh-Hant": "編輯方針", "de": "Redaktionelle Richtlinien", "fr": "Charte éditoriale",
     "ar": "السياسة التحريرية",
 }
 
 CONTACT_LABEL = {
     "en": "Contact", "ja": "お問い合わせ", "ko": "문의하기",
-    "zh-Hans": "联系我们", "de": "Kontakt", "fr": "Contact",
+    "zh-Hans": "联系我们", "zh-Hant": "聯絡我們", "de": "Kontakt", "fr": "Contact",
     "ar": "تواصل معنا",
 }
 
 TERMS_LABEL = {
     "en": "Terms of Use", "ja": "利用規約", "ko": "이용약관",
-    "zh-Hans": "使用条款", "de": "Nutzungsbedingungen", "fr": "Conditions d'utilisation",
+    "zh-Hans": "使用条款", "zh-Hant": "使用條款", "de": "Nutzungsbedingungen", "fr": "Conditions d'utilisation",
     "ar": "شروط الاستخدام",
 }
 
 SITE_LINKS_ARIA = {
     "en": "Site links", "ja": "サイトリンク", "ko": "사이트 링크",
-    "zh-Hans": "网站链接", "de": "Website-Links", "fr": "Liens du site",
+    "zh-Hans": "网站链接", "zh-Hant": "網站連結", "de": "Website-Links", "fr": "Liens du site",
     "ar": "روابط الموقع",
 }
 
@@ -99,14 +99,14 @@ SITE_LINK_LABELS = {
 
 UPDATED_LABEL = {
     "en": "Updated", "ja": "更新日", "ko": "업데이트",
-    "zh-Hans": "更新时间", "de": "Aktualisiert", "fr": "Mis à jour",
+    "zh-Hans": "更新时间", "zh-Hant": "更新時間", "de": "Aktualisiert", "fr": "Mis à jour",
     "ar": "آخر تحديث",
 }
 UPDATED_VALUE = "2026.09"
 
 MORE_GUIDES_LABEL = {
     "en": "More Guides", "ja": "他の攻略ガイド", "ko": "다른 공략 가이드",
-    "zh-Hans": "更多攻略指南", "de": "Weitere Guides", "fr": "Plus de guides",
+    "zh-Hans": "更多攻略指南", "zh-Hant": "更多攻略指南", "de": "Weitere Guides", "fr": "Plus de guides",
     "ar": "المزيد من الأدلة",
 }
 
@@ -114,21 +114,21 @@ MORE_GUIDES_LABEL = {
 GAME_NAMES = {
     "haran-suisekai": {
         "en": "Wild Water World", "ja": "波乱水世界", "ko": "Wild Water World",
-        "zh-Hans": "Wild Water World", "de": "Wild Water World", "fr": "Wild Water World",
+        "zh-Hans": "Wild Water World", "zh-Hant": "Wild Water World", "de": "Wild Water World", "fr": "Wild Water World",
         "ar": "Wild Water World",
     },
     "kancolle": {
         "en": "KanColle", "ja": "艦これ", "ko": "KanColle",
-        "zh-Hans": "KanColle", "de": "KanColle", "fr": "KanColle", "ar": "KanColle",
+        "zh-Hans": "KanColle", "zh-Hant": "KanColle", "de": "KanColle", "fr": "KanColle", "ar": "KanColle",
     },
     "srwdd": {
         "en": "Super Robot Wars DD", "ja": "スパロボDD", "ko": "Super Robot Wars DD",
-        "zh-Hans": "Super Robot Wars DD", "de": "Super Robot Wars DD", "fr": "Super Robot Wars DD",
+        "zh-Hans": "Super Robot Wars DD", "zh-Hant": "超級機器人大戰DD", "de": "Super Robot Wars DD", "fr": "Super Robot Wars DD",
         "ar": "Super Robot Wars DD",
     },
     "deresute": {
         "en": "Deresute (CGSS)", "ja": "デレステ", "ko": "Deresute (CGSS)",
-        "zh-Hans": "Deresute (CGSS)", "de": "Deresute (CGSS)", "fr": "Deresute (CGSS)",
+        "zh-Hans": "Deresute (CGSS)", "zh-Hant": "Deresute (CGSS)", "de": "Deresute (CGSS)", "fr": "Deresute (CGSS)",
         "ar": "Deresute (CGSS)",
     },
 }

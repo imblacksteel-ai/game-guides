@@ -8,7 +8,8 @@
 
 - 静的HTMLのゲーム攻略・ツールサイト。GitHub Pages（`imblacksteel-ai/game-guides`）でホスト。
 - カスタムドメイン: `kouryakulab.com`（Cloudflare DNS → GitHub Pages、HTTPS強制化済み）。
-- 7言語対応: 英語(既定/ルート) / 日本語 `/ja/` / 韓国語 `/ko/` / 中国語簡体字 `/zh/` / ドイツ語 `/de/` / フランス語 `/fr/` / アラビア語 `/ar/`（RTL）。
+- 8言語対応: 英語(既定/ルート) / 日本語 `/ja/` / 韓国語 `/ko/` / 中国語簡体字 `/zh/` / 中国語繁体字 `/zh-hant/` / ドイツ語 `/de/` / フランス語 `/fr/` / アラビア語 `/ar/`（RTL）。
+- 繁体字 `/zh-hant/` は**手で書かない**。簡体字 `/zh/` から `scripts/build_zh_hant.py`（OpenCC s2twp、台湾語彙）で生成する。簡体字ページを追加・修正したら再生成する。hreflangは `zh-Hant`、og:localeは `zh_TW`。
 - ビルドツールなし。素のHTML/CSS/JSのみ。npm等は使っていない。
 
 **インフラはセットアップ済み。以下を再実行しない：**
@@ -20,7 +21,7 @@
 ```
 /index.html                          英語版トップ（正本）
 /games/<slug>/index.html             英語版ゲーム攻略ページ
-/ja/, /ko/, /zh/, /de/, /fr/, /ar/    各言語版（同じ構造をミラー）
+/ja/, /ko/, /zh/, /zh-hant/, /de/, /fr/, /ar/    各言語版（同じ構造をミラー。zh-hantはzhから自動生成）
 /assets/site.css                     トップページ共通CSS（全言語共有・1ファイルのみ編集）
 /assets/lang-switch.js               言語切替メニュー（全言語共有・1ファイルのみ編集）
 /assets/tabs.js                      タブのスクロールスパイ（全言語・全ゲーム共有・1ファイルのみ編集）
@@ -33,8 +34,8 @@ CNAME, robots.txt, sitemap.xml       ドメイン・SEO設定
 1. `games/haran-suisekai/index.html` を**テンプレートとして**読む。クラス名・hreflang構成・言語切替の埋め込み方法をそのまま踏襲する。タブ切り替え（スクロールスパイ）は body末尾で `<script src="/assets/lang-switch.js"></script>` の次に `<script src="/assets/tabs.js"></script>` を置くだけでよい。**このJSを毎回`<script>...</script>`にベタ書きしない**（過去に28ファイルへ複製してしまい、後から`/assets/tabs.js`に切り出した経緯がある）。ゲーム固有のJS（KanColleの計算機のような機能）が必要な場合は、`tabs.js`の読み込みタグの後に別の`<script>...</script>`ブロックを追加する。
 2. 攻略情報はWeb検索で集める。ただし**同じゲームを再調査しない** — 一度集めた事実は該当ページのHTML内に残っているので、追記・修正時はまずそのページをReadする。
 3. 英語版を先に正本として書く（事実の翻訳元）。他言語はそこから翻訳する。
-4. 7言語ぶんのファイルを新規作成する必要がある場合のみforkサブエージェントを使う（2言語ずつ束ねるなど）。**1〜2ファイルの軽微な修正・誤字修正・追記にforkは使わない** — 自分で直接Editする。
-5. 各言語ページの`<head>`にhreflangブロックを追加する（7言語 + x-default、既存ページのブロックをコピーしてcanonicalだけ差し替え）。
+4. 7言語ぶん（繁体字は5.の後に自動生成）のファイルを新規作成する必要がある場合のみforkサブエージェントを使う（2言語ずつ束ねるなど）。**1〜2ファイルの軽微な修正・誤字修正・追記にforkは使わない** — 自分で直接Editする。
+5. 各言語ページの`<head>`にhreflangブロックを追加する（8言語 + x-default、既存ページのブロックをコピーしてcanonicalだけ差し替え）。
 6. `sitemap.xml`に新ページのURLを追記する（hreflang alternate込み、既存の`games/haran-suisekai`のブロックをコピーしてURLだけ差し替え）。
 7. `assets/og/og-<slug>.svg`をゲームのテーマ色で作り、`rsvg-convert -w 1200 -h 630 assets/og/og-<slug>.svg -o assets/og/og-<slug>.png`でOG画像を生成する（`assets/og/og-haran-suisekai.svg`が参考例）。
 8. `python3 scripts/seo_inject.py`を実行する。favicon・OGP/Twitterタグ・JSON-LDを全ページに自動挿入する（冪等なので既存ページは自動でスキップされる）。**このタグ群を手で書かない。**
@@ -42,7 +43,7 @@ CNAME, robots.txt, sitemap.xml       ドメイン・SEO設定
 
 ## SEO設定（実装済み・新ページにも自動適用される）
 
-- **hreflang**：各ページの`<head>`に7言語+x-defaultの`<link rel="alternate" hreflang="...">`を設置済み。新ページも手順5参照。
+- **hreflang**：各ページの`<head>`に8言語+x-defaultの`<link rel="alternate" hreflang="...">`を設置済み。新ページも手順5参照。
 - **canonical / meta description**：全ページに設定済み。新ページ作成時に必ず書くこと（`scripts/seo_inject.py`はこれらを既存の値から読み取って他のタグを組み立てるので、無いとスクリプトがエラーになる）。
 - **OGP / Twitter Card**：`scripts/seo_inject.py`が自動生成する。手動で書かない。
 - **JSON-LD構造化データ**：hubページ=`WebSite`、ゲームガイド=`Article`+`BreadcrumbList`。`scripts/seo_inject.py`が生成する。
@@ -63,8 +64,8 @@ git diff --stat                 # 想定した言語数ぶんのファイルが�
 - **全文書き直しよりEdit。** 既存ページの文言修正・誤字・1セクション追加は`Write`で全体を再生成せず`Edit`で差分適用する。
 - **fork/subagentは「並列化して初めて得する量」の時だけ。** 目安：3ファイル以上の独立した翻訳・生成作業が同時に走る場合のみ。1〜2ファイルの修正は自分で直接やる方が速く安い。
 - **スクリーンショット・ブラウザ確認ループを作らない。** 静的HTMLの構造確認は`python3`でのタグバランスチェックや`curl`のHTTPステータス確認で十分。見た目の最終確認はartifactのプレビューで1回だけ。
-- **CSS/共通JSはトークン化された共通ファイルを編集する。** `site.css`・`lang-switch.js`・`tabs.js`を7言語ぶん個別にコピーしない。ゲーム専用CSSとゲーム固有の機能JS（計算機など）だけがゲームごとに独立している。
-- **hreflangブロックは使い回す。** 7言語+x-defaultのURLリストは機械的に生成できるので、1ページ分作ったら他はcanonicalの差し替えだけで済ませる。
+- **CSS/共通JSはトークン化された共通ファイルを編集する。** `site.css`・`lang-switch.js`・`tabs.js`を言語ごとに個別にコピーしない。ゲーム専用CSSとゲーム固有の機能JS（計算機など）だけがゲームごとに独立している。
+- **hreflangブロックは使い回す。** 8言語+x-defaultのURLリストは機械的に生成できるので、1ページ分作ったら他はcanonicalの差し替えだけで済ませる。
 - **GitHub Pagesのビルド確認は`gh api .../pages/builds/latest`のポーリングで十分。** 無闇に`sleep`を連打しない、`ScheduleWakeup`で数分単位に間隔を空ける。
 
 ## ゲームデータ（数値）の扱い
@@ -76,6 +77,9 @@ git diff --stat                 # 想定した言語数ぶんのファイルが�
 - 新しいゲームを追加する前に、GitHubに抽出済みデータのリポジトリがあるか確認する（中国ゲームは中国語名で検索しないとヒットしない）。数値は事実なので掲載可、ただし画像・音声などのアセットや本文テキストの丸ごと転載はしない。
 
 ## 翻訳の一貫性ルール
+
+- **繁体字版の生成時の注意**：簡体→繁体変換は日本語の漢字も書き換える（装備→裝備）ため、`class="jp"`/`class="romaji"` の要素とカナを含む語は変換から保護している。ゲーム内の日本語表記はこれらのクラスで囲むこと。
+- **繁体字圏では事実が変わるゲームがある**：スパロボDDは台港澳向けの公式繁体中文版がある（公式名「超級機器人大戰DD」、srw-dd-tw.suparobo.jp）。簡体字版の「公式中文版なし」は繁体字版では誤りになるので、`build_zh_hant.py` の `OVERRIDES` で上書きしている。簡体字版の該当文を変えたら `OVERRIDES` も直す（見つからないとエラーで止まる）。
 
 - ブランド名 `Kouryaku Lab` は全言語で英語表記のまま（ロゴ的な固有名詞として統一）。日本語版のみ「攻略ラボ」を使う（もともとの正式名）。
 - ゲームの国際版タイトルが確認できる場合はそれを正本にする（例: 波乱水世界 → 英語圏では "Wild Water World"）。確認できない言語では英語の国際版タイトルをそのまま流用し、存在しないローカライズ名を創作しない。
