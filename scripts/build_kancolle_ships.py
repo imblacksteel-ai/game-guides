@@ -41,7 +41,7 @@ STYPE = {
 }
 
 FIELDS = ["jp", "en", "type", "hp", "fire", "torp", "aa", "armor",
-          "asw", "los", "luck", "slots", "speed"]
+          "asw", "los", "luck", "slots", "speed", "remodel_lv", "remodel_to"]
 
 
 def fetch(name, url):
@@ -53,12 +53,22 @@ def fetch(name, url):
     return json.load(open(path))
 
 
+def remodel_name(ship, by_id):
+    """改造先の日本語名（マスターデータの api_name）。改造がない場合は空文字。
+    表示側で jp 列を引いて「英語名 (日本語名)」にするため、言語に依存しない日本語名で持つ。"""
+    if not ship.get("api_afterlv"):
+        return ""
+    target = by_id.get(int(ship.get("api_aftershipid") or 0))
+    return target["api_name"] if target else ""
+
+
 def main():
     master = fetch("master", SOURCES["master"])
     wiki = fetch("wiki", SOURCES["wiki"])
     tl = fetch("tl", SOURCES["tl"])
 
     mst = {s["api_name"]: s for s in master["api_mst_ship"]}
+    by_id = {s["api_id"]: s for s in master["api_mst_ship"]}
 
     ships = []
     skipped = []
@@ -86,6 +96,8 @@ def main():
             s["api_luck"][0],      # 運（初期値。レベルでは上がらない）
             s["api_slot_num"],
             1 if s["api_soku"] >= 10 else 0,   # 1=高速 0=低速
+            s.get("api_afterlv", 0) or 0,      # 次の改造レベル（0=これ以上なし）
+            remodel_name(s, by_id),
         ])
 
     ships.sort(key=lambda r: (r[2], r[1]))
@@ -96,7 +108,9 @@ def main():
         "_note": ("hp and luck are base values (both rise only through modernization, "
                   "not levelling). fire/torp/aa/armor are Lv99 maxima from the game's "
                   "own master data. asw/los are Lv99 maxima from KanColle Wiki, since "
-                  "the master data does not carry them."),
+                  "the master data does not carry them. remodel_lv/remodel_to come "
+                  "from the master data (api_afterlv/api_aftershipid); 0/empty means "
+                  "no further remodel."),
         "generated": date.today().isoformat(),
         "fields": FIELDS,
         "ships": ships,

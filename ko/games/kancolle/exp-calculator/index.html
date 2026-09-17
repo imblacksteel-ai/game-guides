@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="칸코레 경험치 계산기. 목표 레벨이나 다음 개장 레벨까지 필요한 경험치와 출격 횟수를 계산합니다. 현재 레벨 상한 Lv188 대응.">
+<title>KanColle 경험치 계산기: 레벨업·개장까지 출격 횟수</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/ko/games/kancolle/exp-calculator/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/exp-calculator/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/exp-calculator/">
+<link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/kancolle/exp-calculator/">
+<link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/kancolle/exp-calculator/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/games/kancolle/exp-calculator/">
+<link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/kancolle/exp-calculator/">
+<link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/kancolle/exp-calculator/">
+<link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/kancolle/exp-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/exp-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:title" content="KanColle 경험치 계산기: 레벨업·개장까지 출격 횟수">
+<meta property="og:description" content="칸코레 경험치 계산기. 목표 레벨이나 다음 개장 레벨까지 필요한 경험치와 출격 횟수를 계산합니다. 현재 레벨 상한 Lv188 대응.">
+<meta property="og:url" content="https://kouryakulab.com/ko/games/kancolle/exp-calculator/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KanColle 경험치 계산기: 레벨업·개장까지 출격 횟수">
+<meta name="twitter:description" content="칸코레 경험치 계산기. 목표 레벨이나 다음 개장 레벨까지 필요한 경험치와 출격 횟수를 계산합니다. 현재 레벨 상한 Lv188 대응.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "KanColle 경험치 계산기: 레벨업·개장까지 출격 횟수",
+      "description": "칸코레 경험치 계산기. 목표 레벨이나 다음 개장 레벨까지 필요한 경험치와 출격 횟수를 계산합니다. 현재 레벨 상한 Lv188 대응.",
+      "inLanguage": "ko",
+      "url": "https://kouryakulab.com/ko/games/kancolle/exp-calculator/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/ko/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/ko/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "KanColle 경험치 계산기: 레벨업·개장까지 출격 횟수",
+          "item": "https://kouryakulab.com/ko/games/kancolle/exp-calculator/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ko/games/kancolle/"><span class="arrow">←</span> KanColle 공략 가이드 전체</a>
+    <div>
+      <span class="eyebrow">KANCOLLE · 경험치</span>
+      <h1>경험치 계산기</h1>
+      <p class="sub">다음 개장이나 목표 레벨까지 경험치가 얼마나 필요하고, 몇 번 출격해야 할까요? 함선을 고르고 전투 결과 화면의 기본 경험치를 입력하면 바로 계산됩니다.</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="언어"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+
+  <section id="calculator" style="padding-block:0;">
+    <div class="panel calc-panel">
+      <div class="exp-form">
+        <label class="exp-wide">함선 (선택 — 고르면 다음 개장 레벨을 자동 입력)
+          <input type="text" id="exp-ship" list="exp-ship-list" placeholder="예: Yukikaze, 雪風" autocomplete="off">
+          <datalist id="exp-ship-list"></datalist>
+          <span class="exp-hint" id="exp-ship-info"></span>
+        </label>
+        <label>현재 레벨
+          <input type="number" id="exp-current" min="1" max="188" value="1">
+        </label>
+        <label>다음 레벨까지 경험치 (선택)
+          <input type="number" id="exp-to-next" min="0" placeholder="비워 두어도 됨">
+        </label>
+        <label>목표 레벨
+          <input type="number" id="exp-target" min="1" max="188" value="20">
+        </label>
+        <label>전투당 기본 경험치
+          <input type="number" id="exp-base" min="0" value="100">
+        </label>
+        <label>전투 평가
+          <select id="exp-rank">
+            <option value="S" selected>S (×1.2)</option>
+            <option value="A">A (×1.0)</option>
+            <option value="B">B (×1.0)</option>
+            <option value="C">C (×0.8)</option>
+            <option value="D">D (×0.7)</option>
+            <option value="E">E (×0.5)</option>
+          </select>
+        </label>
+        <label>출격당 전투 수
+          <input type="number" id="exp-battles" min="1" value="1">
+        </label>
+        <label class="exp-check"><input type="checkbox" id="exp-flag" checked> 기함 (×1.5)</label>
+        <label class="exp-check"><input type="checkbox" id="exp-mvp" checked> MVP (×2)</label>
+      </div>
+
+      <div class="calc-result" style="flex-direction:column;align-items:stretch;gap:10px;">
+        <div style="display:flex;flex-wrap:wrap;gap:22px;">
+          <div><div class="result-label">필요 경험치</div><div class="result-value tag-mono" id="r-needed" style="font-size:1.3rem;">—</div></div>
+          <div><div class="result-label">전투당 경험치</div><div class="result-value tag-mono" id="r-per-battle" style="font-size:1.3rem;">—</div></div>
+          <div><div class="result-label">전투 횟수</div><div class="result-value tag-mono" id="r-battles" style="font-size:1.3rem;">—</div></div>
+          <div><div class="result-label">출격 횟수</div><div class="result-value tag-mono" id="r-sorties" style="font-size:1.3rem;">—</div></div>
+        </div>
+        <div class="exp-note" id="exp-note"></div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="glossary">
+          <thead><tr><th>같은 평가에서 이 함선이…</th><th>전투당 경험치</th><th>출격 횟수</th></tr></thead>
+          <tbody id="exp-scenarios"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <div class="callout"><b>기본 경험치는 어디에 나오나요?</b> 전투 결과 화면에 <span class="jp">基本経験値</span>(기본 경험치)로 표시됩니다. 2018년 2기 업데이트 이후로는 맵이 아니라 싸운 적 편성에 따라 값이 정해지므로, 같은 칸이라도 달라질 수 있습니다. 실제로 반복하는 전투의 수치를 사용하세요.</div>
+
+  <div class="panel" style="margin-top:16px;">
+    <h2 style="font-size:1.1rem;margin-bottom:10px;">계산 방법</h2>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 12px;">전투당 경험치 = 기본 경험치 × 평가 배율 × 기함이면 1.5 × MVP면 2. E 평가에는 MVP가 없습니다. 최대는 기함이면서 MVP이고 S 평가일 때의 3.6배입니다.</p>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:0;">함선은 Lv99에서 멈추며, <span class="jp">ケッコンカッコカリ</span>(결혼)을 하면 추가 경험치 없이 Lv100이 됩니다. 그 뒤로는 현재 상한인 Lv<span id="exp-max-level">188</span>까지 올릴 수 있습니다. 연습순양함(CT) 보너스는 포함하지 않았으며, 게임 내 반올림으로 몇 포인트 차이가 날 수 있습니다.</p>
+  </div>
+
+  <div class="more-guides" style="border-bottom:none;padding-block-start:20px;">
+    <h3>이어서 읽기</h3>
+    <div class="more-guides-links">
+      <a href="/ko/games/kancolle/">KanColle 공략 가이드 전체</a>
+      <a href="/ko/games/kancolle/fleet-builder/">함대 편성 시뮬레이터</a>
+      <a href="/ko/games/kancolle/expeditions/">원정 효율 계산기</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">비공식 팬메이드 도구입니다. 레벨별 필요 경험치는 일본 칸코레 공략 위키와 레벨마다 대조했고, 개장 레벨은 게임 자체의 마스터 데이터(api_start2)에서 가져왔습니다. 경험치 공식은 커뮤니티에서 검증된 것이므로 실제 결과와 비교해 사용하세요.</div>
+    <div class="sources">
+      출처:
+      <a href="https://github.com/KC3Kai/KC3Kai" target="_blank" rel="noopener">KC3Kai (경험치 표, MIT 라이선스)</a>
+      <a href="https://wikiwiki.jp/kancolle/%E7%B5%8C%E9%A8%93%E5%80%A4" target="_blank" rel="noopener">일본 칸코레 공략 위키 (경험치)</a>
+      <a href="https://kancolle.fandom.com/wiki/Experience_and_Rank" target="_blank" rel="noopener">KanColle Wiki (Experience and Rank)</a>
+      <a href="https://github.com/kcwiki/kancolle-data" target="_blank" rel="noopener">kcwiki/kancolle-data (개장 레벨)</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="사이트 링크"><a href="/ko/about/">사이트 소개</a> · <a href="/ko/authors/">필자 소개</a> · <a href="/ko/editorial-policy/">편집 방침</a> · <a href="/ko/contact/">문의하기</a> · <a href="/ko/terms/">이용약관</a> · <a href="/ko/privacy/">개인정보처리방침</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+<script>
+  window.EXP_I18N = {
+    "noRemodel": "이 함선은 더 이상 개장할 수 없습니다.",
+    "nextRemodel": "다음 개장: Lv{lv}에 {name}. 목표를 Lv{lv}로 설정했습니다.",
+    "marriage": "Lv100 이상으로 올리려면 Lv99에서 ケッコンカッコカリ(결혼)가 필요합니다.",
+    "targetNotAbove": "목표 레벨이 현재 레벨보다 높지 않습니다.",
+    "loadError": "데이터를 불러오지 못했습니다. 페이지를 새로고침하세요.",
+    "scenarios": {
+      "flagMvp": "기함 + MVP",
+      "flagOnly": "기함 (MVP 아님)",
+      "mvpOnly": "MVP (기함 아님)",
+      "neither": "둘 다 아님"
+    }
+  };
+</script>
+<script src="/assets/games/kancolle-exp-calculator.js"></script>
+</body>
+</html>

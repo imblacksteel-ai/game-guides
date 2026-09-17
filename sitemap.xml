@@ -422,4 +422,24 @@
   <url><loc>https://kouryakulab.com/de/games/srwdd/pvp-guide/</loc></url>
   <url><loc>https://kouryakulab.com/fr/games/srwdd/pvp-guide/</loc></url>
   <url><loc>https://kouryakulab.com/ar/games/srwdd/pvp-guide/</loc></url>
+  <url>
+    <loc>https://kouryakulab.com/games/kancolle/exp-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/exp-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/exp-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/kancolle/exp-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/kancolle/exp-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/games/kancolle/exp-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/kancolle/exp-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/kancolle/exp-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/kancolle/exp-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/exp-calculator/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/kancolle/exp-calculator/</loc></url>
+  <url><loc>https://kouryakulab.com/ko/games/kancolle/exp-calculator/</loc></url>
+  <url><loc>https://kouryakulab.com/zh/games/kancolle/exp-calculator/</loc></url>
+  <url><loc>https://kouryakulab.com/zh-hant/games/kancolle/exp-calculator/</loc></url>
+  <url><loc>https://kouryakulab.com/de/games/kancolle/exp-calculator/</loc></url>
+  <url><loc>https://kouryakulab.com/fr/games/kancolle/exp-calculator/</loc></url>
+  <url><loc>https://kouryakulab.com/ar/games/kancolle/exp-calculator/</loc></url>
+
 </urlset>

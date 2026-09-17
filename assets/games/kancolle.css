@@ -313,3 +313,19 @@ footer nav.site-links a:hover { color: var(--ink-dim); }
 /* ---------- Ship lookup table (bounded so it never buries the builder) ---------- */
 .ship-table-scroll { max-height: 460px; overflow: auto; border: 1px solid var(--line); border-radius: 10px; }
 .ship-table-scroll thead th { position: sticky; top: 0; background: var(--surface); z-index: 1; }
+
+/* ---------- EXP calculator ---------- */
+.exp-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px 16px; }
+.exp-form label { display: flex; flex-direction: column; gap: 5px; font-size: .78rem; font-weight: 700; color: var(--ink-dim); }
+.exp-form .exp-wide { grid-column: 1 / -1; }
+.exp-form input[type="text"], .exp-form input[type="number"], .exp-form select {
+  font-family: 'Space Grotesk', 'Zen Kaku Gothic New', sans-serif; font-size: .92rem; font-weight: 500;
+  padding: 8px 10px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--surface-2); color: var(--ink);
+}
+.exp-form input:focus, .exp-form select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.exp-form .exp-check { flex-direction: row; align-items: center; gap: 8px; font-size: .88rem; color: var(--ink); }
+.exp-form .exp-check input { width: 18px; height: 18px; accent-color: var(--accent); }
+.exp-hint { font-weight: 400; color: var(--accent); min-height: 1.2em; }
+.exp-note { font-size: .85rem; color: var(--state-denial); }
+.exp-note:empty { display: none; }

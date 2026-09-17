@@ -27,6 +27,7 @@ OG画像について:
 
 使い方: python3 scripts/seo_inject.py
 """
+import html
 import re
 import json
 import os
@@ -169,8 +170,10 @@ def process(path):
     content = open(path, encoding="utf-8").read()
 
     lang = re.search(r'<html lang="([^"]+)"', content).group(1)
-    title = re.search(r"<title>(.*?)</title>", content, re.S).group(1).strip()
-    desc = re.search(r'<meta name="description" content="([^"]*)"', content).group(1)
+    # Read as plain text: esc() re-escapes for attributes and JSON-LD must not carry
+    # HTML entities, so an already-escaped "&amp;" would otherwise become "&amp;amp;".
+    title = html.unescape(re.search(r"<title>(.*?)</title>", content, re.S).group(1).strip())
+    desc = html.unescape(re.search(r'<meta name="description" content="([^"]*)"', content).group(1))
     canonical = re.search(r'<link rel="canonical" href="([^"]+)"', content).group(1)
 
     is_guide = "/games/" in rel or rel.startswith("games/")

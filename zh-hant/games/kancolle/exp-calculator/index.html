@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="KanColle 經驗值計算器：計算艦船升到目標等級或下一次改造所需的經驗值與出擊次數，支援當前等級上限Lv188。">
+<title>KanColle 經驗值計算器：升級與改造所需出擊次數</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/zh-hant/games/kancolle/exp-calculator/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/exp-calculator/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/exp-calculator/">
+<link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/kancolle/exp-calculator/">
+<link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/kancolle/exp-calculator/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/games/kancolle/exp-calculator/">
+<link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/kancolle/exp-calculator/">
+<link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/kancolle/exp-calculator/">
+<link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/kancolle/exp-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/exp-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:title" content="KanColle 經驗值計算器：升級與改造所需出擊次數">
+<meta property="og:description" content="KanColle 經驗值計算器：計算艦船升到目標等級或下一次改造所需的經驗值與出擊次數，支援當前等級上限Lv188。">
+<meta property="og:url" content="https://kouryakulab.com/zh-hant/games/kancolle/exp-calculator/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KanColle 經驗值計算器：升級與改造所需出擊次數">
+<meta name="twitter:description" content="KanColle 經驗值計算器：計算艦船升到目標等級或下一次改造所需的經驗值與出擊次數，支援當前等級上限Lv188。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "KanColle 經驗值計算器：升級與改造所需出擊次數",
+      "description": "KanColle 經驗值計算器：計算艦船升到目標等級或下一次改造所需的經驗值與出擊次數，支援當前等級上限Lv188。",
+      "inLanguage": "zh-Hant",
+      "url": "https://kouryakulab.com/zh-hant/games/kancolle/exp-calculator/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/zh-hant/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/zh-hant/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "KanColle 經驗值計算器：升級與改造所需出擊次數",
+          "item": "https://kouryakulab.com/zh-hant/games/kancolle/exp-calculator/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/zh-hant/games/kancolle/"><span class="arrow">←</span> KanColle 完整攻略指南</a>
+    <div>
+      <span class="eyebrow">KANCOLLE · 經驗值</span>
+      <h1>經驗值計算器</h1>
+      <p class="sub">距離下一次改造或目標等級還差多少經驗值、需要出擊幾次？選擇艦船，輸入戰鬥結算畫面上的基礎經驗值即可算出。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="語言"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+
+  <section id="calculator" style="padding-block:0;">
+    <div class="panel calc-panel">
+      <div class="exp-form">
+        <label class="exp-wide">艦船（可選——選擇後自動填入下一次改造等級）
+          <input type="text" id="exp-ship" list="exp-ship-list" placeholder="例：Yukikaze、雪風" autocomplete="off">
+          <datalist id="exp-ship-list"></datalist>
+          <span class="exp-hint" id="exp-ship-info"></span>
+        </label>
+        <label>當前等級
+          <input type="number" id="exp-current" min="1" max="188" value="1">
+        </label>
+        <label>距下一級所需經驗值（可選）
+          <input type="number" id="exp-to-next" min="0" placeholder="可留空">
+        </label>
+        <label>目標等級
+          <input type="number" id="exp-target" min="1" max="188" value="20">
+        </label>
+        <label>每場戰鬥的基礎經驗值
+          <input type="number" id="exp-base" min="0" value="100">
+        </label>
+        <label>戰鬥評價
+          <select id="exp-rank">
+            <option value="S" selected>S (×1.2)</option>
+            <option value="A">A (×1.0)</option>
+            <option value="B">B (×1.0)</option>
+            <option value="C">C (×0.8)</option>
+            <option value="D">D (×0.7)</option>
+            <option value="E">E (×0.5)</option>
+          </select>
+        </label>
+        <label>每次出擊的戰鬥場數
+          <input type="number" id="exp-battles" min="1" value="1">
+        </label>
+        <label class="exp-check"><input type="checkbox" id="exp-flag" checked> 旗艦（×1.5）</label>
+        <label class="exp-check"><input type="checkbox" id="exp-mvp" checked> MVP（×2）</label>
+      </div>
+
+      <div class="calc-result" style="flex-direction:column;align-items:stretch;gap:10px;">
+        <div style="display:flex;flex-wrap:wrap;gap:22px;">
+          <div><div class="result-label">所需經驗值</div><div class="result-value tag-mono" id="r-needed" style="font-size:1.3rem;">—</div></div>
+          <div><div class="result-label">每場經驗值</div><div class="result-value tag-mono" id="r-per-battle" style="font-size:1.3rem;">—</div></div>
+          <div><div class="result-label">戰鬥場數</div><div class="result-value tag-mono" id="r-battles" style="font-size:1.3rem;">—</div></div>
+          <div><div class="result-label">出擊次數</div><div class="result-value tag-mono" id="r-sorties" style="font-size:1.3rem;">—</div></div>
+        </div>
+        <div class="exp-note" id="exp-note"></div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="glossary">
+          <thead><tr><th>相同評價下，該艦為…</th><th>每場經驗值</th><th>出擊次數</th></tr></thead>
+          <tbody id="exp-scenarios"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <div class="callout"><b>基礎經驗值在哪裡看？</b>顯示在戰鬥結算畫面上，日文標註為<span class="jp">基本経験値</span>。自2018年第二期更新起，該數值由所交戰的敵方編成決定，而不只取決於地圖，因此同一節點也可能不同。請使用你實際反覆刷的那場戰鬥的數值。</div>
+
+  <div class="panel" style="margin-top:16px;">
+    <h2 style="font-size:1.1rem;margin-bottom:10px;">計算方法</h2>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 12px;">每場經驗值 = 基礎經驗值 × 評價倍率 × 旗艦1.5 × MVP 2。E評價沒有MVP。最高為旗艦且MVP並獲得S評價時的3.6倍。</p>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:0;">艦船在Lv99會停止升級，進行<span class="jp">ケッコンカッコカリ</span>（結婚）後無需額外經驗即升至Lv100，之後可繼續升到當前上限Lv<span id="exp-max-level">188</span>。本計算器不含練習巡洋艦（CT）加成，遊戲內的取整也可能讓結果相差幾點。</p>
+  </div>
+
+  <div class="more-guides" style="border-bottom:none;padding-block-start:20px;">
+    <h3>繼續閱讀</h3>
+    <div class="more-guides-links">
+      <a href="/zh-hant/games/kancolle/">KanColle 完整攻略指南</a>
+      <a href="/zh-hant/games/kancolle/fleet-builder/">艦隊編成計算器</a>
+      <a href="/zh-hant/games/kancolle/expeditions/">遠征效率計算器</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本工具為非官方粉絲作品。各等級所需經驗值已與日本艦C攻略Wiki逐級核對，改造等級取自遊戲自身的主資料（api_start2）。經驗值公式為社群驗證的公式，請結合實際結果使用。</div>
+    <div class="sources">
+      資料來源：
+      <a href="https://github.com/KC3Kai/KC3Kai" target="_blank" rel="noopener">KC3Kai（經驗值表，MIT許可證）</a>
+      <a href="https://wikiwiki.jp/kancolle/%E7%B5%8C%E9%A8%93%E5%80%A4" target="_blank" rel="noopener">日本艦C攻略Wiki（經驗值）</a>
+      <a href="https://kancolle.fandom.com/wiki/Experience_and_Rank" target="_blank" rel="noopener">KanColle Wiki（Experience and Rank）</a>
+      <a href="https://github.com/kcwiki/kancolle-data" target="_blank" rel="noopener">kcwiki/kancolle-data（改造等級）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="網站連結"><a href="/zh-hant/about/">關於本站</a> · <a href="/zh-hant/authors/">作者資訊</a> · <a href="/zh-hant/editorial-policy/">編輯方針</a> · <a href="/zh-hant/contact/">聯絡我們</a> · <a href="/zh-hant/terms/">使用條款</a> · <a href="/zh-hant/privacy/">隱私政策</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+<script>
+  window.EXP_I18N = {
+    "noRemodel": "該艦船無法再改造。",
+    "nextRemodel": "下一次改造：Lv{lv} 改為 {name}。已將目標設為 Lv{lv}。",
+    "marriage": "要升到Lv100以上，需要在Lv99進行「ケッコンカッコカリ」（結婚）。",
+    "targetNotAbove": "目標等級不高於當前等級。",
+    "loadError": "資料載入失敗，請重新整理頁面。",
+    "scenarios": {
+      "flagMvp": "旗艦 + MVP",
+      "flagOnly": "旗艦（非MVP）",
+      "mvpOnly": "MVP（非旗艦）",
+      "neither": "都不是"
+    }
+  };
+</script>
+<script src="/assets/games/kancolle-exp-calculator.js"></script>
+</body>
+</html>
