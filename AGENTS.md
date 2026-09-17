@@ -37,7 +37,7 @@ CNAME, robots.txt, sitemap.xml       ドメイン・SEO設定
 5. 各言語ページの`<head>`にhreflangブロックを追加する（7言語 + x-default、既存ページのブロックをコピーしてcanonicalだけ差し替え）。
 6. `sitemap.xml`に新ページのURLを追記する（hreflang alternate込み、既存の`games/haran-suisekai`のブロックをコピーしてURLだけ差し替え）。
 7. `assets/og/og-<slug>.svg`をゲームのテーマ色で作り、`rsvg-convert -w 1200 -h 630 assets/og/og-<slug>.svg -o assets/og/og-<slug>.png`でOG画像を生成する（`assets/og/og-haran-suisekai.svg`が参考例）。
-8. `python3 scripts/seo_inject.py`を実行する。favicon・preconnect・OGP/Twitterタグ・JSON-LDを全ページに自動挿入する（冪等なので既存ページは自動でスキップされる）。**このタグ群を手で書かない。**
+8. `python3 scripts/seo_inject.py`を実行する。favicon・OGP/Twitterタグ・JSON-LDを全ページに自動挿入する（冪等なので既存ページは自動でスキップされる）。**このタグ群を手で書かない。**
 9. 全言語ぶん揃ってから一括でgit commit・push（言語ごとに小分けでコミットしない）。
 
 ## SEO設定（実装済み・新ページにも自動適用される）
@@ -49,11 +49,11 @@ CNAME, robots.txt, sitemap.xml       ドメイン・SEO設定
 - **OG画像**：ゲームごとに`assets/og/og-<slug>.png`（1200x630）が必要。無いと`og-hub.png`に自動フォールバックする（`scripts/seo_inject.py`実行時に警告が出る）。
 - **favicon**：`assets/favicon.svg`ほかをサイト共通で使用。ゲームごとに変える必要はない。
 - **sitemap.xml / robots.txt**：ルート直下に設置済み。新ページ追加時は`sitemap.xml`にURLを追記する（手順6）。
-- **フォントpreconnect**：`scripts/seo_inject.py`が自動挿入する。
+- **Webフォント**：Google Fontsは使わず `assets/fonts/` で自前ホストしている（GDPR対策。Google Fontsへの接続は `preconnect` だけでも訪問者のIPが送られる）。各CSSは `@import url('/assets/fonts/fonts.css')` で読み込む。**`fonts.googleapis.com` を新たに参照しない。** `scripts/seo_inject.py` は残っているGoogle Fontsの `preconnect` を除去する。ウェイトの追加は `scripts/build_fonts.py` の `FAMILIES` を編集して再実行（OFLの条件により各フォントの `OFL.txt` を同梱すること）。
 
 新しいゲームを追加した後の確認コマンド（このAGENTS.mdのやり方に沿っていれば全部pass するはず）:
 ```bash
-python3 scripts/seo_inject.py   # 未挿入ページにOGP/JSON-LD/favicon/preconnectを追加
+python3 scripts/seo_inject.py   # 未挿入ページにOGP/JSON-LD/faviconを追加
 git diff --stat                 # 想定した言語数ぶんのファイルが変更されているか確認
 ```
 

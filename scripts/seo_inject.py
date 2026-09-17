@@ -4,7 +4,7 @@ kouryakulab.com 向けSEO/OGPメタデータ一括挿入スクリプト。
 
 やること（新規ページに対してのみ。既に挿入済みのページはスキップされ、何度実行しても安全）:
   - favicon / apple-touch-icon の <link>
-  - Google Fonts の <link rel="preconnect">
+  - Google Fonts への <link rel="preconnect"> の除去（フォントは assets/fonts/ で自前ホスト）
   - Open Graph / Twitter Card メタタグ（7言語分の og:locale:alternate 込み）
   - JSON-LD構造化データ（hub/privacyページ = WebSite、ゲームガイド = Article + BreadcrumbList）
   - フッターへの横断リンク行（About / Authors / Editorial Policy / Contact / Terms of Use /
@@ -253,18 +253,16 @@ def process(path):
             )
         changed = True
 
-    # --- font preconnect ---
-    if 'rel="preconnect"' not in content:
-        preconnect = (
-            '<link rel="preconnect" href="https://fonts.googleapis.com">\n'
-            '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
-        )
-        content = re.sub(
-            r'(<meta name="viewport"[^>]*>\n)',
-            r"\1" + preconnect,
-            content,
-            count=1,
-        )
+    # --- remove Google Fonts preconnect ---
+    # Fonts are self-hosted under /assets/fonts/. A preconnect alone still opens a
+    # connection to Google and sends the visitor's IP, so strip any left over.
+    stripped = re.sub(
+        r'<link rel="preconnect" href="https://fonts\.(?:googleapis|gstatic)\.com"[^>]*>\n',
+        "",
+        content,
+    )
+    if stripped != content:
+        content = stripped
         changed = True
 
     # --- OGP / Twitter / JSON-LD ---
