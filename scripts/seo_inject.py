@@ -43,6 +43,13 @@ LANG_DIRS = ["", "ja", "ko", "zh", "zh-hant", "de", "fr", "ar"]  # "" = ルー�
 
 ADSENSE_CLIENT = "ca-pub-2939651190150074"
 GA_MEASUREMENT_ID = "G-2DMV4KX041"
+# 本番ドメイン以外（localhostでのブラウザ検証など）ではページビューを送らない。
+# gtag.js は config を呼ぶまで計測を送信しないので、この1行だけを条件付きにする。
+GA_CONFIG_PLAIN = f"gtag('config', '{GA_MEASUREMENT_ID}');"
+GA_CONFIG_GUARDED = (
+    "if (/^(www\\.)?kouryakulab\\.com$/.test(location.hostname)) "
+    f"gtag('config', '{GA_MEASUREMENT_ID}');"
+)
 
 PRIVACY_LABEL = {
     "en": "Privacy Policy", "ja": "プライバシーポリシー", "ko": "개인정보처리방침",
@@ -215,6 +222,11 @@ def process(path):
         )
         changed = True
 
+    # --- restrict GA page views to the production domain (migrates older pages) ---
+    if GA_CONFIG_GUARDED not in content and f"  {GA_CONFIG_PLAIN}\n" in content:
+        content = content.replace(f"  {GA_CONFIG_PLAIN}\n", f"  {GA_CONFIG_GUARDED}\n", 1)
+        changed = True
+
     # --- Google Analytics (gtag.js) ---
     if GA_MEASUREMENT_ID not in content:
         ga = (
@@ -223,7 +235,7 @@ def process(path):
             "  window.dataLayer = window.dataLayer || [];\n"
             "  function gtag(){dataLayer.push(arguments);}\n"
             "  gtag('js', new Date());\n"
-            f"  gtag('config', '{GA_MEASUREMENT_ID}');\n"
+            f"  {GA_CONFIG_GUARDED}\n"
             "</script>\n"
         )
         content = re.sub(
