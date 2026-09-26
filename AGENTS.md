@@ -83,11 +83,14 @@ git diff --stat                 # 想定した言語数ぶんのファイルが�
 - 第二期（2018年）以降、基本経験値はマップ単位ではなく敵編成ごとに決まる。**マップを選ぶと経験値が出るようなプリセットは作らない**（不正確になる）。戦闘結果画面の「基本経験値」を入力してもらう。
 - 艦娘データの `remodel_lv` / `remodel_to` はマスターデータの `api_afterlv` / `api_aftershipid` 由来。`remodel_to` は言語に依存しないよう日本語名で持ち、表示側で「英語名 (日本語名)」に変換する。
 - Fleet BuilderのロジックとUIは `assets/games/kancolle-fleet-builder.js` に共有。各言語のHTMLは `window.FLEET_I18N` にUI文言だけを持つ。**JSや艦娘データを言語ごとのHTMLに埋め込まない。**
+- 遠征条件一覧は `assets/data/kancolle-expeditions.json`（**手編集禁止**）。`python3 scripts/build_kancolle_expeditions.py` でKcanotify（編成条件・資源量。マスターデータに無い）とマスターデータ（名前・時間・隻数・海域・アイテム報酬）から生成し、`python3 scripts/render_kancolle_expeditions.py` で英日ページの表（`<!-- EXPED-TABLE -->` マーカー間）に書き込む。表はSEOのためHTMLに直接埋め込み、JSは絞り込みだけ。
+- 東京急行（37/38）の条件は**ドラム缶**（大発動艇ではない）。過去に全言語で誤記していた。
 - 新しいゲームを追加する前に、GitHubに抽出済みデータのリポジトリがあるか確認する（中国ゲームは中国語名で検索しないとヒットしない）。数値は事実なので掲載可、ただし画像・音声などのアセットや本文テキストの丸ごと転載はしない。
 
 ## AdSense 審査対応（2026/09 に「有用性の低いコンテンツ」で却下）
 
 - **インデックス対象は英語・日本語のみ。** ko/zh/zh-hant/de/fr/ar は公開したまま `noindex, follow` にし、hreflang・sitemap・og:locale:alternate から外している。`python3 scripts/set_indexing.py`（冪等）が一括で処理する。新ページ追加時は手順8の `seo_inject.py` の後に必ず実行する。言語を戻すときは同スクリプトの `NOINDEX_DIRS` を編集する。
+- **2026/09以降の新ページは英語・日本語の2言語だけで作る。** 他の6言語は作らない。`<head>` に `<meta name="available-langs" content="en,ja">` を入れると言語切替メニューが英日だけになる（`assets/lang-switch.js`）。hreflangは en/ja/x-default の3行、sitemapも英日の2URLだけ。
 - **地域制限の回避手順・非公式APKの入手方法は載せない。** デレステの `/games/deresute/access/` は「動作が重い・落ちる時の対策」ページ（Namco ID登録＋クラッシュ対策）にしてある。
 - **事実でない運営実態を書かない。** 「実プレイで検証」のような記述は削除済み。編集方針・執筆者ページには実際にやっていることだけを書く。
 - 審査の再申請は本人が行う。サイト公開から日が浅い・流入が少ないことも却下要因になるため、コンテンツを厚くしてから時間を置いて再申請する方針。

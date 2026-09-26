@@ -329,3 +329,22 @@ footer nav.site-links a:hover { color: var(--ink-dim); }
 .exp-hint { font-weight: 400; color: var(--accent); min-height: 1.2em; }
 .exp-note { font-size: .85rem; color: var(--state-denial); }
 .exp-note:empty { display: none; }
+
+/* ---- Expedition requirements list ---- */
+.exped-notes { margin: 0; padding-inline-start: 1.1em; font-size: .9rem; color: var(--ink-dim); }
+.exped-notes li { margin-bottom: 6px; }
+.exped-notes b { color: var(--ink); }
+.exped-search {
+  width: 100%; box-sizing: border-box; padding: 10px 12px; margin-bottom: 12px;
+  border: 1px solid var(--line, #ccd4da); border-radius: 8px; background: var(--surface-2); color: var(--ink); font: inherit;
+}
+.exped-table { font-size: .85rem; min-width: 760px; }
+.exped-table td { vertical-align: top; }
+.exped-table tr.area-row th { background: var(--accent-soft); color: var(--accent); text-align: start; }
+.exped-table tr.exped-hit td { background: var(--accent-soft); }
+.badge-monthly {
+  display: inline-block; margin-inline-start: 6px; padding: 1px 6px; border-radius: 4px;
+  font-size: .72rem; font-weight: 700; background: var(--accent); color: var(--accent-ink); vertical-align: middle;
+}
+.exped-empty { color: var(--ink-dim); font-size: .9rem; margin: 12px 0 0; }
+.exped-table td:nth-child(3) { white-space: nowrap; }
