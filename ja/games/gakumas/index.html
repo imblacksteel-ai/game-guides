@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="学マス（学園アイドルマスター）のプロデュース評価の仕組みを解説。全ランクの必要評価値、評価値の計算式、用語集と評価値計算機へのリンク。">
+<title>学マス（学園アイドルマスター）攻略：評価値・ランク・計算機</title>
+<link rel="stylesheet" href="/assets/games/gakumas.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/gakumas/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/gakumas/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/gakumas/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/gakumas/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="学マス（学園アイドルマスター）攻略：評価値・ランク・計算機">
+<meta property="og:description" content="学マス（学園アイドルマスター）のプロデュース評価の仕組みを解説。全ランクの必要評価値、評価値の計算式、用語集と評価値計算機へのリンク。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/gakumas/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-gakumas.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="学マス（学園アイドルマスター）攻略：評価値・ランク・計算機">
+<meta name="twitter:description" content="学マス（学園アイドルマスター）のプロデュース評価の仕組みを解説。全ランクの必要評価値、評価値の計算式、用語集と評価値計算機へのリンク。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-gakumas.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "学マス（学園アイドルマスター）攻略：評価値・ランク・計算機",
+      "description": "学マス（学園アイドルマスター）のプロデュース評価の仕組みを解説。全ランクの必要評価値、評価値の計算式、用語集と評価値計算機へのリンク。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/gakumas/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "学マス（学園アイドルマスター）攻略：評価値・ランク・計算機",
+          "item": "https://kouryakulab.com/ja/games/gakumas/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/"><span class="arrow">←</span> 攻略ラボ</a>
+    <div>
+      <span class="eyebrow">BANDAI NAMCO / QUALIARTS · 2024.05.16〜</span>
+      <h1>学マス（学園アイドルマスター）攻略</h1>
+      <p class="sub">アイドルマスターシリーズの育成デッキ構築ゲーム。プロデュースの評価がどう決まるか、各ランクに必要な評価値、よく出る用語をまとめた。</p>
+      <div class="fact-strip">
+        <div class="fact"><div class="k">ジャンル</div><div class="v tag-mono">育成・デッキ構築</div></div>
+        <div class="fact"><div class="k">対応機種</div><div class="v tag-mono">iOS / Android / PC（DMM）</div></div>
+        <div class="fact"><div class="k">言語</div><div class="v tag-mono">日本語のみ</div></div>
+        <div class="fact"><div class="k">開発</div><div class="v tag-mono">QualiArts / バンダイナムコ</div></div>
+        <div class="fact" data-fact="updated"><div class="k">更新</div><div class="v tag-mono">2026.09</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links" id="tabs">
+      <a href="#overview">概要</a>
+      <a href="#ranks">評価ランク</a>
+      <a href="#rating">評価値の計算式</a>
+      <a href="#glossary">用語集</a>
+      <a href="/ja/games/gakumas/rank-calculator/">評価値計算機</a>
+    </div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="overview">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>ゲーム概要</h2></div>
+    <p class="sec-desc">『学園アイドルマスター』（学マス）はQualiArtsとバンダイナムコエンターテインメントの共同開発。2024年5月16日にiOS・Android版、2025年3月18日にDMM GAMESでPC版の配信が始まった。1回の「プロデュース」は独立した周回で、決められた週数アイドルを育て、カードバトル形式の試験に挑む。</p>
+    <div class="pillars">
+      <div class="pillar">
+        <h3>レッスン</h3>
+        <p>ほとんどの週はレッスンで、ボーカル・ダンス・ビジュアルの3パラメータのどれかを伸ばす。何を選ぶかで試験に持ち込むステータスが決まる。</p>
+      </div>
+      <div class="pillar">
+        <h3>カードバトルの試験</h3>
+        <p>試験・オーディションはターン制。プロデュース中に集めたスキルカードでデッキを組み、ターン数内に目標スコアを目指す。</p>
+      </div>
+      <div class="pillar">
+        <h3>プロデュース評価</h3>
+        <p>最後にパラメータ・最終試験の順位・最終試験のスコアが評価値として合算され、プロデュース評価（CからS5）が決まる。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ranks">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>評価ランク</h2></div>
+    <p class="sec-desc">各プロデュース評価に必要な評価値。まずはA+（11,500）とS（13,000）が目標になりやすい。</p>
+    <div class="panel table-scroll">
+      <table class="glossary">
+        <thead><tr><th>ランク</th><th>必要な評価値</th></tr></thead>
+        <tbody>
+          <tr><td class="tag-mono">C</td><td class="tag-mono">3,000</td></tr>
+          <tr><td class="tag-mono">C+</td><td class="tag-mono">4,500</td></tr>
+          <tr><td class="tag-mono">B</td><td class="tag-mono">6,000</td></tr>
+          <tr><td class="tag-mono">B+</td><td class="tag-mono">8,000</td></tr>
+          <tr><td class="tag-mono">A</td><td class="tag-mono">10,000</td></tr>
+          <tr><td class="tag-mono">A+</td><td class="tag-mono">11,500</td></tr>
+          <tr><td class="tag-mono">S</td><td class="tag-mono">13,000</td></tr>
+          <tr><td class="tag-mono">S+</td><td class="tag-mono">14,500</td></tr>
+          <tr><td class="tag-mono">SS</td><td class="tag-mono">16,000</td></tr>
+          <tr><td class="tag-mono">SS+</td><td class="tag-mono">18,000</td></tr>
+          <tr><td class="tag-mono">SSS</td><td class="tag-mono">20,000</td></tr>
+          <tr><td class="tag-mono">SSS+</td><td class="tag-mono">23,000</td></tr>
+          <tr><td class="tag-mono">S4</td><td class="tag-mono">26,000</td></tr>
+          <tr><td class="tag-mono">S4+</td><td class="tag-mono">30,000</td></tr>
+          <tr><td class="tag-mono">S5</td><td class="tag-mono">35,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="rating">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>評価値の計算式</h2></div>
+    <p class="sec-desc">シナリオ<b>「初」</b>のレギュラー・プロ・マスターでは、評価値は次の3つの合計になる。</p>
+    <div class="panel">
+      <ol class="steps">
+        <li><span class="n">1</span>最終試験の<b>順位点</b>：1位＝1,700、2位＝900、3位＝500。</li>
+        <li><span class="n">2</span><b>パラメータ</b>：最終試験の順位でまず全パラメータに+30（1位）・+20（2位）・+10（3位）が加わる（難易度の上限まで。レギュラー1,000／プロ1,500／マスター1,800）。3つの合計を2.3倍し、端数は切り捨て。</li>
+        <li><span class="n">3</span><b>最終試験のスコア</b>を段階的に換算：5,000点までは0.3倍、5,001〜10,000は0.15倍、10,001〜20,000は0.08倍、20,001〜30,000は0.04倍、30,001〜40,000は0.02倍、それ以上は0.01倍。</li>
+      </ol>
+      <div class="callout"><b>実際のところ：</b>スコアを伸ばすより順位とパラメータの方がはるかに効く。1位は2位より順位点だけで800高く、さらにパラメータボーナスも大きい。一方スコアの価値は10,000点を超えると急に落ちる。<b>レジェンド</b>は数値が違う（パラメータ上限3,000、2.1倍、順位ボーナスが大きく、中間試験のスコアも加算）が、計算機はどちらにも対応している。</div>
+    </div>
+    <p class="cluster-link" style="margin-top:16px;"><a href="/ja/games/gakumas/rank-calculator/" style="color:var(--accent);font-weight:700;text-decoration:none;">A+・S以上に必要な最終試験スコアを計算する →</a></p>
+  </section>
+
+  <section id="glossary">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>用語集</h2></div>
+    <p class="sec-desc">画面によく出てくる用語。</p>
+    <div class="panel table-scroll">
+      <table class="glossary">
+        <thead><tr><th>用語</th><th>読み</th><th>意味</th></tr></thead>
+        <tbody>
+          <tr><td class="jp">評価値</td><td class="romaji">Hyouka-chi</td><td>プロデュース評価を決める数値。</td></tr>
+          <tr><td class="jp">プロデュース</td><td class="romaji">Purodyūsu</td><td>1人のアイドルを最初のレッスンから最終試験まで育てる1回の周回。</td></tr>
+          <tr><td class="jp">ボーカル・ダンス・ビジュアル</td><td class="romaji">Vo / Da / Vi</td><td>3つのパラメータ。合計値がそのまま評価値に加算される。</td></tr>
+          <tr><td class="jp">中間試験・最終試験</td><td class="romaji">Chūkan / Saishū shiken</td><td>ライバルとスコアを競うカードバトル形式の試験。</td></tr>
+          <tr><td class="jp">スキルカード</td><td class="romaji">Sukiru kādo</td><td>試験で使うカード。プロデュース中にデッキへ加えていく。</td></tr>
+          <tr><td class="jp">Pアイテム</td><td class="romaji">P-aitemu</td><td>試験中に効果を発揮する所持アイテム。</td></tr>
+          <tr><td class="jp">サポートカード（サポカ）</td><td class="romaji">Sapoka</td><td>プロデュースに編成するカード。イベントやパラメータボーナスをもたらす。</td></tr>
+          <tr><td class="jp">レギュラー・プロ・マスター・レジェンド</td><td class="romaji">Difficulty</td><td>難易度。上がるほどパラメータ上限と到達できる評価が上がる。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap more-guides">
+    <h3>他の攻略</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/kancolle/">艦これ</a>
+      <a href="/ja/games/deresute/">デレステ</a>
+      <a href="/ja/games/srwdd/">スパロボDD</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="disclaimer">本ページは公開情報を基にした非公式のファンメイド攻略まとめです。評価値の計算式はコミュニティによる検証結果で、開発元の公式発表ではありません。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://gakuen.idolmaster-official.jp/" target="_blank" rel="noopener">Gakuen Idolmaster official site</a>
+      <a href="https://www.4gamer.net/games/865/G086581/20250318013/" target="_blank" rel="noopener">PC version release (4Gamer)</a>
+      <a href="https://github.com/surisuririsu/gakumas-tools" target="_blank" rel="noopener">gakumas-tools (rating formula)</a>
+      <a href="https://seesaawiki.jp/gakumasu/d/%BA%C7%BD%AA%A5%D7%A5%ED%A5%C7%A5%E5%A1%BC%A5%B9%C9%BE%B2%C1" target="_blank" rel="noopener">学マスwiki: 最終プロデュース評価</a>
+      <a href="https://wikiwiki.jp/gkms_hyouka/%E5%88%9D%E3%83%AC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%89" target="_blank" rel="noopener">評価値Wiki: 初レジェンド</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+<script src="/assets/tabs.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="学マス（学園アイドルマスター）の評価値計算機。最終試験前のパラメータと順位を入れると、A+・S・SSなど各評価に必要な最終試験スコアが分かる。">
+<title>学マス 評価値計算機｜A+・Sに必要な最終試験スコア</title>
+<link rel="stylesheet" href="/assets/games/gakumas.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/gakumas/rank-calculator/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/gakumas/rank-calculator/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/gakumas/rank-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/gakumas/rank-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="学マス 評価値計算機｜A+・Sに必要な最終試験スコア">
+<meta property="og:description" content="学マス（学園アイドルマスター）の評価値計算機。最終試験前のパラメータと順位を入れると、A+・S・SSなど各評価に必要な最終試験スコアが分かる。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/gakumas/rank-calculator/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-gakumas.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="学マス 評価値計算機｜A+・Sに必要な最終試験スコア">
+<meta name="twitter:description" content="学マス（学園アイドルマスター）の評価値計算機。最終試験前のパラメータと順位を入れると、A+・S・SSなど各評価に必要な最終試験スコアが分かる。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-gakumas.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "学マス 評価値計算機｜A+・Sに必要な最終試験スコア",
+      "description": "学マス（学園アイドルマスター）の評価値計算機。最終試験前のパラメータと順位を入れると、A+・S・SSなど各評価に必要な最終試験スコアが分かる。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/gakumas/rank-calculator/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "学マス 評価値計算機｜A+・Sに必要な最終試験スコア",
+          "item": "https://kouryakulab.com/ja/games/gakumas/rank-calculator/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/gakumas/"><span class="arrow">←</span> 学マス 攻略ガイド全体</a>
+    <div>
+      <span class="eyebrow">学マス ・ 評価値計算機</span>
+      <h1>評価値計算機</h1>
+      <p class="sub">最終試験前のパラメータと、狙う順位を入力する。各評価に必要な最終試験スコアが一覧で出る。実際のスコアを入れれば、取れた評価も確認できる。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+
+  <div class="two-col" id="gk-calc">
+    <div class="panel gk-form">
+      <div>
+        <label>難易度</label>
+        <div class="sort-btns" id="gk-diff"><button type="button" class="sort-btn" data-v="regular">レギュラー</button><button type="button" class="sort-btn active" data-v="pro">プロ</button><button type="button" class="sort-btn" data-v="master">マスター</button><button type="button" class="sort-btn" data-v="legend">レジェンド</button></div>
+        <p class="gk-note">パラメータ上限: <span id="gk-cap" class="tag-mono"></span></p>
+      </div>
+      <div>
+        <label>最終試験の順位</label>
+        <div class="sort-btns" id="gk-place"><button type="button" class="sort-btn active" data-v="1">1位</button><button type="button" class="sort-btn" data-v="2">2位</button><button type="button" class="sort-btn" data-v="3">3位</button><button type="button" class="sort-btn" data-v="4">4位以下</button></div>
+        <p class="gk-note">パラメータボーナス: <span id="gk-bonus" class="tag-mono"></span></p>
+      </div>
+      <div>
+        <label>最終試験前のパラメータ</label>
+        <div class="gk-params">
+          <div><label for="gk-vo">ボーカル</label><input type="number" id="gk-vo" min="0" inputmode="numeric" value="1000"></div>
+          <div><label for="gk-da">ダンス</label><input type="number" id="gk-da" min="0" inputmode="numeric" value="1000"></div>
+          <div><label for="gk-vi">ビジュアル</label><input type="number" id="gk-vi" min="0" inputmode="numeric" value="1000"></div>
+        </div>
+      </div>
+      <div id="gk-mid-wrap" hidden>
+        <label for="gk-mid">中間試験のスコア（レジェンドのみ）</label>
+        <input type="number" id="gk-mid" min="0" inputmode="numeric">
+      </div>
+      <div>
+        <label for="gk-final">最終試験のスコア（任意）</label>
+        <input type="number" id="gk-final" min="0" inputmode="numeric">
+        <p class="gk-note">空欄なら必要スコアを表示。入力すると結果を計算する。</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2 style="font-size:1.1rem;margin-bottom:6px;">結果</h2>
+      <div class="gk-result"><span class="gk-note" id="gk-rating-label"></span></div>
+      <div class="gk-result"><span class="v" id="gk-rating">0</span><span class="rank" id="gk-rank">—</span></div>
+      <h3 style="font-size:.95rem;margin:16px 0 6px;">各評価に必要な最終試験スコア</h3>
+      <div class="table-scroll">
+        <table class="glossary gk-table">
+          <thead><tr><th>評価</th><th>評価値</th><th>必要な最終試験スコア</th></tr></thead>
+          <tbody id="gk-targets"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout"><b>計算の仕組み:</b> 評価値＝順位点＋（順位ボーナス込みのパラメータ、各上限まで）×2.3＋最終試験スコアの換算値。レジェンドは係数2.1、順位ボーナス+160／+80／+40で、中間試験のスコアも加算される。詳しくは<a href="/ja/games/gakumas/#rating">評価値の計算式</a>を参照。</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ツールは非公式のファンメイドです。計算式はコミュニティによる検証結果（gakumas-tools・攻略Wikiなど）を元にしており、開発元の公式発表ではありません。最終的にはゲーム内の結果画面が正です。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://github.com/surisuririsu/gakumas-tools" target="_blank" rel="noopener">gakumas-tools (rating formula)</a>
+      <a href="https://seesaawiki.jp/gakumasu/d/%BA%C7%BD%AA%A5%D7%A5%ED%A5%C7%A5%E5%A1%BC%A5%B9%C9%BE%B2%C1" target="_blank" rel="noopener">学マスwiki: 最終プロデュース評価</a>
+      <a href="https://wikiwiki.jp/gkms_hyouka/%E5%88%9D%E3%83%AC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%89" target="_blank" rel="noopener">評価値Wiki: 初レジェンド</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+<script>window.GK_I18N = {"rating": "評価値", "ratingBeforeFinal": "最終試験スコアを除く評価値", "unreachable": "到達不可", "already": "達成済み"};</script>
+<script src="/assets/games/gakumas-rank-calculator.js"></script>
+</body>
+</html>
