@@ -26,6 +26,13 @@
   var mount = document.getElementById('lang-switch');
   if (!mount) return;
 
+  // 一部の言語にしか存在しないページは <meta name="available-langs" content="en,ja"> で宣言する。
+  var avail = document.querySelector('meta[name="available-langs"]');
+  if (avail) {
+    var codes = avail.getAttribute('content').split(',').map(function (c) { return c.trim(); });
+    LANGS = LANGS.filter(function (L) { return codes.indexOf(L.code) !== -1; });
+  }
+
   var html = '<button type="button" class="lang-current" aria-haspopup="true" aria-expanded="false">' +
     LANGS.filter(function (L) { return L.code === current; })[0].label +
     '<svg viewBox="0 0 20 20" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 7l5 5 5-5"/></svg>' +
