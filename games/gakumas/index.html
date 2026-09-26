@@ -100,6 +100,7 @@
       <a href="#overview">Overview</a>
       <a href="#ranks">Produce Ranks</a>
       <a href="#rating">How Rating Works</a>
+      <a href="#hif">HIF Rating</a>
       <a href="#glossary">Glossary</a>
       <a href="/games/gakumas/rank-calculator/">Rank Calculator</a>
     </div>
@@ -169,8 +170,22 @@
     <p class="cluster-link" style="margin-top:16px;"><a href="/games/gakumas/rank-calculator/" style="color:var(--accent);font-weight:700;text-decoration:none;">Work out the final-exam score you need for A+, S or higher →</a></p>
   </section>
 
+  <section id="hif">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>How Rating Works in HIF</h2></div>
+    <p class="sec-desc">The <b>HIF</b> scenario scores a run differently from Hajime. The formula reported by Japanese players is:</p>
+    <div class="panel">
+      <p style="margin:0 0 12px;"><b>Rating = parameter total × 2 + Star power (スター性) × 7.5 + finals score rating − 2,000</b></p>
+      <ul class="steps">
+        <li><span class="n">1</span><b>Finals round 1</b>: the score starts counting above 300,000, is worth the most up to about 700,000, then tapers off and stops adding anything at about 1,400,000 — at most 5,500 rating.</li>
+        <li><span class="n">2</span><b>Finals round 2</b>: counts from 600,000, is worth the most up to 1,500,000, then tapers and caps at 2,400,000 — at most 7,400 rating.</li>
+        <li><span class="n">3</span>Star power is multiplied by 7.5, so every point of it is worth more than three points of a parameter. Round 2 also earns some extra Star power.</li>
+      </ul>
+      <div class="callout"><b>Why there's no HIF calculator here yet:</b> sources disagree on whether the displayed round 1 score is used as-is or divided by 1.2 first, which shifts the result by hundreds of rating. We'll add a calculator once that's settled rather than publish one that might be wrong.</div>
+    </div>
+  </section>
+
   <section id="glossary">
-    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>Glossary</h2></div>
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>Glossary</h2></div>
     <p class="sec-desc">Menus are Japanese-only. These are the terms that come up constantly.</p>
     <div class="panel table-scroll">
       <table class="glossary">
@@ -207,6 +222,7 @@
       Sources:
       <a href="https://gakuen.idolmaster-official.jp/" target="_blank" rel="noopener">Gakuen Idolmaster official site</a>
       <a href="https://www.4gamer.net/games/865/G086581/20250318013/" target="_blank" rel="noopener">PC version release (4Gamer)</a>
+      <a href="https://wikiwiki.jp/gakumas/HIF/%E5%9F%BA%E6%9C%AC%E6%83%85%E5%A0%B1" target="_blank" rel="noopener">学マスWiki: HIF/基本情報</a>
       <a href="https://github.com/surisuririsu/gakumas-tools" target="_blank" rel="noopener">gakumas-tools (rating formula)</a>
       <a href="https://seesaawiki.jp/gakumasu/d/%BA%C7%BD%AA%A5%D7%A5%ED%A5%C7%A5%E5%A1%BC%A5%B9%C9%BE%B2%C1" target="_blank" rel="noopener">学マスwiki: 最終プロデュース評価</a>
       <a href="https://wikiwiki.jp/gkms_hyouka/%E5%88%9D%E3%83%AC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%89" target="_blank" rel="noopener">評価値Wiki: 初レジェンド</a>

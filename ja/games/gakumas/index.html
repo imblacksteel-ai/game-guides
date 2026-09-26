@@ -100,6 +100,7 @@
       <a href="#overview">概要</a>
       <a href="#ranks">評価ランク</a>
       <a href="#rating">評価値の計算式</a>
+      <a href="#hif">HIFの評価値</a>
       <a href="#glossary">用語集</a>
       <a href="/ja/games/gakumas/rank-calculator/">評価値計算機</a>
     </div>
@@ -169,8 +170,22 @@
     <p class="cluster-link" style="margin-top:16px;"><a href="/ja/games/gakumas/rank-calculator/" style="color:var(--accent);font-weight:700;text-decoration:none;">A+・S以上に必要な最終試験スコアを計算する →</a></p>
   </section>
 
+  <section id="hif">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>HIFの評価値</h2></div>
+    <p class="sec-desc">シナリオ<b>「HIF」</b>は「初」と評価の仕組みが違う。プレイヤーの検証で報告されている式は次のとおり。</p>
+    <div class="panel">
+      <p style="margin:0 0 12px;"><b>評価値＝パラメータ合計×2＋スター性×7.5＋本戦スコアの評価点−2,000</b></p>
+      <ul class="steps">
+        <li><span class="n">1</span><b>本戦ラウンド1</b>：スコア30万を超えた分から加算され、約70万までが最も効率がよく、以降は減衰して約140万で頭打ちになる（最大5,500）。</li>
+        <li><span class="n">2</span><b>本戦ラウンド2</b>：60万から加算され、150万までが最も効率がよく、以降は減衰して240万が上限（最大7,400）。</li>
+        <li><span class="n">3</span>スター性は7.5倍されるので、1ポイントあたりパラメータ3ポイント以上の価値がある。ラウンド2ではスター性も追加で得られる。</li>
+      </ul>
+      <div class="callout"><b>HIFの計算機をまだ置いていない理由：</b>ラウンド1のスコアを表示のまま使うのか、1.2で割ってから換算するのかで情報源の間に食い違いがあり、結果が数百ずれる。不正確な計算機を出すより、確定してから追加する。</div>
+    </div>
+  </section>
+
   <section id="glossary">
-    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>用語集</h2></div>
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>用語集</h2></div>
     <p class="sec-desc">画面によく出てくる用語。</p>
     <div class="panel table-scroll">
       <table class="glossary">
@@ -207,6 +222,7 @@
       情報源：
       <a href="https://gakuen.idolmaster-official.jp/" target="_blank" rel="noopener">Gakuen Idolmaster official site</a>
       <a href="https://www.4gamer.net/games/865/G086581/20250318013/" target="_blank" rel="noopener">PC version release (4Gamer)</a>
+      <a href="https://wikiwiki.jp/gakumas/HIF/%E5%9F%BA%E6%9C%AC%E6%83%85%E5%A0%B1" target="_blank" rel="noopener">学マスWiki: HIF/基本情報</a>
       <a href="https://github.com/surisuririsu/gakumas-tools" target="_blank" rel="noopener">gakumas-tools (rating formula)</a>
       <a href="https://seesaawiki.jp/gakumasu/d/%BA%C7%BD%AA%A5%D7%A5%ED%A5%C7%A5%E5%A1%BC%A5%B9%C9%BE%B2%C1" target="_blank" rel="noopener">学マスwiki: 最終プロデュース評価</a>
       <a href="https://wikiwiki.jp/gkms_hyouka/%E5%88%9D%E3%83%AC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%89" target="_blank" rel="noopener">評価値Wiki: 初レジェンド</a>
