@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A Mindustry guide built from the game's source code: the production ratios worth memorizing, how Serpulo and Erekir differ, and every item and liquid name in English and Japanese.">
+<title>Mindustry Guide: Production Ratios, Planets & Item Names</title>
+<link rel="stylesheet" href="/assets/games/mindustry.css">
+<link rel="canonical" href="https://kouryakulab.com/games/mindustry/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/mindustry/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/mindustry/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/mindustry/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:title" content="Mindustry Guide: Production Ratios, Planets &amp; Item Names">
+<meta property="og:description" content="A Mindustry guide built from the game's source code: the production ratios worth memorizing, how Serpulo and Erekir differ, and every item and liquid name in English and Japanese.">
+<meta property="og:url" content="https://kouryakulab.com/games/mindustry/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-mindustry.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mindustry Guide: Production Ratios, Planets &amp; Item Names">
+<meta name="twitter:description" content="A Mindustry guide built from the game's source code: the production ratios worth memorizing, how Serpulo and Erekir differ, and every item and liquid name in English and Japanese.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-mindustry.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Mindustry Guide: Production Ratios, Planets & Item Names",
+      "description": "A Mindustry guide built from the game's source code: the production ratios worth memorizing, how Serpulo and Erekir differ, and every item and liquid name in English and Japanese.",
+      "inLanguage": "en",
+      "url": "https://kouryakulab.com/games/mindustry/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Mindustry Guide: Production Ratios, Planets & Item Names",
+          "item": "https://kouryakulab.com/games/mindustry/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/"><span class="arrow">←</span> Kouryaku Lab</a>
+    <div>
+      <span class="eyebrow">ANUKEN · OPEN SOURCE · v160.5</span>
+      <h1>Mindustry Guide</h1>
+      <p class="sub">An open-source factory-building tower defense game. Every number on this page is read straight from the game's source code, so it matches the current release exactly.</p>
+      <div class="fact-strip">
+        <div class="fact"><div class="k">Genre</div><div class="v tag-mono">Factory / Tower Defense</div></div>
+        <div class="fact"><div class="k">Platforms</div><div class="v tag-mono">PC / Android / iOS</div></div>
+        <div class="fact"><div class="k">License</div><div class="v tag-mono">GPL-3.0 (open source)</div></div>
+        <div class="fact"><div class="k">Developer</div><div class="v tag-mono">Anuken</div></div>
+        <div class="fact" data-fact="updated"><div class="k">Updated</div><div class="v tag-mono">2026.09</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links" id="tabs">
+      <a href="#overview">Overview</a>
+      <a href="#ratios">Key Ratios</a>
+      <a href="#names">Item Names</a>
+      <a href="/games/mindustry/production-calculator/">Production Calculator</a>
+    </div>
+    <nav id="lang-switch" aria-label="Language"></nav>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="overview">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Overview</h2></div>
+    <p class="sec-desc">Mindustry is developed by Anuken, and its full source code is public on GitHub under the GPL-3.0 license. You mine ore with drills, carry it on conveyors into factories, and use what they make to build turrets and units that defend your core against waves of enemies. The campaign spans two planets with separate tech trees.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <h3>Serpulo</h3>
+        <p>The original planet. Copper, lead, sand, coal, titanium and thorium feed a long chain up to plastanium, phase fabric and surge alloy.</p>
+      </div>
+      <div class="pillar">
+        <h3>Erekir</h3>
+        <p>The second planet. Beryllium and tungsten replace copper and lead, several factories need heat from separate heater blocks, and gases like ozone and hydrogen come into play.</p>
+      </div>
+      <div class="pillar">
+        <h3>Ratios</h3>
+        <p>Every factory runs on a fixed cycle, so a factory line only runs at full speed when the numbers of each building are in the right ratio. That's what the calculator works out.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ratios">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>Production Ratios Worth Memorizing</h2></div>
+    <p class="sec-desc">Per building, at full speed, with no boosts:</p>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><b>Silicon</b>: one Silicon Smelter uses 1.5 coal/s and 3 sand/s (plus 30 power/s) for 1.5 silicon/s. If you make sand from scrap, that's exactly <b>2 Pulverizers per smelter</b>.</li>
+        <li><b>Graphite</b>: a Graphite Press turns 1.33 coal/s into 0.67 graphite/s with no power. One Multi-Press (6 coal/s + 6 water/s, 108 power/s) makes 4 graphite/s — the output of <b>6 presses</b>.</li>
+        <li><b>Metaglass</b>: a Kiln takes 2 lead/s and 2 sand/s for 2 metaglass/s.</li>
+        <li><b>Plastanium</b>: a Plastanium Compressor needs 2 titanium/s and 15 oil/s for 1 plastanium/s. <b>One Spore Press</b> (18 oil/s) covers it, and that press needs <b>5 Cultivators</b> feeding it spore pods.</li>
+        <li><b>Surge alloy</b>: a Surge Smelter eats 2.4 copper, 3.2 lead, 1.6 titanium and 2.4 silicon per second for 0.8 surge alloy/s — its silicon alone takes <b>1.6 Silicon Smelters</b>.</li>
+      </ul>
+    </div>
+    <p class="cluster-link" style="margin-top:16px;"><a href="/games/mindustry/production-calculator/" style="color:var(--accent);font-weight:700;text-decoration:none;">Work out any factory's inputs, power and building count →</a></p>
+  </section>
+
+  <section id="names">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>Item & Liquid Names (English / Japanese)</h2></div>
+    <p class="sec-desc">From the game's own translation files — handy when following a guide written for the other language.</p>
+    <div class="panel table-scroll">
+<!-- MDT-NAMES:START -->
+<table class="glossary">
+<thead><tr><th>English</th><th>Japanese</th><th>Type</th></tr></thead>
+<tbody>
+<tr><td>Beryllium</td><td class="jp">ベリリウム</td><td>Item</td></tr>
+<tr><td>Blast Compound</td><td class="jp">爆発性化合物</td><td>Item</td></tr>
+<tr><td>Carbide</td><td class="jp">炭化物</td><td>Item</td></tr>
+<tr><td>Coal</td><td class="jp">石炭</td><td>Item</td></tr>
+<tr><td>Copper</td><td class="jp">銅</td><td>Item</td></tr>
+<tr><td>Graphite</td><td class="jp">黒鉛</td><td>Item</td></tr>
+<tr><td>Lead</td><td class="jp">鉛</td><td>Item</td></tr>
+<tr><td>Metaglass</td><td class="jp">メタガラス</td><td>Item</td></tr>
+<tr><td>Oxide</td><td class="jp">酸化物</td><td>Item</td></tr>
+<tr><td>Phase Fabric</td><td class="jp">フェーズファイバー</td><td>Item</td></tr>
+<tr><td>Plastanium</td><td class="jp">プラスタニウム</td><td>Item</td></tr>
+<tr><td>Pyratite</td><td class="jp">ピラタイト</td><td>Item</td></tr>
+<tr><td>Sand</td><td class="jp">砂</td><td>Item</td></tr>
+<tr><td>Scrap</td><td class="jp">スクラップ</td><td>Item</td></tr>
+<tr><td>Silicon</td><td class="jp">シリコン</td><td>Item</td></tr>
+<tr><td>Spore Pod</td><td class="jp">胞子ポッド</td><td>Item</td></tr>
+<tr><td>Surge Alloy</td><td class="jp">サージ合金</td><td>Item</td></tr>
+<tr><td>Thorium</td><td class="jp">トリウム</td><td>Item</td></tr>
+<tr><td>Titanium</td><td class="jp">チタン</td><td>Item</td></tr>
+<tr><td>Tungsten</td><td class="jp">タングステン</td><td>Item</td></tr>
+<tr><td>Arkycite</td><td class="jp">アーキサイト</td><td>Liquid</td></tr>
+<tr><td>Cryofluid</td><td class="jp">冷却水</td><td>Liquid</td></tr>
+<tr><td>Cyanogen</td><td class="jp">シアン</td><td>Liquid</td></tr>
+<tr><td>Hydrogen</td><td class="jp">水素</td><td>Liquid</td></tr>
+<tr><td>Nitrogen</td><td class="jp">窒素</td><td>Liquid</td></tr>
+<tr><td>Oil</td><td class="jp">石油</td><td>Liquid</td></tr>
+<tr><td>Ozone</td><td class="jp">オゾン</td><td>Liquid</td></tr>
+<tr><td>Slag</td><td class="jp">スラグ</td><td>Liquid</td></tr>
+<tr><td>Water</td><td class="jp">水</td><td>Liquid</td></tr>
+</tbody>
+</table>
+<!-- MDT-NAMES:END -->
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap more-guides">
+    <h3>More Guides</h3>
+    <div class="more-guides-links">
+      <a href="/games/kancolle/">KanColle</a>
+      <a href="/games/gakumas/">Gakuen Idolmaster</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="disclaimer">This is an unofficial, fan-made guide. Numbers come from the Mindustry source code (GPL-3.0) of the release shown above; the game's own stats screen is always authoritative.</div>
+    <div class="sources">
+      Sources:
+      <a href="https://github.com/Anuken/Mindustry" target="_blank" rel="noopener">Mindustry source code (v160.5)</a>
+      <a href="https://mindustrygame.github.io/" target="_blank" rel="noopener">Mindustry official site</a>
+      <a href="https://mindustrygame.github.io/wiki/" target="_blank" rel="noopener">Mindustry Wiki</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="Site links"><a href="/about/">About</a> · <a href="/authors/">Authors</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+<script src="/assets/tabs.js"></script>
+</body>
+</html>

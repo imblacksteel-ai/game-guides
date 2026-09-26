@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mindustryの生産計算機。工場と目標の生産量を選ぶと、必要な基数・毎秒の消費量・電力・上流に必要な工場の数が分かる。数値はゲームのソースコードから取得。">
+<title>Mindustry 生産計算機｜工場の比率と毎秒の生産量</title>
+<link rel="stylesheet" href="/assets/games/mindustry.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/mindustry/production-calculator/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/mindustry/production-calculator/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/mindustry/production-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/mindustry/production-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Mindustry 生産計算機｜工場の比率と毎秒の生産量">
+<meta property="og:description" content="Mindustryの生産計算機。工場と目標の生産量を選ぶと、必要な基数・毎秒の消費量・電力・上流に必要な工場の数が分かる。数値はゲームのソースコードから取得。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/mindustry/production-calculator/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-mindustry.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mindustry 生産計算機｜工場の比率と毎秒の生産量">
+<meta name="twitter:description" content="Mindustryの生産計算機。工場と目標の生産量を選ぶと、必要な基数・毎秒の消費量・電力・上流に必要な工場の数が分かる。数値はゲームのソースコードから取得。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-mindustry.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Mindustry 生産計算機｜工場の比率と毎秒の生産量",
+      "description": "Mindustryの生産計算機。工場と目標の生産量を選ぶと、必要な基数・毎秒の消費量・電力・上流に必要な工場の数が分かる。数値はゲームのソースコードから取得。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/mindustry/production-calculator/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Mindustry 生産計算機｜工場の比率と毎秒の生産量",
+          "item": "https://kouryakulab.com/ja/games/mindustry/production-calculator/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/mindustry/"><span class="arrow">←</span> Mindustry 攻略ガイド全体</a>
+    <div>
+      <span class="eyebrow">MINDUSTRY · 生産計算機</span>
+      <h1>生産計算機</h1>
+      <p class="sub">工場と欲しい生産量を選ぶと、建てるべき基数、毎秒の消費量、消費電力、材料を自前で作る場合に必要な上流の工場の数が分かる。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+
+  <div class="two-col" id="mdt-calc">
+    <div class="panel gk-form">
+      <div>
+        <label for="mdt-block">工場</label>
+        <select id="mdt-block" class="mdt-select"></select>
+      </div>
+      <div class="mdt-modes">
+        <label class="mdt-radio"><input type="radio" name="mdt-mode" value="target" checked> <span id="mdt-target-label">目標の生産量（毎秒）</span></label>
+        <label class="mdt-radio"><input type="radio" name="mdt-mode" value="count"> 建物の数</label>
+      </div>
+      <div>
+        <label for="mdt-value">数値</label>
+        <input type="number" id="mdt-value" min="0" step="any" value="10" inputmode="decimal">
+      </div>
+      <p class="gk-note" id="mdt-notes"></p>
+    </div>
+
+    <div class="panel">
+      <h2 style="font-size:1.1rem;margin-bottom:6px;">結果</h2>
+      <div class="gk-result"><span class="gk-note">必要な基数</span></div>
+      <div class="gk-result"><span class="v" id="mdt-count">0</span><span class="rank" id="mdt-count-ceil"></span></div>
+      <h3 style="font-size:.95rem;margin:14px 0 6px;">毎秒</h3>
+      <table class="glossary gk-table">
+        <thead><tr><th></th><th>資源</th><th>毎秒</th></tr></thead>
+        <tbody id="mdt-rates"></tbody>
+      </table>
+      <h3 style="font-size:.95rem;margin:14px 0 6px;">材料を自前で作る場合</h3>
+      <ul class="exped-notes" id="mdt-chain"></ul>
+    </div>
+  </div>
+
+  <section id="all" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>全工場の一覧</h2></div>
+    <p class="sec-desc">1基あたり・全速・ブーストなし。アイテムは1サイクルの量を毎秒に換算、液体は毎秒。</p>
+    <div class="panel table-scroll">
+<!-- MDT-CRAFTERS:START -->
+<table class="glossary mdt-table">
+<thead><tr><th>ブロック</th><th>入力 /秒</th><th>出力 /秒</th><th>電力 /秒</th><th>1サイクル</th></tr></thead>
+<tbody>
+<tr class="area-row"><th colspan="5">セルプロ</th></tr>
+<tr id="c-graphite-press"><td>黒鉛圧縮機<br><span class="romaji">Graphite Press</span></td><td>石炭 1.33</td><td>黒鉛 0.67</td><td class="tag-mono">—</td><td class="tag-mono">1.5s</td></tr>
+<tr id="c-multi-press"><td>マルチ圧縮機<br><span class="romaji">Multi-Press</span></td><td>石炭 6<br>水 6</td><td>黒鉛 4</td><td class="tag-mono">108</td><td class="tag-mono">0.5s</td></tr>
+<tr id="c-silicon-smelter"><td>シリコン溶鉱炉<br><span class="romaji">Silicon Smelter</span></td><td>石炭 1.5<br>砂 3</td><td>シリコン 1.5</td><td class="tag-mono">30</td><td class="tag-mono">0.67s</td></tr>
+<tr id="c-silicon-crucible"><td>シリコンクルーシブル<br><span class="romaji">Silicon Crucible</span></td><td>石炭 2.67<br>砂 4<br>ピラタイト 0.67</td><td>シリコン 5.33</td><td class="tag-mono">240</td><td class="tag-mono">1.5s</td></tr>
+<tr id="c-kiln"><td>溶解炉<br><span class="romaji">Kiln</span></td><td>鉛 2<br>砂 2</td><td>メタガラス 2</td><td class="tag-mono">36</td><td class="tag-mono">0.5s</td></tr>
+<tr id="c-plastanium-compressor"><td>プラスタニウム圧縮機<br><span class="romaji">Plastanium Compressor</span></td><td>チタン 2<br>石油 15</td><td>プラスタニウム 1</td><td class="tag-mono">180</td><td class="tag-mono">1s</td></tr>
+<tr id="c-phase-weaver"><td>フェーズ織機<br><span class="romaji">Phase Weaver</span></td><td>トリウム 2<br>砂 5</td><td>フェーズファイバー 0.5</td><td class="tag-mono">300</td><td class="tag-mono">2s</td></tr>
+<tr id="c-surge-smelter"><td>合金溶鉱炉<br><span class="romaji">Surge Smelter</span></td><td>銅 2.4<br>鉛 3.2<br>チタン 1.6<br>シリコン 2.4</td><td>サージ合金 0.8</td><td class="tag-mono">240</td><td class="tag-mono">1.25s</td></tr>
+<tr id="c-cryofluid-mixer"><td>冷却ミキサー<br><span class="romaji">Cryofluid Mixer</span></td><td>チタン 0.5<br>水 12</td><td>冷却水 12</td><td class="tag-mono">60</td><td class="tag-mono">2s</td></tr>
+<tr id="c-pyratite-mixer"><td>ピラタイトミキサー<br><span class="romaji">Pyratite Mixer</span></td><td>石炭 0.75<br>鉛 1.5<br>砂 1.5</td><td>ピラタイト 0.75</td><td class="tag-mono">12</td><td class="tag-mono">1.33s</td></tr>
+<tr id="c-blast-mixer"><td>化合物ミキサー<br><span class="romaji">Blast Mixer</span></td><td>ピラタイト 0.75<br>胞子ポッド 0.75</td><td>爆発性化合物 0.75</td><td class="tag-mono">24</td><td class="tag-mono">1.33s</td></tr>
+<tr id="c-melter"><td>融合機<br><span class="romaji">Melter</span></td><td>スクラップ 6</td><td>スラグ 12</td><td class="tag-mono">60</td><td class="tag-mono">0.17s</td></tr>
+<tr id="c-separator"><td>分離機<br><span class="romaji">Separator</span></td><td>スラグ 4</td><td><span class="build-note">1サイクルごとにどれか1つ</span><br>銅 0.71<br>鉛 0.43<br>黒鉛 0.29<br>チタン 0.29</td><td class="tag-mono">66</td><td class="tag-mono">0.58s</td></tr>
+<tr id="c-disassembler"><td>ディスアセンブラー<br><span class="romaji">Disassembler</span></td><td>スクラップ 4<br>スラグ 7.2</td><td><span class="build-note">1サイクルごとにどれか1つ</span><br>砂 1.6<br>黒鉛 0.8<br>チタン 0.8<br>トリウム 0.8</td><td class="tag-mono">240</td><td class="tag-mono">0.25s</td></tr>
+<tr id="c-spore-press"><td>胞子圧縮機<br><span class="romaji">Spore Press</span></td><td>胞子ポッド 3</td><td>石油 18</td><td class="tag-mono">42</td><td class="tag-mono">0.33s</td></tr>
+<tr id="c-pulverizer"><td>粉砕機<br><span class="romaji">Pulverizer</span></td><td>スクラップ 1.5</td><td>砂 1.5</td><td class="tag-mono">30</td><td class="tag-mono">0.67s</td></tr>
+<tr id="c-coal-centrifuge"><td>石炭遠心分離機<br><span class="romaji">Coal Centrifuge</span></td><td>石油 6</td><td>石炭 2</td><td class="tag-mono">42</td><td class="tag-mono">0.5s</td></tr>
+<tr id="c-cultivator"><td>培養機<br><span class="romaji">Cultivator</span></td><td>水 18</td><td>胞子ポッド 0.6</td><td class="tag-mono">80</td><td class="tag-mono">1.67s</td></tr>
+<tr class="area-row"><th colspan="5">エレキル</th></tr>
+<tr id="c-silicon-arc-furnace"><td>シリコン放電炉<br><span class="romaji">Silicon Arc Furnace</span></td><td>黒鉛 1.2<br>砂 4.8</td><td>シリコン 4.8</td><td class="tag-mono">300</td><td class="tag-mono">0.83s</td></tr>
+<tr id="c-electrolyzer"><td>電解装置<br><span class="romaji">Electrolyzer</span></td><td>水 10</td><td>オゾン 4<br>水素 6</td><td class="tag-mono">60</td><td class="tag-mono">0.17s</td></tr>
+<tr id="c-atmospheric-concentrator"><td>窒素濃縮機<br><span class="romaji">Atmospheric Concentrator</span></td><td>—</td><td>窒素 16<br><span class="build-note">熱 24</span></td><td class="tag-mono">120</td><td class="tag-mono">1.33s</td></tr>
+<tr id="c-carbide-crucible"><td>炭化物クルーシブル<br><span class="romaji">Carbide Crucible</span></td><td>タングステン 3.56<br>黒鉛 5.33</td><td>炭化物 1.78<br><span class="build-note">熱 40</span></td><td class="tag-mono">120</td><td class="tag-mono">0.56s</td></tr>
+<tr id="c-surge-crucible"><td>サージクルーシブル<br><span class="romaji">Surge Crucible</span></td><td>シリコン 4<br>スラグ 160</td><td>サージ合金 1.33<br><span class="build-note">熱 40</span></td><td class="tag-mono">90</td><td class="tag-mono">0.75s</td></tr>
+<tr id="c-cyanogen-synthesizer"><td>シアンシンセサイザー<br><span class="romaji">Cyanogen Synthesizer</span></td><td>黒鉛 3<br>アーキサイト 160</td><td>シアン 12<br><span class="build-note">熱 20</span></td><td class="tag-mono">120</td><td class="tag-mono">0.33s</td></tr>
+<tr id="c-phase-synthesizer"><td>フェーズシンセサイザー<br><span class="romaji">Phase Synthesizer</span></td><td>トリウム 4<br>砂 12<br>オゾン 8</td><td>フェーズファイバー 2<br><span class="build-note">熱 32</span></td><td class="tag-mono">480</td><td class="tag-mono">0.5s</td></tr>
+<tr id="c-vent-condenser"><td>ジェットコンデンサー<br><span class="romaji">Vent Condenser</span></td><td>—</td><td>水 30</td><td class="tag-mono">30</td><td class="tag-mono">2s</td></tr>
+</tbody>
+</table>
+<!-- MDT-CRAFTERS:END -->
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ツールは非公式のファンメイドです。数値はMindustryのソースコード（GPL-3.0）から取得しています。オーバードライブプロジェクター、シリコンクルーシブルの熱タイル、培養機の胞子苔などのブーストは含みません。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://github.com/Anuken/Mindustry" target="_blank" rel="noopener">Mindustry source code (v160.5)</a>
+      <a href="https://mindustrygame.github.io/" target="_blank" rel="noopener">Mindustry official site</a>
+      <a href="https://mindustrygame.github.io/wiki/" target="_blank" rel="noopener">Mindustry Wiki</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+<script>window.MDT_I18N = {"target": "{x}の目標（毎秒）", "targetSep": "アイテムの目標（出力の合計・毎秒）", "build": "→ {n}基建てる", "input": "入力", "output": "出力", "power": "電力", "heat": "熱", "chain": "{x} {rate}/秒 ＝ {b} × {n}", "noChain": "材料はすべて採掘・ポンプで直接手に入る。", "noteHeat": "熱を使う工場は、ヒーターから表示の熱量を受け取って初めて全速で動く。", "noteAttr": "この建物は設置するタイルでも速度が変わる。表示は基本値。", "noteSep": "1サイクルごとに、表示の比率でランダムなアイテムが1個出る。", "planets": {"serpulo": "セルプロ", "erekir": "エレキル"}};</script>
+<script src="/assets/games/mindustry-production.js"></script>
+</body>
+</html>

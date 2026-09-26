@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ゲームのソースコードから作ったMindustry攻略。覚えておきたい生産比率、セルプロとエレキルの違い、全アイテム・液体の英語名と日本語名の対照表。">
+<title>Mindustry 攻略：生産比率・惑星・アイテム名の英日対照</title>
+<link rel="stylesheet" href="/assets/games/mindustry.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/mindustry/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/mindustry/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/mindustry/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/mindustry/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Mindustry 攻略：生産比率・惑星・アイテム名の英日対照">
+<meta property="og:description" content="ゲームのソースコードから作ったMindustry攻略。覚えておきたい生産比率、セルプロとエレキルの違い、全アイテム・液体の英語名と日本語名の対照表。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/mindustry/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-mindustry.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mindustry 攻略：生産比率・惑星・アイテム名の英日対照">
+<meta name="twitter:description" content="ゲームのソースコードから作ったMindustry攻略。覚えておきたい生産比率、セルプロとエレキルの違い、全アイテム・液体の英語名と日本語名の対照表。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-mindustry.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Mindustry 攻略：生産比率・惑星・アイテム名の英日対照",
+      "description": "ゲームのソースコードから作ったMindustry攻略。覚えておきたい生産比率、セルプロとエレキルの違い、全アイテム・液体の英語名と日本語名の対照表。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/mindustry/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Mindustry 攻略：生産比率・惑星・アイテム名の英日対照",
+          "item": "https://kouryakulab.com/ja/games/mindustry/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/"><span class="arrow">←</span> 攻略ラボ</a>
+    <div>
+      <span class="eyebrow">ANUKEN · OPEN SOURCE · v160.5</span>
+      <h1>Mindustry 攻略</h1>
+      <p class="sub">オープンソースの工場建設×タワーディフェンス。このページの数値はすべてゲームのソースコードから直接読み取っているので、最新版と正確に一致する。</p>
+      <div class="fact-strip">
+        <div class="fact"><div class="k">ジャンル</div><div class="v tag-mono">工場建設 / タワーディフェンス</div></div>
+        <div class="fact"><div class="k">対応機種</div><div class="v tag-mono">PC / Android / iOS</div></div>
+        <div class="fact"><div class="k">ライセンス</div><div class="v tag-mono">GPL-3.0（オープンソース）</div></div>
+        <div class="fact"><div class="k">開発</div><div class="v tag-mono">Anuken</div></div>
+        <div class="fact" data-fact="updated"><div class="k">更新</div><div class="v tag-mono">2026.09</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links" id="tabs">
+      <a href="#overview">概要</a>
+      <a href="#ratios">生産比率</a>
+      <a href="#names">アイテム名</a>
+      <a href="/ja/games/mindustry/production-calculator/">生産計算機</a>
+    </div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="overview">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>ゲーム概要</h2></div>
+    <p class="sec-desc">MindustryはAnukenが開発しており、ソースコードはGitHubでGPL-3.0ライセンスのもと公開されている。ドリルで鉱石を掘り、コンベアで工場に運び、作った資源でタレットやユニットを建ててコアを敵の襲撃から守る。キャンペーンは技術ツリーの異なる2つの惑星で構成される。</p>
+    <div class="pillars">
+      <div class="pillar">
+        <h3>セルプロ</h3>
+        <p>最初の惑星。銅・鉛・砂・石炭・チタン・トリウムから、プラスタニウム・フェーズファイバー・サージ合金まで長い生産チェーンが続く。</p>
+      </div>
+      <div class="pillar">
+        <h3>エレキル</h3>
+        <p>2つ目の惑星。銅・鉛の代わりにベリリウム・タングステンを使い、いくつかの工場は別のヒーターから熱を受け取る必要がある。オゾンや水素などの気体も登場する。</p>
+      </div>
+      <div class="pillar">
+        <h3>生産比率</h3>
+        <p>どの工場も決まったサイクルで動くので、各建物の数が正しい比率になって初めてラインが全速で動く。それを計算するのが生産計算機。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ratios">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>覚えておきたい生産比率</h2></div>
+    <p class="sec-desc">1基あたり・全速・ブーストなしの値：</p>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><b>シリコン</b>：シリコン溶鉱炉1基は石炭1.5/秒・砂3/秒（電力30/秒）でシリコン1.5/秒。砂をスクラップから作るなら<b>溶鉱炉1基につき粉砕機2基</b>でちょうど足りる。</li>
+        <li><b>黒鉛</b>：黒鉛圧縮機は電力なしで石炭1.33/秒を黒鉛0.67/秒に変える。マルチ圧縮機1基（石炭6/秒＋水6/秒、電力108/秒）は黒鉛4/秒で、<b>黒鉛圧縮機6基分</b>。</li>
+        <li><b>メタガラス</b>：溶解炉は鉛2/秒・砂2/秒でメタガラス2/秒。</li>
+        <li><b>プラスタニウム</b>：プラスタニウム圧縮機はチタン2/秒・石油15/秒でプラスタニウム1/秒。<b>胞子圧縮機1基</b>（石油18/秒）で足り、その胞子圧縮機には<b>培養機5基</b>分の胞子が必要。</li>
+        <li><b>サージ合金</b>：合金溶鉱炉は銅2.4・鉛3.2・チタン1.6・シリコン2.4（すべて毎秒）でサージ合金0.8/秒。シリコンだけで<b>シリコン溶鉱炉1.6基分</b>を使う。</li>
+      </ul>
+    </div>
+    <p class="cluster-link" style="margin-top:16px;"><a href="/ja/games/mindustry/production-calculator/" style="color:var(--accent);font-weight:700;text-decoration:none;">どの工場でも入力・電力・必要な基数を計算する →</a></p>
+  </section>
+
+  <section id="names">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>アイテム・液体名の英日対照</h2></div>
+    <p class="sec-desc">ゲーム本体の翻訳ファイルから。英語の攻略や動画を見るときに便利。</p>
+    <div class="panel table-scroll">
+<!-- MDT-NAMES:START -->
+<table class="glossary">
+<thead><tr><th>英語</th><th>日本語</th><th>種類</th></tr></thead>
+<tbody>
+<tr><td>Beryllium</td><td class="jp">ベリリウム</td><td>アイテム</td></tr>
+<tr><td>Blast Compound</td><td class="jp">爆発性化合物</td><td>アイテム</td></tr>
+<tr><td>Carbide</td><td class="jp">炭化物</td><td>アイテム</td></tr>
+<tr><td>Coal</td><td class="jp">石炭</td><td>アイテム</td></tr>
+<tr><td>Copper</td><td class="jp">銅</td><td>アイテム</td></tr>
+<tr><td>Graphite</td><td class="jp">黒鉛</td><td>アイテム</td></tr>
+<tr><td>Lead</td><td class="jp">鉛</td><td>アイテム</td></tr>
+<tr><td>Metaglass</td><td class="jp">メタガラス</td><td>アイテム</td></tr>
+<tr><td>Oxide</td><td class="jp">酸化物</td><td>アイテム</td></tr>
+<tr><td>Phase Fabric</td><td class="jp">フェーズファイバー</td><td>アイテム</td></tr>
+<tr><td>Plastanium</td><td class="jp">プラスタニウム</td><td>アイテム</td></tr>
+<tr><td>Pyratite</td><td class="jp">ピラタイト</td><td>アイテム</td></tr>
+<tr><td>Sand</td><td class="jp">砂</td><td>アイテム</td></tr>
+<tr><td>Scrap</td><td class="jp">スクラップ</td><td>アイテム</td></tr>
+<tr><td>Silicon</td><td class="jp">シリコン</td><td>アイテム</td></tr>
+<tr><td>Spore Pod</td><td class="jp">胞子ポッド</td><td>アイテム</td></tr>
+<tr><td>Surge Alloy</td><td class="jp">サージ合金</td><td>アイテム</td></tr>
+<tr><td>Thorium</td><td class="jp">トリウム</td><td>アイテム</td></tr>
+<tr><td>Titanium</td><td class="jp">チタン</td><td>アイテム</td></tr>
+<tr><td>Tungsten</td><td class="jp">タングステン</td><td>アイテム</td></tr>
+<tr><td>Arkycite</td><td class="jp">アーキサイト</td><td>液体</td></tr>
+<tr><td>Cryofluid</td><td class="jp">冷却水</td><td>液体</td></tr>
+<tr><td>Cyanogen</td><td class="jp">シアン</td><td>液体</td></tr>
+<tr><td>Hydrogen</td><td class="jp">水素</td><td>液体</td></tr>
+<tr><td>Nitrogen</td><td class="jp">窒素</td><td>液体</td></tr>
+<tr><td>Oil</td><td class="jp">石油</td><td>液体</td></tr>
+<tr><td>Ozone</td><td class="jp">オゾン</td><td>液体</td></tr>
+<tr><td>Slag</td><td class="jp">スラグ</td><td>液体</td></tr>
+<tr><td>Water</td><td class="jp">水</td><td>液体</td></tr>
+</tbody>
+</table>
+<!-- MDT-NAMES:END -->
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap more-guides">
+    <h3>他の攻略</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/kancolle/">艦これ</a>
+      <a href="/ja/games/gakumas/">学マス</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイド攻略です。数値は上記バージョンのMindustryソースコード（GPL-3.0）から取得しています。最終的にはゲーム内のステータス表示が正です。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://github.com/Anuken/Mindustry" target="_blank" rel="noopener">Mindustry source code (v160.5)</a>
+      <a href="https://mindustrygame.github.io/" target="_blank" rel="noopener">Mindustry official site</a>
+      <a href="https://mindustrygame.github.io/wiki/" target="_blank" rel="noopener">Mindustry Wiki</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+<script src="/assets/tabs.js"></script>
+</body>
+</html>

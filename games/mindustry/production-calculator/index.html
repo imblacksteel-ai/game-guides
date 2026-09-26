@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mindustry production calculator: pick any factory and a target output to get the building count, input rates, power use, and how many upstream factories feed it. Data from the game's source.">
+<title>Mindustry Production Calculator: Factory Ratios & Rates</title>
+<link rel="stylesheet" href="/assets/games/mindustry.css">
+<link rel="canonical" href="https://kouryakulab.com/games/mindustry/production-calculator/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/mindustry/production-calculator/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/mindustry/production-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/mindustry/production-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:title" content="Mindustry Production Calculator: Factory Ratios &amp; Rates">
+<meta property="og:description" content="Mindustry production calculator: pick any factory and a target output to get the building count, input rates, power use, and how many upstream factories feed it. Data from the game's source.">
+<meta property="og:url" content="https://kouryakulab.com/games/mindustry/production-calculator/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-mindustry.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mindustry Production Calculator: Factory Ratios &amp; Rates">
+<meta name="twitter:description" content="Mindustry production calculator: pick any factory and a target output to get the building count, input rates, power use, and how many upstream factories feed it. Data from the game's source.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-mindustry.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Mindustry Production Calculator: Factory Ratios & Rates",
+      "description": "Mindustry production calculator: pick any factory and a target output to get the building count, input rates, power use, and how many upstream factories feed it. Data from the game's source.",
+      "inLanguage": "en",
+      "url": "https://kouryakulab.com/games/mindustry/production-calculator/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Mindustry Production Calculator: Factory Ratios & Rates",
+          "item": "https://kouryakulab.com/games/mindustry/production-calculator/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/games/mindustry/"><span class="arrow">←</span> Full Mindustry Guide</a>
+    <div>
+      <span class="eyebrow">MINDUSTRY · PRODUCTION CALCULATOR</span>
+      <h1>Production Calculator</h1>
+      <p class="sub">Pick a factory and how much you want out of it. The calculator tells you how many to build, what they eat per second, the power they draw, and how many upstream factories you'd need to feed them.</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="Language"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+
+  <div class="two-col" id="mdt-calc">
+    <div class="panel gk-form">
+      <div>
+        <label for="mdt-block">Factory</label>
+        <select id="mdt-block" class="mdt-select"></select>
+      </div>
+      <div class="mdt-modes">
+        <label class="mdt-radio"><input type="radio" name="mdt-mode" value="target" checked> <span id="mdt-target-label">Target output per second</span></label>
+        <label class="mdt-radio"><input type="radio" name="mdt-mode" value="count"> Number of buildings</label>
+      </div>
+      <div>
+        <label for="mdt-value">Amount</label>
+        <input type="number" id="mdt-value" min="0" step="any" value="10" inputmode="decimal">
+      </div>
+      <p class="gk-note" id="mdt-notes"></p>
+    </div>
+
+    <div class="panel">
+      <h2 style="font-size:1.1rem;margin-bottom:6px;">Result</h2>
+      <div class="gk-result"><span class="gk-note">Buildings needed</span></div>
+      <div class="gk-result"><span class="v" id="mdt-count">0</span><span class="rank" id="mdt-count-ceil"></span></div>
+      <h3 style="font-size:.95rem;margin:14px 0 6px;">Per second</h3>
+      <table class="glossary gk-table">
+        <thead><tr><th></th><th>Resource</th><th>Per second</th></tr></thead>
+        <tbody id="mdt-rates"></tbody>
+      </table>
+      <h3 style="font-size:.95rem;margin:14px 0 6px;">Feeding it yourself</h3>
+      <ul class="exped-notes" id="mdt-chain"></ul>
+    </div>
+  </div>
+
+  <section id="all" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Every factory at a glance</h2></div>
+    <p class="sec-desc">Per building at full speed with no boosts. Items are converted from per-cycle amounts; liquids are per second.</p>
+    <div class="panel table-scroll">
+<!-- MDT-CRAFTERS:START -->
+<table class="glossary mdt-table">
+<thead><tr><th>Block</th><th>Inputs /s</th><th>Outputs /s</th><th>Power /s</th><th>Cycle</th></tr></thead>
+<tbody>
+<tr class="area-row"><th colspan="5">Serpulo</th></tr>
+<tr id="c-graphite-press"><td>Graphite Press<br><span class="romaji">黒鉛圧縮機</span></td><td>Coal 1.33</td><td>Graphite 0.67</td><td class="tag-mono">—</td><td class="tag-mono">1.5s</td></tr>
+<tr id="c-multi-press"><td>Multi-Press<br><span class="romaji">マルチ圧縮機</span></td><td>Coal 6<br>Water 6</td><td>Graphite 4</td><td class="tag-mono">108</td><td class="tag-mono">0.5s</td></tr>
+<tr id="c-silicon-smelter"><td>Silicon Smelter<br><span class="romaji">シリコン溶鉱炉</span></td><td>Coal 1.5<br>Sand 3</td><td>Silicon 1.5</td><td class="tag-mono">30</td><td class="tag-mono">0.67s</td></tr>
+<tr id="c-silicon-crucible"><td>Silicon Crucible<br><span class="romaji">シリコンクルーシブル</span></td><td>Coal 2.67<br>Sand 4<br>Pyratite 0.67</td><td>Silicon 5.33</td><td class="tag-mono">240</td><td class="tag-mono">1.5s</td></tr>
+<tr id="c-kiln"><td>Kiln<br><span class="romaji">溶解炉</span></td><td>Lead 2<br>Sand 2</td><td>Metaglass 2</td><td class="tag-mono">36</td><td class="tag-mono">0.5s</td></tr>
+<tr id="c-plastanium-compressor"><td>Plastanium Compressor<br><span class="romaji">プラスタニウム圧縮機</span></td><td>Titanium 2<br>Oil 15</td><td>Plastanium 1</td><td class="tag-mono">180</td><td class="tag-mono">1s</td></tr>
+<tr id="c-phase-weaver"><td>Phase Weaver<br><span class="romaji">フェーズ織機</span></td><td>Thorium 2<br>Sand 5</td><td>Phase Fabric 0.5</td><td class="tag-mono">300</td><td class="tag-mono">2s</td></tr>
+<tr id="c-surge-smelter"><td>Surge Smelter<br><span class="romaji">合金溶鉱炉</span></td><td>Copper 2.4<br>Lead 3.2<br>Titanium 1.6<br>Silicon 2.4</td><td>Surge Alloy 0.8</td><td class="tag-mono">240</td><td class="tag-mono">1.25s</td></tr>
+<tr id="c-cryofluid-mixer"><td>Cryofluid Mixer<br><span class="romaji">冷却ミキサー</span></td><td>Titanium 0.5<br>Water 12</td><td>Cryofluid 12</td><td class="tag-mono">60</td><td class="tag-mono">2s</td></tr>
+<tr id="c-pyratite-mixer"><td>Pyratite Mixer<br><span class="romaji">ピラタイトミキサー</span></td><td>Coal 0.75<br>Lead 1.5<br>Sand 1.5</td><td>Pyratite 0.75</td><td class="tag-mono">12</td><td class="tag-mono">1.33s</td></tr>
+<tr id="c-blast-mixer"><td>Blast Mixer<br><span class="romaji">化合物ミキサー</span></td><td>Pyratite 0.75<br>Spore Pod 0.75</td><td>Blast Compound 0.75</td><td class="tag-mono">24</td><td class="tag-mono">1.33s</td></tr>
+<tr id="c-melter"><td>Melter<br><span class="romaji">融合機</span></td><td>Scrap 6</td><td>Slag 12</td><td class="tag-mono">60</td><td class="tag-mono">0.17s</td></tr>
+<tr id="c-separator"><td>Separator<br><span class="romaji">分離機</span></td><td>Slag 4</td><td><span class="build-note">one of, per cycle</span><br>Copper 0.71<br>Lead 0.43<br>Graphite 0.29<br>Titanium 0.29</td><td class="tag-mono">66</td><td class="tag-mono">0.58s</td></tr>
+<tr id="c-disassembler"><td>Disassembler<br><span class="romaji">ディスアセンブラー</span></td><td>Scrap 4<br>Slag 7.2</td><td><span class="build-note">one of, per cycle</span><br>Sand 1.6<br>Graphite 0.8<br>Titanium 0.8<br>Thorium 0.8</td><td class="tag-mono">240</td><td class="tag-mono">0.25s</td></tr>
+<tr id="c-spore-press"><td>Spore Press<br><span class="romaji">胞子圧縮機</span></td><td>Spore Pod 3</td><td>Oil 18</td><td class="tag-mono">42</td><td class="tag-mono">0.33s</td></tr>
+<tr id="c-pulverizer"><td>Pulverizer<br><span class="romaji">粉砕機</span></td><td>Scrap 1.5</td><td>Sand 1.5</td><td class="tag-mono">30</td><td class="tag-mono">0.67s</td></tr>
+<tr id="c-coal-centrifuge"><td>Coal Centrifuge<br><span class="romaji">石炭遠心分離機</span></td><td>Oil 6</td><td>Coal 2</td><td class="tag-mono">42</td><td class="tag-mono">0.5s</td></tr>
+<tr id="c-cultivator"><td>Cultivator<br><span class="romaji">培養機</span></td><td>Water 18</td><td>Spore Pod 0.6</td><td class="tag-mono">80</td><td class="tag-mono">1.67s</td></tr>
+<tr class="area-row"><th colspan="5">Erekir</th></tr>
+<tr id="c-silicon-arc-furnace"><td>Silicon Arc Furnace<br><span class="romaji">シリコン放電炉</span></td><td>Graphite 1.2<br>Sand 4.8</td><td>Silicon 4.8</td><td class="tag-mono">300</td><td class="tag-mono">0.83s</td></tr>
+<tr id="c-electrolyzer"><td>Electrolyzer<br><span class="romaji">電解装置</span></td><td>Water 10</td><td>Ozone 4<br>Hydrogen 6</td><td class="tag-mono">60</td><td class="tag-mono">0.17s</td></tr>
+<tr id="c-atmospheric-concentrator"><td>Atmospheric Concentrator<br><span class="romaji">窒素濃縮機</span></td><td>—</td><td>Nitrogen 16<br><span class="build-note">heat 24</span></td><td class="tag-mono">120</td><td class="tag-mono">1.33s</td></tr>
+<tr id="c-carbide-crucible"><td>Carbide Crucible<br><span class="romaji">炭化物クルーシブル</span></td><td>Tungsten 3.56<br>Graphite 5.33</td><td>Carbide 1.78<br><span class="build-note">heat 40</span></td><td class="tag-mono">120</td><td class="tag-mono">0.56s</td></tr>
+<tr id="c-surge-crucible"><td>Surge Crucible<br><span class="romaji">サージクルーシブル</span></td><td>Silicon 4<br>Slag 160</td><td>Surge Alloy 1.33<br><span class="build-note">heat 40</span></td><td class="tag-mono">90</td><td class="tag-mono">0.75s</td></tr>
+<tr id="c-cyanogen-synthesizer"><td>Cyanogen Synthesizer<br><span class="romaji">シアンシンセサイザー</span></td><td>Graphite 3<br>Arkycite 160</td><td>Cyanogen 12<br><span class="build-note">heat 20</span></td><td class="tag-mono">120</td><td class="tag-mono">0.33s</td></tr>
+<tr id="c-phase-synthesizer"><td>Phase Synthesizer<br><span class="romaji">フェーズシンセサイザー</span></td><td>Thorium 4<br>Sand 12<br>Ozone 8</td><td>Phase Fabric 2<br><span class="build-note">heat 32</span></td><td class="tag-mono">480</td><td class="tag-mono">0.5s</td></tr>
+<tr id="c-vent-condenser"><td>Vent Condenser<br><span class="romaji">ジェットコンデンサー</span></td><td>—</td><td>Water 30</td><td class="tag-mono">30</td><td class="tag-mono">2s</td></tr>
+</tbody>
+</table>
+<!-- MDT-CRAFTERS:END -->
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">This is an unofficial, fan-made tool. Numbers come from the Mindustry source code (GPL-3.0); boosts such as overdrive projectors, silicon crucible heat tiles or cultivator spore moss are not included.</div>
+    <div class="sources">
+      Sources:
+      <a href="https://github.com/Anuken/Mindustry" target="_blank" rel="noopener">Mindustry source code (v160.5)</a>
+      <a href="https://mindustrygame.github.io/" target="_blank" rel="noopener">Mindustry official site</a>
+      <a href="https://mindustrygame.github.io/wiki/" target="_blank" rel="noopener">Mindustry Wiki</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="Site links"><a href="/about/">About</a> · <a href="/authors/">Authors</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+<script>window.MDT_I18N = {"target": "Target {x} per second", "targetSep": "Target items per second (all outputs combined)", "build": "→ build {n}", "input": "In", "output": "Out", "power": "Power", "heat": "Heat", "chain": "{x} {rate}/s = {n} × {b}", "noChain": "All inputs are mined or pumped directly.", "noteHeat": "Heat crafters only reach full speed with the listed heat supplied by heater blocks.", "noteAttr": "This block's speed also depends on the tiles it's built on; the numbers are the base rate.", "noteSep": "Each cycle gives one random item, weighted as shown.", "planets": {"serpulo": "Serpulo", "erekir": "Erekir"}};</script>
+<script src="/assets/games/mindustry-production.js"></script>
+</body>
+</html>
