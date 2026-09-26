@@ -15,6 +15,7 @@
 **インフラはセットアップ済み。以下を再実行しない：**
 - ドメイン購入・Cloudflare DNS設定・GitHub Pagesのカスタムドメイン登録・HTTPS証明書発行
 - `gh auth login` （認証済み。`gh auth status`で確認できる場合はそれで十分）
+- Google Search Console（ドメインプロパティ `kouryakulab.com`、2026/09/26登録）とサイトマップ送信。サイトマップを更新しても再送信は不要（Googleが定期的に読み直す）。ドメインプロパティでは送信欄に `https://kouryakulab.com/sitemap.xml` とフルURLで入れる。
 
 ## ディレクトリ構成
 
