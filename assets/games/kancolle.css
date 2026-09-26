@@ -348,3 +348,7 @@ footer nav.site-links a:hover { color: var(--ink-dim); }
 }
 .exped-empty { color: var(--ink-dim); font-size: .9rem; margin: 12px 0 0; }
 .exped-table td:nth-child(3) { white-space: nowrap; }
+.build-table { font-size: .85rem; min-width: 640px; }
+.build-table td { vertical-align: top; }
+.build-table td:nth-child(-n+2), .build-table th { white-space: nowrap; }
+.build-note { color: var(--ink-dim); font-size: .8rem; }

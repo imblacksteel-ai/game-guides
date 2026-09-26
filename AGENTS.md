@@ -84,6 +84,7 @@ git diff --stat                 # 想定した言語数ぶんのファイルが�
 - 艦娘データの `remodel_lv` / `remodel_to` はマスターデータの `api_afterlv` / `api_aftershipid` 由来。`remodel_to` は言語に依存しないよう日本語名で持ち、表示側で「英語名 (日本語名)」に変換する。
 - Fleet BuilderのロジックとUIは `assets/games/kancolle-fleet-builder.js` に共有。各言語のHTMLは `window.FLEET_I18N` にUI文言だけを持つ。**JSや艦娘データを言語ごとのHTMLに埋め込まない。**
 - 遠征条件一覧は `assets/data/kancolle-expeditions.json`（**手編集禁止**）。`python3 scripts/build_kancolle_expeditions.py` でKcanotify（編成条件・資源量。マスターデータに無い）とマスターデータ（名前・時間・隻数・海域・アイテム報酬）から生成し、`python3 scripts/render_kancolle_expeditions.py` で英日ページの表（`<!-- EXPED-TABLE -->` マーカー間）に書き込む。表はSEOのためHTMLに直接埋め込み、JSは絞り込みだけ。
+- 建造ページ（`/games/kancolle/construction/`）の表と `assets/data/kancolle-construction.json` は `python3 scripts/build_kancolle_construction.py` で生成（**手編集禁止**）。建造時間はマスターデータ、建造可否はkcwikiのwikiデータで、日本の攻略Wiki（建造）の建造時間一覧表と1隻ずつ照合する。海外艦の秘書艦条件はスクリプト内の `SECRETARY`。定番レシピは攻略Wiki「建造レシピ」の報告値（自己申告なので「目安」と明記）。
 - 東京急行（37/38）の条件は**ドラム缶**（大発動艇ではない）。過去に全言語で誤記していた。
 - 新しいゲームを追加する前に、GitHubに抽出済みデータのリポジトリがあるか確認する（中国ゲームは中国語名で検索しないとヒットしない）。数値は事実なので掲載可、ただし画像・音声などのアセットや本文テキストの丸ごと転載はしない。
 

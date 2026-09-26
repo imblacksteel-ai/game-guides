@@ -75,6 +75,14 @@
   <url><loc>https://kouryakulab.com/ja/games/kancolle/expedition-requirements/</loc></url>
 
   <url>
+    <loc>https://kouryakulab.com/games/kancolle/construction/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/construction/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/construction/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/construction/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/kancolle/construction/</loc></url>
+
+  <url>
     <loc>https://kouryakulab.com/games/kancolle/fleet-builder/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/fleet-builder/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/fleet-builder/"/>
