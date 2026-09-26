@@ -120,7 +120,8 @@ git diff --stat                 # 想定した言語数ぶんのファイルが�
 - 近接武器の表は `python3 scripts/build_spd_weapons.py` で最新リリースタグの各武器クラスの min/max/STRReq/defenseFactor の return 式を評価して生成（**手編集禁止**）。武器名は公式翻訳（items(_ja).properties）。ゲーム内の説明文はGPLのテキストなので転載しない（名前と数値だけ）。
 - 職業表・筋力の説明・「数値の見方」は手書き（ソースで確認した事実：筋力不足1ごとに命中÷1.5・攻撃時間×1.2、余剰筋力は1回ごとに0〜余剰分、必要筋力は+1/+3/+6/+10…で1ずつ減る）。
 - 杖と指輪は `/games/shattered-pixel-dungeon/wands-rings/`。`python3 scripts/build_spd_wands_rings.py` で生成（杖は min/max/initialCharges、指輪は statsInfo の Math.pow(B, level+1) から）。効果の一言説明はスクリプト内の WAND_NOTES / RING_NOTES に自前の文で書く（新しい杖・指輪が増えるとエラーで止まるので追記する）。本文中の日本語名は公式訳に合わせる（例：執念の指輪、魔力の矢の杖）。
-- 未対応の需要：artifacts / trinkets。
+- トリンケットは `/games/shattered-pixel-dungeon/trinkets/`。`python3 scripts/build_spd_trinkets.py` で各クラスの `static 関数(int level)` を+0〜+3で評価（return／if-else／switch の3形式のみ対応）。表示の変換と説明はスクリプト内の SPECS に手書き。新しいトリンケットが増えるとエラーで止まるので SPECS に追記する。
+- 未対応の需要：artifacts（充填・レベルの仕組みが個別で複雑）。
 
 ## 翻訳の一貫性ルール
 

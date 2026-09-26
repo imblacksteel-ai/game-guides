@@ -242,4 +242,12 @@
   </url>
   <url><loc>https://kouryakulab.com/ja/games/shattered-pixel-dungeon/wands-rings/</loc></url>
 
+  <url>
+    <loc>https://kouryakulab.com/games/shattered-pixel-dungeon/trinkets/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/shattered-pixel-dungeon/trinkets/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/shattered-pixel-dungeon/trinkets/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/shattered-pixel-dungeon/trinkets/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/shattered-pixel-dungeon/trinkets/</loc></url>
+
 </urlset>
