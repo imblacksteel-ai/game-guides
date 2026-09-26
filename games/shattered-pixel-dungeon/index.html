@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shattered Pixel Dungeon guide built from the game's source: all six hero classes and how to unlock them, how strength affects weapons, and every melee weapon's damage, strength and speed.">
+<title>Shattered Pixel Dungeon Guide: Classes & Every Melee Weapon</title>
+<link rel="stylesheet" href="/assets/games/spd.css">
+<link rel="canonical" href="https://kouryakulab.com/games/shattered-pixel-dungeon/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/shattered-pixel-dungeon/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/shattered-pixel-dungeon/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/shattered-pixel-dungeon/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:title" content="Shattered Pixel Dungeon Guide: Classes &amp; Every Melee Weapon">
+<meta property="og:description" content="Shattered Pixel Dungeon guide built from the game's source: all six hero classes and how to unlock them, how strength affects weapons, and every melee weapon's damage, strength and speed.">
+<meta property="og:url" content="https://kouryakulab.com/games/shattered-pixel-dungeon/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-shattered-pixel-dungeon.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shattered Pixel Dungeon Guide: Classes &amp; Every Melee Weapon">
+<meta name="twitter:description" content="Shattered Pixel Dungeon guide built from the game's source: all six hero classes and how to unlock them, how strength affects weapons, and every melee weapon's damage, strength and speed.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-shattered-pixel-dungeon.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Shattered Pixel Dungeon Guide: Classes & Every Melee Weapon",
+      "description": "Shattered Pixel Dungeon guide built from the game's source: all six hero classes and how to unlock them, how strength affects weapons, and every melee weapon's damage, strength and speed.",
+      "inLanguage": "en",
+      "url": "https://kouryakulab.com/games/shattered-pixel-dungeon/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Shattered Pixel Dungeon Guide: Classes & Every Melee Weapon",
+          "item": "https://kouryakulab.com/games/shattered-pixel-dungeon/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/"><span class="arrow">←</span> Kouryaku Lab</a>
+    <div>
+      <span class="eyebrow">SHATTERED PIXEL · OPEN SOURCE · v4.0.0</span>
+      <h1>Shattered Pixel Dungeon Guide</h1>
+      <p class="sub">An open-source roguelike dungeon crawler. The numbers on this page come straight from the game's source code for the current release, so they match what you see in-game.</p>
+      <div class="fact-strip">
+        <div class="fact"><div class="k">Genre</div><div class="v tag-mono">Roguelike</div></div>
+        <div class="fact"><div class="k">Platforms</div><div class="v tag-mono">Android / iOS / PC</div></div>
+        <div class="fact"><div class="k">License</div><div class="v tag-mono">GPL-3.0 (open source)</div></div>
+        <div class="fact"><div class="k">Developer</div><div class="v tag-mono">Evan Debenham</div></div>
+        <div class="fact" data-fact="updated"><div class="k">Updated</div><div class="v tag-mono">2026.09</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links" id="tabs">
+      <a href="#overview">Overview</a>
+      <a href="#classes">Classes</a>
+      <a href="#strength">Strength</a>
+      <a href="#weapons">Melee Weapons</a>
+    </div>
+    <nav id="lang-switch" aria-label="Language"></nav>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="overview">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Overview</h2></div>
+    <p class="sec-desc">Shattered Pixel Dungeon is developed by Evan Debenham (Shattered Pixel), based on the original Pixel Dungeon, and its full source code is public under the GPL-3.0 license. Each run is a fresh, randomly generated descent: you pick a hero, find and identify items as you go, and push down through the dungeon's regions and bosses. Death is permanent.</p>
+  </section>
+
+  <section id="classes">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>Hero Classes</h2></div>
+    <p class="sec-desc">Six heroes, each with a unique item and a different starting weapon. Only the Warrior is available at first; the others unlock by doing something in a run.</p>
+    <div class="panel table-scroll">
+      <table class="glossary">
+        <thead><tr><th>Class</th><th>Unique item</th><th>Starting melee weapon</th><th>How to unlock</th></tr></thead>
+        <tbody>
+          <tr><td>Warrior<br><span class="romaji">戦士</span></td><td>Broken seal (shielding at low HP)</td><td>Worn shortsword</td><td>Unlocked from the start</td></tr>
+          <tr><td>Mage<br><span class="romaji">魔術師</span></td><td>Mage's staff (imbue any wand)</td><td>Mage's staff</td><td>Use a Scroll of Upgrade on an item</td></tr>
+          <tr><td>Rogue<br><span class="romaji">盗賊</span></td><td>Cloak of Shadows (turn invisible)</td><td>Dagger</td><td>Make 10 surprise attacks in one run</td></tr>
+          <tr><td>Huntress<br><span class="romaji">女猟師</span></td><td>Spirit bow (infinite arrows)</td><td>Studded gloves</td><td>Hit enemies with thrown weapons 10 times in one run</td></tr>
+          <tr><td>Duelist<br><span class="romaji">決闘者</span></td><td>Weapon abilities (different for every weapon)</td><td>Rapier</td><td>Equip a tier 2+ weapon with no strength penalty</td></tr>
+          <tr><td>Cleric<br><span class="romaji">聖職者</span></td><td>Holy tome (divine spells)</td><td>Cudgel</td><td>Fully cleanse the curse on a cursed item</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="strength">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>How Strength Affects Weapons</h2></div>
+    <p class="sec-desc">Every weapon has a strength (STR) requirement. Tier 1 needs 10, and each tier adds 2 (a few heavy weapons need more).</p>
+    <div class="panel">
+      <ol class="steps">
+        <li><span class="n">1</span><b>Too weak:</b> for each point of STR you're missing, accuracy is divided by 1.5 and each attack takes 1.2× as long — and both stack, so even 2 points short hurts a lot.</li>
+        <li><span class="n">2</span><b>Extra strength:</b> every hit gets a random bonus of 0 up to your excess STR (so 3 extra STR adds 0–3 damage per hit).</li>
+        <li><span class="n">3</span><b>Upgrading lowers the requirement:</b> the STR requirement drops by 1 at +1, +3, +6, +10 and so on.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="weapons">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>Every Melee Weapon</h2></div>
+    <p class="sec-desc">Base damage at +0, what each upgrade adds (min / max), and average damage per turn (average hit ÷ attack time). Accuracy below 1 means more misses; reach 2+ lets you hit from further away. From <span id="spd-version">v4.0.0</span>.</p>
+    <div class="panel table-scroll">
+<!-- SPD-WEAPONS:START -->
+<table class="glossary spd-table" id="spd-weapons">
+<thead><tr><th>Weapon</th><th>Tier</th><th>STR</th><th>Damage</th><th>Per upgrade</th><th>Avg / turn</th><th>Notes</th></tr></thead>
+<tbody>
+<tr data-tier="1"><td>Cudgel<br><span class="romaji">棍棒</span></td><td class="tag-mono">1</td><td class="tag-mono">10</td><td class="tag-mono">1–8</td><td class="tag-mono">+1 / +2</td><td class="tag-mono">4.5</td><td>accuracy ×1.4</td></tr>
+<tr data-tier="1"><td>Dagger<br><span class="romaji">ダガー</span></td><td class="tag-mono">1</td><td class="tag-mono">10</td><td class="tag-mono">1–8</td><td class="tag-mono">+1 / +2</td><td class="tag-mono">4.5</td><td>—</td></tr>
+<tr data-tier="1"><td>Mage&#x27;s Staff<br><span class="romaji">魔術師の長杖</span></td><td class="tag-mono">1</td><td class="tag-mono">10</td><td class="tag-mono">1–6</td><td class="tag-mono">+1 / +2</td><td class="tag-mono">3.5</td><td>—</td></tr>
+<tr data-tier="1"><td>Rapier<br><span class="romaji">レイピア</span></td><td class="tag-mono">1</td><td class="tag-mono">10</td><td class="tag-mono">1–8</td><td class="tag-mono">+1 / +2</td><td class="tag-mono">4.5</td><td>+1 armor</td></tr>
+<tr data-tier="1"><td>Studded Gloves<br><span class="romaji">鋲付き手袋</span></td><td class="tag-mono">1</td><td class="tag-mono">10</td><td class="tag-mono">1–5</td><td class="tag-mono">+1 / +1</td><td class="tag-mono">6</td><td>0.5 turns per attack</td></tr>
+<tr data-tier="1"><td>Worn Shortsword<br><span class="romaji">古びた短剣</span></td><td class="tag-mono">1</td><td class="tag-mono">10</td><td class="tag-mono">1–10</td><td class="tag-mono">+1 / +2</td><td class="tag-mono">5.5</td><td>—</td></tr>
+<tr data-tier="2"><td>Dirk<br><span class="romaji">短刀</span></td><td class="tag-mono">2</td><td class="tag-mono">12</td><td class="tag-mono">2–12</td><td class="tag-mono">+1 / +3</td><td class="tag-mono">7</td><td>—</td></tr>
+<tr data-tier="2"><td>Hand Axe<br><span class="romaji">手斧</span></td><td class="tag-mono">2</td><td class="tag-mono">12</td><td class="tag-mono">2–12</td><td class="tag-mono">+1 / +3</td><td class="tag-mono">7</td><td>accuracy ×1.32</td></tr>
+<tr data-tier="2"><td>Quarterstaff<br><span class="romaji">六尺棒</span></td><td class="tag-mono">2</td><td class="tag-mono">12</td><td class="tag-mono">2–12</td><td class="tag-mono">+1 / +3</td><td class="tag-mono">7</td><td>+2 armor</td></tr>
+<tr data-tier="2"><td>Shortsword<br><span class="romaji">短剣</span></td><td class="tag-mono">2</td><td class="tag-mono">12</td><td class="tag-mono">2–15</td><td class="tag-mono">+1 / +3</td><td class="tag-mono">8.5</td><td>—</td></tr>
+<tr data-tier="2"><td>Sickle<br><span class="romaji">鎌</span></td><td class="tag-mono">2</td><td class="tag-mono">12</td><td class="tag-mono">2–20</td><td class="tag-mono">+1 / +3</td><td class="tag-mono">11</td><td>accuracy ×0.68</td></tr>
+<tr data-tier="2"><td>Spear<br><span class="romaji">槍</span></td><td class="tag-mono">2</td><td class="tag-mono">12</td><td class="tag-mono">2–20</td><td class="tag-mono">+1 / +4</td><td class="tag-mono">7.33</td><td>1.5 turns per attack · reach 2</td></tr>
+<tr data-tier="3"><td>Mace<br><span class="romaji">メイス</span></td><td class="tag-mono">3</td><td class="tag-mono">14</td><td class="tag-mono">3–16</td><td class="tag-mono">+1 / +4</td><td class="tag-mono">9.5</td><td>accuracy ×1.28</td></tr>
+<tr data-tier="3"><td>Round Shield<br><span class="romaji">円盾</span></td><td class="tag-mono">3</td><td class="tag-mono">14</td><td class="tag-mono">3–12</td><td class="tag-mono">+1 / +2</td><td class="tag-mono">7.5</td><td>+4 armor (+1/upgrade)</td></tr>
+<tr data-tier="3"><td>Sai<br><span class="romaji">釵</span></td><td class="tag-mono">3</td><td class="tag-mono">14</td><td class="tag-mono">3–10</td><td class="tag-mono">+1 / +2</td><td class="tag-mono">13</td><td>0.5 turns per attack</td></tr>
+<tr data-tier="3"><td>Scimitar<br><span class="romaji">三日月刀</span></td><td class="tag-mono">3</td><td class="tag-mono">14</td><td class="tag-mono">3–16</td><td class="tag-mono">+1 / +4</td><td class="tag-mono">11.88</td><td>0.8 turns per attack</td></tr>
+<tr data-tier="3"><td>Sword<br><span class="romaji">剣</span></td><td class="tag-mono">3</td><td class="tag-mono">14</td><td class="tag-mono">3–20</td><td class="tag-mono">+1 / +4</td><td class="tag-mono">11.5</td><td>—</td></tr>
+<tr data-tier="3"><td>Whip<br><span class="romaji">鞭</span></td><td class="tag-mono">3</td><td class="tag-mono">14</td><td class="tag-mono">3–15</td><td class="tag-mono">+1 / +3</td><td class="tag-mono">9</td><td>reach 3</td></tr>
+<tr data-tier="4"><td>Assassin&#x27;s Blade<br><span class="romaji">暗殺者の刃</span></td><td class="tag-mono">4</td><td class="tag-mono">16</td><td class="tag-mono">4–20</td><td class="tag-mono">+1 / +5</td><td class="tag-mono">12</td><td>—</td></tr>
+<tr data-tier="4"><td>Battle Axe<br><span class="romaji">戦斧</span></td><td class="tag-mono">4</td><td class="tag-mono">16</td><td class="tag-mono">4–20</td><td class="tag-mono">+1 / +5</td><td class="tag-mono">12</td><td>accuracy ×1.24</td></tr>
+<tr data-tier="4"><td>Crossbow<br><span class="romaji">弩</span></td><td class="tag-mono">4</td><td class="tag-mono">16</td><td class="tag-mono">4–20</td><td class="tag-mono">+1 / +4</td><td class="tag-mono">12</td><td>—</td></tr>
+<tr data-tier="4"><td>Flail<br><span class="romaji">フレイル</span></td><td class="tag-mono">4</td><td class="tag-mono">16</td><td class="tag-mono">4–35</td><td class="tag-mono">+1 / +8</td><td class="tag-mono">19.5</td><td>accuracy ×0.8</td></tr>
+<tr data-tier="4"><td>Katana<br><span class="romaji">刀</span></td><td class="tag-mono">4</td><td class="tag-mono">16</td><td class="tag-mono">4–20</td><td class="tag-mono">+1 / +5</td><td class="tag-mono">12</td><td>+3 armor</td></tr>
+<tr data-tier="4"><td>Longsword<br><span class="romaji">長剣</span></td><td class="tag-mono">4</td><td class="tag-mono">16</td><td class="tag-mono">4–25</td><td class="tag-mono">+1 / +5</td><td class="tag-mono">14.5</td><td>—</td></tr>
+<tr data-tier="4"><td>Runic Blade<br><span class="romaji">ルーンの刃</span></td><td class="tag-mono">4</td><td class="tag-mono">16</td><td class="tag-mono">4–20</td><td class="tag-mono">+1 / +6</td><td class="tag-mono">12</td><td>—</td></tr>
+<tr data-tier="5"><td>Glaive<br><span class="romaji">薙刀</span></td><td class="tag-mono">5</td><td class="tag-mono">18</td><td class="tag-mono">5–40</td><td class="tag-mono">+1 / +8</td><td class="tag-mono">15</td><td>1.5 turns per attack · reach 2</td></tr>
+<tr data-tier="5"><td>Greataxe<br><span class="romaji">大斧</span></td><td class="tag-mono">5</td><td class="tag-mono">20</td><td class="tag-mono">5–45</td><td class="tag-mono">+1 / +6</td><td class="tag-mono">25</td><td>—</td></tr>
+<tr data-tier="5"><td>Greatshield<br><span class="romaji">大盾</span></td><td class="tag-mono">5</td><td class="tag-mono">18</td><td class="tag-mono">5–18</td><td class="tag-mono">+1 / +4</td><td class="tag-mono">11.5</td><td>+6 armor (+2/upgrade)</td></tr>
+<tr data-tier="5"><td>Greatsword<br><span class="romaji">大剣</span></td><td class="tag-mono">5</td><td class="tag-mono">18</td><td class="tag-mono">5–30</td><td class="tag-mono">+1 / +6</td><td class="tag-mono">17.5</td><td>—</td></tr>
+<tr data-tier="5"><td>Stone Gauntlet<br><span class="romaji">石の篭手</span></td><td class="tag-mono">5</td><td class="tag-mono">18</td><td class="tag-mono">5–15</td><td class="tag-mono">+1 / +3</td><td class="tag-mono">20</td><td>0.5 turns per attack</td></tr>
+<tr data-tier="5"><td>War Hammer<br><span class="romaji">戦鎚</span></td><td class="tag-mono">5</td><td class="tag-mono">18</td><td class="tag-mono">5–24</td><td class="tag-mono">+1 / +6</td><td class="tag-mono">14.5</td><td>accuracy ×1.2</td></tr>
+<tr data-tier="5"><td>War Scythe<br><span class="romaji">戦鎌</span></td><td class="tag-mono">5</td><td class="tag-mono">18</td><td class="tag-mono">5–40</td><td class="tag-mono">+1 / +6</td><td class="tag-mono">22.5</td><td>accuracy ×0.8</td></tr>
+</tbody>
+</table>
+<!-- SPD-WEAPONS:END -->
+    </div>
+    <div class="panel" style="margin-top:16px;">
+      <h3 style="font-size:1rem;margin-bottom:8px;">Reading the numbers</h3>
+      <ul class="exped-notes">
+        <li>The highest raw damage per turn in each tier: <b>Studded Gloves</b> (tier 1), <b>Sickle</b> (tier 2, but only ×0.68 accuracy), <b>Sai</b> (tier 3), <b>Flail</b> (tier 4, ×0.8 accuracy) and <b>Greataxe</b> (tier 5, which needs 20 STR).</li>
+        <li>Fast weapons like Gloves, Sai and Gauntlet split their damage over two hits per turn, so enemy armor, which reduces every hit, cuts into them more than into slow, heavy weapons.</li>
+        <li>Several weapons have effects the table can't show — the Dagger and Assassin's Blade are built for surprise attacks, and the Runic Blade gains more damage per upgrade than other tier-4 weapons. Accuracy-boosted weapons like the Cudgel, Hand Axe and Mace trade damage for fewer misses.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap more-guides">
+    <h3>More Guides</h3>
+    <div class="more-guides-links">
+      <a href="/games/mindustry/">Mindustry</a>
+      <a href="/games/kancolle/">KanColle</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="disclaimer">This is an unofficial, fan-made guide. Weapon numbers and names come from the Shattered Pixel Dungeon source code (GPL-3.0) of the release shown above; no in-game text is reproduced.</div>
+    <div class="sources">
+      Sources:
+      <a href="https://github.com/00-Evan/shattered-pixel-dungeon" target="_blank" rel="noopener">Shattered Pixel Dungeon source code (v4.0.0)</a>
+      <a href="https://shatteredpixel.com/" target="_blank" rel="noopener">Shattered Pixel (official site)</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="Site links"><a href="/about/">About</a> · <a href="/authors/">Authors</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+<script src="/assets/tabs.js"></script>
+</body>
+</html>

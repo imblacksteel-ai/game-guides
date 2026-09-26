@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ゲームのソースコードから作ったShattered Pixel Dungeon攻略。6職業の特徴と解放条件、筋力と武器の関係、全近接武器のダメージ・必要筋力・攻撃速度の一覧。">
+<title>Shattered Pixel Dungeon 攻略：全職業と近接武器の性能一覧</title>
+<link rel="stylesheet" href="/assets/games/spd.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/shattered-pixel-dungeon/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/shattered-pixel-dungeon/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/shattered-pixel-dungeon/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/shattered-pixel-dungeon/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Shattered Pixel Dungeon 攻略：全職業と近接武器の性能一覧">
+<meta property="og:description" content="ゲームのソースコードから作ったShattered Pixel Dungeon攻略。6職業の特徴と解放条件、筋力と武器の関係、全近接武器のダメージ・必要筋力・攻撃速度の一覧。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/shattered-pixel-dungeon/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-shattered-pixel-dungeon.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shattered Pixel Dungeon 攻略：全職業と近接武器の性能一覧">
+<meta name="twitter:description" content="ゲームのソースコードから作ったShattered Pixel Dungeon攻略。6職業の特徴と解放条件、筋力と武器の関係、全近接武器のダメージ・必要筋力・攻撃速度の一覧。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-shattered-pixel-dungeon.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Shattered Pixel Dungeon 攻略：全職業と近接武器の性能一覧",
+      "description": "ゲームのソースコードから作ったShattered Pixel Dungeon攻略。6職業の特徴と解放条件、筋力と武器の関係、全近接武器のダメージ・必要筋力・攻撃速度の一覧。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/shattered-pixel-dungeon/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Shattered Pixel Dungeon 攻略：全職業と近接武器の性能一覧",
+          "item": "https://kouryakulab.com/ja/games/shattered-pixel-dungeon/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/"><span class="arrow">←</span> 攻略ラボ</a>
+    <div>
+      <span class="eyebrow">SHATTERED PIXEL · OPEN SOURCE · v4.0.0</span>
+      <h1>Shattered Pixel Dungeon 攻略</h1>
+      <p class="sub">オープンソースのローグライク・ダンジョンRPG。このページの数値は最新版のソースコードから直接取っているので、ゲーム内の表示と一致する。</p>
+      <div class="fact-strip">
+        <div class="fact"><div class="k">ジャンル</div><div class="v tag-mono">ローグライク</div></div>
+        <div class="fact"><div class="k">対応機種</div><div class="v tag-mono">Android / iOS / PC</div></div>
+        <div class="fact"><div class="k">ライセンス</div><div class="v tag-mono">GPL-3.0（オープンソース）</div></div>
+        <div class="fact"><div class="k">開発</div><div class="v tag-mono">Evan Debenham</div></div>
+        <div class="fact" data-fact="updated"><div class="k">更新</div><div class="v tag-mono">2026.09</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links" id="tabs">
+      <a href="#overview">概要</a>
+      <a href="#classes">職業</a>
+      <a href="#strength">筋力</a>
+      <a href="#weapons">近接武器</a>
+    </div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="overview">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>ゲーム概要</h2></div>
+    <p class="sec-desc">Shattered Pixel DungeonはEvan Debenham（Shattered Pixel）が元祖Pixel Dungeonをもとに開発しており、ソースコードはGPL-3.0ライセンスで公開されている。毎回ランダム生成されるダンジョンを、職業を選び、拾ったアイテムを識別しながら、各階層とボスを突破して下っていく。死んだらやり直し。</p>
+  </section>
+
+  <section id="classes">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>職業</h2></div>
+    <p class="sec-desc">6人の職業にはそれぞれ固有アイテムと初期武器がある。最初に使えるのは戦士だけで、ほかはゲーム中に条件を満たすと解放される。</p>
+    <div class="panel table-scroll">
+      <table class="glossary">
+        <thead><tr><th>職業</th><th>固有アイテム</th><th>初期の近接武器</th><th>解放条件</th></tr></thead>
+        <tbody>
+          <tr><td>戦士<br><span class="romaji">Warrior</span></td><td>壊れた印章（体力が減るとシールド）</td><td>古びた短剣</td><td>最初から使える</td></tr>
+          <tr><td>魔術師<br><span class="romaji">Mage</span></td><td>魔術師の長杖（杖の力を込められる）</td><td>魔術師の長杖</td><td>強化の巻物でアイテムを強化する</td></tr>
+          <tr><td>盗賊<br><span class="romaji">Rogue</span></td><td>影の外套（透明化）</td><td>ダガー</td><td>1回のゲームで奇襲攻撃を10回行う</td></tr>
+          <tr><td>女猟師<br><span class="romaji">Huntress</span></td><td>精霊の弓（矢が無限）</td><td>鋲付き手袋</td><td>1回のゲームで投擲武器を10回命中させる</td></tr>
+          <tr><td>決闘者<br><span class="romaji">Duelist</span></td><td>武器ごとの特殊能力</td><td>レイピア</td><td>Tier2以上の武器を筋力不足なしで装備する</td></tr>
+          <tr><td>聖職者<br><span class="romaji">Cleric</span></td><td>聖典（神聖魔法）</td><td>棍棒</td><td>呪われた装備品の呪いを完全に浄化する</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="strength">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>筋力と武器の関係</h2></div>
+    <p class="sec-desc">どの武器にも必要筋力がある。Tier1は10で、Tierが1上がるごとに2ずつ増える（一部の重い武器はさらに多い）。</p>
+    <div class="panel">
+      <ol class="steps">
+        <li><span class="n">1</span><b>筋力が足りない：</b>1足りないごとに命中率が1.5で割られ、攻撃にかかる時間が1.2倍になる。どちらも重なるので、2足りないだけでもかなり弱くなる。</li>
+        <li><span class="n">2</span><b>筋力が余っている：</b>毎回の攻撃に「0〜余った筋力」のボーナスダメージがランダムで乗る（3余っていれば1回あたり0〜3）。</li>
+        <li><span class="n">3</span><b>強化で必要筋力が下がる：</b>+1・+3・+6・+10…の時点で必要筋力が1ずつ下がる。</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="weapons">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>全近接武器の性能</h2></div>
+    <p class="sec-desc">+0時点の基本ダメージ、強化1回ごとの上昇量（最小／最大）、1ターンあたりの平均ダメージ（平均ダメージ÷攻撃時間）。命中が1未満の武器は外しやすく、射程2以上は離れた敵を攻撃できる。データは<span id="spd-version">v4.0.0</span>。</p>
+    <div class="panel table-scroll">
+<!-- SPD-WEAPONS:START -->
+<table class="glossary spd-table" id="spd-weapons">
+<thead><tr><th>武器</th><th>Tier</th><th>必要筋力</th><th>ダメージ</th><th>強化ごと</th><th>1ターン平均</th><th>特徴</th></tr></thead>
+<tbody>
+<tr data-tier="1"><td>棍棒<br><span class="romaji">Cudgel</span></td><td class="tag-mono">1</td><td class="tag-mono">10</td><td class="tag-mono">1–8</td><td class="tag-mono">+1 / +2</td><td class="tag-mono">4.5</td><td>命中×1.4</td></tr>
+<tr data-tier="1"><td>ダガー<br><span class="romaji">Dagger</span></td><td class="tag-mono">1</td><td class="tag-mono">10</td><td class="tag-mono">1–8</td><td class="tag-mono">+1 / +2</td><td class="tag-mono">4.5</td><td>—</td></tr>
+<tr data-tier="1"><td>魔術師の長杖<br><span class="romaji">Mage&#x27;s Staff</span></td><td class="tag-mono">1</td><td class="tag-mono">10</td><td class="tag-mono">1–6</td><td class="tag-mono">+1 / +2</td><td class="tag-mono">3.5</td><td>—</td></tr>
+<tr data-tier="1"><td>レイピア<br><span class="romaji">Rapier</span></td><td class="tag-mono">1</td><td class="tag-mono">10</td><td class="tag-mono">1–8</td><td class="tag-mono">+1 / +2</td><td class="tag-mono">4.5</td><td>防御+1</td></tr>
+<tr data-tier="1"><td>鋲付き手袋<br><span class="romaji">Studded Gloves</span></td><td class="tag-mono">1</td><td class="tag-mono">10</td><td class="tag-mono">1–5</td><td class="tag-mono">+1 / +1</td><td class="tag-mono">6</td><td>攻撃に0.5ターン</td></tr>
+<tr data-tier="1"><td>古びた短剣<br><span class="romaji">Worn Shortsword</span></td><td class="tag-mono">1</td><td class="tag-mono">10</td><td class="tag-mono">1–10</td><td class="tag-mono">+1 / +2</td><td class="tag-mono">5.5</td><td>—</td></tr>
+<tr data-tier="2"><td>短刀<br><span class="romaji">Dirk</span></td><td class="tag-mono">2</td><td class="tag-mono">12</td><td class="tag-mono">2–12</td><td class="tag-mono">+1 / +3</td><td class="tag-mono">7</td><td>—</td></tr>
+<tr data-tier="2"><td>手斧<br><span class="romaji">Hand Axe</span></td><td class="tag-mono">2</td><td class="tag-mono">12</td><td class="tag-mono">2–12</td><td class="tag-mono">+1 / +3</td><td class="tag-mono">7</td><td>命中×1.32</td></tr>
+<tr data-tier="2"><td>六尺棒<br><span class="romaji">Quarterstaff</span></td><td class="tag-mono">2</td><td class="tag-mono">12</td><td class="tag-mono">2–12</td><td class="tag-mono">+1 / +3</td><td class="tag-mono">7</td><td>防御+2</td></tr>
+<tr data-tier="2"><td>短剣<br><span class="romaji">Shortsword</span></td><td class="tag-mono">2</td><td class="tag-mono">12</td><td class="tag-mono">2–15</td><td class="tag-mono">+1 / +3</td><td class="tag-mono">8.5</td><td>—</td></tr>
+<tr data-tier="2"><td>鎌<br><span class="romaji">Sickle</span></td><td class="tag-mono">2</td><td class="tag-mono">12</td><td class="tag-mono">2–20</td><td class="tag-mono">+1 / +3</td><td class="tag-mono">11</td><td>命中×0.68</td></tr>
+<tr data-tier="2"><td>槍<br><span class="romaji">Spear</span></td><td class="tag-mono">2</td><td class="tag-mono">12</td><td class="tag-mono">2–20</td><td class="tag-mono">+1 / +4</td><td class="tag-mono">7.33</td><td>攻撃に1.5ターン · 射程2</td></tr>
+<tr data-tier="3"><td>メイス<br><span class="romaji">Mace</span></td><td class="tag-mono">3</td><td class="tag-mono">14</td><td class="tag-mono">3–16</td><td class="tag-mono">+1 / +4</td><td class="tag-mono">9.5</td><td>命中×1.28</td></tr>
+<tr data-tier="3"><td>円盾<br><span class="romaji">Round Shield</span></td><td class="tag-mono">3</td><td class="tag-mono">14</td><td class="tag-mono">3–12</td><td class="tag-mono">+1 / +2</td><td class="tag-mono">7.5</td><td>防御+4（強化ごと+1）</td></tr>
+<tr data-tier="3"><td>釵<br><span class="romaji">Sai</span></td><td class="tag-mono">3</td><td class="tag-mono">14</td><td class="tag-mono">3–10</td><td class="tag-mono">+1 / +2</td><td class="tag-mono">13</td><td>攻撃に0.5ターン</td></tr>
+<tr data-tier="3"><td>三日月刀<br><span class="romaji">Scimitar</span></td><td class="tag-mono">3</td><td class="tag-mono">14</td><td class="tag-mono">3–16</td><td class="tag-mono">+1 / +4</td><td class="tag-mono">11.88</td><td>攻撃に0.8ターン</td></tr>
+<tr data-tier="3"><td>剣<br><span class="romaji">Sword</span></td><td class="tag-mono">3</td><td class="tag-mono">14</td><td class="tag-mono">3–20</td><td class="tag-mono">+1 / +4</td><td class="tag-mono">11.5</td><td>—</td></tr>
+<tr data-tier="3"><td>鞭<br><span class="romaji">Whip</span></td><td class="tag-mono">3</td><td class="tag-mono">14</td><td class="tag-mono">3–15</td><td class="tag-mono">+1 / +3</td><td class="tag-mono">9</td><td>射程3</td></tr>
+<tr data-tier="4"><td>暗殺者の刃<br><span class="romaji">Assassin&#x27;s Blade</span></td><td class="tag-mono">4</td><td class="tag-mono">16</td><td class="tag-mono">4–20</td><td class="tag-mono">+1 / +5</td><td class="tag-mono">12</td><td>—</td></tr>
+<tr data-tier="4"><td>戦斧<br><span class="romaji">Battle Axe</span></td><td class="tag-mono">4</td><td class="tag-mono">16</td><td class="tag-mono">4–20</td><td class="tag-mono">+1 / +5</td><td class="tag-mono">12</td><td>命中×1.24</td></tr>
+<tr data-tier="4"><td>弩<br><span class="romaji">Crossbow</span></td><td class="tag-mono">4</td><td class="tag-mono">16</td><td class="tag-mono">4–20</td><td class="tag-mono">+1 / +4</td><td class="tag-mono">12</td><td>—</td></tr>
+<tr data-tier="4"><td>フレイル<br><span class="romaji">Flail</span></td><td class="tag-mono">4</td><td class="tag-mono">16</td><td class="tag-mono">4–35</td><td class="tag-mono">+1 / +8</td><td class="tag-mono">19.5</td><td>命中×0.8</td></tr>
+<tr data-tier="4"><td>刀<br><span class="romaji">Katana</span></td><td class="tag-mono">4</td><td class="tag-mono">16</td><td class="tag-mono">4–20</td><td class="tag-mono">+1 / +5</td><td class="tag-mono">12</td><td>防御+3</td></tr>
+<tr data-tier="4"><td>長剣<br><span class="romaji">Longsword</span></td><td class="tag-mono">4</td><td class="tag-mono">16</td><td class="tag-mono">4–25</td><td class="tag-mono">+1 / +5</td><td class="tag-mono">14.5</td><td>—</td></tr>
+<tr data-tier="4"><td>ルーンの刃<br><span class="romaji">Runic Blade</span></td><td class="tag-mono">4</td><td class="tag-mono">16</td><td class="tag-mono">4–20</td><td class="tag-mono">+1 / +6</td><td class="tag-mono">12</td><td>—</td></tr>
+<tr data-tier="5"><td>薙刀<br><span class="romaji">Glaive</span></td><td class="tag-mono">5</td><td class="tag-mono">18</td><td class="tag-mono">5–40</td><td class="tag-mono">+1 / +8</td><td class="tag-mono">15</td><td>攻撃に1.5ターン · 射程2</td></tr>
+<tr data-tier="5"><td>大斧<br><span class="romaji">Greataxe</span></td><td class="tag-mono">5</td><td class="tag-mono">20</td><td class="tag-mono">5–45</td><td class="tag-mono">+1 / +6</td><td class="tag-mono">25</td><td>—</td></tr>
+<tr data-tier="5"><td>大盾<br><span class="romaji">Greatshield</span></td><td class="tag-mono">5</td><td class="tag-mono">18</td><td class="tag-mono">5–18</td><td class="tag-mono">+1 / +4</td><td class="tag-mono">11.5</td><td>防御+6（強化ごと+2）</td></tr>
+<tr data-tier="5"><td>大剣<br><span class="romaji">Greatsword</span></td><td class="tag-mono">5</td><td class="tag-mono">18</td><td class="tag-mono">5–30</td><td class="tag-mono">+1 / +6</td><td class="tag-mono">17.5</td><td>—</td></tr>
+<tr data-tier="5"><td>石の篭手<br><span class="romaji">Stone Gauntlet</span></td><td class="tag-mono">5</td><td class="tag-mono">18</td><td class="tag-mono">5–15</td><td class="tag-mono">+1 / +3</td><td class="tag-mono">20</td><td>攻撃に0.5ターン</td></tr>
+<tr data-tier="5"><td>戦鎚<br><span class="romaji">War Hammer</span></td><td class="tag-mono">5</td><td class="tag-mono">18</td><td class="tag-mono">5–24</td><td class="tag-mono">+1 / +6</td><td class="tag-mono">14.5</td><td>命中×1.2</td></tr>
+<tr data-tier="5"><td>戦鎌<br><span class="romaji">War Scythe</span></td><td class="tag-mono">5</td><td class="tag-mono">18</td><td class="tag-mono">5–40</td><td class="tag-mono">+1 / +6</td><td class="tag-mono">22.5</td><td>命中×0.8</td></tr>
+</tbody>
+</table>
+<!-- SPD-WEAPONS:END -->
+    </div>
+    <div class="panel" style="margin-top:16px;">
+      <h3 style="font-size:1rem;margin-bottom:8px;">数値の見方</h3>
+      <ul class="exped-notes">
+        <li>各Tierで1ターンあたりの平均ダメージが最も高いのは、<b>鋲付き手袋</b>（Tier1）、<b>鎌</b>（Tier2、ただし命中×0.68）、<b>釵</b>（Tier3）、<b>フレイル</b>（Tier4、命中×0.8）、<b>大斧</b>（Tier5、必要筋力20）。</li>
+        <li>手袋・釵・石の篭手のような速い武器は1ターンに2回に分けて攻撃するため、1回ごとにダメージを減らす敵の防御の影響を、遅くて重い武器より大きく受ける。</li>
+        <li>表に出ない特徴を持つ武器も多い。ダガーや暗殺者の刃は奇襲攻撃向きで、ルーンの刃は他のTier4武器より強化1回あたりの上昇量が大きい。棍棒・手斧・メイスのような命中が高い武器は、ダメージの代わりに外しにくい。</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap more-guides">
+    <h3>他の攻略</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/mindustry/">Mindustry</a>
+      <a href="/ja/games/kancolle/">艦これ</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイド攻略です。武器の数値と名称は上記バージョンのShattered Pixel Dungeonソースコード（GPL-3.0）から取得しており、ゲーム内の文章は転載していません。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://github.com/00-Evan/shattered-pixel-dungeon" target="_blank" rel="noopener">Shattered Pixel Dungeon source code (v4.0.0)</a>
+      <a href="https://shatteredpixel.com/" target="_blank" rel="noopener">Shattered Pixel (official site)</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+<script src="/assets/tabs.js"></script>
+</body>
+</html>

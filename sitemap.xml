@@ -226,4 +226,12 @@
   </url>
   <url><loc>https://kouryakulab.com/ja/games/mindustry/production-calculator/</loc></url>
 
+  <url>
+    <loc>https://kouryakulab.com/games/shattered-pixel-dungeon/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/shattered-pixel-dungeon/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/shattered-pixel-dungeon/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/shattered-pixel-dungeon/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/shattered-pixel-dungeon/</loc></url>
+
 </urlset>
