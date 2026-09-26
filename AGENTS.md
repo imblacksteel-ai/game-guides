@@ -110,6 +110,7 @@ git diff --stat                 # 想定した言語数ぶんのファイルが�
 
 - `/games/mindustry/`（ハブ：生産比率・英日アイテム名）と `/games/mindustry/production-calculator/`。英日のみ。CSSは `assets/games/mindustry.css`。
 - 数値は `python3 scripts/build_mindustry_crafters.py` で本体の最新リリースタグの `Blocks.java` とbundle（英日の公式翻訳）から生成し、ページの表も書き込む（**手編集禁止**）。液体はソース上「毎ティック」なので×60、電力も×60で毎秒。GenericCrafterの既定craftTimeは80。
+- ドリル（Drill / BurstDrill）も同じスクリプトで生成し、計算機ページの `<!-- MDT-DRILLS -->` に表を書き込む。通常ドリルは (drillTime + 50×硬度) / 倍率 ティック/個 × タイル数、ブーストは暖機も上がるため強度²倍。BurstDrillは硬度無関係・ブーストは強度倍。壁の鉱石（プラズマボーリング）は未対応。
 - 書き方が想定外のブロックは推測で埋めずスキップしてログに出す。新バージョンでスキップが増えたらパーサーを直す。
 - ハブの「生産比率」の文章は手書き（データから計算した値）。バージョン更新時は値が変わっていないか確認する。日本語のブロック名は公式翻訳に合わせる（例：Multi-Press＝マルチ圧縮機）。
 

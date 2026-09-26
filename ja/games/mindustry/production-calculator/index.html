@@ -127,8 +127,45 @@
     </div>
   </div>
 
+  <section id="drills" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>ドリルの採掘量</h2></div>
+    <p class="sec-desc">ドリルの下のタイルがすべて同じ鉱石のときの採掘速度。上段は通常、下段はブースト液（セルプロでは水）を供給したとき。単位は個/秒。</p>
+    <div class="two-col" id="mdt-drill">
+      <div class="panel gk-form">
+        <h3 style="font-size:.95rem;margin:0;">ドリル計算機</h3>
+        <div><label for="mdt-d-block">ドリル</label><select id="mdt-d-block" class="mdt-select"></select></div>
+        <div><label for="mdt-d-ore">鉱石</label><select id="mdt-d-ore" class="mdt-select"></select></div>
+        <div class="gk-params" style="grid-template-columns:1fr 1fr;">
+          <div><label for="mdt-d-tiles">ドリルの下の鉱石タイル数</label><input type="number" id="mdt-d-tiles" min="1" value="4" inputmode="numeric"></div>
+          <div><label for="mdt-d-count">ドリルの数</label><input type="number" id="mdt-d-count" min="1" value="1" inputmode="numeric"></div>
+        </div>
+        <label class="mdt-radio"><input type="checkbox" id="mdt-d-boost"> ブースト液を供給する</label>
+      </div>
+      <div class="panel">
+        <div class="gk-result"><span class="v" id="mdt-d-rate">0</span><span class="gk-note" id="mdt-d-unit"></span></div>
+        <ul class="exped-notes" id="mdt-d-detail" style="margin-top:8px;"></ul>
+      </div>
+    </div>
+    <div class="panel table-scroll" style="margin-top:16px;">
+<!-- MDT-DRILLS:START -->
+<table class="glossary mdt-table">
+<thead><tr><th>ドリル</th><th>砂</th><th>スクラップ</th><th>銅</th><th>鉛</th><th>石炭</th><th>チタン</th><th>トリウム</th><th>ベリリウム</th><th>タングステン</th></tr></thead>
+<tbody>
+<tr id="d-mechanical-drill"><td>機械ドリル<br><span class="build-note">セルプロ · 2×2</span></td><td class="tag-mono">0.4<br><span class="build-note">1.02</span></td><td class="tag-mono">0.4<br><span class="build-note">1.02</span></td><td class="tag-mono">0.37<br><span class="build-note">0.95</span></td><td class="tag-mono">0.37<br><span class="build-note">0.95</span></td><td class="tag-mono">0.34<br><span class="build-note">0.88</span></td><td class="build-note">—</td><td class="build-note">—</td><td class="build-note">—</td><td class="build-note">—</td></tr>
+<tr id="d-pneumatic-drill"><td>空気圧ドリル<br><span class="build-note">セルプロ · 2×2</span></td><td class="tag-mono">0.6<br><span class="build-note">1.54</span></td><td class="tag-mono">0.6<br><span class="build-note">1.54</span></td><td class="tag-mono">0.53<br><span class="build-note">1.37</span></td><td class="tag-mono">0.53<br><span class="build-note">1.37</span></td><td class="tag-mono">0.48<br><span class="build-note">1.23</span></td><td class="tag-mono">0.44<br><span class="build-note">1.12</span></td><td class="build-note">—</td><td class="build-note">—</td><td class="build-note">—</td></tr>
+<tr id="d-laser-drill"><td>レーザードリル<br><span class="build-note">セルプロ · 3×3</span></td><td class="tag-mono">1.93<br><span class="build-note">4.94</span></td><td class="tag-mono">1.93<br><span class="build-note">4.94</span></td><td class="tag-mono">1.64<br><span class="build-note">4.19</span></td><td class="tag-mono">1.64<br><span class="build-note">4.19</span></td><td class="tag-mono">1.42<br><span class="build-note">3.64</span></td><td class="tag-mono">1.26<br><span class="build-note">3.21</span></td><td class="tag-mono">1.12<br><span class="build-note">2.88</span></td><td class="build-note">—</td><td class="build-note">—</td></tr>
+<tr id="d-blast-drill"><td>エアブラストドリル<br><span class="build-note">セルプロ · 4×4</span></td><td class="tag-mono">3.43<br><span class="build-note">11.11</span></td><td class="tag-mono">3.43<br><span class="build-note">11.11</span></td><td class="tag-mono">2.91<br><span class="build-note">9.43</span></td><td class="tag-mono">2.91<br><span class="build-note">9.43</span></td><td class="tag-mono">2.53<br><span class="build-note">8.19</span></td><td class="tag-mono">2.23<br><span class="build-note">7.23</span></td><td class="tag-mono">2<br><span class="build-note">6.48</span></td><td class="build-note">—</td><td class="build-note">—</td></tr>
+<tr id="d-impact-drill"><td>インパクトドリル<br><span class="build-note">エレキル · 4×4</span></td><td class="tag-mono">1.33<br><span class="build-note">2.33</span></td><td class="build-note">—</td><td class="build-note">—</td><td class="build-note">—</td><td class="build-note">—</td><td class="build-note">—</td><td class="tag-mono">1.33<br><span class="build-note">2.33</span></td><td class="tag-mono">2.67<br><span class="build-note">4.67</span></td><td class="tag-mono">1.33<br><span class="build-note">2.33</span></td></tr>
+<tr id="d-eruption-drill"><td>イラプションドリル<br><span class="build-note">エレキル · 5×5</span></td><td class="tag-mono">5.33<br><span class="build-note">10.67</span></td><td class="build-note">—</td><td class="build-note">—</td><td class="build-note">—</td><td class="build-note">—</td><td class="build-note">—</td><td class="tag-mono">5.33<br><span class="build-note">10.67</span></td><td class="tag-mono">10.67<br><span class="build-note">21.33</span></td><td class="tag-mono">5.33<br><span class="build-note">10.67</span></td></tr>
+</tbody>
+</table>
+<!-- MDT-DRILLS:END -->
+    </div>
+    <div class="callout">通常のドリルは硬い鉱石ほど時間がかかる（硬度1ごとに+50ティック）。ブースト液はドリルの速度と暖機の両方を上げるため、効果はブースト倍率の2乗（水なら2.56倍）。エレキルのインパクトドリル・エラプションドリルは硬度の影響を受けず、まとめて採掘し、ブーストも2乗にならない。</div>
+  </section>
+
   <section id="all" style="padding-block:32px 0;">
-    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>全工場の一覧</h2></div>
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>全工場の一覧</h2></div>
     <p class="sec-desc">1基あたり・全速・ブーストなし。アイテムは1サイクルの量を毎秒に換算、液体は毎秒。</p>
     <div class="panel table-scroll">
 <!-- MDT-CRAFTERS:START -->
@@ -185,7 +222,7 @@
 </footer>
 
 <script src="/assets/lang-switch.js"></script>
-<script>window.MDT_I18N = {"target": "{x}の目標（毎秒）", "targetSep": "アイテムの目標（出力の合計・毎秒）", "build": "→ {n}基建てる", "input": "入力", "output": "出力", "power": "電力", "heat": "熱", "chain": "{x} {rate}/秒 ＝ {b} × {n}", "noChain": "材料はすべて採掘・ポンプで直接手に入る。", "noteHeat": "熱を使う工場は、ヒーターから表示の熱量を受け取って初めて全速で動く。", "noteAttr": "この建物は設置するタイルでも速度が変わる。表示は基本値。", "noteSep": "1サイクルごとに、表示の比率でランダムなアイテムが1個出る。", "planets": {"serpulo": "セルプロ", "erekir": "エレキル"}};</script>
+<script>window.MDT_I18N = {"target": "{x}の目標（毎秒）", "targetSep": "アイテムの目標（出力の合計・毎秒）", "build": "→ {n}基建てる", "input": "入力", "output": "出力", "power": "電力", "heat": "熱", "chain": "{x} {rate}/秒 ＝ {b} × {n}", "noChain": "材料はすべて採掘・ポンプで直接手に入る。", "noteHeat": "熱を使う工場は、ヒーターから表示の熱量を受け取って初めて全速で動く。", "noteAttr": "この建物は設置するタイルでも速度が変わる。表示は基本値。", "noteSep": "1サイクルごとに、表示の比率でランダムなアイテムが1個出る。", "planets": {"serpulo": "セルプロ", "erekir": "エレキル"}, "dUnit": "{x} /秒", "dEach": "ドリル1基あたり {r}/秒", "dBoost": "{x} {r}/秒 → 速度×{f}"};</script>
 <script src="/assets/games/mindustry-production.js"></script>
 </body>
 </html>

@@ -15,7 +15,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="available-langs" content="en,ja">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Mindustry production calculator: pick any factory and a target output to get the building count, input rates, power use, and how many upstream factories feed it. Data from the game's source.">
+<meta name="description" content="Mindustry production and drill calculator: building counts, input rates and power for every factory, plus drill output for every ore with and without water boost. Data from the game&#39;s source.">
 <title>Mindustry Production Calculator: Factory Ratios & Rates</title>
 <link rel="stylesheet" href="/assets/games/mindustry.css">
 <link rel="canonical" href="https://kouryakulab.com/games/mindustry/production-calculator/">
@@ -127,8 +127,45 @@
     </div>
   </div>
 
+  <section id="drills" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>Drill output</h2></div>
+    <p class="sec-desc">How fast each drill mines when every tile under it is the same ore. Top number: normal; bottom: with its boost liquid (water on Serpulo). Items per second.</p>
+    <div class="two-col" id="mdt-drill">
+      <div class="panel gk-form">
+        <h3 style="font-size:.95rem;margin:0;">Drill calculator</h3>
+        <div><label for="mdt-d-block">Drill</label><select id="mdt-d-block" class="mdt-select"></select></div>
+        <div><label for="mdt-d-ore">Ore</label><select id="mdt-d-ore" class="mdt-select"></select></div>
+        <div class="gk-params" style="grid-template-columns:1fr 1fr;">
+          <div><label for="mdt-d-tiles">Ore tiles under the drill</label><input type="number" id="mdt-d-tiles" min="1" value="4" inputmode="numeric"></div>
+          <div><label for="mdt-d-count">Number of drills</label><input type="number" id="mdt-d-count" min="1" value="1" inputmode="numeric"></div>
+        </div>
+        <label class="mdt-radio"><input type="checkbox" id="mdt-d-boost"> Boost liquid supplied</label>
+      </div>
+      <div class="panel">
+        <div class="gk-result"><span class="v" id="mdt-d-rate">0</span><span class="gk-note" id="mdt-d-unit"></span></div>
+        <ul class="exped-notes" id="mdt-d-detail" style="margin-top:8px;"></ul>
+      </div>
+    </div>
+    <div class="panel table-scroll" style="margin-top:16px;">
+<!-- MDT-DRILLS:START -->
+<table class="glossary mdt-table">
+<thead><tr><th>Drill</th><th>Sand</th><th>Scrap</th><th>Copper</th><th>Lead</th><th>Coal</th><th>Titanium</th><th>Thorium</th><th>Beryllium</th><th>Tungsten</th></tr></thead>
+<tbody>
+<tr id="d-mechanical-drill"><td>Mechanical Drill<br><span class="build-note">Serpulo · 2×2</span></td><td class="tag-mono">0.4<br><span class="build-note">1.02</span></td><td class="tag-mono">0.4<br><span class="build-note">1.02</span></td><td class="tag-mono">0.37<br><span class="build-note">0.95</span></td><td class="tag-mono">0.37<br><span class="build-note">0.95</span></td><td class="tag-mono">0.34<br><span class="build-note">0.88</span></td><td class="build-note">—</td><td class="build-note">—</td><td class="build-note">—</td><td class="build-note">—</td></tr>
+<tr id="d-pneumatic-drill"><td>Pneumatic Drill<br><span class="build-note">Serpulo · 2×2</span></td><td class="tag-mono">0.6<br><span class="build-note">1.54</span></td><td class="tag-mono">0.6<br><span class="build-note">1.54</span></td><td class="tag-mono">0.53<br><span class="build-note">1.37</span></td><td class="tag-mono">0.53<br><span class="build-note">1.37</span></td><td class="tag-mono">0.48<br><span class="build-note">1.23</span></td><td class="tag-mono">0.44<br><span class="build-note">1.12</span></td><td class="build-note">—</td><td class="build-note">—</td><td class="build-note">—</td></tr>
+<tr id="d-laser-drill"><td>Laser Drill<br><span class="build-note">Serpulo · 3×3</span></td><td class="tag-mono">1.93<br><span class="build-note">4.94</span></td><td class="tag-mono">1.93<br><span class="build-note">4.94</span></td><td class="tag-mono">1.64<br><span class="build-note">4.19</span></td><td class="tag-mono">1.64<br><span class="build-note">4.19</span></td><td class="tag-mono">1.42<br><span class="build-note">3.64</span></td><td class="tag-mono">1.26<br><span class="build-note">3.21</span></td><td class="tag-mono">1.12<br><span class="build-note">2.88</span></td><td class="build-note">—</td><td class="build-note">—</td></tr>
+<tr id="d-blast-drill"><td>Airblast Drill<br><span class="build-note">Serpulo · 4×4</span></td><td class="tag-mono">3.43<br><span class="build-note">11.11</span></td><td class="tag-mono">3.43<br><span class="build-note">11.11</span></td><td class="tag-mono">2.91<br><span class="build-note">9.43</span></td><td class="tag-mono">2.91<br><span class="build-note">9.43</span></td><td class="tag-mono">2.53<br><span class="build-note">8.19</span></td><td class="tag-mono">2.23<br><span class="build-note">7.23</span></td><td class="tag-mono">2<br><span class="build-note">6.48</span></td><td class="build-note">—</td><td class="build-note">—</td></tr>
+<tr id="d-impact-drill"><td>Impact Drill<br><span class="build-note">Erekir · 4×4</span></td><td class="tag-mono">1.33<br><span class="build-note">2.33</span></td><td class="build-note">—</td><td class="build-note">—</td><td class="build-note">—</td><td class="build-note">—</td><td class="build-note">—</td><td class="tag-mono">1.33<br><span class="build-note">2.33</span></td><td class="tag-mono">2.67<br><span class="build-note">4.67</span></td><td class="tag-mono">1.33<br><span class="build-note">2.33</span></td></tr>
+<tr id="d-eruption-drill"><td>Eruption Drill<br><span class="build-note">Erekir · 5×5</span></td><td class="tag-mono">5.33<br><span class="build-note">10.67</span></td><td class="build-note">—</td><td class="build-note">—</td><td class="build-note">—</td><td class="build-note">—</td><td class="build-note">—</td><td class="tag-mono">5.33<br><span class="build-note">10.67</span></td><td class="tag-mono">10.67<br><span class="build-note">21.33</span></td><td class="tag-mono">5.33<br><span class="build-note">10.67</span></td></tr>
+</tbody>
+</table>
+<!-- MDT-DRILLS:END -->
+    </div>
+    <div class="callout">Standard drills take longer on harder ores (+50 ticks per hardness level); a boost liquid speeds both the drill and its warm-up, so the gain is the boost squared (2.56× for water). Erekir's impact and eruption drills ignore hardness, fire in bursts, and their boost is not squared.</div>
+  </section>
+
   <section id="all" style="padding-block:32px 0;">
-    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Every factory at a glance</h2></div>
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>Every factory at a glance</h2></div>
     <p class="sec-desc">Per building at full speed with no boosts. Items are converted from per-cycle amounts; liquids are per second.</p>
     <div class="panel table-scroll">
 <!-- MDT-CRAFTERS:START -->
@@ -185,7 +222,7 @@
 </footer>
 
 <script src="/assets/lang-switch.js"></script>
-<script>window.MDT_I18N = {"target": "Target {x} per second", "targetSep": "Target items per second (all outputs combined)", "build": "→ build {n}", "input": "In", "output": "Out", "power": "Power", "heat": "Heat", "chain": "{x} {rate}/s = {n} × {b}", "noChain": "All inputs are mined or pumped directly.", "noteHeat": "Heat crafters only reach full speed with the listed heat supplied by heater blocks.", "noteAttr": "This block's speed also depends on the tiles it's built on; the numbers are the base rate.", "noteSep": "Each cycle gives one random item, weighted as shown.", "planets": {"serpulo": "Serpulo", "erekir": "Erekir"}};</script>
+<script>window.MDT_I18N = {"target": "Target {x} per second", "targetSep": "Target items per second (all outputs combined)", "build": "→ build {n}", "input": "In", "output": "Out", "power": "Power", "heat": "Heat", "chain": "{x} {rate}/s = {n} × {b}", "noChain": "All inputs are mined or pumped directly.", "noteHeat": "Heat crafters only reach full speed with the listed heat supplied by heater blocks.", "noteAttr": "This block's speed also depends on the tiles it's built on; the numbers are the base rate.", "noteSep": "Each cycle gives one random item, weighted as shown.", "planets": {"serpulo": "Serpulo", "erekir": "Erekir"}, "dUnit": "{x} per second", "dEach": "{r}/s per drill", "dBoost": "{x} {r}/s → ×{f} speed"};</script>
 <script src="/assets/games/mindustry-production.js"></script>
 </body>
 </html>

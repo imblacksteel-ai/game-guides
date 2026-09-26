@@ -131,6 +131,58 @@ def parse(typ, body):
     return d, None
 
 
+# 床の鉱石としてドリルで掘れるアイテム（壁の鉱石はプラズマボーリングで別系統なので扱わない）
+FLOOR_ORES = ["sand", "scrap", "copper", "lead", "coal", "titanium", "thorium", "beryllium", "tungsten"]
+
+
+def parse_drills(src, items_src, en, ja, skipped):
+    """Drill:      1個あたり (drillTime + hardnessDrillMultiplier×硬度) / 倍率 ティック。液体ブースト時は
+                   速度と暖機の両方が強度倍になるので定常状態で強度²倍（ゲーム内表示もこの値）。
+       BurstDrill: 1回あたり drillTime / 倍率 ティックで鉱石タイル数ぶん出す。硬度は無関係、ブーストは強度倍。"""
+    hardness = {}
+    for m in re.finditer(r"(\w+) = new Item\(\"([\w-]+)\"[^{]*\{\{(.*?)\}\};", items_src, flags=re.S):
+        h = re.search(r"hardness = (\d+);", m.group(3))
+        hardness[m.group(2)] = int(h.group(1)) if h else 0
+    out = []
+    for var, typ, bid, body in blocks(src):
+        if typ not in ("Drill", "BurstDrill"):
+            continue
+        g = lambda pat, conv=float, default=None: (conv(num(mm.group(1))) if (mm := re.search(pat, body)) else default)
+        tier = g(r"\btier = (\d+);", int)
+        drill_time = g(r"drillTime = ([^;]+);", float, 300.0)
+        size = g(r"\bsize = (\d+);", int, 1)
+        if tier is None or drill_time is None:
+            skipped.append(f"{bid} ({typ}): no tier/drillTime")
+            continue
+        hmul = g(r"hardnessDrillMultiplier = ([^;]+);", float, 50.0)
+        boost = g(r"liquidBoostIntensity = ([^;]+);", float, 1.6)
+        mults = {camel_to_id(i): float(v) for i, v in re.findall(r"drillMultipliers\.put\(Items\.(\w+), ([\d.]+)f?\)", body)}
+        bm = re.search(r"consumeLiquid\(Liquids\.(\w+), ([^;)]+)\)\.boost\(\);", body)
+        booster = {"id": camel_to_id(bm.group(1)), "per_sec": round(num(bm.group(2)) * 60, 4)} if bm else None
+        need = [{"id": camel_to_id(l), "per_sec": round(num(v) * 60, 4)}
+                for l, v in re.findall(r"consumeLiquid\(Liquids\.(\w+), ([^;)]+)\);", body)]
+        pm = re.search(r"consumePower\(([^;]+)\);", body)
+        power = round(num(pm.group(1)) * 60, 4) if pm else 0.0
+        req = re.search(r"requirements\(Category\.\w+, (?:BuildVisibility\.(\w+), )?(with\([^;]*)\);", body)
+        cost = stacks(req.group(2)) if req else []
+        erekir = any(i in ("beryllium", "tungsten", "oxide", "carbide") for i, _ in cost)
+        ores = []
+        for ore in FLOOR_ORES:
+            if hardness.get(ore, 0) > tier or (ore in ("beryllium", "tungsten") and not erekir) or \
+               (ore in ("copper", "lead", "coal", "titanium", "scrap") and erekir):
+                continue
+            t = drill_time / mults.get(ore, 1.0) if typ == "BurstDrill" else (drill_time + hmul * hardness.get(ore, 0)) / mults.get(ore, 1.0)
+            ores.append({"id": ore, "hardness": hardness.get(ore, 0), "ticks": round(t, 4),
+                         "per_sec_full": round(60 / t * size * size, 4)})
+        out.append({"id": bid, "type": typ, "planet": "erekir" if erekir else "serpulo",
+                    "name_en": en.get(("block", bid), bid), "name_ja": ja.get(("block", bid), en.get(("block", bid), bid)),
+                    "tier": tier, "size": size, "power_per_sec": power, "boost": boost,
+                    "boost_factor": round(boost * boost if typ == "Drill" else boost, 4),
+                    "booster": booster, "liquids": need,
+                    "ores": ores})
+    return out
+
+
 def names(bundle):
     out = {}
     for line in bundle.splitlines():
@@ -169,7 +221,12 @@ def main():
         })
         crafters.append(d)
 
+    drills = parse_drills(src, raw(tag, "core/src/mindustry/content/Items.java"), en, ja, skipped)
+
     res = set()
+    for d in drills:
+        for o in d["ores"]:
+            res.add(("item", o["id"]))
     for c in crafters:
         for x in c["inputs"] + c["outputs"]:
             res.add((x["kind"], x["id"]))
@@ -180,10 +237,11 @@ def main():
     if missing:
         sys.exit(f"names missing from bundle: {missing}")
 
-    data = {"version": tag, "source": "Anuken/Mindustry Blocks.java + bundles", "resources": resources, "crafters": crafters}
+    data = {"version": tag, "source": "Anuken/Mindustry Blocks.java + bundles", "resources": resources,
+            "crafters": crafters, "drills": drills}
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, separators=(",", ":"))
-    print(f"{tag}: wrote {len(crafters)} crafters to {os.path.relpath(OUT, ROOT)}")
+    print(f"{tag}: wrote {len(crafters)} crafters and {len(drills)} drills to {os.path.relpath(OUT, ROOT)}")
     for s in skipped:
         print("  skipped:", s)
 
@@ -193,14 +251,15 @@ def main():
 PAGES = {
     "crafters": {"en": "games/mindustry/production-calculator/index.html", "ja": "ja/games/mindustry/production-calculator/index.html"},
     "names": {"en": "games/mindustry/index.html", "ja": "ja/games/mindustry/index.html"},
+    "drills": {"en": "games/mindustry/production-calculator/index.html", "ja": "ja/games/mindustry/production-calculator/index.html"},
 }
 T = {
     "en": {"crafter_head": ["Block", "Inputs /s", "Outputs /s", "Power /s", "Cycle"],
            "names_head": ["English", "Japanese", "Type"], "item": "Item", "liquid": "Liquid",
-           "planet": {"serpulo": "Serpulo", "erekir": "Erekir"}, "heat": "heat {h}", "random": "one of, per cycle"},
+           "planet": {"serpulo": "Serpulo", "erekir": "Erekir"}, "heat": "heat {h}", "random": "one of, per cycle", "drill": "Drill"},
     "ja": {"crafter_head": ["ブロック", "入力 /秒", "出力 /秒", "電力 /秒", "1サイクル"],
            "names_head": ["英語", "日本語", "種類"], "item": "アイテム", "liquid": "液体",
-           "planet": {"serpulo": "セルプロ", "erekir": "エレキル"}, "heat": "熱 {h}", "random": "1サイクルごとにどれか1つ"},
+           "planet": {"serpulo": "セルプロ", "erekir": "エレキル"}, "heat": "熱 {h}", "random": "1サイクルごとにどれか1つ", "drill": "ドリル"},
 }
 
 
@@ -242,6 +301,23 @@ def render_crafters(lang, data):
             + "\n".join(rows) + "\n</tbody>\n</table>")
 
 
+def render_drills(lang, data):
+    import html as h
+    t = T[lang]
+    res = data["resources"]
+    ores = [o for o in FLOOR_ORES if any(x["id"] == o for d in data["drills"] for x in d["ores"])]
+    rows = []
+    for d in data["drills"]:
+        by = {x["id"]: x for x in d["ores"]}
+        cells = "".join(f'<td class="tag-mono">{fmt(by[o]["per_sec_full"])}<br><span class="build-note">{fmt(by[o]["per_sec_full"] * d["boost_factor"])}</span></td>'
+                        if o in by else '<td class="build-note">—</td>' for o in ores)
+        name = h.escape(d["name_en"] if lang == "en" else d["name_ja"])
+        rows.append(f'<tr id="d-{d["id"]}"><td>{name}<br><span class="build-note">{t["planet"][d["planet"]]} · {d["size"]}×{d["size"]}</span></td>{cells}</tr>')
+    head = f'<th>{t["drill"]}</th>' + "".join(f'<th>{h.escape(res["item:" + o][lang])}</th>' for o in ores)
+    return (f'<table class="glossary mdt-table">\n<thead><tr>{head}</tr></thead>\n<tbody>\n'
+            + "\n".join(rows) + "\n</tbody>\n</table>")
+
+
 def render_names(lang, data):
     import html as h
     t = T[lang]
@@ -256,14 +332,14 @@ def render_names(lang, data):
 
 def render_pages():
     data = json.load(open(OUT, encoding="utf-8"))
-    for key, render in (("crafters", render_crafters), ("names", render_names)):
+    for key, render in (("crafters", render_crafters), ("names", render_names), ("drills", render_drills)):
         for lang, page in PAGES[key].items():
             path = os.path.join(ROOT, page)
             if not os.path.exists(path):
                 print(f"  (page not created yet: {page})")
                 continue
             s = open(path, encoding="utf-8").read()
-            marker = "MDT-CRAFTERS" if key == "crafters" else "MDT-NAMES"
+            marker = {"crafters": "MDT-CRAFTERS", "names": "MDT-NAMES", "drills": "MDT-DRILLS"}[key]
             new, n = re.subn(rf"(<!-- {marker}:START -->\n).*?(<!-- {marker}:END -->)",
                              lambda m: m.group(1) + render(lang, data) + "\n" + m.group(2), s, flags=re.S)
             if n != 1:

@@ -90,5 +90,62 @@
     root.addEventListener('input', update);
     root.addEventListener('change', update);
     update();
+    initDrills();
   });
+
+  // ---- ドリル計算機 ----
+  // Drill: 1個あたり ticks（硬度込み）。ブースト時は速度と暖機の両方が上がるので boost_factor = 強度²。
+  // BurstDrill: 1回で鉱石タイル数ぶん出す。boost_factor = 強度。どちらも 60/ticks × タイル数。
+  function initDrills() {
+    var box = $('mdt-drill');
+    if (!box || !data.drills) return;
+    var dSel = $('mdt-d-block'), oSel = $('mdt-d-ore');
+    var drills = {};
+    data.drills.forEach(function (d) {
+      drills[d.id] = d;
+      var o = document.createElement('option');
+      o.value = d.id;
+      o.textContent = blockName(d) + ' (' + I.planets[d.planet] + ')';
+      dSel.appendChild(o);
+    });
+
+    function fillOres() {
+      var d = drills[dSel.value], keep = oSel.value;
+      oSel.innerHTML = '';
+      d.ores.forEach(function (x) {
+        var o = document.createElement('option');
+        o.value = x.id;
+        o.textContent = data.resources['item:' + x.id][lang];
+        oSel.appendChild(o);
+      });
+      if (d.ores.some(function (x) { return x.id === keep; })) oSel.value = keep;
+      $('mdt-d-tiles').max = d.size * d.size;
+      $('mdt-d-tiles').value = Math.min(parseInt($('mdt-d-tiles').value, 10) || d.size * d.size, d.size * d.size);
+    }
+
+    function calc() {
+      var d = drills[dSel.value];
+      var ore = d.ores.filter(function (x) { return x.id === oSel.value; })[0];
+      var tiles = Math.max(1, Math.min(d.size * d.size, parseInt($('mdt-d-tiles').value, 10) || 1));
+      var n = Math.max(1, parseInt($('mdt-d-count').value, 10) || 1);
+      var boosted = $('mdt-d-boost').checked && d.booster;
+      var per = 60 / ore.ticks * tiles * (boosted ? d.boost_factor : 1);
+      $('mdt-d-rate').textContent = fmt(per * n);
+      $('mdt-d-unit').textContent = I.dUnit.replace('{x}', data.resources['item:' + ore.id][lang]);
+      var lines = [I.dEach.replace('{r}', fmt(per)).replace('{t}', fmt(ore.ticks / 60 / tiles * (d.type === 'BurstDrill' ? tiles : 1)))];
+      if (d.power_per_sec) lines.push(I.power + ': ' + fmt(d.power_per_sec * n) + ' /s');
+      d.liquids.filter(function (l) { return !d.booster || l.id !== d.booster.id; }).forEach(function (l) {
+        lines.push(data.resources['liquid:' + l.id][lang] + ': ' + fmt(l.per_sec * n) + ' /s');
+      });
+      if (boosted) lines.push(I.dBoost.replace('{x}', data.resources['liquid:' + d.booster.id][lang])
+        .replace('{r}', fmt(d.booster.per_sec * n)).replace('{f}', fmt(d.boost_factor)));
+      $('mdt-d-detail').innerHTML = lines.map(function (l) { return '<li>' + l + '</li>'; }).join('');
+    }
+
+    dSel.addEventListener('change', function () { fillOres(); calc(); });
+    box.addEventListener('input', calc);
+    box.addEventListener('change', calc);
+    fillOres();
+    calc();
+  }
 })();
