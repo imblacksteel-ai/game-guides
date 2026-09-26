@@ -40,6 +40,7 @@ LOCALE = {
     "en": "en_US", "ja": "ja_JP", "ko": "ko_KR", "zh-Hans": "zh_CN", "zh-Hant": "zh_TW",
     "de": "de_DE", "fr": "fr_FR", "ar": "ar_AR",
 }
+INDEXED_LOCALES = ["en_US", "ja_JP"]
 LANG_DIRS = ["", "ja", "ko", "zh", "zh-hant", "de", "fr", "ar"]  # "" = ルート(英語)
 
 ADSENSE_CLIENT = "ca-pub-2939651190150074"
@@ -190,7 +191,8 @@ def process(path):
     prefix = f"/{prefix_seg}/" if prefix_seg in LANG_DIRS and prefix_seg != "" else "/"
     site_name = "攻略ラボ" if lang == "ja" else "Kouryaku Lab"
     og_locale = LOCALE.get(lang, "en_US")
-    all_locales = [v for v in LOCALE.values() if v != og_locale]
+    # インデックス対象（英語・日本語）の言語だけを alternate にする。scripts/set_indexing.py 参照。
+    all_locales = [v for v in INDEXED_LOCALES if v != og_locale]
 
     if is_guide:
         slug = rel.split("games/")[1].split("/")[0]

@@ -38,7 +38,7 @@ CNAME, robots.txt, sitemap.xml       ドメイン・SEO設定
 5. 各言語ページの`<head>`にhreflangブロックを追加する（8言語 + x-default、既存ページのブロックをコピーしてcanonicalだけ差し替え）。
 6. `sitemap.xml`に新ページのURLを追記する（hreflang alternate込み、既存の`games/haran-suisekai`のブロックをコピーしてURLだけ差し替え）。
 7. `assets/og/og-<slug>.svg`をゲームのテーマ色で作り、`rsvg-convert -w 1200 -h 630 assets/og/og-<slug>.svg -o assets/og/og-<slug>.png`でOG画像を生成する（`assets/og/og-haran-suisekai.svg`が参考例）。
-8. `python3 scripts/seo_inject.py`を実行する。favicon・OGP/Twitterタグ・JSON-LDを全ページに自動挿入する（冪等なので既存ページは自動でスキップされる）。**このタグ群を手で書かない。**
+8. `python3 scripts/seo_inject.py`を実行し、続けて`python3 scripts/set_indexing.py`を実行する。favicon・OGP/Twitterタグ・JSON-LDを全ページに自動挿入する（冪等なので既存ページは自動でスキップされる）。**このタグ群を手で書かない。**
 9. 全言語ぶん揃ってから一括でgit commit・push（言語ごとに小分けでコミットしない）。
 
 ## SEO設定（実装済み・新ページにも自動適用される）
@@ -84,6 +84,13 @@ git diff --stat                 # 想定した言語数ぶんのファイルが�
 - 艦娘データの `remodel_lv` / `remodel_to` はマスターデータの `api_afterlv` / `api_aftershipid` 由来。`remodel_to` は言語に依存しないよう日本語名で持ち、表示側で「英語名 (日本語名)」に変換する。
 - Fleet BuilderのロジックとUIは `assets/games/kancolle-fleet-builder.js` に共有。各言語のHTMLは `window.FLEET_I18N` にUI文言だけを持つ。**JSや艦娘データを言語ごとのHTMLに埋め込まない。**
 - 新しいゲームを追加する前に、GitHubに抽出済みデータのリポジトリがあるか確認する（中国ゲームは中国語名で検索しないとヒットしない）。数値は事実なので掲載可、ただし画像・音声などのアセットや本文テキストの丸ごと転載はしない。
+
+## AdSense 審査対応（2026/09 に「有用性の低いコンテンツ」で却下）
+
+- **インデックス対象は英語・日本語のみ。** ko/zh/zh-hant/de/fr/ar は公開したまま `noindex, follow` にし、hreflang・sitemap・og:locale:alternate から外している。`python3 scripts/set_indexing.py`（冪等）が一括で処理する。新ページ追加時は手順8の `seo_inject.py` の後に必ず実行する。言語を戻すときは同スクリプトの `NOINDEX_DIRS` を編集する。
+- **地域制限の回避手順・非公式APKの入手方法は載せない。** デレステの `/games/deresute/access/` は「動作が重い・落ちる時の対策」ページ（Namco ID登録＋クラッシュ対策）にしてある。
+- **事実でない運営実態を書かない。** 「実プレイで検証」のような記述は削除済み。編集方針・執筆者ページには実際にやっていることだけを書く。
+- 審査の再申請は本人が行う。サイト公開から日が浅い・流入が少ないことも却下要因になるため、コンテンツを厚くしてから時間を置いて再申請する方針。
 
 ## 翻訳の一貫性ルール
 

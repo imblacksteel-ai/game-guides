@@ -6,440 +6,176 @@
     <loc>https://kouryakulab.com/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/</loc></url>
-  <url><loc>https://kouryakulab.com/de/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/</loc></url>
 
   <url>
     <loc>https://kouryakulab.com/games/haran-suisekai/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/haran-suisekai/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/haran-suisekai/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/haran-suisekai/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/haran-suisekai/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/games/haran-suisekai/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/haran-suisekai/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/haran-suisekai/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/haran-suisekai/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/haran-suisekai/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/games/haran-suisekai/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/games/haran-suisekai/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/games/haran-suisekai/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/games/haran-suisekai/</loc></url>
-  <url><loc>https://kouryakulab.com/de/games/haran-suisekai/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/games/haran-suisekai/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/games/haran-suisekai/</loc></url>
 
   <url>
     <loc>https://kouryakulab.com/games/kancolle/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/kancolle/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/kancolle/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/games/kancolle/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/kancolle/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/kancolle/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/kancolle/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/games/kancolle/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/games/kancolle/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/games/kancolle/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/games/kancolle/</loc></url>
-  <url><loc>https://kouryakulab.com/de/games/kancolle/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/games/kancolle/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/games/kancolle/</loc></url>
 
   <url>
     <loc>https://kouryakulab.com/games/srwdd/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/srwdd/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/srwdd/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/srwdd/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/srwdd/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/games/srwdd/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/srwdd/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/srwdd/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/srwdd/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/srwdd/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/games/srwdd/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/games/srwdd/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/games/srwdd/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/games/srwdd/</loc></url>
-  <url><loc>https://kouryakulab.com/de/games/srwdd/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/games/srwdd/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/games/srwdd/</loc></url>
 
   <url>
     <loc>https://kouryakulab.com/games/deresute/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/deresute/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/deresute/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/deresute/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/deresute/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/games/deresute/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/deresute/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/deresute/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/deresute/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/deresute/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/games/deresute/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/games/deresute/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/games/deresute/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/games/deresute/</loc></url>
-  <url><loc>https://kouryakulab.com/de/games/deresute/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/games/deresute/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/games/deresute/</loc></url>
 
   <url>
     <loc>https://kouryakulab.com/privacy/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/privacy/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/privacy/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/privacy/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/privacy/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/privacy/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/privacy/</loc></url>
-  <url><loc>https://kouryakulab.com/de/privacy/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/privacy/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/privacy/</loc></url>
 
   <url>
     <loc>https://kouryakulab.com/games/kancolle/equipment/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/equipment/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/equipment/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/kancolle/equipment/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/kancolle/equipment/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/games/kancolle/equipment/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/kancolle/equipment/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/kancolle/equipment/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/kancolle/equipment/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/equipment/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/games/kancolle/equipment/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/games/kancolle/equipment/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/games/kancolle/equipment/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/games/kancolle/equipment/</loc></url>
-  <url><loc>https://kouryakulab.com/de/games/kancolle/equipment/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/games/kancolle/equipment/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/games/kancolle/equipment/</loc></url>
 
   <url>
     <loc>https://kouryakulab.com/games/kancolle/expeditions/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/expeditions/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/expeditions/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/kancolle/expeditions/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/kancolle/expeditions/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/games/kancolle/expeditions/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/kancolle/expeditions/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/kancolle/expeditions/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/kancolle/expeditions/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/expeditions/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/games/kancolle/expeditions/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/games/kancolle/expeditions/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/games/kancolle/expeditions/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/games/kancolle/expeditions/</loc></url>
-  <url><loc>https://kouryakulab.com/de/games/kancolle/expeditions/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/games/kancolle/expeditions/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/games/kancolle/expeditions/</loc></url>
 
   <url>
     <loc>https://kouryakulab.com/games/kancolle/fleet-builder/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/fleet-builder/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/fleet-builder/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/kancolle/fleet-builder/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/kancolle/fleet-builder/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/games/kancolle/fleet-builder/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/kancolle/fleet-builder/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/kancolle/fleet-builder/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/kancolle/fleet-builder/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/fleet-builder/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/games/kancolle/fleet-builder/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/games/kancolle/fleet-builder/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/games/kancolle/fleet-builder/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/games/kancolle/fleet-builder/</loc></url>
-  <url><loc>https://kouryakulab.com/de/games/kancolle/fleet-builder/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/games/kancolle/fleet-builder/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/games/kancolle/fleet-builder/</loc></url>
 
   <url>
     <loc>https://kouryakulab.com/games/haran-suisekai/codes/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/haran-suisekai/codes/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/haran-suisekai/codes/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/haran-suisekai/codes/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/haran-suisekai/codes/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/games/haran-suisekai/codes/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/haran-suisekai/codes/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/haran-suisekai/codes/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/haran-suisekai/codes/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/haran-suisekai/codes/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/games/haran-suisekai/codes/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/games/haran-suisekai/codes/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/games/haran-suisekai/codes/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/games/haran-suisekai/codes/</loc></url>
-  <url><loc>https://kouryakulab.com/de/games/haran-suisekai/codes/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/games/haran-suisekai/codes/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/games/haran-suisekai/codes/</loc></url>
 
   <url>
     <loc>https://kouryakulab.com/games/srwdd/reroll/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/srwdd/reroll/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/srwdd/reroll/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/srwdd/reroll/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/srwdd/reroll/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/games/srwdd/reroll/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/srwdd/reroll/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/srwdd/reroll/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/srwdd/reroll/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/srwdd/reroll/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/games/srwdd/reroll/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/games/srwdd/reroll/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/games/srwdd/reroll/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/games/srwdd/reroll/</loc></url>
-  <url><loc>https://kouryakulab.com/de/games/srwdd/reroll/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/games/srwdd/reroll/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/games/srwdd/reroll/</loc></url>
 
   <url>
     <loc>https://kouryakulab.com/games/deresute/access/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/deresute/access/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/deresute/access/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/deresute/access/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/deresute/access/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/games/deresute/access/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/deresute/access/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/deresute/access/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/deresute/access/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/deresute/access/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/games/deresute/access/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/games/deresute/access/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/games/deresute/access/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/games/deresute/access/</loc></url>
-  <url><loc>https://kouryakulab.com/de/games/deresute/access/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/games/deresute/access/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/games/deresute/access/</loc></url>
 
   <url>
     <loc>https://kouryakulab.com/about/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/about/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/about/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/about/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/about/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/about/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/about/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/about/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/about/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/about/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/about/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/about/</loc></url>
-  <url><loc>https://kouryakulab.com/de/about/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/about/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/about/</loc></url>
 
 
   <url>
     <loc>https://kouryakulab.com/authors/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/authors/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/authors/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/authors/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/authors/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/authors/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/authors/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/authors/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/authors/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/authors/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/authors/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/authors/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/authors/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/authors/</loc></url>
-  <url><loc>https://kouryakulab.com/de/authors/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/authors/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/authors/</loc></url>
 
   <url>
     <loc>https://kouryakulab.com/editorial-policy/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/editorial-policy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/editorial-policy/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/editorial-policy/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/editorial-policy/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/editorial-policy/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/editorial-policy/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/editorial-policy/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/editorial-policy/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/editorial-policy/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/editorial-policy/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/editorial-policy/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/editorial-policy/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/editorial-policy/</loc></url>
-  <url><loc>https://kouryakulab.com/de/editorial-policy/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/editorial-policy/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/editorial-policy/</loc></url>
 
   <url>
     <loc>https://kouryakulab.com/contact/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/contact/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/contact/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/contact/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/contact/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/contact/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/contact/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/contact/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/contact/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/contact/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/contact/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/contact/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/contact/</loc></url>
-  <url><loc>https://kouryakulab.com/de/contact/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/contact/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/contact/</loc></url>
 
   <url>
     <loc>https://kouryakulab.com/terms/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/terms/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/terms/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/terms/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/terms/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/terms/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/terms/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/terms/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/terms/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/terms/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/terms/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/terms/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/terms/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/terms/</loc></url>
-  <url><loc>https://kouryakulab.com/de/terms/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/terms/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/terms/</loc></url>
 
   <url>
     <loc>https://kouryakulab.com/games/srwdd/tier-list/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/srwdd/tier-list/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/srwdd/tier-list/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/srwdd/tier-list/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/srwdd/tier-list/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/games/srwdd/tier-list/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/srwdd/tier-list/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/srwdd/tier-list/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/srwdd/tier-list/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/srwdd/tier-list/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/games/srwdd/tier-list/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/games/srwdd/tier-list/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/games/srwdd/tier-list/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/games/srwdd/tier-list/</loc></url>
-  <url><loc>https://kouryakulab.com/de/games/srwdd/tier-list/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/games/srwdd/tier-list/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/games/srwdd/tier-list/</loc></url>
 
   <url>
     <loc>https://kouryakulab.com/games/srwdd/chain-system/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/srwdd/chain-system/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/srwdd/chain-system/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/srwdd/chain-system/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/srwdd/chain-system/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/games/srwdd/chain-system/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/srwdd/chain-system/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/srwdd/chain-system/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/srwdd/chain-system/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/srwdd/chain-system/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/games/srwdd/chain-system/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/games/srwdd/chain-system/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/games/srwdd/chain-system/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/games/srwdd/chain-system/</loc></url>
-  <url><loc>https://kouryakulab.com/de/games/srwdd/chain-system/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/games/srwdd/chain-system/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/games/srwdd/chain-system/</loc></url>
 
   <url>
     <loc>https://kouryakulab.com/games/srwdd/world-guide/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/srwdd/world-guide/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/srwdd/world-guide/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/srwdd/world-guide/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/srwdd/world-guide/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/games/srwdd/world-guide/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/srwdd/world-guide/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/srwdd/world-guide/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/srwdd/world-guide/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/srwdd/world-guide/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/games/srwdd/world-guide/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/games/srwdd/world-guide/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/games/srwdd/world-guide/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/games/srwdd/world-guide/</loc></url>
-  <url><loc>https://kouryakulab.com/de/games/srwdd/world-guide/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/games/srwdd/world-guide/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/games/srwdd/world-guide/</loc></url>
 
   <url>
     <loc>https://kouryakulab.com/games/srwdd/pvp-guide/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/srwdd/pvp-guide/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/srwdd/pvp-guide/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/srwdd/pvp-guide/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/srwdd/pvp-guide/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/games/srwdd/pvp-guide/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/srwdd/pvp-guide/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/srwdd/pvp-guide/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/srwdd/pvp-guide/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/srwdd/pvp-guide/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/games/srwdd/pvp-guide/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/games/srwdd/pvp-guide/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/games/srwdd/pvp-guide/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/games/srwdd/pvp-guide/</loc></url>
-  <url><loc>https://kouryakulab.com/de/games/srwdd/pvp-guide/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/games/srwdd/pvp-guide/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/games/srwdd/pvp-guide/</loc></url>
   <url>
     <loc>https://kouryakulab.com/games/kancolle/exp-calculator/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/exp-calculator/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/exp-calculator/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://kouryakulab.com/ko/games/kancolle/exp-calculator/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://kouryakulab.com/zh/games/kancolle/exp-calculator/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://kouryakulab.com/zh-hant/games/kancolle/exp-calculator/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://kouryakulab.com/de/games/kancolle/exp-calculator/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kouryakulab.com/fr/games/kancolle/exp-calculator/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kouryakulab.com/ar/games/kancolle/exp-calculator/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/exp-calculator/"/>
   </url>
   <url><loc>https://kouryakulab.com/ja/games/kancolle/exp-calculator/</loc></url>
-  <url><loc>https://kouryakulab.com/ko/games/kancolle/exp-calculator/</loc></url>
-  <url><loc>https://kouryakulab.com/zh/games/kancolle/exp-calculator/</loc></url>
-  <url><loc>https://kouryakulab.com/zh-hant/games/kancolle/exp-calculator/</loc></url>
-  <url><loc>https://kouryakulab.com/de/games/kancolle/exp-calculator/</loc></url>
-  <url><loc>https://kouryakulab.com/fr/games/kancolle/exp-calculator/</loc></url>
-  <url><loc>https://kouryakulab.com/ar/games/kancolle/exp-calculator/</loc></url>
 
 </urlset>
