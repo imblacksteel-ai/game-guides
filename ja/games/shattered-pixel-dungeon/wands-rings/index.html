@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shattered Pixel Dungeonの全杖のダメージ・強化ごとの上昇・充填回数と充填の仕組み、全指輪の+0〜+3の効果量をゲームのソースコードからまとめた。">
+<title>Shattered Pixel Dungeon 杖と指輪の性能一覧（ダメージ・充填・効果量）</title>
+<link rel="stylesheet" href="/assets/games/spd.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/shattered-pixel-dungeon/wands-rings/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/shattered-pixel-dungeon/wands-rings/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/shattered-pixel-dungeon/wands-rings/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/shattered-pixel-dungeon/wands-rings/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Shattered Pixel Dungeon 杖と指輪の性能一覧（ダメージ・充填・効果量）">
+<meta property="og:description" content="Shattered Pixel Dungeonの全杖のダメージ・強化ごとの上昇・充填回数と充填の仕組み、全指輪の+0〜+3の効果量をゲームのソースコードからまとめた。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/shattered-pixel-dungeon/wands-rings/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-shattered-pixel-dungeon.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shattered Pixel Dungeon 杖と指輪の性能一覧（ダメージ・充填・効果量）">
+<meta name="twitter:description" content="Shattered Pixel Dungeonの全杖のダメージ・強化ごとの上昇・充填回数と充填の仕組み、全指輪の+0〜+3の効果量をゲームのソースコードからまとめた。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-shattered-pixel-dungeon.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Shattered Pixel Dungeon 杖と指輪の性能一覧（ダメージ・充填・効果量）",
+      "description": "Shattered Pixel Dungeonの全杖のダメージ・強化ごとの上昇・充填回数と充填の仕組み、全指輪の+0〜+3の効果量をゲームのソースコードからまとめた。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/shattered-pixel-dungeon/wands-rings/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Shattered Pixel Dungeon 杖と指輪の性能一覧（ダメージ・充填・効果量）",
+          "item": "https://kouryakulab.com/ja/games/shattered-pixel-dungeon/wands-rings/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/shattered-pixel-dungeon/"><span class="arrow">←</span> Shattered Pixel Dungeon 攻略ガイド全体</a>
+    <div>
+      <span class="eyebrow">SHATTERED PIXEL DUNGEON · 杖と指輪</span>
+      <h1>杖と指輪</h1>
+      <p class="sub">どの杖が一番強いか、充填がどれくらいで戻るか、指輪が強化段階ごとに実際どれだけ効くか。数値はゲームのソースコードから取得。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+
+  <section id="wands" style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>杖</h2></div>
+    <p class="sec-desc">1回あたりのダメージ（+0）と、強化1回ごとの上昇量（最小／最大）。補助系の杖は直接ダメージを与えない。データは<span id="spd-version">v4.0.0</span>。</p>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li>杖の充填回数は<b>初期2回</b>（魔力の矢の杖は3回）で、<b>強化ごとに+1</b>、<b>上限は10</b>。</li>
+        <li>充填は1回分ずつ戻り、減っているほど速い。1回分にかかる時間は 10＋40×0.875<sup>不足数</sup> ターンで、1回分不足なら約45ターン、3回分なら約36.8ターン、10回分なら約20.5ターン。エネルギーの指輪で速くなる。</li>
+        <li>ダメージや効果は杖のレベルに比例するので、よく使う杖の強化は「1回の威力」と「充填回数」の両方に効く。</li>
+      </ul>
+    </div>
+    <div class="panel table-scroll" style="margin-top:16px;">
+<!-- SPD-WANDS:START -->
+<table class="glossary spd-table">
+<thead><tr><th>杖</th><th>+0のダメージ</th><th>強化ごと</th><th>充填回数</th><th>効果</th></tr></thead>
+<tbody>
+<tr><td>爆風の杖<br><span class="romaji">Wand of Blast Wave</span></td><td class="tag-mono">1–3</td><td class="tag-mono">+1 / +3</td><td>2（強化ごと+1、最大10）</td><td>ダメージを与えて敵を吹き飛ばす。</td></tr>
+<tr><td>分解の杖<br><span class="romaji">Wand of Disintegration</span></td><td class="tag-mono">2–8</td><td class="tag-mono">+1 / +4</td><td>2（強化ごと+1、最大10）</td><td>直線上の敵をすべて貫くビーム。</td></tr>
+<tr><td>爆炎の杖<br><span class="romaji">Wand of Fireblast</span></td><td class="tag-mono">1–2</td><td class="tag-mono">+1 / +2</td><td>2（強化ごと+1、最大10）</td><td>扇状の炎。一度に最大3回分の充填を使って強化できる（表は1回分）。</td></tr>
+<tr><td>凍結の杖<br><span class="romaji">Wand of Frost</span></td><td class="tag-mono">2–8</td><td class="tag-mono">+1 / +5</td><td>2（強化ごと+1、最大10）</td><td>ダメージを与えて敵を冷やし、凍らせることもある。</td></tr>
+<tr><td>稲妻の杖<br><span class="romaji">Wand of Lightning</span></td><td class="tag-mono">5–10</td><td class="tag-mono">+1 / +5</td><td>2（強化ごと+1、最大10）</td><td>近くの敵に連鎖する雷。</td></tr>
+<tr><td>生ける大地の杖<br><span class="romaji">Wand of Living Earth</span></td><td class="tag-mono">4–6</td><td class="tag-mono">+0 / +2</td><td>2（強化ごと+1、最大10）</td><td>岩の鎧をまとい、戦ってくれる土の守護者を作る。</td></tr>
+<tr><td>魔力の矢の杖<br><span class="romaji">Wand of Magic Missile</span></td><td class="tag-mono">2–8</td><td class="tag-mono">+1 / +2</td><td>3（強化ごと+1、最大10）</td><td>安定した単体ダメージ。初期充填が3回。</td></tr>
+<tr><td>光彩の杖<br><span class="romaji">Wand of Prismatic Light</span></td><td class="tag-mono">1–5</td><td class="tag-mono">+1 / +3</td><td>2（強化ごと+1、最大10）</td><td>ダメージを与えて目をくらませる。悪魔・アンデッドに追加効果。</td></tr>
+<tr><td>腐食の杖<br><span class="romaji">Wand of Corrosion</span></td><td class="tag-mono">—</td><td class="tag-mono">—</td><td>2（強化ごと+1、最大10）</td><td>中にいる敵を傷つけ続ける腐食ガスを放つ。</td></tr>
+<tr><td>堕落の杖<br><span class="romaji">Wand of Corruption</span></td><td class="tag-mono">—</td><td class="tag-mono">—</td><td>2（強化ごと+1、最大10）</td><td>弱った敵を味方にする。失敗時は弱体効果を与える。</td></tr>
+<tr><td>再萌芽の杖<br><span class="romaji">Wand of Regrowth</span></td><td class="tag-mono">—</td><td class="tag-mono">—</td><td>2（強化ごと+1、最大10）</td><td>範囲に草や植物を生やす。</td></tr>
+<tr><td>輸血の杖<br><span class="romaji">Wand of Transfusion</span></td><td class="tag-mono">—</td><td class="tag-mono">—</td><td>2（強化ごと+1、最大10）</td><td>自分の体力を使って味方を回復したり敵を魅了したりする。アンデッドには有害。</td></tr>
+<tr><td>護衛の杖<br><span class="romaji">Wand of Warding</span></td><td class="tag-mono">—</td><td class="tag-mono">—</td><td>2（強化ごと+1、最大10）</td><td>敵を撃つ固定式の番兵を呼び出す。</td></tr>
+</tbody>
+</table>
+<!-- SPD-WANDS:END -->
+    </div>
+  </section>
+
+  <section id="rings" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>指輪</h2></div>
+    <p class="sec-desc">指輪の効果は段階で決まる。段階数は「強化値＋1」なので、+0の指輪でも1段階分の効果があり、強化ごとに1段階増える。同じ指輪を2つ着けると段階数は合算される。</p>
+    <div class="panel table-scroll">
+<!-- SPD-RINGS:START -->
+<table class="glossary spd-table">
+<thead><tr><th>指輪</th><th>効果</th><th>+0</th><th>+1</th><th>+2</th><th>+3</th><th>1段階あたり</th></tr></thead>
+<tbody>
+<tr><td>正確の指輪<br><span class="romaji">Ring of Accuracy</span></td><td>命中</td><td class="tag-mono">+30%</td><td class="tag-mono">+69%</td><td class="tag-mono">+119.7%</td><td class="tag-mono">+185.6%</td><td class="tag-mono">×1.3</td></tr>
+<tr><td>秘儀の指輪<br><span class="romaji">Ring of Arcana</span></td><td>エンチャント・刻印の効果</td><td class="tag-mono">+17.5%</td><td class="tag-mono">+38.1%</td><td class="tag-mono">+62.2%</td><td class="tag-mono">+90.6%</td><td class="tag-mono">×1.175</td></tr>
+<tr><td>元素の指輪<br><span class="romaji">Ring of Elements</span></td><td>属性効果のダメージ・持続を軽減</td><td class="tag-mono">−17.5%</td><td class="tag-mono">−31.9%</td><td class="tag-mono">−43.8%</td><td class="tag-mono">−53.7%</td><td class="tag-mono">×0.825</td></tr>
+<tr><td>エネルギーの指輪<br><span class="romaji">Ring of Energy</span></td><td>杖・アーティファクトの充填速度</td><td class="tag-mono">+17.5%</td><td class="tag-mono">+38.1%</td><td class="tag-mono">+62.2%</td><td class="tag-mono">+90.6%</td><td class="tag-mono">×1.175</td></tr>
+<tr><td>回避の指輪<br><span class="romaji">Ring of Evasion</span></td><td>回避</td><td class="tag-mono">+12.5%</td><td class="tag-mono">+26.6%</td><td class="tag-mono">+42.4%</td><td class="tag-mono">+60.2%</td><td class="tag-mono">×1.125</td></tr>
+<tr><td>力の指輪<br><span class="romaji">Ring of Force</span></td><td>素手・武器技のダメージ（独自の式）</td><td class="build-note">独自</td><td class="build-note">独自</td><td class="build-note">独自</td><td class="build-note">独自</td><td class="tag-mono">—</td></tr>
+<tr><td>激怒の指輪<br><span class="romaji">Ring of Furor</span></td><td>攻撃速度</td><td class="tag-mono">+9.1%</td><td class="tag-mono">+18.9%</td><td class="tag-mono">+29.7%</td><td class="tag-mono">+41.4%</td><td class="tag-mono">×1.09051</td></tr>
+<tr><td>加速の指輪<br><span class="romaji">Ring of Haste</span></td><td>移動速度</td><td class="tag-mono">+15%</td><td class="tag-mono">+32.2%</td><td class="tag-mono">+52.1%</td><td class="tag-mono">+74.9%</td><td class="tag-mono">×1.15</td></tr>
+<tr><td>筋力の指輪<br><span class="romaji">Ring of Might</span></td><td>最大体力（段階ごとに筋力も+1）</td><td class="tag-mono">+3.5%</td><td class="tag-mono">+7.1%</td><td class="tag-mono">+10.9%</td><td class="tag-mono">+14.8%</td><td class="tag-mono">×1.035</td></tr>
+<tr><td>精密射撃の指輪<br><span class="romaji">Ring of Sharpshooting</span></td><td>投擲武器の耐久（とレベル）</td><td class="tag-mono">+20%</td><td class="tag-mono">+44%</td><td class="tag-mono">+72.8%</td><td class="tag-mono">+107.4%</td><td class="tag-mono">×1.2</td></tr>
+<tr><td>執念の指輪<br><span class="romaji">Ring of Tenacity</span></td><td>被ダメージ軽減（体力が減るほど強い）</td><td class="tag-mono">−15%</td><td class="tag-mono">−27.8%</td><td class="tag-mono">−38.6%</td><td class="tag-mono">−47.8%</td><td class="tag-mono">×0.85</td></tr>
+<tr><td>幸運の指輪<br><span class="romaji">Ring of Wealth</span></td><td>敵からの追加ドロップ</td><td class="tag-mono">+20%</td><td class="tag-mono">+44%</td><td class="tag-mono">+72.8%</td><td class="tag-mono">+107.4%</td><td class="tag-mono">×1.2</td></tr>
+</tbody>
+</table>
+<!-- SPD-RINGS:END -->
+    </div>
+    <div class="callout">執念の指輪の軽減は体力が減るほど大きくなり、表の値は体力がほぼ尽きたときのもの。力の指輪は素手・武器技のダメージに独自の式を使う。</div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/shattered-pixel-dungeon/">攻略ガイド全体</a>
+      <a href="/ja/games/shattered-pixel-dungeon/#weapons">全近接武器の性能</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイド攻略です。数値と名称は上記バージョンのShattered Pixel Dungeonソースコード（GPL-3.0）から取得しており、効果の説明は当サイト独自の要約でゲーム内の文章ではありません。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://github.com/00-Evan/shattered-pixel-dungeon" target="_blank" rel="noopener">Shattered Pixel Dungeon source code (v4.0.0)</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

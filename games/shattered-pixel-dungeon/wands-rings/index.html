@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Every Shattered Pixel Dungeon wand's damage, upgrade scaling and charges, how wand recharge works, and every ring's bonus at +0 to +3 — read from the game's source code.">
+<title>Shattered Pixel Dungeon Wands & Rings: Damage, Charges and Bonuses</title>
+<link rel="stylesheet" href="/assets/games/spd.css">
+<link rel="canonical" href="https://kouryakulab.com/games/shattered-pixel-dungeon/wands-rings/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/shattered-pixel-dungeon/wands-rings/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/shattered-pixel-dungeon/wands-rings/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/shattered-pixel-dungeon/wands-rings/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:title" content="Shattered Pixel Dungeon Wands &amp; Rings: Damage, Charges and Bonuses">
+<meta property="og:description" content="Every Shattered Pixel Dungeon wand's damage, upgrade scaling and charges, how wand recharge works, and every ring's bonus at +0 to +3 — read from the game's source code.">
+<meta property="og:url" content="https://kouryakulab.com/games/shattered-pixel-dungeon/wands-rings/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-shattered-pixel-dungeon.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shattered Pixel Dungeon Wands &amp; Rings: Damage, Charges and Bonuses">
+<meta name="twitter:description" content="Every Shattered Pixel Dungeon wand's damage, upgrade scaling and charges, how wand recharge works, and every ring's bonus at +0 to +3 — read from the game's source code.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-shattered-pixel-dungeon.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Shattered Pixel Dungeon Wands & Rings: Damage, Charges and Bonuses",
+      "description": "Every Shattered Pixel Dungeon wand's damage, upgrade scaling and charges, how wand recharge works, and every ring's bonus at +0 to +3 — read from the game's source code.",
+      "inLanguage": "en",
+      "url": "https://kouryakulab.com/games/shattered-pixel-dungeon/wands-rings/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Shattered Pixel Dungeon Wands & Rings: Damage, Charges and Bonuses",
+          "item": "https://kouryakulab.com/games/shattered-pixel-dungeon/wands-rings/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/games/shattered-pixel-dungeon/"><span class="arrow">←</span> Full Shattered Pixel Dungeon Guide</a>
+    <div>
+      <span class="eyebrow">SHATTERED PIXEL DUNGEON · WANDS &amp; RINGS</span>
+      <h1>Wands &amp; Rings</h1>
+      <p class="sub">Which wand hits hardest, how fast charges come back, and what each ring actually gives at each upgrade level. Numbers are from the game's source code.</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="Language"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+
+  <section id="wands" style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Wands</h2></div>
+    <p class="sec-desc">Damage per zap at +0 and what each upgrade adds (min / max). Utility wands don't deal direct damage. From <span id="spd-version">v4.0.0</span>.</p>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li>Every wand starts with <b>2 charges</b> (Magic Missile has 3), gains <b>+1 per upgrade</b>, and caps at <b>10</b>.</li>
+        <li>Charges come back one at a time, and faster the emptier the wand is: each charge takes 10 + 40 × 0.875<sup>missing charges</sup> turns — about 45 turns with 1 charge missing, 36.8 with 3 missing and 20.5 with 10 missing. A Ring of Energy speeds this up.</li>
+        <li>Damage and effects scale with the wand's level, so upgrades on a wand you use a lot pay off twice: more damage per zap and more charges.</li>
+      </ul>
+    </div>
+    <div class="panel table-scroll" style="margin-top:16px;">
+<!-- SPD-WANDS:START -->
+<table class="glossary spd-table">
+<thead><tr><th>Wand</th><th>Damage at +0</th><th>Per upgrade</th><th>Charges</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><td>Wand of Blast Wave<br><span class="romaji">爆風の杖</span></td><td class="tag-mono">1–3</td><td class="tag-mono">+1 / +3</td><td>2 (+1 per upgrade, max 10)</td><td>Damages and knocks enemies back.</td></tr>
+<tr><td>Wand of Disintegration<br><span class="romaji">分解の杖</span></td><td class="tag-mono">2–8</td><td class="tag-mono">+1 / +4</td><td>2 (+1 per upgrade, max 10)</td><td>A beam that pierces through every enemy in its path.</td></tr>
+<tr><td>Wand of Fireblast<br><span class="romaji">爆炎の杖</span></td><td class="tag-mono">1–2</td><td class="tag-mono">+1 / +2</td><td>2 (+1 per upgrade, max 10)</td><td>A cone of fire; can spend up to 3 charges at once for a bigger blast (damage shown for 1 charge).</td></tr>
+<tr><td>Wand of Frost<br><span class="romaji">凍結の杖</span></td><td class="tag-mono">2–8</td><td class="tag-mono">+1 / +5</td><td>2 (+1 per upgrade, max 10)</td><td>Damages and chills enemies, and can freeze them.</td></tr>
+<tr><td>Wand of Lightning<br><span class="romaji">稲妻の杖</span></td><td class="tag-mono">5–10</td><td class="tag-mono">+1 / +5</td><td>2 (+1 per upgrade, max 10)</td><td>Lightning that arcs between nearby targets.</td></tr>
+<tr><td>Wand of Living Earth<br><span class="romaji">生ける大地の杖</span></td><td class="tag-mono">4–6</td><td class="tag-mono">+0 / +2</td><td>2 (+1 per upgrade, max 10)</td><td>Gives you rock armor and forms an earthen guardian to fight for you.</td></tr>
+<tr><td>Wand of Magic Missile<br><span class="romaji">魔力の矢の杖</span></td><td class="tag-mono">2–8</td><td class="tag-mono">+1 / +2</td><td>3 (+1 per upgrade, max 10)</td><td>Cheap, reliable single-target damage; starts with 3 charges.</td></tr>
+<tr><td>Wand of Prismatic Light<br><span class="romaji">光彩の杖</span></td><td class="tag-mono">1–5</td><td class="tag-mono">+1 / +3</td><td>2 (+1 per upgrade, max 10)</td><td>Damages and blinds; extra effect on demonic and undead enemies.</td></tr>
+<tr><td>Wand of Corrosion<br><span class="romaji">腐食の杖</span></td><td class="tag-mono">—</td><td class="tag-mono">—</td><td>2 (+1 per upgrade, max 10)</td><td>Releases corrosive gas that keeps damaging enemies inside it.</td></tr>
+<tr><td>Wand of Corruption<br><span class="romaji">堕落の杖</span></td><td class="tag-mono">—</td><td class="tag-mono">—</td><td>2 (+1 per upgrade, max 10)</td><td>Turns a weakened enemy into an ally; otherwise inflicts debuffs.</td></tr>
+<tr><td>Wand of Regrowth<br><span class="romaji">再萌芽の杖</span></td><td class="tag-mono">—</td><td class="tag-mono">—</td><td>2 (+1 per upgrade, max 10)</td><td>Grows grass and plants over an area.</td></tr>
+<tr><td>Wand of Transfusion<br><span class="romaji">輸血の杖</span></td><td class="tag-mono">—</td><td class="tag-mono">—</td><td>2 (+1 per upgrade, max 10)</td><td>Spends your HP to heal allies or charm enemies; hurts undead.</td></tr>
+<tr><td>Wand of Warding<br><span class="romaji">護衛の杖</span></td><td class="tag-mono">—</td><td class="tag-mono">—</td><td>2 (+1 per upgrade, max 10)</td><td>Summons stationary sentries that shoot at enemies.</td></tr>
+</tbody>
+</table>
+<!-- SPD-WANDS:END -->
+    </div>
+  </section>
+
+  <section id="rings" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>Rings</h2></div>
+    <p class="sec-desc">Rings give their bonus in steps. A ring's step count is its level + 1, so even a +0 ring gives one step, and each upgrade adds another. Wearing two of the same ring adds their steps together.</p>
+    <div class="panel table-scroll">
+<!-- SPD-RINGS:START -->
+<table class="glossary spd-table">
+<thead><tr><th>Ring</th><th>Affects</th><th>+0</th><th>+1</th><th>+2</th><th>+3</th><th>Per level</th></tr></thead>
+<tbody>
+<tr><td>Ring of Accuracy<br><span class="romaji">正確の指輪</span></td><td>Accuracy</td><td class="tag-mono">+30%</td><td class="tag-mono">+69%</td><td class="tag-mono">+119.7%</td><td class="tag-mono">+185.6%</td><td class="tag-mono">×1.3</td></tr>
+<tr><td>Ring of Arcana<br><span class="romaji">秘儀の指輪</span></td><td>Enchantment and glyph power</td><td class="tag-mono">+17.5%</td><td class="tag-mono">+38.1%</td><td class="tag-mono">+62.2%</td><td class="tag-mono">+90.6%</td><td class="tag-mono">×1.175</td></tr>
+<tr><td>Ring of Elements<br><span class="romaji">元素の指輪</span></td><td>Less damage and duration from elemental effects</td><td class="tag-mono">−17.5%</td><td class="tag-mono">−31.9%</td><td class="tag-mono">−43.8%</td><td class="tag-mono">−53.7%</td><td class="tag-mono">×0.825</td></tr>
+<tr><td>Ring of Energy<br><span class="romaji">エネルギーの指輪</span></td><td>Wand and artifact recharge speed</td><td class="tag-mono">+17.5%</td><td class="tag-mono">+38.1%</td><td class="tag-mono">+62.2%</td><td class="tag-mono">+90.6%</td><td class="tag-mono">×1.175</td></tr>
+<tr><td>Ring of Evasion<br><span class="romaji">回避の指輪</span></td><td>Evasion</td><td class="tag-mono">+12.5%</td><td class="tag-mono">+26.6%</td><td class="tag-mono">+42.4%</td><td class="tag-mono">+60.2%</td><td class="tag-mono">×1.125</td></tr>
+<tr><td>Ring of Force<br><span class="romaji">力の指輪</span></td><td>Unarmed and weapon-ability damage (special formula)</td><td class="build-note">special</td><td class="build-note">special</td><td class="build-note">special</td><td class="build-note">special</td><td class="tag-mono">—</td></tr>
+<tr><td>Ring of Furor<br><span class="romaji">激怒の指輪</span></td><td>Attack speed</td><td class="tag-mono">+9.1%</td><td class="tag-mono">+18.9%</td><td class="tag-mono">+29.7%</td><td class="tag-mono">+41.4%</td><td class="tag-mono">×1.09051</td></tr>
+<tr><td>Ring of Haste<br><span class="romaji">加速の指輪</span></td><td>Movement speed</td><td class="tag-mono">+15%</td><td class="tag-mono">+32.2%</td><td class="tag-mono">+52.1%</td><td class="tag-mono">+74.9%</td><td class="tag-mono">×1.15</td></tr>
+<tr><td>Ring of Might<br><span class="romaji">筋力の指輪</span></td><td>Max HP (plus +1 STR per step)</td><td class="tag-mono">+3.5%</td><td class="tag-mono">+7.1%</td><td class="tag-mono">+10.9%</td><td class="tag-mono">+14.8%</td><td class="tag-mono">×1.035</td></tr>
+<tr><td>Ring of Sharpshooting<br><span class="romaji">精密射撃の指輪</span></td><td>Thrown-weapon durability (and their level)</td><td class="tag-mono">+20%</td><td class="tag-mono">+44%</td><td class="tag-mono">+72.8%</td><td class="tag-mono">+107.4%</td><td class="tag-mono">×1.2</td></tr>
+<tr><td>Ring of Tenacity<br><span class="romaji">執念の指輪</span></td><td>Less damage taken, scaling with missing HP</td><td class="tag-mono">−15%</td><td class="tag-mono">−27.8%</td><td class="tag-mono">−38.6%</td><td class="tag-mono">−47.8%</td><td class="tag-mono">×0.85</td></tr>
+<tr><td>Ring of Wealth<br><span class="romaji">幸運の指輪</span></td><td>Extra item drops from enemies</td><td class="tag-mono">+20%</td><td class="tag-mono">+44%</td><td class="tag-mono">+72.8%</td><td class="tag-mono">+107.4%</td><td class="tag-mono">×1.2</td></tr>
+</tbody>
+</table>
+<!-- SPD-RINGS:END -->
+    </div>
+    <div class="callout">Ring of Tenacity's reduction grows as you lose HP — the numbers shown apply at very low HP. Ring of Force uses its own formula for unarmed and ability damage.</div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>Continue reading</h3>
+    <div class="more-guides-links">
+      <a href="/games/shattered-pixel-dungeon/">Full Guide</a>
+      <a href="/games/shattered-pixel-dungeon/#weapons">Every Melee Weapon</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">This is an unofficial, fan-made guide. Numbers and item names come from the Shattered Pixel Dungeon source code (GPL-3.0) of the release shown above; the effect summaries are our own wording, not in-game text.</div>
+    <div class="sources">
+      Sources:
+      <a href="https://github.com/00-Evan/shattered-pixel-dungeon" target="_blank" rel="noopener">Shattered Pixel Dungeon source code (v4.0.0)</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="Site links"><a href="/about/">About</a> · <a href="/authors/">Authors</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

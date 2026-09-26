@@ -155,7 +155,7 @@ def render(tag, weapons):
                 notes.append(t["rch"].format(v=w["rch"]))
             if w.get("block"):
                 notes.append(t["blocks"].format(v=w["block"]) + (t["blocks_lvl"].format(v=w["block_per_lvl"]) if w["block_per_lvl"] else ""))
-            cap = " ".join(x[:1].upper() + x[1:] for x in w["name_en"].split())  # title() だと Mage'S になる
+            cap = " ".join(x if x == "of" else x[:1].upper() + x[1:] for x in w["name_en"].split())  # title() だと Mage'S になる
             name = cap if lang == "en" else w["name_ja"]
             sub = w["name_ja"] if lang == "en" else cap
             avg = (w["min"] + w["max"]) / 2 / w["dly"]

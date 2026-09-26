@@ -367,4 +367,4 @@ footer nav.site-links a:hover { color: var(--ink-dim); }
 .gk-table td:nth-child(2) { text-align: start; font-family: inherit; }
 .spd-table { font-size: .85rem; min-width: 700px; }
 .spd-table td { vertical-align: top; }
-.spd-table td:nth-child(n+2):nth-child(-n+6) { white-space: nowrap; }
+.spd-table td.tag-mono { white-space: nowrap; }
