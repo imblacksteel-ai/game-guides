@@ -42,6 +42,12 @@ CNAME, robots.txt, sitemap.xml       ドメイン・SEO設定
 8. `python3 scripts/seo_inject.py`を実行し、続けて`python3 scripts/set_indexing.py`を実行する。favicon・OGP/Twitterタグ・JSON-LDを全ページに自動挿入する（冪等なので既存ページは自動でスキップされる）。**このタグ群を手で書かない。**
 9. 全言語ぶん揃ってから一括でgit commit・push（言語ごとに小分けでコミットしない）。
 
+## 英日の新ページを作るとき
+
+- `scripts/page_helpers.py` の `head_from`（既存ページのheadを土台にタイトル・説明・CSS・hreflang・available-langsを差し替え）、`footer`、`add_to_sitemap` を使う。一時スクリプトで毎回書き直さない。
+- 書き出した後は `python3 scripts/seo_inject.py` → `python3 scripts/set_indexing.py` の順に実行する。
+- `.steps li` は横並び（flex）なので、本文に `<b>` などのタグを含む場合は `<li><span class="n">1</span><span>本文</span></li>` と本文を `<span>` で包む（包まないと太字部分が別の列に分かれて崩れる）。
+
 ## SEO設定（実装済み・新ページにも自動適用される）
 
 - **hreflang**：各ページの`<head>`に8言語+x-defaultの`<link rel="alternate" hreflang="...">`を設置済み。新ページも手順5参照。
