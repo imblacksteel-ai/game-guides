@@ -263,3 +263,8 @@ footer nav.site-links a:hover { color: var(--ink-dim); }
 .more-guides-links { display: flex; flex-wrap: wrap; gap: 8px; }
 .more-guides-links a { font-size: .85rem; background: var(--surface); border: 1px solid var(--line); padding: 7px 14px; border-radius: 999px; text-decoration: none; color: var(--ink); }
 .more-guides-links a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---- Tier list page ---- */
+.tier-table td { vertical-align: top; }
+.tier-table td:nth-child(n+2):nth-child(-n+5) { white-space: nowrap; }
+.tier-table .romaji, .tier-table .build-note { display: inline-block; font-size: .78rem; color: var(--ink-dim); font-weight: 400; }
