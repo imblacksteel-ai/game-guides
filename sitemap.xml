@@ -266,4 +266,12 @@
   </url>
   <url><loc>https://kouryakulab.com/ja/games/haran-suisekai/tier-list/</loc></url>
 
+  <url>
+    <loc>https://kouryakulab.com/games/kancolle/2-4/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/2-4/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/2-4/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/2-4/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/kancolle/2-4/</loc></url>
+
 </urlset>

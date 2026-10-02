@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="艦これ2-4（沖ノ島海域）の初心者向け攻略。クリアできた編成、羅針盤が逸れる理由と分岐条件、必要な制空値、撤退の判断までまとめた。">
+<title>艦これ 2-4 攻略：編成・ルート分岐・制空値（初心者向け）</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/kancolle/2-4/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/2-4/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/2-4/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/2-4/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="艦これ 2-4 攻略：編成・ルート分岐・制空値（初心者向け）">
+<meta property="og:description" content="艦これ2-4（沖ノ島海域）の初心者向け攻略。クリアできた編成、羅針盤が逸れる理由と分岐条件、必要な制空値、撤退の判断までまとめた。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/kancolle/2-4/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="艦これ 2-4 攻略：編成・ルート分岐・制空値（初心者向け）">
+<meta name="twitter:description" content="艦これ2-4（沖ノ島海域）の初心者向け攻略。クリアできた編成、羅針盤が逸れる理由と分岐条件、必要な制空値、撤退の判断までまとめた。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "艦これ 2-4 攻略：編成・ルート分岐・制空値（初心者向け）",
+      "description": "艦これ2-4（沖ノ島海域）の初心者向け攻略。クリアできた編成、羅針盤が逸れる理由と分岐条件、必要な制空値、撤退の判断までまとめた。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/kancolle/2-4/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "艦これ 2-4 攻略：編成・ルート分岐・制空値（初心者向け）",
+          "item": "https://kouryakulab.com/ja/games/kancolle/2-4/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/kancolle/"><span class="arrow">←</span> 艦これ 攻略ガイド全体</a>
+    <div>
+      <span class="eyebrow">艦これ ・ 2-4</span>
+      <h1>2-4 攻略：沖ノ島海域</h1>
+      <p class="sub">2-4は「初心者の壁」と呼ばれる海域。クリアできた編成と、羅針盤が逸れる理由、思った以上に重要な制空値をまとめた。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+
+  <section id="conclusion" style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;"><b>クリアした編成：</b>戦艦2・空母2・重巡1・軽巡1（全員Lv40前後）。出撃5回ほどでクリア。</p>
+      <p style="margin:0 0 8px;"><b>一番大事なこと：</b>道中の敵空母に負けない制空値（航空優勢なら<b>84</b>超）、大破したら必ず撤退、羅針盤に合った編成。</p>
+      <p style="margin:0;"><b>難しい理由：</b>どのルートでも敵の空母機動部隊と戦うことになり、戦艦・空母を多く入れると遠回りになって、ボスまでに4戦することが多い。</p>
+    </div>
+    <div class="callout"><b>筆者の体験：</b> 最初のうちはボス前のマスで大破が出て撤退することがほとんどだった。羅針盤もボスから逸れることが多く、上の編成に変えてから安定した。いちばん意外だったのは、制空の確保が想像以上に大事だったこと。</div>
+  </section>
+
+  <section id="need" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>必要なもの</h2></div>
+    <h3 style="font-size:1rem;margin:0 0 8px;">編成</h3>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>枠</th><th>艦種</th><th>理由</th></tr></thead>
+        <tbody>
+        <tr><td>1〜2</td><td>戦艦</td><td>火力と装甲が最も高い。ボスは最大3隻の戦艦が単縦陣で来るので、撃ち合える艦が必要。</td></tr>
+        <tr><td>3〜4</td><td>空母（正規空母／軽空母）</td><td>道中の敵空母機動部隊との航空戦に勝つための艦戦と、砲撃戦前に敵を削る艦攻・艦爆を積む。正規空母と軽空母の違いは下の注意を参照。</td></tr>
+        <tr><td>5</td><td>重巡</td><td>打たれ強く、夜戦火力が高い。ボスの止めに役立つ。</td></tr>
+        <tr><td>6</td><td>軽巡</td><td>燃費が良く、ボス側の分岐では軽巡がいるとボス方向に寄りやすい。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout"><b>正規空母か軽空母か：</b>攻略Wikiのルート分岐データでは、2戦目（Fマス）で<b>軽空母がおらず駆逐艦が1隻以下</b>だとAマスに進み、ボスに着かずに出撃が終わる。軽空母がいるとボス側（Jマス）に大きく寄る。2戦目の後にアイテムマスで終わることが続くなら、正規空母1隻を軽空母に替えよう。</div>
+
+    <h3 style="font-size:1rem;margin:20px 0 8px;">装備</h3>
+    <ul style="margin:0;padding-inline-start:1.2em;font-size:.93rem;">
+      <li><b>艦上戦闘機（艦戦）</b>：ボス前までの敵制空値は最大<b>56</b>。航空優勢には<b>84</b>超、制空権確保には<b>168</b>超が必要。合計は<a href="/ja/games/kancolle/#calculator">制空値計算機</a>で確認できる。</li>
+      <li><b>主砲</b>：戦艦と重巡に、積める範囲で一番大きいもの。</li>
+      <li><b>電探</b>：余っていれば数隻に。戦艦・空母の多い編成はうずしお（燃料が減るマス）を通るが、電探で減る量を抑えられる。</li>
+      <li><b>応急修理要員（任意）</b>：1回だけ轟沈を防ぐ。撤退の判断を守れば必須ではない。</li>
+    </ul>
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:12px 0 0;"><b>使えないもの：</b>2-4では支援艦隊も基地航空隊も出撃できない。6隻だけで戦うことになる。</p>
+  </section>
+
+  <section id="steps" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>手順</h2></div>
+    <div class="panel">
+      <ol class="steps">
+      <li><span class="n">1</span><span>母港の「編成」で上の艦隊を組む。旗艦（1番目）は轟沈しないので、打たれ強い戦艦を置く。</span></li>
+      <li><span class="n">2</span><span>空母にはまず艦戦を積み、<a href='/ja/games/kancolle/#calculator'>制空値計算機</a>で84を超えているか確認する。</span></li>
+      <li><span class="n">3</span><span>全員を「補給」し、損傷があれば「入渠」で修理する。急ぐなら高速修復材（バケツ）を使う。損傷したまま出撃しない。</span></li>
+      <li><span class="n">4</span><span>「出撃」→もう一度「出撃」→南西諸島海域の<b>2-4 沖ノ島海域</b>を選ぶ。2-5「沖ノ島<b>沖</b>」と名前が似ているので注意。</span></li>
+      <li><span class="n">5</span><span>水上艦相手には<b>単縦陣</b>。輪形陣で来る敵空母機動部隊にも単縦陣で問題ない。対空を重視するなら<b>輪形陣</b>（火力は下がる）。</span></li>
+      <li><span class="n">6</span><span>戦闘のたびに損傷を確認し、<b>大破</b>が1隻でもいれば「撤退」、いなければ「進撃」。</span></li>
+      <li><span class="n">7</span><span>道中では夜戦をせず「追撃せず」。ボスでは敵旗艦が残っていれば夜戦へ。重巡と戦艦は夜戦で特に強い。</span></li>
+      <li><span class="n">8</span><span>ボス戦に勝利すればクリア。</span></li>
+      </ol>
+    </div>
+
+    <h3 style="font-size:1rem;margin:20px 0 8px;">羅針盤が逸れる理由</h3>
+    <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 10px;">羅針盤は完全なランダムではなく、編成によって各分岐の確率が決まる。マスのアルファベットは攻略Wikiの表記（ゲーム画面には表示されない）。</p>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>分岐</th><th>ルート分岐データ</th><th>意味</th></tr></thead>
+        <tbody>
+        <tr><td>1戦目の後（B）</td><td>戦艦＋正規空母が3隻以上でCマス（うずしお）</td><td>燃料が少し減る。電探で軽減できる。</td></tr>
+        <tr><td>2戦目の後（F）</td><td>軽空母か駆逐艦2隻以上でボス側（J）に寄る。軽空母なし・駆逐1隻以下はAマスで出撃終了</td><td>戦艦中心の編成がボスに着かない一番の原因。</td></tr>
+        <tr><td>Jマス</td><td>戦艦＋空母が4隻以上でL、ちょうど3隻でM、正規空母2隻でM</td><td>どちらもボス方向だが、戦う相手が変わる。</td></tr>
+        <tr><td>Lマス</td><td>戦艦＋空母がちょうど4隻でM（空母部隊ともう1戦）。軽巡1＋駆逐2、または戦艦＋正規空母が2隻以下ならボスへ直行</td><td>戦艦2・空母2だとボス前にMマスでもう1戦するので、ボス前の大破撤退が増える。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">Wikiのデータでは、<b>戦艦1＋正規空母1＋軽空母1</b>（大型艦3隻）にするとJ→M→ボスと進み、1戦少なくなる（筆者は未検証）。また<b>重巡1・軽巡1・駆逐4</b>なら道中2戦の固定ルートもあるが、軽量艦の練度や装備改修が必要なので、初めての攻略には向かない。</p>
+  </section>
+
+  <section id="mistakes" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>よくある失敗</h2></div>
+    <div class="panel">
+      <ol class="steps">
+      <li><span class="n">1</span><span><b>制空値を気にしない。</b>どのルートでも、ヲ級flagshipを含む敵空母機動部隊と最低1回は戦う。ここで航空戦に負けると、ボスに着く前に損傷がかさむ。筆者がいちばん驚いた点で、艦戦を十分積んでから道中がずっと楽になった。</span></li>
+      <li><span class="n">2</span><span><b>大破のまま進撃する。</b>旗艦以外の大破艦は、もう一度被弾すると轟沈することがある。轟沈した艦は装備ごと戻らない。撤退して修理し、やり直そう。</span></li>
+      <li><span class="n">3</span><span><b>羅針盤を運だけのせいにする。</b>同じマスに逸れ続けるなら、原因はほぼ編成。上の分岐表を参照。筆者も編成を変えたことでルートが安定した。</span></li>
+      <li><span class="n">4</span><span><b>戦艦・空母をありったけ入れる。</b>大型艦4隻以上だとMマスを経由してもう1戦増えるので、火力だけでは解決しない。</span></li>
+      <li><span class="n">5</span><span><b>やり直しの前に補給を忘れる。</b>燃料・弾薬が減った艦は弱くなり、うずしおでも燃料が減る。</span></li>
+      <li><span class="n">6</span><span><b>資源が尽きる。</b>戦艦・空母の編成は消費が重い。修理中も遠征を回そう。何を送れるかは<a href='/ja/games/kancolle/expedition-requirements/'>遠征の編成条件一覧</a>で確認できる。</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">レベルは最大まで必要？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">不要。筆者は全員Lv40前後でクリアした。レベルより、編成・艦戦・撤退の判断の方が大事。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">2戦目の後で出撃が終わってしまうのはなぜ？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">その分岐（Fマス）では、軽空母がおらず駆逐艦が1隻以下だとAマスに進み、出撃が終わる。軽空母か駆逐艦2隻を入れよう。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">制空値はどれくらい必要？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">ボス前の敵制空値は最大56なので、84超（航空優勢）を目安に。168超で制空権確保。ボス艦隊に空母はいない。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">支援艦隊や基地航空隊は使える？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">使えない。南西諸島海域ではどちらも出撃できない。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">2-4をクリアすると何が開く？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">3-3の出撃条件の一つ（3-2と合わせて）。南西諸島海域では、この後にExtra Operation海域の2-5が続く。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">ボス戦の陣形は？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">単縦陣。ボスは最大3隻の戦艦を含む水上艦だけの艦隊で、相手も単縦陣で来る。対空寄りの陣形は火力が下がるだけになる。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">攻撃がよく外れるのはなぜ？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">この海域の敵の随伴には回避の高い駆逐艦の後期型が多い。外すたびに敵の攻撃機会が増えるので、道中で損傷がかさむ原因の一つになる。練度と主砲の質を上げると改善する。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">クリア後も来る理由はある？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0;">ある。クォータリー任務「沖ノ島海域迎撃戦」はボスS勝利2回で給糧艦「間宮」がもらえる。また2-4は、通常海域で唯一高速修復材を拾えるマスがある海域でもある。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/kancolle/">艦これ 攻略ガイド全体</a>
+      <a href="/ja/games/kancolle/#calculator">制空値計算機</a>
+      <a href="/ja/games/kancolle/fleet-builder/">艦隊編成シミュレーター</a>
+      <a href="/ja/games/kancolle/expedition-requirements/">遠征の編成条件一覧</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイド攻略です。編成と体験は筆者自身のクリア記録、ルート分岐・敵制空値・任務の情報は艦これ攻略Wikiに基づいており、ゲームのアップデートで変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://wikiwiki.jp/kancolle/%E5%8D%97%E8%A5%BF%E8%AB%B8%E5%B3%B6%E6%B5%B7%E5%9F%9F" target="_blank" rel="noopener">艦これ攻略Wiki：南西諸島海域（2-4のルート分岐・敵編成）</a>
+      <a href="https://wikiwiki.jp/kancolle/%E5%8C%97%E6%96%B9%E6%B5%B7%E5%9F%9F" target="_blank" rel="noopener">艦これ攻略Wiki：北方海域（3-3の出撃条件）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>
