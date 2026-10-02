@@ -1,0 +1,62 @@
+{
+  "_note": "波乱水世界（日本版）の公開Tier表の集計元。手で転記したデータ。評価を見直したらここを更新して python3 scripts/build_www_tier.py を実行する。配信前の暫定表・中国/台湾サーバー基準の表は除外（excluded に理由を記録）。",
+  "checked": "2026-10-02",
+  "sources": [
+    {"id": "pokemonza", "name": "ポケモナンザ / GameUpX", "date": "2026-09-02",
+     "urls": ["https://pokemonza.hatenablog.jp/entry/2026/09/02/104425", "https://gameupx.com/611/"],
+     "note": "2サイトの表が同一のため1件として数える",
+     "tiers": {"SS": ["silas", "bob", "samuel", "zoey"], "S": ["cole", "curtis", "lee", "oliver", "jack", "diana", "kang"], "A": ["becky", "ken"], "B": ["rex"]}},
+    {"id": "ahiru", "name": "あひるのゲーム部屋", "date": "2026-09-03",
+     "urls": ["https://ahiru0923-gameroom.com/27954/"],
+     "tiers": {"SS": ["oliver", "cole"], "S": ["lee", "curtis", "zoey", "bob"], "A": ["rex", "becky", "silas", "samuel"], "B": ["jack", "diana", "kang", "ken"], "C": ["mia", "skadi", "ray", "riker", "johnny", "kyle"]}},
+    {"id": "pekuo", "name": "ぺくおゲームズ", "date": "2026-09-02",
+     "urls": ["https://pekuo-games.com/haranmizusekai-saikyo/"],
+     "note": "5キャラのみ掲載",
+     "tiers": {"SS": ["bob", "riker", "rex", "samuel"], "S": ["becky"]}},
+    {"id": "moriyama", "name": "もりやまブログ", "date": "2026-09-07",
+     "urls": ["https://moriyama-blog.com/wildwaterworld-ranking/"],
+     "tiers": {"SS": ["silas", "bob", "samuel", "zoey"], "S": ["kang", "cole", "curtis", "lee", "oliver", "jack", "diana"], "A": ["becky", "ken", "rex", "snow", "ray", "riker", "johnny", "skadi", "kyle", "mia"]}},
+    {"id": "jpgamex", "name": "JPGamex", "date": "2026-09-23",
+     "urls": ["https://jpgamex.hatenablog.jp/entry/2026/09/23/003602"],
+     "tiers": {"SS": ["silas", "bob", "samuel", "zoey", "oliver", "cole"], "S": ["lee", "curtis", "jack", "diana", "kang"], "A": ["becky", "ken", "rex"], "B": ["mia", "skadi", "ray", "riker"]}}
+  ],
+  "excluded": [
+    {"name": "game-tier.com", "date": "2026-09-01", "url": "https://game-tier.com/haranmizu/haranmizu-tier/", "reason": "配信前の暫定表（本人が配信後に作り直すと明記）"},
+    {"name": "JPGamex（9/13・9/14）", "url": "https://jpgamex.hatenablog.jp/entry/2026/09/13/211703", "reason": "中国サーバー基準で、日本版にまだいないキャラが中心"},
+    {"name": "LDPlayer《瘋狂水世界》", "date": "2026-09-01", "url": "https://www.ldplayer.tw/blog/wild-water-world-tier-list.html", "reason": "台湾版の表で、キャラ構成・名称が日本版と一致しない"}
+  ],
+  "crew": {
+    "silas": {"en": "Machine Butcher Silas", "ja": "マシンブッチャー・サイレス", "class": "tank"},
+    "bob": {"en": "Bouncy Bob", "ja": "ぴょんぴょん・ボブ", "class": "tank"},
+    "samuel": {"en": "Neon Wizard Samuel", "ja": "ネオンウィザード・サミュエル", "class": "mage"},
+    "zoey": {"en": "Mechanic Girl Zoey", "ja": "メカニックガール・ゾーイ", "class": "mage"},
+    "oliver": {"en": "Scrap Vulture Oliver", "ja": "スクラップハゲタカ・オリバー", "class": "mage"},
+    "cole": {"en": "Steelman Cole", "ja": "スチールマン・コール", "class": "shooter"},
+    "lee": {"en": "Techhound Lee", "ja": "テックハウンド・リー", "class": "shooter"},
+    "curtis": {"en": "Lizardman Curtis", "ja": "リザードマン・カーティス", "class": "mage"},
+    "jack": {"en": "Jolly Jack", "ja": "ジョリー・ジャック", "class": "warrior"},
+    "diana": {"en": "Diana", "ja": "ダイアナ", "class": "warrior"},
+    "kang": {"en": "Tipsy Brawler Kang", "ja": "ほろ酔い喧嘩屋・カン", "class": "warrior"},
+    "becky": {"en": "Ravager Becky", "ja": "ラヴェジャー・ベッキー", "class": "shooter"},
+    "ken": {"en": "Undefeated King Ken", "ja": "無敗の王・ケン", "class": "warrior"},
+    "rex": {"en": "Rex", "ja": "レックス", "class": "shooter"},
+    "riker": {"en": "Phantom Flame Riker", "ja": "ファントムフレイム・ライカー", "class": null},
+    "snow": {"en": "Frost Monarch Snow", "ja": "フロストモナーク・スノー", "class": null},
+    "ray": {"en": "Professor Ray", "ja": "教授・レイ", "class": null},
+    "johnny": {"en": "Boulder Giant Johnny", "ja": "巨石ジャイアント・ジョニー", "class": null},
+    "skadi": {"en": "Skadi", "ja": "スカジ", "class": null},
+    "kyle": {"en": "Iron Ruler Kyle", "ja": "アイアンルーラー・カイル", "class": null},
+    "mia": {"en": "Mia", "ja": "ミア", "class": null}
+  },
+  "notes": {
+    "silas": ["Pulls the farthest enemy into your side and briefly stuns it.", "一番遠くの敵を自陣側に引き寄せ、短時間スタンさせる。"],
+    "bob": ["Wide-area taunt that reflects part of the damage he takes.", "広範囲の挑発で、受けたダメージの一部を反射する。"],
+    "samuel": ["Shields allies and boosts attack speed and crit rate.", "味方にシールドを張り、攻撃速度と会心率を上げる。"],
+    "zoey": ["Summons a giant robot that keeps dealing area damage.", "巨大ロボを召喚し、範囲ダメージを与え続ける。"],
+    "oliver": ["Heals the whole team and boosts the crit rate of your strongest attacker.", "味方全体を回復し、攻撃力の最も高い味方の会心率を上げる。"],
+    "cole": ["Teleports to the back line and fires a wide energy wave.", "後列へワープし、幅の広いエネルギー波を撃つ。"],
+    "lee": ["Summons two robo-dogs that chip away at the front line.", "ロボ犬を2体召喚し、前線を削り続ける。"],
+    "curtis": ["Transforms to widen his attack range in long fights.", "変身で攻撃範囲が広がり、長期戦で強い。"],
+    "rex": ["Often used as the main damage dealer in the standard team.", "定番編成ではメイン火力として使われることが多い。"]
+  }
+}
