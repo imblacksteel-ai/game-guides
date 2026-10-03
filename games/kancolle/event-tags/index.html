@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="KanColle event tags (札) explained: when ships get locked to an event map, why it only restricts you on Normal and Hard, how to find tagged ships, and how to plan so your best ships aren't locked out.">
+<title>KanColle Event Ship Locks (Tags) Explained</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/games/kancolle/event-tags/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/event-tags/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/event-tags/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/event-tags/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:title" content="KanColle Event Ship Locks (Tags) Explained">
+<meta property="og:description" content="KanColle event tags (札) explained: when ships get locked to an event map, why it only restricts you on Normal and Hard, how to find tagged ships, and how to plan so your best ships aren't locked out.">
+<meta property="og:url" content="https://kouryakulab.com/games/kancolle/event-tags/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KanColle Event Ship Locks (Tags) Explained">
+<meta name="twitter:description" content="KanColle event tags (札) explained: when ships get locked to an event map, why it only restricts you on Normal and Hard, how to find tagged ships, and how to plan so your best ships aren't locked out.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "KanColle Event Ship Locks (Tags) Explained",
+      "description": "KanColle event tags (札) explained: when ships get locked to an event map, why it only restricts you on Normal and Hard, how to find tagged ships, and how to plan so your best ships aren't locked out.",
+      "inLanguage": "en",
+      "url": "https://kouryakulab.com/games/kancolle/event-tags/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "KanColle Event Ship Locks (Tags) Explained",
+          "item": "https://kouryakulab.com/games/kancolle/event-tags/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/games/kancolle/"><span class="arrow">←</span> Full KanColle Guide</a>
+    <div>
+      <span class="eyebrow">KANCOLLE · EVENT TAGS</span>
+      <h1>Event Ship Locks (Tags) Explained</h1>
+      <p class="sub">Sortie a ship into the wrong event map and it can be locked out of the one you actually need. Here's how tags work, when they matter, and how to plan around them.</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="Language"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Conclusion</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">In many events, a ship gets a <b>tag</b> (出撃識別札, <i>Shutsugeki Shikibetsu Fuda</i>; players just say 札, <i>fuda</i>) for the <b>first event map it sorties into</b>. The tag can't be changed or removed until the event ends.</p>
+      <p style="margin:0 0 8px;">On <b>Normal and Hard</b>, a tagged ship can't sortie into maps that use a different tag. On <b>Easy and Casual</b>, you can ignore the restriction.</p>
+      <p style="margin:0;">So the one thing to avoid is sending your best ships into an early map on Normal/Hard and then finding them locked out of the final map.</p>
+    </div>
+    <div class="callout"><b>An analysis-based guide:</b> this guide is based on our analysis of the sortie-restriction rules on the Japanese KanColle wiki. It describes what the data shows and is not a guarantee of results.</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>How Tags Work</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li>The tag is the one for the first tag-giving map a ship sorties into. If a ship already has a tag, sortieing elsewhere doesn't change it.</li>
+        <li>Tags are applied <b>on every difficulty</b> — what changes is whether they restrict you.</li>
+        <li><b>Hard and Normal:</b> a tagged ship can't sortie into event maps that use a different tag.</li>
+        <li><b>Easy and Casual:</b> tagged ships can sortie anywhere. But being allowed to sortie isn't the same as getting the route you want — some maps still need a fleet with matching tags for routing, even on lower difficulties.</li>
+        <li>Tags are per individual ship. An untagged duplicate of the same ship can go to a different map.</li>
+        <li>Regular maps, expeditions and exercises ignore tags completely.</li>
+        <li>In some events the restrictions are lifted once every map is cleared, even on Normal/Hard.</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>Finding Tagged Ships</h2></div>
+    <div class="panel">
+      <p style="margin:0;">During an event, the ship list in <b>Organize</b> (編成, <i>Hensei</i>) gets an extra filter at the right end of the ship-type filters. Click it to cycle <b>全艦艇</b> (all ships) → <b>作戦参加</b> (<i>Sakusen Sanka</i>, tagged / in the operation) → <b>待機中</b> (<i>Taikichū</i>, untagged / on standby).</p>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>How to Plan Around Tags</h2></div>
+    <div class="panel">
+      <ol class="steps">
+      <li><span class="n">1</span><span>Before your first sortie, check which maps share a tag. The event's map guide usually lists them.</span></li>
+      <li><span class="n">2</span><span>Decide which map needs your strongest ships — usually the last one — and keep them out of earlier maps that use a different tag.</span></li>
+      <li><span class="n">3</span><span>Clear early maps with the ships you can spare. Untagged duplicates are useful here.</span></li>
+      <li><span class="n">4</span><span>If you're not sure you can finish on Normal/Hard, playing on Easy or Casual removes the problem entirely.</span></li>
+      </ol>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Can I remove a tag?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">No. Tags can't be changed or removed by any means until the event ends.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Do tags affect regular maps?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">No — only event maps. Regular maps, expeditions and exercises work as usual.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">I'm on Easy. Do tags matter at all?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">They're still applied, and occasionally a route needs matching tags, but they won't block you from sortieing.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Do tags carry over to the next event?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">No — restrictions are lifted when the event ends.</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>Continue reading</h3>
+    <div class="more-guides-links">
+      <a href="/games/kancolle/">Full KanColle Guide</a>
+      <a href="/games/kancolle/event-difficulty/">Event Difficulty</a>
+      <a href="/games/kancolle/ui-translation/">UI Translation</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">This is an unofficial, fan-made, analysis-based guide. It is not a guarantee of results, and game updates may change any of it.</div>
+    <div class="sources">
+      Sources:
+      <a href="https://wikiwiki.jp/kancolle/%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E6%A9%9F%E8%83%BD" target="_blank" rel="noopener">KanColle Wiki (JP): 知っておきたい機能 — event difficulty and sortie tags</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="Site links"><a href="/about/">About</a> · <a href="/authors/">Authors</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

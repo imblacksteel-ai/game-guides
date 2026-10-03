@@ -314,4 +314,20 @@
   </url>
   <url><loc>https://kouryakulab.com/ja/games/kancolle/quest-not-completing/</loc></url>
 
+  <url>
+    <loc>https://kouryakulab.com/games/kancolle/event-difficulty/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/event-difficulty/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/event-difficulty/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/event-difficulty/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/kancolle/event-difficulty/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/games/kancolle/event-tags/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/event-tags/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/event-tags/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/event-tags/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/kancolle/event-tags/</loc></url>
+
 </urlset>
