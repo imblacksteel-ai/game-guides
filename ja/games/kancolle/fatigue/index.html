@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="艦これの赤・オレンジの疲労表示とキラキラの意味、コンディション値の増減、回復時間、一番早いキラ付けの方法をまとめた。">
+<title>艦これ 疲労度とキラ付けの仕組み（赤・オレンジ疲労）</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/kancolle/fatigue/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/fatigue/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/fatigue/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/fatigue/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="艦これ 疲労度とキラ付けの仕組み（赤・オレンジ疲労）">
+<meta property="og:description" content="艦これの赤・オレンジの疲労表示とキラキラの意味、コンディション値の増減、回復時間、一番早いキラ付けの方法をまとめた。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/kancolle/fatigue/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="艦これ 疲労度とキラ付けの仕組み（赤・オレンジ疲労）">
+<meta name="twitter:description" content="艦これの赤・オレンジの疲労表示とキラキラの意味、コンディション値の増減、回復時間、一番早いキラ付けの方法をまとめた。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "艦これ 疲労度とキラ付けの仕組み（赤・オレンジ疲労）",
+      "description": "艦これの赤・オレンジの疲労表示とキラキラの意味、コンディション値の増減、回復時間、一番早いキラ付けの方法をまとめた。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/kancolle/fatigue/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "艦これ 疲労度とキラ付けの仕組み（赤・オレンジ疲労）",
+          "item": "https://kouryakulab.com/ja/games/kancolle/fatigue/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/kancolle/"><span class="arrow">←</span> 艦これ 攻略ガイド全体</a>
+    <div>
+      <span class="eyebrow">艦これ ・ 疲労度とキラ付け</span>
+      <h1>疲労度とキラ付けの仕組み</h1>
+      <p class="sub">オレンジ・赤の顔、キラキラ、その裏にある隠れたコンディション値。それぞれの影響と回復時間、狙ってキラ付けする方法をまとめた。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;"><b>オレンジ・赤の顔＝疲労。</b>疲労した艦は攻撃を外しやすく、被弾しやすく、遠征失敗の原因にもなる。20〜30分ほど休ませてから出撃しよう。</p>
+      <p style="margin:0 0 8px;"><b>キラキラ＝戦意高揚。</b>命中・回避が上がり、全員キラキラの艦隊なら遠征が大成功しやすくなる。</p>
+      <p style="margin:0;"><b>一番早いキラ付け：</b>1-1に旗艦として出し、1回の出撃で2戦ともMVPを取らせる。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事は艦これ攻略Wikiに公開されている疲労度（コンディション値）のデータを分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>顔の表示の意味</h2></div>
+    <p class="sec-desc">艦娘には0〜100の隠れたコンディション値がある。数値は見えないが、艦娘の画像でどの段階かが分かる。</p>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>コンディション値</th><th>表示</th><th>状態</th></tr></thead>
+        <tbody>
+        <tr><td>50〜100</td><td>キラキラ（値が高いほど多い）</td><td>戦意高揚</td></tr>
+        <tr><td>40〜49</td><td>なし</td><td>通常</td></tr>
+        <tr><td>30〜39</td><td>なし（間宮を持っていれば「給」アイコンが点滅）</td><td>軽い疲労</td></tr>
+        <tr><td>20〜29</td><td>オレンジの顔</td><td>疲労</td></tr>
+        <tr><td>0〜19</td><td>赤い顔</td><td>疲労困憊</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">表示は「母港」画面に戻ったときにだけ更新される。確認するときは一度母港に戻ろう。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>コンディションの影響</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><b>キラキラ：</b>戦闘での命中・回避が上がる。遠征の大成功（資源1.5倍）の確率が上がり、支援艦隊の旗艦がキラキラなら支援の発動率も上がる。</li>
+        <li><b>疲労（おおむね32以下）：</b>命中・回避の低下が確認されている。</li>
+        <li><b>遠征：</b>結果確認時にオレンジ・赤（29以下）の艦が1隻でもいると失敗する。</li>
+        <li><b>赤疲労（19以下）：</b>轟沈を防ぐ仕組みは働くが、働いたときに必ず大破になるため、大破しやすくなる。</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>コンディションの増減</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>状況</th><th>増減</th></tr></thead>
+        <tbody>
+        <tr><td>入手時（ドロップ・建造）</td><td>40から開始</td></tr>
+        <tr><td>時間経過</td><td>3分ごとに+3、上限49（自然にキラキラにはならない）</td></tr>
+        <tr><td>出撃からの帰投</td><td>−15（30未満なら−30）</td></tr>
+        <tr><td>昼戦1回ごと</td><td>−3（30未満なら−9）</td></tr>
+        <tr><td>夜戦1回ごと</td><td>−2</td></tr>
+        <tr><td>MVP</td><td>+10</td></tr>
+        <tr><td>旗艦</td><td>戦闘ごとに+3（S〜C評価のとき）</td></tr>
+        <tr><td>戦闘評価</td><td>S +4、A +3、B +2、C +1、D/E 0</td></tr>
+        <tr><td>遠征からの帰投</td><td>−3</td></tr>
+        <tr><td>演習</td><td>帰投時は0（戦闘の−3はかかる）</td></tr>
+        <tr><td>入渠</td><td>40未満なら修理完了時に40</td></tr>
+        <tr><td>改造</td><td>40になる（キラキラも消える）</td></tr>
+        <tr><td>間宮</td><td>50（または40）まで回復</td></tr>
+        <tr><td>伊良湖</td><td>0〜40なら65、41以上なら+25</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">回復時間の目安：赤疲労が消えてから完全回復まで約30分、オレンジが消えてから約21分、間宮の点滅が消えてから約9分。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>キラ付けのやり方</h2></div>
+    <div class="panel">
+      <ol class="steps">
+      <li><span class="n">1</span><span>まず疲労を完全に抜く（間宮の点滅が消えてからさらに9分ほど待つ）。抜けていないとキラキラまで届かないことがある。</span></li>
+      <li><span class="n">2</span><span>キラ付けしたい艦を<b>旗艦</b>にして<b>1-1（鎮守府正面海域）</b>へ。単艦か、旗艦より後に攻撃してMVPを奪わない随伴艦をつける。</span></li>
+      <li><span class="n">3</span><span>1回の出撃で<b>2戦とも旗艦がMVP</b>を取る。帰投時の−15を差し引いても+12前後になり、キラキラが付く。</span></li>
+      <li><span class="n">4</span><span>最大3回繰り返すと、出撃で上げられる上限の85近くまで上がる（いわゆる三重キラ）。1戦目で撤退するとキラキラは付かない。</span></li>
+      </ol>
+    </div>
+    <div class="callout"><b>ほかの方法：</b>演習で昼戦のうちにS勝利を取る、または間宮・伊良湖を使う。時間がかかるか限りあるアイテムを使うので、普段は1-1が定番。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">06</span><h2>よくある失敗</h2></div>
+    <div class="panel">
+      <ol class="steps">
+      <li><span class="n">1</span><span><b>同じ艦隊で連続出撃する。</b>出撃ごとに−15、戦闘ごとに−3なので、2回連続で出るとオレンジになりやすい。</span></li>
+      <li><span class="n">2</span><span><b>休ませればキラキラになると思う。</b>自然回復は49で止まる。キラキラは戦闘・演習・給糧艦でしか付かない。</span></li>
+      <li><span class="n">3</span><span><b>疲労したまま遠征に出す。</b>結果確認時にオレンジ・赤だと失敗し、資源はもらえない。</span></li>
+      <li><span class="n">4</span><span><b>母港に戻らずに疲労を確認する。</b>顔の表示は母港に戻るまで更新されない。</span></li>
+      <li><span class="n">5</span><span><b>遠征直前にキラ付けした艦を改造する。</b>改造でコンディションが40に戻る。</span></li>
+      </ol>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">07</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">赤疲労はどれくらいで回復する？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">自然回復は3分ごとに+3で、上限は49。赤い顔は20で消え、そこから完全回復まで約30分、最低値からでも約50分。入渠させると、修理完了時に40未満は40になる。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">キラキラは時間で消える？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">消えない。50以上の値は放置しても下がらず、出撃・戦闘・遠征で下がる。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">遠征にキラキラは必要？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">成功には不要だが、大成功にはほとんどの遠征で全員のキラキラが必要。<a href='/ja/games/kancolle/expeditions/#great-success'>大成功の条件</a>を参照。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">キラキラなのに効果がない気がするのはなぜ？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">昼戦の開始時にコンディションが−3されるので、50〜52の艦は戦闘開始時にキラキラの範囲から外れ、補正が消える。52を大きく超えるところまで上げておこう。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/kancolle/">艦これ 攻略ガイド全体</a>
+      <a href="/ja/games/kancolle/expeditions/">遠征効率計算機</a>
+      <a href="/ja/games/kancolle/2-4/">2-4攻略</a>
+      <a href="/ja/games/kancolle/expedition-requirements/">遠征の編成条件一覧</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://wikiwiki.jp/kancolle/%E7%96%B2%E5%8A%B4%E5%BA%A6" target="_blank" rel="noopener">艦これ攻略Wiki：疲労度</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>
