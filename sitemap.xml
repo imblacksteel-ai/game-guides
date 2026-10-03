@@ -306,4 +306,12 @@
   </url>
   <url><loc>https://kouryakulab.com/ja/games/kancolle/ui-translation/</loc></url>
 
+  <url>
+    <loc>https://kouryakulab.com/games/kancolle/quest-not-completing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/quest-not-completing/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/quest-not-completing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/quest-not-completing/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/kancolle/quest-not-completing/</loc></url>
+
 </urlset>

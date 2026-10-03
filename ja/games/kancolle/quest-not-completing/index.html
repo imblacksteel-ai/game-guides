@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="艦これで任務が達成にならない原因と対処法。受注前の作業、勝利ランク、編成の不一致、海域ごとのカウント、編成済みの艦の改造、5時のリセットなど8つの原因とチェックリスト。">
+<title>艦これ 任務が達成にならない原因と対処法</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/kancolle/quest-not-completing/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/quest-not-completing/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/quest-not-completing/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/quest-not-completing/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="艦これ 任務が達成にならない原因と対処法">
+<meta property="og:description" content="艦これで任務が達成にならない原因と対処法。受注前の作業、勝利ランク、編成の不一致、海域ごとのカウント、編成済みの艦の改造、5時のリセットなど8つの原因とチェックリスト。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/kancolle/quest-not-completing/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="艦これ 任務が達成にならない原因と対処法">
+<meta name="twitter:description" content="艦これで任務が達成にならない原因と対処法。受注前の作業、勝利ランク、編成の不一致、海域ごとのカウント、編成済みの艦の改造、5時のリセットなど8つの原因とチェックリスト。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "艦これ 任務が達成にならない原因と対処法",
+      "description": "艦これで任務が達成にならない原因と対処法。受注前の作業、勝利ランク、編成の不一致、海域ごとのカウント、編成済みの艦の改造、5時のリセットなど8つの原因とチェックリスト。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/kancolle/quest-not-completing/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "艦これ 任務が達成にならない原因と対処法",
+          "item": "https://kouryakulab.com/ja/games/kancolle/quest-not-completing/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/kancolle/"><span class="arrow">←</span> 艦これ 攻略ガイド全体</a>
+    <div>
+      <span class="eyebrow">艦これ ・ 任務</span>
+      <h1>任務が達成にならない原因</h1>
+      <p class="sub">条件どおりにやったはずなのに達成にならない。よくある8つの原因を、確認する順番に並べて対処法をまとめた。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">ほとんどの場合、原因は3つのどれか。<b>任務を受注していない</b>、<b>勝利ランクが足りない</b>、<b>編成が条件と完全に一致していない</b>。</p>
+      <p style="margin:0;">攻略Wikiの任務一覧を読む限り、見落としやすいのは「海域ごとの回数がそろってからカウント」「編成済みの艦を改造した」「5時のリセット」あたり。8つの原因を、確認する順に並べた。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事は艦これ攻略Wikiの任務一覧と注意事項を分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>任務が達成にならない8つの原因</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>確認すること</th><th>何が起きているか</th></tr></thead>
+        <tbody>
+        <tr><td><b>受注前にやってしまった</b></td><td>進捗は任務を受注している間しかカウントされない。Wikiには、空母撃沈任務を受注する前に空母を沈めたら、別の任務の進捗は進んだのに目的の任務は達成されなかった例が載っている。受注してからもう一度やる必要がある。</td></tr>
+        <tr><td><b>似た名前の別の任務を受注している</b></td><td>ほぼ同じ名前の任務が多い。名前だけでなく任務IDと内容も確認しよう。</td></tr>
+        <tr><td><b>勝利ランクが足りない</b></td><td>出撃任務はボスでA勝利以上やS勝利が条件のものが多い。B勝利は基本的にカウントされない。</td></tr>
+        <tr><td><b>旗艦や編成が条件と違う</b></td><td>旗艦や特定の艦を指定する任務は、編成を厳密にチェックする。旗艦とは<b>別に</b>特定の艦種が何隻必要、という条件もある。</td></tr>
+        <tr><td><b>海域ごとの回数がそろっていない</b></td><td>「3つの海域で各2回S勝利」のような任務は、1つの海域の回数がそろって初めて50%・80%と進む。各海域1回ずつでは進捗はまったく進まない。</td></tr>
+        <tr><td><b>編成済みの艦を改造した</b></td><td>編成した状態で改造（改二など）した艦は、編成任務で認識されないことがある。並び替えるか、任務を受注し直すと判定し直される。</td></tr>
+        <tr><td><b>リセット前に「達成」を押していない</b></td><td>デイリー任務の1日は5時から翌5時（日本時間）。条件を満たしても、更新までに達成ボタンを押さないとやり直しになることがある。</td></tr>
+        <tr><td><b>資源・アイテムの条件を満たしていない</b></td><td>資源やアイテムを消費する任務は、必要数を持っているかを判定する。所持数が足りない間は80%表示が消え、足りると戻ったという報告がある。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>進捗表示の読み方</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li>任務一覧では、進捗が<b>50%</b>・<b>80%</b>の表示で示され、その後「達成」になったら報酬を受け取る。</li>
+        <li>表示の段階は均等とは限らない。勝利7回が条件の任務では、Wikiによると4回で50%、6回で80%。</li>
+        <li>「複数の海域で各X回」の任務は、勝利ごとではなく<b>海域ごとの達成</b>で表示が進む。</li>
+        <li>編成任務は、出撃しなくても編成が条件を満たした瞬間に達成になる。ならないときは並び替えて判定し直させる。</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>任務を始める前のチェックリスト</h2></div>
+    <div class="panel">
+      <ol class="steps">
+      <li><span class="n">1</span><span>任務画面で目的の任務を<b>受注</b>する（IDも確認）。遂行中になっているか確かめる。</span></li>
+      <li><span class="n">2</span><span>条件をすべて読む：旗艦、必要な艦、艦種の隻数、海域、勝利ランク。</span></li>
+      <li><span class="n">3</span><span>資源やアイテムを消費する任務なら、必要数を持っているか先に確認する。</span></li>
+      <li><span class="n">4</span><span>機種転換の任務では、消費する装備のロックを外しておき、任務が終わるまで旗艦やその装備を替えない。</span></li>
+      <li><span class="n">5</span><span>達成したらすぐに報酬を受け取る（5時のリセット前に）。</span></li>
+      </ol>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">デイリー任務はいつリセットされる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">1日は日本時間の5時から翌5時。ウィークリー・マンスリー・クォータリーはそれぞれ別の周期でリセットされる。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">B勝利はカウントされる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">ほとんどの出撃任務ではされない。Wikiでも多くがA勝利以上・S勝利を条件としている。B勝利がカウントされたという報告がある任務もあるが、当てにしない方がいい。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">編成したのに達成にならない。</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">編成する前に任務を受注していたか確認し、艦隊を並び替えて（2隻を入れ替えて戻すなど）判定し直させる。編成中に改造した艦がいる場合も、これで直ることが多い。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">1回の行動で2つの任務を進められる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">両方を受注していて、両方の条件を満たしていれば進む。始める前に関係する任務をまとめて受注しておこう。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/kancolle/">艦これ 攻略ガイド全体</a>
+      <a href="/ja/games/kancolle/unlock-fleets/">艦隊の解放方法</a>
+      <a href="/ja/games/kancolle/ui-translation/">用語の英日対照</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://wikiwiki.jp/kancolle/%E4%BB%BB%E5%8B%99" target="_blank" rel="noopener">艦これ攻略Wiki：任務（全任務一覧と注意事項）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>
