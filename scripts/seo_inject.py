@@ -43,6 +43,7 @@ LOCALE = {
 INDEXED_LOCALES = ["en_US", "ja_JP"]
 LANG_DIRS = ["", "ja", "ko", "zh", "zh-hant", "de", "fr", "ar"]  # "" = ルート(英語)
 
+from set_indexing import NOINDEX_DIRS  # noqa: E402  (同じ scripts/ ディレクトリ)
 ADSENSE_CLIENT = "ca-pub-2939651190150074"
 GA_MEASUREMENT_ID = "G-2DMV4KX041"
 # 本番ドメイン以外（localhostでのブラウザ検証など）ではページビューを送らない。
@@ -214,7 +215,9 @@ def process(path):
     changed = False
 
     # --- Google AdSense (as close to the top of <head> as possible) ---
-    if "pagead2.googlesyndication.com" not in content:
+    # 検索対象外の言語（scripts/set_indexing.py の NOINDEX_DIRS）には広告タグを入れない。
+    in_noindex_dir = os.path.relpath(path, ROOT).split(os.sep)[0] in NOINDEX_DIRS
+    if "pagead2.googlesyndication.com" not in content and not in_noindex_dir:
         adsense = (
             f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE_CLIENT}" '
             'crossorigin="anonymous"></script>\n'

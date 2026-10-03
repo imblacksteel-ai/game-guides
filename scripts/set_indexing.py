@@ -6,7 +6,7 @@
 言語版は公開したまま noindex にし、hreflang と sitemap.xml から外す。
 
 - NOINDEX_DIRS 配下の全ページ: <meta name="robots" content="noindex, follow"> を付け、
-  hreflang の alternate を全部外す（noindex ページの hreflang は無視されるため）。
+  hreflang の alternate を全部外す（noindex ページの hreflang は無視されるため）。AdSense のタグも外す。
 - それ以外のページ: NOINDEX_DIRS の言語の hreflang 行と og:locale:alternate を外す。
 - sitemap.xml: NOINDEX_DIRS の URL と alternate を外す。
 
@@ -25,6 +25,8 @@ NOINDEX_HREFLANGS = ["ko", "zh", "zh-Hant", "de", "fr", "ar"]
 NOINDEX_LOCALES = ["ko_KR", "zh_CN", "zh_TW", "de_DE", "fr_FR", "ar_AR"]
 
 ROBOTS = '<meta name="robots" content="noindex, follow">\n'
+# 検索対象外の言語には AdSense を載せない（AdSense 審査で薄い翻訳ページに広告が付いて見えないように）。
+ADSENSE_TAG = re.compile(r'<script async src="https://pagead2\.googlesyndication\.com/pagead/js/adsbygoogle\.js\?client=[^"]+" crossorigin="anonymous"></script>\n')
 HREFLANG_ANY = re.compile(r'<link rel="alternate" hreflang="[^"]+" href="[^"]*">\n')
 HREFLANG_DROP = re.compile(
     r'<link rel="alternate" hreflang="(?:%s)" href="[^"]*">\n' % "|".join(map(re.escape, NOINDEX_HREFLANGS))
@@ -43,6 +45,7 @@ def process_page(path):
             if ROBOTS not in h:
                 raise SystemExit(f"viewport meta not found in {rel}")
         h = HREFLANG_ANY.sub("", h)
+        h = ADSENSE_TAG.sub("", h)
     else:
         h = HREFLANG_DROP.sub("", h)
     h = LOCALE_DROP.sub("", h)

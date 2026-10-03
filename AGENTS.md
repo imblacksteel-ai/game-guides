@@ -97,7 +97,7 @@ git diff --stat                 # 想定した言語数ぶんのファイルが�
 
 ## AdSense 審査対応（2026/09 に「有用性の低いコンテンツ」で却下）
 
-- **インデックス対象は英語・日本語のみ。** ko/zh/zh-hant/de/fr/ar は公開したまま `noindex, follow` にし、hreflang・sitemap・og:locale:alternate から外している。`python3 scripts/set_indexing.py`（冪等）が一括で処理する。新ページ追加時は手順8の `seo_inject.py` の後に必ず実行する。言語を戻すときは同スクリプトの `NOINDEX_DIRS` を編集する。
+- **インデックス対象は英語・日本語のみ。** ko/zh/zh-hant/de/fr/ar は公開したまま `noindex, follow` にし、hreflang・sitemap・og:locale:alternate から外している。`python3 scripts/set_indexing.py`（冪等）が一括で処理する。この6言語には**AdSenseのタグも載せない**（2026/10/03に外した。seo_inject.py は NOINDEX_DIRS には挿入せず、set_indexing.py が残っていれば除去する）。新ページ追加時は手順8の `seo_inject.py` の後に必ず実行する。言語を戻すときは同スクリプトの `NOINDEX_DIRS` を編集する。
 - **2026/09以降の新ページは英語・日本語の2言語だけで作る。** 他の6言語は作らない。`<head>` に `<meta name="available-langs" content="en,ja">` を入れると言語切替メニューが英日だけになる（`assets/lang-switch.js`）。hreflangは en/ja/x-default の3行、sitemapも英日の2URLだけ。
 - **地域制限の回避手順・非公式APKの入手方法は載せない。** デレステの `/games/deresute/access/` は「動作が重い・落ちる時の対策」ページ（Namco ID登録＋クラッシュ対策）にしてある。
 - **波乱水世界のTier表は複数の公開Tier表の集計。** 元データは `assets/data/www-tier-sources.json`（手で転記）、`python3 scripts/build_www_tier.py` で総合評価（SS=4…C=0の平均、一致度、3件未満は別枠）を計算してTier表ページに書き込む。新しいTier表を見つけたら sources に追加、配信前の暫定表・中国/台湾サーバー基準の表は excluded に理由付きで入れる。同一内容の表は1件として数える。ページ冒頭の「ひとことで言うと」は手書きなので、集計結果が変わったら合わせて直す。ゲーム本体（非公開の商用アプリ）の逆コンパイル・データ抽出はしない（2026/10時点で有志の抽出データも見つかっていない）。
