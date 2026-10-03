@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="艦これの改造のやり方。改造で変わること（能力値・装備・近代化改修のリセット）、改造できない原因（装備欄の空き4つ・段階は飛ばせない・改装設計図・装備のロック）、改装設計図の入手方法。">
+<title>艦これ 改造のやり方と注意点（改・改二）</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/kancolle/remodel/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/remodel/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/remodel/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/remodel/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="艦これ 改造のやり方と注意点（改・改二）">
+<meta property="og:description" content="艦これの改造のやり方。改造で変わること（能力値・装備・近代化改修のリセット）、改造できない原因（装備欄の空き4つ・段階は飛ばせない・改装設計図・装備のロック）、改装設計図の入手方法。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/kancolle/remodel/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="艦これ 改造のやり方と注意点（改・改二）">
+<meta name="twitter:description" content="艦これの改造のやり方。改造で変わること（能力値・装備・近代化改修のリセット）、改造できない原因（装備欄の空き4つ・段階は飛ばせない・改装設計図・装備のロック）、改装設計図の入手方法。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "艦これ 改造のやり方と注意点（改・改二）",
+      "description": "艦これの改造のやり方。改造で変わること（能力値・装備・近代化改修のリセット）、改造できない原因（装備欄の空き4つ・段階は飛ばせない・改装設計図・装備のロック）、改装設計図の入手方法。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/kancolle/remodel/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "艦これ 改造のやり方と注意点（改・改二）",
+          "item": "https://kouryakulab.com/ja/games/kancolle/remodel/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/kancolle/"><span class="arrow">←</span> 艦これ 攻略ガイド全体</a>
+    <div>
+      <span class="eyebrow">艦これ ・ 改造</span>
+      <h1>改造のやり方と注意点</h1>
+      <p class="sub">改造は多くの艦にとって一番大きな強化。やり方と、改造で変わること、改造ボタンが押せない5つの原因をまとめた。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">改造（ゲーム内では「改装」とも）は、艦を次の段階に進めること。例えば夕立 → 夕立改 → 夕立改二。決まったレベルで可能になり、弾薬と鋼材を消費し、ドックを使わず即座に反映される。</p>
+      <p style="margin:0;">Wikiの仕様を読む限り、つまずきやすいのは<b>段階を飛ばせない</b>、<b>装備欄の空きが4つ以上必要</b>、<b>近代化改修の上昇分がリセットされる</b>（運・耐久・対潜は除く）、一部の改造には<b>改装設計図などのアイテム</b>が必要、の4点。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事は艦これ攻略Wikiの改造のページを分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>改造のやり方</h2></div>
+    <div class="panel">
+      <ol class="steps">
+      <li><span class="n">1</span><span>母港から<b>改装</b>を開く。</span></li>
+      <li><span class="n">2</span><span>艦を選ぶ。改造レベルに達していれば<b>改造</b>ボタンが押せる。</span></li>
+      <li><span class="n">3</span><span>必要なものを確認する：弾薬と鋼材、ほかに表示されたアイテム（開発資材、高速建造材、装備、改装設計図など）。</span></li>
+      <li><span class="n">4</span><span>決定する。変化は即座に反映され、新しい姿・能力値・初期装備がすぐに手に入る。</span></li>
+      </ol>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>改造で変わること</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>項目</th><th>どうなるか</th></tr></thead>
+        <tbody>
+        <tr><td>能力値</td><td>ほとんどの場合上がる。改造直後の火力・雷装・対空・装甲には多少のばらつきがあるが、レベルが上がれば必ず一定の値に届く。</td></tr>
+        <tr><td>近代化改修の上昇分</td><td>リセットされる。ただし<b>運・耐久・対潜</b>は引き継がれる。近代化改修は使う予定の段階まで改造してからにしよう。</td></tr>
+        <tr><td>レベルと経験値</td><td>引き継がれる。改造レベルを超えてから改造しても能力値で損はしない。</td></tr>
+        <tr><td>耐久・燃料・弾薬</td><td>全回復する。疲労度は一定値になり、キラキラは消える。</td></tr>
+        <tr><td>装備</td><td>それまでの装備は装備一覧に戻り、新しい初期装備を持ってくる。改造でしか手に入らない装備も多い。</td></tr>
+        <tr><td>スロットと艦載機</td><td>装備スロットは変わらないか増える。空母は艦載機の合計は同じか増えるが、スロットごとでは減ることもある。</td></tr>
+        <tr><td>燃費</td><td>ほとんどの艦で燃料・弾薬の消費が増える。遠征要員をあえて改造しない人がいるのはこのため。</td></tr>
+        <tr><td>艦種・艦名</td><td>変わることがある（例：軽巡 → 重雷装巡洋艦）。改造前の艦種が必要な遠征や任務を先に確認しよう。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>改造できないときの原因</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><b>装備欄の空きが4つ未満。</b>警告が出て改造できない。先に装備を廃棄しよう。</li>
+        <li><b>段階を飛ばそうとしている。</b>那珂をLv48まで上げても、いったん那珂改にしないと那珂改二にはできない。</li>
+        <li><b>必要なアイテムが足りない。</b>改装設計図、試製甲板カタパルト、戦闘詳報は、上位の改造でよく要求される。</li>
+        <li><b>消費する装備がロックされている。</b>装備を消費する改造では、装備一覧でロックを外しておく。</li>
+        <li><b>弾薬・鋼材が足りない。</b>大型艦ほど多く必要。</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>改装設計図の入手</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">改装設計図は、基本的にアイテム画面で<b>勲章4つ</b>と交換して手に入れる。勲章は毎月、各海域の最深部（X-5など）をクリアすると最大7個もらえるほか、一部の任務でももらえる。任務やイベントで設計図が直接もらえることもある。</p>
+      <p style="margin:0;">Wikiによると設計図が必要な艦は全部で計103枚分あり、勲章は長期的な予算になる。どの改造に使うかは<a href="/ja/games/kancolle/remodel-priority/">改造の優先順位</a>を参照。</p>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">06</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">改造レベルに達したらすぐ改造すべき？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">戦闘で使う艦なら基本的にはい。Wikiにある小技として、改造レベルに達した艦が大破したときに改造すれば、入渠せずに全回復できる。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">改造は元に戻せる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">通常の改造は一方通行。一部の艦には2つの状態を行き来できるコンバート改装があり、その都度資材を消費する。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">空母の艦載機が減った。</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">改造でスロットごとの搭載数が変わったため。合計は同じか増えているが、減ったスロットの分は補充できない。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">改造後に近代化改修はやり直し？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">運・耐久・対潜以外はやり直しになる。だから近代化改修は最終的に使う段階まで改造してからがおすすめ。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/kancolle/">艦これ 攻略ガイド全体</a>
+      <a href="/ja/games/kancolle/remodel-priority/">改造の優先順位</a>
+      <a href="/ja/games/kancolle/exp-calculator/">経験値計算機</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://wikiwiki.jp/kancolle/%E6%94%B9%E9%80%A0" target="_blank" rel="noopener">艦これ攻略Wiki：改造（改造Lv早見表・改装設計図）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

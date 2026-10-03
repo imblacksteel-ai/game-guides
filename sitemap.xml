@@ -362,4 +362,20 @@
   </url>
   <url><loc>https://kouryakulab.com/ja/games/kancolle/daily-quests/</loc></url>
 
+  <url>
+    <loc>https://kouryakulab.com/games/kancolle/remodel/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/remodel/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/remodel/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/remodel/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/kancolle/remodel/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/games/kancolle/remodel-priority/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/remodel-priority/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/remodel-priority/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/remodel-priority/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/kancolle/remodel-priority/</loc></url>
+
 </urlset>

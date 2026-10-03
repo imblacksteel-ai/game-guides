@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How remodeling works in KanColle: where the button is, what changes (stats, gear, modernization reset), why remodel won't work (4 free slots, no skipping stages, blueprints, locked gear), and how to get blueprints.">
+<title>How to Remodel in KanColle (Kai, Kai Ni) — Requirements and Gotchas</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/games/kancolle/remodel/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/remodel/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/remodel/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/remodel/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:title" content="How to Remodel in KanColle (Kai, Kai Ni) — Requirements and Gotchas">
+<meta property="og:description" content="How remodeling works in KanColle: where the button is, what changes (stats, gear, modernization reset), why remodel won't work (4 free slots, no skipping stages, blueprints, locked gear), and how to get blueprints.">
+<meta property="og:url" content="https://kouryakulab.com/games/kancolle/remodel/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Remodel in KanColle (Kai, Kai Ni) — Requirements and Gotchas">
+<meta name="twitter:description" content="How remodeling works in KanColle: where the button is, what changes (stats, gear, modernization reset), why remodel won't work (4 free slots, no skipping stages, blueprints, locked gear), and how to get blueprints.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How to Remodel in KanColle (Kai, Kai Ni) — Requirements and Gotchas",
+      "description": "How remodeling works in KanColle: where the button is, what changes (stats, gear, modernization reset), why remodel won't work (4 free slots, no skipping stages, blueprints, locked gear), and how to get blueprints.",
+      "inLanguage": "en",
+      "url": "https://kouryakulab.com/games/kancolle/remodel/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "How to Remodel in KanColle (Kai, Kai Ni) — Requirements and Gotchas",
+          "item": "https://kouryakulab.com/games/kancolle/remodel/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/games/kancolle/"><span class="arrow">←</span> Full KanColle Guide</a>
+    <div>
+      <span class="eyebrow">KANCOLLE · REMODEL</span>
+      <h1>How to Remodel (Kai, Kai Ni)</h1>
+      <p class="sub">Remodeling is the biggest power jump most ships get. Here's how to do it, what it changes, and the five reasons the button sometimes won't work.</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="Language"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Conclusion</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">Remodeling (改造, <i>Kaizō</i>; the game also says 改装, <i>Kaisō</i>) is how a ship moves to its next form — for example 夕立 → 夕立改 → 夕立改二. It unlocks at a set level, costs ammo and steel, and takes effect instantly with no dock time.</p>
+      <p style="margin:0;">Going by the wiki's rules, the things that trip people up are: you <b>can't skip a stage</b>, you need <b>at least 4 free equipment slots</b>, <b>modernization bonuses reset</b> (except luck, HP and ASW), and some remodels need <b>items</b> such as blueprints.</p>
+    </div>
+    <div class="callout"><b>An analysis-based guide:</b> this guide is based on our analysis of the remodel page on the Japanese KanColle wiki. It describes what the data shows and is not a guarantee of results.</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>How to Remodel</h2></div>
+    <div class="panel">
+      <ol class="steps">
+      <li><span class="n">1</span><span>From the home port, open <b>Refit</b> (改装, <i>Kaisō</i>).</span></li>
+      <li><span class="n">2</span><span>Pick the ship. If it has reached its remodel level, the <b>Remodel</b> (改造) button becomes available.</span></li>
+      <li><span class="n">3</span><span>Check the cost: ammo and steel, plus any items listed (development materials, Instant Construction, equipment, blueprints).</span></li>
+      <li><span class="n">4</span><span>Confirm. The change is immediate — the new form, stats and starting equipment appear right away.</span></li>
+      </ol>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>What Changes When You Remodel</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>Thing</th><th>What happens</th></tr></thead>
+        <tbody>
+        <tr><td>Stats</td><td>Almost always go up. Right after remodeling, firepower, torpedo, AA and armor can vary a little, but they all reach a fixed higher value as the ship levels.</td></tr>
+        <tr><td>Modernization bonuses</td><td>Reset — except <b>luck, HP and ASW</b>, which carry over. Modernize after the remodel you plan to keep, not before.</td></tr>
+        <tr><td>Level and EXP</td><td>Carried over. Remodeling later than the minimum level doesn't cost you stats.</td></tr>
+        <tr><td>HP, fuel, ammo</td><td>Fully restored. Fatigue is set to a fixed value, so sparkle is lost.</td></tr>
+        <tr><td>Equipment</td><td>Your old gear goes back to storage and the ship brings its own new starting gear — some of which you can't get any other way.</td></tr>
+        <tr><td>Slots and planes</td><td>Equipment slots stay the same or increase. For carriers, the total plane count stays the same or rises, but individual slots can shrink.</td></tr>
+        <tr><td>Running costs</td><td>Fuel and ammo use usually rises. That's why some players keep expedition ships unremodeled.</td></tr>
+        <tr><td>Ship type and name</td><td>Can change (e.g. light cruiser → torpedo cruiser). Check expeditions and quests that need the old type first.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>Why a Remodel Button Won't Work</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><b>Fewer than 4 free equipment slots.</b> The game warns you and refuses. Discard some gear first.</li>
+        <li><b>A stage was skipped.</b> Even at level 48, 那珂 (Naka) has to become 那珂改 before 那珂改二. There's no jumping ahead.</li>
+        <li><b>A required item is missing.</b> Blueprints (改装設計図), Prototype Flight Deck Catapults (試製甲板カタパルト) and Action Reports (戦闘詳報) are common requirements for higher remodels.</li>
+        <li><b>The equipment it consumes is locked.</b> If a remodel eats a piece of gear, unlock it in the equipment list first.</li>
+        <li><b>Not enough ammo or steel.</b> Big ships cost more.</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>Getting Blueprints</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">A Blueprint (改装設計図, <i>Kaisō Sekkeizu</i>) is usually made by trading <b>4 medals</b> (勲章, <i>Kunshō</i>) from the item screen. Medals come from clearing the end-of-world maps each month (up to 7 a month) and from some quests. A few quests and events give blueprints directly.</p>
+      <p style="margin:0;">The wiki counts 103 blueprints needed across every ship that uses them, so medals are a long-term budget. Pick which remodels to spend them on — see <a href="/games/kancolle/remodel-priority/">Which Ships to Remodel First</a>.</p>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">06</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Should I remodel the moment a ship hits the level?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Usually yes for combat ships. One tip from the wiki: if a ship at its remodel level is badly damaged, remodeling restores its HP for free instead of paying for repairs.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Can I undo a remodel?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Normal remodels are one-way. Some ships have convert remodels (コンバート改装) that let you switch between two forms, at a resource cost each time.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Why did my carrier lose planes?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">The remodel changed the slot sizes. The total is the same or higher, but planes in a shrunken slot can't all be refilled.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Do I need to modernize again after remodeling?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Yes, except for luck, HP and ASW. That's why it's usually better to modernize after the final remodel you plan to use.</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>Continue reading</h3>
+    <div class="more-guides-links">
+      <a href="/games/kancolle/">Full KanColle Guide</a>
+      <a href="/games/kancolle/remodel-priority/">Which Ships to Remodel First</a>
+      <a href="/games/kancolle/exp-calculator/">EXP Calculator</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">This is an unofficial, fan-made, analysis-based guide. It is not a guarantee of results, and game updates may change any of it.</div>
+    <div class="sources">
+      Sources:
+      <a href="https://wikiwiki.jp/kancolle/%E6%94%B9%E9%80%A0" target="_blank" rel="noopener">KanColle Wiki (JP): 改造 — remodel rules, blueprints and level table</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="Site links"><a href="/about/">About</a> · <a href="/authors/">Authors</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>
