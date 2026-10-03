@@ -159,6 +159,45 @@
     <p style="color:var(--ink-dim);font-size:.93rem;margin:0;">艦娘はLv99で止まり、<span class="jp">ケッコンカッコカリ</span>を行うと追加の経験値なしでLv100になります。その後は現在の上限Lv<span id="exp-max-level">188</span>まで上げられます。練習巡洋艦（CT）のボーナスは含めていません。また、ゲーム内の端数処理で数ポイント前後することがあります。</p>
   </div>
 
+  <section id="leveling" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>レベル上げの目安</h2></div>
+    <p class="sec-desc">経験値の伸び方を知っておくと、目標まであと数回の出撃なのか、数週間かかるのかの見当がつく。</p>
+    <div class="panel">
+      <ol class="steps">
+        <li><span class="n">1</span><span>Lv50までは、1レベルあたり<b>現在Lv×100</b>の経験値で一定（Lv10→11は1,000）。それ以降は少しずつ増えていく。</span></li>
+        <li><span class="n">2</span><span>後半ほど重くなる。Lv50までの折り返し地点はLv35、Lv70まではLv52、Lv99まではLv88。Lv98→99に必要な経験値は、Lv1→55とほぼ同じ。</span></li>
+        <li><span class="n">3</span><span>最初の改造（改）は早めに来る艦が多い。駆逐・軽巡はLv20、重巡・軽空母はLv25、正規空母はLv30で改造できる艦が多い。正確な改造レベルは、上の計算機で艦娘を選ぶと自動で入る。</span></li>
+        <li><span class="n">4</span><span>Lv99になると、ケッコンカッコカリをするまで経験値が入らない。ケッコン前のLv99で得た経験値は無駄になるので、上限に達した艦はレベリング艦隊から外そう。</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="expedition-exp" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>遠征で入る経験値</h2></div>
+    <p class="sec-desc">遠征でも艦娘に経験値が入る。出撃させていない艦を、資源を使わずにゆっくり育てる方法になる。</p>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li>経験値は2パターンのどちらかがランダム（おおむね半々）で入る。<b>大成功</b>で2倍、<b>旗艦</b>はさらに1.5倍。</li>
+        <li>遠征に失敗しても成功時と同じ経験値が入るが、帰還命令で中止した場合は0になる。</li>
+      </ul>
+      <div class="table-scroll" style="margin-top:12px;">
+        <table class="glossary">
+          <thead><tr><th>番号</th><th>遠征</th><th>時間</th><th>僚艦の経験値（成功時）</th><th>平均時給</th></tr></thead>
+          <tbody>
+          <tr><td class="tag-mono">22</td><td>艦隊演習</td><td class="tag-mono">3時間</td><td class="tag-mono">133–267</td><td class="tag-mono">200</td></tr>
+          <tr><td class="tag-mono">07</td><td>観艦式予行</td><td class="tag-mono">1時間</td><td class="tag-mono">120–240</td><td class="tag-mono">180</td></tr>
+          <tr><td class="tag-mono">23</td><td>航空戦艦運用演習</td><td class="tag-mono">4時間</td><td class="tag-mono">105–210</td><td class="tag-mono">158</td></tr>
+          <tr><td class="tag-mono">03</td><td>警備任務</td><td class="tag-mono">20分</td><td class="tag-mono">90–180</td><td class="tag-mono">135</td></tr>
+          <tr><td class="tag-mono">06</td><td>防空射撃演習</td><td class="tag-mono">40分</td><td class="tag-mono">75–150</td><td class="tag-mono">113</td></tr>
+          <tr><td class="tag-mono">B1</td><td>南西方面航空偵察作戦</td><td class="tag-mono">35分</td><td class="tag-mono">69–137</td><td class="tag-mono">103</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="build-note" style="margin:10px 0 0;">通常成功時の僚艦の経験値。2つの数字はランダムで決まる2パターン。各遠征の編成条件は<a href="/ja/games/kancolle/expedition-requirements/">遠征の編成条件一覧</a>を参照。</p>
+    </div>
+    <div class="callout"><b>演習：</b>演習の経験値は相手艦隊の1隻目・2隻目のレベルで変わるため、相手によって異なる。</div>
+  </section>
+
   <div class="more-guides" style="border-bottom:none;padding-block-start:20px;">
     <h3>続けて読む</h3>
     <div class="more-guides-links">
