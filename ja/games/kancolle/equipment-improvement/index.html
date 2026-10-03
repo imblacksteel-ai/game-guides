@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="艦これの装備改修の基本。改修工廠の開き方、曜日と2番艦による改修メニュー、★ごとの成功率（★0〜★4は失敗しない）、失敗時に消費されるもの、改修資材の入手方法。">
+<title>艦これ 装備改修（改修工廠）の基本：成功率とネジの集め方</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/kancolle/equipment-improvement/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/equipment-improvement/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/equipment-improvement/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/equipment-improvement/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="艦これ 装備改修（改修工廠）の基本：成功率とネジの集め方">
+<meta property="og:description" content="艦これの装備改修の基本。改修工廠の開き方、曜日と2番艦による改修メニュー、★ごとの成功率（★0〜★4は失敗しない）、失敗時に消費されるもの、改修資材の入手方法。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/kancolle/equipment-improvement/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="艦これ 装備改修（改修工廠）の基本：成功率とネジの集め方">
+<meta name="twitter:description" content="艦これの装備改修の基本。改修工廠の開き方、曜日と2番艦による改修メニュー、★ごとの成功率（★0〜★4は失敗しない）、失敗時に消費されるもの、改修資材の入手方法。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "艦これ 装備改修（改修工廠）の基本：成功率とネジの集め方",
+      "description": "艦これの装備改修の基本。改修工廠の開き方、曜日と2番艦による改修メニュー、★ごとの成功率（★0〜★4は失敗しない）、失敗時に消費されるもの、改修資材の入手方法。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/kancolle/equipment-improvement/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "艦これ 装備改修（改修工廠）の基本：成功率とネジの集め方",
+          "item": "https://kouryakulab.com/ja/games/kancolle/equipment-improvement/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/kancolle/"><span class="arrow">←</span> 艦これ 攻略ガイド全体</a>
+    <div>
+      <span class="eyebrow">艦これ ・ 装備改修</span>
+      <h1>装備改修（改修工廠）の基本</h1>
+      <p class="sub">改修は装備に★を付けて、表に出ない戦闘補正をかける仕組み。開き方、メニューが変わる条件、成功率、ネジの集め方をまとめた。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">装備の改修は<b>改修工廠</b>で行う。明石を第1艦隊の旗艦にして、<b>改修資材（ネジ）</b>・開発資材・資源を使い、装備に★を付ける。ステータス画面の数値は変わらないが、戦闘では補正がかかる。</p>
+      <p style="margin:0;">Wikiのデータから見ると、低い★は安くて安全な部分で、<b>★0→★4は失敗しない</b>。それ以降はコストが上がり、成功率が下がる。始めたばかりなら、1つを★maxにするより、よく使う主砲や魚雷に少しずつ★を付ける方がコスパが良さそうだ。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事は艦これ攻略Wikiの改修工廠のページを分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>改修工廠の開き方</h2></div>
+    <div class="panel">
+      <ol class="steps">
+      <li><span class="n">1</span><span>工作艦<b>明石</b>を手に入れる。<a href='/ja/games/kancolle/get-akashi/'>明石の入手方法</a>を参照。</span></li>
+      <li><span class="n">2</span><span>序盤の任務<b>「改修工廠を準備せよ！」</b>を達成する（改修資材5個がもらえる）。水上機母艦配備任務の達成後に出現する。</span></li>
+      <li><span class="n">3</span><span>明石（または明石改）を<b>第1艦隊の旗艦</b>にする。</span></li>
+      <li><span class="n">4</span><span>母港から入る。工廠ボタンの脇に改修工廠のボタンが出る。「編成」など母港の第二階層で、画面左下のクレーンを押しても移動できる。</span></li>
+      </ol>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>改修できる装備と曜日</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li>改修できる装備は<b>曜日</b>（日本時間0時に切り替わる）と<b>2番艦</b>で変わる。対応する2番艦を置くと、メニューの一部が「特別改修」に差し替わる。</li>
+        <li>艦娘が装備中の装備は「外す」ボタン付きでリストに出る。遠征中の艦の装備と基地航空隊の装備は使えない。</li>
+        <li>ロックしたままでも改修<b>できる</b>。ロックを外す必要があるのは、★maxから別の装備に更新するときだけ。</li>
+        <li>高い★では<b>未改修の同じ装備</b>を素材に要求されることがある。成否に関係なく消費されるので、ロック中や★付きのものは使えない。</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>成功率</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>段階</th><th>明石</th><th>明石改</th></tr></thead>
+        <tbody>
+        <tr><td>★0 → ★4</td><td>100%</td><td>100%</td></tr>
+        <tr><td>★4 → ★5</td><td>95%</td><td>100%</td></tr>
+        <tr><td>★5 → ★6</td><td>90%</td><td>95%</td></tr>
+        <tr><td>★6 → ★7</td><td>80%</td><td>90%</td></tr>
+        <tr><td>★7 → ★8</td><td>77%</td><td>82%</td></tr>
+        <tr><td>★8 → ★9</td><td>72%</td><td>77%</td></tr>
+        <tr><td>★9 → ★max</td><td>60%</td><td>67%</td></tr>
+        <tr><td>★max → 更新</td><td>50%</td><td>62%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">Wikiに載っている値（解析と検証による）。失敗しても開発資材・改修資材・素材の装備は消費されるが、改修元の装備はなくならない。資材を追加で払えば確実化（必ず成功）もできる。</p>
+    <div class="callout"><b>明石は改にしておこう：</b>明石改（Lv35）は★4以降の成功率が高い。改造には鋼材1,500が必要。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>改修資材（ネジ）の入手</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>入手先</th><th>おおよその数</th></tr></thead>
+        <tbody>
+        <tr><td>デイリー任務（装備改修の任務を含む）</td><td>1日に約2個</td></tr>
+        <tr><td>ウィークリー任務</td><td>週に約12個</td></tr>
+        <tr><td>マンスリー任務</td><td>月に約14個</td></tr>
+        <tr><td>クォータリー任務</td><td>四半期に約24個</td></tr>
+        <tr><td>勲章</td><td>勲章1個でネジ4個（または勲章4個で設計図）</td></tr>
+        <tr><td>アイテム屋さん</td><td>10個で700ポイント</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">任務の数はWikiに載っている定期任務の合計。単発任務やイベントでも手に入る。上限は3,000個。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">06</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">改修してもステータスが上がらない。失敗？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">成功している。改修ではステータス表示は変わらず、戦闘の計算で補正がかかる。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">間違って改修した装備の★は消せる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">2026年4月から初期化できるようになったが、アイテム「工廠資源」を使い、失敗することもある。改修前の確認が大事なのは変わらない。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">改修のデイリー任務はある？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">ある。1日1回の改修でデイリー任務が達成になる。<a href='/ja/games/kancolle/daily-quests/'>デイリー任務一覧</a>を参照。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">明石のレベルは関係ある？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Wikiによると、明石自身のレベルや疲労度による成功率の変化はないとされている。関係するのは明石か明石改か。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/kancolle/">艦これ 攻略ガイド全体</a>
+      <a href="/ja/games/kancolle/get-akashi/">明石の入手方法</a>
+      <a href="/ja/games/kancolle/daily-quests/">デイリー任務一覧</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://wikiwiki.jp/kancolle/%E6%94%B9%E4%BF%AE%E5%B7%A5%E5%BB%A0" target="_blank" rel="noopener">艦これ攻略Wiki：改修工廠</a>
+      <a href="https://wikiwiki.jp/kancolle/%E8%B3%87%E6%9D%90" target="_blank" rel="noopener">艦これ攻略Wiki：資材（改修資材の入手方法）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

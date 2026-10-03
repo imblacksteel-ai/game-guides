@@ -378,4 +378,20 @@
   </url>
   <url><loc>https://kouryakulab.com/ja/games/kancolle/remodel-priority/</loc></url>
 
+  <url>
+    <loc>https://kouryakulab.com/games/kancolle/equipment-improvement/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/equipment-improvement/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/equipment-improvement/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/equipment-improvement/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/kancolle/equipment-improvement/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/games/kancolle/get-akashi/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/get-akashi/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/get-akashi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/get-akashi/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/kancolle/get-akashi/</loc></url>
+
 </urlset>
