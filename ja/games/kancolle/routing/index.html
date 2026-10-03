@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="艦これのルート分岐の仕組み。羅針盤は進撃時に艦種・速力・索敵スコア・装備などを判定する。4-1・2-5・4-5・5-5の具体例と、間違えやすい艦種のくくり（雷巡は軽巡級、特設護衛空母は補給艦扱いなど）。">
+<title>艦これ ルート分岐の仕組み：羅針盤は何を見ているか</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/kancolle/routing/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/routing/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/routing/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/routing/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="艦これ ルート分岐の仕組み：羅針盤は何を見ているか">
+<meta property="og:description" content="艦これのルート分岐の仕組み。羅針盤は進撃時に艦種・速力・索敵スコア・装備などを判定する。4-1・2-5・4-5・5-5の具体例と、間違えやすい艦種のくくり（雷巡は軽巡級、特設護衛空母は補給艦扱いなど）。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/kancolle/routing/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="艦これ ルート分岐の仕組み：羅針盤は何を見ているか">
+<meta name="twitter:description" content="艦これのルート分岐の仕組み。羅針盤は進撃時に艦種・速力・索敵スコア・装備などを判定する。4-1・2-5・4-5・5-5の具体例と、間違えやすい艦種のくくり（雷巡は軽巡級、特設護衛空母は補給艦扱いなど）。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "艦これ ルート分岐の仕組み：羅針盤は何を見ているか",
+      "description": "艦これのルート分岐の仕組み。羅針盤は進撃時に艦種・速力・索敵スコア・装備などを判定する。4-1・2-5・4-5・5-5の具体例と、間違えやすい艦種のくくり（雷巡は軽巡級、特設護衛空母は補給艦扱いなど）。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/kancolle/routing/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "艦これ ルート分岐の仕組み：羅針盤は何を見ているか",
+          "item": "https://kouryakulab.com/ja/games/kancolle/routing/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/kancolle/"><span class="arrow">←</span> 艦これ 攻略ガイド全体</a>
+    <div>
+      <span class="eyebrow">艦これ ・ ルート分岐</span>
+      <h1>ルート分岐の仕組み</h1>
+      <p class="sub">羅針盤は運だけではない。何が判定されるのか、具体例、「なぜそっちへ？」の原因になりやすい艦種のくくりをまとめた。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">艦これの羅針盤は運だけで決まるわけではない。多くの分岐点では、<b>艦種と隻数、速力、索敵スコア、装備</b>などの艦隊の状態がチェックされ、ランダムになるのはルール上そうなっている場合だけ。</p>
+      <p style="margin:0;">Wikiのルート分岐のページを読むと、「なぜそっちへ行った？」の多くは2つの点で説明がつく。判定は<b>進撃ボタンを押した時点</b>の艦隊で行われること、そして<b>分岐独自の艦種のくくり</b>があり、艦の表示と一致しないことがあること。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事は艦これ攻略Wikiのルート分岐のページを分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>羅針盤がチェックするもの</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>要素</th><th>内容</th></tr></thead>
+        <tbody>
+        <tr><td>艦種と隻数</td><td>「戦艦級＋空母系5隻以上でE」など。最もよくある条件で、多くの海域で重い艦の数が制限される理由。</td></tr>
+        <tr><td>特定の艦</td><td>海域のモチーフになった海戦に関係する艦。例：翔鶴と瑞鶴を両方含む。</td></tr>
+        <tr><td>艦隊の隻数</td><td>6隻編成とそれ以下で進路が変わるマスもある。</td></tr>
+        <tr><td>旗艦</td><td>例：軽巡旗艦＋駆逐艦。</td></tr>
+        <tr><td>索敵スコア</td><td>艦隊の索敵スコアが基準を満たしているか。満たしていると偵察機のアニメーションが出る。</td></tr>
+        <tr><td>速力</td><td>高速・高速＋・最速で統一すると、うずしおを避けたり他の条件を無視できたりする海域が多い。</td></tr>
+        <tr><td>装備</td><td>ドラム缶・大発動艇・電探がよく要求される。多くの場合、個数ではなく装備している艦の数で数える。</td></tr>
+        <tr><td>経由したマス</td><td>特定のマスを通ったか（または出現しているか）。</td></tr>
+        <tr><td>イベント限定の要素</td><td>連合艦隊の種類、ギミック、札、ゲージの状態、作戦難易度。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>具体例</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>Wikiに載っている例</th><th>条件</th></tr></thead>
+        <tbody>
+        <tr><td>4-1 Cマス</td><td>（戦艦級＋空母系）5隻以上でE、4隻でE寄り（70%）のランダム、3隻でランダム（片寄りなし）、2隻以下でF</td></tr>
+        <tr><td>2-5 出撃地点</td><td>ドラム缶を装備した艦が2隻以上でB</td></tr>
+        <tr><td>4-5 Mマス</td><td>低速艦を含むとR</td></tr>
+        <tr><td>5-5 Pマス</td><td>索敵スコア73未満でQ、73以上80未満でランダム、80以上でS。最速統一でもS</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">分岐条件はアップデートで変わることがある。狙う海域は、出撃前にWikiの分岐表を確認しよう。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>間違えやすい艦種のくくり</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>分岐での表記</th><th>含まれる艦種</th><th>注意点</th></tr></thead>
+        <tbody>
+        <tr><td>軽巡級</td><td>軽巡・練巡・雷巡</td><td>雷巡も軽巡級に含まれる</td></tr>
+        <tr><td>戦艦級</td><td>高速戦艦・(低速)戦艦</td><td>金剛型は高速戦艦。長門型や大和（改二以外）は(低速)戦艦</td></tr>
+        <tr><td>補給艦</td><td>補給艦のほか、特設護衛空母など</td><td>特設護衛空母は空母ではなく補給艦扱い</td></tr>
+        <tr><td>海防艦</td><td>海防艦と海防戦艦</td><td>海防戦艦は分岐上は戦艦ではない</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>実戦でのポイント</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><b>判定は進撃のたびに行われる。</b>出撃中に護衛退避などで艦を帰すと、次の分岐では減った後の艦隊で判定される。</li>
+        <li><b>装備は艦の数で数えることが多い。</b>1隻にドラム缶を2つ積んでも「ドラム缶を積んだ艦1隻」。分散させよう。</li>
+        <li><b>速力が最も強い条件になることが多い。</b>海域によっては高速＋・最速統一で戦艦・空母の制限を無視できる。速力は<a href="/ja/games/kancolle/fleet-builder/">艦隊編成ツール</a>を参照。</li>
+        <li><b>索敵スコアは計算式で決まる。</b>Wikiで「判定式(33)」と呼ばれる式で、艦の索敵値の単純な合計ではない。手計算より編成ツールで計算しよう。</li>
+        <li><b>「ランダム」にも偏りがある。</b>4-1の70%の例のように、編成によって片寄るランダム分岐もある。</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">06</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">ルートは完全に運で決まることもある？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">ランダムな分岐もあるが、多くは編成で固定される。ランダムでも、編成で確率が変わる場合がある。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">2-4でボスに行けない。</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">2-4には分岐条件がいくつもある。条件から導いた編成は<a href='/ja/games/kancolle/2-4/'>2-4攻略</a>を参照。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">偵察機のアニメーションは何？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">そのマスの索敵判定を満たしたという意味。出るはずの場所で出ないなら、索敵スコアが足りていない。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">レベルは分岐に関係ある？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">艦のレベル自体は分岐条件ではないが、計算式を通して索敵スコアに影響する。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/kancolle/">艦これ 攻略ガイド全体</a>
+      <a href="/ja/games/kancolle/2-4/">2-4攻略</a>
+      <a href="/ja/games/kancolle/fleet-builder/">艦隊編成ツール</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://wikiwiki.jp/kancolle/%E3%83%AB%E3%83%BC%E3%83%88%E5%88%86%E5%B2%90" target="_blank" rel="noopener">艦これ攻略Wiki：ルート分岐</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How KanColle routing works: the compass checks ship types, fleet speed, LoS score, equipment and more when you press advance. With real examples (4-1, 2-5, 4-5, 5-5) and the ship type groups that trip people up.">
+<title>KanColle Routing Explained: How the Compass Decides Your Path</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/games/kancolle/routing/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/routing/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/routing/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/routing/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:title" content="KanColle Routing Explained: How the Compass Decides Your Path">
+<meta property="og:description" content="How KanColle routing works: the compass checks ship types, fleet speed, LoS score, equipment and more when you press advance. With real examples (4-1, 2-5, 4-5, 5-5) and the ship type groups that trip people up.">
+<meta property="og:url" content="https://kouryakulab.com/games/kancolle/routing/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KanColle Routing Explained: How the Compass Decides Your Path">
+<meta name="twitter:description" content="How KanColle routing works: the compass checks ship types, fleet speed, LoS score, equipment and more when you press advance. With real examples (4-1, 2-5, 4-5, 5-5) and the ship type groups that trip people up.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "KanColle Routing Explained: How the Compass Decides Your Path",
+      "description": "How KanColle routing works: the compass checks ship types, fleet speed, LoS score, equipment and more when you press advance. With real examples (4-1, 2-5, 4-5, 5-5) and the ship type groups that trip people up.",
+      "inLanguage": "en",
+      "url": "https://kouryakulab.com/games/kancolle/routing/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "KanColle Routing Explained: How the Compass Decides Your Path",
+          "item": "https://kouryakulab.com/games/kancolle/routing/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/games/kancolle/"><span class="arrow">←</span> Full KanColle Guide</a>
+    <div>
+      <span class="eyebrow">KANCOLLE · ROUTING</span>
+      <h1>Routing Explained: How the Compass Decides</h1>
+      <p class="sub">The compass isn't just luck. Here's what it checks, a few real examples, and the ship type quirks behind most “why did it send me there?” moments.</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="Language"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Conclusion</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">The compass in KanColle isn't pure luck. At most branch points the game checks your fleet — <b>ship types and counts, fleet speed, line of sight (LoS), equipment</b> and a few others — and only falls back to random when the rules say so.</p>
+      <p style="margin:0;">Reading the wiki's routing page, two details explain a lot of “why did it send me there?” moments: the check happens <b>when you press advance</b>, not when you sortie, and the game uses <b>its own ship type groups</b>, which don't always match what the ship card says.</p>
+    </div>
+    <div class="callout"><b>An analysis-based guide:</b> this guide is based on our analysis of the routing rules page on the Japanese KanColle wiki. It describes what the data shows and is not a guarantee of results.</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>What the Compass Checks</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>Factor</th><th>What it means</th></tr></thead>
+        <tbody>
+        <tr><td>Ship types and counts</td><td>“5+ battleships and carriers → node E”. The most common rule, and the reason many maps limit heavy ships.</td></tr>
+        <tr><td>Specific ships</td><td>Ships tied to the historical battle a map is based on, e.g. Shoukaku and Zuikaku together.</td></tr>
+        <tr><td>Number of ships</td><td>Some nodes route 6-ship fleets differently from smaller ones.</td></tr>
+        <tr><td>Flagship type</td><td>e.g. a light cruiser flagship with destroyers.</td></tr>
+        <tr><td>Line of sight (LoS) score</td><td>Your fleet's recon score must meet a threshold. When it does, you see a scout plane animation.</td></tr>
+        <tr><td>Fleet speed</td><td>Fast, Fast+ or Fastest fleets often skip whirlpools or bypass other rules entirely.</td></tr>
+        <tr><td>Equipment</td><td>Drums, Daihatsu landing craft and radar are the usual ones — usually counted by how many ships carry them, not how many items.</td></tr>
+        <tr><td>Nodes visited</td><td>Whether you've passed (or unlocked) a certain node.</td></tr>
+        <tr><td>Event-only factors</td><td>Combined fleet type, gimmicks, ship tags, gauge state and difficulty.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>Real Examples</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>Example on the wiki</th><th>Rule</th></tr></thead>
+        <tbody>
+        <tr><td>4-1, node C</td><td>(Battleships + carriers) 5+ → E; exactly 4 → random, leaning E (70%); 3 → random 50/50; 2 or fewer → F</td></tr>
+        <tr><td>2-5, start</td><td>2 or more ships carrying drums → B</td></tr>
+        <tr><td>4-5, node M</td><td>Any slow ship → R</td></tr>
+        <tr><td>5-5, node P</td><td>LoS score under 73 → Q; 73–80 → random; 80+ → S; Fastest fleet → S</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">Rules can change in updates. Before a map you care about, check its routing table on the wiki.</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>Ship Type Groups That Trip People Up</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>Routing label</th><th>What it includes</th><th>Watch out for</th></tr></thead>
+        <tbody>
+        <tr><td>Light cruiser class (軽巡級)</td><td>Light cruisers, training cruisers and torpedo cruisers</td><td>Torpedo cruisers count here even though they're not “light cruisers”</td></tr>
+        <tr><td>Battleship class (戦艦級)</td><td>Fast and slow battleships</td><td>The Kongou class are fast battleships; Nagato and Yamato (before Kai Ni) are slow</td></tr>
+        <tr><td>Supply ship (補給艦)</td><td>Fleet oilers, plus escort carriers (特設護衛空母)</td><td>An escort carrier is counted as a supply ship, not a carrier</td></tr>
+        <tr><td>Destroyer escort (海防艦)</td><td>Destroyer escorts, plus coastal defense battleships</td><td>A coastal defense “battleship” is not a battleship for routing</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>Practical Tips</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><b>The fleet is checked at each advance.</b> If you send a ship home mid-sortie (escort retreat), the next branch sees the smaller fleet.</li>
+        <li><b>Equipment usually counts per ship.</b> Two drums on one ship counts as one ship with drums. Spread them out.</li>
+        <li><b>Speed is often the strongest rule.</b> A Fast+ or Fastest fleet can override battleship and carrier limits on some maps. See <a href="/games/kancolle/fleet-builder/">Fleet Builder</a> for speed.</li>
+        <li><b>LoS uses a formula, not the number shown on ships.</b> The wiki calls it Formula 33. Use a fleet-planning tool to calculate it rather than adding up stats by hand.</li>
+        <li><b>“Random” can be weighted.</b> Some random branches lean one way depending on the fleet, like 4-1's 70% example.</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">06</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Is routing ever pure luck?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Some branches are random, but many are fixed by your fleet. When a branch is random, the fleet can still change the odds.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Why do I keep missing the boss on 2-4?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">2-4 has several routing checks. See the <a href='/games/kancolle/2-4/'>2-4 guide</a> for the fleet the rules point to.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">What's the scout plane animation?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">It means your fleet met the LoS check at that node. If you don't see it where you expected, your LoS score was too low.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Do levels matter for routing?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Ship level isn't a routing factor, but it affects the LoS score through the formula.</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>Continue reading</h3>
+    <div class="more-guides-links">
+      <a href="/games/kancolle/">Full KanColle Guide</a>
+      <a href="/games/kancolle/2-4/">2-4 Guide</a>
+      <a href="/games/kancolle/fleet-builder/">Fleet Builder</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">This is an unofficial, fan-made, analysis-based guide. It is not a guarantee of results, and game updates may change any of it.</div>
+    <div class="sources">
+      Sources:
+      <a href="https://wikiwiki.jp/kancolle/%E3%83%AB%E3%83%BC%E3%83%88%E5%88%86%E5%B2%90" target="_blank" rel="noopener">KanColle Wiki (JP): ルート分岐 — routing factors and examples</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="Site links"><a href="/about/">About</a> · <a href="/authors/">Authors</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>
