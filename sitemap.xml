@@ -410,4 +410,12 @@
   </url>
   <url><loc>https://kouryakulab.com/ja/games/kancolle/1-6/</loc></url>
 
+  <url>
+    <loc>https://kouryakulab.com/games/kancolle/lbas/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/lbas/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/lbas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/lbas/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/kancolle/lbas/</loc></url>
+
 </urlset>

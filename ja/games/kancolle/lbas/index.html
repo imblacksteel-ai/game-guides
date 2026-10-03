@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="艦これの基地航空隊の基本。開放方法（設営隊と任務）、スロットと機数、ボーキサイトのコスト、12分の配置転換、航空隊の札、攻撃マスの選び方と戦闘行動半径を初心者向けにまとめた。">
+<title>艦これ 基地航空隊の基本（初心者向け）</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/kancolle/lbas/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/lbas/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/lbas/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/lbas/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="艦これ 基地航空隊の基本（初心者向け）">
+<meta property="og:description" content="艦これの基地航空隊の基本。開放方法（設営隊と任務）、スロットと機数、ボーキサイトのコスト、12分の配置転換、航空隊の札、攻撃マスの選び方と戦闘行動半径を初心者向けにまとめた。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/kancolle/lbas/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="艦これ 基地航空隊の基本（初心者向け）">
+<meta name="twitter:description" content="艦これの基地航空隊の基本。開放方法（設営隊と任務）、スロットと機数、ボーキサイトのコスト、12分の配置転換、航空隊の札、攻撃マスの選び方と戦闘行動半径を初心者向けにまとめた。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "艦これ 基地航空隊の基本（初心者向け）",
+      "description": "艦これの基地航空隊の基本。開放方法（設営隊と任務）、スロットと機数、ボーキサイトのコスト、12分の配置転換、航空隊の札、攻撃マスの選び方と戦闘行動半径を初心者向けにまとめた。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/kancolle/lbas/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "艦これ 基地航空隊の基本（初心者向け）",
+          "item": "https://kouryakulab.com/ja/games/kancolle/lbas/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/kancolle/"><span class="arrow">←</span> 艦これ 攻略ガイド全体</a>
+    <div>
+      <span class="eyebrow">艦これ ・ 基地航空隊</span>
+      <h1>基地航空隊の基本</h1>
+      <p class="sub">基地航空隊は艦隊の航空戦より先に敵を叩ける。開放方法、コスト、札の意味、攻撃マスの選び方をまとめた。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">基地航空隊は、陸上の基地に置いた航空機が<b>艦隊の航空戦より先に</b>敵のマスを攻撃する仕組み。通常海域では6-X（中部海域）と7-X（南西海域）で使い、イベントでは海域ごとに基地が用意される。</p>
+      <p style="margin:0;">Wikiの仕様を読む限り、手間を一番減らせる習慣は3つ。<b>配置する前に編成を決める</b>（配置のたびにボーキサイトを消費する）、<b>出撃のたびに札を確認する</b>、<b>攻撃機は後ろの航空隊に置く</b>（敵戦闘機が減った後に当たる）。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事は艦これ攻略Wikiの基地航空隊のページを分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>開放の手順</h2></div>
+    <div class="panel">
+      <ol class="steps">
+      <li><span class="n">1</span><span>アイテム<b>「設営隊」</b>を手に入れる。いくつかの任務でもらえるほか、アイテム屋さんでも買える。</span></li>
+      <li><span class="n">2</span><span>開放任務をクリアする：中部海域は<b>『中部海域「基地航空隊」展開！』</b>、南西海域は<b>『南西海域「基地航空隊」開設！』</b>。</span></li>
+      <li><span class="n">3</span><span>第二・第三航空隊を増やすには、基地航空隊の画面で<b>「飛行場拡張」</b>を押す。1回ごとに設営隊を1つ消費する。</span></li>
+      <li><span class="n">4</span><span>イベント海域の基地は攻略を進めると開放・拡張される。設営隊は要らない。</span></li>
+      </ol>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>航空隊の基本</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li>1つの基地に最大<b>3個航空隊</b>、各航空隊に<b>4つの中隊（スロット）</b>。1スロットは通常18機、大型陸上機は9機、偵察機は4機。</li>
+        <li>陸上攻撃機・局地戦闘機・陸軍戦闘機のほか、艦載機や水上機も配置できる。</li>
+        <li><b>航空機を外すと12分間「配置転換中」</b>になり、使えなくなる。12分たった後、一度母港を経由する必要がある。同じ航空隊内でスロットを入れ替えるだけならコストはかからない。</li>
+        <li>2021年7月から、同じ基地の<b>別の航空隊との入れ替え</b>はリストから行えば、配置コストも待ち時間もなし。</li>
+        <li>中部海域・南西海域・イベント海域の基地は共有されない。どこかに配置中の機体は、他の基地では使えない。</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>コスト</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>タイミング</th><th>消費するもの</th></tr></thead>
+        <tbody>
+        <tr><td>スロットに航空機を配置したとき</td><td>ボーキサイト（機種で異なる）</td></tr>
+        <tr><td>出撃のたび</td><td>燃料・弾薬</td></tr>
+        <tr><td>失った機体の補充</td><td>燃料・ボーキサイト</td></tr>
+        <tr><td>敵の基地空襲で損害が出たとき</td><td>燃料かボーキサイトのどちらか（ランダム）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout"><b>ボーキサイトに注意：</b>配置のたびにボーキサイトを消費するので、入れ替えを繰り返すとどんどん減る。編成を先に決めてから1回で配置しよう。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>航空隊の札</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>札</th><th>内容</th></tr></thead>
+        <tbody>
+        <tr><td>待機</td><td>出撃しない。疲労は回復するが、休息より遅い。</td></tr>
+        <tr><td>出撃</td><td>艦隊の出撃後に指定したマスを攻撃する。</td></tr>
+        <tr><td>防空</td><td>攻撃せず、敵の基地空襲から基地を守る。</td></tr>
+        <tr><td>退避</td><td>航空隊を基地から退避させる。</td></tr>
+        <tr><td>休息</td><td>疲労の回復が最も速い。ただし設定中はボーキサイトの自然回復が半減する。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">06</span><h2>出撃の流れ</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li>艦隊の出撃後、<b>航空隊ごとに攻撃するマスを2つ</b>選ぶ。同じマスを2回選ぶと<b>「集中」</b>になり、そのマスを2回攻撃する。</li>
+        <li>選べるのは航空隊の<b>戦闘行動半径</b>内のマスだけ。半径は航空隊の中で最も短い機体で決まり、偵察機や大型飛行艇を入れると延ばせる。</li>
+        <li>基地航空隊の攻撃は艦隊の航空戦より前に、波状攻撃で行われる。波ごとに敵機が減るので、艦隊の航空戦は敵機が少ない状態で始まる。</li>
+        <li>航空隊は第一→第二→第三の順に攻撃する。後の航空隊ほど敵戦闘機が少ないので、攻撃機は後ろに置く。</li>
+        <li>戦闘のないマスも選べてしまうので、送り間違いに注意。夜戦マスには原則として飛んでこない。</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">07</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">航空機がリストから消えた。</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">配置転換中（12分以内に外した。時間がたったら母港を経由する）か、別の基地に配置中のどちらか。どちらも通常の装備リストには出ない。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">損耗が少ないのに熟練度がリセットされた。</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">集中攻撃では1回目と2回目の間に機体が補充される。1回目で大きく失うと、2回目がうまくいっても熟練度はリセットされる。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">偵察機は基地航空隊で熟練度が上がる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">水偵・艦偵・大型飛行艇は上がらない。艦娘に装備して育てよう。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">イベント終了後、イベントの航空隊はどうなる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">解散して機体は倉庫に戻る。資源は減らない。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/kancolle/">艦これ 攻略ガイド全体</a>
+      <a href="/ja/games/kancolle/resources/">資源が足りないとき</a>
+      <a href="/ja/games/kancolle/event-difficulty/">イベントの難易度</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://wikiwiki.jp/kancolle/%E5%9F%BA%E5%9C%B0%E8%88%AA%E7%A9%BA%E9%9A%8A" target="_blank" rel="noopener">艦これ攻略Wiki：基地航空隊</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>
