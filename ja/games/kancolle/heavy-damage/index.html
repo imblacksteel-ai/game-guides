@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="艦これで艦娘が轟沈する条件・しない条件。大破の意味、旗艦と未損傷艦が守られる仕組み（轟沈ストッパー）、撤退の判断基準をまとめた。">
+<title>艦これ 大破と轟沈の仕組み：撤退の判断基準</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/kancolle/heavy-damage/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/heavy-damage/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/heavy-damage/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/heavy-damage/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="艦これ 大破と轟沈の仕組み：撤退の判断基準">
+<meta property="og:description" content="艦これで艦娘が轟沈する条件・しない条件。大破の意味、旗艦と未損傷艦が守られる仕組み（轟沈ストッパー）、撤退の判断基準をまとめた。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/kancolle/heavy-damage/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="艦これ 大破と轟沈の仕組み：撤退の判断基準">
+<meta name="twitter:description" content="艦これで艦娘が轟沈する条件・しない条件。大破の意味、旗艦と未損傷艦が守られる仕組み（轟沈ストッパー）、撤退の判断基準をまとめた。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "艦これ 大破と轟沈の仕組み：撤退の判断基準",
+      "description": "艦これで艦娘が轟沈する条件・しない条件。大破の意味、旗艦と未損傷艦が守られる仕組み（轟沈ストッパー）、撤退の判断基準をまとめた。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/kancolle/heavy-damage/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "艦これ 大破と轟沈の仕組み：撤退の判断基準",
+          "item": "https://kouryakulab.com/ja/games/kancolle/heavy-damage/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/kancolle/"><span class="arrow">←</span> 艦これ 攻略ガイド全体</a>
+    <div>
+      <span class="eyebrow">艦これ ・ 大破と轟沈</span>
+      <h1>大破と轟沈：撤退の判断基準</h1>
+      <p class="sub">轟沈した艦は二度と戻らない。どんなときに轟沈するのか、なぜ旗艦は沈まないのか、艦隊を守るための判断基準をまとめた。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;"><b>ルール：</b>戦闘後に<b>大破</b>した艦が1隻でもいたら<b>撤退</b>する。轟沈が確認されているのは「大破のまま進撃した場合」だけ。</p>
+      <p style="margin:0 0 8px;"><b>安全なこと：</b>旗艦は轟沈しない。また、戦闘開始時に大破していなかった艦は、その戦闘中（同じマスの夜戦を含む）は轟沈から守られる。</p>
+      <p style="margin:0;"><b>なぜ大事か：</b>轟沈した艦はレベルも装備も含めて永久に戻らない。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事は艦これ攻略Wikiに公開されている戦闘とダメージの仕様を分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>損傷表示の意味</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>表示</th><th>残りHP</th><th>対応</th></tr></thead>
+        <tbody>
+        <tr><td>小破</td><td>半分より多く、4分の3未満</td><td>そのまま進撃してよい</td></tr>
+        <tr><td>中破</td><td>4分の1より多く、半分以下</td><td>基本的には進撃可。ただし弱くなる</td></tr>
+        <tr><td><b>大破</b></td><td><b>25%以下</b></td><td><b>撤退</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">大破は「現在HP÷最大HPが4分の1以下」で判定される（HPは整数）。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>轟沈を防ぐ仕組み</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 10px;">HPが0になる被弾を受けたとき、多くの場合は小さなダメージに置き換えられる。守られるかどうかは<b>戦闘開始時</b>の状態で決まる。</p>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>艦</th><th>沈むはずの被弾を受けたら</th></tr></thead>
+        <tbody>
+        <tr><td>旗艦</td><td>常に現在HPの約50〜79%のダメージに置き換わる。旗艦は轟沈しない。</td></tr>
+        <tr><td>戦闘開始時に大破しておらず、赤疲労でもない随伴艦</td><td>その戦闘中は被弾のたびに、現在HPの約50〜79%のダメージに置き換わる。</td></tr>
+        <tr><td>戦闘開始時に大破していないが赤疲労の随伴艦</td><td>残りHPが1になるダメージに置き換わる。沈まないが必ず大破する。</td></tr>
+        <tr><td>戦闘開始時に<b>すでに大破している</b>随伴艦</td><td><b>守られない。轟沈することがある。</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+    <div class="callout"><b>応急修理要員・応急修理女神（ダメコン）</b>は、轟沈するはずの艦を復活させる。発動後はその戦闘の間、大破していない艦と同じ扱いになる。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>戦闘後の判断</h2></div>
+    <div class="panel">
+      <ol class="steps">
+      <li><span class="n">1</span><span>結果画面で旗艦だけでなく全員の損傷表示を確認する。</span></li>
+      <li><span class="n">2</span><span>随伴艦に<b>大破</b>が1隻でもいれば<b>撤退</b>。「あと1マスだけ」と進撃しない。</span></li>
+      <li><span class="n">3</span><span>同じマスの夜戦は、そのマスの戦闘開始時の状態で判定されるので、轟沈の原因にはならない。ただし損傷と疲労は増えるので、道中では夜戦をしない。</span></li>
+      <li><span class="n">4</span><span>次の出撃の前に入渠する。中破のまま出撃すると大破しやすい。</span></li>
+      </ol>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>よくある失敗</h2></div>
+    <div class="panel">
+      <ol class="steps">
+      <li><span class="n">1</span><span><b>次がボスだからと大破進撃する。</b>まさに轟沈するケース。撤退してやり直そう。</span></li>
+      <li><span class="n">2</span><span><b>中破なら絶対安全だと思う。</b>次の戦闘で沈むことはないが、そこで大破すればその後は撤退が必要になる。</span></li>
+      <li><span class="n">3</span><span><b>赤疲労のまま出撃する。</b>ストッパーでHP1が残る形になり、大破しやすくなる。<a href='/ja/games/kancolle/fatigue/'>疲労度とキラ付けの仕組み</a>を参照。</span></li>
+      <li><span class="n">4</span><span><b>戦闘中にゲームを閉じて結果を避けようとする。</b>戦闘開始の時点で結果は決まっているので、損傷は取り消せない。</span></li>
+      </ol>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">06</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">旗艦は轟沈する？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">しない。旗艦は大破していても常に守られる。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">無傷から一撃で轟沈することはある？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">ない。戦闘開始時に大破していない艦は守られる。一撃で大破することはあっても、轟沈はしない。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">大破した艦で夜戦をすると危ない？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">守られるかどうかはそのマスの戦闘開始時に決まるので、開始時に大破していなかった艦は、そのマスの夜戦でも守られる。危険なのは次のマスへの進撃。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">小さな艦がすぐ大破するのはなぜ？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">ストッパーの置き換えダメージは現在HPの割合を切り捨てて計算される。最大HPが小さい艦では、最大HPが4の倍数だとわずかに大破しやすい。大型艦ではほとんど影響しない。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/kancolle/">艦これ 攻略ガイド全体</a>
+      <a href="/ja/games/kancolle/fatigue/">疲労度とキラ付け</a>
+      <a href="/ja/games/kancolle/2-4/">2-4攻略</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://wikiwiki.jp/kancolle/%E6%88%A6%E9%97%98%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" target="_blank" rel="noopener">艦これ攻略Wiki：戦闘について（轟沈ストッパー）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>
