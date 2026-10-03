@@ -418,4 +418,12 @@
   </url>
   <url><loc>https://kouryakulab.com/ja/games/kancolle/lbas/</loc></url>
 
+  <url>
+    <loc>https://kouryakulab.com/games/kancolle/first-event/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/first-event/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/first-event/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/first-event/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/kancolle/first-event/</loc></url>
+
 </urlset>
