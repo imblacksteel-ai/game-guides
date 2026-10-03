@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="艦これの演習の仕組み。更新時刻（3時・15時）、対戦相手の選び方、演習の経験値の決まり方、艦が沈まない理由を初心者向けにまとめた。">
+<title>艦これ 演習の仕組みと経験値（初心者向け）</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/kancolle/exercises/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/exercises/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/exercises/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/exercises/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="艦これ 演習の仕組みと経験値（初心者向け）">
+<meta property="og:description" content="艦これの演習の仕組み。更新時刻（3時・15時）、対戦相手の選び方、演習の経験値の決まり方、艦が沈まない理由を初心者向けにまとめた。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/kancolle/exercises/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="艦これ 演習の仕組みと経験値（初心者向け）">
+<meta name="twitter:description" content="艦これの演習の仕組み。更新時刻（3時・15時）、対戦相手の選び方、演習の経験値の決まり方、艦が沈まない理由を初心者向けにまとめた。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "艦これ 演習の仕組みと経験値（初心者向け）",
+      "description": "艦これの演習の仕組み。更新時刻（3時・15時）、対戦相手の選び方、演習の経験値の決まり方、艦が沈まない理由を初心者向けにまとめた。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/kancolle/exercises/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "艦これ 演習の仕組みと経験値（初心者向け）",
+          "item": "https://kouryakulab.com/ja/games/kancolle/exercises/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/kancolle/"><span class="arrow">←</span> 艦これ 攻略ガイド全体</a>
+    <div>
+      <span class="eyebrow">艦これ ・ 演習</span>
+      <h1>演習の仕組みと経験値</h1>
+      <p class="sub">演習は1日2回、艦を失う心配なく経験値が稼げる。仕組みと更新時刻、経験値を決めるものをまとめた。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;"><b>演習は毎日やろう。</b>消費する資源に対する経験値効率がゲーム内で最も良く、艦が沈むこともなく、損傷も終了後に元に戻る。</p>
+      <p style="margin:0 0 8px;">相手は1日2回、日本時間の<b>3時と15時</b>に5人ずつ入れ替わり、最大で1日10戦できる。</p>
+      <p style="margin:0;">経験値はほぼ相手の<b>1隻目と2隻目</b>のレベルで決まる。旗艦（または1・2隻目の平均）がLv32を超えていれば、基本経験値は最低500になる。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事は艦これ攻略Wikiの演習の仕様と経験値表を分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>演習の仕組み</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li>「出撃」→「演習」から行う。相手は他の提督の第1艦隊で、ゲームが操作する。</li>
+        <li>燃料・弾薬・ボーキサイトは出撃と同じように消費するが、<b>損傷は終了後に元に戻り</b>、<b>艦がロストすることはない</b>。</li>
+        <li>旗艦が大破していると演習できない。連合艦隊でも演習できない。</li>
+        <li>5人の相手とは、1回の更新につき1回ずつ戦える。</li>
+        <li>相手の編成は戦闘開始の直前まで変わることがあり、陣形選択時に見た編成と実際に戦う編成が違うこともある。</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>対戦相手の選び方</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>設定</th><th>内容</th></tr></thead>
+        <tbody>
+        <tr><td>(新式)演習艦隊【第一群】</td><td>練度の高い手強い相手が多く、勝てば経験値が多い</td></tr>
+        <tr><td>(新式)演習艦隊【第二群】</td><td>比較的戦いやすい相手が多い</td></tr>
+        <tr><td>(旧式)全体</td><td>ランキングからランダム</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">設定の変更は、更新の2時間前（1時・13時）までに行うと次の相手から反映される。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>演習の経験値</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li>基本経験値は相手の<b>旗艦と2隻目のレベル</b>で決まる。司令部Lv、自分の艦隊のレベル、相手の3隻目以降はほぼ影響しない。</li>
+        <li>相手の旗艦、または1・2隻目の平均がLv32を超えていれば、基本経験値は<b>最低500</b>。500を超えるとゆるやかにしか増えない（例：旗艦Lv99・2隻目Lv99で約613）。</li>
+        <li>S勝利で1.2倍。さらに旗艦（×1.5）とMVP（×2）の補正がかかる。</li>
+        <li>演習で撃沈判定を受けた艦（HP1で行動不能）は<b>経験値が入らず</b>、評価も下がる。</li>
+        <li>練習巡洋艦（香取型など）を編成すると、配置やレベルに応じて経験値が増える。</li>
+      </ul>
+    </div>
+    <div class="callout"><b>相手で経験値が決まるのに自分の艦隊が大事な理由：</b>評価の倍率とMVPは自分の艦隊の戦い方で決まる。育てたい艦を旗艦にして、勝てる艦隊で挑もう。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">演習で艦が沈むことはある？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">ない。撃沈判定でHP1の行動不能にはなるが、ロストはせず、ダメコンも消費されない。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">演習相手はいつ更新される？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">日本時間の3時と15時。任務更新の5時とはずれている。3時〜5時の間の演習は前日の任務にカウントされるが、相手は新しく更新された分を使うことになるので、演習任務を狙うときは注意。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">他の提督に演習を挑まれると損をする？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">しない。自分の艦隊が相手に選ばれても、資源の消費も損傷も一切発生しない。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">疲労は関係ある？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">ある。演習の戦闘でも出撃と同じく1戦ごとにコンディション−3。昼戦のうちにS勝利を取るのはキラ付けの方法の一つ。<a href='/ja/games/kancolle/fatigue/'>疲労度とキラ付け</a>を参照。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/kancolle/">艦これ 攻略ガイド全体</a>
+      <a href="/ja/games/kancolle/exp-calculator/">経験値計算機</a>
+      <a href="/ja/games/kancolle/fatigue/">疲労度とキラ付け</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://wikiwiki.jp/kancolle/%E6%BC%94%E7%BF%92" target="_blank" rel="noopener">艦これ攻略Wiki：演習</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

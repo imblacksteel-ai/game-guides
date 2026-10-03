@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="艦これで保有枠がいっぱいになったときの対処法。母港拡張（艦娘＋10・装備＋40）、誤って解体しないためのロック、残す艦・手放す艦の目安、解体より近代化改修が得な理由。">
+<title>艦これ 保有枠がいっぱいのとき：母港拡張と解体の判断</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/kancolle/dock-full/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/dock-full/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/dock-full/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/dock-full/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="艦これ 保有枠がいっぱいのとき：母港拡張と解体の判断">
+<meta property="og:description" content="艦これで保有枠がいっぱいになったときの対処法。母港拡張（艦娘＋10・装備＋40）、誤って解体しないためのロック、残す艦・手放す艦の目安、解体より近代化改修が得な理由。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/kancolle/dock-full/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="艦これ 保有枠がいっぱいのとき：母港拡張と解体の判断">
+<meta name="twitter:description" content="艦これで保有枠がいっぱいになったときの対処法。母港拡張（艦娘＋10・装備＋40）、誤って解体しないためのロック、残す艦・手放す艦の目安、解体より近代化改修が得な理由。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "艦これ 保有枠がいっぱいのとき：母港拡張と解体の判断",
+      "description": "艦これで保有枠がいっぱいになったときの対処法。母港拡張（艦娘＋10・装備＋40）、誤って解体しないためのロック、残す艦・手放す艦の目安、解体より近代化改修が得な理由。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/kancolle/dock-full/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "艦これ 保有枠がいっぱいのとき：母港拡張と解体の判断",
+          "item": "https://kouryakulab.com/ja/games/kancolle/dock-full/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/kancolle/"><span class="arrow">←</span> 艦これ 攻略ガイド全体</a>
+    <div>
+      <span class="eyebrow">艦これ ・ 保有枠</span>
+      <h1>保有枠がいっぱいのとき</h1>
+      <p class="sub">保有上限に達して建造できない。枠の増やし方、後悔しない空け方、そして最初にロックすべき理由をまとめた。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">保有枠がいっぱいになったら、<b>枠を空ける</b>か<b>枠を買う</b>かの2択。枠を増やすのは有料の<b>母港拡張</b>で、1回につき艦娘＋10隻・装備＋40個。</p>
+      <p style="margin:0;">空ける場合、手放す艦は解体するより<b>近代化改修</b>の素材にした方が得、というのが仕様から読み取れること。そして、残したい艦はまず<b>ロック</b>しておこう。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事は艦これ攻略Wikiのアイテム・ロック・近代化改修の仕様を分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>まずロックする</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 10px;">艦これは操作のたびに即セーブされるので、解体した艦は取り消せない。そのためにあるのが<b>ロック</b>機能。</p>
+      <ul class="exped-notes">
+        <li>ロックした艦は<b>近代化改修の素材にできない</b>（リストに出てこない）。</li>
+        <li>ロックした艦は<b>解体できない</b>（リストには出るが決定ボタンが押せない）。</li>
+        <li>それ以外は一切影響しない。出撃も近代化改修を受けることもレベル上げも普段どおり。</li>
+        <li>「編成」画面でどこかの枠の「変更」を押して艦娘リストを開き、ロックしたい艦のロックアイコンを押す。</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>残す艦・手放す艦</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>基本的に残す</th><th>手放してよい</th></tr></thead>
+        <tbody>
+        <tr><td>各艦の1隻目。特に改造（改・改二）がある艦</td><td>すでに育てた艦がいる、よく出る艦の重複</td></tr>
+        <tr><td>未達成の任務で指定されている艦（例：艦隊解放任務の川内型・金剛型）</td><td>任務で使わない低レベルの重複</td></tr>
+        <tr><td>イベント中は、使える艦の予備1〜2隻（札の付いていない同名艦は、札付きの艦が出られない海域に出せる）</td><td>イベント終了後の重複</td></tr>
+        <tr><td>遠征を回す燃費の良い駆逐・軽巡</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">あくまで目安だが、どれも任務・札・遠征の仕様から導いたもの。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>解体より近代化改修</h2></div>
+    <div class="panel">
+      <p style="margin:0;">解体すると少しの資源が戻るだけ。「改装」の<b>近代化改修</b>で素材にすれば、同じように枠が空くうえに、残す艦の火力・雷装・対空・装甲などが上がる。どうせ手放すなら、近代化改修に使う方が基本的に得。</p>
+    </div>
+    <div class="callout"><b>装備枠もいっぱいになる：</b>母港拡張1回で装備枠も40個増える。低性能の主砲や艦載機の重複を廃棄すれば装備枠は空くが、機種転換などで特定の装備を消費する任務もあるので、先に任務を確認しよう。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">枠を増やす方法は母港拡張だけ？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">標準的な方法は母港拡張で、アイテム屋さんの有料アイテム（1,000ポイント）。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">間違って解体した。戻せる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">戻せない。操作は即保存され、取り消しはできない。別の同名艦を拾うか建造するしかないので、ロックが先。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">イベント中に重複艦を解体していい？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">基本的におすすめしない。札の付いていない同名艦は、札付きの艦が出られない海域に出せる。<a href='/ja/games/kancolle/event-tags/'>イベントの札の仕組み</a>を参照。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/kancolle/">艦これ 攻略ガイド全体</a>
+      <a href="/ja/games/kancolle/event-tags/">イベントの札の仕組み</a>
+      <a href="/ja/games/kancolle/unlock-fleets/">艦隊の解放方法</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://wikiwiki.jp/kancolle/%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0" target="_blank" rel="noopener">艦これ攻略Wiki：アイテム（母港拡張）</a>
+      <a href="https://wikiwiki.jp/kancolle/%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E6%A9%9F%E8%83%BD" target="_blank" rel="noopener">艦これ攻略Wiki：知っておきたい機能（ロック機能）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>
