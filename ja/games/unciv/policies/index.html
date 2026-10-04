@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unciv（オープンソース版シヴィライゼーション5）の社会制度10系統の一覧。ゲームのデータから全制度の前提・効果・完成ボーナス、AIが好む系統をまとめ、ソースコードの式による社会制度コスト計算機も付けた。">
+<title>Unciv 社会制度一覧：全系統の効果とコスト計算機</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/unciv/policies/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/policies/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/policies/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/policies/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Unciv 社会制度一覧：全系統の効果とコスト計算機">
+<meta property="og:description" content="Unciv（オープンソース版シヴィライゼーション5）の社会制度10系統の一覧。ゲームのデータから全制度の前提・効果・完成ボーナス、AIが好む系統をまとめ、ソースコードの式による社会制度コスト計算機も付けた。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/unciv/policies/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv 社会制度一覧：全系統の効果とコスト計算機">
+<meta name="twitter:description" content="Unciv（オープンソース版シヴィライゼーション5）の社会制度10系統の一覧。ゲームのデータから全制度の前提・効果・完成ボーナス、AIが好む系統をまとめ、ソースコードの式による社会制度コスト計算機も付けた。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv 社会制度一覧：全系統の効果とコスト計算機",
+      "description": "Unciv（オープンソース版シヴィライゼーション5）の社会制度10系統の一覧。ゲームのデータから全制度の前提・効果・完成ボーナス、AIが好む系統をまとめ、ソースコードの式による社会制度コスト計算機も付けた。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/unciv/policies/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv 社会制度一覧：全系統の効果とコスト計算機",
+          "item": "https://kouryakulab.com/ja/games/unciv/policies/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/unciv/"><span class="arrow">←</span> Unciv 攻略ガイド</a>
+    <div>
+      <span class="eyebrow">UNCIV ・ 社会制度</span>
+      <h1>社会制度とコスト計算</h1>
+      <p class="sub">ゲームのデータから全系統・全制度をまとめ、Uncivのコスト式をそのまま使った計算機を付けた。都市が増えるとどれだけ高くなるかも分かる。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">Uncivの社会制度は<b>10系統</b>。各系統に5つの制度と、系統を完成させたときのボーナスがある。<b>信仰と合理主義</b>、そしてイデオロギーの<b>自由・独裁・秩序</b>は互いに排他。</p>
+      <p style="margin:0;">ソースのコスト式を読むと、社会制度はすぐに高くなる。基本コストは25、34、62、108、173、256…と増え、さらに<b>都市が1つ増えるごとに10%</b>（小〜中マップ）上がる。都市を広げるか、社会制度を早く取るかのトレードオフの正体はここ。下の計算機で自分のゲームの値を確認できる。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事はUncivのPoliciesデータファイルとソースコードのコスト式を分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>社会制度コスト計算機</h2></div>
+    <div class="panel" id="policy-calc" data-lSettler="開拓者" data-lChieftain="酋長" data-lWarlord="将軍" data-lPrince="皇子" data-lKing="国王" data-lEmperor="皇帝" data-lImmortal="不死者" data-lDeity="創造主" data-lQuick="クイック" data-lStandard="スタンダード" data-lEpic="エピック" data-lMarathon="マラソン" data-lTiny="極小" data-lSmall="小" data-lMedium="中" data-lLarge="大" data-lHuge="極大">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;">
+        <label>採用済みの社会制度の数<br><input id="pc-n" type="number" min="0" value="0" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+        <label>都市数（傀儡を除く）<br><input id="pc-cities" type="number" min="1" value="1" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+        <label>難易度<br><select id="pc-diff" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></select></label>
+        <label>ゲーム速度<br><select id="pc-speed" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></select></label>
+        <label>マップサイズ<br><select id="pc-map" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></select></label>
+      </div>
+      <p style="margin:16px 0 8px;font-size:1.05rem;">次の社会制度に必要な文化力: <b id="pc-out" class="tag-mono" style="font-size:1.4rem;">—</b></p>
+      <div class="table-scroll"><table class="glossary"><thead><tr><th>何個目</th><th>必要な文化力</th><th>都市が2つ多い場合</th></tr></thead><tbody id="pc-rows"></tbody></table></div>
+    </div>
+<!-- UNCIV-POLICYCALC -->
+<script>window.UNCIV_POLICY_CFG = {"diff": {"Settler": 0.5, "Chieftain": 0.67, "Warlord": 0.85, "Prince": 1, "King": 1, "Emperor": 1, "Immortal": 1, "Deity": 1}, "speed": {"Quick": 0.67, "Standard": 1.0, "Epic": 1.5, "Marathon": 3.0}, "map": {"Tiny": 0.1, "Small": 0.1, "Medium": 0.1, "Large": 0.075, "Huge": 0.05}};</script>
+<!-- /UNCIV-POLICYCALC -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">ゲームのコードの式：(25 + (採用数 × 3)<sup>2.01</sup>) × 難易度 × ゲーム速度 × (1 + マップ補正 × (都市数 − 1))、5の倍数に切り捨て。マップ補正は極小〜中で1都市あたり10%、大7.5%、極大5%。社会制度コストを下げる制度や遺産は含めていない。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>全系統と全制度</h2></div>
+<!-- UNCIV-POLICIES -->
+<h3 style="margin:22px 0 8px;">伝統 <span style='color:var(--ink-dim);font-size:.85rem'>（太古〜）</span></h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>制度</th><th>前提</th><th>効果</th></tr></thead><tbody>
+<tr><td><b>系統の採用時</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>首都で文化力+3</li><li>すべての都市で国境拡大に必要な文化力-25%</li></ul></td></tr>
+<tr><td>貴族制</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>すべての都市ですべての遺産の建築時に生産力+15%</li><li>すべての都市で人口10あたりにつき幸福度+1</li></ul></td></tr>
+<tr><td>法治主義</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>最初の4つまでの都市に最も安い文化力の建物が無償で手に入る</li></ul></td></tr>
+<tr><td>寡頭制</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>都市に駐留しているユニットには維持費がかからなくなる</li><li>駐屯地がある、攻撃時、都市の耐久力+50%</li></ul></td></tr>
+<tr><td>地主エリート</td><td>法治主義</td><td><ul class='exped-notes' style='margin:0'><li>首都で成長+10%</li><li>首都で食料+2</li></ul></td></tr>
+<tr><td>君主制</td><td>法治主義</td><td><ul class='exped-notes' style='margin:0'><li>首都で人口2あたりにつきゴールド+1・幸福度+1</li></ul></td></tr>
+<tr><td><b>系統の完成時</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>すべての都市で成長+15%</li><li>最初の4つまでの都市に用水路が無償で手に入る</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">解放 <span style='color:var(--ink-dim);font-size:.85rem'>（太古〜）</span></h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>制度</th><th>前提</th><th>効果</th></tr></thead><tbody>
+<tr><td><b>系統の採用時</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>すべての都市で文化力+1</li></ul></td></tr>
+<tr><td>共和制</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>すべての都市で生産力+1</li><li>すべての都市ですべての建物の建築時に生産力+5%</li></ul></td></tr>
+<tr><td>市民権</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>すべてタイル整備を+25%の割合で建設できる</li><li>労働者が無償で出現</li></ul></td></tr>
+<tr><td>直接民主制</td><td>共和制</td><td><ul class='exped-notes' style='margin:0'><li>首都で開拓者ユニットの生産時に生産力+50%</li><li>開拓者が無償で出現</li></ul></td></tr>
+<tr><td>代議制</td><td>市民権</td><td><ul class='exped-notes' style='margin:0'><li>都市の新設による社会制度の文化力コストの増加を33%抑える</li><li>国家が黄金時代に入る</li></ul></td></tr>
+<tr><td>実力主義</td><td>市民権</td><td><ul class='exped-notes' style='margin:0'><li>首都に接続するすべての都市で幸福度+1</li><li>すべての占領していない都市で人口からの不満が-5%</li></ul></td></tr>
+<tr><td><b>系統の完成時</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>無償の偉人</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">名誉 <span style='color:var(--ink-dim);font-size:.85rem'>（太古〜）</span></h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>制度</th><th>前提</th><th>効果</th></tr></thead><tbody>
+<tr><td><b>系統の採用時</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>野蛮人ユニットに対して、戦闘力+33%</li><li>敵の野蛮人を倒すごとに敵戦闘力100%分の文化力を得る</li><li>新しい蛮族の野営地が出現したときに通知</li></ul></td></tr>
+<tr><td>戦士の掟</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>すべての都市で白兵ユニットの生産時に生産力+15%</li><li>大将軍が無償で出現</li></ul></td></tr>
+<tr><td>規律</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>白兵のユニットに、白兵ユニットと隣接しているとき、戦闘力+15%</li></ul></td></tr>
+<tr><td>軍の栄誉</td><td>戦士の掟</td><td><ul class='exped-notes' style='margin:0'><li>軍事のユニットに、戦闘で得られるXPが+50%</li></ul></td></tr>
+<tr><td>戦士階級</td><td>規律</td><td><ul class='exped-notes' style='margin:0'><li>駐留中のユニットがいるすべての都市で幸福度+1・文化力+2</li></ul></td></tr>
+<tr><td>軍隊の常備</td><td>戦士階級</td><td><ul class='exped-notes' style='margin:0'><li>軍事のユニットに、アップグレードにかかるゴールド-33%</li><li>すべての防壁から幸福度+1</li><li>すべての城から幸福度+1</li><li>すべての備蓄から幸福度+1</li><li>すべての軍事基地から幸福度+1</li></ul></td></tr>
+<tr><td><b>系統の完成時</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>敵の軍事を倒すごとに敵コスト10%分のゴールドを得る</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">敬虔 <span style='color:var(--ink-dim);font-size:.85rem'>（古典〜）</span></h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>制度</th><th>前提</th><th>効果</th></tr></thead><tbody>
+<tr><td><b>系統の採用時</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>すべての都市で神殿の建物の建築時に生産力+100%</li><li>すべての都市で寺院の建物の建築時に生産力+100%</li><li>合理主義を採用するまで、のみ利用可能</li></ul></td></tr>
+<tr><td>宗教の組織化</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>すべての神殿から信仰力+1</li><li>すべての寺院から信仰力+1</li></ul></td></tr>
+<tr><td>天命</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>余剰幸福度の50%が文化力に変換される</li></ul></td></tr>
+<tr><td>神権政治</td><td>宗教の組織化</td><td><ul class='exped-notes' style='margin:0'><li>寺院がゴールド+10%の効果を得る</li></ul></td></tr>
+<tr><td>改革</td><td>宗教の組織化</td><td><ul class='exped-notes' style='margin:0'><li>世界遺産があるすべての都市で文化力+33%</li><li>国家が黄金時代に入る</li></ul></td></tr>
+<tr><td>宗教的寛容</td><td>天命, 改革</td><td><ul class='exped-notes' style='margin:0'><li>新しい社会制度の文化力コストが-10%</li></ul></td></tr>
+<tr><td><b>系統の完成時</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>全都市で購入にかかる信仰力-20%</li><li>すべての聖地からゴールド+3・文化力+3</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">文化後援 <span style='color:var(--ink-dim);font-size:.85rem'>（中世〜）</span></h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>制度</th><th>前提</th><th>効果</th></tr></thead><tbody>
+<tr><td><b>系統の採用時</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>都市国家への影響力の減少-25%</li></ul></td></tr>
+<tr><td>博愛主義</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>ゴールドの寄付によって都市国家へ与える影響力が25%増加</li></ul></td></tr>
+<tr><td>美学</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>都市国家への影響力の基本値が20増加</li></ul></td></tr>
+<tr><td>スコラ学</td><td>博愛主義</td><td><ul class='exped-notes' style='margin:0'><li>同盟都市国家の生み出す科学力の25%を得る</li></ul></td></tr>
+<tr><td>文化外交</td><td>スコラ学</td><td><ul class='exped-notes' style='margin:0'><li>都市国家から贈られる資源の量+100%</li><li>都市国家から贈られた高級資源から得られる幸福度+50%</li></ul></td></tr>
+<tr><td>エリート教育</td><td>スコラ学, 美学</td><td><ul class='exped-notes' style='margin:0'><li>同盟都市国家から不定期に偉人が贈られる</li></ul></td></tr>
+<tr><td><b>系統の完成時</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>他文明の都市国家への影響力を33%早く低下させる</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">商業 <span style='color:var(--ink-dim);font-size:.85rem'>（中世〜）</span></h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>制度</th><th>前提</th><th>効果</th></tr></thead><tbody>
+<tr><td><b>系統の採用時</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>首都でゴールド+25%</li></ul></td></tr>
+<tr><td>海軍の栄誉</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>軍事水上のユニットに、移動+1</li><li>軍事水上のユニットに、視界+1</li><li>大提督が無償で出現</li><li>大提督のユニットに、移動+2</li></ul></td></tr>
+<tr><td>労働組合</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>輸送維持費-33%</li><li>すべての港からゴールド+1</li><li>すべての港湾からゴールド+1</li></ul></td></tr>
+<tr><td>商船隊</td><td>海軍の栄誉</td><td><ul class='exped-notes' style='margin:0'><li>すべての沿岸都市で生産力+3</li></ul></td></tr>
+<tr><td>重商主義</td><td>労働組合</td><td><ul class='exped-notes' style='margin:0'><li>全都市で購入にかかるゴールド-25%</li><li>すべての造幣所から科学力+1</li><li>すべての市場から科学力+1</li><li>すべての銀行から科学力+1</li><li>すべての証券取引所から科学力+1</li></ul></td></tr>
+<tr><td>保護貿易主義</td><td>重商主義</td><td><ul class='exped-notes' style='margin:0'><li>高級資源から得られる幸福度+2</li></ul></td></tr>
+<tr><td><b>系統の完成時</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>すべての交易所からゴールド+1</li><li>通商任務で得られるゴールド+100%</li><li>産業時代以降、都市の主流宗教が大規模宗教である都市すべてで大商人ユニットを1000信仰力で購入でき、コストは500ずつ上昇していく</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">合理主義 <span style='color:var(--ink-dim);font-size:.85rem'>（ルネサンス〜）</span></h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>制度</th><th>前提</th><th>効果</th></tr></thead><tbody>
+<tr><td><b>系統の採用時</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>国家が幸福である間、科学力+15%</li><li>敬虔を採用するまで、のみ利用可能</li></ul></td></tr>
+<tr><td>政教分離主義</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>すべての都市で専門家あたり科学力+2</li></ul></td></tr>
+<tr><td>人間主義</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>すべての大学から幸福度+1</li><li>すべての天文台から幸福度+1</li><li>すべての公立学校から幸福度+1</li></ul></td></tr>
+<tr><td>自由思想</td><td>政教分離主義</td><td><ul class='exped-notes' style='margin:0'><li>すべての交易所から科学力+1</li><li>大学が科学力+17%の効果を得る</li></ul></td></tr>
+<tr><td>主権</td><td>人間主義</td><td><ul class='exped-notes' style='margin:0'><li>すべての科学力の建物からゴールド+1</li></ul></td></tr>
+<tr><td>科学革命</td><td>自由思想</td><td><ul class='exped-notes' style='margin:0'><li>研究協定で獲得する科学力+50%</li></ul></td></tr>
+<tr><td><b>系統の完成時</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>テクノロジーを無償で2つ獲得</li><li>産業時代以降、都市の主流宗教が大規模宗教である都市すべてで大科学者ユニットを1000信仰力で購入でき、コストは500ずつ上昇していく</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">自由 <span style='color:var(--ink-dim);font-size:.85rem'>（産業時代〜）</span></h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>制度</th><th>前提</th><th>効果</th></tr></thead><tbody>
+<tr><td><b>系統の採用時</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>すべての都市で偉人生成+25%</li><li>独裁を採用するまで、のみ利用可能</li><li>秩序を採用するまで、のみ利用可能</li></ul></td></tr>
+<tr><td>憲法</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>すべての遺産から文化力+2</li></ul></td></tr>
+<tr><td>普通選挙</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>防衛時、都市の耐久力+33%</li></ul></td></tr>
+<tr><td>市民社会</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>すべての都市で専門家による食料消費が-50%</li></ul></td></tr>
+<tr><td>表現の自由</td><td>憲法</td><td><ul class='exped-notes' style='margin:0'><li>8つのユニットの維持費が無料になる</li></ul></td></tr>
+<tr><td>民主主義</td><td>市民社会</td><td><ul class='exped-notes' style='margin:0'><li>すべての都市で専門家からの不満が-50%</li></ul></td></tr>
+<tr><td><b>系統の完成時</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>偉人のタイル整備の産出量+100%</li><li>黄金時代の長さ+50%</li><li>産業時代以降、都市の主流宗教が大規模宗教である都市すべてで大芸術家ユニットを1000信仰力で購入でき、コストは500ずつ上昇していく</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">独裁 <span style='color:var(--ink-dim);font-size:.85rem'>（産業時代〜）</span></h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>制度</th><th>前提</th><th>効果</th></tr></thead><tbody>
+<tr><td><b>系統の採用時</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>すべてのユニットに、維持コスト-33%</li><li>都市を占領時その文化力の産出量の10倍を文化力として入手する</li><li>秩序を採用するまで、のみ利用可能</li><li>自由を採用するまで、のみ利用可能</li></ul></td></tr>
+<tr><td>ポピュリズム</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>損傷のユニットに、戦闘力+25%</li></ul></td></tr>
+<tr><td>軍事主義</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>すべてユニットの購入に必要なゴールド-33%</li></ul></td></tr>
+<tr><td>ファシズム</td><td>ポピュリズム, 軍事主義</td><td><ul class='exped-notes' style='margin:0'><li>戦略資源の産出量が+100%</li><li>大将軍のユニットに、移動+2</li></ul></td></tr>
+<tr><td>警察国家</td><td>軍事主義</td><td><ul class='exped-notes' style='margin:0'><li>すべての裁判所から幸福度+3</li><li>すべての都市で裁判所の建物の建築時に生産力+100%</li><li>すべての都市で敵のスパイ活動の効率が-25%</li></ul></td></tr>
+<tr><td>総力戦</td><td>警察国家, ファシズム</td><td><ul class='exped-notes' style='margin:0'><li>すべての都市で軍事ユニットの生産時に生産力+25%</li><li>すべての都市で新たに訓練された軍事ユニットが経験値を15得る</li></ul></td></tr>
+<tr><td><b>系統の完成時</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>攻撃時、軍事のユニットに、50ターンの間、戦闘力+25%</li><li>産業時代以降、都市の主流宗教が大規模宗教である都市すべてで大将軍ユニットを1000信仰力で購入でき、コストは500ずつ上昇していく</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">秩序 <span style='color:var(--ink-dim);font-size:.85rem'>（産業時代〜）</span></h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>制度</th><th>前提</th><th>効果</th></tr></thead><tbody>
+<tr><td><b>系統の採用時</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>すべての都市で幸福度+1</li><li>独裁を採用するまで、のみ利用可能</li><li>自由を採用するまで、のみ利用可能</li></ul></td></tr>
+<tr><td>統一戦線</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>共通の敵と戦争中に、軍事都市国家からのユニットの供給頻度が2倍になる</li></ul></td></tr>
+<tr><td>計画経済</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>工場が科学力+25%の効果を得る</li><li>すべての都市で工場の建物の建築時に生産力+100%</li></ul></td></tr>
+<tr><td>ナショナリズム</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>すべてのユニットに、友好国のタイルで戦闘時、戦闘力+15%</li></ul></td></tr>
+<tr><td>社会主義</td><td>計画経済</td><td><ul class='exped-notes' style='margin:0'><li>すべての都市ですべて建物の維持費が-15%</li></ul></td></tr>
+<tr><td>共産主義</td><td>社会主義</td><td><ul class='exped-notes' style='margin:0'><li>すべての都市で生産力+2</li><li>すべての鉱山から生産力+1</li><li>すべての採石場から生産力+1</li></ul></td></tr>
+<tr><td><b>系統の完成時</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>すべての都市で食料+2・生産力+2・科学力+2・ゴールド+2・文化力+2</li><li>産業時代以降、都市の主流宗教が大規模宗教である都市すべてで大技術者ユニットを1000信仰力で購入でき、コストは500ずつ上昇していく</li></ul></td></tr>
+</tbody></table></div>
+<!-- /UNCIV-POLICIES -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">制度名と効果文はゲームの公式日本語訳による。数値はゲーム本体のデータファイル（Unciv同梱の Civ V Gods &amp; Kings ルールセット）を、2026年10月2日時点のソースから読み取ったもの。アップデートやMODで変わることがある。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>AIが好む系統</h2></div>
+<!-- UNCIV-POLICYAI -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>系統</th><th>科学</th><th>文化</th><th>外交</th><th>制覇</th></tr></thead><tbody>
+<tr><td>伝統</td><td><b>5</b></td><td>5</td><td>5</td><td>5</td></tr>
+<tr><td>解放</td><td><b>10</b></td><td>10</td><td>10</td><td>10</td></tr>
+<tr><td>名誉</td><td><b>5</b></td><td>5</td><td>5</td><td>5</td></tr>
+<tr><td>敬虔</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>文化後援</td><td>5</td><td>5</td><td><b>10</b></td><td>5</td></tr>
+<tr><td>商業</td><td><b>5</b></td><td>5</td><td>5</td><td>5</td></tr>
+<tr><td>合理主義</td><td><b>10</b></td><td>10</td><td>10</td><td>10</td></tr>
+<tr><td>自由</td><td><b>10</b></td><td>10</td><td>5</td><td>5</td></tr>
+<tr><td>独裁</td><td>5</td><td>5</td><td>5</td><td><b>10</b></td></tr>
+<tr><td>秩序</td><td>5</td><td>5</td><td><b>10</b></td><td>5</td></tr>
+</tbody></table></div>
+<!-- /UNCIV-POLICYAI -->
+    <div class="panel" style="margin-top:12px;">
+      <ul class="exped-notes">
+        <li>数値は、その勝利を目指すAIにとっての各系統の重み（AIはこれに性格の補正を足す）。太字は各系統で最も高い値。</li>
+        <li><b>解放と合理主義</b>はどの勝利でも最高の重み（10）で、<b>信仰</b>は0。AIが信仰を取るのは性格による場合だけ。</li>
+        <li>イデオロギーは明確に分かれる。制覇なら<b>独裁</b>、文化・科学なら<b>自由</b>、外交なら<b>秩序</b>。</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">次の社会制度が急に高くなった。</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">都市を建設・併合した可能性が高い。極小〜中マップでは、傀儡以外の都市が1つ増えるごとにコストが10%上がる。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">傀儡都市でもコストは上がる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">上がらない。式は傀儡以外の都市だけを数える。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">信仰と合理主義は両方取れる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">取れない。どちらも、もう一方を採用する前しか選べない。3つのイデオロギーも互いに排他。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">シヴィライゼーション5と同じ？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">構成は「神々と王」に沿っているが、ここの式はUnciv自身のコード。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/unciv/">Unciv 攻略ガイド</a>
+      <a href="/ja/games/unciv/civilizations/">文明一覧</a>
+      <a href="/ja/games/unciv/difficulty/">難易度の違い</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv ソースコード（yairm210/Unciv、MPL-2.0）</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv データファイル：Civ V Gods & Kings ルールセット（2026-10-02 時点）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/translations/Japanese.properties" target="_blank" rel="noopener">Unciv 公式日本語訳ファイル（Japanese.properties）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/core/src/com/unciv/logic/civilization/managers/PolicyManager.kt" target="_blank" rel="noopener">Unciv ソース：PolicyManager.kt（社会制度コストの式）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+<script src="/assets/games/unciv-policy-cost.js"></script>
+</body>
+</html>

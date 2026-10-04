@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unciv（オープンソース版シヴィライゼーション5）の技術ツリー。ゲームのデータから全80技術の基本コスト・前提技術・解禁されるものをまとめ、都市数・マップサイズ・既知文明による技術コストの変化も解説。">
+<title>Unciv 技術ツリー：全技術のコストと解禁内容</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/unciv/tech-tree/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/tech-tree/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/tech-tree/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/tech-tree/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Unciv 技術ツリー：全技術のコストと解禁内容">
+<meta property="og:description" content="Unciv（オープンソース版シヴィライゼーション5）の技術ツリー。ゲームのデータから全80技術の基本コスト・前提技術・解禁されるものをまとめ、都市数・マップサイズ・既知文明による技術コストの変化も解説。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/unciv/tech-tree/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv 技術ツリー：全技術のコストと解禁内容">
+<meta name="twitter:description" content="Unciv（オープンソース版シヴィライゼーション5）の技術ツリー。ゲームのデータから全80技術の基本コスト・前提技術・解禁されるものをまとめ、都市数・マップサイズ・既知文明による技術コストの変化も解説。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv 技術ツリー：全技術のコストと解禁内容",
+      "description": "Unciv（オープンソース版シヴィライゼーション5）の技術ツリー。ゲームのデータから全80技術の基本コスト・前提技術・解禁されるものをまとめ、都市数・マップサイズ・既知文明による技術コストの変化も解説。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/unciv/tech-tree/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv 技術ツリー：全技術のコストと解禁内容",
+          "item": "https://kouryakulab.com/ja/games/unciv/tech-tree/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/unciv/"><span class="arrow">←</span> Unciv 攻略ガイド</a>
+    <div>
+      <span class="eyebrow">UNCIV ・ 技術ツリー</span>
+      <h1>技術ツリー：全技術と解禁内容</h1>
+      <p class="sub">全80技術のコスト・前提・解禁内容と、コスト式に隠れた要素をまとめた。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">Uncivの技術ツリーは<b>18列・80技術</b>。農業（基本コスト20）から未来技術（9,500）まで、各技術の基本コスト・前提技術・解禁されるものをすべて載せた。</p>
+      <p style="margin:0;">コードには、ツリーに表示されない要素が2つある。<b>都市が1つ増えるごとに技術コストが5%上がる</b>（極小〜中。大3.75%、極大2.5%）こと、そして<b>出会った文明がすでに研究済みの技術は安くなる</b>こと（残っている主要文明がすべて研究済みなら最大30%安い）。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事はUncivのTechsデータファイルとソースコードの技術コストの式を分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>時代別の全技術</h2></div>
+<!-- UNCIV-TECHS -->
+<h3 style="margin:22px 0 8px;">太古</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>技術</th><th>基本コスト</th><th>前提技術</th><th>解禁されるもの</th></tr></thead><tbody>
+<tr><td><b>農業</b></td><td>20</td><td>—</td><td><b>ユニット:</b> 労働者、開拓者、斥候、戦士、マオリの戦士 *、ジャガー戦士 *、投槍兵 *<br><b>タイル整備:</b> 農場</td></tr>
+<tr><td><b>陶器</b></td><td>35</td><td>農業</td><td><b>建物:</b> 穀物庫、神殿、マヤのピラミッド *</td></tr>
+<tr><td><b>畜産</b></td><td>35</td><td>農業</td><td><b>タイル整備:</b> 牧草地<br><b>資源の発見:</b> 馬</td></tr>
+<tr><td><b>弓術</b></td><td>35</td><td>農業</td><td><b>ユニット:</b> 弓兵、バビロニア弓兵 *、投石兵 *<br><b>遺産:</b> アルテミス神殿</td></tr>
+<tr><td><b>採鉱</b></td><td>35</td><td>農業</td><td><b>タイル整備:</b> 鉱山、森林削除</td></tr>
+<tr><td><b>帆走</b></td><td>55</td><td>陶器</td><td><b>ユニット:</b> 作業船、三段櫂船、五段櫂船 *、ドロモン *<br><b>タイル整備:</b> 漁船</td></tr>
+<tr><td><b>暦</b></td><td>55</td><td>陶器</td><td><b>建物:</b> 石工所<br><b>遺産:</b> ストーンヘンジ<br><b>タイル整備:</b> 大規模農場</td></tr>
+<tr><td><b>筆記</b></td><td>55</td><td>陶器</td><td><b>建物:</b> 図書館、製紙工場 *<br><b>遺産:</b> アレクサンドリア図書館</td></tr>
+<tr><td><b>トラップ</b></td><td>55</td><td>畜産</td><td><b>建物:</b> サーカス<br><b>タイル整備:</b> キャンプ</td></tr>
+<tr><td><b>車輪</b></td><td>55</td><td>畜産、弓術</td><td><b>ユニット:</b> 戦車弓兵、重装チャリオット兵 *、弓騎兵 *、軍用象 *<br><b>建物:</b> 水車小屋、水上庭園 *<br><b>タイル整備:</b> 道路</td></tr>
+<tr><td><b>石工術</b></td><td>55</td><td>採鉱</td><td><b>建物:</b> 防壁、バビロニアの城壁 *<br><b>遺産:</b> ピラミッド、マウソロス霊廟<br><b>タイル整備:</b> 採石場、湿原削除</td></tr>
+<tr><td><b>青銅器</b></td><td>55</td><td>採鉱</td><td><b>ユニット:</b> 槍兵、重装歩兵 *、不死隊 *、戦闘羊 *、ピクト戦士 *<br><b>建物:</b> 兵舎、クレポスト *<br><b>遺産:</b> ゼウス像<br><b>タイル整備:</b> ジャングル削除</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">古典</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>技術</th><th>基本コスト</th><th>前提技術</th><th>解禁されるもの</th></tr></thead><tbody>
+<tr><td><b>光学</b></td><td>85</td><td>帆走</td><td><b>建物:</b> 灯台<br><b>遺産:</b> ファロス灯台</td></tr>
+<tr><td><b>騎乗</b></td><td>105</td><td>トラップ、車輪</td><td><b>ユニット:</b> 騎兵、ヘタイロイ *、マルミミゾウ *、カタフラクト *<br><b>建物:</b> 厩舎<br><b>国家遺産:</b> キルクス・マクシムス</td></tr>
+<tr><td><b>数学</b></td><td>105</td><td>車輪</td><td><b>ユニット:</b> カタパルト、投石機 *<br><b>建物:</b> 裁判所<br><b>遺産:</b> 空中庭園</td></tr>
+<tr><td><b>建築学</b></td><td>105</td><td>石工術、車輪</td><td><b>ユニット:</b> 戦闘弓射手<br><b>建物:</b> コロシアム<br><b>遺産:</b> 兵馬俑<br><b>タイル整備:</b> 製材所、モアイ *、棚田 *</td></tr>
+<tr><td><b>哲学</b></td><td>175</td><td>筆記、暦</td><td><b>建物:</b> 寺院、陵墓 *、泥のピラミッド状モスク *<br><b>遺産:</b> アポロ神殿<br><b>国家遺産:</b> 国立大学</td></tr>
+<tr><td><b>演劇と詩</b></td><td>175</td><td>筆記</td><td><b>建物:</b> 円形劇場<br><b>国家遺産:</b> 民族叙事詩</td></tr>
+<tr><td><b>通貨</b></td><td>175</td><td>数学</td><td><b>建物:</b> 市場、バザー *、造幣所<br><b>遺産:</b> ペトラ</td></tr>
+<tr><td><b>工学</b></td><td>175</td><td>数学、建築学</td><td><b>建物:</b> 用水路<br><b>遺産:</b> 万里の長城<br><b>タイル整備:</b> 要塞</td></tr>
+<tr><td><b>鉄器</b></td><td>175</td><td>青銅器</td><td><b>ユニット:</b> 剣士、レギオン *、モホーク族の戦士 *<br><b>遺産:</b> ロードス島の巨神像<br><b>国家遺産:</b> 英雄叙事詩<br><b>資源の発見:</b> 鉄</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">中世</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>技術</th><th>基本コスト</th><th>前提技術</th><th>解禁されるもの</th></tr></thead><tbody>
+<tr><td><b>神学</b></td><td>275</td><td>哲学、演劇と詩</td><td><b>建物:</b> 庭園<br><b>遺産:</b> ハギア・ソフィア聖堂、泥のモスク<br><b>国家遺産:</b> 大寺院</td></tr>
+<tr><td><b>官吏</b></td><td>275</td><td>通貨、騎乗、演劇と詩</td><td><b>ユニット:</b> 長槍兵、ランツクネヒト *<br><b>遺産:</b> チチェン・イツァ</td></tr>
+<tr><td><b>ギルド</b></td><td>275</td><td>通貨</td><td><b>遺産:</b> マチュ・ピチュ<br><b>国家遺産:</b> 国庫<br><b>タイル整備:</b> 交易所、干拓地 *</td></tr>
+<tr><td><b>錬金</b></td><td>275</td><td>工学、鉄器</td><td><b>ユニット:</b> バーサーカー *<br><b>建物:</b> 工房、ロングハウス *、溶鉱炉</td></tr>
+<tr><td><b>羅針盤</b></td><td>375</td><td>光学、神学</td><td><b>ユニット:</b> ガレアス船<br><b>建物:</b> 港</td></tr>
+<tr><td><b>教育</b></td><td>485</td><td>神学、官吏</td><td><b>建物:</b> 大学、ワット *<br><b>遺産:</b> アンコールワット<br><b>国家遺産:</b> オックスフォード大学</td></tr>
+<tr><td><b>騎士道</b></td><td>485</td><td>官吏、ギルド</td><td><b>ユニット:</b> 騎士、ラクダ弓兵 *、コンキスタドール *、ナレースワンの象 *、イスラム騎兵隊 *、ケシク *<br><b>建物:</b> 城、ムガル要塞 *<br><b>遺産:</b> アランブラ</td></tr>
+<tr><td><b>機械</b></td><td>485</td><td>ギルド、工学</td><td><b>ユニット:</b> 弩兵、連弩兵 *、長弓兵 *<br><b>国家遺産:</b> 製鉄所</td></tr>
+<tr><td><b>物理学</b></td><td>485</td><td>錬金</td><td><b>ユニット:</b> トレビュシェット、火車 *<br><b>遺産:</b> ノートルダム大聖堂</td></tr>
+<tr><td><b>鉄鋼</b></td><td>485</td><td>錬金</td><td><b>ユニット:</b> 長剣士、侍 *<br><b>建物:</b> 武器庫</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">ルネサンス</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>技術</th><th>基本コスト</th><th>前提技術</th><th>解禁されるもの</th></tr></thead><tbody>
+<tr><td><b>天文学</b></td><td>780</td><td>羅針盤、教育</td><td><b>ユニット:</b> キャラベル船、亀甲船 *<br><b>建物:</b> 天文台</td></tr>
+<tr><td><b>音響学</b></td><td>780</td><td>教育</td><td><b>建物:</b> オペラハウス、ケイリー・ホール *<br><b>遺産:</b> システィーナ礼拝堂</td></tr>
+<tr><td><b>銀行</b></td><td>780</td><td>騎士道、教育</td><td><b>建物:</b> 銀行、サトラップの王宮 *、交番<br><b>遺産:</b> 紫禁城</td></tr>
+<tr><td><b>活版印刷</b></td><td>780</td><td>機械、物理学、騎士道</td><td><b>建物:</b> 劇場<br><b>遺産:</b> ピサの斜塔</td></tr>
+<tr><td><b>火薬</b></td><td>780</td><td>物理学、鉄鋼</td><td><b>ユニット:</b> マスケット兵、銃士隊 *、イェニチェリ *、ミニットマン *、テルシオ *<br><b>遺産:</b> 姫路城</td></tr>
+<tr><td><b>航海術</b></td><td>1150</td><td>天文学</td><td><b>ユニット:</b> 私掠船、海の乞食団 *、フリゲート艦、戦列艦 *<br><b>建物:</b> 港湾</td></tr>
+<tr><td><b>建築</b></td><td>1150</td><td>音響学、銀行</td><td><b>遺産:</b> タージ・マハル、南京の陶塔<br><b>国家遺産:</b> エルミタージュ美術館</td></tr>
+<tr><td><b>経済学</b></td><td>1150</td><td>銀行、活版印刷</td><td><b>建物:</b> 風車、コーヒーハウス *</td></tr>
+<tr><td><b>冶金</b></td><td>1150</td><td>活版印刷、火薬</td><td><b>ユニット:</b> 槍騎兵、スィパーヒー *、ハッカペル *<br><b>建物:</b> 備蓄<br><b>遺産:</b> クレムリン宮殿</td></tr>
+<tr><td><b>化学</b></td><td>1150</td><td>火薬</td><td><b>ユニット:</b> カノン砲</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">産業時代</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>技術</th><th>基本コスト</th><th>前提技術</th><th>解禁されるもの</th></tr></thead><tbody>
+<tr><td><b>考古学</b></td><td>1600</td><td>航海術、建築</td><td><b>建物:</b> 博物館<br><b>遺産:</b> ルーブル美術館</td></tr>
+<tr><td><b>科学理論</b></td><td>1600</td><td>建築、経済学</td><td><b>建物:</b> 公立学校</td></tr>
+<tr><td><b>工業化</b></td><td>1600</td><td>経済学</td><td><b>ユニット:</b> ガトリング砲<br><b>建物:</b> 工場<br><b>遺産:</b> ビッグベン<br><b>資源の発見:</b> 石炭</td></tr>
+<tr><td><b>ライフリング</b></td><td>1600</td><td>経済学、冶金</td><td><b>ユニット:</b> ライフル兵、ノルウェーのスキー歩兵 *、カロライン *、マハール・セファリ *</td></tr>
+<tr><td><b>軍事学</b></td><td>1600</td><td>冶金、化学</td><td><b>ユニット:</b> 騎兵隊、コサック騎馬兵 *、軽騎兵 *<br><b>建物:</b> 士官学校<br><b>遺産:</b> ブランデンブルク門</td></tr>
+<tr><td><b>肥料</b></td><td>1600</td><td>化学</td><td>—</td></tr>
+<tr><td><b>生物学</b></td><td>2350</td><td>考古学、科学理論</td><td><b>建物:</b> 病院<br><b>タイル整備:</b> 油井<br><b>資源の発見:</b> 石油</td></tr>
+<tr><td><b>電気</b></td><td>2350</td><td>科学理論</td><td><b>建物:</b> 証券取引所、水力発電所、警察署<br><b>資源の発見:</b> アルミニウム</td></tr>
+<tr><td><b>蒸気機関</b></td><td>2350</td><td>工業化、科学理論、ライフリング</td><td><b>ユニット:</b> 装甲艦</td></tr>
+<tr><td><b>ダイナマイト</b></td><td>2350</td><td>肥料、軍事学</td><td><b>ユニット:</b> 大砲</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">現代</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>技術</th><th>基本コスト</th><th>前提技術</th><th>解禁されるもの</th></tr></thead><tbody>
+<tr><td><b>冷蔵技術</b></td><td>3100</td><td>生物学、電気</td><td><b>ユニット:</b> 潜水艦<br><b>建物:</b> スタジアム<br><b>タイル整備:</b> 海上油田</td></tr>
+<tr><td><b>無線通信</b></td><td>3100</td><td>電気</td><td><b>建物:</b> 放送塔<br><b>遺産:</b> エッフェル塔<br><b>国家遺産:</b> 国家情報機関</td></tr>
+<tr><td><b>共通規格</b></td><td>3100</td><td>電気、蒸気機関</td><td><b>ユニット:</b> 第1次大戦歩兵、外人部隊 *<br><b>建物:</b> 軍事基地<br><b>遺産:</b> 自由の女神</td></tr>
+<tr><td><b>飛行機</b></td><td>3100</td><td>蒸気機関</td><td><b>ユニット:</b> 三翼飛行機、第1次大戦爆撃機</td></tr>
+<tr><td><b>鉄道</b></td><td>3100</td><td>蒸気機関、ダイナマイト</td><td><b>遺産:</b> ノイシュヴァンシュタイン城<br><b>タイル整備:</b> 鉄道</td></tr>
+<tr><td><b>プラスチック</b></td><td>4100</td><td>無線通信、共通規格</td><td><b>ユニット:</b> 歩兵<br><b>建物:</b> 研究所<br><b>遺産:</b> コルコバードのキリスト像</td></tr>
+<tr><td><b>電子工学</b></td><td>4100</td><td>共通規格、飛行機</td><td><b>ユニット:</b> 航空母艦、戦艦</td></tr>
+<tr><td><b>弾道学</b></td><td>4100</td><td>飛行機</td><td><b>ユニット:</b> マシンガン、対空砲</td></tr>
+<tr><td><b>内燃機関</b></td><td>4100</td><td>鉄道</td><td><b>ユニット:</b> 陸上船、駆逐艦</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">原子力時代</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>技術</th><th>基本コスト</th><th>前提技術</th><th>解禁されるもの</th></tr></thead><tbody>
+<tr><td><b>医薬品</b></td><td>5100</td><td>プラスチック、冷蔵技術</td><td><b>ユニット:</b> 海兵隊<br><b>建物:</b> 医学研究所</td></tr>
+<tr><td><b>原子理論</b></td><td>5100</td><td>プラスチック、電子工学</td><td><b>国家遺産:</b> マンハッタン計画<br><b>資源の発見:</b> ウラン</td></tr>
+<tr><td><b>レーダー</b></td><td>5100</td><td>弾道学、電子工学</td><td><b>ユニット:</b> 戦闘機、ゼロ戦 *、爆撃機、B17 *、空挺部隊</td></tr>
+<tr><td><b>連合部隊</b></td><td>5100</td><td>弾道学、内燃機関</td><td><b>ユニット:</b> 戦車、パンツァー *、対戦車砲<br><b>遺産:</b> ペンタゴン</td></tr>
+<tr><td><b>生態学</b></td><td>6400</td><td>原子理論、医薬品</td><td><b>建物:</b> 太陽熱発電、リサイクルセンター<br><b>遺産:</b> シドニー・オペラハウス</td></tr>
+<tr><td><b>核分裂反応</b></td><td>6400</td><td>原子理論、レーダー</td><td><b>ユニット:</b> 原子爆弾<br><b>建物:</b> 原子力発電所</td></tr>
+<tr><td><b>ロケット工学</b></td><td>6400</td><td>レーダー</td><td><b>ユニット:</b> ロケット砲、移動式SAM<br><b>国家遺産:</b> アポロ計画</td></tr>
+<tr><td><b>コンピュータ</b></td><td>6400</td><td>連合部隊、レーダー</td><td><b>ユニット:</b> ガンシップ<br><b>遺産:</b> グレートファイアーウォール</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">情報時代</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>技術</th><th>基本コスト</th><th>前提技術</th><th>解禁されるもの</th></tr></thead><tbody>
+<tr><td><b>遠距離通信</b></td><td>7700</td><td>生態学</td><td><b>ユニット:</b> 原子力潜水艦<br><b>建物:</b> 耐爆壕<br><b>遺産:</b> CNタワー</td></tr>
+<tr><td><b>機動戦術</b></td><td>7700</td><td>生態学、核分裂反応</td><td><b>ユニット:</b> 機械化歩兵</td></tr>
+<tr><td><b>先進弾道学</b></td><td>7700</td><td>核分裂反応、ロケット工学</td><td><b>ユニット:</b> 誘導ミサイル、核ミサイル、宇宙船推進装置</td></tr>
+<tr><td><b>人工衛星</b></td><td>7700</td><td>ロケット工学</td><td><b>ユニット:</b> 宇宙船コクピット<br><b>遺産:</b> ハッブル宇宙望遠鏡</td></tr>
+<tr><td><b>ロボット工学</b></td><td>7700</td><td>ロケット工学、コンピュータ</td><td><b>ユニット:</b> ミサイル巡洋艦<br><b>建物:</b> 宇宙船工場</td></tr>
+<tr><td><b>レーザー</b></td><td>7700</td><td>コンピュータ</td><td><b>ユニット:</b> 現代機甲部隊、ジェット戦闘機</td></tr>
+<tr><td><b>グローバル化</b></td><td>8800</td><td>遠距離通信</td><td><b>遺産:</b> 国際連合</td></tr>
+<tr><td><b>素粒子物理学</b></td><td>8800</td><td>遠距離通信、機動戦術、先進弾道学</td><td><b>ユニット:</b> 宇宙船エンジン</td></tr>
+<tr><td><b>核融合反応</b></td><td>8800</td><td>先進弾道学、人工衛星、ロボット工学</td><td><b>ユニット:</b> 巨大殺人ロボット</td></tr>
+<tr><td><b>ナノテクノロジー</b></td><td>8800</td><td>ロボット工学</td><td><b>ユニット:</b> 宇宙船冷凍睡眠室</td></tr>
+<tr><td><b>ステルス</b></td><td>8800</td><td>ロボット工学、レーザー</td><td><b>ユニット:</b> ステルス爆撃機</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">未来</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>技術</th><th>基本コスト</th><th>前提技術</th><th>解禁されるもの</th></tr></thead><tbody>
+<tr><td><b>未来技術</b></td><td>9500</td><td>グローバル化、素粒子物理学、核融合反応、ナノテクノロジー、ステルス</td><td>—</td></tr>
+</tbody></table></div>
+<!-- /UNCIV-TECHS -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">「*」は文明固有のユニット・建物・タイル整備。基本コストは難易度・ゲーム速度・マップサイズ・都市数を掛ける前の値。名称はゲームの公式日本語訳による。数値はゲーム本体のデータファイル（Unciv同梱の Civ V Gods &amp; Kings ルールセット）を、2026年10月2日時点のソースから読み取ったもの。アップデートやMODで変わることがある。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>技術コストの計算方法</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>要素</th><th>効果（TechManager.ktより）</th></tr></thead>
+        <tbody>
+        <tr><td>難易度</td><td>あなたのコスト × 研究補正（開拓者90%、酋長95%、将軍以上100%）。人間のプレイヤーのみ。</td></tr>
+        <tr><td>ゲーム速度</td><td>クイック67%、スタンダード100%、エピック150%、マラソン300%。</td></tr>
+        <tr><td>マップサイズ</td><td>中 ×1.1、大 ×1.2、極大 ×1.3。</td></tr>
+        <tr><td>都市数</td><td>2都市目から1都市ごとに、極小〜中で+5%、大+3.75%、極大+2.5%（傀儡は数えない）。</td></tr>
+        <tr><td>研究済みの既知文明</td><td>コスト ÷（1 + 0.3 × 出会った文明のうち研究済みの割合）。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">ツリーの数値より研究が遅いのはなぜ？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">マップサイズと都市数が技術コストを上げるため。大マップだけで20%増え、さらに1都市ごとに3.75%増える。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">他の文明と出会うと研究が速くなる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">なる。出会った文明がすでに研究した技術は、あなたにとって安くなる。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">時代ごとのユニット性能は？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;"><a href='/ja/games/unciv/units/'>ユニット一覧</a>を参照。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/unciv/">Unciv 攻略ガイド</a>
+      <a href="/ja/games/unciv/civilizations/">文明一覧</a>
+      <a href="/ja/games/unciv/difficulty/">難易度の違い</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv ソースコード（yairm210/Unciv、MPL-2.0）</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv データファイル：Civ V Gods & Kings ルールセット（2026-10-02 時点）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/translations/Japanese.properties" target="_blank" rel="noopener">Unciv 公式日本語訳ファイル（Japanese.properties）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/core/src/com/unciv/logic/civilization/managers/TechManager.kt" target="_blank" rel="noopener">Unciv ソース：TechManager.kt（技術コストの式）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

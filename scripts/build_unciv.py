@@ -30,7 +30,13 @@ PAGES = {
     "civs": {"en": "games/unciv/civilizations/index.html", "ja": "ja/games/unciv/civilizations/index.html"},
     "units": {"en": "games/unciv/units/index.html", "ja": "ja/games/unciv/units/index.html"},
     "diff": {"en": "games/unciv/difficulty/index.html", "ja": "ja/games/unciv/difficulty/index.html"},
+    "policies": {"en": "games/unciv/policies/index.html", "ja": "ja/games/unciv/policies/index.html"},
+    "wonders": {"en": "games/unciv/wonders/index.html", "ja": "ja/games/unciv/wonders/index.html"},
+    "techs": {"en": "games/unciv/tech-tree/index.html", "ja": "ja/games/unciv/tech-tree/index.html"},
+    "beliefs": {"en": "games/unciv/beliefs/index.html", "ja": "ja/games/unciv/beliefs/index.html"},
 }
+STATS = ["food", "production", "gold", "science", "culture", "faith", "happiness"]
+SKIP_UNIQUE = ("for AI decisions", "leader title", "global alert", "Comment", "hidden from users", "Never destroyed", "Indicates the capital")
 OUT = {"civs": os.path.join(ROOT, "assets/data/unciv-civs.json"),
        "units": os.path.join(ROOT, "assets/data/unciv-units.json")}
 
@@ -112,7 +118,7 @@ class Tr:
         return body, params
 
     # パラメータとして使われたときだけ訳語を差し替える（"Land" が「領土」になる等の誤訳対策）
-    PARAM_OVERRIDE = {"Land": "地上", "Water": "水上"}
+    PARAM_OVERRIDE = {"Land": "地上", "Water": "水上", "Strategic": "戦略"}
 
     def word(self, s):
         if s in self.PARAM_OVERRIDE:
@@ -126,6 +132,8 @@ class Tr:
             return "".join(self.word(p) for p in parts)
         if "[" in s:
             return self.sentence(s)
+        if ", " in s and all(re.fullmatch(r"[+-]?\d+ .+", x) for x in s.split(", ")):  # "+1 Gold, +1 Happiness"
+            return "・".join(self.word(x) for x in s.split(", "))
         m = re.fullmatch(r"([+-]?\d+) (.+)", s)  # "+2 Culture"
         if m and m.group(2) in self.exact:
             return f"{self.exact[m.group(2)]}{m.group(1)}"
@@ -330,8 +338,161 @@ def main():
         t2 = f'<div class="table-scroll" style="margin-top:14px"><table class="glossary"><thead><tr>{h2}</tr></thead><tbody>\n' + "\n".join(r2) + "\n</tbody></table></div>"
         return t1 + "\n" + t2
 
+    # ---------- policies / wonders / techs / beliefs ----------
+    policies, beliefs, imps, ress = (load(f) for f in ("Policies.json", "Beliefs.json", "TileImprovements.json", "TileResources.json"))
+    col_of = {}
+    for col in techs:
+        for t in col["techs"]:
+            col_of[t["name"]] = col
+
+    def uq(lst, lang):
+        out = []
+        for u in lst or []:
+            if any(k in u for k in SKIP_UNIQUE):
+                continue
+            if lang == "en":
+                out.append(clean_en(u))
+            else:
+                t = tr.unique(u)
+                out.append(t if t else clean_en(u))
+        return out
+
+    def stats(x, lang):
+        out = []
+        for k in STATS:
+            v = x.get(k)
+            if v:
+                name = k.capitalize()
+                out.append(f"+{v:g} {name}" if lang == "en" else f"{ja(name)}+{v:g}")
+        for gp, v in (x.get("greatPersonPoints") or {}).items():
+            out.append(f"+{v} {gp} points" if lang == "en" else f"{ja(gp)}ポイント+{v}")
+        return out
+
+    def ul(items):
+        return "<ul class='exped-notes' style='margin:0'>" + "".join(f"<li>{e(i)}</li>" for i in items) + "</ul>" if items else "—"
+
+    def tbl(head, rows, extra=""):
+        h = "".join(f"<th>{x}</th>" for x in head)
+        return f'<div class="table-scroll"{extra}><table class="glossary"><thead><tr>{h}</tr></thead><tbody>\n' + "\n".join("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>" for r in rows) + "\n</tbody></table></div>"
+
+    VIC = ["Scientific", "Cultural", "Diplomatic", "Domination"]
+    VIC_JA = {"Scientific": "科学", "Cultural": "文化", "Diplomatic": "外交", "Domination": "制覇", "Neutral": "中立"}
+
+    def policy_rows(lang):
+        out = []
+        for br in policies:
+            era = br.get("era", "")
+            title = f"{br['name']} <span style='color:var(--ink-dim);font-size:.85rem'>({era})</span>" if lang == "en" else f"{ja(br['name'])} <span style='color:var(--ink-dim);font-size:.85rem'>（{ja(era)}〜）</span>"
+            out.append(f'<h3 style="margin:22px 0 8px;">{title}</h3>')
+            rows = [[("<b>Adopting the branch</b>" if lang == "en" else "<b>系統の採用時</b>"), "—", ul(uq(br.get("uniques"), lang))]]
+            for pol in br.get("policies", []):
+                done = pol["name"].endswith("Complete")
+                nm = ("<b>Branch complete</b>" if lang == "en" else "<b>系統の完成時</b>") if done else e(pol["name"] if lang == "en" else ja(pol["name"]))
+                req = ", ".join(e(r if lang == "en" else ja(r)) for r in pol.get("requires", [])) or "—"
+                rows.append([nm, "—" if done else req, ul(uq(pol.get("uniques"), lang))])
+            out.append(tbl(["Policy", "Requires", "Effect"] if lang == "en" else ["制度", "前提", "効果"], rows))
+        return "\n".join(out)
+
+    def policy_ai(lang):
+        rows = []
+        for br in policies:
+            pr = br.get("priorities", {})
+            top = max(VIC, key=lambda v: pr.get(v, 0))
+            rows.append([e(br["name"] if lang == "en" else ja(br["name"]))] + [(f"<b>{pr.get(v, 0)}</b>" if v == top and pr.get(v, 0) > 0 else str(pr.get(v, 0))) for v in VIC])
+        return tbl(["Branch"] + VIC if lang == "en" else ["系統"] + [VIC_JA[v] for v in VIC], rows)
+
+    def policy_calc(lang):
+        d = {x["name"]: x.get("policyCostModifier", 1) for x in diffs}
+        cfg = {"diff": d, "speed": {"Quick": 0.67, "Standard": 1.0, "Epic": 1.5, "Marathon": 3.0},
+               "map": {"Tiny": 0.1, "Small": 0.1, "Medium": 0.1, "Large": 0.075, "Huge": 0.05}}
+        return f'<script>window.UNCIV_POLICY_CFG = {json.dumps(cfg)};</script>'
+
+    wonders = [x for x in buildings if x.get("isWonder")]
+    nwonders = [x for x in buildings if x.get("isNationalWonder")]
+
+    def bcost(x):
+        if "cost" in x:
+            return x["cost"]
+        c = col_of.get(x.get("requiredTech"))
+        return (c["wonderCost"] if (x.get("isWonder") or x.get("isNationalWonder")) else c["buildingCost"]) if c else 0
+
+    def wonder_rows(lang):
+        out = []
+        for era in era_order:
+            ws = [w for w in wonders if era_of.get(w.get("requiredTech")) == era]
+            if not ws:
+                continue
+            out.append(f'<h3 style="margin:22px 0 8px;">{e(era if lang == "en" else ja(era))}</h3>')
+            rows = []
+            for w in sorted(ws, key=lambda w: (bcost(w), w["name"])):
+                rows.append([f"<b>{e(w['name'] if lang == 'en' else ja(w['name']))}</b>", e(w["requiredTech"] if lang == "en" else ja(w["requiredTech"])), bcost(w), ul(stats(w, lang) + uq(w.get("uniques"), lang))])
+            out.append(tbl(["Wonder", "Tech", "Cost", "Effects"] if lang == "en" else ["遺産", "技術", "コスト", "効果"], rows))
+        return "\n".join(out)
+
+    def nwonder_rows(lang):
+        rows = []
+        for w in sorted(nwonders, key=lambda w: (era_order.index(era_of[w["requiredTech"]]) if w.get("requiredTech") in era_of else -1, w["name"])):
+            tech = w.get("requiredTech")
+            rows.append([f"<b>{e(w['name'] if lang == 'en' else ja(w['name']))}</b>",
+                         e((tech if lang == "en" else ja(tech)) if tech else "—"),
+                         e((w.get("requiredBuilding") if lang == "en" else ja(w.get("requiredBuilding", ""))) or "—"),
+                         bcost(w) or "—", ul(stats(w, lang) + uq(w.get("uniques"), lang))])
+        return tbl(["National wonder", "Tech", "Needs (in city)", "Cost", "Effects"] if lang == "en" else ["国家遺産", "技術", "必要な建物", "コスト", "効果"], rows)
+
+    def tech_rows(lang):
+        out = []
+        unlock = {}
+        for u in units:
+            if u.get("requiredTech") and u.get("uniqueTo") != "Barbarians":
+                unlock.setdefault(u["requiredTech"], []).append(("unit", u["name"], u.get("uniqueTo")))
+        for b in buildings:
+            if b.get("requiredTech"):
+                kind = "wonder" if b.get("isWonder") else ("national" if b.get("isNationalWonder") else "building")
+                unlock.setdefault(b["requiredTech"], []).append((kind, b["name"], b.get("uniqueTo")))
+        for i in imps:
+            if i.get("techRequired"):
+                unlock.setdefault(i["techRequired"], []).append(("improvement", i["name"], i.get("uniqueTo")))
+        for r in ress:
+            if r.get("revealedBy"):
+                unlock.setdefault(r["revealedBy"], []).append(("resource", r["name"], None))
+        lab = {"en": {"unit": "Units", "building": "Buildings", "wonder": "Wonders", "national": "National wonders", "improvement": "Improvements", "resource": "Reveals"},
+               "ja": {"unit": "ユニット", "building": "建物", "wonder": "遺産", "national": "国家遺産", "improvement": "タイル整備", "resource": "資源の発見"}}[lang]
+        for col_i, col in enumerate(techs):
+            pass
+        for era in era_order:
+            cols = [c for c in techs if c["era"] == era]
+            out.append(f'<h3 style="margin:22px 0 8px;">{e(era if lang == "en" else ja(era))}</h3>')
+            rows = []
+            for c in cols:
+                for t in sorted(c["techs"], key=lambda t: t["row"]):
+                    groups = []
+                    for kind in ("unit", "building", "wonder", "national", "improvement", "resource"):
+                        items = [(n if lang == "en" else ja(n)) + ((" *" ) if ut else "") for k, n, ut in unlock.get(t["name"], []) if k == kind and ut != "Barbarians"]
+                        if items:
+                            groups.append(f"<b>{lab[kind]}:</b> " + e(", ".join(items) if lang == "en" else "、".join(items)))
+                    pre = ", ".join(t.get("prerequisites", [])) if lang == "en" else "、".join(ja(x) for x in t.get("prerequisites", []))
+                    rows.append([f"<b>{e(t['name'] if lang == 'en' else ja(t['name']))}</b>", t.get("cost", c["techCost"]), e(pre) or "—", "<br>".join(groups) or "—"])
+            out.append(tbl(["Tech", "Base cost", "Requires", "Unlocks"] if lang == "en" else ["技術", "基本コスト", "前提技術", "解禁されるもの"], rows))
+        return "\n".join(out)
+
+    BTYPES = [("Pantheon", "Pantheon beliefs", "パンテオンの信仰"), ("Founder", "Founder beliefs", "創始者の信仰"), ("Follower", "Follower beliefs", "信者の信仰"), ("Enhancer", "Enhancer beliefs", "強化の信仰")]
+
+    def belief_rows(lang):
+        out = []
+        for key, en_t, ja_t in BTYPES:
+            bs = [b for b in beliefs if b["type"] == key]
+            out.append(f'<h3 style="margin:22px 0 8px;">{en_t if lang == "en" else ja_t} ({len(bs)})</h3>')
+            rows = [[f"<b>{e(b['name'] if lang == 'en' else ja(b['name']))}</b>", ul(uq(b.get("uniques"), lang))] for b in bs]
+            out.append(tbl(["Belief", "Effect"] if lang == "en" else ["信仰", "効果"], rows))
+        return "\n".join(out)
+
     PAGES["uniq"] = PAGES["civs"]
-    for key, fn in (("civs", civ_rows), ("units", unit_rows), ("uniq", uniq_rows), ("diff", diff_rows)):
+    PAGES["policyai"] = PAGES["policies"]
+    PAGES["policycalc"] = PAGES["policies"]
+    PAGES["nwonders"] = PAGES["wonders"]
+    for key, fn in (("civs", civ_rows), ("units", unit_rows), ("uniq", uniq_rows), ("diff", diff_rows),
+                    ("policies", policy_rows), ("policyai", policy_ai), ("policycalc", policy_calc),
+                    ("wonders", wonder_rows), ("nwonders", nwonder_rows), ("techs", tech_rows), ("beliefs", belief_rows)):
         marker = "UNCIV-" + key.upper()
         for lang, rel in PAGES[key].items():
             p = os.path.join(ROOT, rel)
@@ -344,7 +505,7 @@ def main():
                 sys.exit(f"marker {marker} not found once in {rel}")
             open(p, "w", encoding="utf-8").write(s2)
             print("wrote", rel)
-    print(f"civs={len(civs)} units={len(ulist)} untranslated={len(tr.missing)}")
+    print(f"civs={len(civs)} units={len(ulist)} policies={len(policies)} wonders={len(wonders)}+{len(nwonders)} techs={sum(len(c['techs']) for c in techs)} beliefs={len(beliefs)} untranslated={len(tr.missing)}")
     for m in sorted(tr.missing)[:40]:
         print("  missing:", m)
 

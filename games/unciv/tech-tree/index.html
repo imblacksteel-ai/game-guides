@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The full Unciv tech tree from the game's data: all 80 technologies with base cost, prerequisites and what each unlocks — plus how tech cost really scales with cities, map size and known civs.">
+<title>Unciv Tech Tree: Every Tech, Cost and Unlock</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/games/unciv/tech-tree/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/tech-tree/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/tech-tree/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/tech-tree/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:title" content="Unciv Tech Tree: Every Tech, Cost and Unlock">
+<meta property="og:description" content="The full Unciv tech tree from the game's data: all 80 technologies with base cost, prerequisites and what each unlocks — plus how tech cost really scales with cities, map size and known civs.">
+<meta property="og:url" content="https://kouryakulab.com/games/unciv/tech-tree/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv Tech Tree: Every Tech, Cost and Unlock">
+<meta name="twitter:description" content="The full Unciv tech tree from the game's data: all 80 technologies with base cost, prerequisites and what each unlocks — plus how tech cost really scales with cities, map size and known civs.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv Tech Tree: Every Tech, Cost and Unlock",
+      "description": "The full Unciv tech tree from the game's data: all 80 technologies with base cost, prerequisites and what each unlocks — plus how tech cost really scales with cities, map size and known civs.",
+      "inLanguage": "en",
+      "url": "https://kouryakulab.com/games/unciv/tech-tree/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv Tech Tree: Every Tech, Cost and Unlock",
+          "item": "https://kouryakulab.com/games/unciv/tech-tree/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/games/unciv/"><span class="arrow">←</span> Unciv Guide</a>
+    <div>
+      <span class="eyebrow">UNCIV · TECH TREE</span>
+      <h1>Tech Tree: Every Tech and Unlock</h1>
+      <p class="sub">All 80 technologies with their cost, prerequisites and unlocks, and the hidden factors in the cost formula.</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="Language"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Conclusion</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">Unciv's tech tree has <b>80 technologies</b> in 18 columns, from Agriculture (base cost 20) to Future Tech (9,500). Below, every tech is listed with its base cost, prerequisites and everything it unlocks.</p>
+      <p style="margin:0;">The code adds two things the tree doesn't show: <b>each extra city raises tech costs by 5%</b> on Tiny–Medium maps (3.75% Large, 2.5% Huge), and a tech gets <b>cheaper when civilizations you know already have it</b> — up to 30% cheaper when every remaining major civ has researched it.</p>
+    </div>
+    <div class="callout"><b>An analysis-based guide:</b> this guide is based on our analysis of Unciv's Techs data file and the tech cost formula in its source code. It describes what the data shows and is not a guarantee of results.</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>Every Tech by Era</h2></div>
+<!-- UNCIV-TECHS -->
+<h3 style="margin:22px 0 8px;">Ancient era</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Tech</th><th>Base cost</th><th>Requires</th><th>Unlocks</th></tr></thead><tbody>
+<tr><td><b>Agriculture</b></td><td>20</td><td>—</td><td><b>Units:</b> Worker, Settler, Scout, Warrior, Maori Warrior *, Jaguar *, Atlatlist *<br><b>Improvements:</b> Farm</td></tr>
+<tr><td><b>Pottery</b></td><td>35</td><td>Agriculture</td><td><b>Buildings:</b> Granary, Shrine, Pyramid *</td></tr>
+<tr><td><b>Animal Husbandry</b></td><td>35</td><td>Agriculture</td><td><b>Improvements:</b> Pasture<br><b>Reveals:</b> Horses</td></tr>
+<tr><td><b>Archery</b></td><td>35</td><td>Agriculture</td><td><b>Units:</b> Archer, Bowman *, Slinger *<br><b>Wonders:</b> Temple of Artemis</td></tr>
+<tr><td><b>Mining</b></td><td>35</td><td>Agriculture</td><td><b>Improvements:</b> Mine, Remove Forest</td></tr>
+<tr><td><b>Sailing</b></td><td>55</td><td>Pottery</td><td><b>Units:</b> Work Boats, Trireme, Quinquereme *, Dromon *<br><b>Improvements:</b> Fishing Boats</td></tr>
+<tr><td><b>Calendar</b></td><td>55</td><td>Pottery</td><td><b>Buildings:</b> Stone Works<br><b>Wonders:</b> Stonehenge<br><b>Improvements:</b> Plantation</td></tr>
+<tr><td><b>Writing</b></td><td>55</td><td>Pottery</td><td><b>Buildings:</b> Library, Paper Maker *<br><b>Wonders:</b> The Great Library</td></tr>
+<tr><td><b>Trapping</b></td><td>55</td><td>Animal Husbandry</td><td><b>Buildings:</b> Circus<br><b>Improvements:</b> Camp</td></tr>
+<tr><td><b>The Wheel</b></td><td>55</td><td>Animal Husbandry, Archery</td><td><b>Units:</b> Chariot Archer, War Chariot *, Horse Archer *, War Elephant *<br><b>Buildings:</b> Water Mill, Floating Gardens *<br><b>Improvements:</b> Road</td></tr>
+<tr><td><b>Masonry</b></td><td>55</td><td>Mining</td><td><b>Buildings:</b> Walls, Walls of Babylon *<br><b>Wonders:</b> The Pyramids, Mausoleum of Halicarnassus<br><b>Improvements:</b> Quarry, Remove Marsh</td></tr>
+<tr><td><b>Bronze Working</b></td><td>55</td><td>Mining</td><td><b>Units:</b> Spearman, Hoplite *, Persian Immortal *, Battering Ram *, Pictish Warrior *<br><b>Buildings:</b> Barracks, Krepost *<br><b>Wonders:</b> Statue of Zeus<br><b>Improvements:</b> Remove Jungle</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">Classical era</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Tech</th><th>Base cost</th><th>Requires</th><th>Unlocks</th></tr></thead><tbody>
+<tr><td><b>Optics</b></td><td>85</td><td>Sailing</td><td><b>Buildings:</b> Lighthouse<br><b>Wonders:</b> The Great Lighthouse</td></tr>
+<tr><td><b>Horseback Riding</b></td><td>105</td><td>Trapping, The Wheel</td><td><b>Units:</b> Horseman, Companion Cavalry *, African Forest Elephant *, Cataphract *<br><b>Buildings:</b> Stable<br><b>National wonders:</b> Circus Maximus</td></tr>
+<tr><td><b>Mathematics</b></td><td>105</td><td>The Wheel</td><td><b>Units:</b> Catapult, Ballista *<br><b>Buildings:</b> Courthouse<br><b>Wonders:</b> Hanging Gardens</td></tr>
+<tr><td><b>Construction</b></td><td>105</td><td>Masonry, The Wheel</td><td><b>Units:</b> Composite Bowman<br><b>Buildings:</b> Colosseum<br><b>Wonders:</b> Terracotta Army<br><b>Improvements:</b> Lumber mill, Moai *, Terrace farm *</td></tr>
+<tr><td><b>Philosophy</b></td><td>175</td><td>Writing, Calendar</td><td><b>Buildings:</b> Temple, Burial Tomb *, Mud Pyramid Mosque *<br><b>Wonders:</b> The Oracle<br><b>National wonders:</b> National College</td></tr>
+<tr><td><b>Drama and Poetry</b></td><td>175</td><td>Writing</td><td><b>Buildings:</b> Amphitheater<br><b>National wonders:</b> National Epic</td></tr>
+<tr><td><b>Currency</b></td><td>175</td><td>Mathematics</td><td><b>Buildings:</b> Market, Bazaar *, Mint<br><b>Wonders:</b> Petra</td></tr>
+<tr><td><b>Engineering</b></td><td>175</td><td>Mathematics, Construction</td><td><b>Buildings:</b> Aqueduct<br><b>Wonders:</b> Great Wall<br><b>Improvements:</b> Fort</td></tr>
+<tr><td><b>Iron Working</b></td><td>175</td><td>Bronze Working</td><td><b>Units:</b> Swordsman, Legion *, Mohawk Warrior *<br><b>Wonders:</b> Colossus<br><b>National wonders:</b> Heroic Epic<br><b>Reveals:</b> Iron</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">Medieval era</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Tech</th><th>Base cost</th><th>Requires</th><th>Unlocks</th></tr></thead><tbody>
+<tr><td><b>Theology</b></td><td>275</td><td>Philosophy, Drama and Poetry</td><td><b>Buildings:</b> Garden<br><b>Wonders:</b> Hagia Sophia, Great Mosque of Djenne<br><b>National wonders:</b> Grand Temple</td></tr>
+<tr><td><b>Civil Service</b></td><td>275</td><td>Currency, Horseback Riding, Drama and Poetry</td><td><b>Units:</b> Pikeman, Landsknecht *<br><b>Wonders:</b> Chichen Itza</td></tr>
+<tr><td><b>Guilds</b></td><td>275</td><td>Currency</td><td><b>Wonders:</b> Machu Picchu<br><b>National wonders:</b> National Treasury<br><b>Improvements:</b> Trading post, Polder *</td></tr>
+<tr><td><b>Metal Casting</b></td><td>275</td><td>Engineering, Iron Working</td><td><b>Units:</b> Berserker *<br><b>Buildings:</b> Workshop, Longhouse *, Forge</td></tr>
+<tr><td><b>Compass</b></td><td>375</td><td>Optics, Theology</td><td><b>Units:</b> Galleass<br><b>Buildings:</b> Harbor</td></tr>
+<tr><td><b>Education</b></td><td>485</td><td>Theology, Civil Service</td><td><b>Buildings:</b> University, Wat *<br><b>Wonders:</b> Angkor Wat<br><b>National wonders:</b> Oxford University</td></tr>
+<tr><td><b>Chivalry</b></td><td>485</td><td>Civil Service, Guilds</td><td><b>Units:</b> Knight, Camel Archer *, Conquistador *, Naresuan&#x27;s Elephant *, Mandekalu Cavalry *, Keshik *<br><b>Buildings:</b> Castle, Mughal Fort *<br><b>Wonders:</b> Alhambra</td></tr>
+<tr><td><b>Machinery</b></td><td>485</td><td>Guilds, Engineering</td><td><b>Units:</b> Crossbowman, Chu-Ko-Nu *, Longbowman *<br><b>National wonders:</b> Ironworks</td></tr>
+<tr><td><b>Physics</b></td><td>485</td><td>Metal Casting</td><td><b>Units:</b> Trebuchet, Hwach&#x27;a *<br><b>Wonders:</b> Notre Dame</td></tr>
+<tr><td><b>Steel</b></td><td>485</td><td>Metal Casting</td><td><b>Units:</b> Longswordsman, Samurai *<br><b>Buildings:</b> Armory</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">Renaissance era</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Tech</th><th>Base cost</th><th>Requires</th><th>Unlocks</th></tr></thead><tbody>
+<tr><td><b>Astronomy</b></td><td>780</td><td>Compass, Education</td><td><b>Units:</b> Caravel, Turtle Ship *<br><b>Buildings:</b> Observatory</td></tr>
+<tr><td><b>Acoustics</b></td><td>780</td><td>Education</td><td><b>Buildings:</b> Opera House, Ceilidh Hall *<br><b>Wonders:</b> Sistine Chapel</td></tr>
+<tr><td><b>Banking</b></td><td>780</td><td>Chivalry, Education</td><td><b>Buildings:</b> Bank, Satrap&#x27;s Court *, Constabulary<br><b>Wonders:</b> Forbidden Palace</td></tr>
+<tr><td><b>Printing Press</b></td><td>780</td><td>Machinery, Physics, Chivalry</td><td><b>Buildings:</b> Theatre<br><b>Wonders:</b> Leaning Tower of Pisa</td></tr>
+<tr><td><b>Gunpowder</b></td><td>780</td><td>Physics, Steel</td><td><b>Units:</b> Musketman, Musketeer *, Janissary *, Minuteman *, Tercio *<br><b>Wonders:</b> Himeji Castle</td></tr>
+<tr><td><b>Navigation</b></td><td>1150</td><td>Astronomy</td><td><b>Units:</b> Privateer, Sea Beggar *, Frigate, Ship of the Line *<br><b>Buildings:</b> Seaport</td></tr>
+<tr><td><b>Architecture</b></td><td>1150</td><td>Acoustics, Banking</td><td><b>Wonders:</b> Taj Mahal, Porcelain Tower<br><b>National wonders:</b> Hermitage</td></tr>
+<tr><td><b>Economics</b></td><td>1150</td><td>Banking, Printing Press</td><td><b>Buildings:</b> Windmill, Coffee House *</td></tr>
+<tr><td><b>Metallurgy</b></td><td>1150</td><td>Printing Press, Gunpowder</td><td><b>Units:</b> Lancer, Sipahi *, Hakkapeliitta *<br><b>Buildings:</b> Arsenal<br><b>Wonders:</b> Kremlin</td></tr>
+<tr><td><b>Chemistry</b></td><td>1150</td><td>Gunpowder</td><td><b>Units:</b> Cannon</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">Industrial era</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Tech</th><th>Base cost</th><th>Requires</th><th>Unlocks</th></tr></thead><tbody>
+<tr><td><b>Archaeology</b></td><td>1600</td><td>Navigation, Architecture</td><td><b>Buildings:</b> Museum<br><b>Wonders:</b> The Louvre</td></tr>
+<tr><td><b>Scientific Theory</b></td><td>1600</td><td>Architecture, Economics</td><td><b>Buildings:</b> Public School</td></tr>
+<tr><td><b>Industrialization</b></td><td>1600</td><td>Economics</td><td><b>Units:</b> Gatling Gun<br><b>Buildings:</b> Factory<br><b>Wonders:</b> Big Ben<br><b>Reveals:</b> Coal</td></tr>
+<tr><td><b>Rifling</b></td><td>1600</td><td>Economics, Metallurgy</td><td><b>Units:</b> Rifleman, Norwegian Ski Infantry *, Carolean *, Mehal Sefari *</td></tr>
+<tr><td><b>Military Science</b></td><td>1600</td><td>Metallurgy, Chemistry</td><td><b>Units:</b> Cavalry, Cossack *, Hussar *<br><b>Buildings:</b> Military Academy<br><b>Wonders:</b> Brandenburg Gate</td></tr>
+<tr><td><b>Fertilizer</b></td><td>1600</td><td>Chemistry</td><td>—</td></tr>
+<tr><td><b>Biology</b></td><td>2350</td><td>Archaeology, Scientific Theory</td><td><b>Buildings:</b> Hospital<br><b>Improvements:</b> Oil well<br><b>Reveals:</b> Oil</td></tr>
+<tr><td><b>Electricity</b></td><td>2350</td><td>Scientific Theory</td><td><b>Buildings:</b> Stock Exchange, Hydro Plant, Police Station<br><b>Reveals:</b> Aluminum</td></tr>
+<tr><td><b>Steam Power</b></td><td>2350</td><td>Industrialization, Scientific Theory, Rifling</td><td><b>Units:</b> Ironclad</td></tr>
+<tr><td><b>Dynamite</b></td><td>2350</td><td>Fertilizer, Military Science</td><td><b>Units:</b> Artillery</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">Modern era</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Tech</th><th>Base cost</th><th>Requires</th><th>Unlocks</th></tr></thead><tbody>
+<tr><td><b>Refrigeration</b></td><td>3100</td><td>Biology, Electricity</td><td><b>Units:</b> Submarine<br><b>Buildings:</b> Stadium<br><b>Improvements:</b> Offshore Platform</td></tr>
+<tr><td><b>Radio</b></td><td>3100</td><td>Electricity</td><td><b>Buildings:</b> Broadcast Tower<br><b>Wonders:</b> Eiffel Tower<br><b>National wonders:</b> National Intelligence Agency</td></tr>
+<tr><td><b>Replaceable Parts</b></td><td>3100</td><td>Electricity, Steam Power</td><td><b>Units:</b> Great War Infantry, Foreign Legion *<br><b>Buildings:</b> Military Base<br><b>Wonders:</b> Statue of Liberty</td></tr>
+<tr><td><b>Flight</b></td><td>3100</td><td>Steam Power</td><td><b>Units:</b> Triplane, Great War Bomber</td></tr>
+<tr><td><b>Railroads</b></td><td>3100</td><td>Steam Power, Dynamite</td><td><b>Wonders:</b> Neuschwanstein<br><b>Improvements:</b> Railroad</td></tr>
+<tr><td><b>Plastics</b></td><td>4100</td><td>Radio, Replaceable Parts</td><td><b>Units:</b> Infantry<br><b>Buildings:</b> Research Lab<br><b>Wonders:</b> Cristo Redentor</td></tr>
+<tr><td><b>Electronics</b></td><td>4100</td><td>Replaceable Parts, Flight</td><td><b>Units:</b> Carrier, Battleship</td></tr>
+<tr><td><b>Ballistics</b></td><td>4100</td><td>Flight</td><td><b>Units:</b> Machine Gun, Anti-Aircraft Gun</td></tr>
+<tr><td><b>Combustion</b></td><td>4100</td><td>Railroads</td><td><b>Units:</b> Landship, Destroyer</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">Atomic era</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Tech</th><th>Base cost</th><th>Requires</th><th>Unlocks</th></tr></thead><tbody>
+<tr><td><b>Pharmaceuticals</b></td><td>5100</td><td>Plastics, Refrigeration</td><td><b>Units:</b> Marine<br><b>Buildings:</b> Medical Lab</td></tr>
+<tr><td><b>Atomic Theory</b></td><td>5100</td><td>Plastics, Electronics</td><td><b>National wonders:</b> Manhattan Project<br><b>Reveals:</b> Uranium</td></tr>
+<tr><td><b>Radar</b></td><td>5100</td><td>Ballistics, Electronics</td><td><b>Units:</b> Fighter, Zero *, Bomber, B17 *, Paratrooper</td></tr>
+<tr><td><b>Combined Arms</b></td><td>5100</td><td>Ballistics, Combustion</td><td><b>Units:</b> Tank, Panzer *, Anti-Tank Gun<br><b>Wonders:</b> Pentagon</td></tr>
+<tr><td><b>Ecology</b></td><td>6400</td><td>Atomic Theory, Pharmaceuticals</td><td><b>Buildings:</b> Solar Plant, Recycling Center<br><b>Wonders:</b> Sydney Opera House</td></tr>
+<tr><td><b>Nuclear Fission</b></td><td>6400</td><td>Atomic Theory, Radar</td><td><b>Units:</b> Atomic Bomb<br><b>Buildings:</b> Nuclear Plant</td></tr>
+<tr><td><b>Rocketry</b></td><td>6400</td><td>Radar</td><td><b>Units:</b> Rocket Artillery, Mobile SAM<br><b>National wonders:</b> Apollo Program</td></tr>
+<tr><td><b>Computers</b></td><td>6400</td><td>Combined Arms, Radar</td><td><b>Units:</b> Helicopter Gunship<br><b>Wonders:</b> Great Firewall</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">Information era</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Tech</th><th>Base cost</th><th>Requires</th><th>Unlocks</th></tr></thead><tbody>
+<tr><td><b>Telecommunications</b></td><td>7700</td><td>Ecology</td><td><b>Units:</b> Nuclear Submarine<br><b>Buildings:</b> Bomb Shelter<br><b>Wonders:</b> CN Tower</td></tr>
+<tr><td><b>Mobile Tactics</b></td><td>7700</td><td>Ecology, Nuclear Fission</td><td><b>Units:</b> Mechanized Infantry</td></tr>
+<tr><td><b>Advanced Ballistics</b></td><td>7700</td><td>Nuclear Fission, Rocketry</td><td><b>Units:</b> Guided Missile, Nuclear Missile, SS Booster</td></tr>
+<tr><td><b>Satellites</b></td><td>7700</td><td>Rocketry</td><td><b>Units:</b> SS Cockpit<br><b>Wonders:</b> Hubble Space Telescope</td></tr>
+<tr><td><b>Robotics</b></td><td>7700</td><td>Rocketry, Computers</td><td><b>Units:</b> Missile Cruiser<br><b>Buildings:</b> Spaceship Factory</td></tr>
+<tr><td><b>Lasers</b></td><td>7700</td><td>Computers</td><td><b>Units:</b> Modern Armor, Jet Fighter</td></tr>
+<tr><td><b>Globalization</b></td><td>8800</td><td>Telecommunications</td><td><b>Wonders:</b> United Nations</td></tr>
+<tr><td><b>Particle Physics</b></td><td>8800</td><td>Telecommunications, Mobile Tactics, Advanced Ballistics</td><td><b>Units:</b> SS Engine</td></tr>
+<tr><td><b>Nuclear Fusion</b></td><td>8800</td><td>Advanced Ballistics, Satellites, Robotics</td><td><b>Units:</b> Giant Death Robot</td></tr>
+<tr><td><b>Nanotechnology</b></td><td>8800</td><td>Robotics</td><td><b>Units:</b> SS Stasis Chamber</td></tr>
+<tr><td><b>Stealth</b></td><td>8800</td><td>Robotics, Lasers</td><td><b>Units:</b> Stealth Bomber</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">Future era</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Tech</th><th>Base cost</th><th>Requires</th><th>Unlocks</th></tr></thead><tbody>
+<tr><td><b>Future Tech</b></td><td>9500</td><td>Globalization, Particle Physics, Nuclear Fusion, Nanotechnology, Stealth</td><td>—</td></tr>
+</tbody></table></div>
+<!-- /UNCIV-TECHS -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">“*” marks a civilization's unique unit, building or improvement. Base cost is before difficulty, game speed, map size and city count. Data from the game's own files (Civ V: Gods &amp; Kings ruleset that ships with Unciv), read from the source at the commit of 2026-10-02. Updates and mods can change these numbers.</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>How Tech Cost Is Calculated</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>Factor</th><th>Effect (from TechManager.kt)</th></tr></thead>
+        <tbody>
+        <tr><td>Difficulty</td><td>Your cost × the research modifier (90% on Settler, 95% Chieftain, 100% from Warlord up). Applies to human players.</td></tr>
+        <tr><td>Game speed</td><td>Quick 67%, Standard 100%, Epic 150%, Marathon 300%.</td></tr>
+        <tr><td>Map size</td><td>Medium ×1.1, Large ×1.2, Huge ×1.3.</td></tr>
+        <tr><td>Cities</td><td>+5% per city beyond the first on Tiny–Medium, +3.75% Large, +2.5% Huge (puppets don't count).</td></tr>
+        <tr><td>Known civs who have it</td><td>Cost ÷ (1 + 0.3 × share of remaining major civs you know that have it).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Why is my research slower than the tree suggests?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Map size and city count both raise tech cost. A Large map alone adds 20%, and each city adds 3.75% there.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Does meeting other civs help research?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Yes — techs that civs you know have already researched become cheaper for you.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Where are the eras' unit stats?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">See <a href='/games/unciv/units/'>Every Unit's Stats</a>.</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>Continue reading</h3>
+    <div class="more-guides-links">
+      <a href="/games/unciv/">Unciv Guide</a>
+      <a href="/games/unciv/civilizations/">Civilizations</a>
+      <a href="/games/unciv/difficulty/">Difficulty</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">This is an unofficial, fan-made, analysis-based guide. It is not a guarantee of results, and game updates may change any of it.</div>
+    <div class="sources">
+      Sources:
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv source code (yairm210/Unciv, MPL-2.0)</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv data files — Civ V: Gods & Kings ruleset, commit of 2026-10-02</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/core/src/com/unciv/logic/civilization/managers/TechManager.kt" target="_blank" rel="noopener">Unciv source: TechManager.kt (tech cost formula)</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="Site links"><a href="/about/">About</a> · <a href="/authors/">Authors</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

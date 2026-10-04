@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="All 10 Unciv social policy branches from the game's data: every policy, its prerequisites and effects, completion bonuses, what the AI prefers — plus a policy cost calculator built from the source code formula.">
+<title>Unciv Social Policies: Every Branch, Effect and a Cost Calculator</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/games/unciv/policies/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/policies/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/policies/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/policies/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:title" content="Unciv Social Policies: Every Branch, Effect and a Cost Calculator">
+<meta property="og:description" content="All 10 Unciv social policy branches from the game's data: every policy, its prerequisites and effects, completion bonuses, what the AI prefers — plus a policy cost calculator built from the source code formula.">
+<meta property="og:url" content="https://kouryakulab.com/games/unciv/policies/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv Social Policies: Every Branch, Effect and a Cost Calculator">
+<meta name="twitter:description" content="All 10 Unciv social policy branches from the game's data: every policy, its prerequisites and effects, completion bonuses, what the AI prefers — plus a policy cost calculator built from the source code formula.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv Social Policies: Every Branch, Effect and a Cost Calculator",
+      "description": "All 10 Unciv social policy branches from the game's data: every policy, its prerequisites and effects, completion bonuses, what the AI prefers — plus a policy cost calculator built from the source code formula.",
+      "inLanguage": "en",
+      "url": "https://kouryakulab.com/games/unciv/policies/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv Social Policies: Every Branch, Effect and a Cost Calculator",
+          "item": "https://kouryakulab.com/games/unciv/policies/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/games/unciv/"><span class="arrow">←</span> Unciv Guide</a>
+    <div>
+      <span class="eyebrow">UNCIV · SOCIAL POLICIES</span>
+      <h1>Social Policies and Policy Cost</h1>
+      <p class="sub">Every branch and policy from the game's data, and a calculator that uses Unciv's own cost formula — including how much each new city adds.</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="Language"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Conclusion</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">Unciv has <b>10 social policy branches</b>, each with five policies plus a bonus for completing the branch. Two pairs lock each other out: <b>Piety vs Rationalism</b>, and the three ideologies <b>Freedom, Autocracy and Order</b>.</p>
+      <p style="margin:0;">Reading the cost formula in the source, policies get expensive fast: the base cost goes 25, 34, 62, 108, 173, 256… and <b>every extra city adds 10%</b> on small and medium maps. That's the real trade-off between going wide and adopting policies quickly — the calculator below shows it for your game.</p>
+    </div>
+    <div class="callout"><b>An analysis-based guide:</b> this guide is based on our analysis of Unciv's Policies data file and the cost formula in its source code. It describes what the data shows and is not a guarantee of results.</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>Policy Cost Calculator</h2></div>
+    <div class="panel" id="policy-calc" >
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;">
+        <label>Policies already adopted<br><input id="pc-n" type="number" min="0" value="0" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+        <label>Cities (not counting puppets)<br><input id="pc-cities" type="number" min="1" value="1" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+        <label>Difficulty<br><select id="pc-diff" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></select></label>
+        <label>Game speed<br><select id="pc-speed" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></select></label>
+        <label>Map size<br><select id="pc-map" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></select></label>
+      </div>
+      <p style="margin:16px 0 8px;font-size:1.05rem;">Culture for your next policy: <b id="pc-out" class="tag-mono" style="font-size:1.4rem;">—</b></p>
+      <div class="table-scroll"><table class="glossary"><thead><tr><th>Policy #</th><th>Culture</th><th>With 2 more cities</th></tr></thead><tbody id="pc-rows"></tbody></table></div>
+    </div>
+<!-- UNCIV-POLICYCALC -->
+<script>window.UNCIV_POLICY_CFG = {"diff": {"Settler": 0.5, "Chieftain": 0.67, "Warlord": 0.85, "Prince": 1, "King": 1, "Emperor": 1, "Immortal": 1, "Deity": 1}, "speed": {"Quick": 0.67, "Standard": 1.0, "Epic": 1.5, "Marathon": 3.0}, "map": {"Tiny": 0.1, "Small": 0.1, "Medium": 0.1, "Large": 0.075, "Huge": 0.05}};</script>
+<!-- /UNCIV-POLICYCALC -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">Formula from the game's code: (25 + (adopted × 3)<sup>2.01</sup>) × difficulty × game speed × (1 + map modifier × (cities − 1)), rounded down to a multiple of 5. Map modifier: 10% per city on Tiny–Medium, 7.5% on Large, 5% on Huge. Policies and wonders that reduce policy cost aren't included.</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>Every Branch and Policy</h2></div>
+<!-- UNCIV-POLICIES -->
+<h3 style="margin:22px 0 8px;">Tradition <span style='color:var(--ink-dim);font-size:.85rem'>(Ancient era)</span></h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Policy</th><th>Requires</th><th>Effect</th></tr></thead><tbody>
+<tr><td><b>Adopting the branch</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+3 Culture in capital</li><li>-25% Culture cost of natural border growth in all cities</li></ul></td></tr>
+<tr><td>Aristocracy</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+15% Production when constructing All wonders in all cities</li><li>+1 Happiness per 10 population in all cities</li></ul></td></tr>
+<tr><td>Legalism</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>Provides the cheapest Culture building in your first 4 cities for free</li></ul></td></tr>
+<tr><td>Oligarchy</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>Units in cities cost no Maintenance</li><li>+50% Strength for cities (with a garrison) (when attacking)</li></ul></td></tr>
+<tr><td>Landed Elite</td><td>Legalism</td><td><ul class='exped-notes' style='margin:0'><li>+10% growth in capital</li><li>+2 Food in capital</li></ul></td></tr>
+<tr><td>Monarchy</td><td>Legalism</td><td><ul class='exped-notes' style='margin:0'><li>+1 Gold, +1 Happiness per 2 population in capital</li></ul></td></tr>
+<tr><td><b>Branch complete</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+15% growth in all cities</li><li>Provides a Aqueduct in your first 4 cities for free</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">Liberty <span style='color:var(--ink-dim);font-size:.85rem'>(Ancient era)</span></h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Policy</th><th>Requires</th><th>Effect</th></tr></thead><tbody>
+<tr><td><b>Adopting the branch</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+1 Culture in all cities</li></ul></td></tr>
+<tr><td>Republic</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+1 Production in all cities</li><li>+5% Production when constructing All buildings in all cities</li></ul></td></tr>
+<tr><td>Citizenship</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>Can build all improvements at a +25% rate</li><li>Free Worker appears</li></ul></td></tr>
+<tr><td>Collective Rule</td><td>Republic</td><td><ul class='exped-notes' style='margin:0'><li>+50% Production when constructing Settler units in capital</li><li>Free Settler appears</li></ul></td></tr>
+<tr><td>Representation</td><td>Citizenship</td><td><ul class='exped-notes' style='margin:0'><li>Each city founded increases culture cost of policies 33% less than normal</li><li>Empire enters golden age</li></ul></td></tr>
+<tr><td>Meritocracy</td><td>Citizenship</td><td><ul class='exped-notes' style='margin:0'><li>+1 Happiness in all cities connected to capital</li><li>-5% Unhappiness from Population in all non-occupied cities</li></ul></td></tr>
+<tr><td><b>Branch complete</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>Free Great Person</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">Honor <span style='color:var(--ink-dim);font-size:.85rem'>(Ancient era)</span></h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Policy</th><th>Requires</th><th>Effect</th></tr></thead><tbody>
+<tr><td><b>Adopting the branch</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+33% Strength (vs Barbarian units)</li><li>Earn 100% of killed Barbarian unit&#x27;s Strength as Culture</li><li>Notified of new Barbarian encampments</li></ul></td></tr>
+<tr><td>Warrior Code</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+15% Production when constructing Melee units in all cities</li><li>Free Great General appears</li></ul></td></tr>
+<tr><td>Discipline</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+15% Strength (for Melee units) (when adjacent to a Melee unit)</li></ul></td></tr>
+<tr><td>Military Tradition</td><td>Warrior Code</td><td><ul class='exped-notes' style='margin:0'><li>+50% XP gained from combat (for Military units)</li></ul></td></tr>
+<tr><td>Military Caste</td><td>Discipline</td><td><ul class='exped-notes' style='margin:0'><li>+1 Happiness, +2 Culture in all cities with a garrison</li></ul></td></tr>
+<tr><td>Professional Army</td><td>Military Caste</td><td><ul class='exped-notes' style='margin:0'><li>-33% Gold cost of upgrading (for Military units)</li><li>+1 Happiness from every Walls</li><li>+1 Happiness from every Castle</li><li>+1 Happiness from every Arsenal</li><li>+1 Happiness from every Military Base</li></ul></td></tr>
+<tr><td><b>Branch complete</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>Earn 10% of killed Military unit&#x27;s Cost as Gold</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">Piety <span style='color:var(--ink-dim);font-size:.85rem'>(Classical era)</span></h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Policy</th><th>Requires</th><th>Effect</th></tr></thead><tbody>
+<tr><td><b>Adopting the branch</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+100% Production when constructing Shrine buildings in all cities</li><li>+100% Production when constructing Temple buildings in all cities</li><li>Only available (before adopting Rationalism)</li></ul></td></tr>
+<tr><td>Organized Religion</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+1 Faith from every Shrine</li><li>+1 Faith from every Temple</li></ul></td></tr>
+<tr><td>Mandate Of Heaven</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>50% of excess happiness converted to Culture</li></ul></td></tr>
+<tr><td>Theocracy</td><td>Organized Religion</td><td><ul class='exped-notes' style='margin:0'><li>+10% Gold from every Temple</li></ul></td></tr>
+<tr><td>Reformation</td><td>Organized Religion</td><td><ul class='exped-notes' style='margin:0'><li>+33% Culture in all cities with a world wonder</li><li>Empire enters golden age</li></ul></td></tr>
+<tr><td>Free Religion</td><td>Mandate Of Heaven, Reformation</td><td><ul class='exped-notes' style='margin:0'><li>-10% Culture cost of adopting new Policies</li></ul></td></tr>
+<tr><td><b>Branch complete</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>Faith cost of purchasing items in cities -20%</li><li>+3 Gold, +3 Culture from every Holy site</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">Patronage <span style='color:var(--ink-dim);font-size:.85rem'>(Medieval era)</span></h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Policy</th><th>Requires</th><th>Effect</th></tr></thead><tbody>
+<tr><td><b>Adopting the branch</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>-25% City-State Influence degradation</li></ul></td></tr>
+<tr><td>Philantropy</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>Gifts of Gold to City-States generate 25% more Influence</li></ul></td></tr>
+<tr><td>Aesthetics</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>Resting point for Influence with City-States is increased by 20</li></ul></td></tr>
+<tr><td>Scholasticism</td><td>Philantropy</td><td><ul class='exped-notes' style='margin:0'><li>Allied City-States provide Science equal to 25% of what they produce for themselves</li></ul></td></tr>
+<tr><td>Cultural Diplomacy</td><td>Scholasticism</td><td><ul class='exped-notes' style='margin:0'><li>+100% resources gifted by City-States</li><li>+50% Happiness from luxury resources gifted by City-States</li></ul></td></tr>
+<tr><td>Educated Elite</td><td>Scholasticism, Aesthetics</td><td><ul class='exped-notes' style='margin:0'><li>Allied City-States will occasionally gift Great People</li></ul></td></tr>
+<tr><td><b>Branch complete</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>Influence of all other civilizations with all city-states degrades 33% faster</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">Commerce <span style='color:var(--ink-dim);font-size:.85rem'>(Medieval era)</span></h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Policy</th><th>Requires</th><th>Effect</th></tr></thead><tbody>
+<tr><td><b>Adopting the branch</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+25% Gold in capital</li></ul></td></tr>
+<tr><td>Naval Tradition</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+1 Movement (for Military Water units)</li><li>+1 Sight (for Military Water units)</li><li>Free Great Admiral appears</li><li>+2 Movement (for Great Admiral units)</li></ul></td></tr>
+<tr><td>Trade Unions</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>-33% maintenance on road &amp; railroads</li><li>+1 Gold from every Harbor</li><li>+1 Gold from every Seaport</li></ul></td></tr>
+<tr><td>Merchant Navy</td><td>Naval Tradition</td><td><ul class='exped-notes' style='margin:0'><li>+3 Production in all coastal cities</li></ul></td></tr>
+<tr><td>Mercantilism</td><td>Trade Unions</td><td><ul class='exped-notes' style='margin:0'><li>Gold cost of purchasing items in cities -25%</li><li>+1 Science from every Mint</li><li>+1 Science from every Market</li><li>+1 Science from every Bank</li><li>+1 Science from every Stock Exchange</li></ul></td></tr>
+<tr><td>Protectionism</td><td>Mercantilism</td><td><ul class='exped-notes' style='margin:0'><li>+2 Happiness from each type of luxury resource</li></ul></td></tr>
+<tr><td><b>Branch complete</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+1 Gold from every Trading post</li><li>+100% Gold from Great Merchant trade missions</li><li>May buy Great Merchant units for 1000 Faith in all cities in which the majority religion is a major religion at an increasing price (500) (starting from the Industrial era)</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">Rationalism <span style='color:var(--ink-dim);font-size:.85rem'>(Renaissance era)</span></h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Policy</th><th>Requires</th><th>Effect</th></tr></thead><tbody>
+<tr><td><b>Adopting the branch</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+15% Science (while the empire is happy)</li><li>Only available (before adopting Piety)</li></ul></td></tr>
+<tr><td>Secularism</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+2 Science from every specialist in all cities</li></ul></td></tr>
+<tr><td>Humanism</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+1 Happiness from every University</li><li>+1 Happiness from every Observatory</li><li>+1 Happiness from every Public School</li></ul></td></tr>
+<tr><td>Free Thought</td><td>Secularism</td><td><ul class='exped-notes' style='margin:0'><li>+1 Science from every Trading post</li><li>+17% Science from every University</li></ul></td></tr>
+<tr><td>Sovereignty</td><td>Humanism</td><td><ul class='exped-notes' style='margin:0'><li>+1 Gold from all Science buildings</li></ul></td></tr>
+<tr><td>Scientific Revolution</td><td>Free Thought</td><td><ul class='exped-notes' style='margin:0'><li>Science gained from research agreements +50%</li></ul></td></tr>
+<tr><td><b>Branch complete</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>2 Free Technologies</li><li>May buy Great Scientist units for 1000 Faith in all cities in which the majority religion is a major religion at an increasing price (500) (starting from the Industrial era)</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">Freedom <span style='color:var(--ink-dim);font-size:.85rem'>(Industrial era)</span></h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Policy</th><th>Requires</th><th>Effect</th></tr></thead><tbody>
+<tr><td><b>Adopting the branch</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+25% Great Person generation in all cities</li><li>Only available (before adopting Autocracy)</li><li>Only available (before adopting Order)</li></ul></td></tr>
+<tr><td>Constitution</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+2 Culture from every Wonder</li></ul></td></tr>
+<tr><td>Universal Suffrage</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+33% Strength for cities (when defending)</li></ul></td></tr>
+<tr><td>Civil Society</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>-50% Food consumption by Specialists in all cities</li></ul></td></tr>
+<tr><td>Free Speech</td><td>Constitution</td><td><ul class='exped-notes' style='margin:0'><li>8 units cost no maintenance</li></ul></td></tr>
+<tr><td>Democracy</td><td>Civil Society</td><td><ul class='exped-notes' style='margin:0'><li>-50% Unhappiness from Specialists in all cities</li></ul></td></tr>
+<tr><td><b>Branch complete</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+100% Yield from every Great Improvement</li><li>+50% Golden Age length</li><li>May buy Great Artist units for 1000 Faith in all cities in which the majority religion is a major religion at an increasing price (500) (starting from the Industrial era)</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">Autocracy <span style='color:var(--ink-dim);font-size:.85rem'>(Industrial era)</span></h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Policy</th><th>Requires</th><th>Effect</th></tr></thead><tbody>
+<tr><td><b>Adopting the branch</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>-33% maintenance costs (for All units)</li><li>Upon capturing a city, receive 10 times its Culture production as Culture immediately</li><li>Only available (before adopting Order)</li><li>Only available (before adopting Freedom)</li></ul></td></tr>
+<tr><td>Populism</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+25% Strength (for Wounded units)</li></ul></td></tr>
+<tr><td>Militarism</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>Gold cost of purchasing All units -33%</li></ul></td></tr>
+<tr><td>Fascism</td><td>Populism, Militarism</td><td><ul class='exped-notes' style='margin:0'><li>+100% Strategic resource production</li><li>+2 Movement (for Great General units)</li></ul></td></tr>
+<tr><td>Police State</td><td>Militarism</td><td><ul class='exped-notes' style='margin:0'><li>+3 Happiness from every Courthouse</li><li>+100% Production when constructing Courthouse buildings in all cities</li><li>-25% enemy spy effectiveness in all cities</li></ul></td></tr>
+<tr><td>Total War</td><td>Police State, Fascism</td><td><ul class='exped-notes' style='margin:0'><li>+25% Production when constructing Military units in all cities</li><li>New Military units start with 15 XP in all cities</li></ul></td></tr>
+<tr><td><b>Branch complete</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+25% Strength (when attacking) (for Military units) (for 50 turns)</li><li>May buy Great General units for 1000 Faith in all cities in which the majority religion is a major religion at an increasing price (500) (starting from the Industrial era)</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">Order <span style='color:var(--ink-dim);font-size:.85rem'>(Industrial era)</span></h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Policy</th><th>Requires</th><th>Effect</th></tr></thead><tbody>
+<tr><td><b>Adopting the branch</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+1 Happiness in all cities</li><li>Only available (before adopting Autocracy)</li><li>Only available (before adopting Freedom)</li></ul></td></tr>
+<tr><td>United Front</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>Militaristic City-States grant units 2 times as fast when you are at war with a common nation</li></ul></td></tr>
+<tr><td>Planned Economy</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+25% Science from every Factory</li><li>+100% Production when constructing Factory buildings in all cities</li></ul></td></tr>
+<tr><td>Nationalism</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+15% Strength (for All units) (when fighting in Friendly Land tiles)</li></ul></td></tr>
+<tr><td>Socialism</td><td>Planned Economy</td><td><ul class='exped-notes' style='margin:0'><li>-15% maintenance cost for all buildings in all cities</li></ul></td></tr>
+<tr><td>Communism</td><td>Socialism</td><td><ul class='exped-notes' style='margin:0'><li>+2 Production in all cities</li><li>+1 Production from every Mine</li><li>+1 Production from every Quarry</li></ul></td></tr>
+<tr><td><b>Branch complete</b></td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>+2 Food, +2 Production, +2 Science, +2 Gold, +2 Culture in all cities</li><li>May buy Great Engineer units for 1000 Faith in all cities in which the majority religion is a major religion at an increasing price (500) (starting from the Industrial era)</li></ul></td></tr>
+</tbody></table></div>
+<!-- /UNCIV-POLICIES -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">Data from the game's own files (Civ V: Gods &amp; Kings ruleset that ships with Unciv), read from the source at the commit of 2026-10-02. Updates and mods can change these numbers.</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>What the AI Prefers</h2></div>
+<!-- UNCIV-POLICYAI -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Branch</th><th>Scientific</th><th>Cultural</th><th>Diplomatic</th><th>Domination</th></tr></thead><tbody>
+<tr><td>Tradition</td><td><b>5</b></td><td>5</td><td>5</td><td>5</td></tr>
+<tr><td>Liberty</td><td><b>10</b></td><td>10</td><td>10</td><td>10</td></tr>
+<tr><td>Honor</td><td><b>5</b></td><td>5</td><td>5</td><td>5</td></tr>
+<tr><td>Piety</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Patronage</td><td>5</td><td>5</td><td><b>10</b></td><td>5</td></tr>
+<tr><td>Commerce</td><td><b>5</b></td><td>5</td><td>5</td><td>5</td></tr>
+<tr><td>Rationalism</td><td><b>10</b></td><td>10</td><td>10</td><td>10</td></tr>
+<tr><td>Freedom</td><td><b>10</b></td><td>10</td><td>5</td><td>5</td></tr>
+<tr><td>Autocracy</td><td>5</td><td>5</td><td>5</td><td><b>10</b></td></tr>
+<tr><td>Order</td><td>5</td><td>5</td><td><b>10</b></td><td>5</td></tr>
+</tbody></table></div>
+<!-- /UNCIV-POLICYAI -->
+    <div class="panel" style="margin-top:12px;">
+      <ul class="exped-notes">
+        <li>The numbers are each branch's weight for an AI aiming at that victory type (the AI also adds its personality). Bold marks the highest for each branch.</li>
+        <li><b>Liberty and Rationalism</b> carry the top weight (10) for every victory type, and <b>Piety</b> has 0 — the AI only picks it through personality.</li>
+        <li>The ideologies split cleanly: <b>Autocracy</b> for domination, <b>Freedom</b> for cultural and scientific, <b>Order</b> for diplomatic.</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Why did my next policy suddenly get more expensive?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">You probably founded or annexed a city. Each non-puppet city beyond the first raises the cost by 10% on Tiny–Medium maps.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Do puppet cities raise policy cost?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">No. The formula only counts cities that aren't puppets.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Can I take both Piety and Rationalism?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">No. Each is only available before you adopt the other. The three ideologies also exclude each other.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Is this the same as Civ V?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">The structure follows Civ V: Gods &amp; Kings, but the formula here is Unciv's own code.</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>Continue reading</h3>
+    <div class="more-guides-links">
+      <a href="/games/unciv/">Unciv Guide</a>
+      <a href="/games/unciv/civilizations/">Civilizations</a>
+      <a href="/games/unciv/difficulty/">Difficulty</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">This is an unofficial, fan-made, analysis-based guide. It is not a guarantee of results, and game updates may change any of it.</div>
+    <div class="sources">
+      Sources:
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv source code (yairm210/Unciv, MPL-2.0)</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv data files — Civ V: Gods & Kings ruleset, commit of 2026-10-02</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/core/src/com/unciv/logic/civilization/managers/PolicyManager.kt" target="_blank" rel="noopener">Unciv source: PolicyManager.kt (policy cost formula)</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="Site links"><a href="/about/">About</a> · <a href="/authors/">Authors</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+<script src="/assets/games/unciv-policy-cost.js"></script>
+</body>
+</html>
