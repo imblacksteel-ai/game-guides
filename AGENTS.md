@@ -45,6 +45,8 @@ CNAME, robots.txt, sitemap.xml       ドメイン・SEO設定
 ## 英日の新ページを作るとき
 
 - `scripts/page_helpers.py` の `head_from`（既存ページのheadを土台にタイトル・説明・CSS・hreflang・available-langsを差し替え）、`footer`、`add_to_sitemap` を使う。一時スクリプトで毎回書き直さない。
+- 記事ページは `scripts/article_helpers.py` の `build_article`（`section`/`table`/`steps`/`faq`/`analysis_note`）で組む。艦これハブへのリンク追加は `scripts/add_hub_link.py <slug> "EN" "JA"`、タグ整合チェックは `scripts/check_tags.py <files>`。
+- 艦これ英語SEO 30テーマ（2026-10）はすべて公開済み。事実は艦これ攻略Wiki（wikiwiki.jp/kancolle）で確認し、Wiki内で記述が食い違う値（例：1-5明石ドロップの司令部Lv 35/40）は断定せず両論併記する。
 - 書き出した後は `python3 scripts/seo_inject.py` → `python3 scripts/set_indexing.py` の順に実行する。
 - `.steps li` は横並び（flex）なので、本文に `<b>` などのタグを含む場合は `<li><span class="n">1</span><span>本文</span></li>` と本文を `<span>` で包む（包まないと太字部分が別の列に分かれて崩れる）。
 
