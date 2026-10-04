@@ -152,6 +152,14 @@ git diff --stat                 # 想定した言語数ぶんのファイルが�
 - MODページ `/mods/` の人気MOD表は `python3 scripts/build_unciv_mods.py`（GitHub の topic:unciv-mod をスター順に40件、確認日を表示）。月1回程度更新する。説明文は作者の英文のまま。
 - 未対応の需要：特になし（Uncivは主要な需要をひと通りカバー済み・2026/10）。マルチプレイは `/multiplayer/`（docs/Other/Multiplayer.md より。コミュニティのサーバーは名指しで勧めない）。文明ごとの個別ページは中身が薄くなりやすいので作らない（AdSenseの低品質判定対策）。
 
+## Endless Sky（オープンソース、GPL-3.0）
+
+- `/games/endless-sky/`（ハブ）、`/first-ship/`、`/making-money/`、`/ships/`、`/weapons/`。英日のみ。CSSは `assets/games/endless-sky.css`、OG画像は `assets/og/og-endless-sky.png`。公式の日本語訳がないので、船・装備・星系名は日本語版でも英語のまま。
+- 表は `python3 scripts/build_endless_sky.py` で生成（**手編集禁止**）。endless-sky/endless-sky の `COMMIT` 時点の `data/`（タブのインデントで階層を表す独自テキスト形式）を読み、`<!-- ES-SHIPS/WEAPONS/TRADE/STARTER -->` に書き込む。銀河は開始時点の状態（イベントで変わる店・政府は反映しない）。ゲーム内の説明文（GPLのテキスト）は転載しない。
+- ソースで確認済みの式：最高速度 60×推力/抵抗、加速 3600×推力/質量、旋回 60×turn/質量（ShipInfoDisplay.cpp）。価格 = 基準 − 100×erf(在庫/20000)（System.cpp、基準から±100程度）。依頼の報酬 = 固定額 +（ジャンプ数+1）× 積載量 × 倍率、積載量 = 貨物トン + 10×乗客、`payment` 単独は倍率150（MissionAction.cpp・Mission.cpp）。乗客の依頼は +2000。
+- 武器のDPSは 60/reload × 1発のダメージ（サブミュニションは再帰で加算）、射程は velocity×lifetime。連射・誘導・爆発半径は未反映（本文に明記）。
+- 未対応の需要：エンジン・発電機・シールドなど武器以外の装備、免許（license）の入手方法、ストーリーの分岐。
+
 ## 翻訳の一貫性ルール
 
 - **繁体字版の生成時の注意**：簡体→繁体変換は日本語の漢字も書き換える（装備→裝備）ため、`class="jp"`/`class="romaji"` の要素とカナを含む語は変換から保護している。ゲーム内の日本語表記はこれらのクラスで囲むこと。

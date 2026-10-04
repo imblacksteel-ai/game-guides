@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="オープンソースの宇宙交易・戦闘ゲーム「Endless Sky」の攻略ガイド。ゲームのデータとコードから、最初の船、依頼と交易の本当の報酬、全船・全武器の性能と販売場所をまとめた。">
+<title>Endless Sky 攻略ガイド：船・武器・お金の稼ぎ方（データ分析）</title>
+<link rel="stylesheet" href="/assets/games/endless-sky.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/endless-sky/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/endless-sky/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/endless-sky/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/endless-sky/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Endless Sky 攻略ガイド：船・武器・お金の稼ぎ方（データ分析）">
+<meta property="og:description" content="オープンソースの宇宙交易・戦闘ゲーム「Endless Sky」の攻略ガイド。ゲームのデータとコードから、最初の船、依頼と交易の本当の報酬、全船・全武器の性能と販売場所をまとめた。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/endless-sky/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-endless-sky.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Endless Sky 攻略ガイド：船・武器・お金の稼ぎ方（データ分析）">
+<meta name="twitter:description" content="オープンソースの宇宙交易・戦闘ゲーム「Endless Sky」の攻略ガイド。ゲームのデータとコードから、最初の船、依頼と交易の本当の報酬、全船・全武器の性能と販売場所をまとめた。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-endless-sky.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Endless Sky 攻略ガイド：船・武器・お金の稼ぎ方（データ分析）",
+      "description": "オープンソースの宇宙交易・戦闘ゲーム「Endless Sky」の攻略ガイド。ゲームのデータとコードから、最初の船、依頼と交易の本当の報酬、全船・全武器の性能と販売場所をまとめた。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/endless-sky/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Endless Sky 攻略ガイド：船・武器・お金の稼ぎ方（データ分析）",
+          "item": "https://kouryakulab.com/ja/games/endless-sky/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/"><span class="arrow">←</span> 攻略ラボ</a>
+    <div>
+      <span class="eyebrow">ENDLESS SKY · OPEN SOURCE · SPACE TRADING</span>
+      <h1>Endless Sky 攻略ガイド</h1>
+      <p class="sub">Endless Skyはオープンソースなので、このガイドの数値はゲームのデータファイルとコードから直接読み取っている。</p>
+      <div class="fact-strip">
+        <div class="fact"><div class="k">ジャンル</div><div class="v tag-mono">宇宙交易・戦闘</div></div>
+        <div class="fact"><div class="k">対応機種</div><div class="v tag-mono">PC（Windows・Mac・Linux）</div></div>
+        <div class="fact"><div class="k">ライセンス</div><div class="v tag-mono">GPL-3.0（オープンソース）</div></div>
+        <div class="fact"><div class="k">開発</div><div class="v tag-mono">Michael Zahniser ほか</div></div>
+        <div class="fact" data-fact="updated"><div class="k">更新日</div><div class="v tag-mono">2026.09</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links" id="tabs">
+      <a href="#overview">概要</a>
+      <a href="#guides">ガイド一覧</a>
+      <a href="/ja/games/endless-sky/first-ship/">最初の船</a>
+      <a href="/ja/games/endless-sky/making-money/">お金の稼ぎ方</a>
+      <a href="/ja/games/endless-sky/ships/">船</a>
+      <a href="/ja/games/endless-sky/weapons/">武器</a>
+    </div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section id="overview" style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Endless Skyとは</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;"><b>Endless Sky</b>は、Escape Velocity系の無料・オープンソースの宇宙交易・戦闘ゲーム。小さな船と住宅ローンから始め、依頼・交易・戦闘をこなしながら、広い銀河で船団を強化していく。コードとデータはGitHubでGPL-3.0ライセンスで公開されている。</p>
+      <p style="margin:0;">オープンソースなので、このガイドの数値はデータファイルとコードから直接読み取っている。依頼の報酬の決まり方のように、ゲーム内では表示されない式も含む。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事はEndless Skyのデータファイルとソースコードを分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section id="guides" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>ガイド一覧</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><a href="/ja/games/endless-sky/first-ship/"><b>最初の船</b></a>：Shuttle・Star Barge・Sparrowをゲームの数値で比較。</li>
+        <li><a href="/ja/games/endless-sky/making-money/"><b>お金の稼ぎ方：交易と依頼</b></a>：コードにある依頼の報酬の式と、最良の交易ルート。</li>
+        <li><a href="/ja/games/endless-sky/ships/"><b>全船</b></a>：販売されている全121隻の性能と販売場所。</li>
+        <li><a href="/ja/games/endless-sky/weapons/"><b>全武器</b></a>：販売されている全100種のDPS・射程・エネルギー・熱。</li>
+      </ul>
+    </div>
+  </section>
+  <section id="key-numbers" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>主な数値の早見表</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>事実</th><th>値</th><th>出典</th></tr></thead>
+        <tbody>
+        <tr><td>開始時の所持金（標準の開始）</td><td>480,000クレジットと住宅ローン</td><td>starts.txt</td></tr>
+        <tr><td>一般的な依頼の報酬</td><td>150 ×（ジャンプ数＋1）× トン数</td><td>MissionAction.cpp</td></tr>
+        <tr><td>乗客</td><td>1人10トン分として計算（乗客の依頼は1件ごとに+2,000）</td><td>Mission.cpp・jobs.txt</td></tr>
+        <tr><td>交易品の価格</td><td>各星系の基準価格から100クレジット程度の範囲に収まる</td><td>System.cpp</td></tr>
+        <tr><td>最高速度／加速</td><td>60 × 推力 ÷ 抵抗／3,600 × 推力 ÷ 質量</td><td>ShipInfoDisplay.cpp</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">数値はゲームのデータファイル（2026年10月3日時点）から、新しくゲームを始めた時点の銀河の状態で読み取ったもの（ストーリーのイベントで店や政府が変わることがある）。Endless Skyには公式の日本語訳がないため、船・武器・星系の名前は英語のまま。</p>
+  </section>
+  <section id="faq" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Endless Skyは無料？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">無料。オープンソースで、Steamでも無料で配信されている。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">日本語版はある？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">公式の日本語訳はないので、このガイドでも船・装備・星系の名前は英語のまま。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">数値は最新？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">2026年10月3日時点のソースから、新しくゲームを始めた時点の銀河の状態で読み取ったもの。</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap more-guides">
+    <h3>他の攻略ガイド</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/haran-suisekai/">波乱水世界</a>
+      <a href="/ja/games/kancolle/">艦これ</a>
+      <a href="/ja/games/srwdd/">スパロボDD</a>
+      <a href="/ja/games/deresute/">デレステ</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://github.com/endless-sky/endless-sky" target="_blank" rel="noopener">Endless Sky ソースコード（endless-sky/endless-sky、GPL-3.0）</a>
+      <a href="https://github.com/endless-sky/endless-sky/tree/b28e3c36fb1f10e79607d5d27f5cb3721909b94e/data" target="_blank" rel="noopener">Endless Sky データファイル（2026-10-03 時点）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+<script src="/assets/tabs.js"></script>
+</body>
+</html>

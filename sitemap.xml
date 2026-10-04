@@ -658,4 +658,44 @@
   </url>
   <url><loc>https://kouryakulab.com/ja/games/unciv/mods/</loc></url>
 
+  <url>
+    <loc>https://kouryakulab.com/games/endless-sky/making-money/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/endless-sky/making-money/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/endless-sky/making-money/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/endless-sky/making-money/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/endless-sky/making-money/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/games/endless-sky/first-ship/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/endless-sky/first-ship/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/endless-sky/first-ship/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/endless-sky/first-ship/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/endless-sky/first-ship/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/games/endless-sky/ships/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/endless-sky/ships/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/endless-sky/ships/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/endless-sky/ships/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/endless-sky/ships/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/games/endless-sky/weapons/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/endless-sky/weapons/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/endless-sky/weapons/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/endless-sky/weapons/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/endless-sky/weapons/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/games/endless-sky/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/endless-sky/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/endless-sky/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/endless-sky/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/endless-sky/</loc></url>
+
 </urlset>

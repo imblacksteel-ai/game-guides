@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How to make money in Endless Sky, from the game's code: the job payment formula (150 × (jumps + 1) × tons, passengers = 10 tons), how commodity prices drift, and the best trade routes between neighboring systems in human space.">
+<title>Endless Sky: Best Way to Make Money (Trade Routes vs Jobs)</title>
+<link rel="stylesheet" href="/assets/games/endless-sky.css">
+<link rel="canonical" href="https://kouryakulab.com/games/endless-sky/making-money/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/endless-sky/making-money/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/endless-sky/making-money/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/endless-sky/making-money/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:title" content="Endless Sky: Best Way to Make Money (Trade Routes vs Jobs)">
+<meta property="og:description" content="How to make money in Endless Sky, from the game's code: the job payment formula (150 × (jumps + 1) × tons, passengers = 10 tons), how commodity prices drift, and the best trade routes between neighboring systems in human space.">
+<meta property="og:url" content="https://kouryakulab.com/games/endless-sky/making-money/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-endless-sky.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Endless Sky: Best Way to Make Money (Trade Routes vs Jobs)">
+<meta name="twitter:description" content="How to make money in Endless Sky, from the game's code: the job payment formula (150 × (jumps + 1) × tons, passengers = 10 tons), how commodity prices drift, and the best trade routes between neighboring systems in human space.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-endless-sky.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Endless Sky: Best Way to Make Money (Trade Routes vs Jobs)",
+      "description": "How to make money in Endless Sky, from the game's code: the job payment formula (150 × (jumps + 1) × tons, passengers = 10 tons), how commodity prices drift, and the best trade routes between neighboring systems in human space.",
+      "inLanguage": "en",
+      "url": "https://kouryakulab.com/games/endless-sky/making-money/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Endless Sky: Best Way to Make Money (Trade Routes vs Jobs)",
+          "item": "https://kouryakulab.com/games/endless-sky/making-money/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/games/endless-sky/"><span class="arrow">←</span> Endless Sky Guide</a>
+    <div>
+      <span class="eyebrow">ENDLESS SKY · MONEY</span>
+      <h1>Making Money: Trade Routes vs Jobs</h1>
+      <p class="sub">The real payment formulas from the code, why passengers are so lucrative, and the best trade routes at base prices.</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="Language"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Conclusion</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">Reading Endless Sky's code, ordinary delivery jobs pay <b>150 credits × (jumps + 1) × tons</b>, and <b>each passenger counts as 10 tons</b> (passenger jobs add a flat 2,000 on top). Trading, by contrast, makes at most about <b>139 credits per ton</b> on the best one-way run in human space — and prices drift by up to about 100 either way.</p>
+      <p style="margin:0;">So for a new captain, the data points to <b>jobs first, especially passengers</b>, with trading as a way to fill spare cargo space on the way.</p>
+    </div>
+    <div class="callout"><b>An analysis-based guide:</b> this guide is based on our analysis of Endless Sky's job payment code (MissionAction.cpp), its price code (System.cpp) and the trade prices in its map data. It describes what the data shows and is not a guarantee of results.</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>Jobs vs Trading, by the Numbers</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>Example</th><th>Calculation (from the code)</th><th>Payment</th></tr></thead>
+        <tbody>
+        <tr><td>Cargo job: 5 tons, 3 jumps</td><td>150 × (3 + 1) × 5</td><td>3,000</td></tr>
+        <tr><td>Bulk job: 25 tons, 3 jumps</td><td>150 × (3 + 1) × 25</td><td>15,000</td></tr>
+        <tr><td>Passengers: 2 people, 3 jumps</td><td>2,000 + 150 × (3 + 1) × 2 × 10</td><td>14,000</td></tr>
+        <tr><td>Best trade run: Food, Ankaa → Markab, 50 tons</td><td>139 × 50 (at base prices)</td><td>6,950</td></tr>
+        </tbody>
+      </table>
+    </div>    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">The job formula is payment + (jumps + 1) × payload × multiplier, where payload = cargo tons + 10 × passengers and a plain “payment” means a multiplier of 150 (MissionAction.cpp, Mission.cpp). Special and story missions use their own amounts.</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>How Prices Move</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">Each system has a base price for each commodity. The code sets the current price to <b>base − 100 × erf(supply ÷ 20,000)</b>, and supply drifts randomly every day. In practice the price stays within about <b>100 credits of the base</b>.</p>
+      <p style="margin:0;">That matters because the best price gaps between neighboring systems are only about 100–150 per ton. Check the live prices before you load up — on a bad day a route's margin can disappear.</p>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>Best Trade Routes Between Neighboring Systems (Human Space)</h2></div>
+<!-- ES-TRADE -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>#</th><th>Route</th><th>Buy here → sell there</th><th>Profit/ton</th><th>Return cargo</th><th>Profit/ton</th><th>Round trip/ton</th><th>Governments</th></tr></thead><tbody>
+<tr><td>1</td><td><b>Ankaa ⇄ Markab</b></td><td>Food (Ankaa → Markab)</td><td>139</td><td>Industrial</td><td>123</td><td><b>262</b></td><td>Syndicate / Syndicate</td></tr>
+<tr><td>2</td><td><b>Al Dhanab ⇄ Scheat</b></td><td>Food (Al Dhanab → Scheat)</td><td>116</td><td>Medical</td><td>145</td><td><b>261</b></td><td>Syndicate / Syndicate</td></tr>
+<tr><td>3</td><td><b>Ankaa ⇄ Ruchbah</b></td><td>Equipment (Ankaa → Ruchbah)</td><td>109</td><td>Food</td><td>127</td><td><b>236</b></td><td>Syndicate / Syndicate</td></tr>
+<tr><td>4</td><td><b>Sirius ⇄ Sol</b></td><td>Clothing (Sirius → Sol)</td><td>96</td><td>Luxury Goods</td><td>138</td><td><b>234</b></td><td>Republic / Republic</td></tr>
+<tr><td>5</td><td><b>Cebalrai ⇄ Menkent</b></td><td>Clothing (Cebalrai → Menkent)</td><td>88</td><td>Medical</td><td>139</td><td><b>227</b></td><td>Republic / Republic</td></tr>
+<tr><td>6</td><td><b>Merak ⇄ Phecda</b></td><td>Medical (Merak → Phecda)</td><td>137</td><td>Food</td><td>89</td><td><b>226</b></td><td>Republic / Republic</td></tr>
+<tr><td>7</td><td><b>Alhena ⇄ Wazn</b></td><td>Electronics (Alhena → Wazn)</td><td>92</td><td>Heavy Metals</td><td>130</td><td><b>222</b></td><td>Republic / Republic</td></tr>
+<tr><td>8</td><td><b>Cor Caroli ⇄ Vindemiatrix</b></td><td>Heavy Metals (Cor Caroli → Vindemiatrix)</td><td>109</td><td>Food</td><td>110</td><td><b>219</b></td><td>Republic / Republic</td></tr>
+<tr><td>9</td><td><b>Alphard ⇄ Zosma</b></td><td>Heavy Metals (Alphard → Zosma)</td><td>118</td><td>Medical</td><td>98</td><td><b>216</b></td><td>Republic / Republic</td></tr>
+<tr><td>10</td><td><b>Albireo ⇄ Tarazed</b></td><td>Luxury Goods (Albireo → Tarazed)</td><td>126</td><td>Equipment</td><td>88</td><td><b>214</b></td><td>Republic / Republic</td></tr>
+<tr><td>11</td><td><b>Algorel ⇄ Phecda</b></td><td>Food (Algorel → Phecda)</td><td>113</td><td>Plastic</td><td>101</td><td><b>214</b></td><td>Republic / Republic</td></tr>
+<tr><td>12</td><td><b>Alniyat ⇄ Pherkad</b></td><td>Industrial (Alniyat → Pherkad)</td><td>97</td><td>Metal</td><td>117</td><td><b>214</b></td><td>Republic / Republic</td></tr>
+<tr><td>13</td><td><b>Dabih ⇄ Kaus Australis</b></td><td>Equipment (Dabih → Kaus Australis)</td><td>137</td><td>Electronics</td><td>75</td><td><b>212</b></td><td>Republic / Republic</td></tr>
+<tr><td>14</td><td><b>Cebalrai ⇄ Rasalhague</b></td><td>Luxury Goods (Cebalrai → Rasalhague)</td><td>115</td><td>Heavy Metals</td><td>94</td><td><b>209</b></td><td>Republic / Republic</td></tr>
+<tr><td>15</td><td><b>Ascella ⇄ Peacock</b></td><td>Heavy Metals (Ascella → Peacock)</td><td>78</td><td>Food</td><td>130</td><td><b>208</b></td><td>Republic / Republic</td></tr>
+<tr><td>16</td><td><b>Altair ⇄ Sol</b></td><td>Luxury Goods (Altair → Sol)</td><td>111</td><td>Clothing</td><td>96</td><td><b>207</b></td><td>Republic / Republic</td></tr>
+<tr><td>17</td><td><b>Alpheratz ⇄ Ruchbah</b></td><td>Industrial (Alpheratz → Ruchbah)</td><td>89</td><td>Medical</td><td>116</td><td><b>205</b></td><td>Syndicate / Syndicate</td></tr>
+<tr><td>18</td><td><b>Menkar ⇄ Zaurak</b></td><td>Plastic (Menkar → Zaurak)</td><td>91</td><td>Heavy Metals</td><td>111</td><td><b>202</b></td><td>Syndicate / Syndicate</td></tr>
+<tr><td>19</td><td><b>Algorel ⇄ Turais</b></td><td>Metal (Algorel → Turais)</td><td>69</td><td>Luxury Goods</td><td>126</td><td><b>195</b></td><td>Republic / Republic</td></tr>
+<tr><td>20</td><td><b>Avior ⇄ Naos</b></td><td>Heavy Metals (Avior → Naos)</td><td>92</td><td>Luxury Goods</td><td>103</td><td><b>195</b></td><td>Republic / Republic</td></tr>
+<tr><td>21</td><td><b>Matar ⇄ Scheat</b></td><td>Luxury Goods (Matar → Scheat)</td><td>99</td><td>Plastic</td><td>95</td><td><b>194</b></td><td>Syndicate / Syndicate</td></tr>
+<tr><td>22</td><td><b>Sol ⇄ Vega</b></td><td>Clothing (Sol → Vega)</td><td>93</td><td>Luxury Goods</td><td>101</td><td><b>194</b></td><td>Republic / Republic</td></tr>
+<tr><td>23</td><td><b>Albaldah ⇄ Girtab</b></td><td>Metal (Albaldah → Girtab)</td><td>100</td><td>Industrial</td><td>93</td><td><b>193</b></td><td>Republic / Republic</td></tr>
+<tr><td>24</td><td><b>Aldhibain ⇄ Alniyat</b></td><td>Industrial (Aldhibain → Alniyat)</td><td>76</td><td>Heavy Metals</td><td>116</td><td><b>192</b></td><td>Republic / Republic</td></tr>
+<tr><td>25</td><td><b>Delta Capricorni ⇄ Scheat</b></td><td>Heavy Metals (Delta Capricorni → Scheat)</td><td>91</td><td>Food</td><td>100</td><td><b>191</b></td><td>Syndicate / Syndicate</td></tr>
+<tr><td>26</td><td><b>Markab ⇄ Scheat</b></td><td>Heavy Metals (Markab → Scheat)</td><td>124</td><td>Food</td><td>64</td><td><b>188</b></td><td>Syndicate / Syndicate</td></tr>
+<tr><td>27</td><td><b>Sheratan ⇄ Zaurak</b></td><td>Heavy Metals (Sheratan → Zaurak)</td><td>105</td><td>Luxury Goods</td><td>83</td><td><b>188</b></td><td>Syndicate / Syndicate</td></tr>
+<tr><td>28</td><td><b>Aldebaran ⇄ Capella</b></td><td>Heavy Metals (Aldebaran → Capella)</td><td>112</td><td>Equipment</td><td>72</td><td><b>184</b></td><td>Republic / Republic</td></tr>
+<tr><td>29</td><td><b>Al Dhanab ⇄ Alpheratz</b></td><td>Industrial (Al Dhanab → Alpheratz)</td><td>104</td><td>Food</td><td>78</td><td><b>182</b></td><td>Syndicate / Syndicate</td></tr>
+<tr><td>30</td><td><b>Alphard ⇄ Talita</b></td><td>Industrial (Alphard → Talita)</td><td>101</td><td>Heavy Metals</td><td>81</td><td><b>182</b></td><td>Republic / Republic</td></tr>
+<tr><td>31</td><td><b>Ankaa ⇄ Diphda</b></td><td>Heavy Metals (Ankaa → Diphda)</td><td>113</td><td>Industrial</td><td>69</td><td><b>182</b></td><td>Syndicate / Syndicate</td></tr>
+<tr><td>32</td><td><b>Aldhibain ⇄ Dschubba</b></td><td>Clothing (Aldhibain → Dschubba)</td><td>66</td><td>Heavy Metals</td><td>115</td><td><b>181</b></td><td>Republic / Republic</td></tr>
+<tr><td>33</td><td><b>Cebalrai ⇄ Kaus Borealis</b></td><td>Heavy Metals (Cebalrai → Kaus Borealis)</td><td>65</td><td>Equipment</td><td>115</td><td><b>180</b></td><td>Republic / Republic</td></tr>
+<tr><td>34</td><td><b>Kursa ⇄ Wazn</b></td><td>Electronics (Kursa → Wazn)</td><td>138</td><td>Luxury Goods</td><td>42</td><td><b>180</b></td><td>Republic / Republic</td></tr>
+<tr><td>35</td><td><b>Caph ⇄ Sol</b></td><td>Food (Caph → Sol)</td><td>83</td><td>Luxury Goods</td><td>94</td><td><b>177</b></td><td>Syndicate / Republic</td></tr>
+<tr><td>36</td><td><b>Naos ⇄ Regor</b></td><td>Heavy Metals (Naos → Regor)</td><td>87</td><td>Clothing</td><td>90</td><td><b>177</b></td><td>Republic / Republic</td></tr>
+<tr><td>37</td><td><b>Menkent ⇄ Vega</b></td><td>Clothing (Menkent → Vega)</td><td>79</td><td>Plastic</td><td>97</td><td><b>176</b></td><td>Republic / Republic</td></tr>
+<tr><td>38</td><td><b>Acrux ⇄ Izar</b></td><td>Metal (Acrux → Izar)</td><td>86</td><td>Plastic</td><td>89</td><td><b>175</b></td><td>Republic / Republic</td></tr>
+<tr><td>39</td><td><b>Mirach ⇄ Scheat</b></td><td>Food (Mirach → Scheat)</td><td>61</td><td>Medical</td><td>113</td><td><b>174</b></td><td>Syndicate / Syndicate</td></tr>
+<tr><td>40</td><td><b>Alheka ⇄ Canopus</b></td><td>Electronics (Alheka → Canopus)</td><td>75</td><td>Heavy Metals</td><td>98</td><td><b>173</b></td><td>Republic / Republic</td></tr>
+</tbody></table></div>
+<!-- /ES-TRADE -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">Round trip = best cargo one way plus best cargo back, per ton, at base prices. Only linked systems with a spaceport, in Republic, Syndicate, Pirate and other human governments at the start of the game. Numbers come from the game's data files at the commit of 2026-10-03, for the galaxy as it is at the start of a new game (story events can change shops and governments).</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>Practical Takeaways</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><b>Bunks are money.</b> One passenger pays like 10 tons of cargo. A ship with spare bunks can out-earn a freighter early on.</li>
+        <li><b>Longer jobs pay more per job, not per jump.</b> (jumps + 1) means a 1-jump job pays twice the jump rate; a 9-jump job pays 1.11×.</li>
+        <li><b>Stack jobs going the same way.</b> Several small jobs to the same area use one trip.</li>
+        <li><b>Trade to fill the gaps.</b> Use leftover cargo space on a route from the table above.</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">06</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Is trading worth it at all?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Yes, as a top-up. With a big hold it adds up, but per ton it's below what delivery and passenger jobs pay.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Why don't my profits match the table?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Prices drift up to about 100 credits from the base, and the table uses base prices.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Do I need a special license for jobs?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Ordinary jobs don't; some ships and outfits require licenses.</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>Continue reading</h3>
+    <div class="more-guides-links">
+      <a href="/games/endless-sky/">Endless Sky Guide</a>
+      <a href="/games/endless-sky/making-money/">Making Money</a>
+      <a href="/games/endless-sky/ships/">Ships</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">This is an unofficial, fan-made, analysis-based guide. It is not a guarantee of results, and game updates may change any of it.</div>
+    <div class="sources">
+      Sources:
+      <a href="https://github.com/endless-sky/endless-sky" target="_blank" rel="noopener">Endless Sky source code (endless-sky/endless-sky, GPL-3.0)</a>
+      <a href="https://github.com/endless-sky/endless-sky/tree/b28e3c36fb1f10e79607d5d27f5cb3721909b94e/data" target="_blank" rel="noopener">Endless Sky data files, commit of 2026-10-03</a>
+      <a href="https://github.com/endless-sky/endless-sky/blob/b28e3c36fb1f10e79607d5d27f5cb3721909b94e/source/MissionAction.cpp" target="_blank" rel="noopener">Endless Sky source: MissionAction.cpp (job payment formula)</a>
+      <a href="https://github.com/endless-sky/endless-sky/blob/b28e3c36fb1f10e79607d5d27f5cb3721909b94e/source/System.cpp" target="_blank" rel="noopener">Endless Sky source: System.cpp (commodity prices)</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="Site links"><a href="/about/">About</a> · <a href="/authors/">Authors</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>
