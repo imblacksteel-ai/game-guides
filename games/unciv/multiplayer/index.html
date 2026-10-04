@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How Unciv multiplayer works, from the official docs: how to start an online game with user and game IDs, why the default server can be unreliable, and how to host your own server with UncivServer.jar.">
+<title>Unciv Multiplayer: How to Play Online and Host Your Own Server</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/games/unciv/multiplayer/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/multiplayer/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/multiplayer/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/multiplayer/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:title" content="Unciv Multiplayer: How to Play Online and Host Your Own Server">
+<meta property="og:description" content="How Unciv multiplayer works, from the official docs: how to start an online game with user and game IDs, why the default server can be unreliable, and how to host your own server with UncivServer.jar.">
+<meta property="og:url" content="https://kouryakulab.com/games/unciv/multiplayer/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv Multiplayer: How to Play Online and Host Your Own Server">
+<meta name="twitter:description" content="How Unciv multiplayer works, from the official docs: how to start an online game with user and game IDs, why the default server can be unreliable, and how to host your own server with UncivServer.jar.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv Multiplayer: How to Play Online and Host Your Own Server",
+      "description": "How Unciv multiplayer works, from the official docs: how to start an online game with user and game IDs, why the default server can be unreliable, and how to host your own server with UncivServer.jar.",
+      "inLanguage": "en",
+      "url": "https://kouryakulab.com/games/unciv/multiplayer/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv Multiplayer: How to Play Online and Host Your Own Server",
+          "item": "https://kouryakulab.com/games/unciv/multiplayer/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/games/unciv/"><span class="arrow">←</span> Unciv Guide</a>
+    <div>
+      <span class="eyebrow">UNCIV · MULTIPLAYER</span>
+      <h1>Multiplayer: Playing Online</h1>
+      <p class="sub">Starting an online game step by step, and hosting your own server when the default one is busy.</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="Language"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Conclusion</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">Unciv's multiplayer works by uploading and downloading the save file each turn. Everyone must be on the <b>same multiplayer server</b>; the host starts the game with the other players' <b>user IDs</b> and sends them the <b>game ID</b>.</p>
+      <p style="margin:0;">According to the official docs, the default server is a free Dropbox account shared by many players, so it isn't always reachable. For reliable games you can <b>host your own server</b> with the official UncivServer.jar.</p>
+    </div>
+    <div class="callout"><b>An analysis-based guide:</b> this guide is based on our analysis of Unciv's official multiplayer documentation. It describes what the data shows and is not a guarantee of results.</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>How to Start a Game</h2></div>
+    <div class="panel">
+      <ol class="steps">
+      <li><span class="n">1</span><span>Everyone checks they use the same server: <b>Main Menu → Options → Multiplayer</b>.</span></li>
+      <li><span class="n">2</span><span>Each player copies their user ID (<b>Main Menu → Multiplayer → Copy user ID</b>) and sends it to the host. You can also add them to your <b>Friends list</b>.</span></li>
+      <li><span class="n">3</span><span>The host goes to <b>Start new game</b>, ticks <b>Online Multiplayer</b>, adds human players and enters their user IDs, then presses <b>Start game!</b></span></li>
+      <li><span class="n">4</span><span>The game ID is copied to the host's clipboard automatically (or use <b>Multiplayer → Copy game ID</b>). Send it to the others.</span></li>
+      <li><span class="n">5</span><span>The other players open <b>Multiplayer → Add multiplayer game</b>, enter the game ID, and join from that screen.</span></li>
+      </ol>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>Hosting Your Own Server</h2></div>
+    <div class="panel">
+      <ol class="steps">
+      <li><span class="n">1</span><span>Install a Java JDK and download the latest <b>UncivServer.jar</b> from the Unciv releases page on GitHub.</span></li>
+      <li><span class="n">2</span><span>Next to the jar, create a folder named <b>MultiplayerFiles</b>, open a terminal there and run <code>java -jar UncivServer.jar</code>.</span></li>
+      <li><span class="n">3</span><span>Test it on the same computer: in Unciv, <b>Options → Multiplayer</b>, set the server address to <code>http://localhost:8080</code> and check the connection.</span></li>
+      <li><span class="n">4</span><span>For players outside your network, forward the server's port (default 8080) on your router and use <code>http://&lt;your public IP&gt;:&lt;port&gt;</code>.</span></li>
+      <li><span class="n">5</span><span>Every player sets the same server address. Devices on different servers can't play together.</span></li>
+      </ol>
+    </div>
+    <div class="callout"><b>Good to know:</b> the server is simple file storage over HTTP. Options are <code>-p</code> (port) and <code>-f</code> (folder); files aren't cleaned up when a game ends. If your public IP changes, you'll need to update it or use a dynamic DNS service.</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Why can't I connect to the default server?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">The docs say the default Dropbox-based server is shared by many players and has hit its limits several times. Hosting your own server is the official workaround.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Are there community servers?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">The docs list some community-run servers, with a warning that they're unofficial, may go offline and lose saves, and may collect data. Use them only if you accept that.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Do I need to be online at the same time?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">No. Because the game passes the save file around, players can take turns whenever they're available.</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>Continue reading</h3>
+    <div class="more-guides-links">
+      <a href="/games/unciv/">Unciv Guide</a>
+      <a href="/games/unciv/game-speed/">Game Speed</a>
+      <a href="/games/unciv/vs-civ5/">Unciv vs Civ V</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">This is an unofficial, fan-made, analysis-based guide. It is not a guarantee of results, and game updates may change any of it.</div>
+    <div class="sources">
+      Sources:
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv source code (yairm210/Unciv, MPL-2.0)</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv data files — Civ V: Gods & Kings ruleset, commit of 2026-10-02</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/docs/Other/Multiplayer.md" target="_blank" rel="noopener">Unciv docs: Multiplayer</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="Site links"><a href="/about/">About</a> · <a href="/authors/">Authors</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

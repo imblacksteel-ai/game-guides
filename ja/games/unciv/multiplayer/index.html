@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unciv（オープンソース版シヴィライゼーション5）のマルチプレイのやり方を公式ドキュメントから解説。ユーザーIDとゲームIDでのオンライン対戦の始め方、標準サーバーがつながりにくい理由、UncivServer.jarで自分のサーバーを立てる手順。">
+<title>Unciv マルチプレイのやり方とサーバーの立て方</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/unciv/multiplayer/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/multiplayer/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/multiplayer/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/multiplayer/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Unciv マルチプレイのやり方とサーバーの立て方">
+<meta property="og:description" content="Unciv（オープンソース版シヴィライゼーション5）のマルチプレイのやり方を公式ドキュメントから解説。ユーザーIDとゲームIDでのオンライン対戦の始め方、標準サーバーがつながりにくい理由、UncivServer.jarで自分のサーバーを立てる手順。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/unciv/multiplayer/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv マルチプレイのやり方とサーバーの立て方">
+<meta name="twitter:description" content="Unciv（オープンソース版シヴィライゼーション5）のマルチプレイのやり方を公式ドキュメントから解説。ユーザーIDとゲームIDでのオンライン対戦の始め方、標準サーバーがつながりにくい理由、UncivServer.jarで自分のサーバーを立てる手順。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv マルチプレイのやり方とサーバーの立て方",
+      "description": "Unciv（オープンソース版シヴィライゼーション5）のマルチプレイのやり方を公式ドキュメントから解説。ユーザーIDとゲームIDでのオンライン対戦の始め方、標準サーバーがつながりにくい理由、UncivServer.jarで自分のサーバーを立てる手順。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/unciv/multiplayer/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv マルチプレイのやり方とサーバーの立て方",
+          "item": "https://kouryakulab.com/ja/games/unciv/multiplayer/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/unciv/"><span class="arrow">←</span> Unciv 攻略ガイド</a>
+    <div>
+      <span class="eyebrow">UNCIV ・ マルチプレイ</span>
+      <h1>マルチプレイのやり方</h1>
+      <p class="sub">オンライン対戦の始め方と、標準サーバーが混んでいるときに自分のサーバーを立てる方法。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">Uncivのマルチプレイは、毎ターンのセーブファイルをアップロード・ダウンロードする仕組み。全員が<b>同じマルチプレイサーバー</b>を使う必要があり、ホストが他のプレイヤーの<b>ユーザーID</b>でゲームを作り、<b>ゲームID</b>を送る。</p>
+      <p style="margin:0;">公式ドキュメントによると、標準のサーバーは多くのプレイヤーが共有する無料のDropboxアカウントなので、つながらないことがある。安定して遊ぶなら、公式のUncivServer.jarで<b>自分のサーバーを立てる</b>方法がある。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事はUncivの公式マルチプレイドキュメントを分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>ゲームの始め方</h2></div>
+    <div class="panel">
+      <ol class="steps">
+      <li><span class="n">1</span><span>全員が同じサーバーを使っているか確認する：<b>メインメニュー → 設定 → マルチプレイ</b>。</span></li>
+      <li><span class="n">2</span><span>各プレイヤーがユーザーIDをコピーして（<b>メインメニュー → マルチプレイ → ユーザーIDをコピー</b>）ホストに送る。<b>フレンドリスト</b>に登録しておくこともできる。</span></li>
+      <li><span class="n">3</span><span>ホストは<b>新しくゲームを始める</b>で<b>オンラインマルチプレイ</b>にチェックを入れ、人間のプレイヤーを追加してユーザーIDを入力し、<b>ゲーム開始</b>を押す。</span></li>
+      <li><span class="n">4</span><span>ゲームIDは自動でホストのクリップボードにコピーされる（<b>マルチプレイ → ゲームIDをコピー</b>でも取得できる）。他のプレイヤーに送る。</span></li>
+      <li><span class="n">5</span><span>他のプレイヤーは<b>マルチプレイ → マルチプレイゲームを追加</b>でゲームIDを入力し、その画面から参加する。</span></li>
+      </ol>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>自分のサーバーを立てる</h2></div>
+    <div class="panel">
+      <ol class="steps">
+      <li><span class="n">1</span><span>Java JDKをインストールし、GitHubのUncivのリリースページから最新の<b>UncivServer.jar</b>をダウンロードする。</span></li>
+      <li><span class="n">2</span><span>jarと同じ場所に<b>MultiplayerFiles</b>というフォルダを作り、そこでターミナルを開いて <code>java -jar UncivServer.jar</code> を実行する。</span></li>
+      <li><span class="n">3</span><span>同じパソコンで確認する。Uncivの<b>設定 → マルチプレイ</b>でサーバーのアドレスを <code>http://localhost:8080</code> にして、接続を確認する。</span></li>
+      <li><span class="n">4</span><span>外部のプレイヤー向けには、ルーターでサーバーのポート（標準8080）を転送し、<code>http://（グローバルIP）:（ポート）</code> を使う。</span></li>
+      <li><span class="n">5</span><span>全員が同じサーバーのアドレスを設定する。違うサーバーの端末同士では一緒に遊べない。</span></li>
+      </ol>
+    </div>
+    <div class="callout"><b>補足：</b>サーバーはHTTPでファイルを置くだけのシンプルなもの。オプションは <code>-p</code>（ポート）と <code>-f</code>（フォルダ）。ゲームが終わってもファイルは自動で消えない。グローバルIPが変わる環境では、その都度更新するかダイナミックDNSを使う。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">標準のサーバーにつながらないのはなぜ？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">公式ドキュメントによると、Dropboxを使う標準サーバーは多くのプレイヤーが共有していて、何度も上限に達している。自分でサーバーを立てるのが公式の対処法。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">コミュニティのサーバーはある？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">公式ドキュメントにはコミュニティ運営のサーバーも載っているが、非公式で、停止したりセーブが消えたりすることがあり、データを収集する可能性もあると注意書きがある。それを受け入れられる場合だけ使おう。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">同時にオンラインでいる必要はある？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">ない。セーブファイルを回す仕組みなので、各自が都合の良いときに手番を進められる。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/unciv/">Unciv 攻略ガイド</a>
+      <a href="/ja/games/unciv/game-speed/">ゲーム速度</a>
+      <a href="/ja/games/unciv/vs-civ5/">シヴィ5との違い</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv ソースコード（yairm210/Unciv、MPL-2.0）</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv データファイル：Civ V Gods & Kings ルールセット（2026-10-02 時点）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/translations/Japanese.properties" target="_blank" rel="noopener">Unciv 公式日本語訳ファイル（Japanese.properties）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/docs/Other/Multiplayer.md" target="_blank" rel="noopener">Unciv公式ドキュメント：Multiplayer</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>
