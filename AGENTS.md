@@ -149,7 +149,8 @@ git diff --stat                 # 想定した言語数ぶんのファイルが�
 - 成長は CityPopulationManager（15+8(人口−1)+floor((人口−1)^1.5)、市民1人食料2）、不満の段階は GlobalUniques.json（−1〜−10で成長−75%、−10未満で成長停止・生産−50%・戦闘力−33%）。偉人は GreatPersonManager（100×速度で開始し2倍、科学者・技術者・商人・芸術家は「Great Person」グループで閾値を共有、将軍・提督は200から+50）。
 - 文明ページの固有ユニット比較表の「追加の能力」は、ユニットの uniques と promotions（固有能力は UnitPromotions.json に隠し昇進として入っている）から置き換え対象との差分を取っている。
 - MapSize.kt のコメントにあるシヴィ5のマップ寸法は引数の並びが紛らわしく、Uncivの方が小さいとは言い切れないので書かない。
-- 未対応の需要：MOD（主要MODのデータ）。マルチプレイは `/multiplayer/`（docs/Other/Multiplayer.md より。コミュニティのサーバーは名指しで勧めない）。文明ごとの個別ページは中身が薄くなりやすいので作らない（AdSenseの低品質判定対策）。
+- MODページ `/mods/` の人気MOD表は `python3 scripts/build_unciv_mods.py`（GitHub の topic:unciv-mod をスター順に40件、確認日を表示）。月1回程度更新する。説明文は作者の英文のまま。
+- 未対応の需要：特になし（Uncivは主要な需要をひと通りカバー済み・2026/10）。マルチプレイは `/multiplayer/`（docs/Other/Multiplayer.md より。コミュニティのサーバーは名指しで勧めない）。文明ごとの個別ページは中身が薄くなりやすいので作らない（AdSenseの低品質判定対策）。
 
 ## 翻訳の一貫性ルール
 
