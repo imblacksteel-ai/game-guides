@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How Unciv city growth and happiness work, from the game's source: the food-to-grow formula with a full table, food eaten per citizen, every happiness source, annexation penalties, and what unhappiness does at −1, −10 and −20.">
+<title>Unciv City Growth and Happiness: Formulas from the Code</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/games/unciv/growth-happiness/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/growth-happiness/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/growth-happiness/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/growth-happiness/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:title" content="Unciv City Growth and Happiness: Formulas from the Code">
+<meta property="og:description" content="How Unciv city growth and happiness work, from the game's source: the food-to-grow formula with a full table, food eaten per citizen, every happiness source, annexation penalties, and what unhappiness does at −1, −10 and −20.">
+<meta property="og:url" content="https://kouryakulab.com/games/unciv/growth-happiness/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv City Growth and Happiness: Formulas from the Code">
+<meta name="twitter:description" content="How Unciv city growth and happiness work, from the game's source: the food-to-grow formula with a full table, food eaten per citizen, every happiness source, annexation penalties, and what unhappiness does at −1, −10 and −20.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv City Growth and Happiness: Formulas from the Code",
+      "description": "How Unciv city growth and happiness work, from the game's source: the food-to-grow formula with a full table, food eaten per citizen, every happiness source, annexation penalties, and what unhappiness does at −1, −10 and −20.",
+      "inLanguage": "en",
+      "url": "https://kouryakulab.com/games/unciv/growth-happiness/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv City Growth and Happiness: Formulas from the Code",
+          "item": "https://kouryakulab.com/games/unciv/growth-happiness/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/games/unciv/"><span class="arrow">←</span> Unciv Guide</a>
+    <div>
+      <span class="eyebrow">UNCIV · GROWTH & HAPPINESS</span>
+      <h1>City Growth and Happiness</h1>
+      <p class="sub">The real formulas behind growth and happiness, read from Unciv's code — with a full food table.</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="Language"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Conclusion</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">A city needs <b>15 food</b> to grow from size 1, then <b>8 more per size</b> plus a small extra: 15 + 8 × (size − 1) + (size − 1)<sup>1.5</sup>, rounded down. Each citizen eats <b>2 food</b>, and only the surplus counts toward growth.</p>
+      <p style="margin:0;">Happiness is the brake. Every city costs 3 and every citizen 1, while each <b>different</b> luxury gives 4. Once your empire dips below zero, growth drops by 75%; below −10, cities stop growing and units fight 33% weaker.</p>
+    </div>
+    <div class="callout"><b>An analysis-based guide:</b> this guide is based on our analysis of Unciv's growth and happiness code (CityPopulationManager.kt, CityStats.kt) and GlobalUniques.json. It describes what the data shows and is not a guarantee of results.</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>Food Needed to Grow</h2></div>
+<!-- UNCIV-GROWTH -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Population</th><th>Food (Standard)</th><th>Total from size 1</th><th>Quick</th><th>Epic</th><th>Marathon</th></tr></thead><tbody>
+<tr><td>1 → 2</td><td>15</td><td>15</td><td>10</td><td>22</td><td>45</td></tr>
+<tr><td>2 → 3</td><td>24</td><td>39</td><td>16</td><td>36</td><td>72</td></tr>
+<tr><td>3 → 4</td><td>33</td><td>72</td><td>22</td><td>49</td><td>99</td></tr>
+<tr><td>4 → 5</td><td>44</td><td>116</td><td>29</td><td>66</td><td>132</td></tr>
+<tr><td>5 → 6</td><td>55</td><td>171</td><td>36</td><td>82</td><td>165</td></tr>
+<tr><td>6 → 7</td><td>66</td><td>237</td><td>44</td><td>99</td><td>198</td></tr>
+<tr><td>7 → 8</td><td>77</td><td>314</td><td>51</td><td>115</td><td>231</td></tr>
+<tr><td>8 → 9</td><td>89</td><td>403</td><td>59</td><td>133</td><td>267</td></tr>
+<tr><td>9 → 10</td><td>101</td><td>504</td><td>67</td><td>151</td><td>303</td></tr>
+<tr><td>10 → 11</td><td>114</td><td>618</td><td>76</td><td>171</td><td>342</td></tr>
+<tr><td>11 → 12</td><td>126</td><td>744</td><td>84</td><td>189</td><td>378</td></tr>
+<tr><td>12 → 13</td><td>139</td><td>883</td><td>93</td><td>208</td><td>417</td></tr>
+<tr><td>13 → 14</td><td>152</td><td>1035</td><td>101</td><td>228</td><td>456</td></tr>
+<tr><td>14 → 15</td><td>165</td><td>1200</td><td>110</td><td>247</td><td>495</td></tr>
+<tr><td>15 → 16</td><td>179</td><td>1379</td><td>119</td><td>268</td><td>537</td></tr>
+<tr><td>16 → 17</td><td>193</td><td>1572</td><td>129</td><td>289</td><td>579</td></tr>
+<tr><td>17 → 18</td><td>207</td><td>1779</td><td>138</td><td>310</td><td>621</td></tr>
+<tr><td>18 → 19</td><td>221</td><td>2000</td><td>148</td><td>331</td><td>663</td></tr>
+<tr><td>19 → 20</td><td>235</td><td>2235</td><td>157</td><td>352</td><td>705</td></tr>
+<tr><td>20 → 21</td><td>249</td><td>2484</td><td>166</td><td>373</td><td>747</td></tr>
+<tr><td>21 → 22</td><td>264</td><td>2748</td><td>176</td><td>396</td><td>792</td></tr>
+<tr><td>22 → 23</td><td>279</td><td>3027</td><td>186</td><td>418</td><td>837</td></tr>
+<tr><td>23 → 24</td><td>294</td><td>3321</td><td>196</td><td>441</td><td>882</td></tr>
+<tr><td>24 → 25</td><td>309</td><td>3630</td><td>207</td><td>463</td><td>927</td></tr>
+<tr><td>25 → 26</td><td>324</td><td>3954</td><td>217</td><td>486</td><td>972</td></tr>
+<tr><td>26 → 27</td><td>340</td><td>4294</td><td>227</td><td>510</td><td>1020</td></tr>
+<tr><td>27 → 28</td><td>355</td><td>4649</td><td>237</td><td>532</td><td>1065</td></tr>
+<tr><td>28 → 29</td><td>371</td><td>5020</td><td>248</td><td>556</td><td>1113</td></tr>
+<tr><td>29 → 30</td><td>387</td><td>5407</td><td>259</td><td>580</td><td>1161</td></tr>
+<tr><td>30 → 31</td><td>403</td><td>5810</td><td>270</td><td>604</td><td>1209</td></tr>
+</tbody></table></div>
+<!-- /UNCIV-GROWTH -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">Formula from the game's code. Game speed multiplies it; city-states need 50% more; AI cities use the difficulty's AI growth modifier.</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>Where Happiness Comes From</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>Source</th><th>Happiness</th><th>Notes</th></tr></thead>
+        <tbody>
+        <tr><td>Base (difficulty)</td><td>+15 Settler, +12 Chieftain/Warlord, +9 Prince+</td><td></td></tr>
+        <tr><td>Each city</td><td>−3</td><td>−5 for an annexed city you didn't found (until it has a Courthouse); scaled by difficulty.</td></tr>
+        <tr><td>Each citizen</td><td>−1</td><td>Doubled in annexed cities; scaled by difficulty. India halves it.</td></tr>
+        <tr><td>Annexed city</td><td>−2 extra</td><td>Removed by a Courthouse.</td></tr>
+        <tr><td>Each different luxury resource</td><td>+4</td><td>Only the first copy counts; extra copies are for trading.</td></tr>
+        <tr><td>Buildings, wonders, policies, natural wonders</td><td>varies</td><td>See the Buildings and Wonders pages.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>What Unhappiness Does</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>Empire happiness</th><th>Effect (GlobalUniques.json)</th></tr></thead>
+        <tbody>
+        <tr><td>−1 to −10</td><td>−75% growth in all cities</td></tr>
+        <tr><td>Below −10</td><td>No growth, −50% production, −33% unit strength, can't build Settlers</td></tr>
+        <tr><td>Below −20</td><td>Rebel units may spawn</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>Practical Takeaways</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><b>Spread your luxuries.</b> A new kind of luxury is worth +4; a second copy of one you have is worth nothing until you trade it.</li>
+        <li><b>Each new city costs at least 4 happiness</b> (3 for the city, 1 for its first citizen) before buildings.</li>
+        <li><b>Annexing is expensive.</b> An annexed city starts at −5 and doubles its citizens' unhappiness until it has a Courthouse; a puppet avoids the extra penalty.</li>
+        <li><b>Growth slows gently, not sharply.</b> Size 10 → 11 needs 114 food and size 20 → 21 needs 249 on Standard speed.</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">06</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Why did my city stop growing?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Check empire happiness: below −10 growth stops completely. Also check that the city has a food surplus after its citizens eat 2 food each.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Do specialists eat food?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Yes, 2 food each like any citizen.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Does difficulty change unhappiness?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Yes — your unhappiness is multiplied by 40% on Settler, 60% Chieftain, 75% Warlord and 100% from Prince up.</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>Continue reading</h3>
+    <div class="more-guides-links">
+      <a href="/games/unciv/">Unciv Guide</a>
+      <a href="/games/unciv/combat/">Combat</a>
+      <a href="/games/unciv/civilizations/">Civilizations</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">This is an unofficial, fan-made, analysis-based guide. It is not a guarantee of results, and game updates may change any of it.</div>
+    <div class="sources">
+      Sources:
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv source code (yairm210/Unciv, MPL-2.0)</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv data files — Civ V: Gods & Kings ruleset, commit of 2026-10-02</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/core/src/com/unciv/logic/city/managers/CityPopulationManager.kt" target="_blank" rel="noopener">Unciv source: CityPopulationManager.kt (food to grow)</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/core/src/com/unciv/logic/city/CityStats.kt" target="_blank" rel="noopener">Unciv source: CityStats.kt (happiness and food eaten)</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="Site links"><a href="/about/">About</a> · <a href="/authors/">Authors</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

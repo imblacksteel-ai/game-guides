@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unciv（オープンソース版シヴィライゼーション5）の偉人の仕組みをデータとソースから解説。各偉人の能力、専門家の産出とポイント、ポイントをくれる建物・遺産、そして科学者・技術者・商人・芸術家が2倍になる必要ポイントを共有している理由。">
+<title>Unciv 偉人の仕組み：ポイント・専門家・共有される必要ポイント</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/unciv/great-people/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/great-people/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/great-people/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/great-people/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Unciv 偉人の仕組み：ポイント・専門家・共有される必要ポイント">
+<meta property="og:description" content="Unciv（オープンソース版シヴィライゼーション5）の偉人の仕組みをデータとソースから解説。各偉人の能力、専門家の産出とポイント、ポイントをくれる建物・遺産、そして科学者・技術者・商人・芸術家が2倍になる必要ポイントを共有している理由。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/unciv/great-people/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv 偉人の仕組み：ポイント・専門家・共有される必要ポイント">
+<meta name="twitter:description" content="Unciv（オープンソース版シヴィライゼーション5）の偉人の仕組みをデータとソースから解説。各偉人の能力、専門家の産出とポイント、ポイントをくれる建物・遺産、そして科学者・技術者・商人・芸術家が2倍になる必要ポイントを共有している理由。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv 偉人の仕組み：ポイント・専門家・共有される必要ポイント",
+      "description": "Unciv（オープンソース版シヴィライゼーション5）の偉人の仕組みをデータとソースから解説。各偉人の能力、専門家の産出とポイント、ポイントをくれる建物・遺産、そして科学者・技術者・商人・芸術家が2倍になる必要ポイントを共有している理由。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/unciv/great-people/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv 偉人の仕組み：ポイント・専門家・共有される必要ポイント",
+          "item": "https://kouryakulab.com/ja/games/unciv/great-people/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/unciv/"><span class="arrow">←</span> Unciv 攻略ガイド</a>
+    <div>
+      <span class="eyebrow">UNCIV ・ 偉人</span>
+      <h1>偉人：ポイントと共有の枠</h1>
+      <p class="sub">各偉人の能力、ポイントの入手元、そして意外と知られていない共有の必要ポイント。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">GreatPersonManager.ktを読むと、最初の偉人に必要なのは<b>100ポイント</b>（×ゲーム速度）で、1人出るたびに<b>2倍</b>になる。注意点は、<b>大科学者・大技術者・大商人・大芸術家が1つの枠を共有している</b>こと。どれか1人が出ると、全種類の次の必要ポイントが2倍になる。大預言者は別枠。</p>
+      <p style="margin:0;">大将軍と大提督は戦闘で得るポイントから出る。最初は200ポイント、以降は1人ごとに50ずつ増える。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事はUncivのUnits・Specialists・BuildingsのデータとGreatPersonManager.ktを分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>偉人とできること</h2></div>
+<!-- UNCIV-GREATPEOPLE -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>偉人</th><th>ポイントの枠</th><th>できること</th></tr></thead><tbody>
+<tr><td><b>大科学者</b></td><td>偉人</td><td><ul class='exped-notes' style='margin:0'><li>テクノロジーの研究を早める</li><li>このユニットを消費することで、タイルにアカデミーを即時整備できる</li></ul></td></tr>
+<tr><td><b>大技術者</b></td><td>偉人</td><td><ul class='exped-notes' style='margin:0'><li>建造物の建設を進められる</li><li>このユニットを消費することで、タイルに製造所を即時整備できる</li></ul></td></tr>
+<tr><td><b>大商人</b></td><td>偉人</td><td><ul class='exped-notes' style='margin:0'><li>都市国家の領土内で「通商任務」を遂行することで、多額のゴールドとその都市国家に対する影響力30を得ることができる</li><li>このユニットを消費することで、タイルに税関を即時整備できる</li></ul></td></tr>
+<tr><td><b>大芸術家</b></td><td>偉人</td><td><ul class='exped-notes' style='margin:0'><li>このユニットを消費することで、国家が8ターンの黄金時代に入る</li><li>このユニットを消費することで、タイルにランドマークを即時整備できる</li></ul></td></tr>
+<tr><td><b>大預言者</b></td><td>預言者</td><td><ul class='exped-notes' style='margin:0'><li>このユニットを消費することで、まだ他のアクションを行っていない場合、タイルに聖地を即時整備できる</li><li>2の移動力で、4回、このユニットが消費された後、布教できる</li><li>布教時に他の宗教を排除する</li><li>このユニットを消費することで、まだ他のアクションを行っていない場合、宗教を創始できる</li><li>このユニットを消費することで、まだ他のアクションを行っていない場合、宗教を強化できる</li><li>国境開放していない文明の領土に入れる</li><li>誕生した都市の宗教ではなくあなたの宗教を選択する</li></ul></td></tr>
+<tr><td><b>大将軍</b></td><td>将軍</td><td><ul class='exped-notes' style='margin:0'><li>2タイル以内にいる軍事地上ユニットに+15%の戦闘力ボーナス</li><li>このユニットを消費することで、タイルに城塞を即時整備できる</li><li>地上のユニットに、戦闘によって獲得できる</li></ul></td></tr>
+<tr><td><b>大提督</b></td><td>提督</td><td><ul class='exped-notes' style='margin:0'><li>市街地のタイルで、25タイル以内のあなたの海岸市街地タイルに降下できる</li><li>2タイル以内にいる軍事水上ユニットに+15%の戦闘力ボーナス</li><li>水上のユニットに、戦闘によって獲得できる</li></ul></td></tr>
+</tbody></table></div>
+<!-- /UNCIV-GREATPEOPLE -->
+
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>専門家</h2></div>
+<!-- UNCIV-SPECIALISTS -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>専門家</th><th>産出</th><th>偉人ポイント</th></tr></thead><tbody>
+<tr><td><b>科学者</b></td><td>科学力+3</td><td>大科学者+3</td></tr>
+<tr><td><b>商人</b></td><td>ゴールド+3</td><td>大商人+3</td></tr>
+<tr><td><b>芸術家</b></td><td>文化力+2</td><td>大芸術家+3</td></tr>
+<tr><td><b>技術者</b></td><td>生産力+2</td><td>大技術者+3</td></tr>
+</tbody></table></div>
+<!-- /UNCIV-SPECIALISTS -->
+
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>ポイントをくれる建物と遺産</h2></div>
+<!-- UNCIV-GPSOURCES -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>入手元</th><th>種類</th><th>毎ターンのポイント</th><th>専門家の枠</th></tr></thead><tbody>
+<tr><td><b>アルテミス神殿</b></td><td>世界遺産</td><td>大技術者+1</td><td>—</td></tr>
+<tr><td><b>ストーンヘンジ</b></td><td>世界遺産</td><td>大技術者+1</td><td>—</td></tr>
+<tr><td><b>アレクサンドリア図書館</b></td><td>世界遺産</td><td>大科学者+1</td><td>—</td></tr>
+<tr><td><b>ピラミッド</b></td><td>世界遺産</td><td>大技術者+1</td><td>—</td></tr>
+<tr><td><b>マウソロス霊廟</b></td><td>世界遺産</td><td>大商人+1</td><td>—</td></tr>
+<tr><td><b>ファロス灯台</b></td><td>世界遺産</td><td>大商人+1</td><td>—</td></tr>
+<tr><td><b>空中庭園</b></td><td>世界遺産</td><td>大芸術家+1</td><td>—</td></tr>
+<tr><td><b>兵馬俑</b></td><td>世界遺産</td><td>大芸術家+1</td><td>—</td></tr>
+<tr><td><b>アポロ神殿</b></td><td>世界遺産</td><td>大科学者+1</td><td>—</td></tr>
+<tr><td><b>ペトラ</b></td><td>世界遺産</td><td>大技術者+1</td><td>—</td></tr>
+<tr><td><b>万里の長城</b></td><td>世界遺産</td><td>大技術者+1</td><td>—</td></tr>
+<tr><td><b>ロードス島の巨神像</b></td><td>世界遺産</td><td>大商人+1</td><td>—</td></tr>
+<tr><td><b>ハギア・ソフィア聖堂</b></td><td>世界遺産</td><td>大芸術家+1</td><td>—</td></tr>
+<tr><td><b>泥のモスク</b></td><td>世界遺産</td><td>大技術者+1</td><td>—</td></tr>
+<tr><td><b>チチェン・イツァ</b></td><td>世界遺産</td><td>大技術者+1</td><td>—</td></tr>
+<tr><td><b>マチュ・ピチュ</b></td><td>世界遺産</td><td>大商人+1</td><td>—</td></tr>
+<tr><td><b>アンコールワット</b></td><td>世界遺産</td><td>大技術者+1</td><td>—</td></tr>
+<tr><td><b>アランブラ</b></td><td>世界遺産</td><td>大芸術家+1</td><td>—</td></tr>
+<tr><td><b>ノートルダム大聖堂</b></td><td>世界遺産</td><td>大商人+1</td><td>—</td></tr>
+<tr><td><b>システィーナ礼拝堂</b></td><td>世界遺産</td><td>大芸術家+2</td><td>—</td></tr>
+<tr><td><b>紫禁城</b></td><td>世界遺産</td><td>大芸術家+1</td><td>—</td></tr>
+<tr><td><b>ピサの斜塔</b></td><td>世界遺産</td><td>大芸術家+1</td><td>—</td></tr>
+<tr><td><b>姫路城</b></td><td>世界遺産</td><td>大技術者+2</td><td>—</td></tr>
+<tr><td><b>タージ・マハル</b></td><td>世界遺産</td><td>大芸術家+2</td><td>—</td></tr>
+<tr><td><b>南京の陶塔</b></td><td>世界遺産</td><td>大科学者+2</td><td>—</td></tr>
+<tr><td><b>クレムリン宮殿</b></td><td>世界遺産</td><td>大科学者+1</td><td>—</td></tr>
+<tr><td><b>ルーブル美術館</b></td><td>世界遺産</td><td>大芸術家+2</td><td>—</td></tr>
+<tr><td><b>ビッグベン</b></td><td>世界遺産</td><td>大商人+2</td><td>—</td></tr>
+<tr><td><b>ブランデンブルク門</b></td><td>世界遺産</td><td>大科学者+2</td><td>—</td></tr>
+<tr><td><b>エッフェル塔</b></td><td>世界遺産</td><td>大商人+2</td><td>—</td></tr>
+<tr><td><b>自由の女神</b></td><td>世界遺産</td><td>大技術者+2</td><td>—</td></tr>
+<tr><td><b>ノイシュヴァンシュタイン城</b></td><td>世界遺産</td><td>大商人+1</td><td>—</td></tr>
+<tr><td><b>コルコバードのキリスト像</b></td><td>世界遺産</td><td>大芸術家+2</td><td>—</td></tr>
+<tr><td><b>ペンタゴン</b></td><td>世界遺産</td><td>大技術者+2</td><td>—</td></tr>
+<tr><td><b>シドニー・オペラハウス</b></td><td>世界遺産</td><td>大芸術家+2</td><td>—</td></tr>
+<tr><td><b>CNタワー</b></td><td>世界遺産</td><td>大商人+1</td><td>—</td></tr>
+<tr><td><b>ハッブル宇宙望遠鏡</b></td><td>世界遺産</td><td>大科学者+1</td><td>—</td></tr>
+<tr><td><b>国際連合</b></td><td>世界遺産</td><td>大商人+2</td><td>—</td></tr>
+</tbody></table></div>
+<!-- /UNCIV-GPSOURCES -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">名称と効果文はゲームの公式日本語訳による。数値はゲーム本体のデータファイル（Unciv同梱の Civ V Gods &amp; Kings ルールセット）を、2026年10月2日時点のソースから読み取ったもの。アップデートやMODで変わることがある。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>必要ポイント</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>何人目</th><th>科学者・技術者・商人・芸術家（共有）</th><th>大将軍・大提督</th></tr></thead>
+        <tbody>
+        <tr><td>1人目</td><td>100</td><td>200</td></tr>
+        <tr><td>2人目</td><td>200</td><td>250</td></tr>
+        <tr><td>3人目</td><td>400</td><td>300</td></tr>
+        <tr><td>4人目</td><td>800</td><td>350</td></tr>
+        <tr><td>5人目</td><td>1,600</td><td>400</td></tr>
+        </tbody>
+      </table>
+    </div>    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">標準速度。共有枠はクイック×0.67、エピック×1.5、マラソン×3。バビロンは大科学者を50%早く獲得し、「解放」の完成ボーナスで偉人が1人無償で手に入る。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">06</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">大芸術家が急に遅くなったのはなぜ？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">大科学者・大技術者・大商人が出たばかりだから。同じ必要ポイントを共有している。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">ポイントを増やすには？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">専門家を配置する（1人あたり毎ターン3ポイント）、上の建物や遺産を建てる。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">大預言者も影響を受ける？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">受けない。大預言者は別の枠と必要ポイントを持つ。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/unciv/">Unciv 攻略ガイド</a>
+      <a href="/ja/games/unciv/combat/">戦闘の仕組み</a>
+      <a href="/ja/games/unciv/civilizations/">文明一覧</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv ソースコード（yairm210/Unciv、MPL-2.0）</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv データファイル：Civ V Gods & Kings ルールセット（2026-10-02 時点）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/translations/Japanese.properties" target="_blank" rel="noopener">Unciv 公式日本語訳ファイル（Japanese.properties）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/core/src/com/unciv/logic/civilization/managers/GreatPersonManager.kt" target="_blank" rel="noopener">Unciv ソース：GreatPersonManager.kt（必要ポイント）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

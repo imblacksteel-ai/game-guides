@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unciv（オープンソース版シヴィライゼーション5）の全地形・地形特徴・自然遺産・資源・タイル整備の一覧。ゲームのデータから、産出・移動コスト・防御ボーナス・整備方法・発見に必要な技術をまとめた。">
+<title>Unciv 地形・資源・タイル整備：産出とボーナス</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/unciv/terrain/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/terrain/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/terrain/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/terrain/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Unciv 地形・資源・タイル整備：産出とボーナス">
+<meta property="og:description" content="Unciv（オープンソース版シヴィライゼーション5）の全地形・地形特徴・自然遺産・資源・タイル整備の一覧。ゲームのデータから、産出・移動コスト・防御ボーナス・整備方法・発見に必要な技術をまとめた。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/unciv/terrain/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv 地形・資源・タイル整備：産出とボーナス">
+<meta name="twitter:description" content="Unciv（オープンソース版シヴィライゼーション5）の全地形・地形特徴・自然遺産・資源・タイル整備の一覧。ゲームのデータから、産出・移動コスト・防御ボーナス・整備方法・発見に必要な技術をまとめた。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv 地形・資源・タイル整備：産出とボーナス",
+      "description": "Unciv（オープンソース版シヴィライゼーション5）の全地形・地形特徴・自然遺産・資源・タイル整備の一覧。ゲームのデータから、産出・移動コスト・防御ボーナス・整備方法・発見に必要な技術をまとめた。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/unciv/terrain/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv 地形・資源・タイル整備：産出とボーナス",
+          "item": "https://kouryakulab.com/ja/games/unciv/terrain/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/unciv/"><span class="arrow">←</span> Unciv 攻略ガイド</a>
+    <div>
+      <span class="eyebrow">UNCIV ・ 地形</span>
+      <h1>地形・資源・タイル整備</h1>
+      <p class="sub">全タイルの産出・移動・防御と、全資源・全タイル整備をUncivのデータから。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">マップ上のものを1ページに。基本地形、地形特徴、自然遺産、資源、タイル整備の産出・移動コスト・防御ボーナスをまとめた。</p>
+      <p style="margin:0;">戦闘で役立つのはシンプルな1行。<b>丘陵・森林・ジャングルは防御+25%</b>、湿原（−15%）と氾濫原・オアシス（−10%）は防御側が弱くなる。地形特徴のボーナスは基本地形の値を置き換える。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事はUncivのTerrains・TileResources・TileImprovementsのデータファイルを分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>基本地形</h2></div>
+<!-- UNCIV-TERRAIN -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>地形</th><th>産出</th><th>移動コスト</th><th>防御</th><th>特徴</th></tr></thead><tbody>
+<tr><td><b>外洋</b></td><td>食料+1、ゴールド+1</td><td>1</td><td>—</td><td>—</td></tr>
+<tr><td><b>近海</b></td><td>食料+1、ゴールド+1</td><td>1</td><td>—</td><td>—</td></tr>
+<tr><td><b>草原</b></td><td>食料+2</td><td>1</td><td>—</td><td>—</td></tr>
+<tr><td><b>平原</b></td><td>食料+1、生産力+1</td><td>1</td><td>—</td><td>—</td></tr>
+<tr><td><b>ツンドラ</b></td><td>食料+1</td><td>1</td><td>—</td><td>—</td></tr>
+<tr><td><b>砂漠</b></td><td>—</td><td>1</td><td>—</td><td>—</td></tr>
+<tr><td><b>湖</b></td><td>食料+2、ゴールド+1</td><td>1</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>淡水源</li></ul></td></tr>
+<tr><td><b>山岳</b></td><td>—</td><td>通行不可</td><td>+25%</td><td><ul class='exped-notes' style='margin:0'><li>起伏に富んだ地形</li><li>ターン終了時にこのタイル上にいるユニットは50ダメージを受ける</li></ul></td></tr>
+<tr><td><b>氷土</b></td><td>—</td><td>1</td><td>—</td><td>—</td></tr>
+</tbody></table></div>
+<!-- /UNCIV-TERRAIN -->
+
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>地形特徴</h2></div>
+<!-- UNCIV-FEATURES -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>地形</th><th>産出</th><th>移動コスト</th><th>防御</th><th>特徴</th></tr></thead><tbody>
+<tr><td><b>丘陵</b></td><td>生産力+2</td><td>2</td><td>+25%</td><td><ul class='exped-notes' style='margin:0'><li>起伏に富んだ地形</li><li>この地形上に建設された都市に+5の戦闘力</li></ul></td></tr>
+<tr><td><b>森林</b></td><td>食料+1、生産力+1</td><td>2</td><td>+25%</td><td><ul class='exped-notes' style='margin:0'><li>起伏に富んだ地形</li><li>(ゲームスピードによって調整される)、伐採された時に最も近い都市に生産力+30のボーナスを一度与える</li></ul></td></tr>
+<tr><td><b>ジャングル</b></td><td>食料+2</td><td>2</td><td>+25%</td><td><ul class='exped-notes' style='margin:0'><li>起伏に富んだ地形</li></ul></td></tr>
+<tr><td><b>湿原</b></td><td>食料-1</td><td>3</td><td>-15%</td><td>—</td></tr>
+<tr><td><b>死の灰</b></td><td>—</td><td>2</td><td>-15%</td><td><ul class='exped-notes' style='margin:0'><li>このタイルが供給する他の状態を無効にする</li></ul></td></tr>
+<tr><td><b>オアシス</b></td><td>食料+3、ゴールド+1</td><td>1</td><td>-10%</td><td><ul class='exped-notes' style='margin:0'><li>淡水源</li><li>このタイルには改良すべての道しか建設できない</li></ul></td></tr>
+<tr><td><b>氾濫原</b></td><td>食料+2</td><td>1</td><td>-10%</td><td>—</td></tr>
+<tr><td><b>氷河</b></td><td>—</td><td>通行不可</td><td>—</td><td>—</td></tr>
+<tr><td><b>環礁</b></td><td>食料+1、生産力+1</td><td>1</td><td>—</td><td>—</td></tr>
+<tr><td><b>川</b></td><td>ゴールド+1</td><td>0</td><td>—</td><td>—</td></tr>
+</tbody></table></div>
+<!-- /UNCIV-FEATURES -->
+
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>自然遺産</h2></div>
+<!-- UNCIV-NATURALWONDERS -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>地形</th><th>産出</th><th>移動コスト</th><th>防御</th><th>特徴</th></tr></thead><tbody>
+<tr><td><b>グレート・バリア・リーフ</b></td><td>食料+2、生産力+1、ゴールド+1、科学力+2</td><td>通行不可</td><td>—</td><td>—</td></tr>
+<tr><td><b>オールド・フェイスフル</b></td><td>科学力+2、幸福度+3</td><td>通行不可</td><td>—</td><td>—</td></tr>
+<tr><td><b>エル・ドラード</b></td><td>文化力+5</td><td>通行不可</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>最初に発見した文明はゴールド+500得る</li></ul></td></tr>
+<tr><td><b>若返りの泉</b></td><td>幸福度+10</td><td>通行不可</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>隣接した軍事地上ユニットは残りのゲーム中若返り（すべての回復効果が倍）を得る</li><li>このタイルは労働者を割当てがなくても産出する</li></ul></td></tr>
+<tr><td><b>グランド・メサ</b></td><td>生産力+2、ゴールド+3</td><td>通行不可</td><td>—</td><td>—</td></tr>
+<tr><td><b>富士山</b></td><td>ゴールド+2、文化力+3、信仰力+3</td><td>通行不可</td><td>—</td><td>—</td></tr>
+<tr><td><b>クラカタウ</b></td><td>科学力+5</td><td>通行不可</td><td>—</td><td>—</td></tr>
+<tr><td><b>ジブラルタルの岩山</b></td><td>食料+2、ゴールド+5</td><td>通行不可</td><td>—</td><td>—</td></tr>
+<tr><td><b>ポトシ</b></td><td>ゴールド+10</td><td>通行不可</td><td>—</td><td>—</td></tr>
+<tr><td><b>バリンジャー・クレーター</b></td><td>ゴールド+2、科学力+3</td><td>通行不可</td><td>—</td><td>—</td></tr>
+<tr><td><b>カイラス山</b></td><td>信仰力+6、幸福度+2</td><td>通行不可</td><td>—</td><td>—</td></tr>
+<tr><td><b>シナイ山</b></td><td>信仰力+8</td><td>通行不可</td><td>—</td><td>—</td></tr>
+<tr><td><b>スリー･パーダ</b></td><td>食料+2、信仰力+4、幸福度+2</td><td>通行不可</td><td>—</td><td>—</td></tr>
+<tr><td><b>ウルル</b></td><td>食料+2、信仰力+6</td><td>通行不可</td><td>—</td><td>—</td></tr>
+</tbody></table></div>
+<!-- /UNCIV-NATURALWONDERS -->
+
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>資源</h2></div>
+<!-- UNCIV-RESOURCES -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>資源</th><th>種類</th><th>産出</th><th>タイル整備</th><th>整備後の追加</th><th>発見に必要な技術</th><th>出現する地形</th></tr></thead><tbody>
+<tr><td><b>バナナ</b></td><td>ボーナス資源</td><td>食料+1</td><td>大規模農場</td><td>食料+2、生産力-1、ゴールド-1</td><td>—</td><td>ジャングル</td></tr>
+<tr><td><b>牛</b></td><td>ボーナス資源</td><td>食料+1</td><td>牧草地</td><td>生産力+1</td><td>—</td><td>草原</td></tr>
+<tr><td><b>鹿</b></td><td>ボーナス資源</td><td>食料+1</td><td>キャンプ</td><td>生産力+1</td><td>—</td><td>森林、ツンドラ</td></tr>
+<tr><td><b>魚</b></td><td>ボーナス資源</td><td>食料+1</td><td>漁船</td><td>—</td><td>—</td><td>近海</td></tr>
+<tr><td><b>羊</b></td><td>ボーナス資源</td><td>食料+1</td><td>牧草地</td><td>食料+1</td><td>—</td><td>丘陵</td></tr>
+<tr><td><b>石材</b></td><td>ボーナス資源</td><td>生産力+1</td><td>採石場</td><td>生産力+1</td><td>—</td><td>草原、砂漠、ツンドラ</td></tr>
+<tr><td><b>小麦</b></td><td>ボーナス資源</td><td>食料+1</td><td>農場</td><td>—</td><td>—</td><td>平原、氾濫原、砂漠</td></tr>
+<tr><td><b>アルミニウム</b></td><td>戦略資源</td><td>生産力+1</td><td>鉱山</td><td>生産力+1</td><td>電気</td><td>砂漠、ツンドラ、丘陵、氷土、ジャングル</td></tr>
+<tr><td><b>石炭</b></td><td>戦略資源</td><td>生産力+1</td><td>鉱山</td><td>生産力+1</td><td>工業化</td><td>草原、平原、丘陵、ジャングル、森林、湿原</td></tr>
+<tr><td><b>馬</b></td><td>戦略資源</td><td>生産力+1</td><td>牧草地</td><td>生産力+1</td><td>畜産</td><td>平原、草原、丘陵</td></tr>
+<tr><td><b>鉄</b></td><td>戦略資源</td><td>生産力+1</td><td>鉱山</td><td>—</td><td>鉄器</td><td>草原、平原、砂漠、ツンドラ、氷土、丘陵、湿原</td></tr>
+<tr><td><b>石油</b></td><td>戦略資源</td><td>生産力+1</td><td>—</td><td>生産力+3</td><td>生物学</td><td>砂漠、近海、ツンドラ、氷土、湿原、ジャングル</td></tr>
+<tr><td><b>ウラン</b></td><td>戦略資源</td><td>生産力+1</td><td>鉱山</td><td>生産力+1</td><td>原子理論</td><td>湿原、ジャングル、森林、ツンドラ、氷土</td></tr>
+<tr><td><b>柑橘果物</b></td><td>高級資源</td><td>食料+1、ゴールド+1</td><td>大規模農場</td><td>—</td><td>—</td><td>ジャングル、森林、氾濫原</td></tr>
+<tr><td><b>銅</b></td><td>高級資源</td><td>ゴールド+2</td><td>鉱山</td><td>—</td><td>—</td><td>丘陵、森林、ジャングル、草原、ツンドラ</td></tr>
+<tr><td><b>綿</b></td><td>高級資源</td><td>ゴールド+2</td><td>大規模農場</td><td>—</td><td>—</td><td>草原、氾濫原</td></tr>
+<tr><td><b>カニ</b></td><td>高級資源</td><td>食料+1、ゴールド+1</td><td>漁船</td><td>—</td><td>—</td><td>近海</td></tr>
+<tr><td><b>染料</b></td><td>高級資源</td><td>ゴールド+2</td><td>大規模農場</td><td>—</td><td>—</td><td>ジャングル、森林、湿原</td></tr>
+<tr><td><b>毛皮</b></td><td>高級資源</td><td>ゴールド+2</td><td>キャンプ</td><td>ゴールド+1</td><td>—</td><td>森林、ツンドラ</td></tr>
+<tr><td><b>宝石</b></td><td>高級資源</td><td>ゴールド+3</td><td>鉱山</td><td>—</td><td>—</td><td>ジャングル、森林、丘陵</td></tr>
+<tr><td><b>金鉱石</b></td><td>高級資源</td><td>ゴールド+2</td><td>鉱山</td><td>—</td><td>—</td><td>砂漠、丘陵、森林、ジャングル</td></tr>
+<tr><td><b>香料</b></td><td>高級資源</td><td>ゴールド+2</td><td>大規模農場</td><td>—</td><td>—</td><td>平原、砂漠、氾濫原</td></tr>
+<tr><td><b>象牙</b></td><td>高級資源</td><td>ゴールド+2</td><td>キャンプ</td><td>ゴールド+1</td><td>—</td><td>平原、草原</td></tr>
+<tr><td><b>ジュエリー</b></td><td>高級資源</td><td>ゴールド+2</td><td>—</td><td>—</td><td>—</td><td></td></tr>
+<tr><td><b>大理石</b></td><td>高級資源</td><td>ゴールド+2</td><td>採石場</td><td>生産力+1</td><td>—</td><td>砂漠、平原、丘陵、草原</td></tr>
+<tr><td><b>真珠</b></td><td>高級資源</td><td>ゴールド+2</td><td>漁船</td><td>—</td><td>—</td><td>近海</td></tr>
+<tr><td><b>磁器</b></td><td>高級資源</td><td>ゴールド+2</td><td>—</td><td>—</td><td>—</td><td></td></tr>
+<tr><td><b>塩</b></td><td>高級資源</td><td>食料+1、ゴールド+1</td><td>鉱山</td><td>食料+1</td><td>—</td><td>砂漠、ツンドラ、平原、森林</td></tr>
+<tr><td><b>絹</b></td><td>高級資源</td><td>ゴールド+2</td><td>大規模農場</td><td>—</td><td>—</td><td>森林、ジャングル</td></tr>
+<tr><td><b>銀</b></td><td>高級資源</td><td>ゴールド+2</td><td>鉱山</td><td>—</td><td>—</td><td>丘陵、森林、ジャングル、ツンドラ、草原</td></tr>
+<tr><td><b>香辛料</b></td><td>高級資源</td><td>ゴールド+2</td><td>大規模農場</td><td>—</td><td>—</td><td>ジャングル、森林、湿原</td></tr>
+<tr><td><b>砂糖</b></td><td>高級資源</td><td>ゴールド+2</td><td>大規模農場</td><td>—</td><td>—</td><td>氾濫原、草原、湿原</td></tr>
+<tr><td><b>トリュフ</b></td><td>高級資源</td><td>ゴールド+2</td><td>キャンプ</td><td>ゴールド+1</td><td>—</td><td>森林、湿原、ジャングル</td></tr>
+<tr><td><b>鯨</b></td><td>高級資源</td><td>食料+1、ゴールド+1</td><td>漁船</td><td>—</td><td>—</td><td>近海</td></tr>
+<tr><td><b>ワイン</b></td><td>高級資源</td><td>ゴールド+2</td><td>大規模農場</td><td>—</td><td>—</td><td>草原、平原</td></tr>
+</tbody></table></div>
+<!-- /UNCIV-RESOURCES -->
+
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">06</span><h2>タイル整備</h2></div>
+<!-- UNCIV-IMPROVEMENTS -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>タイル整備</th><th>技術</th><th>ターン</th><th>産出</th><th>特徴</th></tr></thead><tbody>
+<tr><td><b>農場</b></td><td>農業</td><td>7</td><td>食料+1</td><td><ul class='exped-notes' style='margin:0'><li>淡水源に隣接したタイルにも建設できる</li><li>官吏を研究してから、淡水源タイルから食料+1</li><li>肥料を研究してから、非淡水源タイルから食料+1</li></ul></td></tr>
+<tr><td><b>製材所</b></td><td>建築学</td><td>7</td><td>生産力+1</td><td><ul class='exped-notes' style='margin:0'><li>科学理論を研究してから、生産力+1</li></ul></td></tr>
+<tr><td><b>鉱山</b></td><td>採鉱</td><td>7</td><td>生産力+1</td><td><ul class='exped-notes' style='margin:0'><li>化学を研究してから、生産力+1</li></ul></td></tr>
+<tr><td><b>交易所</b></td><td>ギルド</td><td>7</td><td>ゴールド+1</td><td><ul class='exped-notes' style='margin:0'><li>経済学を研究してから、ゴールド+1</li></ul></td></tr>
+<tr><td><b>キャンプ</b></td><td>トラップ</td><td>7</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>森林をはずす必要はありません</li><li>ジャングルをはずす必要はありません</li><li>経済学を研究してから、ゴールド+1</li><li>資源を改善する場合のみ建設できる</li></ul></td></tr>
+<tr><td><b>油井</b></td><td>生物学</td><td>9</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>資源を改善する場合のみ建設できる</li><li>水上タイル上では建設できない</li></ul></td></tr>
+<tr><td><b>海上油田</b></td><td>冷蔵技術</td><td>1</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>資源を改善する場合のみ建設できる</li><li>水上タイル上でのみ建設できる</li></ul></td></tr>
+<tr><td><b>牧草地</b></td><td>畜産</td><td>8</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>肥料を研究してから、食料+1</li><li>資源を改善する場合のみ建設できる</li></ul></td></tr>
+<tr><td><b>大規模農場</b></td><td>暦</td><td>6</td><td>ゴールド+1</td><td><ul class='exped-notes' style='margin:0'><li>肥料を研究してから、食料+1</li><li>資源を改善する場合のみ建設できる</li></ul></td></tr>
+<tr><td><b>採石場</b></td><td>石工術</td><td>8</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>化学を研究してから、生産力+1</li><li>資源を改善する場合のみ建設できる</li></ul></td></tr>
+<tr><td><b>漁船</b></td><td>帆走</td><td>1</td><td>食料+1</td><td><ul class='exped-notes' style='margin:0'><li>羅針盤を研究してから、ゴールド+1</li><li>資源を改善する場合のみ建設できる</li></ul></td></tr>
+<tr><td><b>要塞</b></td><td>工学</td><td>6</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>国境外に建設できる</li><li>50％の防御ボーナスを付与</li></ul></td></tr>
+<tr><td><b>道路</b></td><td>車輪</td><td>4</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>国境外に建設できる</li><li>毎ターン1ゴールド消費する</li></ul></td></tr>
+<tr><td><b>鉄道</b></td><td>鉄道</td><td>4</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>国境外に建設できる</li><li>毎ターン2ゴールド消費する</li></ul></td></tr>
+<tr><td><b>森林削除</b></td><td>採鉱</td><td>4</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>国境外に建設できる</li></ul></td></tr>
+<tr><td><b>ジャングル削除</b></td><td>青銅器</td><td>7</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>国境外に建設できる</li></ul></td></tr>
+<tr><td><b>死の灰削除</b></td><td>—</td><td>2</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>国境外に建設できる</li></ul></td></tr>
+<tr><td><b>湿原削除</b></td><td>石工術</td><td>6</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>国境外に建設できる</li></ul></td></tr>
+<tr><td><b>道路削除</b></td><td>—</td><td>2</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>国境外に建設できる</li></ul></td></tr>
+<tr><td><b>鉄道削除</b></td><td>—</td><td>2</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>国境外に建設できる</li></ul></td></tr>
+<tr><td><b>修復</b></td><td>—</td><td>2</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>建設不可</li></ul></td></tr>
+</tbody></table></div>
+<!-- /UNCIV-IMPROVEMENTS -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">名称と効果文はゲームの公式日本語訳による。数値はゲーム本体のデータファイル（Unciv同梱の Civ V Gods &amp; Kings ルールセット）を、2026年10月2日時点のソースから読み取ったもの。アップデートやMODで変わることがある。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">07</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">山岳はなぜ通れない？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">標準ルールでは山岳は通行不可（カルタゴは最初の大将軍の後に通れるが、山岳でターンを終えると50ダメージ）。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">道は戦闘に影響する？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">直接はしないが、技術によっては道でつながったタイルでは渡河攻撃のペナルティがなくなる。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">大事な資源は？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">戦略資源はユニットの生産条件になり、種類の違う高級資源はそれぞれ幸福度+4。<a href='/ja/games/unciv/growth-happiness/'>成長と幸福度</a>を参照。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/unciv/">Unciv 攻略ガイド</a>
+      <a href="/ja/games/unciv/combat/">戦闘の仕組み</a>
+      <a href="/ja/games/unciv/civilizations/">文明一覧</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv ソースコード（yairm210/Unciv、MPL-2.0）</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv データファイル：Civ V Gods & Kings ルールセット（2026-10-02 時点）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/translations/Japanese.properties" target="_blank" rel="noopener">Unciv 公式日本語訳ファイル（Japanese.properties）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

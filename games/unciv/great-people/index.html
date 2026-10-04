@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How Unciv great people work, from the game's data and source: what each great person does, specialist yields and points, every building and wonder that gives points, and why Scientists, Engineers, Merchants and Artists share one doubling threshold.">
+<title>Unciv Great People: Points, Specialists and the Shared Pool</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/games/unciv/great-people/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/great-people/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/great-people/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/great-people/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:title" content="Unciv Great People: Points, Specialists and the Shared Pool">
+<meta property="og:description" content="How Unciv great people work, from the game's data and source: what each great person does, specialist yields and points, every building and wonder that gives points, and why Scientists, Engineers, Merchants and Artists share one doubling threshold.">
+<meta property="og:url" content="https://kouryakulab.com/games/unciv/great-people/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv Great People: Points, Specialists and the Shared Pool">
+<meta name="twitter:description" content="How Unciv great people work, from the game's data and source: what each great person does, specialist yields and points, every building and wonder that gives points, and why Scientists, Engineers, Merchants and Artists share one doubling threshold.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv Great People: Points, Specialists and the Shared Pool",
+      "description": "How Unciv great people work, from the game's data and source: what each great person does, specialist yields and points, every building and wonder that gives points, and why Scientists, Engineers, Merchants and Artists share one doubling threshold.",
+      "inLanguage": "en",
+      "url": "https://kouryakulab.com/games/unciv/great-people/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv Great People: Points, Specialists and the Shared Pool",
+          "item": "https://kouryakulab.com/games/unciv/great-people/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/games/unciv/"><span class="arrow">←</span> Unciv Guide</a>
+    <div>
+      <span class="eyebrow">UNCIV · GREAT PEOPLE</span>
+      <h1>Great People: Points and the Shared Pool</h1>
+      <p class="sub">What each great person does, where points come from, and the shared threshold most players don't know about.</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="Language"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Conclusion</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">Reading GreatPersonManager.kt, the first great person needs <b>100 points</b> (× game speed) and the requirement <b>doubles</b> each time. The catch: <b>Great Scientists, Engineers, Merchants and Artists share one pool</b>, so earning any of them doubles the cost of the next one of every kind. Great Prophets have their own pool.</p>
+      <p style="margin:0;">Great Generals and Admirals come from combat instead: the first needs 200 points and each one after needs 50 more.</p>
+    </div>
+    <div class="callout"><b>An analysis-based guide:</b> this guide is based on our analysis of Unciv's Units, Specialists and Buildings data and GreatPersonManager.kt. It describes what the data shows and is not a guarantee of results.</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>Great People and What They Do</h2></div>
+<!-- UNCIV-GREATPEOPLE -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Great person</th><th>Point pool</th><th>What it can do</th></tr></thead><tbody>
+<tr><td><b>Great Scientist</b></td><td>Great Person</td><td><ul class='exped-notes' style='margin:0'><li>Can hurry technology research</li><li>Can instantly construct a Academy improvement (by consuming this unit)</li></ul></td></tr>
+<tr><td><b>Great Engineer</b></td><td>Great Person</td><td><ul class='exped-notes' style='margin:0'><li>Can speed up construction of a building</li><li>Can instantly construct a Manufactory improvement (by consuming this unit)</li></ul></td></tr>
+<tr><td><b>Great Merchant</b></td><td>Great Person</td><td><ul class='exped-notes' style='margin:0'><li>Can undertake a trade mission with City-State, giving a large sum of gold and 30 Influence</li><li>Can instantly construct a Customs house improvement (by consuming this unit)</li></ul></td></tr>
+<tr><td><b>Great Artist</b></td><td>Great Person</td><td><ul class='exped-notes' style='margin:0'><li>Empire enters a 8-turn Golden Age (by consuming this unit)</li><li>Can instantly construct a Landmark improvement (by consuming this unit)</li></ul></td></tr>
+<tr><td><b>Great Prophet</b></td><td>Prophet</td><td><ul class='exped-notes' style='margin:0'><li>Can instantly construct a Holy site improvement (by consuming this unit) (if it hasn&#x27;t used other actions yet)</li><li>Can Spread Religion (for 2 movement) (4 times) (after which this unit is consumed)</li><li>Removes other religions when spreading religion</li><li>May found a religion (by consuming this unit) (if it hasn&#x27;t used other actions yet)</li><li>May enhance a religion (by consuming this unit)  (if it hasn&#x27;t used other actions yet)</li><li>May enter foreign tiles without open borders</li><li>Takes your religion over the one in their birth city</li></ul></td></tr>
+<tr><td><b>Great General</b></td><td>General</td><td><ul class='exped-notes' style='margin:0'><li>+15% Strength bonus for Military Land units within 2 tiles</li><li>Can instantly construct a Citadel improvement (by consuming this unit)</li><li>Can be earned through combat (for Land units)</li></ul></td></tr>
+<tr><td><b>Great Admiral</b></td><td>Admiral</td><td><ul class='exped-notes' style='margin:0'><li>May Paradrop to your Coastal City center tiles up to 25 tiles away (in City center tiles)</li><li>+15% Strength bonus for Military Water units within 2 tiles</li><li>Can be earned through combat (for Water units)</li></ul></td></tr>
+</tbody></table></div>
+<!-- /UNCIV-GREATPEOPLE -->
+
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>Specialists</h2></div>
+<!-- UNCIV-SPECIALISTS -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Specialist</th><th>Yields</th><th>Great person points</th></tr></thead><tbody>
+<tr><td><b>Scientist</b></td><td>+3 Science</td><td>+3 Great Scientist</td></tr>
+<tr><td><b>Merchant</b></td><td>+3 Gold</td><td>+3 Great Merchant</td></tr>
+<tr><td><b>Artist</b></td><td>+2 Culture</td><td>+3 Great Artist</td></tr>
+<tr><td><b>Engineer</b></td><td>+2 Production</td><td>+3 Great Engineer</td></tr>
+</tbody></table></div>
+<!-- /UNCIV-SPECIALISTS -->
+
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>Buildings and Wonders That Give Points</h2></div>
+<!-- UNCIV-GPSOURCES -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Source</th><th>Kind</th><th>Points per turn</th><th>Specialist slots</th></tr></thead><tbody>
+<tr><td><b>Temple of Artemis</b></td><td>World wonder</td><td>+1 Great Engineer</td><td>—</td></tr>
+<tr><td><b>Stonehenge</b></td><td>World wonder</td><td>+1 Great Engineer</td><td>—</td></tr>
+<tr><td><b>The Great Library</b></td><td>World wonder</td><td>+1 Great Scientist</td><td>—</td></tr>
+<tr><td><b>The Pyramids</b></td><td>World wonder</td><td>+1 Great Engineer</td><td>—</td></tr>
+<tr><td><b>Mausoleum of Halicarnassus</b></td><td>World wonder</td><td>+1 Great Merchant</td><td>—</td></tr>
+<tr><td><b>The Great Lighthouse</b></td><td>World wonder</td><td>+1 Great Merchant</td><td>—</td></tr>
+<tr><td><b>Hanging Gardens</b></td><td>World wonder</td><td>+1 Great Artist</td><td>—</td></tr>
+<tr><td><b>Terracotta Army</b></td><td>World wonder</td><td>+1 Great Artist</td><td>—</td></tr>
+<tr><td><b>The Oracle</b></td><td>World wonder</td><td>+1 Great Scientist</td><td>—</td></tr>
+<tr><td><b>Petra</b></td><td>World wonder</td><td>+1 Great Engineer</td><td>—</td></tr>
+<tr><td><b>Great Wall</b></td><td>World wonder</td><td>+1 Great Engineer</td><td>—</td></tr>
+<tr><td><b>Colossus</b></td><td>World wonder</td><td>+1 Great Merchant</td><td>—</td></tr>
+<tr><td><b>Hagia Sophia</b></td><td>World wonder</td><td>+1 Great Artist</td><td>—</td></tr>
+<tr><td><b>Great Mosque of Djenne</b></td><td>World wonder</td><td>+1 Great Engineer</td><td>—</td></tr>
+<tr><td><b>Chichen Itza</b></td><td>World wonder</td><td>+1 Great Engineer</td><td>—</td></tr>
+<tr><td><b>Machu Picchu</b></td><td>World wonder</td><td>+1 Great Merchant</td><td>—</td></tr>
+<tr><td><b>Angkor Wat</b></td><td>World wonder</td><td>+1 Great Engineer</td><td>—</td></tr>
+<tr><td><b>Alhambra</b></td><td>World wonder</td><td>+1 Great Artist</td><td>—</td></tr>
+<tr><td><b>Notre Dame</b></td><td>World wonder</td><td>+1 Great Merchant</td><td>—</td></tr>
+<tr><td><b>Sistine Chapel</b></td><td>World wonder</td><td>+2 Great Artist</td><td>—</td></tr>
+<tr><td><b>Forbidden Palace</b></td><td>World wonder</td><td>+1 Great Artist</td><td>—</td></tr>
+<tr><td><b>Leaning Tower of Pisa</b></td><td>World wonder</td><td>+1 Great Artist</td><td>—</td></tr>
+<tr><td><b>Himeji Castle</b></td><td>World wonder</td><td>+2 Great Engineer</td><td>—</td></tr>
+<tr><td><b>Taj Mahal</b></td><td>World wonder</td><td>+2 Great Artist</td><td>—</td></tr>
+<tr><td><b>Porcelain Tower</b></td><td>World wonder</td><td>+2 Great Scientist</td><td>—</td></tr>
+<tr><td><b>Kremlin</b></td><td>World wonder</td><td>+1 Great Scientist</td><td>—</td></tr>
+<tr><td><b>The Louvre</b></td><td>World wonder</td><td>+2 Great Artist</td><td>—</td></tr>
+<tr><td><b>Big Ben</b></td><td>World wonder</td><td>+2 Great Merchant</td><td>—</td></tr>
+<tr><td><b>Brandenburg Gate</b></td><td>World wonder</td><td>+2 Great Scientist</td><td>—</td></tr>
+<tr><td><b>Eiffel Tower</b></td><td>World wonder</td><td>+2 Great Merchant</td><td>—</td></tr>
+<tr><td><b>Statue of Liberty</b></td><td>World wonder</td><td>+2 Great Engineer</td><td>—</td></tr>
+<tr><td><b>Neuschwanstein</b></td><td>World wonder</td><td>+1 Great Merchant</td><td>—</td></tr>
+<tr><td><b>Cristo Redentor</b></td><td>World wonder</td><td>+2 Great Artist</td><td>—</td></tr>
+<tr><td><b>Pentagon</b></td><td>World wonder</td><td>+2 Great Engineer</td><td>—</td></tr>
+<tr><td><b>Sydney Opera House</b></td><td>World wonder</td><td>+2 Great Artist</td><td>—</td></tr>
+<tr><td><b>CN Tower</b></td><td>World wonder</td><td>+1 Great Merchant</td><td>—</td></tr>
+<tr><td><b>Hubble Space Telescope</b></td><td>World wonder</td><td>+1 Great Scientist</td><td>—</td></tr>
+<tr><td><b>United Nations</b></td><td>World wonder</td><td>+2 Great Merchant</td><td>—</td></tr>
+</tbody></table></div>
+<!-- /UNCIV-GPSOURCES -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">Data from the game's own files (Civ V: Gods &amp; Kings ruleset that ships with Unciv), read from the source at the commit of 2026-10-02. Updates and mods can change these numbers.</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>Points Needed</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>Great person #</th><th>Scientist / Engineer / Merchant / Artist (shared)</th><th>Great General / Admiral</th></tr></thead>
+        <tbody>
+        <tr><td>1st</td><td>100</td><td>200</td></tr>
+        <tr><td>2nd</td><td>200</td><td>250</td></tr>
+        <tr><td>3rd</td><td>400</td><td>300</td></tr>
+        <tr><td>4th</td><td>800</td><td>350</td></tr>
+        <tr><td>5th</td><td>1,600</td><td>400</td></tr>
+        </tbody>
+      </table>
+    </div>    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">Standard speed. Quick ×0.67, Epic ×1.5, Marathon ×3 for the shared pool. Babylon earns Great Scientists 50% faster; Liberty's completion bonus gives a free great person.</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">06</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Why did my Great Artist suddenly take longer?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Because you just got a Great Scientist, Engineer or Merchant — they share the same threshold.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">How do I earn more points?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Work specialists (3 points each per turn) and build the buildings and wonders listed above.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Is the Great Prophet affected?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">No, it has its own pool and threshold.</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>Continue reading</h3>
+    <div class="more-guides-links">
+      <a href="/games/unciv/">Unciv Guide</a>
+      <a href="/games/unciv/combat/">Combat</a>
+      <a href="/games/unciv/civilizations/">Civilizations</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">This is an unofficial, fan-made, analysis-based guide. It is not a guarantee of results, and game updates may change any of it.</div>
+    <div class="sources">
+      Sources:
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv source code (yairm210/Unciv, MPL-2.0)</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv data files — Civ V: Gods & Kings ruleset, commit of 2026-10-02</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/core/src/com/unciv/logic/civilization/managers/GreatPersonManager.kt" target="_blank" rel="noopener">Unciv source: GreatPersonManager.kt (points needed)</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="Site links"><a href="/about/">About</a> · <a href="/authors/">Authors</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

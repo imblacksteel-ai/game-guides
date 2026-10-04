@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unciv（オープンソース版シヴィライゼーション5）の戦闘ダメージの仕組みをソースコードから解説。攻撃力と防御力の比率の式、固定された乱数、負傷のペナルティ、要塞化・地形・側面攻撃・渡河などの全補正と、ダメージ計算機。">
+<title>Unciv 戦闘の仕組み：ダメージの式と計算機</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/unciv/combat/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/combat/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/combat/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/combat/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Unciv 戦闘の仕組み：ダメージの式と計算機">
+<meta property="og:description" content="Unciv（オープンソース版シヴィライゼーション5）の戦闘ダメージの仕組みをソースコードから解説。攻撃力と防御力の比率の式、固定された乱数、負傷のペナルティ、要塞化・地形・側面攻撃・渡河などの全補正と、ダメージ計算機。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/unciv/combat/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv 戦闘の仕組み：ダメージの式と計算機">
+<meta name="twitter:description" content="Unciv（オープンソース版シヴィライゼーション5）の戦闘ダメージの仕組みをソースコードから解説。攻撃力と防御力の比率の式、固定された乱数、負傷のペナルティ、要塞化・地形・側面攻撃・渡河などの全補正と、ダメージ計算機。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv 戦闘の仕組み：ダメージの式と計算機",
+      "description": "Unciv（オープンソース版シヴィライゼーション5）の戦闘ダメージの仕組みをソースコードから解説。攻撃力と防御力の比率の式、固定された乱数、負傷のペナルティ、要塞化・地形・側面攻撃・渡河などの全補正と、ダメージ計算機。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/unciv/combat/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv 戦闘の仕組み：ダメージの式と計算機",
+          "item": "https://kouryakulab.com/ja/games/unciv/combat/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/unciv/"><span class="arrow">←</span> Unciv 攻略ガイド</a>
+    <div>
+      <span class="eyebrow">UNCIV ・ 戦闘</span>
+      <h1>戦闘：ダメージの式と計算機</h1>
+      <p class="sub">Uncivのコードにあるダメージの式そのもの、全ての戦闘補正、戦う前に結果を確認できる計算機。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">Uncivのダメージの式（BattleDamage.kt）は、すべてのボーナスを掛けた後の<b>攻撃力と防御力の比率</b>で決まる。同じ強さならお互い<b>24〜36</b>のダメージ。比率が開くほど強い側のダメージは急に増え、弱い側のダメージは減る。</p>
+      <p style="margin:0;">知っておきたいのは2点。<b>乱数はターンとタイルで固定</b>されているので、やり直しても結果は変わらない。そして負傷したユニットは与えるダメージが減る。<b>HPが3減るごとに1%</b>。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事はUncivのソースコードの戦闘処理（BattleDamage.kt・BattleConstants.kt）を分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>ダメージ計算機</h2></div>
+    <div class="panel" id="combat-calc" data-noretaliation="0（遠隔）" data-killsalways="どの乱数でも倒せる" data-killssometimes="乱数次第で倒せる" data-killsnever="倒せない">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;">
+        <div><h3 style="margin:0 0 8px;">攻撃側</h3>
+          <label>戦闘力（白兵）または遠隔攻撃力<input id="cc-as" type="number" min="1" value="14" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+          <label>現在のHP（1〜100）<input id="cc-ahp" type="number" min="1" max="100" value="100" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+          <label>その他のボーナス合計（%）<input id="cc-ab" type="number" value="0" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+          <label style="display:flex;gap:8px;align-items:center;margin-top:8px;"><input id="cc-ranged" type="checkbox"> 遠隔攻撃（反撃なし）</label></div>
+        <div><h3 style="margin:0 0 8px;">防御側</h3>
+          <label>戦闘力（白兵）または遠隔攻撃力<input id="cc-ds" type="number" min="1" value="11" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+          <label>現在のHP（1〜100）<input id="cc-dhp" type="number" min="1" max="100" value="100" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+          <label>その他のボーナス合計（%）<input id="cc-db" type="number" value="0" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+          <label>要塞化<select id="cc-fort" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"><option value="0">なし</option><option value="20">1ターン（+20%）</option><option value="40">2ターン以上（+40%）</option></select></label>
+          <label>地形<select id="cc-terr" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"><option value="0">平地・なし</option><option value="25">丘陵・森林・ジャングル（+25%）</option><option value="-10">氾濫原・オアシス（−10%）</option><option value="-15">湿原（−15%）</option></select></label></div>
+      </div>
+      <div class="table-scroll" style="margin-top:14px;"><table class="glossary"><tbody>
+        <tr><td>攻撃力 / 防御力 / 比率</td><td class="tag-mono"><span id="cc-A"></span> / <span id="cc-D"></span> / <span id="cc-r"></span></td></tr>
+        <tr><td><b>防御側へのダメージ</b></td><td class="tag-mono"><b id="cc-tod"></b></td></tr>
+        <tr><td><b>攻撃側へのダメージ</b></td><td class="tag-mono"><b id="cc-toa"></b></td></tr>
+        <tr><td>このターンで倒せる？</td><td id="cc-kill"></td></tr>
+      </tbody></table></div>
+    </div>    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">ゲームの式：比率 = 攻撃力 ÷ 防御力、強い側と弱い側の比 s、倍率 m = (((s + 3) ÷ 4)<sup>4</sup> + 1) ÷ 2、ダメージ = (24 + 12 × 乱数) × m（弱い側は1/m）×（1 − 減ったHP ÷ 300）。昇進や社会制度などのボーナスは「その他のボーナス合計」に入れる。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>戦闘の補正（コードより）</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>補正</th><th>値</th><th>補足</th></tr></thead>
+        <tbody>
+        <tr><td>要塞化</td><td>1ターンごとに+20%、最大+40%</td><td>動かずに2ターンで最大になる。</td></tr>
+        <tr><td>地形（防御側）</td><td>丘陵・森林・ジャングル+25%、湿原−15%、氾濫原・オアシス−10%</td><td>地形特徴があれば基本地形より優先。乗船中のユニットは地形ボーナスなし。</td></tr>
+        <tr><td>側面攻撃</td><td>防御側に隣接する他の味方白兵ユニット1体につき+10%</td><td>白兵攻撃のみ。社会制度や昇進で強化される（軽騎兵は+50%）。</td></tr>
+        <tr><td>渡河攻撃</td><td>−20%</td><td>白兵のみ。技術によっては道でつながっていれば無効。</td></tr>
+        <tr><td>上陸・乗船中の攻撃</td><td>−50%</td><td>乗船中のユニットが陸を攻撃、または海軍の白兵ユニットが陸上ユニットを攻撃する場合。</td></tr>
+        <tr><td>戦略資源の不足</td><td>−25%</td><td>必要な資源が足りないとき。</td></tr>
+        <tr><td>近くの大将軍</td><td>+15%</td><td>2タイル以内（中国は2倍）。</td></tr>
+        <tr><td>対蛮族</td><td>難易度により+75%〜0%</td><td>難易度のページを参照。</td></tr>
+        <tr><td>負傷</td><td>HPが3減るごとに与ダメージ−1%</td><td>日本のユニットはこの影響を受けない。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>実戦でのポイント</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><b>防御ボーナスを重ねる。</b>丘陵で2ターン要塞化すると防御+65%。互角の戦いが一方的になる。</li>
+        <li><b>攻撃は元気なユニットで。</b>HP40のユニットは、満タンのときより与ダメージが20%少ない。</li>
+        <li><b>囲んでから殴る。</b>標的に隣接する他の白兵ユニット1体ごとに、白兵攻撃が10%強くなる。</li>
+        <li><b>先に遠隔ユニットで削る。</b>遠隔攻撃は反撃を受けない（航空ユニットは例外）。</li>
+        <li><b>渡河や船からの攻撃は避ける。</b>それぞれ−20%と−50%。</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">ロードし直せば乱数は変わる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">変わらない。乱数はターン数とタイルの位置から決まるので、同じターンの同じ攻撃は同じ結果になる。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">民間ユニットはダメージを受ける？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">防御側が民間ユニットなら、常に40ダメージ（ふつうは捕獲される）。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">ユニットのボーナスはどこで見る？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">ゲーム内の戦闘予測にすべての補正が表示される。ここにないものは「その他のボーナス合計」に入れよう。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/unciv/">Unciv 攻略ガイド</a>
+      <a href="/ja/games/unciv/combat/">戦闘の仕組み</a>
+      <a href="/ja/games/unciv/civilizations/">文明一覧</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv ソースコード（yairm210/Unciv、MPL-2.0）</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv データファイル：Civ V Gods & Kings ルールセット（2026-10-02 時点）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/translations/Japanese.properties" target="_blank" rel="noopener">Unciv 公式日本語訳ファイル（Japanese.properties）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/core/src/com/unciv/logic/battle/BattleDamage.kt" target="_blank" rel="noopener">Unciv ソース：BattleDamage.kt（ダメージの式）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/core/src/com/unciv/logic/battle/BattleConstants.kt" target="_blank" rel="noopener">Unciv ソース：BattleConstants.kt（戦闘補正の定数）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+<script src="/assets/games/unciv-combat.js"></script>
+</body>
+</html>

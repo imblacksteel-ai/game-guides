@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How Unciv combat damage really works, from the game's source code: the strength-ratio formula, fixed random rolls, wounded penalties, every combat modifier (fortify, terrain, flanking, rivers) — plus a damage calculator.">
+<title>Unciv Combat Explained: Damage Formula and Calculator</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/games/unciv/combat/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/combat/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/combat/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/combat/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:title" content="Unciv Combat Explained: Damage Formula and Calculator">
+<meta property="og:description" content="How Unciv combat damage really works, from the game's source code: the strength-ratio formula, fixed random rolls, wounded penalties, every combat modifier (fortify, terrain, flanking, rivers) — plus a damage calculator.">
+<meta property="og:url" content="https://kouryakulab.com/games/unciv/combat/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv Combat Explained: Damage Formula and Calculator">
+<meta name="twitter:description" content="How Unciv combat damage really works, from the game's source code: the strength-ratio formula, fixed random rolls, wounded penalties, every combat modifier (fortify, terrain, flanking, rivers) — plus a damage calculator.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv Combat Explained: Damage Formula and Calculator",
+      "description": "How Unciv combat damage really works, from the game's source code: the strength-ratio formula, fixed random rolls, wounded penalties, every combat modifier (fortify, terrain, flanking, rivers) — plus a damage calculator.",
+      "inLanguage": "en",
+      "url": "https://kouryakulab.com/games/unciv/combat/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv Combat Explained: Damage Formula and Calculator",
+          "item": "https://kouryakulab.com/games/unciv/combat/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/games/unciv/"><span class="arrow">←</span> Unciv Guide</a>
+    <div>
+      <span class="eyebrow">UNCIV · COMBAT</span>
+      <h1>Combat: Damage Formula and Calculator</h1>
+      <p class="sub">The exact damage formula from Unciv's code, every combat modifier, and a calculator to check a fight before you take it.</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="Language"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Conclusion</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">Unciv's damage formula (BattleDamage.kt) depends on one number: the <b>ratio of attack strength to defense strength</b> after all bonuses. At equal strength each side deals <b>24–36</b> damage. The stronger side's damage grows quickly with the ratio, while the weaker side's shrinks.</p>
+      <p style="margin:0;">Two things worth knowing: <b>the random roll is fixed by the turn and tile</b>, so reloading doesn't change the result; and a wounded unit deals less damage — <b>1% less for every 3 HP</b> it's missing.</p>
+    </div>
+    <div class="callout"><b>An analysis-based guide:</b> this guide is based on our analysis of the combat code in Unciv's source (BattleDamage.kt and BattleConstants.kt). It describes what the data shows and is not a guarantee of results.</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>Damage Calculator</h2></div>
+    <div class="panel" id="combat-calc" data-noretaliation="0 (ranged)" data-killsalways="Yes, at any roll" data-killssometimes="Only with a good roll" data-killsnever="No">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;">
+        <div><h3 style="margin:0 0 8px;">Attacker</h3>
+          <label>Strength (melee) or ranged strength<input id="cc-as" type="number" min="1" value="14" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+          <label>Current HP (1–100)<input id="cc-ahp" type="number" min="1" max="100" value="100" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+          <label>Other bonuses total (%)<input id="cc-ab" type="number" value="0" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+          <label style="display:flex;gap:8px;align-items:center;margin-top:8px;"><input id="cc-ranged" type="checkbox"> Ranged attack (no retaliation)</label></div>
+        <div><h3 style="margin:0 0 8px;">Defender</h3>
+          <label>Strength (melee) or ranged strength<input id="cc-ds" type="number" min="1" value="11" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+          <label>Current HP (1–100)<input id="cc-dhp" type="number" min="1" max="100" value="100" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+          <label>Other bonuses total (%)<input id="cc-db" type="number" value="0" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+          <label>Fortified<select id="cc-fort" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"><option value="0">No</option><option value="20">1 turn (+20%)</option><option value="40">2+ turns (+40%)</option></select></label>
+          <label>Terrain<select id="cc-terr" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"><option value="0">Flat / none</option><option value="25">Hill, forest or jungle (+25%)</option><option value="-10">Flood plains or oasis (−10%)</option><option value="-15">Marsh (−15%)</option></select></label></div>
+      </div>
+      <div class="table-scroll" style="margin-top:14px;"><table class="glossary"><tbody>
+        <tr><td>Attack / Defense / Ratio</td><td class="tag-mono"><span id="cc-A"></span> / <span id="cc-D"></span> / <span id="cc-r"></span></td></tr>
+        <tr><td><b>Damage to defender</b></td><td class="tag-mono"><b id="cc-tod"></b></td></tr>
+        <tr><td><b>Damage to attacker</b></td><td class="tag-mono"><b id="cc-toa"></b></td></tr>
+        <tr><td>Kill this turn?</td><td id="cc-kill"></td></tr>
+      </tbody></table></div>
+    </div>    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">Uses the game's formula: ratio = attack ÷ defense; stronger/weaker ratio s; multiplier m = (((s + 3) ÷ 4)<sup>4</sup> + 1) ÷ 2; damage = (24 + 12 × roll) × m (or 1/m for the weaker side) × (1 − missing HP ÷ 300). Put promotion, policy and other bonuses into the “other bonuses” boxes.</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>Combat Modifiers (from the Code)</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>Modifier</th><th>Value</th><th>Notes</th></tr></thead>
+        <tbody>
+        <tr><td>Fortified</td><td>+20% per turn, up to +40%</td><td>Builds up over 2 turns of not moving.</td></tr>
+        <tr><td>Terrain (defender)</td><td>Hill/forest/jungle +25%, marsh −15%, flood plains/oasis −10%</td><td>The best feature replaces the base terrain; embarked units get none.</td></tr>
+        <tr><td>Flanking</td><td>+10% per other friendly melee unit next to the defender</td><td>Melee attacks only. Some policies and promotions raise it (Hussar +50%).</td></tr>
+        <tr><td>Attacking across a river</td><td>−20%</td><td>Melee only, unless both tiles are road-connected after the right tech.</td></tr>
+        <tr><td>Amphibious / naval landing</td><td>−50%</td><td>Embarked units attacking land, or naval melee units attacking a land unit.</td></tr>
+        <tr><td>Missing strategic resource</td><td>−25%</td><td>When you're short of the resource a unit needs.</td></tr>
+        <tr><td>Great General nearby</td><td>+15%</td><td>Within 2 tiles (China doubles it).</td></tr>
+        <tr><td>Vs barbarians</td><td>+75% to 0% by difficulty</td><td>See Difficulty.</td></tr>
+        <tr><td>Wounded attacker/defender</td><td>−1% damage dealt per 3 HP missing</td><td>Japan's units ignore this.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>Practical Takeaways</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><b>Stack defense bonuses.</b> A unit fortified for 2 turns on a hill gets +65% defense — enough to turn an even fight into a lopsided one.</li>
+        <li><b>Attack with healthy units.</b> A unit at 40 HP deals 20% less damage than at full health.</li>
+        <li><b>Surround before you strike.</b> Each other melee unit next to the target adds 10% to every melee attack.</li>
+        <li><b>Soften with ranged units first.</b> Ranged attackers take no retaliation (air units are the exception).</li>
+        <li><b>Don't attack over rivers or from boats</b> if you can avoid it: −20% and −50%.</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Can I reload to get a better roll?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">No. The roll comes from the turn number and the tile position, so the same attack on the same turn gives the same result.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Do civilians take damage?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">A civilian defender always takes 40 damage (and is usually captured).</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">How do I see a unit's bonuses?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">The in-game battle preview lists every modifier; add the ones that aren't covered here into the “other bonuses” boxes.</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>Continue reading</h3>
+    <div class="more-guides-links">
+      <a href="/games/unciv/">Unciv Guide</a>
+      <a href="/games/unciv/combat/">Combat</a>
+      <a href="/games/unciv/civilizations/">Civilizations</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">This is an unofficial, fan-made, analysis-based guide. It is not a guarantee of results, and game updates may change any of it.</div>
+    <div class="sources">
+      Sources:
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv source code (yairm210/Unciv, MPL-2.0)</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv data files — Civ V: Gods & Kings ruleset, commit of 2026-10-02</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/core/src/com/unciv/logic/battle/BattleDamage.kt" target="_blank" rel="noopener">Unciv source: BattleDamage.kt (damage formula)</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/core/src/com/unciv/logic/battle/BattleConstants.kt" target="_blank" rel="noopener">Unciv source: BattleConstants.kt (combat modifiers)</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="Site links"><a href="/about/">About</a> · <a href="/authors/">Authors</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+<script src="/assets/games/unciv-combat.js"></script>
+</body>
+</html>

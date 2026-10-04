@@ -554,4 +554,52 @@
   </url>
   <url><loc>https://kouryakulab.com/ja/games/unciv/buildings/</loc></url>
 
+  <url>
+    <loc>https://kouryakulab.com/games/unciv/combat/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/combat/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/combat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/combat/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/unciv/combat/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/games/unciv/growth-happiness/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/growth-happiness/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/growth-happiness/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/growth-happiness/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/unciv/growth-happiness/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/games/unciv/promotions/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/promotions/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/promotions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/promotions/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/unciv/promotions/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/games/unciv/terrain/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/terrain/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/terrain/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/terrain/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/unciv/terrain/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/games/unciv/city-states/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/city-states/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/city-states/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/city-states/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/unciv/city-states/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/games/unciv/great-people/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/great-people/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/great-people/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/great-people/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/unciv/great-people/</loc></url>
+
 </urlset>

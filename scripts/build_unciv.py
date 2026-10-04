@@ -35,9 +35,14 @@ PAGES = {
     "techs": {"en": "games/unciv/tech-tree/index.html", "ja": "ja/games/unciv/tech-tree/index.html"},
     "beliefs": {"en": "games/unciv/beliefs/index.html", "ja": "ja/games/unciv/beliefs/index.html"},
     "buildings": {"en": "games/unciv/buildings/index.html", "ja": "ja/games/unciv/buildings/index.html"},
+    "promotions": {"en": "games/unciv/promotions/index.html", "ja": "ja/games/unciv/promotions/index.html"},
+    "terrain": {"en": "games/unciv/terrain/index.html", "ja": "ja/games/unciv/terrain/index.html"},
+    "citystates": {"en": "games/unciv/city-states/index.html", "ja": "ja/games/unciv/city-states/index.html"},
+    "greatpeople": {"en": "games/unciv/great-people/index.html", "ja": "ja/games/unciv/great-people/index.html"},
+    "growth": {"en": "games/unciv/growth-happiness/index.html", "ja": "ja/games/unciv/growth-happiness/index.html"},
 }
 STATS = ["food", "production", "gold", "science", "culture", "faith", "happiness"]
-SKIP_UNIQUE = ("for AI decisions", "leader title", "global alert", "Comment", "hidden from users", "Never destroyed", "Indicates the capital")
+SKIP_UNIQUE = ("for AI decisions", "leader title", "global alert", "map editor", "generate naturally", "Map Generation", "start locations", "Comment", "hidden from users", "Never destroyed", "Indicates the capital")
 OUT = {"civs": os.path.join(ROOT, "assets/data/unciv-civs.json"),
        "units": os.path.join(ROOT, "assets/data/unciv-units.json")}
 
@@ -280,6 +285,31 @@ def main():
         return "\n".join(out)
 
     base = {u["name"]: u for u in ulist}
+    raw_unit = {x["name"]: x for x in units}
+    promos = load("UnitPromotions.json")
+    promo_of = {x["name"]: x for x in promos}
+
+    def ul(items):
+        return "<ul class='exped-notes' style='margin:0'>" + "".join(f"<li>{e(i)}</li>" for i in items) + "</ul>" if items else "—"
+
+    def unit_abilities(name, base_name, lang):
+        """Uniques and promotion effects the unique unit has that the replaced unit doesn't."""
+        def effects(n):
+            x = raw_unit.get(n, {})
+            out = [u for u in x.get("uniques", []) if not any(k in u for k in ("Unbuildable", "Uncapturable"))]
+            for pn in x.get("promotions", []):
+                out += promo_of.get(pn, {}).get("uniques", [])
+            return out
+        mine, theirs = effects(name), set(effects(base_name))
+        diff = [u for u in mine if u not in theirs and not any(k in u for k in SKIP_UNIQUE)]
+        res = []
+        for u in diff:
+            if lang == "en":
+                res.append(clean_en(u))
+            else:
+                t = tr.unique(u)
+                res.append(t if t else clean_en(u))
+        return res
 
     def uniq_rows(lang):
         rows = []
@@ -290,13 +320,14 @@ def main():
             def d(k):
                 v = u[k] - b[k]
                 return "±0" if v == 0 else (f"+{v}" if v > 0 else str(v))
+            ab = unit_abilities(u["name"], b["name"], lang)
             if lang == "en":
-                cells = [f"<b>{e(u['name'])}</b>", e(u["unique_to"]), e(b["name"]), d("strength"), d("ranged"), d("move"), d("cost")]
+                cells = [f"<b>{e(u['name'])}</b>", e(u["unique_to"]), e(b["name"]), d("strength"), d("ranged"), d("move"), d("cost"), ul(ab)]
             else:
-                cells = [f"<b>{e(u['name_ja'])}</b>", e(u["unique_to_ja"]), e(b["name_ja"]), d("strength"), d("ranged"), d("move"), d("cost")]
+                cells = [f"<b>{e(u['name_ja'])}</b>", e(u["unique_to_ja"]), e(b["name_ja"]), d("strength"), d("ranged"), d("move"), d("cost"), ul(ab)]
             rows.append("<tr>" + "".join(f"<td>{c}</td>" for c in cells) + "</tr>")
-        head = ("<th>Unique unit</th><th>Civilization</th><th>Replaces</th><th>Strength</th><th>Ranged</th><th>Move</th><th>Cost</th>" if lang == "en"
-                else "<th>固有ユニット</th><th>文明</th><th>置き換え対象</th><th>戦闘力</th><th>遠隔</th><th>移動</th><th>コスト</th>")
+        head = ("<th>Unique unit</th><th>Civilization</th><th>Replaces</th><th>Strength</th><th>Ranged</th><th>Move</th><th>Cost</th><th>Extra abilities (vs the unit it replaces)</th>" if lang == "en"
+                else "<th>固有ユニット</th><th>文明</th><th>置き換え対象</th><th>戦闘力</th><th>遠隔</th><th>移動</th><th>コスト</th><th>追加の能力（置き換え対象との差）</th>")
         return f'<div class="table-scroll"><table class="glossary"><thead><tr>{head}</tr></thead><tbody>\n' + "\n".join(rows) + "\n</tbody></table></div>"
 
     def pct(v):
@@ -517,13 +548,154 @@ def main():
             out.append(tbl(["Building", "Tech", "Requires", "Cost", "Upkeep", "Effects"] if lang == "en" else ["建物", "技術", "必要な建物", "コスト", "維持費", "効果"], rows))
         return "\n".join(out)
 
+    # ---------- promotions ----------
+    def promo_rows(lang):
+        groups = {}
+        for pr in promos:
+            if not pr.get("unitTypes"):
+                continue
+            key = tuple(pr["unitTypes"])
+            groups.setdefault(key, []).append(pr)
+        rows = []
+        for pr in promos:
+            if not pr.get("unitTypes"):
+                continue
+            nm = pr["name"] if lang == "en" else ja(pr["name"])
+            req = (", " if lang == "en" else "、").join((x if lang == "en" else ja(x)) for x in pr.get("prerequisites", [])) or "—"
+            types = (", " if lang == "en" else "、").join((x if lang == "en" else ja(x)) for x in pr["unitTypes"])
+            rows.append([f"<b>{e(nm)}</b>", e(req), e(types), ul(uq(pr.get("uniques"), lang))])
+        return tbl(["Promotion", "Requires", "Unit types", "Effect"] if lang == "en" else ["昇進", "前提", "ユニットの種類", "効果"], rows)
+
+    # ---------- terrain / resources / improvements ----------
+    terrains = load("Terrains.json")
+    YK = ["food", "production", "gold", "science", "culture", "faith", "happiness"]
+
+    def yields(x, lang):
+        out = []
+        for k in YK:
+            v = x.get(k)
+            if v:
+                out.append((f"{v:+g} {k.capitalize()}") if lang == "en" else f"{ja(k.capitalize())}{v:+g}")
+        return ", ".join(out) if lang == "en" else "、".join(out)
+
+    def terr_rows(lang, kinds):
+        rows = []
+        for t in terrains:
+            if t["type"] not in kinds:
+                continue
+            mv = "—" if t.get("impassable") else str(t.get("movementCost", 1))
+            df = f"{round(t.get('defenceBonus', 0) * 100):+d}%" if t.get("defenceBonus") else "—"
+            notes = [u for u in t.get("uniques", []) if any(k in u for k in ("Rough terrain", "Fresh water", "damage", "Strength for cities", "Grants", "Rejuvenation", "cut down", "Nullifies", "Only [", "yield without"))]
+            rows.append([f"<b>{e(t['name'] if lang == 'en' else ja(t['name']))}</b>", e(yields(t, lang)) or "—",
+                         ("Impassable" if lang == "en" else "通行不可") if t.get("impassable") else mv, df, ul(uq(notes, lang))])
+        return tbl(["Terrain", "Yields", "Move cost", "Defense", "Notes"] if lang == "en" else ["地形", "産出", "移動コスト", "防御", "特徴"], rows)
+
+    def res_rows(lang):
+        rows = []
+        order = {"Bonus": 0, "Strategic": 1, "Luxury": 2}
+        for r in sorted(ress, key=lambda r: (order.get(r["resourceType"], 9), r["name"])):
+            imp = r.get("improvement")
+            on = (", " if lang == "en" else "、").join((x if lang == "en" else ja(x)) for x in r.get("terrainsCanBeFoundOn", []))
+            rv = r.get("revealedBy")
+            rows.append([f"<b>{e(r['name'] if lang == 'en' else ja(r['name']))}</b>", e(r["resourceType"] if lang == "en" else ja(r["resourceType"] + " resource") if (r["resourceType"] + " resource") in tr.exact else r["resourceType"]),
+                         e(yields(r, lang)) or "—", e((imp if lang == "en" else ja(imp)) if imp else "—"),
+                         e(yields(r.get("improvementStats", {}), lang)) or "—", e((rv if lang == "en" else ja(rv)) if rv else "—"), e(on)])
+        return tbl(["Resource", "Type", "Yields", "Improvement", "Extra when improved", "Revealed by", "Found on"] if lang == "en"
+                   else ["資源", "種類", "産出", "タイル整備", "整備後の追加", "発見に必要な技術", "出現する地形"], rows)
+
+    def imp_rows(lang):
+        rows = []
+        for i in imps:
+            if not i.get("turnsToBuild") and not i.get("techRequired"):
+                continue
+            if i.get("uniqueTo"):
+                continue
+            tech = i.get("techRequired")
+            rows.append([f"<b>{e(i['name'] if lang == 'en' else ja(i['name']))}</b>", e((tech if lang == "en" else ja(tech)) if tech else "—"),
+                         i.get("turnsToBuild", "—"), e(yields(i, lang)) or "—", ul(uq([u for u in i.get("uniques", []) if "Pillaging" not in u and "Automation" not in u], lang))])
+        return tbl(["Improvement", "Tech", "Turns", "Yields", "Notes"] if lang == "en" else ["タイル整備", "技術", "ターン", "産出", "特徴"], rows)
+
+    # ---------- city-states ----------
+    cstypes = load("CityStateTypes.json")
+    quests = load("Quests.json")
+
+    def cs_rows(lang):
+        rows = []
+        for c in cstypes:
+            rows.append([f"<b>{e(c['name'] if lang == 'en' else ja(c['name']))}</b>", ul(uq(c.get("friendBonusUniques"), lang)), ul(uq(c.get("allyBonusUniques"), lang))])
+        return tbl(["Type", "Friend bonus", "Ally bonus"] if lang == "en" else ["種類", "友好時のボーナス", "同盟時のボーナス"], rows)
+
+    def quest_rows(lang):
+        rows = []
+        for q in quests:
+            inf = q.get("influence")
+            dur = q.get("duration")
+            glob = q.get("type") == "Global"
+            rows.append([f"<b>{e(q['name'] if lang == 'en' else ja(q['name']))}</b>", e(clean_en(q.get("description", "")) if lang == "en" else (tr.sentence(q.get("description", "")) or ja(q.get("description", "")) or clean_en(q.get("description", "")))),
+                         inf if inf is not None else "40", dur or "—", ("Contest (best civ wins)" if lang == "en" else "競争（最上位の文明が獲得）") if glob else "—"])
+        return tbl(["Quest", "What it asks", "Influence", "Turns", "Kind"] if lang == "en" else ["クエスト", "内容", "影響力", "期限（ターン）", "形式"], rows)
+
+    # ---------- great people ----------
+    specialists = load("Specialists.json")
+
+    def gp_rows(lang):
+        rows = []
+        for n in ("Great Scientist", "Great Engineer", "Great Merchant", "Great Artist", "Great Prophet", "Great General", "Great Admiral"):
+            x = raw_unit[n]
+            grp = next((re.search(r"\[([^\]]+)\]", u).group(1) for u in x["uniques"] if u.startswith("Is part of Great Person group")), "")
+            abil = [u for u in x["uniques"] if not any(k in u for k in ("Is part of", "gets a name", "Great Person -", "Unbuildable", "Uncapturable", "Religious Unit", "Only available", "Sight"))]
+            rows.append([f"<b>{e(n if lang == 'en' else ja(n))}</b>", e(grp if lang == "en" else ja(grp)), ul(uq(abil, lang))])
+        return tbl(["Great person", "Point pool", "What it can do"] if lang == "en" else ["偉人", "ポイントの枠", "できること"], rows)
+
+    def spec_rows(lang):
+        rows = []
+        for sp in specialists:
+            rows.append([f"<b>{e(sp['name'] if lang == 'en' else ja(sp['name']))}</b>", e(yields(sp, lang)), e(", ".join(f"+{v} {k}" for k, v in sp.get("greatPersonPoints", {}).items()) if lang == "en" else "、".join(f"{ja(k)}+{v}" for k, v in sp.get("greatPersonPoints", {}).items()))])
+        return tbl(["Specialist", "Yields", "Great person points"] if lang == "en" else ["専門家", "産出", "偉人ポイント"], rows)
+
+    def gp_src_rows(lang):
+        rows = []
+        for b in buildings:
+            if not b.get("greatPersonPoints") or b.get("uniqueTo"):
+                continue
+            kind = ("World wonder" if lang == "en" else "世界遺産") if b.get("isWonder") else (("National wonder" if lang == "en" else "国家遺産") if b.get("isNationalWonder") else ("Building" if lang == "en" else "建物"))
+            pts = ", ".join(f"+{v} {k}" for k, v in b["greatPersonPoints"].items()) if lang == "en" else "、".join(f"{ja(k)}+{v}" for k, v in b["greatPersonPoints"].items())
+            slots = ", ".join(f"{v} {k}" for k, v in (b.get("specialistSlots") or {}).items()) if lang == "en" else "、".join(f"{ja(k)}{v}" for k, v in (b.get("specialistSlots") or {}).items())
+            rows.append([f"<b>{e(b['name'] if lang == 'en' else ja(b['name']))}</b>", kind, e(pts), e(slots) or "—"])
+        rows.sort(key=lambda r: r[1])
+        return tbl(["Source", "Kind", "Points per turn", "Specialist slots"] if lang == "en" else ["入手元", "種類", "毎ターンのポイント", "専門家の枠"], rows)
+
+    # ---------- growth ----------
+    import math
+    def food_needed(p):
+        return 15 + 8 * (p - 1) + math.floor((p - 1) ** 1.5)
+
+    def growth_rows(lang):
+        rows = []
+        total = 0
+        for p in range(1, 31):
+            f = food_needed(p)
+            total += f
+            rows.append([f"{p} → {p + 1}", f, total, int(f * 0.67), int(f * 1.5), int(f * 3)])
+        return tbl(["Population", "Food (Standard)", "Total from size 1", "Quick", "Epic", "Marathon"] if lang == "en"
+                   else ["人口", "必要な食料（標準）", "人口1からの累計", "クイック", "エピック", "マラソン"], rows)
+
     PAGES["uniq"] = PAGES["civs"]
     PAGES["policyai"] = PAGES["policies"]
     PAGES["policycalc"] = PAGES["policies"]
     PAGES["nwonders"] = PAGES["wonders"]
+    for k in ("features", "naturalwonders", "resources", "improvements"):
+        PAGES[k] = PAGES["terrain"]
+    PAGES["quests"] = PAGES["citystates"]
+    PAGES["specialists"] = PAGES["greatpeople"]
+    PAGES["gpsources"] = PAGES["greatpeople"]
     for key, fn in (("civs", civ_rows), ("units", unit_rows), ("uniq", uniq_rows), ("diff", diff_rows),
                     ("policies", policy_rows), ("policyai", policy_ai), ("policycalc", policy_calc),
-                    ("wonders", wonder_rows), ("nwonders", nwonder_rows), ("techs", tech_rows), ("beliefs", belief_rows), ("buildings", building_rows)):
+                    ("wonders", wonder_rows), ("nwonders", nwonder_rows), ("techs", tech_rows), ("beliefs", belief_rows), ("buildings", building_rows),
+                    ("promotions", promo_rows), ("terrain", lambda l: terr_rows(l, ("Land", "Water"))), ("features", lambda l: terr_rows(l, ("TerrainFeature",))),
+                    ("naturalwonders", lambda l: terr_rows(l, ("NaturalWonder",))), ("resources", res_rows), ("improvements", imp_rows),
+                    ("citystates", cs_rows), ("quests", quest_rows), ("greatpeople", gp_rows), ("specialists", spec_rows), ("gpsources", gp_src_rows),
+                    ("growth", growth_rows)):
         marker = "UNCIV-" + key.upper()
         for lang, rel in PAGES[key].items():
             p = os.path.join(ROOT, rel)

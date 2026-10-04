@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unciv（オープンソース版シヴィライゼーション5）の都市の成長と幸福度の仕組みをソースコードから解説。成長に必要な食料の式と早見表、市民の食料消費、幸福度の増減、併合のペナルティ、不満が−1・−10・−20で起きること。">
+<title>Unciv 都市の成長と幸福度：コードにある式</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/unciv/growth-happiness/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/growth-happiness/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/growth-happiness/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/growth-happiness/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Unciv 都市の成長と幸福度：コードにある式">
+<meta property="og:description" content="Unciv（オープンソース版シヴィライゼーション5）の都市の成長と幸福度の仕組みをソースコードから解説。成長に必要な食料の式と早見表、市民の食料消費、幸福度の増減、併合のペナルティ、不満が−1・−10・−20で起きること。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/unciv/growth-happiness/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv 都市の成長と幸福度：コードにある式">
+<meta name="twitter:description" content="Unciv（オープンソース版シヴィライゼーション5）の都市の成長と幸福度の仕組みをソースコードから解説。成長に必要な食料の式と早見表、市民の食料消費、幸福度の増減、併合のペナルティ、不満が−1・−10・−20で起きること。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv 都市の成長と幸福度：コードにある式",
+      "description": "Unciv（オープンソース版シヴィライゼーション5）の都市の成長と幸福度の仕組みをソースコードから解説。成長に必要な食料の式と早見表、市民の食料消費、幸福度の増減、併合のペナルティ、不満が−1・−10・−20で起きること。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/unciv/growth-happiness/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv 都市の成長と幸福度：コードにある式",
+          "item": "https://kouryakulab.com/ja/games/unciv/growth-happiness/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/unciv/"><span class="arrow">←</span> Unciv 攻略ガイド</a>
+    <div>
+      <span class="eyebrow">UNCIV ・ 成長と幸福度</span>
+      <h1>都市の成長と幸福度</h1>
+      <p class="sub">成長と幸福度の本当の式を、Uncivのコードから読み取った。食料の早見表つき。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">都市は人口1から2に育つのに<b>食料15</b>、その後は<b>1人ごとに8ずつ</b>と少しの上乗せが必要。式は 15 + 8 × (人口 − 1) + (人口 − 1)<sup>1.5</sup>（切り捨て）。市民は1人あたり<b>食料2</b>を消費し、余った分だけが成長に回る。</p>
+      <p style="margin:0;">ブレーキになるのが幸福度。都市1つで−3、市民1人で−1、<b>種類の違う</b>高級資源1つで+4。帝国の幸福度がマイナスになると成長が75%減り、−10未満では成長が止まり、ユニットの戦闘力が33%下がる。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事はUncivの成長と幸福度のコード（CityPopulationManager.kt・CityStats.kt）とGlobalUniques.jsonを分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>成長に必要な食料</h2></div>
+<!-- UNCIV-GROWTH -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>人口</th><th>必要な食料（標準）</th><th>人口1からの累計</th><th>クイック</th><th>エピック</th><th>マラソン</th></tr></thead><tbody>
+<tr><td>1 → 2</td><td>15</td><td>15</td><td>10</td><td>22</td><td>45</td></tr>
+<tr><td>2 → 3</td><td>24</td><td>39</td><td>16</td><td>36</td><td>72</td></tr>
+<tr><td>3 → 4</td><td>33</td><td>72</td><td>22</td><td>49</td><td>99</td></tr>
+<tr><td>4 → 5</td><td>44</td><td>116</td><td>29</td><td>66</td><td>132</td></tr>
+<tr><td>5 → 6</td><td>55</td><td>171</td><td>36</td><td>82</td><td>165</td></tr>
+<tr><td>6 → 7</td><td>66</td><td>237</td><td>44</td><td>99</td><td>198</td></tr>
+<tr><td>7 → 8</td><td>77</td><td>314</td><td>51</td><td>115</td><td>231</td></tr>
+<tr><td>8 → 9</td><td>89</td><td>403</td><td>59</td><td>133</td><td>267</td></tr>
+<tr><td>9 → 10</td><td>101</td><td>504</td><td>67</td><td>151</td><td>303</td></tr>
+<tr><td>10 → 11</td><td>114</td><td>618</td><td>76</td><td>171</td><td>342</td></tr>
+<tr><td>11 → 12</td><td>126</td><td>744</td><td>84</td><td>189</td><td>378</td></tr>
+<tr><td>12 → 13</td><td>139</td><td>883</td><td>93</td><td>208</td><td>417</td></tr>
+<tr><td>13 → 14</td><td>152</td><td>1035</td><td>101</td><td>228</td><td>456</td></tr>
+<tr><td>14 → 15</td><td>165</td><td>1200</td><td>110</td><td>247</td><td>495</td></tr>
+<tr><td>15 → 16</td><td>179</td><td>1379</td><td>119</td><td>268</td><td>537</td></tr>
+<tr><td>16 → 17</td><td>193</td><td>1572</td><td>129</td><td>289</td><td>579</td></tr>
+<tr><td>17 → 18</td><td>207</td><td>1779</td><td>138</td><td>310</td><td>621</td></tr>
+<tr><td>18 → 19</td><td>221</td><td>2000</td><td>148</td><td>331</td><td>663</td></tr>
+<tr><td>19 → 20</td><td>235</td><td>2235</td><td>157</td><td>352</td><td>705</td></tr>
+<tr><td>20 → 21</td><td>249</td><td>2484</td><td>166</td><td>373</td><td>747</td></tr>
+<tr><td>21 → 22</td><td>264</td><td>2748</td><td>176</td><td>396</td><td>792</td></tr>
+<tr><td>22 → 23</td><td>279</td><td>3027</td><td>186</td><td>418</td><td>837</td></tr>
+<tr><td>23 → 24</td><td>294</td><td>3321</td><td>196</td><td>441</td><td>882</td></tr>
+<tr><td>24 → 25</td><td>309</td><td>3630</td><td>207</td><td>463</td><td>927</td></tr>
+<tr><td>25 → 26</td><td>324</td><td>3954</td><td>217</td><td>486</td><td>972</td></tr>
+<tr><td>26 → 27</td><td>340</td><td>4294</td><td>227</td><td>510</td><td>1020</td></tr>
+<tr><td>27 → 28</td><td>355</td><td>4649</td><td>237</td><td>532</td><td>1065</td></tr>
+<tr><td>28 → 29</td><td>371</td><td>5020</td><td>248</td><td>556</td><td>1113</td></tr>
+<tr><td>29 → 30</td><td>387</td><td>5407</td><td>259</td><td>580</td><td>1161</td></tr>
+<tr><td>30 → 31</td><td>403</td><td>5810</td><td>270</td><td>604</td><td>1209</td></tr>
+</tbody></table></div>
+<!-- /UNCIV-GROWTH -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">ゲームのコードの式による。ゲーム速度で倍率が掛かり、都市国家は50%多く必要、AIの都市は難易度のAI成長補正が掛かる。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>幸福度の増減</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>要素</th><th>幸福度</th><th>補足</th></tr></thead>
+        <tbody>
+        <tr><td>基本（難易度）</td><td>開拓者+15、酋長・将軍+12、皇子以上+9</td><td></td></tr>
+        <tr><td>都市1つごと</td><td>−3</td><td>自分が建てていない併合都市は−5（裁判所を建てるまで）。難易度で増減。</td></tr>
+        <tr><td>市民1人ごと</td><td>−1</td><td>併合都市では2倍。難易度で増減。インドは半分。</td></tr>
+        <tr><td>併合都市</td><td>さらに−2</td><td>裁判所で解消。</td></tr>
+        <tr><td>種類の違う高級資源1つごと</td><td>+4</td><td>数えるのは1つ目だけ。2つ目以降は取引用。</td></tr>
+        <tr><td>建物・遺産・社会制度・自然遺産</td><td>さまざま</td><td>建物・遺産のページを参照。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>不満の影響</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>帝国の幸福度</th><th>効果（GlobalUniques.json）</th></tr></thead>
+        <tbody>
+        <tr><td>−1〜−10</td><td>全都市の成長−75%</td></tr>
+        <tr><td>−10未満</td><td>成長なし、生産力−50%、ユニットの戦闘力−33%、開拓者を生産できない</td></tr>
+        <tr><td>−20未満</td><td>反乱ユニットが出現することがある</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>実戦でのポイント</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><b>高級資源は種類を増やす。</b>新しい種類なら+4、すでに持っている種類の2つ目は取引しない限り0。</li>
+        <li><b>新しい都市は最低でも幸福度4</b>（都市で3、最初の市民で1）を使う。建物で補う前提で。</li>
+        <li><b>併合は高くつく。</b>併合都市は−5から始まり、裁判所を建てるまで市民の不満が2倍。傀儡ならこの追加ペナルティはない。</li>
+        <li><b>成長は急には重くならない。</b>標準速度で人口10→11は食料114、20→21は249。</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">06</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">都市が成長しなくなった。</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">帝国の幸福度を確認しよう。−10未満では成長が完全に止まる。また、市民が1人2ずつ食べた後に食料が余っているかも確認。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">専門家も食料を食べる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">食べる。他の市民と同じく1人2。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">難易度で不満は変わる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">変わる。あなたの不満は開拓者40%、酋長60%、将軍75%、皇子以上100%の倍率。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/unciv/">Unciv 攻略ガイド</a>
+      <a href="/ja/games/unciv/combat/">戦闘の仕組み</a>
+      <a href="/ja/games/unciv/civilizations/">文明一覧</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv ソースコード（yairm210/Unciv、MPL-2.0）</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv データファイル：Civ V Gods & Kings ルールセット（2026-10-02 時点）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/translations/Japanese.properties" target="_blank" rel="noopener">Unciv 公式日本語訳ファイル（Japanese.properties）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/core/src/com/unciv/logic/city/managers/CityPopulationManager.kt" target="_blank" rel="noopener">Unciv ソース：CityPopulationManager.kt（成長に必要な食料）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/core/src/com/unciv/logic/city/CityStats.kt" target="_blank" rel="noopener">Unciv ソース：CityStats.kt（幸福度と食料消費）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>
