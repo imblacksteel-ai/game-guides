@@ -138,12 +138,14 @@ git diff --stat                 # 想定した言語数ぶんのファイルが�
 
 ## Unciv（オープンソース版シヴィライゼーション5）
 
-- `/games/unciv/`（ハブ）、`/civilizations/`（全34文明）、`/units/`（全ユニット）、`/difficulty/`（難易度）。英日のみ。CSSは `assets/games/unciv.css`（spd.cssの配色違い）、OG画像は `assets/og/og-unciv.png`。
-- 表は `python3 scripts/build_unciv.py` で生成（**手編集禁止**）。yairm210/Unciv（MPL-2.0）の `COMMIT` 時点の `Civ V - Gods & Kings` の JSON（コメント・末尾カンマ入りなので strip() してから読む）と公式日本語訳 `Japanese.properties` から、`<!-- UNCIV-CIVS/UNIQ/UNITS/DIFF -->` マーカー間に書き込む。更新するときは `COMMIT`/`COMMIT_DATE` を差し替え、本文中の「2026-10-02」も合わせて直す。
+- `/games/unciv/`（ハブ）、`/civilizations/`（全34文明）、`/units/`（全ユニット）、`/difficulty/`（難易度）、`/policies/`（社会制度＋コスト計算機）、`/wonders/`（遺産）、`/tech-tree/`（技術ツリー）、`/beliefs/`（信仰）。英日のみ。CSSは `assets/games/unciv.css`（spd.cssの配色違い）、OG画像は `assets/og/og-unciv.png`。
+- 表は `python3 scripts/build_unciv.py` で生成（**手編集禁止**）。yairm210/Unciv（MPL-2.0）の `COMMIT` 時点の `Civ V - Gods & Kings` の JSON（コメント・末尾カンマ入りなので strip() してから読む）と公式日本語訳 `Japanese.properties` から、`<!-- UNCIV-CIVS/UNIQ/UNITS/DIFF/POLICIES/POLICYAI/POLICYCALC/WONDERS/NWONDERS/TECHS/BELIEFS -->` マーカー間に書き込む。更新するときは `COMMIT`/`COMMIT_DATE` を差し替え、本文中の「2026-10-02」も合わせて直す。
 - 日本語の能力文はUncivと同じテンプレート方式（[ ]を差し替え、条件<...>は本文の前）で公式訳から組み立てる。"Land"→「地上」など、パラメータの誤訳は `PARAM_OVERRIDE` で補正。訳が無いものは英語のまま残り、件数が表示される。
 - 難易度の各項目の意味は本体のコードで確認済み：研究/ユニット/建物/社会制度コストは人間プレイヤーのみ（AIは `aiDifficultyLevel` の易しい設定）、`aiCityGrowthModifier` はAIの成長に必要な食料の倍率、`barbarianBonus` は対蛮族の戦闘ボーナス、`turnBarbariansCanEnterPlayerTiles` は蛮族が領土に入れるようになるターン。
 - 本文（結論・読み取り）は手書き。データ更新で数値（例：固有ユニット49中24が同性能、AIの勝利志向 科学11/文化9/制覇9/外交5）が変わったら直す。
-- 未対応の需要：社会制度（Policies）、遺産（Wonders）、信仰（Beliefs）、技術ツリー。
+- 社会制度コスト計算機は `assets/games/unciv-policy-cost.js`（式は PolicyManager.getPolicyCultureCost：(25+(採用数×3)^2.01)×難易度×速度×(1+マップ補正×(都市数−1))、5の倍数に切り捨て。マップ補正 極小〜中0.1/大0.075/極大0.05）。定数は build_unciv.py が `window.UNCIV_POLICY_CFG` としてページに書く。選択肢の日本語は `data-l<小文字のキー>` 属性。
+- 技術コストは TechManager.costOfTech で確認済み（難易度は人間のみ、マップ 中1.1/大1.2/極大1.3、1都市ごと+5%/3.75%/2.5%、既知文明の研究済み割合×0.3で割引）。遺産のコストは自前の cost が無ければ解禁技術の列の wonderCost（国家遺産も同じ）。信仰は他の宗教が持っているものは選べない（ReligionManager）。
+- 未対応の需要：建物（通常の建物）一覧、タイル整備・資源、偉人。
 
 ## 翻訳の一貫性ルール
 
