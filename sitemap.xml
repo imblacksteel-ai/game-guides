@@ -458,4 +458,12 @@
   </url>
   <url><loc>https://kouryakulab.com/ja/games/kancolle/first-week/</loc></url>
 
+  <url>
+    <loc>https://kouryakulab.com/games/kancolle/play-without-japanese/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/play-without-japanese/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/play-without-japanese/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/play-without-japanese/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/kancolle/play-without-japanese/</loc></url>
+
 </urlset>
