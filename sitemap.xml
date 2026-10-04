@@ -434,4 +434,12 @@
   </url>
   <url><loc>https://kouryakulab.com/ja/games/kancolle/marriage/</loc></url>
 
+  <url>
+    <loc>https://kouryakulab.com/games/kancolle/1-5/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/1-5/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/1-5/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/1-5/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/kancolle/1-5/</loc></url>
+
 </urlset>
