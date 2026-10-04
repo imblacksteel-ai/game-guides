@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unciv（オープンソース版シヴィライゼーション5）の全ユニット一覧。ゲームのデータファイルから、戦闘力・遠隔・射程・移動力・コスト・技術・資源・アップグレード先を時代別にまとめた。固有ユニットも掲載。">
+<title>Unciv ユニット一覧：時代別の全ユニット性能</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/unciv/units/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/units/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/units/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/units/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Unciv ユニット一覧：時代別の全ユニット性能">
+<meta property="og:description" content="Unciv（オープンソース版シヴィライゼーション5）の全ユニット一覧。ゲームのデータファイルから、戦闘力・遠隔・射程・移動力・コスト・技術・資源・アップグレード先を時代別にまとめた。固有ユニットも掲載。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/unciv/units/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv ユニット一覧：時代別の全ユニット性能">
+<meta name="twitter:description" content="Unciv（オープンソース版シヴィライゼーション5）の全ユニット一覧。ゲームのデータファイルから、戦闘力・遠隔・射程・移動力・コスト・技術・資源・アップグレード先を時代別にまとめた。固有ユニットも掲載。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv ユニット一覧：時代別の全ユニット性能",
+      "description": "Unciv（オープンソース版シヴィライゼーション5）の全ユニット一覧。ゲームのデータファイルから、戦闘力・遠隔・射程・移動力・コスト・技術・資源・アップグレード先を時代別にまとめた。固有ユニットも掲載。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/unciv/units/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv ユニット一覧：時代別の全ユニット性能",
+          "item": "https://kouryakulab.com/ja/games/unciv/units/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/unciv/"><span class="arrow">←</span> Unciv 攻略ガイド</a>
+    <div>
+      <span class="eyebrow">UNCIV ・ ユニット</span>
+      <h1>時代別の全ユニット性能</h1>
+      <p class="sub">生産できる全110ユニットを、Uncivのデータファイルから直接読み取った。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">Uncivの標準ルールセットで生産できる全ユニット<b>110種</b>を、解禁する技術の時代ごとにまとめた。戦闘力・遠隔攻撃力・射程・移動力・生産コスト・必要資源・アップグレード先を載せている。</p>
+      <p style="margin:0;">表で分かりやすいのは、どのユニットが<b>戦略資源</b>（馬・鉄・石油・ウランなど）を必要とするか、そして各系統がどう<b>アップグレード</b>していくか。序盤のユニットを残すかどうかの判断に役立つ。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事はUncivのUnits・Techsのデータファイルを分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>時代別の全ユニット</h2></div>
+<!-- UNCIV-UNITS -->
+<h3 style="margin:22px 0 8px;">太古</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>ユニット</th><th>種類</th><th>技術</th><th>戦闘力</th><th>遠隔</th><th>射程</th><th>移動</th><th>コスト</th><th>資源</th><th>アップグレード先</th></tr></thead><tbody>
+<tr><td>斥候</td><td>斥候</td><td>農業</td><td>5</td><td>—</td><td>—</td><td>2</td><td>25</td><td>—</td><td>—</td></tr>
+<tr><td>作業船</td><td>民間の海</td><td>帆走</td><td>—</td><td>—</td><td>—</td><td>4</td><td>30</td><td>—</td><td>—</td></tr>
+<tr><td>投槍兵 <span style='color:var(--ink-dim);font-size:.82rem'>（マヤ固有）</span></td><td>弓術</td><td>農業</td><td>5</td><td>7</td><td>2</td><td>2</td><td>36</td><td>—</td><td>戦闘弓射手</td></tr>
+<tr><td>弓兵</td><td>弓術</td><td>弓術</td><td>5</td><td>7</td><td>2</td><td>2</td><td>40</td><td>—</td><td>戦闘弓射手</td></tr>
+<tr><td>バビロニア弓兵 <span style='color:var(--ink-dim);font-size:.82rem'>（バビロン固有）</span></td><td>弓術</td><td>弓術</td><td>7</td><td>9</td><td>2</td><td>2</td><td>40</td><td>—</td><td>戦闘弓射手</td></tr>
+<tr><td>ジャガー戦士 <span style='color:var(--ink-dim);font-size:.82rem'>（アステカ固有）</span></td><td>剣</td><td>農業</td><td>8</td><td>—</td><td>—</td><td>2</td><td>40</td><td>—</td><td>剣士</td></tr>
+<tr><td>マオリの戦士 <span style='color:var(--ink-dim);font-size:.82rem'>（ポリネシア固有）</span></td><td>剣</td><td>農業</td><td>8</td><td>—</td><td>—</td><td>2</td><td>40</td><td>—</td><td>剣士</td></tr>
+<tr><td>投石兵 <span style='color:var(--ink-dim);font-size:.82rem'>（インカ固有）</span></td><td>弓術</td><td>弓術</td><td>4</td><td>7</td><td>2</td><td>2</td><td>40</td><td>—</td><td>戦闘弓射手</td></tr>
+<tr><td>戦士</td><td>剣</td><td>農業</td><td>8</td><td>—</td><td>—</td><td>2</td><td>40</td><td>—</td><td>剣士</td></tr>
+<tr><td>五段櫂船 <span style='color:var(--ink-dim);font-size:.82rem'>（カルタゴ固有）</span></td><td>海軍</td><td>帆走</td><td>13</td><td>—</td><td>—</td><td>4</td><td>45</td><td>—</td><td>キャラベル船</td></tr>
+<tr><td>三段櫂船</td><td>海軍</td><td>帆走</td><td>10</td><td>—</td><td>—</td><td>4</td><td>45</td><td>—</td><td>キャラベル船</td></tr>
+<tr><td>戦車弓兵</td><td>弓術</td><td>車輪</td><td>6</td><td>10</td><td>2</td><td>4</td><td>56</td><td>馬</td><td>騎士</td></tr>
+<tr><td>ドロモン <span style='color:var(--ink-dim);font-size:.82rem'>（ビザンチン固有）</span></td><td>海軍遠隔</td><td>帆走</td><td>8</td><td>10</td><td>2</td><td>4</td><td>56</td><td>—</td><td>ガレアス船</td></tr>
+<tr><td>重装歩兵 <span style='color:var(--ink-dim);font-size:.82rem'>（ギリシャ固有）</span></td><td>剣</td><td>青銅器</td><td>13</td><td>—</td><td>—</td><td>2</td><td>56</td><td>—</td><td>長槍兵</td></tr>
+<tr><td>弓騎兵 <span style='color:var(--ink-dim);font-size:.82rem'>（フン固有）</span></td><td>弓術</td><td>車輪</td><td>7</td><td>10</td><td>2</td><td>4</td><td>56</td><td>—</td><td>騎士</td></tr>
+<tr><td>不死隊 <span style='color:var(--ink-dim);font-size:.82rem'>（ペルシア固有）</span></td><td>剣</td><td>青銅器</td><td>12</td><td>—</td><td>—</td><td>2</td><td>56</td><td>—</td><td>長槍兵</td></tr>
+<tr><td>ピクト戦士 <span style='color:var(--ink-dim);font-size:.82rem'>（ケルト固有）</span></td><td>剣</td><td>青銅器</td><td>11</td><td>—</td><td>—</td><td>2</td><td>56</td><td>—</td><td>長槍兵</td></tr>
+<tr><td>槍兵</td><td>剣</td><td>青銅器</td><td>11</td><td>—</td><td>—</td><td>2</td><td>56</td><td>—</td><td>長槍兵</td></tr>
+<tr><td>重装チャリオット兵 <span style='color:var(--ink-dim);font-size:.82rem'>（エジプト固有）</span></td><td>弓術</td><td>車輪</td><td>6</td><td>10</td><td>2</td><td>5</td><td>56</td><td>—</td><td>騎士</td></tr>
+<tr><td>軍用象 <span style='color:var(--ink-dim);font-size:.82rem'>（インド固有）</span></td><td>弓術</td><td>車輪</td><td>9</td><td>11</td><td>2</td><td>3</td><td>70</td><td>—</td><td>騎士</td></tr>
+<tr><td>労働者</td><td>市民</td><td>農業</td><td>—</td><td>—</td><td>—</td><td>2</td><td>70</td><td>—</td><td>—</td></tr>
+<tr><td>戦闘羊 <span style='color:var(--ink-dim);font-size:.82rem'>（フン固有）</span></td><td>剣</td><td>青銅器</td><td>10</td><td>—</td><td>—</td><td>2</td><td>75</td><td>—</td><td>トレビュシェット</td></tr>
+<tr><td>開拓者</td><td>市民</td><td>農業</td><td>—</td><td>—</td><td>—</td><td>2</td><td>106</td><td>—</td><td>—</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">古典</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>ユニット</th><th>種類</th><th>技術</th><th>戦闘力</th><th>遠隔</th><th>射程</th><th>移動</th><th>コスト</th><th>資源</th><th>アップグレード先</th></tr></thead><tbody>
+<tr><td>投石機 <span style='color:var(--ink-dim);font-size:.82rem'>（ローマ固有）</span></td><td>攻城</td><td>数学</td><td>8</td><td>10</td><td>2</td><td>2</td><td>75</td><td>—</td><td>トレビュシェット</td></tr>
+<tr><td>カタフラクト <span style='color:var(--ink-dim);font-size:.82rem'>（ビザンチン固有）</span></td><td>騎乗</td><td>騎乗</td><td>15</td><td>—</td><td>—</td><td>3</td><td>75</td><td>馬</td><td>騎士</td></tr>
+<tr><td>カタパルト</td><td>攻城</td><td>数学</td><td>7</td><td>8</td><td>2</td><td>2</td><td>75</td><td>—</td><td>トレビュシェット</td></tr>
+<tr><td>ヘタイロイ <span style='color:var(--ink-dim);font-size:.82rem'>（ギリシャ固有）</span></td><td>騎乗</td><td>騎乗</td><td>14</td><td>—</td><td>—</td><td>5</td><td>75</td><td>馬</td><td>騎士</td></tr>
+<tr><td>戦闘弓射手</td><td>弓術</td><td>建築学</td><td>7</td><td>11</td><td>2</td><td>2</td><td>75</td><td>—</td><td>弩兵</td></tr>
+<tr><td>騎兵</td><td>騎乗</td><td>騎乗</td><td>12</td><td>—</td><td>—</td><td>4</td><td>75</td><td>馬</td><td>騎士</td></tr>
+<tr><td>レギオン <span style='color:var(--ink-dim);font-size:.82rem'>（ローマ固有）</span></td><td>剣</td><td>鉄器</td><td>17</td><td>—</td><td>—</td><td>2</td><td>75</td><td>鉄</td><td>長剣士</td></tr>
+<tr><td>モホーク族の戦士 <span style='color:var(--ink-dim);font-size:.82rem'>（イロコイ固有）</span></td><td>剣</td><td>鉄器</td><td>14</td><td>—</td><td>—</td><td>2</td><td>75</td><td>—</td><td>長剣士</td></tr>
+<tr><td>剣士</td><td>剣</td><td>鉄器</td><td>14</td><td>—</td><td>—</td><td>2</td><td>75</td><td>鉄</td><td>長剣士</td></tr>
+<tr><td>マルミミゾウ <span style='color:var(--ink-dim);font-size:.82rem'>（カルタゴ固有）</span></td><td>騎乗</td><td>騎乗</td><td>14</td><td>—</td><td>—</td><td>3</td><td>100</td><td>—</td><td>騎士</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">中世</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>ユニット</th><th>種類</th><th>技術</th><th>戦闘力</th><th>遠隔</th><th>射程</th><th>移動</th><th>コスト</th><th>資源</th><th>アップグレード先</th></tr></thead><tbody>
+<tr><td>ランツクネヒト <span style='color:var(--ink-dim);font-size:.82rem'>（ドイツ固有）</span></td><td>剣</td><td>官吏</td><td>16</td><td>—</td><td>—</td><td>2</td><td>45</td><td>—</td><td>槍騎兵</td></tr>
+<tr><td>長槍兵</td><td>剣</td><td>官吏</td><td>16</td><td>—</td><td>—</td><td>2</td><td>90</td><td>—</td><td>槍騎兵</td></tr>
+<tr><td>ガレアス船</td><td>海軍遠隔</td><td>羅針盤</td><td>16</td><td>17</td><td>2</td><td>3</td><td>100</td><td>—</td><td>フリゲート艦</td></tr>
+<tr><td>イスラム騎兵隊 <span style='color:var(--ink-dim);font-size:.82rem'>（ソンガイ固有）</span></td><td>騎乗</td><td>騎士道</td><td>20</td><td>—</td><td>—</td><td>4</td><td>110</td><td>馬</td><td>騎兵隊</td></tr>
+<tr><td>バーサーカー <span style='color:var(--ink-dim);font-size:.82rem'>（デンマーク固有）</span></td><td>剣</td><td>錬金</td><td>21</td><td>—</td><td>—</td><td>3</td><td>120</td><td>鉄</td><td>マスケット兵</td></tr>
+<tr><td>ラクダ弓兵 <span style='color:var(--ink-dim);font-size:.82rem'>（アラビア固有）</span></td><td>弓術</td><td>騎士道</td><td>17</td><td>21</td><td>2</td><td>4</td><td>120</td><td>馬</td><td>騎兵隊</td></tr>
+<tr><td>連弩兵 <span style='color:var(--ink-dim);font-size:.82rem'>（中国固有）</span></td><td>弓術</td><td>機械</td><td>13</td><td>14</td><td>2</td><td>2</td><td>120</td><td>—</td><td>ガトリング砲</td></tr>
+<tr><td>弩兵</td><td>弓術</td><td>機械</td><td>13</td><td>18</td><td>2</td><td>2</td><td>120</td><td>—</td><td>ガトリング砲</td></tr>
+<tr><td>火車 <span style='color:var(--ink-dim);font-size:.82rem'>（朝鮮固有）</span></td><td>攻城</td><td>物理学</td><td>11</td><td>26</td><td>2</td><td>2</td><td>120</td><td>—</td><td>カノン砲</td></tr>
+<tr><td>ケシク <span style='color:var(--ink-dim);font-size:.82rem'>（モンゴル固有）</span></td><td>弓術</td><td>騎士道</td><td>15</td><td>16</td><td>2</td><td>5</td><td>120</td><td>馬</td><td>騎兵隊</td></tr>
+<tr><td>騎士</td><td>騎乗</td><td>騎士道</td><td>20</td><td>—</td><td>—</td><td>4</td><td>120</td><td>馬</td><td>騎兵隊</td></tr>
+<tr><td>長弓兵 <span style='color:var(--ink-dim);font-size:.82rem'>（イギリス固有）</span></td><td>弓術</td><td>機械</td><td>13</td><td>18</td><td>2</td><td>2</td><td>120</td><td>—</td><td>ガトリング砲</td></tr>
+<tr><td>長剣士</td><td>剣</td><td>鉄鋼</td><td>21</td><td>—</td><td>—</td><td>2</td><td>120</td><td>鉄</td><td>マスケット兵</td></tr>
+<tr><td>ナレースワンの象 <span style='color:var(--ink-dim);font-size:.82rem'>（シャム固有）</span></td><td>騎乗</td><td>騎士道</td><td>25</td><td>—</td><td>—</td><td>3</td><td>120</td><td>—</td><td>騎兵隊</td></tr>
+<tr><td>侍 <span style='color:var(--ink-dim);font-size:.82rem'>（日本固有）</span></td><td>剣</td><td>鉄鋼</td><td>21</td><td>—</td><td>—</td><td>2</td><td>120</td><td>鉄</td><td>マスケット兵</td></tr>
+<tr><td>トレビュシェット</td><td>攻城</td><td>物理学</td><td>12</td><td>14</td><td>2</td><td>2</td><td>120</td><td>—</td><td>カノン砲</td></tr>
+<tr><td>コンキスタドール <span style='color:var(--ink-dim);font-size:.82rem'>（スペイン固有）</span></td><td>騎乗</td><td>騎士道</td><td>20</td><td>—</td><td>—</td><td>4</td><td>135</td><td>馬</td><td>騎兵隊</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">ルネサンス</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>ユニット</th><th>種類</th><th>技術</th><th>戦闘力</th><th>遠隔</th><th>射程</th><th>移動</th><th>コスト</th><th>資源</th><th>アップグレード先</th></tr></thead><tbody>
+<tr><td>キャラベル船</td><td>海軍</td><td>天文学</td><td>20</td><td>—</td><td>—</td><td>4</td><td>120</td><td>—</td><td>装甲艦</td></tr>
+<tr><td>亀甲船 <span style='color:var(--ink-dim);font-size:.82rem'>（朝鮮固有）</span></td><td>海軍</td><td>天文学</td><td>36</td><td>—</td><td>—</td><td>4</td><td>120</td><td>—</td><td>装甲艦</td></tr>
+<tr><td>イェニチェリ <span style='color:var(--ink-dim);font-size:.82rem'>（オスマン固有）</span></td><td>火薬</td><td>火薬</td><td>24</td><td>—</td><td>—</td><td>2</td><td>150</td><td>—</td><td>ライフル兵</td></tr>
+<tr><td>ミニットマン <span style='color:var(--ink-dim);font-size:.82rem'>（アメリカ固有）</span></td><td>火薬</td><td>火薬</td><td>24</td><td>—</td><td>—</td><td>2</td><td>150</td><td>—</td><td>ライフル兵</td></tr>
+<tr><td>銃士隊 <span style='color:var(--ink-dim);font-size:.82rem'>（フランス固有）</span></td><td>火薬</td><td>火薬</td><td>28</td><td>—</td><td>—</td><td>2</td><td>150</td><td>—</td><td>ライフル兵</td></tr>
+<tr><td>マスケット兵</td><td>火薬</td><td>火薬</td><td>24</td><td>—</td><td>—</td><td>2</td><td>150</td><td>—</td><td>ライフル兵</td></tr>
+<tr><td>私掠船</td><td>海軍</td><td>航海術</td><td>25</td><td>—</td><td>—</td><td>5</td><td>150</td><td>—</td><td>駆逐艦</td></tr>
+<tr><td>海の乞食団 <span style='color:var(--ink-dim);font-size:.82rem'>（オランダ固有）</span></td><td>海軍</td><td>航海術</td><td>25</td><td>—</td><td>—</td><td>5</td><td>150</td><td>—</td><td>駆逐艦</td></tr>
+<tr><td>テルシオ <span style='color:var(--ink-dim);font-size:.82rem'>（スペイン固有）</span></td><td>火薬</td><td>火薬</td><td>26</td><td>—</td><td>—</td><td>2</td><td>160</td><td>—</td><td>ライフル兵</td></tr>
+<tr><td>カノン砲</td><td>攻城</td><td>化学</td><td>14</td><td>20</td><td>2</td><td>2</td><td>185</td><td>—</td><td>大砲</td></tr>
+<tr><td>フリゲート艦</td><td>海軍遠隔</td><td>航海術</td><td>25</td><td>28</td><td>2</td><td>5</td><td>185</td><td>鉄</td><td>戦艦</td></tr>
+<tr><td>ハッカペル <span style='color:var(--ink-dim);font-size:.82rem'>（スウェーデン固有）</span></td><td>騎乗</td><td>冶金</td><td>25</td><td>—</td><td>—</td><td>4</td><td>185</td><td>馬</td><td>対戦車砲</td></tr>
+<tr><td>槍騎兵</td><td>騎乗</td><td>冶金</td><td>25</td><td>—</td><td>—</td><td>4</td><td>185</td><td>馬</td><td>対戦車砲</td></tr>
+<tr><td>戦列艦 <span style='color:var(--ink-dim);font-size:.82rem'>（イギリス固有）</span></td><td>海軍遠隔</td><td>航海術</td><td>30</td><td>35</td><td>2</td><td>5</td><td>185</td><td>鉄</td><td>戦艦</td></tr>
+<tr><td>スィパーヒー <span style='color:var(--ink-dim);font-size:.82rem'>（オスマン固有）</span></td><td>騎乗</td><td>冶金</td><td>25</td><td>—</td><td>—</td><td>5</td><td>185</td><td>馬</td><td>対戦車砲</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">産業時代</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>ユニット</th><th>種類</th><th>技術</th><th>戦闘力</th><th>遠隔</th><th>射程</th><th>移動</th><th>コスト</th><th>資源</th><th>アップグレード先</th></tr></thead><tbody>
+<tr><td>マハール・セファリ <span style='color:var(--ink-dim);font-size:.82rem'>（エチオピア固有）</span></td><td>火薬</td><td>ライフリング</td><td>34</td><td>—</td><td>—</td><td>2</td><td>200</td><td>—</td><td>第1次大戦歩兵</td></tr>
+<tr><td>カロライン <span style='color:var(--ink-dim);font-size:.82rem'>（スウェーデン固有）</span></td><td>火薬</td><td>ライフリング</td><td>34</td><td>—</td><td>—</td><td>2</td><td>225</td><td>—</td><td>第1次大戦歩兵</td></tr>
+<tr><td>騎兵隊</td><td>騎乗</td><td>軍事学</td><td>34</td><td>—</td><td>—</td><td>4</td><td>225</td><td>馬</td><td>陸上船</td></tr>
+<tr><td>コサック騎馬兵 <span style='color:var(--ink-dim);font-size:.82rem'>（ロシア固有）</span></td><td>騎乗</td><td>軍事学</td><td>34</td><td>—</td><td>—</td><td>4</td><td>225</td><td>馬</td><td>陸上船</td></tr>
+<tr><td>ガトリング砲</td><td>火薬遠隔</td><td>工業化</td><td>30</td><td>30</td><td>1</td><td>2</td><td>225</td><td>—</td><td>マシンガン</td></tr>
+<tr><td>軽騎兵 <span style='color:var(--ink-dim);font-size:.82rem'>（オーストリア固有）</span></td><td>騎乗</td><td>軍事学</td><td>34</td><td>—</td><td>—</td><td>5</td><td>225</td><td>馬</td><td>陸上船</td></tr>
+<tr><td>ノルウェーのスキー歩兵 <span style='color:var(--ink-dim);font-size:.82rem'>（デンマーク固有）</span></td><td>火薬</td><td>ライフリング</td><td>34</td><td>—</td><td>—</td><td>2</td><td>225</td><td>—</td><td>第1次大戦歩兵</td></tr>
+<tr><td>ライフル兵</td><td>火薬</td><td>ライフリング</td><td>34</td><td>—</td><td>—</td><td>2</td><td>225</td><td>—</td><td>第1次大戦歩兵</td></tr>
+<tr><td>装甲艦</td><td>海軍</td><td>蒸気機関</td><td>45</td><td>—</td><td>—</td><td>3</td><td>250</td><td>石炭</td><td>駆逐艦</td></tr>
+<tr><td>大砲</td><td>攻城</td><td>ダイナマイト</td><td>21</td><td>28</td><td>3</td><td>2</td><td>320</td><td>—</td><td>ロケット砲</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">現代</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>ユニット</th><th>種類</th><th>技術</th><th>戦闘力</th><th>遠隔</th><th>射程</th><th>移動</th><th>コスト</th><th>資源</th><th>アップグレード先</th></tr></thead><tbody>
+<tr><td>外人部隊 <span style='color:var(--ink-dim);font-size:.82rem'>（フランス固有）</span></td><td>火薬</td><td>共通規格</td><td>50</td><td>—</td><td>—</td><td>2</td><td>320</td><td>—</td><td>歩兵</td></tr>
+<tr><td>第1次大戦歩兵</td><td>火薬</td><td>共通規格</td><td>50</td><td>—</td><td>—</td><td>2</td><td>320</td><td>—</td><td>歩兵</td></tr>
+<tr><td>第1次大戦爆撃機</td><td>爆撃機</td><td>飛行機</td><td>50</td><td>50</td><td>6</td><td>1</td><td>325</td><td>石油</td><td>爆撃機</td></tr>
+<tr><td>潜水艦</td><td>潜水艦</td><td>冷蔵技術</td><td>35</td><td>60</td><td>2</td><td>5</td><td>325</td><td>—</td><td>原子力潜水艦</td></tr>
+<tr><td>三翼飛行機</td><td>戦闘機</td><td>飛行機</td><td>35</td><td>35</td><td>5</td><td>1</td><td>325</td><td>石油</td><td>戦闘機</td></tr>
+<tr><td>陸上船</td><td>機甲</td><td>内燃機関</td><td>60</td><td>—</td><td>—</td><td>4</td><td>350</td><td>石油</td><td>戦車</td></tr>
+<tr><td>マシンガン</td><td>火薬遠隔</td><td>弾道学</td><td>60</td><td>60</td><td>1</td><td>2</td><td>350</td><td>—</td><td>機械化歩兵</td></tr>
+<tr><td>対空砲</td><td>火薬</td><td>弾道学</td><td>50</td><td>—</td><td>—</td><td>2</td><td>375</td><td>—</td><td>移動式SAM</td></tr>
+<tr><td>戦艦</td><td>海軍遠隔</td><td>電子工学</td><td>55</td><td>55</td><td>3</td><td>5</td><td>375</td><td>石油</td><td>—</td></tr>
+<tr><td>航空母艦</td><td>空母</td><td>電子工学</td><td>40</td><td>—</td><td>—</td><td>5</td><td>375</td><td>—</td><td>—</td></tr>
+<tr><td>駆逐艦</td><td>海軍</td><td>内燃機関</td><td>55</td><td>—</td><td>—</td><td>6</td><td>375</td><td>—</td><td>—</td></tr>
+<tr><td>歩兵</td><td>火薬</td><td>プラスチック</td><td>70</td><td>—</td><td>—</td><td>2</td><td>375</td><td>—</td><td>機械化歩兵</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">原子力時代</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>ユニット</th><th>種類</th><th>技術</th><th>戦闘力</th><th>遠隔</th><th>射程</th><th>移動</th><th>コスト</th><th>資源</th><th>アップグレード先</th></tr></thead><tbody>
+<tr><td>対戦車砲</td><td>火薬</td><td>連合部隊</td><td>50</td><td>—</td><td>—</td><td>2</td><td>300</td><td>—</td><td>ガンシップ</td></tr>
+<tr><td>B17 <span style='color:var(--ink-dim);font-size:.82rem'>（アメリカ固有）</span></td><td>爆撃機</td><td>レーダー</td><td>70</td><td>70</td><td>10</td><td>1</td><td>375</td><td>石油</td><td>ステルス爆撃機</td></tr>
+<tr><td>爆撃機</td><td>爆撃機</td><td>レーダー</td><td>65</td><td>65</td><td>10</td><td>1</td><td>375</td><td>石油</td><td>ステルス爆撃機</td></tr>
+<tr><td>戦闘機</td><td>戦闘機</td><td>レーダー</td><td>45</td><td>45</td><td>8</td><td>1</td><td>375</td><td>石油</td><td>ジェット戦闘機</td></tr>
+<tr><td>パンツァー <span style='color:var(--ink-dim);font-size:.82rem'>（ドイツ固有）</span></td><td>機甲</td><td>連合部隊</td><td>80</td><td>—</td><td>—</td><td>6</td><td>375</td><td>石油</td><td>現代機甲部隊</td></tr>
+<tr><td>空挺部隊</td><td>火薬</td><td>レーダー</td><td>65</td><td>—</td><td>—</td><td>2</td><td>375</td><td>—</td><td>—</td></tr>
+<tr><td>戦車</td><td>機甲</td><td>連合部隊</td><td>70</td><td>—</td><td>—</td><td>5</td><td>375</td><td>石油</td><td>現代機甲部隊</td></tr>
+<tr><td>ゼロ戦 <span style='color:var(--ink-dim);font-size:.82rem'>（日本固有）</span></td><td>戦闘機</td><td>レーダー</td><td>45</td><td>45</td><td>8</td><td>1</td><td>375</td><td>—</td><td>ジェット戦闘機</td></tr>
+<tr><td>海兵隊</td><td>火薬</td><td>医薬品</td><td>65</td><td>—</td><td>—</td><td>2</td><td>400</td><td>—</td><td>—</td></tr>
+<tr><td>ガンシップ</td><td>ヘリコプター</td><td>コンピュータ</td><td>60</td><td>—</td><td>—</td><td>6</td><td>425</td><td>アルミニウム</td><td>—</td></tr>
+<tr><td>移動式SAM</td><td>火薬</td><td>ロケット工学</td><td>65</td><td>—</td><td>—</td><td>3</td><td>425</td><td>—</td><td>—</td></tr>
+<tr><td>ロケット砲</td><td>攻城</td><td>ロケット工学</td><td>45</td><td>60</td><td>3</td><td>2</td><td>425</td><td>アルミニウム</td><td>—</td></tr>
+<tr><td>原子爆弾</td><td>原子爆弾</td><td>核分裂反応</td><td>150</td><td>150</td><td>10</td><td>1</td><td>600</td><td>ウラン</td><td>—</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">情報時代</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>ユニット</th><th>種類</th><th>技術</th><th>戦闘力</th><th>遠隔</th><th>射程</th><th>移動</th><th>コスト</th><th>資源</th><th>アップグレード先</th></tr></thead><tbody>
+<tr><td>誘導ミサイル</td><td>ミサイル</td><td>先進弾道学</td><td>60</td><td>60</td><td>8</td><td>1</td><td>150</td><td>—</td><td>—</td></tr>
+<tr><td>機械化歩兵</td><td>火薬</td><td>機動戦術</td><td>90</td><td>—</td><td>—</td><td>3</td><td>375</td><td>—</td><td>—</td></tr>
+<tr><td>巨大殺人ロボット</td><td>機甲</td><td>核融合反応</td><td>150</td><td>—</td><td>—</td><td>5</td><td>425</td><td>ウラン</td><td>—</td></tr>
+<tr><td>ジェット戦闘機</td><td>戦闘機</td><td>レーザー</td><td>75</td><td>75</td><td>10</td><td>1</td><td>425</td><td>アルミニウム</td><td>—</td></tr>
+<tr><td>ミサイル巡洋艦</td><td>海軍遠隔</td><td>ロボット工学</td><td>80</td><td>100</td><td>3</td><td>7</td><td>425</td><td>—</td><td>—</td></tr>
+<tr><td>現代機甲部隊</td><td>機甲</td><td>レーザー</td><td>100</td><td>—</td><td>—</td><td>5</td><td>425</td><td>アルミニウム</td><td>巨大殺人ロボット</td></tr>
+<tr><td>原子力潜水艦</td><td>潜水艦</td><td>遠距離通信</td><td>50</td><td>85</td><td>3</td><td>6</td><td>425</td><td>—</td><td>—</td></tr>
+<tr><td>ステルス爆撃機</td><td>爆撃機</td><td>ステルス</td><td>85</td><td>85</td><td>20</td><td>2</td><td>425</td><td>アルミニウム</td><td>—</td></tr>
+<tr><td>核ミサイル</td><td>ミサイル</td><td>先進弾道学</td><td>300</td><td>300</td><td>12</td><td>1</td><td>1000</td><td>—</td><td>—</td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">—</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>ユニット</th><th>種類</th><th>技術</th><th>戦闘力</th><th>遠隔</th><th>射程</th><th>移動</th><th>コスト</th><th>資源</th><th>アップグレード先</th></tr></thead><tbody>
+<tr><td>大提督</td><td>民間の海</td><td>—</td><td>—</td><td>—</td><td>—</td><td>4</td><td>—</td><td>—</td><td>—</td></tr>
+</tbody></table></div>
+<!-- /UNCIV-UNITS -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">コストは難易度とゲーム速度を掛ける前の基本の生産コスト。射程は遠隔ユニットのみ。固有ユニットには文明名を付けた。蛮族専用ユニットと偉人は除いている。名称はゲームの公式日本語訳による。数値はゲーム本体のデータファイル（Unciv同梱の Civ V Gods &amp; Kings ルールセット）を、2026年10月2日時点のソースから読み取ったもの。アップデートやMODで変わることがある。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>表の見方</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><b>戦闘力</b>は白兵攻撃と防御に使われ、<b>遠隔</b>は遠隔攻撃の値。</li>
+        <li><b>コスト</b>は、あなたの場合は難易度（<a href="/ja/games/unciv/difficulty/">難易度の違い</a>）とゲーム速度で変わる。</li>
+        <li>資源が必要なユニットは、その資源に空きがないと生産できない。</li>
+        <li>性能に昇進や特殊能力は含まれない。詳細はゲーム内のシヴィロペディアで確認しよう。</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">載っていないユニットがある。</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">蛮族専用ユニット、偉人、一部の特殊な民間ユニットは表に含めていない。MODでユニットが追加されることもある。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">アップグレードの費用は？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">ユニットのデータファイルには固定値として入っておらず、ゲームが計算するため載せていない。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">固有ユニットも載っている？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">載っている（文明名つき）。置き換え対象との比較は<a href='/ja/games/unciv/civilizations/'>文明一覧</a>を参照。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/unciv/">Unciv 攻略ガイド</a>
+      <a href="/ja/games/unciv/civilizations/">文明一覧</a>
+      <a href="/ja/games/unciv/difficulty/">難易度の違い</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv ソースコード（yairm210/Unciv、MPL-2.0）</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv データファイル：Civ V Gods & Kings ルールセット（2026-10-02 時点）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/translations/Japanese.properties" target="_blank" rel="noopener">Unciv 公式日本語訳ファイル（Japanese.properties）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

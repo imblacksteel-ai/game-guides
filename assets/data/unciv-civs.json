@@ -1,0 +1,1107 @@
+{
+ "meta": {
+  "repo": "yairm210/Unciv",
+  "commit": "31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd",
+  "date": "2026-10-02",
+  "ruleset": "Civ V - Gods & Kings"
+ },
+ "data": [
+  {
+   "name": "Babylon",
+   "name_ja": "バビロン",
+   "leader": "Nebuchadnezzar II",
+   "leader_ja": "ネブカドネザル2世",
+   "ability": "Ingenuity",
+   "ability_ja": "創造力",
+   "effects_en": [
+    "Free Great Scientist appears (upon discovering Writing technology)",
+    "Great Scientist is earned 50% faster"
+   ],
+   "effects_ja": [
+    "技術筆記を発見した時、大科学者が無償で出現",
+    "大科学者を50%早く獲得"
+   ],
+   "victory": "Scientific",
+   "units": [
+    {
+     "name": "Bowman",
+     "name_ja": "バビロニア弓兵",
+     "replaces": "Archer",
+     "replaces_ja": "弓兵"
+    }
+   ],
+   "buildings": [
+    {
+     "name": "Walls of Babylon",
+     "name_ja": "バビロニアの城壁",
+     "replaces": "Walls",
+     "replaces_ja": "防壁"
+    }
+   ]
+  },
+  {
+   "name": "Greece",
+   "name_ja": "ギリシャ",
+   "leader": "Alexander",
+   "leader_ja": "アレクサンドロス",
+   "ability": "Hellenic League",
+   "ability_ja": "ヘレニズム同盟",
+   "effects_en": [
+    "-50% City-State Influence degradation",
+    "City-State Influence recovers at twice the normal rate",
+    "City-State territory always counts as friendly territory"
+   ],
+   "effects_ja": [
+    "都市国家への影響力の減少-50%",
+    "都市国家への影響力の回復速度が2倍になる",
+    "都市国家の領土は常に友好的な領土として扱う"
+   ],
+   "victory": "Diplomatic",
+   "units": [
+    {
+     "name": "Hoplite",
+     "name_ja": "重装歩兵",
+     "replaces": "Spearman",
+     "replaces_ja": "槍兵"
+    },
+    {
+     "name": "Companion Cavalry",
+     "name_ja": "ヘタイロイ",
+     "replaces": "Horseman",
+     "replaces_ja": "騎兵"
+    }
+   ],
+   "buildings": []
+  },
+  {
+   "name": "China",
+   "name_ja": "中国",
+   "leader": "Wu Zetian",
+   "leader_ja": "武則天",
+   "ability": "Art of War",
+   "ability_ja": "兵法",
+   "effects_en": [
+    "Great General provides double combat bonus",
+    "Great General is earned 50% faster",
+    "Great Admiral is earned 50% faster"
+   ],
+   "effects_ja": [
+    "大将軍による戦闘ボーナスが2倍",
+    "大将軍を50%早く獲得",
+    "大提督を50%早く獲得"
+   ],
+   "victory": "Scientific",
+   "units": [
+    {
+     "name": "Chu-Ko-Nu",
+     "name_ja": "連弩兵",
+     "replaces": "Crossbowman",
+     "replaces_ja": "弩兵"
+    }
+   ],
+   "buildings": [
+    {
+     "name": "Paper Maker",
+     "name_ja": "製紙工場",
+     "replaces": "Library",
+     "replaces_ja": "図書館"
+    }
+   ]
+  },
+  {
+   "name": "Egypt",
+   "name_ja": "エジプト",
+   "leader": "Ramesses II",
+   "leader_ja": "ラムセス２世",
+   "ability": "Monument Builders",
+   "ability_ja": "遺産建設者",
+   "effects_en": [
+    "+20% Production when constructing All wonders in all cities"
+   ],
+   "effects_ja": [
+    "すべての都市ですべての遺産の建築時に生産力+20%"
+   ],
+   "victory": "Cultural",
+   "units": [
+    {
+     "name": "War Chariot",
+     "name_ja": "重装チャリオット兵",
+     "replaces": "Chariot Archer",
+     "replaces_ja": "戦車弓兵"
+    }
+   ],
+   "buildings": [
+    {
+     "name": "Burial Tomb",
+     "name_ja": "陵墓",
+     "replaces": "Temple",
+     "replaces_ja": "寺院"
+    }
+   ]
+  },
+  {
+   "name": "England",
+   "name_ja": "イギリス",
+   "leader": "Elizabeth",
+   "leader_ja": "エリザベス1世",
+   "ability": "Sun Never Sets",
+   "ability_ja": "沈まぬ太陽",
+   "effects_en": [
+    "+2 Movement (for Water units)",
+    "Gain an extra spy (upon entering the Renaissance era)"
+   ],
+   "effects_ja": [
+    "水上のユニットに、移動+2",
+    "ルネサンスに移行した時、新たなスパイを獲得する"
+   ],
+   "victory": "Diplomatic",
+   "units": [
+    {
+     "name": "Longbowman",
+     "name_ja": "長弓兵",
+     "replaces": "Crossbowman",
+     "replaces_ja": "弩兵"
+    },
+    {
+     "name": "Ship of the Line",
+     "name_ja": "戦列艦",
+     "replaces": "Frigate",
+     "replaces_ja": "フリゲート艦"
+    }
+   ],
+   "buildings": []
+  },
+  {
+   "name": "France",
+   "name_ja": "フランス",
+   "leader": "Napoleon",
+   "leader_ja": "ナポレオン",
+   "ability": "Ancien Régime",
+   "ability_ja": "アンシャン・レジーム",
+   "effects_en": [
+    "+2 Culture in all cities (before discovering Steam Power)"
+   ],
+   "effects_ja": [
+    "蒸気機関を研究するまで、すべての都市で文化力+2"
+   ],
+   "victory": "Cultural",
+   "units": [
+    {
+     "name": "Musketeer",
+     "name_ja": "銃士隊",
+     "replaces": "Musketman",
+     "replaces_ja": "マスケット兵"
+    },
+    {
+     "name": "Foreign Legion",
+     "name_ja": "外人部隊",
+     "replaces": "Great War Infantry",
+     "replaces_ja": "第1次大戦歩兵"
+    }
+   ],
+   "buildings": []
+  },
+  {
+   "name": "Russia",
+   "name_ja": "ロシア",
+   "leader": "Catherine",
+   "leader_ja": "エカチェリーナ2世",
+   "ability": "Siberian Riches",
+   "ability_ja": "シベリアの富",
+   "effects_en": [
+    "+1 Production from every Strategic resource",
+    "+100% Horses resource production",
+    "+100% Iron resource production",
+    "+100% Uranium resource production"
+   ],
+   "effects_ja": [
+    "すべての戦略資源から生産力+1",
+    "馬資源の産出量が+100%",
+    "鉄資源の産出量が+100%",
+    "ウラン資源の産出量が+100%"
+   ],
+   "victory": "Scientific",
+   "units": [
+    {
+     "name": "Cossack",
+     "name_ja": "コサック騎馬兵",
+     "replaces": "Cavalry",
+     "replaces_ja": "騎兵隊"
+    }
+   ],
+   "buildings": [
+    {
+     "name": "Krepost",
+     "name_ja": "クレポスト",
+     "replaces": "Barracks",
+     "replaces_ja": "兵舎"
+    }
+   ]
+  },
+  {
+   "name": "Rome",
+   "name_ja": "ローマ",
+   "leader": "Augustus Caesar",
+   "leader_ja": "アウグストゥス",
+   "ability": "The Glory of Rome",
+   "ability_ja": "ローマの栄光",
+   "effects_en": [
+    "+25% Production towards any buildings that already exist in the Capital"
+   ],
+   "effects_ja": [
+    "すでに首都で建設済みの建物を他の都市で建設するとき、生産力+25%"
+   ],
+   "victory": "Scientific",
+   "units": [
+    {
+     "name": "Ballista",
+     "name_ja": "投石機",
+     "replaces": "Catapult",
+     "replaces_ja": "カタパルト"
+    },
+    {
+     "name": "Legion",
+     "name_ja": "レギオン",
+     "replaces": "Swordsman",
+     "replaces_ja": "剣士"
+    }
+   ],
+   "buildings": []
+  },
+  {
+   "name": "Arabia",
+   "name_ja": "アラビア",
+   "leader": "Harun al-Rashid",
+   "leader_ja": "ハールーン・アッラシード",
+   "ability": "Trade Caravans",
+   "ability_ja": "隊商",
+   "effects_en": [
+    "+1 Gold from each Trade Route",
+    "+100% Oil resource production"
+   ],
+   "effects_ja": [
+    "各交易路からゴールド+1",
+    "石油資源の産出量が+100%"
+   ],
+   "victory": "Scientific",
+   "units": [
+    {
+     "name": "Camel Archer",
+     "name_ja": "ラクダ弓兵",
+     "replaces": "Knight",
+     "replaces_ja": "騎士"
+    }
+   ],
+   "buildings": [
+    {
+     "name": "Bazaar",
+     "name_ja": "バザー",
+     "replaces": "Market",
+     "replaces_ja": "市場"
+    }
+   ]
+  },
+  {
+   "name": "America",
+   "name_ja": "アメリカ",
+   "leader": "George Washington",
+   "leader_ja": "ワシントン",
+   "ability": "Manifest Destiny",
+   "ability_ja": "明白な天命",
+   "effects_en": [
+    "+1 Sight (for Military Land units)",
+    "-50% Gold cost of acquiring tiles in all cities"
+   ],
+   "effects_ja": [
+    "軍事地上のユニットに、視界+1",
+    "すべての都市でタイル購入に必要なゴールド-50%"
+   ],
+   "victory": "Scientific",
+   "units": [
+    {
+     "name": "Minuteman",
+     "name_ja": "ミニットマン",
+     "replaces": "Musketman",
+     "replaces_ja": "マスケット兵"
+    },
+    {
+     "name": "B17",
+     "name_ja": "B17",
+     "replaces": "Bomber",
+     "replaces_ja": "爆撃機"
+    }
+   ],
+   "buildings": []
+  },
+  {
+   "name": "Japan",
+   "name_ja": "日本",
+   "leader": "Oda Nobunaga",
+   "leader_ja": "織田信長",
+   "ability": "Bushido",
+   "ability_ja": "武士道",
+   "effects_en": [
+    "No damage penalty for wounded units (for non-Air units)"
+   ],
+   "effects_ja": [
+    "非空軍のユニットに、損傷ユニットのダメージペナルティがない"
+   ],
+   "victory": "Domination",
+   "units": [
+    {
+     "name": "Samurai",
+     "name_ja": "侍",
+     "replaces": "Longswordsman",
+     "replaces_ja": "長剣士"
+    },
+    {
+     "name": "Zero",
+     "name_ja": "ゼロ戦",
+     "replaces": "Fighter",
+     "replaces_ja": "戦闘機"
+    }
+   ],
+   "buildings": []
+  },
+  {
+   "name": "India",
+   "name_ja": "インド",
+   "leader": "Gandhi",
+   "leader_ja": "ガンディー",
+   "ability": "Population Growth",
+   "ability_ja": "人口増加",
+   "effects_en": [
+    "+100% unhappiness from the number of cities",
+    "-50% Unhappiness from Population in all cities"
+   ],
+   "effects_ja": [
+    "都市数による不満が+100%",
+    "すべての都市で人口からの不満が-50%"
+   ],
+   "victory": "Cultural",
+   "units": [
+    {
+     "name": "War Elephant",
+     "name_ja": "軍用象",
+     "replaces": "Chariot Archer",
+     "replaces_ja": "戦車弓兵"
+    }
+   ],
+   "buildings": [
+    {
+     "name": "Mughal Fort",
+     "name_ja": "ムガル要塞",
+     "replaces": "Castle",
+     "replaces_ja": "城"
+    }
+   ]
+  },
+  {
+   "name": "Germany",
+   "name_ja": "ドイツ",
+   "leader": "Otto von Bismarck",
+   "leader_ja": "ビスマルク",
+   "ability": "Furor Teutonicus",
+   "ability_ja": "怒れるテウトネス",
+   "effects_en": [
+    "When conquering an encampment, earn 25 Gold and recruit a Barbarian unit (with 67% chance)",
+    "-25% maintenance costs (for Land units)"
+   ],
+   "effects_ja": [
+    "67%の確率で、蛮族の野営地を制圧時に25ゴールドを入手し、蛮族が入隊する",
+    "地上のユニットに、維持コスト-25%"
+   ],
+   "victory": "Scientific",
+   "units": [
+    {
+     "name": "Landsknecht",
+     "name_ja": "ランツクネヒト",
+     "replaces": "Pikeman",
+     "replaces_ja": "長槍兵"
+    },
+    {
+     "name": "Panzer",
+     "name_ja": "パンツァー",
+     "replaces": "Tank",
+     "replaces_ja": "戦車"
+    }
+   ],
+   "buildings": []
+  },
+  {
+   "name": "The Ottomans",
+   "name_ja": "オスマン",
+   "leader": "Suleiman I",
+   "leader_ja": "スレイマン1世",
+   "ability": "Barbary Corsairs",
+   "ability_ja": "バルバリア海賊",
+   "effects_en": [
+    "-66% maintenance costs (for Water units)",
+    "When defeating a Barbarian Water unit, earn 25 Gold and recruit it (with 50% chance)"
+   ],
+   "effects_ja": [
+    "水上のユニットに、維持コスト-66%",
+    "50%の確率で、野蛮人水上ユニットを破壊時に25ゴールドを入手し、そのユニットが入隊する"
+   ],
+   "victory": "Domination",
+   "units": [
+    {
+     "name": "Janissary",
+     "name_ja": "イェニチェリ",
+     "replaces": "Musketman",
+     "replaces_ja": "マスケット兵"
+    },
+    {
+     "name": "Sipahi",
+     "name_ja": "スィパーヒー",
+     "replaces": "Lancer",
+     "replaces_ja": "槍騎兵"
+    }
+   ],
+   "buildings": []
+  },
+  {
+   "name": "Korea",
+   "name_ja": "朝鮮",
+   "leader": "Sejong",
+   "leader_ja": "世宗",
+   "ability": "Scholars of the Jade Hall",
+   "ability_ja": "翡翠の間の学者たち",
+   "effects_en": [
+    "+2 Science from every specialist in all cities",
+    "+2 Science from every Great Improvement",
+    "Receive a tech boost when scientific buildings/wonders are built in capital"
+   ],
+   "effects_ja": [
+    "すべての都市で専門家あたり科学力+2",
+    "すべての偉人のタイル整備から科学力+2",
+    "首都に科学関連の建造物/遺産が建設されると、科学力が増大する。"
+   ],
+   "victory": "Scientific",
+   "units": [
+    {
+     "name": "Hwach'a",
+     "name_ja": "火車",
+     "replaces": "Trebuchet",
+     "replaces_ja": "トレビュシェット"
+    },
+    {
+     "name": "Turtle Ship",
+     "name_ja": "亀甲船",
+     "replaces": "Caravel",
+     "replaces_ja": "キャラベル船"
+    }
+   ],
+   "buildings": []
+  },
+  {
+   "name": "Iroquois",
+   "name_ja": "イロコイ",
+   "leader": "Hiawatha",
+   "leader_ja": "ハイアワサ",
+   "ability": "The Great Warpath",
+   "ability_ja": "偉大な出征路",
+   "effects_en": [
+    "All units move through Forest and Jungle Tiles in friendly territory as if they have roads. These tiles can be used to establish City Connections upon researching the Wheel."
+   ],
+   "effects_ja": [
+    "全てのユニットが自友好国領の森林とジャングルを道として使える。車輪を研究後、森林とジャングルによって都市の交易路が形成される。"
+   ],
+   "victory": "Scientific",
+   "units": [
+    {
+     "name": "Mohawk Warrior",
+     "name_ja": "モホーク族の戦士",
+     "replaces": "Swordsman",
+     "replaces_ja": "剣士"
+    }
+   ],
+   "buildings": [
+    {
+     "name": "Longhouse",
+     "name_ja": "ロングハウス",
+     "replaces": "Workshop",
+     "replaces_ja": "工房"
+    }
+   ]
+  },
+  {
+   "name": "Persia",
+   "name_ja": "ペルシア",
+   "leader": "Darius I",
+   "leader_ja": "ダレイオス1世",
+   "ability": "Achaemenid Legacy",
+   "ability_ja": "アケメネス朝の遺産",
+   "effects_en": [
+    "+50% Golden Age length",
+    "+1 Movement (for All units) (during a Golden Age)",
+    "+10% Strength (for All units) (during a Golden Age)"
+   ],
+   "effects_ja": [
+    "黄金時代の長さ+50%",
+    "すべてのユニットに、黄金時代の間、移動+1",
+    "すべてのユニットに、黄金時代の間、戦闘力+10%"
+   ],
+   "victory": "Scientific",
+   "units": [
+    {
+     "name": "Persian Immortal",
+     "name_ja": "不死隊",
+     "replaces": "Spearman",
+     "replaces_ja": "槍兵"
+    }
+   ],
+   "buildings": [
+    {
+     "name": "Satrap's Court",
+     "name_ja": "サトラップの王宮",
+     "replaces": "Bank",
+     "replaces_ja": "銀行"
+    }
+   ]
+  },
+  {
+   "name": "Polynesia",
+   "name_ja": "ポリネシア",
+   "leader": "Kamehameha I",
+   "leader_ja": "カメハメハ",
+   "ability": "Wayfinding",
+   "ability_ja": "ウェイファインディング",
+   "effects_en": [
+    "Enables embarkation for land units (starting from the Ancient era)",
+    "Enables All units to enter ocean tiles (starting from the Ancient era)",
+    "+1 Sight (for Embarked units)",
+    "+10% Strength (within 2 tiles of a Moai)"
+   ],
+   "effects_ja": [
+    "太古以降、地上ユニットの乗船が可能になる",
+    "太古以降、すべてユニットが外洋タイルに移動できる",
+    "乗船中のユニットに、視界+1",
+    "モアイタイルから2タイル以内で、戦闘力+10%"
+   ],
+   "victory": "Cultural",
+   "units": [
+    {
+     "name": "Maori Warrior",
+     "name_ja": "マオリの戦士",
+     "replaces": "Warrior",
+     "replaces_ja": "戦士"
+    }
+   ],
+   "buildings": []
+  },
+  {
+   "name": "Siam",
+   "name_ja": "シャム",
+   "leader": "Ramkhamhaeng",
+   "leader_ja": "ラームカムヘーン",
+   "ability": "Father Governs Children",
+   "ability_ja": "父権政治",
+   "effects_en": [
+    "+50% Food from City-States",
+    "+50% Culture from City-States",
+    "+50% Faith from City-States",
+    "Military Units gifted from City-States start with +10 XP"
+   ],
+   "effects_ja": [
+    "都市国家からの食料+50%",
+    "都市国家からの文化力+50%",
+    "都市国家からの信仰力+50%",
+    "都市国家から贈られる軍事ユニットが始めからXP+10"
+   ],
+   "victory": "Diplomatic",
+   "units": [
+    {
+     "name": "Naresuan's Elephant",
+     "name_ja": "ナレースワンの象",
+     "replaces": "Knight",
+     "replaces_ja": "騎士"
+    }
+   ],
+   "buildings": [
+    {
+     "name": "Wat",
+     "name_ja": "ワット",
+     "replaces": "University",
+     "replaces_ja": "大学"
+    }
+   ]
+  },
+  {
+   "name": "Spain",
+   "name_ja": "スペイン",
+   "leader": "Isabella",
+   "leader_ja": "イサベル",
+   "ability": "Seven Cities of Gold",
+   "ability_ja": "黄金の七都市",
+   "effects_en": [
+    "+100 Gold for discovering a Natural Wonder (bonus enhanced to +500 Gold if first to discover it)",
+    "+1 Happiness for every known Natural Wonder",
+    "+100% Yield from every Natural Wonder"
+   ],
+   "effects_ja": [
+    "自然遺産を発見するとゴールド+100(ボーナスは最初に発見するとゴールド+500に増える)",
+    "発見済みの自然遺産1件あたり幸福度+1",
+    "自然遺産の産出量+100%"
+   ],
+   "victory": "Domination",
+   "units": [
+    {
+     "name": "Conquistador",
+     "name_ja": "コンキスタドール",
+     "replaces": "Knight",
+     "replaces_ja": "騎士"
+    },
+    {
+     "name": "Tercio",
+     "name_ja": "テルシオ",
+     "replaces": "Musketman",
+     "replaces_ja": "マスケット兵"
+    }
+   ],
+   "buildings": []
+  },
+  {
+   "name": "Songhai",
+   "name_ja": "ソンガイ",
+   "leader": "Askia",
+   "leader_ja": "アスキア",
+   "ability": "River Warlord",
+   "ability_ja": "水軍の将",
+   "effects_en": [
+    "Receive +200% Gold from Barbarian encampments and pillaging Cities",
+    "+100% Strength (when defending) (for Embarked units)",
+    "Military Land units gain the Amphibious promotion"
+   ],
+   "effects_ja": [
+    "蛮族の野営地と都市の略奪から+200%のゴールドを得る",
+    "防衛時、乗船中のユニットに、戦闘力+100%",
+    "軍事地上ユニットが昇進「上陸作戦」を獲得"
+   ],
+   "victory": "Domination",
+   "units": [
+    {
+     "name": "Mandekalu Cavalry",
+     "name_ja": "イスラム騎兵隊",
+     "replaces": "Knight",
+     "replaces_ja": "騎士"
+    }
+   ],
+   "buildings": [
+    {
+     "name": "Mud Pyramid Mosque",
+     "name_ja": "泥のピラミッド状モスク",
+     "replaces": "Temple",
+     "replaces_ja": "寺院"
+    }
+   ]
+  },
+  {
+   "name": "Mongolia",
+   "name_ja": "モンゴル",
+   "leader": "Genghis Khan",
+   "leader_ja": "チンギス・カン",
+   "ability": "Mongol Terror",
+   "ability_ja": "モンゴルの脅威",
+   "effects_en": [
+    "+30% Strength (vs City-States)",
+    "+1 Movement (for Mounted units)"
+   ],
+   "effects_ja": [
+    "対 都市国家、戦闘力+30%",
+    "騎乗のユニットに、移動+1"
+   ],
+   "victory": "Domination",
+   "units": [
+    {
+     "name": "Keshik",
+     "name_ja": "ケシク",
+     "replaces": "Knight",
+     "replaces_ja": "騎士"
+    },
+    {
+     "name": "Khan",
+     "name_ja": "カン",
+     "replaces": "Great General",
+     "replaces_ja": "大将軍"
+    }
+   ],
+   "buildings": []
+  },
+  {
+   "name": "Aztecs",
+   "name_ja": "アステカ",
+   "leader": "Montezuma I",
+   "leader_ja": "モクテスマ1世",
+   "ability": "Sacrificial Captives",
+   "ability_ja": "捕虜の生贄",
+   "effects_en": [
+    "Earn 100% of killed Military unit's Strength as Culture"
+   ],
+   "effects_ja": [
+    "敵の軍事を倒すごとに敵戦闘力100%分の文化力を得る"
+   ],
+   "victory": "Domination",
+   "units": [
+    {
+     "name": "Jaguar",
+     "name_ja": "ジャガー戦士",
+     "replaces": "Warrior",
+     "replaces_ja": "戦士"
+    }
+   ],
+   "buildings": [
+    {
+     "name": "Floating Gardens",
+     "name_ja": "水上庭園",
+     "replaces": "Water Mill",
+     "replaces_ja": "水車小屋"
+    }
+   ]
+  },
+  {
+   "name": "Inca",
+   "name_ja": "インカ",
+   "leader": "Pachacuti",
+   "leader_ja": "パチャクテク",
+   "ability": "Great Andean Road",
+   "ability_ja": "アンデスの大道",
+   "effects_en": [
+    "Units ignore terrain costs when moving into any tile with Hills",
+    "-50% maintenance on road & railroads",
+    "No Maintenance costs for improvements in Hill tiles"
+   ],
+   "effects_ja": [
+    "丘陵タイルを移動する際の移動コストが無視される",
+    "輸送維持費-50%",
+    "丘陵タイル上の整備の維持コストが不要"
+   ],
+   "victory": "Cultural",
+   "units": [
+    {
+     "name": "Slinger",
+     "name_ja": "投石兵",
+     "replaces": "Archer",
+     "replaces_ja": "弓兵"
+    }
+   ],
+   "buildings": []
+  },
+  {
+   "name": "Denmark",
+   "name_ja": "デンマーク",
+   "leader": "Harald Bluetooth",
+   "leader_ja": "青歯王ハーラル",
+   "ability": "Viking Fury",
+   "ability_ja": "ヴァイキングの怒り",
+   "effects_en": [
+    "+1 Movement (for Embarked units)",
+    "1 Movement point cost to disembark (for All units)",
+    "No movement cost to pillage (for Melee units)"
+   ],
+   "effects_ja": [
+    "乗船中のユニットに、移動+1",
+    "すべてのユニットに、上陸には1の移動ポイントがかかる",
+    "白兵のユニットに、略奪時の移動力消費なし"
+   ],
+   "victory": "Cultural",
+   "units": [
+    {
+     "name": "Berserker",
+     "name_ja": "バーサーカー",
+     "replaces": "Longswordsman",
+     "replaces_ja": "長剣士"
+    },
+    {
+     "name": "Norwegian Ski Infantry",
+     "name_ja": "ノルウェーのスキー歩兵",
+     "replaces": "Rifleman",
+     "replaces_ja": "ライフル兵"
+    }
+   ],
+   "buildings": []
+  },
+  {
+   "name": "The Huns",
+   "name_ja": "フン",
+   "leader": "Attila the Hun",
+   "leader_ja": "アッティラ",
+   "ability": "Scourge of God",
+   "ability_ja": "神の災い",
+   "effects_en": [
+    "+1 Production from every Pasture",
+    "Cities are razed 2 times as fast",
+    "Starts with Animal Husbandry",
+    "\"Borrows\" city names from other civilizations in the game"
+   ],
+   "effects_ja": [
+    "すべての牧草地から生産力+1",
+    "都市の焼却速度が2倍",
+    "畜産で始まる",
+    "都市の建設時に他の文明の都市名を借りる"
+   ],
+   "victory": "Domination",
+   "units": [
+    {
+     "name": "Horse Archer",
+     "name_ja": "弓騎兵",
+     "replaces": "Chariot Archer",
+     "replaces_ja": "戦車弓兵"
+    },
+    {
+     "name": "Battering Ram",
+     "name_ja": "戦闘羊",
+     "replaces": "Spearman",
+     "replaces_ja": "槍兵"
+    }
+   ],
+   "buildings": []
+  },
+  {
+   "name": "The Netherlands",
+   "name_ja": "オランダ",
+   "leader": "William of Orange",
+   "leader_ja": "オレンジ公ウィリアム",
+   "ability": "Dutch East India Company",
+   "ability_ja": "オランダ東インド会社",
+   "effects_en": [
+    "Retain 50% of the happiness from a luxury after the last copy has been traded away"
+   ],
+   "effects_ja": [
+    "高級資源の最後の1個を取引に出した後も、その資源から得られたはずの幸福度の50%を保持する。"
+   ],
+   "victory": "Cultural",
+   "units": [
+    {
+     "name": "Sea Beggar",
+     "name_ja": "海の乞食団",
+     "replaces": "Privateer",
+     "replaces_ja": "私掠船"
+    }
+   ],
+   "buildings": []
+  },
+  {
+   "name": "Sweden",
+   "name_ja": "スウェーデン",
+   "leader": "Gustavus Adolphus",
+   "leader_ja": "グスタフ・アドルフ",
+   "ability": "Nobel Prize",
+   "ability_ja": "ノーベル賞",
+   "effects_en": [
+    "Gain 90 Influence with a Great Person gift to a City-State",
+    "When declaring friendship, both parties gain a 10% boost to great person generation"
+   ],
+   "effects_ja": [
+    "偉人の寄付で都市国家への影響力90獲得",
+    "友好宣言をすると、自文明と相手文明の両方の偉人生成10%"
+   ],
+   "victory": "Diplomatic",
+   "units": [
+    {
+     "name": "Hakkapeliitta",
+     "name_ja": "ハッカペル",
+     "replaces": "Lancer",
+     "replaces_ja": "槍騎兵"
+    },
+    {
+     "name": "Carolean",
+     "name_ja": "カロライン",
+     "replaces": "Rifleman",
+     "replaces_ja": "ライフル兵"
+    }
+   ],
+   "buildings": []
+  },
+  {
+   "name": "Austria",
+   "name_ja": "オーストリア",
+   "leader": "Maria Theresa",
+   "leader_ja": "マリア・テレジア",
+   "ability": "Diplomatic Marriage",
+   "ability_ja": "政略結婚",
+   "effects_en": [
+    "Can spend Gold to annex or puppet a City-State that has been your Ally for 5 turns"
+   ],
+   "effects_ja": [
+    "5ターン同盟関係にある都市国家をゴールドを消費して併合または傀儡化できる"
+   ],
+   "victory": "Diplomatic",
+   "units": [
+    {
+     "name": "Hussar",
+     "name_ja": "軽騎兵",
+     "replaces": "Cavalry",
+     "replaces_ja": "騎兵隊"
+    }
+   ],
+   "buildings": [
+    {
+     "name": "Coffee House",
+     "name_ja": "コーヒーハウス",
+     "replaces": "Windmill",
+     "replaces_ja": "風車"
+    }
+   ]
+  },
+  {
+   "name": "Carthage",
+   "name_ja": "カルタゴ",
+   "leader": "Dido",
+   "leader_ja": "ディードー",
+   "ability": "Phoenician Heritage",
+   "ability_ja": "フェニキア人の遺産",
+   "effects_en": [
+    "Gain a free Harbor in all coastal cities",
+    "Land units may cross Mountain tiles after the first Great General is earned"
+   ],
+   "effects_ja": [
+    "すべての沿岸都市で無償の港を獲得",
+    "最初の大将軍を入手後、地上ユニットが山岳タイル上を移動できる"
+   ],
+   "victory": "Domination",
+   "units": [
+    {
+     "name": "Quinquereme",
+     "name_ja": "五段櫂船",
+     "replaces": "Trireme",
+     "replaces_ja": "三段櫂船"
+    },
+    {
+     "name": "African Forest Elephant",
+     "name_ja": "マルミミゾウ",
+     "replaces": "Horseman",
+     "replaces_ja": "騎兵"
+    }
+   ],
+   "buildings": []
+  },
+  {
+   "name": "Byzantium",
+   "name_ja": "ビザンチン",
+   "leader": "Theodora",
+   "leader_ja": "テオドラ",
+   "ability": "Patriarchate of Constantinople",
+   "ability_ja": "コンスタンティノープルの総大司教",
+   "effects_en": [
+    "May choose 1 additional belief(s) of any type when founding a religion"
+   ],
+   "effects_ja": [
+    "宗教を創始するとき、任意の信念を追加で1つ選択できる"
+   ],
+   "victory": "Cultural",
+   "units": [
+    {
+     "name": "Dromon",
+     "name_ja": "ドロモン",
+     "replaces": "Trireme",
+     "replaces_ja": "三段櫂船"
+    },
+    {
+     "name": "Cataphract",
+     "name_ja": "カタフラクト",
+     "replaces": "Horseman",
+     "replaces_ja": "騎兵"
+    }
+   ],
+   "buildings": []
+  },
+  {
+   "name": "Celts",
+   "name_ja": "ケルト",
+   "leader": "Boudicca",
+   "leader_ja": "ブーディカ",
+   "ability": "Druidic Lore",
+   "ability_ja": "ドルイドの伝説",
+   "effects_en": [
+    "+1 Faith in all cities (with 1 to 2 neighboring unimproved Forest tiles)",
+    "+2 Faith in all cities (with 3 to 6 neighboring unimproved Forest tiles)"
+   ],
+   "effects_ja": [
+    "1〜2個のタイルの整備なし森林タイルに隣接している場合、すべての都市で信仰力+1",
+    "3〜6個のタイルの整備なし森林タイルに隣接している場合、すべての都市で信仰力+2"
+   ],
+   "victory": "Domination",
+   "units": [
+    {
+     "name": "Pictish Warrior",
+     "name_ja": "ピクト戦士",
+     "replaces": "Spearman",
+     "replaces_ja": "槍兵"
+    }
+   ],
+   "buildings": [
+    {
+     "name": "Ceilidh Hall",
+     "name_ja": "ケイリー・ホール",
+     "replaces": "Opera House",
+     "replaces_ja": "オペラハウス"
+    }
+   ]
+  },
+  {
+   "name": "Ethiopia",
+   "name_ja": "エチオピア",
+   "leader": "Haile Selassie",
+   "leader_ja": "ハイレ・セラシエ",
+   "ability": "Spirit of Adwa",
+   "ability_ja": "アドワの精神",
+   "effects_en": [
+    "+20% Strength (when fighting units from a Civilization with more Cities than you)"
+   ],
+   "effects_ja": [
+    "自文明より都市数の多い文明のユニットとの戦闘時に、戦闘力+20%"
+   ],
+   "victory": "Cultural",
+   "units": [
+    {
+     "name": "Mehal Sefari",
+     "name_ja": "マハール・セファリ",
+     "replaces": "Rifleman",
+     "replaces_ja": "ライフル兵"
+    }
+   ],
+   "buildings": [
+    {
+     "name": "Stele",
+     "name_ja": "ステッレ",
+     "replaces": "Monument",
+     "replaces_ja": "モニュメント"
+    }
+   ]
+  },
+  {
+   "name": "The Maya",
+   "name_ja": "マヤ",
+   "leader": "Pacal",
+   "leader_ja": "パカル",
+   "ability": "The Long Count",
+   "ability_ja": "長期暦",
+   "effects_en": [
+    "Receive a free Great Person at the end of every Maya Long Count calendar cycle (every 394 years), after researching Theology. Each bonus person can only be chosen once.",
+    "Once The Long Count activates, the year on the world screen displays as the traditional Mayan Long Count."
+   ],
+   "effects_ja": [
+    "神学を研究後、長期暦サイクル(394年)に無償の偉人が受け取れる。同じ種類の偉人は1回ずつのみ受け取れる。",
+    "長期暦の有効化後、ワールド画面の年号がマヤ暦で表示される。"
+   ],
+   "victory": "Scientific",
+   "units": [
+    {
+     "name": "Atlatlist",
+     "name_ja": "投槍兵",
+     "replaces": "Archer",
+     "replaces_ja": "弓兵"
+    }
+   ],
+   "buildings": [
+    {
+     "name": "Pyramid",
+     "name_ja": "マヤのピラミッド",
+     "replaces": "Shrine",
+     "replaces_ja": "神殿"
+    }
+   ]
+  }
+ ]
+}

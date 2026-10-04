@@ -136,6 +136,15 @@ git diff --stat                 # 想定した言語数ぶんのファイルが�
 - トリンケットは `/games/shattered-pixel-dungeon/trinkets/`。`python3 scripts/build_spd_trinkets.py` で各クラスの `static 関数(int level)` を+0〜+3で評価（return／if-else／switch の3形式のみ対応）。表示の変換と説明はスクリプト内の SPECS に手書き。新しいトリンケットが増えるとエラーで止まるので SPECS に追記する。
 - 未対応の需要：artifacts（充填・レベルの仕組みが個別で複雑）。
 
+## Unciv（オープンソース版シヴィライゼーション5）
+
+- `/games/unciv/`（ハブ）、`/civilizations/`（全34文明）、`/units/`（全ユニット）、`/difficulty/`（難易度）。英日のみ。CSSは `assets/games/unciv.css`（spd.cssの配色違い）、OG画像は `assets/og/og-unciv.png`。
+- 表は `python3 scripts/build_unciv.py` で生成（**手編集禁止**）。yairm210/Unciv（MPL-2.0）の `COMMIT` 時点の `Civ V - Gods & Kings` の JSON（コメント・末尾カンマ入りなので strip() してから読む）と公式日本語訳 `Japanese.properties` から、`<!-- UNCIV-CIVS/UNIQ/UNITS/DIFF -->` マーカー間に書き込む。更新するときは `COMMIT`/`COMMIT_DATE` を差し替え、本文中の「2026-10-02」も合わせて直す。
+- 日本語の能力文はUncivと同じテンプレート方式（[ ]を差し替え、条件<...>は本文の前）で公式訳から組み立てる。"Land"→「地上」など、パラメータの誤訳は `PARAM_OVERRIDE` で補正。訳が無いものは英語のまま残り、件数が表示される。
+- 難易度の各項目の意味は本体のコードで確認済み：研究/ユニット/建物/社会制度コストは人間プレイヤーのみ（AIは `aiDifficultyLevel` の易しい設定）、`aiCityGrowthModifier` はAIの成長に必要な食料の倍率、`barbarianBonus` は対蛮族の戦闘ボーナス、`turnBarbariansCanEnterPlayerTiles` は蛮族が領土に入れるようになるターン。
+- 本文（結論・読み取り）は手書き。データ更新で数値（例：固有ユニット49中24が同性能、AIの勝利志向 科学11/文化9/制覇9/外交5）が変わったら直す。
+- 未対応の需要：社会制度（Policies）、遺産（Wonders）、信仰（Beliefs）、技術ツリー。
+
 ## 翻訳の一貫性ルール
 
 - **繁体字版の生成時の注意**：簡体→繁体変換は日本語の漢字も書き換える（装備→裝備）ため、`class="jp"`/`class="romaji"` の要素とカナを含む語は変換から保護している。ゲーム内の日本語表記はこれらのクラスで囲むこと。

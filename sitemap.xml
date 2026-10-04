@@ -482,4 +482,36 @@
   </url>
   <url><loc>https://kouryakulab.com/ja/games/kancolle/destroyer-escorts/</loc></url>
 
+  <url>
+    <loc>https://kouryakulab.com/games/unciv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/unciv/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/games/unciv/civilizations/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/civilizations/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/civilizations/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/civilizations/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/unciv/civilizations/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/games/unciv/units/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/units/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/units/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/units/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/unciv/units/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/games/unciv/difficulty/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/difficulty/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/difficulty/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/difficulty/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/unciv/difficulty/</loc></url>
+
 </urlset>

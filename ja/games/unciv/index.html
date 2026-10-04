@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="オープンソース版シヴィライゼーション5「Unciv」の攻略ガイド。ゲーム本体のデータファイルから、全34文明、全ユニットの性能、難易度ごとの違いをまとめた。">
+<title>Unciv 攻略ガイド：文明・ユニット・難易度（データ分析）</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/unciv/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Unciv 攻略ガイド：文明・ユニット・難易度（データ分析）">
+<meta property="og:description" content="オープンソース版シヴィライゼーション5「Unciv」の攻略ガイド。ゲーム本体のデータファイルから、全34文明、全ユニットの性能、難易度ごとの違いをまとめた。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/unciv/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv 攻略ガイド：文明・ユニット・難易度（データ分析）">
+<meta name="twitter:description" content="オープンソース版シヴィライゼーション5「Unciv」の攻略ガイド。ゲーム本体のデータファイルから、全34文明、全ユニットの性能、難易度ごとの違いをまとめた。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv 攻略ガイド：文明・ユニット・難易度（データ分析）",
+      "description": "オープンソース版シヴィライゼーション5「Unciv」の攻略ガイド。ゲーム本体のデータファイルから、全34文明、全ユニットの性能、難易度ごとの違いをまとめた。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/unciv/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv 攻略ガイド：文明・ユニット・難易度（データ分析）",
+          "item": "https://kouryakulab.com/ja/games/unciv/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/"><span class="arrow">←</span> 攻略ラボ</a>
+    <div>
+      <span class="eyebrow">UNCIV · OPEN SOURCE · CIV V REMAKE</span>
+      <h1>Unciv 攻略ガイド</h1>
+      <p class="sub">Uncivはオープンソースなので、このガイドの数値はゲーム本体のデータファイルから直接読み取っている。</p>
+      <div class="fact-strip">
+        <div class="fact"><div class="k">ジャンル</div><div class="v tag-mono">4Xストラテジー</div></div>
+        <div class="fact"><div class="k">対応機種</div><div class="v tag-mono">Android / PC</div></div>
+        <div class="fact"><div class="k">ライセンス</div><div class="v tag-mono">MPL-2.0（オープンソース）</div></div>
+        <div class="fact"><div class="k">開発</div><div class="v tag-mono">yairm210 ほか</div></div>
+        <div class="fact" data-fact="updated"><div class="k">更新日</div><div class="v tag-mono">2026.09</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links" id="tabs">
+      <a href="#overview">概要</a>
+      <a href="#guides">ガイド一覧</a>
+      <a href="#starting-units">序盤のユニット</a>
+      <a href="/ja/games/unciv/civilizations/">文明一覧</a>
+      <a href="/ja/games/unciv/units/">ユニット一覧</a>
+      <a href="/ja/games/unciv/difficulty/">難易度</a>
+    </div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section id="overview" style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Uncivとは</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;"><b>Unciv</b>は、シヴィライゼーション5を再現した無料のオープンソースゲーム（Android・PC）。ストアの説明文では「軽くて小さくて広告なしの完全無料」とされていて、ソースコードはGitHubでMPL-2.0ライセンスで公開されている。</p>
+      <p style="margin:0;">オープンソースなので、このガイドの数値は記憶や古いWikiではなく、ゲーム本体のデータファイルから直接読み取っている。同梱の主なルールセットはシヴィライゼーション5の拡張パック<b>「神々と王」</b>に準拠していて、ユニットのデータファイル自体にも「Civilization WikiとCivFanaticsの情報に基づく」と注記がある。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事はUncivのデータファイルとソースコードを分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section id="guides" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>ガイド一覧</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><a href="/ja/games/unciv/civilizations/"><b>全34文明</b></a>：能力、固有ユニット・建物、置き換え対象との性能比較。</li>
+        <li><a href="/ja/games/unciv/units/"><b>全ユニットの性能</b></a>：戦闘力・遠隔攻撃力・射程・移動力・コスト・技術・アップグレード先を時代別に。</li>
+        <li><a href="/ja/games/unciv/difficulty/"><b>難易度の違い</b></a>：開拓者から創造主まで何が変わるのかを、ソースコードで確認した。</li>
+      </ul>
+    </div>
+  </section>
+  <section id="starting-units" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>序盤のユニット早見表</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>ユニット</th><th>コスト</th><th>データ上の特徴</th></tr></thead>
+        <tbody>
+        <tr><td>開拓者</td><td>106</td><td>都市を建設する。人口2以上で生産可能。生産中は余剰食料が生産力に変換される。</td></tr>
+        <tr><td>労働者</td><td>70</td><td>陸上のタイル整備を行う。</td></tr>
+        <tr><td>戦士</td><td>40</td><td>戦闘力8。序盤の基本的な白兵ユニット。</td></tr>
+        <tr><td>斥候</td><td>25</td><td>戦闘力5。地形による移動コストを無視し、蛮族ユニットとしては出現しない。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">数値はゲーム本体のデータファイル（Unciv同梱の Civ V Gods &amp; Kings ルールセット）を、2026年10月2日時点のソースから読み取ったもの。アップデートやMODで変わることがある。</p>
+  </section>
+  <section id="faq" style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Uncivはシヴィライゼーション5と同じ？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">シヴィライゼーション5のルールと数値をかなり忠実に再現した独立の作品で、独自のアップデートもある。シヴィ5の攻略情報は参考程度に考えよう。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">数値は最新？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">2026年10月2日時点のソースから読み取ったもの。Uncivは更新が多いので、後のバージョンで変わることがある。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">MODを入れると変わる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">変わる。このガイドは標準の「神々と王」ルールセットが対象。MODは文明を追加したり、数値を変えたりできる。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">日本語で遊べる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">遊べる。ゲームには日本語訳が入っていて、このガイドの日本語版もその公式訳の名称を使っている。</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap more-guides">
+    <h3>他の攻略ガイド</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/haran-suisekai/">波乱水世界</a>
+      <a href="/ja/games/kancolle/">艦これ</a>
+      <a href="/ja/games/srwdd/">スパロボDD</a>
+      <a href="/ja/games/deresute/">デレステ</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv ソースコード（yairm210/Unciv、MPL-2.0）</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv データファイル：Civ V Gods & Kings ルールセット（2026-10-02 時点）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/translations/Japanese.properties" target="_blank" rel="noopener">Unciv 公式日本語訳ファイル（Japanese.properties）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+<script src="/assets/tabs.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unciv（オープンソース版シヴィライゼーション5）の難易度で実際に何が変わるのかを、データとソースコードで確認。開拓者〜将軍はあなたが安くなり、皇子はコスト面で中立、国王〜創造主は主にAIが強化される。">
+<title>Unciv 難易度の違い：開拓者から創造主まで何が変わるか</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/unciv/difficulty/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/difficulty/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/difficulty/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/difficulty/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Unciv 難易度の違い：開拓者から創造主まで何が変わるか">
+<meta property="og:description" content="Unciv（オープンソース版シヴィライゼーション5）の難易度で実際に何が変わるのかを、データとソースコードで確認。開拓者〜将軍はあなたが安くなり、皇子はコスト面で中立、国王〜創造主は主にAIが強化される。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/unciv/difficulty/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv 難易度の違い：開拓者から創造主まで何が変わるか">
+<meta name="twitter:description" content="Unciv（オープンソース版シヴィライゼーション5）の難易度で実際に何が変わるのかを、データとソースコードで確認。開拓者〜将軍はあなたが安くなり、皇子はコスト面で中立、国王〜創造主は主にAIが強化される。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv 難易度の違い：開拓者から創造主まで何が変わるか",
+      "description": "Unciv（オープンソース版シヴィライゼーション5）の難易度で実際に何が変わるのかを、データとソースコードで確認。開拓者〜将軍はあなたが安くなり、皇子はコスト面で中立、国王〜創造主は主にAIが強化される。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/unciv/difficulty/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv 難易度の違い：開拓者から創造主まで何が変わるか",
+          "item": "https://kouryakulab.com/ja/games/unciv/difficulty/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/unciv/"><span class="arrow">←</span> Unciv 攻略ガイド</a>
+    <div>
+      <span class="eyebrow">UNCIV ・ 難易度</span>
+      <h1>難易度の違い</h1>
+      <p class="sub">開拓者から創造主まで、各難易度で実際に何が変わるのか。各数値を適用するコードと突き合わせて確認した。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">Uncivの難易度ファイルと、それを使うソースコードを突き合わせると、難易度は前半と後半で仕組みが違う。<b>開拓者・酋長・将軍はあなたのコストを安くする</b>（開拓者ではユニット・建物・社会制度のコストが半分）。<b>皇子はコストと成長の面で中立の基準</b>で、これらはすべて100%（ただしAIのユニット上限はすでに+20%）。</p>
+      <p style="margin:0;"><b>国王以上では、あなたのコストと幸福度はもう変わらない。</b>変わるのは蛮族への戦闘ボーナスが減っていくことだけで、残りの難しさはAI側から来る。ユニットと建物が安くなり、都市の成長が速くなり、ユニット上限が増え、初期ユニットと技術が追加される。創造主ではAIのユニットと建物のコストが半分。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事はUncivのDifficultiesデータファイルと、それを適用するソースコードを分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>全難易度の比較</h2></div>
+<!-- UNCIV-DIFF -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>難易度</th><th>あなたの研究コスト</th><th>あなたのユニットコスト</th><th>あなたの建物コスト</th><th>あなたの社会制度コスト</th><th>基本幸福度</th><th>あなたの不満</th><th>蛮族への戦闘ボーナス</th><th>AIの成長に必要な食料</th><th>AIのユニットコスト</th><th>AIの建物コスト</th><th>AIのユニット上限の上乗せ</th></tr></thead><tbody>
+<tr><td><b>開拓者<br><span style='color:var(--ink-dim);font-size:.82rem'>Settler</span></b></td><td>90%</td><td>50%</td><td>50%</td><td>50%</td><td>15</td><td>40%</td><td>+75%</td><td>160%</td><td>175%</td><td>160%</td><td>+0%</td></tr>
+<tr><td><b>酋長<br><span style='color:var(--ink-dim);font-size:.82rem'>Chieftain</span></b></td><td>95%</td><td>67%</td><td>67%</td><td>67%</td><td>12</td><td>60%</td><td>+50%</td><td>130%</td><td>130%</td><td>130%</td><td>+0%</td></tr>
+<tr><td><b>将軍<br><span style='color:var(--ink-dim);font-size:.82rem'>Warlord</span></b></td><td>100%</td><td>85%</td><td>85%</td><td>85%</td><td>12</td><td>75%</td><td>+40%</td><td>110%</td><td>110%</td><td>110%</td><td>+10%</td></tr>
+<tr><td><b>皇子<br><span style='color:var(--ink-dim);font-size:.82rem'>Prince</span></b></td><td>100%</td><td>100%</td><td>100%</td><td>100%</td><td>9</td><td>100%</td><td>+33%</td><td>100%</td><td>100%</td><td>100%</td><td>+20%</td></tr>
+<tr><td><b>国王<br><span style='color:var(--ink-dim);font-size:.82rem'>King</span></b></td><td>100%</td><td>100%</td><td>100%</td><td>100%</td><td>9</td><td>100%</td><td>+25%</td><td>90%</td><td>85%</td><td>85%</td><td>+30%</td></tr>
+<tr><td><b>皇帝<br><span style='color:var(--ink-dim);font-size:.82rem'>Emperor</span></b></td><td>100%</td><td>100%</td><td>100%</td><td>100%</td><td>9</td><td>100%</td><td>+20%</td><td>85%</td><td>80%</td><td>80%</td><td>+30%</td></tr>
+<tr><td><b>不死者<br><span style='color:var(--ink-dim);font-size:.82rem'>Immortal</span></b></td><td>100%</td><td>100%</td><td>100%</td><td>100%</td><td>9</td><td>100%</td><td>+10%</td><td>75%</td><td>65%</td><td>65%</td><td>+40%</td></tr>
+<tr><td><b>創造主<br><span style='color:var(--ink-dim);font-size:.82rem'>Deity</span></b></td><td>100%</td><td>100%</td><td>100%</td><td>100%</td><td>9</td><td>100%</td><td>+0%</td><td>60%</td><td>50%</td><td>50%</td><td>+50%</td></tr>
+</tbody></table></div>
+<div class="table-scroll" style="margin-top:14px"><table class="glossary"><thead><tr><th>難易度</th><th>AI文明が追加で持つ初期ユニット</th><th>AIが最初から持つ技術</th></tr></thead><tbody>
+<tr><td><b>開拓者</b></td><td>—</td><td>—</td></tr>
+<tr><td><b>酋長</b></td><td>—</td><td>—</td></tr>
+<tr><td><b>将軍</b></td><td>—</td><td>—</td></tr>
+<tr><td><b>皇子</b></td><td>—</td><td>—</td></tr>
+<tr><td><b>国王</b></td><td>時代の初期軍事ユニット</td><td>陶器</td></tr>
+<tr><td><b>皇帝</b></td><td>時代の初期軍事ユニット、斥候</td><td>陶器、畜産</td></tr>
+<tr><td><b>不死者</b></td><td>労働者、斥候、時代の初期軍事ユニット、時代の初期軍事ユニット</td><td>陶器、畜産、採鉱</td></tr>
+<tr><td><b>創造主</b></td><td>開拓者、労働者、斥候、時代の初期軍事ユニット、時代の初期軍事ユニット、時代の初期軍事ユニット</td><td>陶器、畜産、採鉱、車輪</td></tr>
+</tbody></table></div>
+<!-- /UNCIV-DIFF -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">％は倍率。コスト50%は半額、食料160%はAIの都市が成長に60%多くの食料を必要とする意味。数値はゲーム本体のデータファイル（Unciv同梱の Civ V Gods &amp; Kings ルールセット）を、2026年10月2日時点のソースから読み取ったもの。アップデートやMODで変わることがある。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>各項目の意味（コードで確認）</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>項目</th><th>対象</th><th>効果</th></tr></thead>
+        <tbody>
+        <tr><td>研究・ユニット・建物・社会制度のコスト</td><td>あなた（人間のプレイヤー）</td><td>あなたのコストに掛かる。AI自身のこの値は、あなたの難易度ではなく内部の易しい設定が使われる。</td></tr>
+        <tr><td>基本幸福度</td><td>あなた</td><td>最初の幸福度。開拓者15、酋長・将軍12、皇子以上9。</td></tr>
+        <tr><td>不満</td><td>あなた</td><td>都市数と人口による不満の倍率。</td></tr>
+        <tr><td>蛮族への戦闘ボーナス</td><td>あなたのユニット</td><td>蛮族との戦闘時のボーナス。開拓者+75%から創造主0%まで。</td></tr>
+        <tr><td>AIの成長に必要な食料</td><td>AIの都市</td><td>AIの都市が成長に必要な食料の倍率。100%より上ならAIの成長が遅く、下なら速い。</td></tr>
+        <tr><td>AIのユニット・建物コスト</td><td>AI文明</td><td>AIの生産コストの倍率（遺産は国王以上で100%のまま）。</td></tr>
+        <tr><td>AIのユニット上限の上乗せ</td><td>AIの主要文明</td><td>AIがペナルティなしで維持できるユニット数を増やす。</td></tr>
+        <tr><td>蛮族の領土侵入</td><td>蛮族</td><td>開拓者では蛮族があなたの領土に入らない。酋長は60ターン目から、将軍は20ターン目から、皇子以上は最初から入ってくる。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>どの難易度を選ぶか</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><b>ゲームを覚えたい：</b>酋長か将軍。コストが安く幸福度も多く、序盤は蛮族が領土に入ってこない。</li>
+        <li><b>対等な勝負：</b>皇子。コストと成長は双方とも同じ（AIはユニット上限+20%で、皇子以上ではAI同士が技術を交換する）。</li>
+        <li><b>挑戦：</b>国王以上。あなたのコストはもう変わらないので、難易度を上げるたびに主にAIの経済力と初期の差が大きくなる。</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">創造主だと研究が遅くなる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">ならない。あなたの研究コストは将軍以上で100%。創造主の難しさはAIの優遇。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">開拓者だとAIがあなたより弱いのはなぜ？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">開拓者ではAIの成長に必要な食料が160%、ユニットのコストが175%、建物と遺産が160%で、あなたのコストは半分になるため。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">ゲーム速度は含まれている？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">含まれていない。ゲーム速度は難易度とは別にコストに掛かる。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">都市国家にも適用される？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">都市国家には別のルールがあり（ユニットのコストが150%など）、ここのAIの行は主要文明についてのもの。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/unciv/">Unciv 攻略ガイド</a>
+      <a href="/ja/games/unciv/civilizations/">文明一覧</a>
+      <a href="/ja/games/unciv/units/">ユニット一覧</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv ソースコード（yairm210/Unciv、MPL-2.0）</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv データファイル：Civ V Gods & Kings ルールセット（2026-10-02 時点）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/translations/Japanese.properties" target="_blank" rel="noopener">Unciv 公式日本語訳ファイル（Japanese.properties）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

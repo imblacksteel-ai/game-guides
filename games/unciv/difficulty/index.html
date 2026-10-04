@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="What Unciv's difficulty levels really change, from the game's data and source code: Settler–Warlord make your costs cheaper, Prince is neutral for costs, and King–Deity mainly boost the AI (costs, growth, unit cap, free units and techs).">
+<title>Unciv Difficulty Levels Explained: What Changes from Settler to Deity</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/games/unciv/difficulty/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/difficulty/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/difficulty/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/difficulty/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:title" content="Unciv Difficulty Levels Explained: What Changes from Settler to Deity">
+<meta property="og:description" content="What Unciv's difficulty levels really change, from the game's data and source code: Settler–Warlord make your costs cheaper, Prince is neutral for costs, and King–Deity mainly boost the AI (costs, growth, unit cap, free units and techs).">
+<meta property="og:url" content="https://kouryakulab.com/games/unciv/difficulty/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv Difficulty Levels Explained: What Changes from Settler to Deity">
+<meta name="twitter:description" content="What Unciv's difficulty levels really change, from the game's data and source code: Settler–Warlord make your costs cheaper, Prince is neutral for costs, and King–Deity mainly boost the AI (costs, growth, unit cap, free units and techs).">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv Difficulty Levels Explained: What Changes from Settler to Deity",
+      "description": "What Unciv's difficulty levels really change, from the game's data and source code: Settler–Warlord make your costs cheaper, Prince is neutral for costs, and King–Deity mainly boost the AI (costs, growth, unit cap, free units and techs).",
+      "inLanguage": "en",
+      "url": "https://kouryakulab.com/games/unciv/difficulty/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv Difficulty Levels Explained: What Changes from Settler to Deity",
+          "item": "https://kouryakulab.com/games/unciv/difficulty/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/games/unciv/"><span class="arrow">←</span> Unciv Guide</a>
+    <div>
+      <span class="eyebrow">UNCIV · DIFFICULTY</span>
+      <h1>Difficulty Levels Explained</h1>
+      <p class="sub">What actually changes at each level, from Settler to Deity — checked against the code that applies each number.</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="Language"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Conclusion</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">Reading Unciv's difficulty file next to the code that uses it, the levels work in two halves. <b>Settler, Chieftain and Warlord make things cheaper for you</b> (Settler halves your unit, building and policy costs). <b>Prince is the neutral baseline for costs and growth</b> — those are all 100%, though the AI already gets a little extra unit supply (+20%).</p>
+      <p style="margin:0;"><b>From King upward, your costs and happiness stop changing</b> — only your combat bonus against barbarians keeps shrinking. The rest of the difficulty comes from the AI: cheaper units and buildings, faster city growth, a bigger unit cap, extra starting units and free techs. On Deity, AI units and buildings cost half.</p>
+    </div>
+    <div class="callout"><b>An analysis-based guide:</b> this guide is based on our analysis of Unciv's Difficulties data file and the source code that applies it. It describes what the data shows and is not a guarantee of results.</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>Every Difficulty Level</h2></div>
+<!-- UNCIV-DIFF -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Difficulty</th><th>Your tech cost</th><th>Your unit cost</th><th>Your building cost</th><th>Your policy cost</th><th>Base happiness</th><th>Your unhappiness</th><th>Your bonus vs barbarians</th><th>AI food needed to grow</th><th>AI unit cost</th><th>AI building cost</th><th>AI extra unit supply</th></tr></thead><tbody>
+<tr><td><b>Settler</b></td><td>90%</td><td>50%</td><td>50%</td><td>50%</td><td>15</td><td>40%</td><td>+75%</td><td>160%</td><td>175%</td><td>160%</td><td>+0%</td></tr>
+<tr><td><b>Chieftain</b></td><td>95%</td><td>67%</td><td>67%</td><td>67%</td><td>12</td><td>60%</td><td>+50%</td><td>130%</td><td>130%</td><td>130%</td><td>+0%</td></tr>
+<tr><td><b>Warlord</b></td><td>100%</td><td>85%</td><td>85%</td><td>85%</td><td>12</td><td>75%</td><td>+40%</td><td>110%</td><td>110%</td><td>110%</td><td>+10%</td></tr>
+<tr><td><b>Prince</b></td><td>100%</td><td>100%</td><td>100%</td><td>100%</td><td>9</td><td>100%</td><td>+33%</td><td>100%</td><td>100%</td><td>100%</td><td>+20%</td></tr>
+<tr><td><b>King</b></td><td>100%</td><td>100%</td><td>100%</td><td>100%</td><td>9</td><td>100%</td><td>+25%</td><td>90%</td><td>85%</td><td>85%</td><td>+30%</td></tr>
+<tr><td><b>Emperor</b></td><td>100%</td><td>100%</td><td>100%</td><td>100%</td><td>9</td><td>100%</td><td>+20%</td><td>85%</td><td>80%</td><td>80%</td><td>+30%</td></tr>
+<tr><td><b>Immortal</b></td><td>100%</td><td>100%</td><td>100%</td><td>100%</td><td>9</td><td>100%</td><td>+10%</td><td>75%</td><td>65%</td><td>65%</td><td>+40%</td></tr>
+<tr><td><b>Deity</b></td><td>100%</td><td>100%</td><td>100%</td><td>100%</td><td>9</td><td>100%</td><td>+0%</td><td>60%</td><td>50%</td><td>50%</td><td>+50%</td></tr>
+</tbody></table></div>
+<div class="table-scroll" style="margin-top:14px"><table class="glossary"><thead><tr><th>Difficulty</th><th>Extra starting units for each AI civ</th><th>Free techs for AI</th></tr></thead><tbody>
+<tr><td><b>Settler</b></td><td>—</td><td>—</td></tr>
+<tr><td><b>Chieftain</b></td><td>—</td><td>—</td></tr>
+<tr><td><b>Warlord</b></td><td>—</td><td>—</td></tr>
+<tr><td><b>Prince</b></td><td>—</td><td>—</td></tr>
+<tr><td><b>King</b></td><td>era starting unit</td><td>Pottery</td></tr>
+<tr><td><b>Emperor</b></td><td>era starting unit, Scout</td><td>Pottery, Animal Husbandry</td></tr>
+<tr><td><b>Immortal</b></td><td>Worker, Scout, era starting unit, era starting unit</td><td>Pottery, Animal Husbandry, Mining</td></tr>
+<tr><td><b>Deity</b></td><td>Settler, Worker, Scout, era starting unit, era starting unit, era starting unit</td><td>Pottery, Animal Husbandry, Mining, The Wheel</td></tr>
+</tbody></table></div>
+<!-- /UNCIV-DIFF -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">Percentages are multipliers: 50% cost means half price; 160% food means AI cities need 60% more food to grow. Data from the game's own files (Civ V: Gods &amp; Kings ruleset that ships with Unciv), read from the source at the commit of 2026-10-02. Updates and mods can change these numbers.</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>What Each Setting Does (Checked in the Code)</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>Setting</th><th>Applies to</th><th>Effect</th></tr></thead>
+        <tbody>
+        <tr><td>Tech / unit / building / policy cost</td><td>You (human players)</td><td>Multiplies your costs. The AI's own player-side values come from an easier internal level, not yours.</td></tr>
+        <tr><td>Base happiness</td><td>You</td><td>Starting happiness: 15 on Settler, 12 on Chieftain and Warlord, 9 from Prince up.</td></tr>
+        <tr><td>Unhappiness</td><td>You</td><td>Scales unhappiness from cities and population.</td></tr>
+        <tr><td>Bonus vs barbarians</td><td>Your units</td><td>A combat bonus against barbarians: +75% on Settler down to none on Deity.</td></tr>
+        <tr><td>AI food needed to grow</td><td>AI cities</td><td>Multiplies the food an AI city needs to grow — above 100% slows the AI, below speeds it up.</td></tr>
+        <tr><td>AI unit / building cost</td><td>AI civilizations</td><td>Multiplies AI production costs (wonders stay at 100% from King up).</td></tr>
+        <tr><td>AI extra unit supply</td><td>AI major civs</td><td>Raises how many units the AI can support before penalties.</td></tr>
+        <tr><td>Barbarians entering your land</td><td>Barbarians</td><td>On Settler barbarians never enter your territory; on Chieftain only from turn 60, Warlord from turn 20, and from the start on Prince and above.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>Which Level to Pick</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><b>Learning the game:</b> Chieftain or Warlord. You get cheaper costs and more happiness, and barbarians are kept out early.</li>
+        <li><b>A fair game:</b> Prince. Costs and growth are even on both sides; the AI gets +20% unit supply and trades techs with other AIs from Prince up.</li>
+        <li><b>Challenge:</b> King and above. Your costs no longer change, so each step up mainly means a stronger AI economy and a bigger AI head start.</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Does Deity make my research slower?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">No. Your tech cost is 100% from Warlord up. Deity's difficulty is the AI's advantages.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Why is the AI weaker on Settler than me?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">On Settler the AI needs 160% food to grow and pays 175% for units and 160% for buildings and wonders, while your costs are halved.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Is game speed included?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">No. Game speed multiplies costs separately on top of difficulty.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Do these apply to city-states?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">City-states have their own rules (for example, they pay 150% for units), so the AI rows here are about major civilizations.</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>Continue reading</h3>
+    <div class="more-guides-links">
+      <a href="/games/unciv/">Unciv Guide</a>
+      <a href="/games/unciv/civilizations/">Civilizations</a>
+      <a href="/games/unciv/units/">Units</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">This is an unofficial, fan-made, analysis-based guide. It is not a guarantee of results, and game updates may change any of it.</div>
+    <div class="sources">
+      Sources:
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv source code (yairm210/Unciv, MPL-2.0)</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv data files — Civ V: Gods & Kings ruleset, commit of 2026-10-02</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="Site links"><a href="/about/">About</a> · <a href="/authors/">Authors</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>
