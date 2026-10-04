@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="艦これの速力の仕組み。4種類の速力、速力でルートが変わる理由、タービンと缶による高速化（まずはタービン＋缶1つ）、高速＋・最速にできる艦の区分、速力を上げても艦種は変わらない注意点。">
+<title>艦これ 速力の仕組み：低速・高速・高速＋・最速</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/kancolle/fleet-speed/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/fleet-speed/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/fleet-speed/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/fleet-speed/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="艦これ 速力の仕組み：低速・高速・高速＋・最速">
+<meta property="og:description" content="艦これの速力の仕組み。4種類の速力、速力でルートが変わる理由、タービンと缶による高速化（まずはタービン＋缶1つ）、高速＋・最速にできる艦の区分、速力を上げても艦種は変わらない注意点。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/kancolle/fleet-speed/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="艦これ 速力の仕組み：低速・高速・高速＋・最速">
+<meta name="twitter:description" content="艦これの速力の仕組み。4種類の速力、速力でルートが変わる理由、タービンと缶による高速化（まずはタービン＋缶1つ）、高速＋・最速にできる艦の区分、速力を上げても艦種は変わらない注意点。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "艦これ 速力の仕組み：低速・高速・高速＋・最速",
+      "description": "艦これの速力の仕組み。4種類の速力、速力でルートが変わる理由、タービンと缶による高速化（まずはタービン＋缶1つ）、高速＋・最速にできる艦の区分、速力を上げても艦種は変わらない注意点。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/kancolle/fleet-speed/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "艦これ 速力の仕組み：低速・高速・高速＋・最速",
+          "item": "https://kouryakulab.com/ja/games/kancolle/fleet-speed/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/kancolle/"><span class="arrow">←</span> 艦これ 攻略ガイド全体</a>
+    <div>
+      <span class="eyebrow">艦これ ・ 速力</span>
+      <h1>速力の仕組み：低速・高速・高速＋・最速</h1>
+      <p class="sub">速力は多くの海域でルートを左右する。4種類の速力の仕組み、速力を上げる装備、間違えやすい艦種の扱いをまとめた。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">艦の速力は<b>低速・高速・高速＋・最速</b>の4種類。艦隊の速力は一番遅い艦で決まり、多くの海域で速力によってルートが変わる。「高速＋以上統一」「最速統一」が他のどの条件より優先されることもある。</p>
+      <p style="margin:0;">速力は機関部の装備で上げる。<b>改良型艦本式タービン</b>と、<b>強化型艦本式缶</b>か<b>新型高温高圧缶</b>の組み合わせ。Wikiの表から読むと、まずは<b>タービン＋缶1つ</b>が基本で、低速艦は高速に、高速艦は高速＋になる。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事は艦これ攻略Wikiの速力のページを分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>速力が大事な理由</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><b>ルート分岐。</b>低速艦の有無、「高速＋以上統一」「最速統一」を見る分岐がある。Wikiでは3-2・5-1などの通常海域、4-5・5-5などのEOで確認されていて、イベントでもよく使われる。<a href="/ja/games/kancolle/routing/">ルート分岐の仕組み</a>を参照。</li>
+        <li><b>連合艦隊。</b>(低速)戦艦・航空戦艦も高速＋以上にすれば第二艦隊に編成でき、高速戦艦と合算で数えられる。</li>
+        <li><b>回避。</b>機関部強化で高速以上にした艦は、回避率が上がる模様。</li>
+      </ul>
+    </div>
+    <div class="callout"><b>速力を上げても艦種は変わらない。</b>高速にした(低速)戦艦は、任務や分岐では「(低速)戦艦」のまま。「高速戦艦」を指定する任務には、もともと高速戦艦の艦が必要。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>最初の一歩：タービン＋缶1つ</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li>Wikiで最低保証とされている組み合わせ。<b>タービン＋缶1つ</b>で、ほぼすべての低速艦が<b>高速</b>に、高速艦は<b>高速＋</b>になる。</li>
+        <li>タービンは<b>補強増設</b>にも装備でき、通常のスロットを節約できる。</li>
+        <li>機関部の装備を積めない艦は高速化できない。主に海防艦と未改造のまるゆ。</li>
+        <li>1つの装備だけで高速になる艦もいる。Samuel B.Roberts（Mk.II前）と夕張改二特はタービンのみ、鳳翔改二・伊201・伊203・稲木改二は新型缶のみ。</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>高速＋・最速にするには</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>区分（Wikiの仮称）</th><th>主な艦</th><th>高速＋</th><th>最速</th></tr></thead>
+        <tbody>
+        <tr><td>高速A群</td><td>翔鶴型、大鳳、利根型、最上型、島風など</td><td>タービン＋強化缶1</td><td>タービン＋新型缶1、または強化缶2</td></tr>
+        <tr><td>高速B1群</td><td>金剛型、Iowa、蒼龍、飛龍、阿賀野型など</td><td>タービン＋強化缶1</td><td>タービン＋新型缶1＋強化缶1</td></tr>
+        <tr><td>高速B2群（大半の高速艦）</td><td>多くの高速戦艦・空母・巡洋艦・駆逐艦</td><td>タービン＋強化缶1</td><td>タービン＋新型缶2、または強化缶3</td></tr>
+        <tr><td>高速C群</td><td>加賀、水母、夕張（改二前）</td><td>タービン＋缶1</td><td>不可</td></tr>
+        <tr><td>低速A群</td><td>大和型、長門型改二</td><td>タービン＋新型缶1＋強化缶1</td><td>タービン＋新型缶1＋強化缶2</td></tr>
+        <tr><td>低速B群（大半の低速艦）</td><td>多くの低速戦艦、航空戦艦、低速の軽空母、水母など</td><td>タービン＋新型缶2、または強化缶3</td><td>不可</td></tr>
+        <tr><td>低速C群</td><td>潜水艦の大部分、明石、あきつ丸、速吸、Béarn</td><td>不可（高速が上限）</td><td>不可</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">強化缶の代わりに新型缶を使ってもよい。組み合わせによっては5スロットか補強増設が必要。改装で区分が変わる艦もいるので、個別の艦はWikiで確認しよう。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">艦の速力はどこで見る？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">艦のステータスに低速・高速・高速+・最速と表示される。艦隊の速力は一番遅い艦の速力になる。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">もともと低速の艦は？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">戦艦では長門・陸奥・伊勢・日向・扶桑・山城・大和・武蔵など。軽空母では鳳翔・飛鷹・隼鷹・大鷹型など。重巡と雷巡はすべて高速。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">スロットを使ってまで高速化する価値はある？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">その海域の分岐に必要なら、ルートを決めることが多いので価値は大きい。そうでなければ、主砲や艦載機に使う方が役に立つことが多い。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">艦隊の速力はどこで確認できる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;"><a href='/ja/games/kancolle/fleet-builder/'>艦隊編成ツール</a>で艦を追加すると艦隊の速力が表示される。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/kancolle/">艦これ 攻略ガイド全体</a>
+      <a href="/ja/games/kancolle/fleet-builder/">艦隊編成ツール</a>
+      <a href="/ja/games/kancolle/routing/">ルート分岐の仕組み</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://wikiwiki.jp/kancolle/%E9%80%9F%E5%8A%9B" target="_blank" rel="noopener">艦これ攻略Wiki：速力</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

@@ -466,4 +466,12 @@
   </url>
   <url><loc>https://kouryakulab.com/ja/games/kancolle/play-without-japanese/</loc></url>
 
+  <url>
+    <loc>https://kouryakulab.com/games/kancolle/fleet-speed/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/fleet-speed/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/fleet-speed/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/fleet-speed/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/kancolle/fleet-speed/</loc></url>
+
 </urlset>

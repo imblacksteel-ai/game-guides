@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="KanColle fleet speed explained: the four speeds, why speed changes routing, how turbines and boilers raise speed (turbine + 1 boiler first), which ships can reach Fast+ or Fastest, and why speed doesn't change ship type.">
+<title>KanColle Fleet Speed Explained: Slow, Fast, Fast+ and Fastest</title>
+<link rel="stylesheet" href="/assets/games/kancolle.css">
+<link rel="canonical" href="https://kouryakulab.com/games/kancolle/fleet-speed/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/kancolle/fleet-speed/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/kancolle/fleet-speed/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/kancolle/fleet-speed/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:title" content="KanColle Fleet Speed Explained: Slow, Fast, Fast+ and Fastest">
+<meta property="og:description" content="KanColle fleet speed explained: the four speeds, why speed changes routing, how turbines and boilers raise speed (turbine + 1 boiler first), which ships can reach Fast+ or Fastest, and why speed doesn't change ship type.">
+<meta property="og:url" content="https://kouryakulab.com/games/kancolle/fleet-speed/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KanColle Fleet Speed Explained: Slow, Fast, Fast+ and Fastest">
+<meta name="twitter:description" content="KanColle fleet speed explained: the four speeds, why speed changes routing, how turbines and boilers raise speed (turbine + 1 boiler first), which ships can reach Fast+ or Fastest, and why speed doesn't change ship type.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-kancolle.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "KanColle Fleet Speed Explained: Slow, Fast, Fast+ and Fastest",
+      "description": "KanColle fleet speed explained: the four speeds, why speed changes routing, how turbines and boilers raise speed (turbine + 1 boiler first), which ships can reach Fast+ or Fastest, and why speed doesn't change ship type.",
+      "inLanguage": "en",
+      "url": "https://kouryakulab.com/games/kancolle/fleet-speed/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "KanColle Fleet Speed Explained: Slow, Fast, Fast+ and Fastest",
+          "item": "https://kouryakulab.com/games/kancolle/fleet-speed/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/games/kancolle/"><span class="arrow">←</span> Full KanColle Guide</a>
+    <div>
+      <span class="eyebrow">KANCOLLE · SPEED</span>
+      <h1>Fleet Speed: Slow, Fast, Fast+ and Fastest</h1>
+      <p class="sub">Speed quietly decides routes on many maps. Here's how the four speeds work, the equipment that raises them, and the ship-type trap to avoid.</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="Language"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Conclusion</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">Every ship has a speed: <b>Slow, Fast, Fast+ or Fastest</b>. A fleet is only as fast as its slowest ship, and many maps route you by fleet speed — sometimes “all Fast+” or “all Fastest” overrides every other rule.</p>
+      <p style="margin:0;">You raise speed with engine equipment: the <b>Improved Kanhon Turbine</b> (改良型艦本式タービン) plus <b>boilers</b> — the Enhanced Kanhon Boiler (強化型艦本式缶) or the New Model High Pressure-Temperature Boiler (新型高温高圧缶). Going by the wiki's table, a turbine plus any one boiler is the usual first step: it makes a slow ship Fast and a fast ship Fast+.</p>
+    </div>
+    <div class="callout"><b>An analysis-based guide:</b> this guide is based on our analysis of the speed page on the Japanese KanColle wiki. It describes what the data shows and is not a guarantee of results.</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>Why Speed Matters</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><b>Routing.</b> Some branches check for any slow ship, “all Fast+” or “all Fastest”. The wiki lists normal maps such as 3-2 and 5-1 and Extra Operations such as 4-5 and 5-5, and events use these checks often. See <a href="/games/kancolle/routing/">Routing Explained</a>.</li>
+        <li><b>Combined fleets.</b> Slow battleships and aviation battleships boosted to Fast+ can go in the 2nd fleet, sharing the limit with fast battleships.</li>
+        <li><b>Evasion.</b> Ships boosted to Fast or above appear to get slightly better evasion.</li>
+      </ul>
+    </div>
+    <div class="callout"><b>Speed doesn't change ship type.</b> A slow battleship boosted to Fast is still a “(slow) battleship” for quests and routing. A quest that asks for a fast battleship needs one that was fast to begin with.</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>The First Step: Turbine + One Boiler</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li>The wiki calls this the minimum guarantee: <b>turbine + 1 boiler</b> makes almost any slow ship <b>Fast</b>, and any fast ship <b>Fast+</b>.</li>
+        <li>The turbine can go in the <b>reinforcement expansion slot</b> (補強増設), which saves a regular slot.</li>
+        <li>Ships that can't equip engine gear can't be sped up at all — mainly destroyer escorts and unremodeled Maruyu.</li>
+        <li>A few ships get Fast from a single item: Samuel B. Roberts (pre-Mk.II) and Yuubari Kai Ni Toku with just a turbine; Houshou Kai Ni, I-201, I-203 and Inagi Kai Ni with just a new-model boiler.</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>Going Further: Fast+ and Fastest</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>Group (wiki's label)</th><th>Examples</th><th>Fast+</th><th>Fastest</th></tr></thead>
+        <tbody>
+        <tr><td>Fast A</td><td>Shoukaku class, Taihou, Tone and Mogami classes, Shimakaze</td><td>Turbine + 1 enhanced boiler</td><td>Turbine + 1 new-model boiler, or 2 enhanced boilers</td></tr>
+        <tr><td>Fast B1</td><td>Kongou class, Iowa, Souryuu, Hiryuu, Agano class</td><td>Turbine + 1 enhanced boiler</td><td>Turbine + 1 new-model + 1 enhanced boiler</td></tr>
+        <tr><td>Fast B2 (most fast ships)</td><td>Most fast battleships, carriers, cruisers and destroyers</td><td>Turbine + 1 enhanced boiler</td><td>Turbine + 2 new-model boilers, or 3 enhanced</td></tr>
+        <tr><td>Fast C</td><td>Kaga, seaplane tenders, Yuubari (before Kai Ni)</td><td>Turbine + 1 boiler</td><td>Not possible</td></tr>
+        <tr><td>Slow A</td><td>Yamato class, Nagato class Kai Ni</td><td>Turbine + 1 new-model + 1 enhanced boiler</td><td>Turbine + 1 new-model + 2 enhanced boilers</td></tr>
+        <tr><td>Slow B (most slow ships)</td><td>Most slow battleships, aviation battleships, slow light carriers, seaplane tenders</td><td>Turbine + 2 new-model boilers, or 3 enhanced</td><td>Not possible</td></tr>
+        <tr><td>Slow C</td><td>Most submarines, Akashi, Akitsu Maru, Hayasui, Béarn</td><td>Not possible (Fast is the limit)</td><td>Not possible</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">A new-model boiler can stand in for an enhanced boiler in any of these. Some combinations need 5 slots or the reinforcement slot. Remodels can move a ship to a different group, so check the wiki for your specific ship.</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">How do I see a ship's speed?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">It's shown in the ship's stats as 低速 (slow), 高速 (fast), 高速+ (fast+) or 最速 (fastest). The fleet's speed is that of its slowest ship.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Which ships are slow by default?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Among battleships: Nagato, Mutsu, Ise, Hyuuga, Fusou, Yamashiro, Yamato, Musashi and others. Among light carriers: Houshou, Hiyou, Junyou and the Taiyou class, among others. Heavy cruisers and torpedo cruisers are all fast.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Is speeding up worth the slots?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">When a map's routing needs it, yes — it often decides the route. Otherwise those slots usually do more as guns or planes.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Where can I plan fleet speed?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">The <a href='/games/kancolle/fleet-builder/'>Fleet Builder</a> shows the fleet's speed as you add ships.</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>Continue reading</h3>
+    <div class="more-guides-links">
+      <a href="/games/kancolle/">Full KanColle Guide</a>
+      <a href="/games/kancolle/fleet-builder/">Fleet Builder</a>
+      <a href="/games/kancolle/routing/">Routing Explained</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">This is an unofficial, fan-made, analysis-based guide. It is not a guarantee of results, and game updates may change any of it.</div>
+    <div class="sources">
+      Sources:
+      <a href="https://wikiwiki.jp/kancolle/%E9%80%9F%E5%8A%9B" target="_blank" rel="noopener">KanColle Wiki (JP): 速力 — speed groups and engine synergy</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="Site links"><a href="/about/">About</a> · <a href="/authors/">Authors</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>
