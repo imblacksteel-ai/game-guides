@@ -698,4 +698,20 @@
   </url>
   <url><loc>https://kouryakulab.com/ja/games/endless-sky/</loc></url>
 
+  <url>
+    <loc>https://kouryakulab.com/games/endless-sky/outfits/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/endless-sky/outfits/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/endless-sky/outfits/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/endless-sky/outfits/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/endless-sky/outfits/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/games/endless-sky/licenses/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/endless-sky/licenses/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/endless-sky/licenses/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/endless-sky/licenses/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/endless-sky/licenses/</loc></url>
+
 </urlset>

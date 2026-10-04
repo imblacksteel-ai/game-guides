@@ -30,6 +30,8 @@ PAGES = {
     "weapons": {"en": "games/endless-sky/weapons/index.html", "ja": "ja/games/endless-sky/weapons/index.html"},
     "trade": {"en": "games/endless-sky/making-money/index.html", "ja": "ja/games/endless-sky/making-money/index.html"},
     "starter": {"en": "games/endless-sky/first-ship/index.html", "ja": "ja/games/endless-sky/first-ship/index.html"},
+    "outfits": {"en": "games/endless-sky/outfits/index.html", "ja": "ja/games/endless-sky/outfits/index.html"},
+    "licenses": {"en": "games/endless-sky/licenses/index.html", "ja": "ja/games/endless-sky/licenses/index.html"},
 }
 OUT = os.path.join(ROOT, "assets/data/endless-sky.json")
 HUMAN_GOV = {"Republic", "Syndicate", "Pirate", "Free Worlds", "Independent", "Neutral", "Militia", "Merchant"}
@@ -202,6 +204,8 @@ def main():
                 oa = o["attr"]
                 mass += k * num(oa.get("mass")); thrust += k * num(oa.get("thrust")); turn += k * num(oa.get("turn"))
                 cost += k * num(oa.get("cost")); ospace += k * num(oa.get("outfit space"))
+        lic_node = at.get("licenses")
+        lic = [c.tokens[0] for c in lic_node.children] if lic_node else []
         drag = num(a.get("drag")) or 1
         faction = sn.file.split("/")[0] if "/" in sn.file else "other"
         ships.append({"name": name, "faction": faction, "category": a.get("category", ""), "price": round(cost),
@@ -211,7 +215,7 @@ def main():
                       "speed": round(60 * thrust / min(drag, mass), 1) if thrust and mass else 0,
                       "accel": round(3600 * thrust / mass, 1) if thrust and mass else 0,
                       "turn": round(60 * turn / mass, 1) if turn and mass else 0,
-                      "where": where_sold(name, "ship")})
+                      "licenses": lic, "where": where_sold(name, "ship")})
 
     # ---------- weapons ----------
     def wnode(name):
@@ -352,7 +356,105 @@ def main():
     def starter_rows(lang):
         return ship_rows(lang, sorted(starter, key=lambda s: s["price"]))
 
-    for key, fn in (("ships", ships_all), ("weapons", weapons_all), ("trade", trade_rows), ("starter", starter_rows)):
+    # ---------- other outfits ----------
+    def series(name):
+        o = outfits[name]["node"].get("series")
+        return o.tokens[1] if o and len(o.tokens) > 1 else ""
+
+    def per_s(a, k):
+        return round(60 * num(a.get(k)), 1)
+
+    OUTCATS = [
+        ("Engines (thrust)", "エンジン（推力）", lambda n, a: a.get("category") == "Engines" and num(a.get("thrust")) > 0,
+         ["Thrust", "Thrust / space", "Energy/s", "Heat/s"], ["推力", "スペースあたり推力", "エネルギー/秒", "熱/秒"],
+         lambda a: [round(num(a.get("thrust")), 2), round(num(a.get("thrust")) / max(1, -num(a.get("outfit space"))), 3), per_s(a, "thrusting energy"), per_s(a, "thrusting heat")]),
+        ("Engines (steering)", "エンジン（旋回）", lambda n, a: a.get("category") == "Engines" and num(a.get("turn")) > 0 and not num(a.get("thrust")),
+         ["Turn", "Turn / space", "Energy/s", "Heat/s"], ["旋回力", "スペースあたり旋回力", "エネルギー/秒", "熱/秒"],
+         lambda a: [round(num(a.get("turn")), 1), round(num(a.get("turn")) / max(1, -num(a.get("outfit space"))), 2), per_s(a, "turning energy"), per_s(a, "turning heat")]),
+        ("Generators", "発電機", lambda n, a: a.get("category") == "Power" and num(a.get("energy generation")) > 0,
+         ["Energy/s", "Energy/s per space", "Heat/s", "Battery"], ["エネルギー/秒", "スペースあたりエネルギー/秒", "熱/秒", "蓄電"],
+         lambda a: [per_s(a, "energy generation"), round(60 * num(a.get("energy generation")) / max(1, -num(a.get("outfit space"))), 2), per_s(a, "heat generation"), round(num(a.get("energy capacity")))]),
+        ("Batteries", "バッテリー", lambda n, a: a.get("category") == "Power" and num(a.get("energy capacity")) > 0 and not num(a.get("energy generation")),
+         ["Energy capacity", "Capacity / space", "—", "—"], ["蓄電量", "スペースあたり蓄電量", "—", "—"],
+         lambda a: [round(num(a.get("energy capacity"))), round(num(a.get("energy capacity")) / max(1, -num(a.get("outfit space"))), 1), "—", "—"]),
+        ("Shield generators", "シールド発生装置", lambda n, a: num(a.get("shield generation")) > 0,
+         ["Shield/s", "Shield/s per space", "Energy/s", "Heat/s"], ["シールド回復/秒", "スペースあたり回復/秒", "エネルギー/秒", "熱/秒"],
+         lambda a: [per_s(a, "shield generation"), round(60 * num(a.get("shield generation")) / max(1, -num(a.get("outfit space"))), 2), per_s(a, "shield energy"), per_s(a, "shield heat")]),
+        ("Cooling", "冷却", lambda n, a: num(a.get("cooling")) > 0 or num(a.get("active cooling")) > 0,
+         ["Cooling/s", "Cooling/s per space", "Energy/s (active)", "—"], ["冷却/秒", "スペースあたり冷却/秒", "エネルギー/秒（能動）", "—"],
+         lambda a: [round(60 * (num(a.get("cooling")) + num(a.get("active cooling"))), 1), round(60 * (num(a.get("cooling")) + num(a.get("active cooling"))) / max(1, -num(a.get("outfit space"))), 2), per_s(a, "cooling energy"), "—"]),
+    ]
+
+    def outfits_all(lang):
+        res = []
+        for en_t, ja_t, pred, h_en, h_ja, vals in OUTCATS:
+            lst = [n for n in sorted(sold_outfits) if n in outfits and pred(n, outfits[n]["attr"])]
+            human = [n for n in lst if outfits[n]["node"].file.startswith("human/")]
+            other = [n for n in lst if n not in human]
+            for grp, names in (("human", human), ("other", other)):
+                if not names:
+                    continue
+                label = (en_t if lang == "en" else ja_t) + (" — " + ("Human" if lang == "en" else "人類") if grp == "human" else " — " + ("Alien" if lang == "en" else "異星"))
+                res.append(f'<h3 style="margin:22px 0 8px;">{label} ({len(names)})</h3>')
+                head = (["Outfit", "Cost", "Space"] + h_en + ["Where sold"]) if lang == "en" else (["装備", "価格", "スペース"] + h_ja + ["販売場所（星系）"])
+                rows = []
+                for n in sorted(names, key=lambda n: num(outfits[n]["attr"].get("cost"))):
+                    a = outfits[n]["attr"]
+                    rows.append([f"<b>{e(n)}</b>", f"{round(num(a.get('cost'))):,}", round(-num(a.get("outfit space")))] + vals(a) + [where(where_sold(n, "outfit"), lang, 3)])
+                res.append(tbl(head, rows))
+        return "\n".join(res)
+
+    # ---------- licenses ----------
+    grants = {}
+    def scan(node, mname):
+        for c in node.children:
+            if len(c.tokens) >= 2 and c.tokens[0] == "set" and c.tokens[1].startswith("license: "):
+                grants.setdefault(c.tokens[1][9:], set()).add(mname)
+            scan(c, mname)
+    for mname, lst in by.get("mission", {}).items():
+        if "_deprecated" in lst[0].file:
+            continue
+        for m in lst:
+            scan(m, mname)
+    for st_name, lst in by.get("start", {}).items():
+        for m in lst:
+            for c in m.children:
+                if len(c.tokens) >= 2 and c.tokens[0] == "set" and c.tokens[1].startswith("license: "):
+                    grants.setdefault(c.tokens[1][9:], set()).add(f"(start: {st_name})")
+    out_lic = {}
+    for n, o in outfits.items():
+        ln = o["node"].get("licenses")
+        if ln:
+            for c in ln.children:
+                out_lic.setdefault(c.tokens[0], []).append(n)
+    ship_lic = {}
+    for sh in ships:
+        for l in sh["licenses"]:
+            ship_lic.setdefault(l, []).append(sh["name"])
+
+    def license_rows(lang):
+        names = sorted(set(ship_lic) | set(out_lic) | set(grants))
+        rows = []
+        for l in names:
+            sh = sorted(ship_lic.get(l, [])); ou = sorted(n for n in out_lic.get(l, []) if n in sold_outfits)
+            gr = sorted(grants.get(l, []))
+            if not sh and not ou:
+                continue
+            fmt = lambda xs, k=6: (e(", ".join(xs[:k])) + ((f" +{len(xs) - k} more" if lang == "en" else f" ほか{len(xs) - k}") if len(xs) > k else "")) if xs else "—"
+            lo = f"{l} License"
+            buy = ""
+            if lo in sold_outfits and lo in outfits:
+                cost = round(num(outfits[lo]["attr"].get("cost")))
+                buy = (f"Buy for {cost:,} at outfitters in " if lang == "en" else f"装備屋で{cost:,}クレジットで購入：") + where(where_sold(lo, "outfit"), lang, 3)
+            how = " / ".join(x for x in (buy, (("Missions: " if lang == "en" else "ミッション：") + fmt(gr, 4)) if gr else "") if x)
+            if not how:
+                how = "No way to get it found in the data" if lang == "en" else "データ上に入手方法が見つからない"
+            rows.append([f"<b>{e(l)}</b>", fmt(sh), fmt(ou), how])
+        head = (["License", "Ships that need it", "Outfits that need it", "How to get it (from the data)"] if lang == "en"
+                else ["免許", "必要な船", "必要な装備", "入手方法（データより）"])
+        return tbl(head, rows)
+
+    for key, fn in (("ships", ships_all), ("weapons", weapons_all), ("trade", trade_rows), ("starter", starter_rows), ("outfits", outfits_all), ("licenses", license_rows)):
         marker = "ES-" + key.upper()
         for lang, rel in PAGES[key].items():
             p = os.path.join(ROOT, rel)

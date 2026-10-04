@@ -154,11 +154,12 @@ git diff --stat                 # 想定した言語数ぶんのファイルが�
 
 ## Endless Sky（オープンソース、GPL-3.0）
 
-- `/games/endless-sky/`（ハブ）、`/first-ship/`、`/making-money/`、`/ships/`、`/weapons/`。英日のみ。CSSは `assets/games/endless-sky.css`、OG画像は `assets/og/og-endless-sky.png`。公式の日本語訳がないので、船・装備・星系名は日本語版でも英語のまま。
-- 表は `python3 scripts/build_endless_sky.py` で生成（**手編集禁止**）。endless-sky/endless-sky の `COMMIT` 時点の `data/`（タブのインデントで階層を表す独自テキスト形式）を読み、`<!-- ES-SHIPS/WEAPONS/TRADE/STARTER -->` に書き込む。銀河は開始時点の状態（イベントで変わる店・政府は反映しない）。ゲーム内の説明文（GPLのテキスト）は転載しない。
+- `/games/endless-sky/`（ハブ）、`/first-ship/`、`/making-money/`、`/ships/`、`/weapons/`、`/outfits/`（エンジン・電力・シールド・冷却）、`/licenses/`（免許）。英日のみ。CSSは `assets/games/endless-sky.css`、OG画像は `assets/og/og-endless-sky.png`。公式の日本語訳がないので、船・装備・星系名は日本語版でも英語のまま。
+- 表は `python3 scripts/build_endless_sky.py` で生成（**手編集禁止**）。endless-sky/endless-sky の `COMMIT` 時点の `data/`（タブのインデントで階層を表す独自テキスト形式）を読み、`<!-- ES-SHIPS/WEAPONS/TRADE/STARTER/OUTFITS/LICENSES -->` に書き込む。銀河は開始時点の状態（イベントで変わる店・政府は反映しない）。ゲーム内の説明文（GPLのテキスト）は転載しない。
 - ソースで確認済みの式：最高速度 60×推力/抵抗、加速 3600×推力/質量、旋回 60×turn/質量（ShipInfoDisplay.cpp）。価格 = 基準 − 100×erf(在庫/20000)（System.cpp、基準から±100程度）。依頼の報酬 = 固定額 +（ジャンプ数+1）× 積載量 × 倍率、積載量 = 貨物トン + 10×乗客、`payment` 単独は倍率150（MissionAction.cpp・Mission.cpp）。乗客の依頼は +2000。
 - 武器のDPSは 60/reload × 1発のダメージ（サブミュニションは再帰で加算）、射程は velocity×lifetime。連射・誘導・爆発半径は未反映（本文に明記）。
-- 未対応の需要：エンジン・発電機・シールドなど武器以外の装備、免許（license）の入手方法、ストーリーの分岐。
+- 免許はミッションの `set "license: X"` か、装備屋で売られる「X License」装備で得る。どちらも見つからない免許は「データ上に入手方法が見つからない」と書く（海軍・Gegno・Avgiなど。断定しない）。
+- 未対応の需要：ストーリーの分岐、採掘（minables）。
 
 ## 翻訳の一貫性ルール
 
