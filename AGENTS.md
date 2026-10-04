@@ -138,7 +138,7 @@ git diff --stat                 # 想定した言語数ぶんのファイルが�
 
 ## Unciv（オープンソース版シヴィライゼーション5）
 
-- `/games/unciv/`（ハブ）、`/civilizations/`（全34文明）、`/units/`（全ユニット）、`/difficulty/`（難易度）、`/policies/`（社会制度＋コスト計算機）、`/wonders/`（遺産）、`/tech-tree/`（技術ツリー）、`/beliefs/`（信仰）、`/buildings/`（建物）、`/combat/`（戦闘の式＋ダメージ計算機）、`/growth-happiness/`（成長と幸福度）、`/great-people/`（偉人）、`/promotions/`（昇進）、`/terrain/`（地形・資源・整備）、`/city-states/`（都市国家）。英日のみ。CSSは `assets/games/unciv.css`（spd.cssの配色違い）、OG画像は `assets/og/og-unciv.png`。
+- `/games/unciv/`（ハブ）、`/civilizations/`（全34文明）、`/units/`（全ユニット）、`/difficulty/`（難易度）、`/policies/`（社会制度＋コスト計算機）、`/wonders/`（遺産）、`/tech-tree/`（技術ツリー）、`/beliefs/`（信仰）、`/buildings/`（建物）、`/combat/`（戦闘の式＋ダメージ計算機）、`/growth-happiness/`（成長と幸福度）、`/great-people/`（偉人）、`/promotions/`（昇進）、`/terrain/`（地形・資源・整備）、`/city-states/`（都市国家）、`/opening/`（序盤：データからの分析記事）、`/victory/`（勝利条件）、`/game-speed/`（速度と開始時代）。英日のみ。CSSは `assets/games/unciv.css`（spd.cssの配色違い）、OG画像は `assets/og/og-unciv.png`。
 - 表は `python3 scripts/build_unciv.py` で生成（**手編集禁止**）。yairm210/Unciv（MPL-2.0）の `COMMIT` 時点の `Civ V - Gods & Kings` の JSON（コメント・末尾カンマ入りなので strip() してから読む）と公式日本語訳 `Japanese.properties` から、`<!-- UNCIV-CIVS/UNIQ/UNITS/DIFF/POLICIES/POLICYAI/POLICYCALC/WONDERS/NWONDERS/TECHS/BELIEFS/BUILDINGS -->` マーカー間に書き込む。更新するときは `COMMIT`/`COMMIT_DATE` を差し替え、本文中の「2026-10-02」も合わせて直す。
 - 日本語の能力文はUncivと同じテンプレート方式（[ ]を差し替え、条件<...>は本文の前）で公式訳から組み立てる。"Land"→「地上」など、パラメータの誤訳は `PARAM_OVERRIDE` で補正。訳が無いものは英語のまま残り、件数が表示される。
 - 難易度の各項目の意味は本体のコードで確認済み：研究/ユニット/建物/社会制度コストは人間プレイヤーのみ（AIは `aiDifficultyLevel` の易しい設定）、`aiCityGrowthModifier` はAIの成長に必要な食料の倍率、`barbarianBonus` は対蛮族の戦闘ボーナス、`turnBarbariansCanEnterPlayerTiles` は蛮族が領土に入れるようになるターン。
@@ -148,7 +148,7 @@ git diff --stat                 # 想定した言語数ぶんのファイルが�
 - 戦闘の式は BattleDamage.kt / BattleConstants.kt（比率 s、m=(((s+3)/4)^4+1)/2、ダメージ=(24+12×乱数)×m（弱い側は1/m）×(1−減ったHP/300)、乱数はターン×タイル位置で固定、要塞化は1ターン+20%で最大+40%、地形は地形特徴の最大値が基本地形を置き換える）。計算機は `assets/games/unciv-combat.js`。
 - 成長は CityPopulationManager（15+8(人口−1)+floor((人口−1)^1.5)、市民1人食料2）、不満の段階は GlobalUniques.json（−1〜−10で成長−75%、−10未満で成長停止・生産−50%・戦闘力−33%）。偉人は GreatPersonManager（100×速度で開始し2倍、科学者・技術者・商人・芸術家は「Great Person」グループで閾値を共有、将軍・提督は200から+50）。
 - 文明ページの固有ユニット比較表の「追加の能力」は、ユニットの uniques と promotions（固有能力は UnitPromotions.json に隠し昇進として入っている）から置き換え対象との差分を取っている。
-- 未対応の需要：勝利条件、序盤の進め方（分析記事）、社会制度以外の計算機（研究ターン数など）。
+- 未対応の需要：研究ターン数の計算機、文明ごとの戦略記事、MOD（主要MODのデータ）。
 
 ## 翻訳の一貫性ルール
 

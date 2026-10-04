@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A data-based Unciv opening: why Scout, grow to size 2, then Settler; Monument and first policy choice (Tradition vs Liberty by city count); happiness budget; and every ancient ruin reward — from the game's files and source.">
+<title>Unciv Opening Guide: First Turns Based on the Game's Data</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/games/unciv/opening/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/opening/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/opening/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/opening/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:title" content="Unciv Opening Guide: First Turns Based on the Game's Data">
+<meta property="og:description" content="A data-based Unciv opening: why Scout, grow to size 2, then Settler; Monument and first policy choice (Tradition vs Liberty by city count); happiness budget; and every ancient ruin reward — from the game's files and source.">
+<meta property="og:url" content="https://kouryakulab.com/games/unciv/opening/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv Opening Guide: First Turns Based on the Game's Data">
+<meta name="twitter:description" content="A data-based Unciv opening: why Scout, grow to size 2, then Settler; Monument and first policy choice (Tradition vs Liberty by city count); happiness budget; and every ancient ruin reward — from the game's files and source.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv Opening Guide: First Turns Based on the Game's Data",
+      "description": "A data-based Unciv opening: why Scout, grow to size 2, then Settler; Monument and first policy choice (Tradition vs Liberty by city count); happiness budget; and every ancient ruin reward — from the game's files and source.",
+      "inLanguage": "en",
+      "url": "https://kouryakulab.com/games/unciv/opening/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv Opening Guide: First Turns Based on the Game's Data",
+          "item": "https://kouryakulab.com/games/unciv/opening/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/games/unciv/"><span class="arrow">←</span> Unciv Guide</a>
+    <div>
+      <span class="eyebrow">UNCIV · OPENING</span>
+      <h1>Opening Guide: The First Turns</h1>
+      <p class="sub">Not a build order from experience — what the game's own numbers say about the first turns, and why.</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="Language"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Conclusion</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">This isn't a build order from experience — it's what the game's data and code say about the first turns. Put together, they point to a simple opening: <b>Scout → grow to size 2 → Settler</b>, a <b>Monument</b> early for culture, and a policy choice based on <b>how many cities you plan to have</b>.</p>
+      <p style="margin:0;">The reasons are all in the numbers below: a Settler needs 2 population, excess food turns into production while you build one, policies get 10% more expensive per city, and each city costs at least 4 happiness.</p>
+    </div>
+    <div class="callout"><b>An analysis-based guide:</b> this guide is based on our analysis of Unciv's data files and source code (no first-hand play experience). It describes what the data shows and is not a guarantee of results.</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>An Opening the Data Supports</h2></div>
+    <div class="panel">
+      <ol class="steps">
+      <li><span class="n">1</span><span><b>Scout first (25 production).</b> It ignores terrain movement costs and is your best way to pop ancient ruins early (see below).</span></li>
+      <li><span class="n">2</span><span><b>Grow the capital to size 2.</b> A Settler can't be built below 2 population.</span></li>
+      <li><span class="n">3</span><span><b>Build a Settler (106 production).</b> While it's being built, excess food is converted to production, so a food-rich capital builds it faster.</span></li>
+      <li><span class="n">4</span><span><b>Get a Monument (40 production, +2 culture)</b> to start earning policies. The first policy costs 25 culture.</span></li>
+      <li><span class="n">5</span><span><b>Pick your first branch by city count.</b> Tradition boosts the capital and gives 4 free Aqueducts on completion; Liberty gives +1 culture in every city and a free great person on completion. Since every extra city adds 10% to policy cost, Tradition suits a few big cities and Liberty a wider empire.</span></li>
+      <li><span class="n">6</span><span><b>Watch happiness before each new city.</b> A new city costs 3 happiness plus 1 per citizen; each <i>different</i> luxury gives +4.</span></li>
+      </ol>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>Ancient Ruins: What You Can Get</h2></div>
+<!-- UNCIV-RUINS -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>Ruin result</th><th>Effect and conditions</th></tr></thead><tbody>
+<tr><td><b>discover cultural artifacts</b></td><td><ul class='exped-notes' style='margin:0'><li>Gain 20 Culture ((modified by game speed))</li></ul></td></tr>
+<tr><td><b>squatters willing to work for you</b></td><td><ul class='exped-notes' style='margin:0'><li>Free Worker found in the ruins</li><li>Unavailable (on Prince difficulty or higher)</li></ul></td></tr>
+<tr><td><b>squatters wishing to settle under your rule</b></td><td><ul class='exped-notes' style='margin:0'><li>Free Settler found in the ruins</li><li>Unavailable (on Prince difficulty or higher)</li></ul></td></tr>
+<tr><td><b>your exploring unit receives training</b></td><td><ul class='exped-notes' style='margin:0'><li>This Unit gains 10 XP</li><li>Only available (after turn number 10)</li><li>Unavailable (for Civilian units)</li></ul></td></tr>
+<tr><td><b>survivors (adds population to a city)</b></td><td><ul class='exped-notes' style='margin:0'><li>+1 population in a random city</li></ul></td></tr>
+<tr><td><b>a stash of gold</b></td><td><ul class='exped-notes' style='margin:0'><li>Gain 50-100 Gold ((modified by game speed))</li></ul></td></tr>
+<tr><td><b>discover a lost technology</b></td><td><ul class='exped-notes' style='margin:0'><li>1 free random researchable Tech(s) from the Ancient era</li></ul></td></tr>
+<tr><td><b>advanced weaponry for your explorer</b></td><td><ul class='exped-notes' style='margin:0'><li>This Unit upgrades for free including special upgrades</li></ul></td></tr>
+<tr><td><b>reveal nearby Barbarian camps</b></td><td><ul class='exped-notes' style='margin:0'><li>Reveal up to All Barbarian encampment within a 10 tile radius</li></ul></td></tr>
+<tr><td><b>find a crudely-drawn map</b></td><td><ul class='exped-notes' style='margin:0'><li>From a randomly chosen tile 4 tiles away from the ruins, reveal tiles up to 4 tiles away with 80% chance</li></ul></td></tr>
+<tr><td><b>discover holy symbols</b></td><td><ul class='exped-notes' style='margin:0'><li>Only available (when religion is enabled)</li><li>Gain enough Faith for a Pantheon</li><li>Only available (before founding a Pantheon)</li><li>Only available (after turn number 20)</li></ul></td></tr>
+<tr><td><b>an ancient prophecy</b></td><td><ul class='exped-notes' style='margin:0'><li>Only available (when religion is enabled)</li><li>Gain enough Faith for 33% of a Great Prophet</li><li>Unavailable (after generating a Great Prophet)</li><li>Only available (after founding a Pantheon)</li><li>Only available (after turn number 20)</li></ul></td></tr>
+</tbody></table></div>
+<!-- /UNCIV-RUINS -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">Free Workers and Settlers from ruins are only possible below Prince difficulty. Data from the game's own files (Civ V: Gods &amp; Kings ruleset that ships with Unciv), read from the source at the commit of 2026-10-02. Updates and mods can change these numbers.</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>Numbers Behind the Opening</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>Fact</th><th>Value</th><th>Where it comes from</th></tr></thead>
+        <tbody>
+        <tr><td>Settler cost / requirement</td><td>106 production, size 2+</td><td>Units.json</td></tr>
+        <tr><td>Food to grow from size 1 / 2</td><td>15 / 24</td><td>CityPopulationManager.kt</td></tr>
+        <tr><td>First policies (culture)</td><td>25, 30, 60, 105, 170…</td><td>PolicyManager.kt (1 city, Standard, Prince)</td></tr>
+        <tr><td>Policy cost per extra city</td><td>+10% (Tiny–Medium)</td><td>PolicyManager.kt</td></tr>
+        <tr><td>Happiness per city / citizen / luxury</td><td>−3 / −1 / +4</td><td>CityStats.kt</td></tr>
+        <tr><td>Barbarians entering your land</td><td>Never on Settler, turn 60 Chieftain, turn 20 Warlord, from the start on Prince+</td><td>Difficulties.json</td></tr>
+        </tbody>
+      </table>
+    </div>    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">See <a href='/games/unciv/growth-happiness/'>Growth and Happiness</a>, <a href='/games/unciv/policies/'>Social Policies</a> and <a href='/games/unciv/difficulty/'>Difficulty</a> for the full formulas.</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Is this the best opening?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">It's the opening the numbers support, not a tested build order. Map, civilization and difficulty all change what's best.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Should I go Warrior first instead?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">On higher difficulties barbarians can enter your land from turn 1, so a defender can matter more there. The data doesn't settle it for every map.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">How many cities should I build?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">There's no fixed answer, but the costs are clear: each city raises policy cost by 10% and tech cost by 5%, and costs at least 4 happiness.</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>Continue reading</h3>
+    <div class="more-guides-links">
+      <a href="/games/unciv/">Unciv Guide</a>
+      <a href="/games/unciv/policies/">Social Policies</a>
+      <a href="/games/unciv/growth-happiness/">Growth and Happiness</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">This is an unofficial, fan-made, analysis-based guide. It is not a guarantee of results, and game updates may change any of it.</div>
+    <div class="sources">
+      Sources:
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv source code (yairm210/Unciv, MPL-2.0)</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv data files — Civ V: Gods & Kings ruleset, commit of 2026-10-02</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="Site links"><a href="/about/">About</a> · <a href="/authors/">Authors</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

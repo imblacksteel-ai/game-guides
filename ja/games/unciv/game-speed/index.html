@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unciv（オープンソース版シヴィライゼーション5）のゲーム速度で実際に変わるものをデータから解説。生産・研究・文化・ゴールド・信仰力のコスト倍率、整備時間、黄金時代の長さ、ターン上限、開始時代ごとの初期ユニット。">
+<title>Unciv ゲーム速度と開始時代：何が変わるか</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/unciv/game-speed/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/game-speed/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/game-speed/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/game-speed/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Unciv ゲーム速度と開始時代：何が変わるか">
+<meta property="og:description" content="Unciv（オープンソース版シヴィライゼーション5）のゲーム速度で実際に変わるものをデータから解説。生産・研究・文化・ゴールド・信仰力のコスト倍率、整備時間、黄金時代の長さ、ターン上限、開始時代ごとの初期ユニット。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/unciv/game-speed/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv ゲーム速度と開始時代：何が変わるか">
+<meta name="twitter:description" content="Unciv（オープンソース版シヴィライゼーション5）のゲーム速度で実際に変わるものをデータから解説。生産・研究・文化・ゴールド・信仰力のコスト倍率、整備時間、黄金時代の長さ、ターン上限、開始時代ごとの初期ユニット。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv ゲーム速度と開始時代：何が変わるか",
+      "description": "Unciv（オープンソース版シヴィライゼーション5）のゲーム速度で実際に変わるものをデータから解説。生産・研究・文化・ゴールド・信仰力のコスト倍率、整備時間、黄金時代の長さ、ターン上限、開始時代ごとの初期ユニット。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/unciv/game-speed/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv ゲーム速度と開始時代：何が変わるか",
+          "item": "https://kouryakulab.com/ja/games/unciv/game-speed/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/unciv/"><span class="arrow">←</span> Unciv 攻略ガイド</a>
+    <div>
+      <span class="eyebrow">UNCIV ・ ゲーム速度</span>
+      <h1>ゲーム速度と開始時代</h1>
+      <p class="sub">クイック・スタンダード・エピック・マラソンの全倍率と、開始時代ごとにもらえるもの。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">ゲーム速度が変えるのはターン上限だけではなく、ほぼすべてのコスト。クイックは生産・研究・文化のコストが<b>67%</b>、エピックは<b>150%</b>、マラソンは<b>300%</b>になり、ターン上限は330から1,500まで変わる。</p>
+      <p style="margin:0;">後の時代から始めると、最初の手持ちが増える。太古の<b>開拓者1・戦士1</b>から、情報時代の<b>開拓者3・労働者3・海兵隊5</b>、都市の初期人口5まで。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事はUncivのSpeeds・Erasのデータファイルを分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>ゲーム速度</h2></div>
+<!-- UNCIV-SPEEDS -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>速度</th><th>成長・偉人</th><th>生産</th><th>研究</th><th>文化（社会制度）</th><th>ゴールドでの購入</th><th>信仰力での購入</th><th>タイル整備の時間</th><th>黄金時代の長さ</th><th>最大ターン</th></tr></thead><tbody>
+<tr><td><b>クイック</b></td><td>67%</td><td>67%</td><td>67%</td><td>67%</td><td>67%</td><td>67%</td><td>67%</td><td>80%</td><td>330</td></tr>
+<tr><td><b>スタンダード</b></td><td>100%</td><td>100%</td><td>100%</td><td>100%</td><td>100%</td><td>100%</td><td>100%</td><td>100%</td><td>500</td></tr>
+<tr><td><b>エピック</b></td><td>150%</td><td>150%</td><td>150%</td><td>150%</td><td>150%</td><td>150%</td><td>150%</td><td>125%</td><td>750</td></tr>
+<tr><td><b>マラソン</b></td><td>300%</td><td>300%</td><td>300%</td><td>300%</td><td>300%</td><td>300%</td><td>300%</td><td>200%</td><td>1500</td></tr>
+</tbody></table></div>
+<!-- /UNCIV-SPEEDS -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">「成長・偉人」は、成長に必要な食料や偉人の必要ポイントにコードが使う全体の速度補正。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>開始時代</h2></div>
+<!-- UNCIV-ERAS -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>開始時代</th><th>開拓者</th><th>労働者</th><th>軍事ユニット</th><th>都市の初期人口</th></tr></thead><tbody>
+<tr><td><b>太古</b></td><td>1</td><td>0</td><td>1 × 戦士</td><td>1</td></tr>
+<tr><td><b>古典</b></td><td>1</td><td>0</td><td>2 × 槍兵</td><td>1</td></tr>
+<tr><td><b>中世</b></td><td>2</td><td>1</td><td>3 × 槍兵</td><td>1</td></tr>
+<tr><td><b>ルネサンス</b></td><td>2</td><td>1</td><td>3 × 長槍兵</td><td>2</td></tr>
+<tr><td><b>産業時代</b></td><td>3</td><td>2</td><td>5 × マスケット兵</td><td>3</td></tr>
+<tr><td><b>現代</b></td><td>3</td><td>2</td><td>5 × ライフル兵</td><td>3</td></tr>
+<tr><td><b>原子力時代</b></td><td>3</td><td>2</td><td>5 × 歩兵</td><td>4</td></tr>
+<tr><td><b>情報時代</b></td><td>3</td><td>3</td><td>5 × 海兵隊</td><td>5</td></tr>
+<tr><td><b>未来</b></td><td>3</td><td>3</td><td>5 × 海兵隊</td><td>5</td></tr>
+</tbody></table></div>
+<!-- /UNCIV-ERAS -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">名称はゲームの公式日本語訳による。数値はゲーム本体のデータファイル（Unciv同梱の Civ V Gods &amp; Kings ルールセット）を、2026年10月2日時点のソースから読み取ったもの。アップデートやMODで変わることがある。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">クイックだと簡単になる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">それだけでは簡単にならない。コストは全員同じように下がる。主に試合が短くなる。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">速度が速いとユニットの移動も増える？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">増えない。移動力は変わらず、生産と研究のコストが変わる。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">ターン上限に達するとどうなる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">誰も勝っていなければ、スコアが最も高い文明の勝ち（時間勝利）。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/unciv/">Unciv 攻略ガイド</a>
+      <a href="/ja/games/unciv/difficulty/">難易度の違い</a>
+      <a href="/ja/games/unciv/victory/">勝利条件</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv ソースコード（yairm210/Unciv、MPL-2.0）</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv データファイル：Civ V Gods & Kings ルールセット（2026-10-02 時点）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/translations/Japanese.properties" target="_blank" rel="noopener">Unciv 公式日本語訳ファイル（Japanese.properties）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

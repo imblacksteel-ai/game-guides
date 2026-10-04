@@ -40,6 +40,9 @@ PAGES = {
     "citystates": {"en": "games/unciv/city-states/index.html", "ja": "ja/games/unciv/city-states/index.html"},
     "greatpeople": {"en": "games/unciv/great-people/index.html", "ja": "ja/games/unciv/great-people/index.html"},
     "growth": {"en": "games/unciv/growth-happiness/index.html", "ja": "ja/games/unciv/growth-happiness/index.html"},
+    "speeds": {"en": "games/unciv/game-speed/index.html", "ja": "ja/games/unciv/game-speed/index.html"},
+    "ruins": {"en": "games/unciv/opening/index.html", "ja": "ja/games/unciv/opening/index.html"},
+    "victory": {"en": "games/unciv/victory/index.html", "ja": "ja/games/unciv/victory/index.html"},
 }
 STATS = ["food", "production", "gold", "science", "culture", "faith", "happiness"]
 SKIP_UNIQUE = ("for AI decisions", "leader title", "global alert", "map editor", "generate naturally", "Map Generation", "start locations", "Comment", "hidden from users", "Never destroyed", "Indicates the capital")
@@ -680,6 +683,42 @@ def main():
         return tbl(["Population", "Food (Standard)", "Total from size 1", "Quick", "Epic", "Marathon"] if lang == "en"
                    else ["人口", "必要な食料（標準）", "人口1からの累計", "クイック", "エピック", "マラソン"], rows)
 
+    speeds, eras, ruins, victories = (load(f) for f in ("Speeds.json", "Eras.json", "Ruins.json", "VictoryTypes.json"))
+    SPJ = {"Quick": "クイック", "Standard": "スタンダード", "Epic": "エピック", "Marathon": "マラソン"}
+
+    def speed_rows(lang):
+        keys = [("modifier", "Growth & great people", "成長・偉人"), ("productionCostModifier", "Production", "生産"), ("scienceCostModifier", "Research", "研究"),
+                ("cultureCostModifier", "Culture (policies)", "文化（社会制度）"), ("goldCostModifier", "Gold purchases", "ゴールドでの購入"), ("faithCostModifier", "Faith purchases", "信仰力での購入"),
+                ("improvementBuildLengthModifier", "Worker build time", "タイル整備の時間"), ("goldenAgeLengthModifier", "Golden age length", "黄金時代の長さ")]
+        rows = []
+        for sp in speeds:
+            maxt = sp["turns"][-1]["untilTurn"] if sp.get("turns") else "—"
+            rows.append([f"<b>{sp['name'] if lang == 'en' else SPJ.get(sp['name'], sp['name'])}</b>"] + [f"{round(sp.get(k, 1) * 100)}%" for k, _, _ in keys] + [maxt])
+        return tbl((["Speed"] + [a for _, a, _ in keys] + ["Max turns"]) if lang == "en" else (["速度"] + [b for _, _, b in keys] + ["最大ターン"]), rows)
+
+    def era_rows(lang):
+        rows = []
+        for er in eras:
+            u = er.get("startingMilitaryUnit", "")
+            rows.append([f"<b>{e(er['name'] if lang == 'en' else ja(er['name']))}</b>", er.get("startingSettlerCount", 1), er.get("startingWorkerCount", 0),
+                         f"{er.get('startingMilitaryUnitCount', 0)} × {e(u if lang == 'en' else ja(u))}", er.get("settlerPopulation", 1)])
+        return tbl(["Starting era", "Settlers", "Workers", "Military units", "Starting city size"] if lang == "en" else ["開始時代", "開拓者", "労働者", "軍事ユニット", "都市の初期人口"], rows)
+
+    def ruin_rows(lang):
+        rows = []
+        for r in ruins:
+            rows.append([f"<b>{e(r['name'] if lang == 'en' else (ja(r['name']) if r['name'] in tr.exact else r['name']))}</b>", ul(uq([u for u in r.get("uniques", []) if "sound" not in u], lang))])
+        return tbl(["Ruin result", "Effect and conditions"] if lang == "en" else ["遺跡の結果", "効果と条件"], rows)
+
+    def victory_rows(lang):
+        rows = []
+        VJ = {"Scientific": "科学", "Cultural": "文化", "Domination": "制覇", "Diplomatic": "外交", "Time": "時間"}
+        for v in victories:
+            ms = v.get("milestones", [])
+            ms_t = [clean_en(m) if lang == "en" else (tr.sentence(m) if "[" in m else tr.exact.get(m)) or clean_en(m) for m in ms]
+            rows.append([f"<b>{v['name'] if lang == 'en' else VJ.get(v['name'], v['name'])}</b>", ul(ms_t)])
+        return tbl(["Victory", "Milestones (in order)"] if lang == "en" else ["勝利", "達成条件（順番に）"], rows)
+
     PAGES["uniq"] = PAGES["civs"]
     PAGES["policyai"] = PAGES["policies"]
     PAGES["policycalc"] = PAGES["policies"]
@@ -687,6 +726,7 @@ def main():
     for k in ("features", "naturalwonders", "resources", "improvements"):
         PAGES[k] = PAGES["terrain"]
     PAGES["quests"] = PAGES["citystates"]
+    PAGES["eras"] = PAGES["speeds"]
     PAGES["specialists"] = PAGES["greatpeople"]
     PAGES["gpsources"] = PAGES["greatpeople"]
     for key, fn in (("civs", civ_rows), ("units", unit_rows), ("uniq", uniq_rows), ("diff", diff_rows),
@@ -695,7 +735,7 @@ def main():
                     ("promotions", promo_rows), ("terrain", lambda l: terr_rows(l, ("Land", "Water"))), ("features", lambda l: terr_rows(l, ("TerrainFeature",))),
                     ("naturalwonders", lambda l: terr_rows(l, ("NaturalWonder",))), ("resources", res_rows), ("improvements", imp_rows),
                     ("citystates", cs_rows), ("quests", quest_rows), ("greatpeople", gp_rows), ("specialists", spec_rows), ("gpsources", gp_src_rows),
-                    ("growth", growth_rows)):
+                    ("growth", growth_rows), ("speeds", speed_rows), ("eras", era_rows), ("ruins", ruin_rows), ("victory", victory_rows)):
         marker = "UNCIV-" + key.upper()
         for lang, rel in PAGES[key].items():
             p = os.path.join(ROOT, rel)

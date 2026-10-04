@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unciv（オープンソース版シヴィライゼーション5）の序盤をデータから考える。斥候→人口2→開拓者の理由、記念碑と最初の社会制度（都市数で伝統か解放か）、幸福度の予算、古代遺跡の全報酬を、ゲームのファイルとソースから。">
+<title>Unciv 序盤の進め方：ゲームのデータから考える最初のターン</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/unciv/opening/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/opening/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/opening/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/opening/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Unciv 序盤の進め方：ゲームのデータから考える最初のターン">
+<meta property="og:description" content="Unciv（オープンソース版シヴィライゼーション5）の序盤をデータから考える。斥候→人口2→開拓者の理由、記念碑と最初の社会制度（都市数で伝統か解放か）、幸福度の予算、古代遺跡の全報酬を、ゲームのファイルとソースから。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/unciv/opening/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv 序盤の進め方：ゲームのデータから考える最初のターン">
+<meta name="twitter:description" content="Unciv（オープンソース版シヴィライゼーション5）の序盤をデータから考える。斥候→人口2→開拓者の理由、記念碑と最初の社会制度（都市数で伝統か解放か）、幸福度の予算、古代遺跡の全報酬を、ゲームのファイルとソースから。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv 序盤の進め方：ゲームのデータから考える最初のターン",
+      "description": "Unciv（オープンソース版シヴィライゼーション5）の序盤をデータから考える。斥候→人口2→開拓者の理由、記念碑と最初の社会制度（都市数で伝統か解放か）、幸福度の予算、古代遺跡の全報酬を、ゲームのファイルとソースから。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/unciv/opening/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv 序盤の進め方：ゲームのデータから考える最初のターン",
+          "item": "https://kouryakulab.com/ja/games/unciv/opening/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/unciv/"><span class="arrow">←</span> Unciv 攻略ガイド</a>
+    <div>
+      <span class="eyebrow">UNCIV ・ 序盤</span>
+      <h1>序盤の進め方：最初のターン</h1>
+      <p class="sub">プレイ経験からの手順ではなく、ゲーム自身の数値が序盤について示していることと、その理由。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">これはプレイ経験から作った手順ではなく、ゲームのデータとコードが序盤について示していることをまとめたもの。まとめると、シンプルな序盤になる。<b>斥候 → 人口2まで育てる → 開拓者</b>、早めに<b>記念碑</b>で文化力、そして<b>何都市作る予定か</b>で社会制度を選ぶ。</p>
+      <p style="margin:0;">理由はすべて下の数値にある。開拓者は人口2が必要、開拓者の生産中は余剰食料が生産力になる、社会制度は都市1つごとに10%高くなる、都市1つで幸福度が最低4減る。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事はUncivのデータファイルとソースコード（実際のプレイ経験ではない）を分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>データが支持する序盤</h2></div>
+    <div class="panel">
+      <ol class="steps">
+      <li><span class="n">1</span><span><b>最初は斥候（生産25）。</b>地形の移動コストを無視でき、古代遺跡を早く回るのに最適（下を参照）。</span></li>
+      <li><span class="n">2</span><span><b>首都を人口2まで育てる。</b>開拓者は人口2未満では生産できない。</span></li>
+      <li><span class="n">3</span><span><b>開拓者を作る（生産106）。</b>生産中は余剰食料が生産力に変わるので、食料の多い首都ほど早くできる。</span></li>
+      <li><span class="n">4</span><span><b>記念碑（生産40、文化力+2）</b>で社会制度を取り始める。最初の社会制度は文化力25。</span></li>
+      <li><span class="n">5</span><span><b>最初の系統は都市数で選ぶ。</b>伝統は首都を強化し、完成で用水路が4つ無償。解放は全都市で文化力+1、完成で偉人が1人無償。都市が増えるごとに社会制度が10%高くなるので、伝統は少数の大都市向き、解放は都市を広げる場合向き。</span></li>
+      <li><span class="n">6</span><span><b>都市を増やす前に幸福度を確認。</b>新しい都市で−3、市民1人ごとに−1。<i>種類の違う</i>高級資源1つで+4。</span></li>
+      </ol>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>古代遺跡で手に入るもの</h2></div>
+<!-- UNCIV-RUINS -->
+<div class="table-scroll"><table class="glossary"><thead><tr><th>遺跡の結果</th><th>効果と条件</th></tr></thead><tbody>
+<tr><td><b>文化の古物を発見</b></td><td><ul class='exped-notes' style='margin:0'><li>(ゲームスピードによって調整される)、20文化力を手に入れる</li></ul></td></tr>
+<tr><td><b>あなたのために働く住人</b></td><td><ul class='exped-notes' style='margin:0'><li>廃墟で無償の労働者を発見</li><li>難易度が皇子以上の場合、利用不可</li></ul></td></tr>
+<tr><td><b>あなたの統治のもとで居住する住人</b></td><td><ul class='exped-notes' style='margin:0'><li>廃墟で無償の開拓者を発見</li><li>難易度が皇子以上の場合、利用不可</li></ul></td></tr>
+<tr><td><b>ユニットが戦闘指導を受ける</b></td><td><ul class='exped-notes' style='margin:0'><li>このユニットは10経験値獲得する</li><li>10ターン以降、のみ利用可能</li><li>市民のユニットに、利用不可</li></ul></td></tr>
+<tr><td><b>生存者（都市の市民になる）</b></td><td><ul class='exped-notes' style='margin:0'><li>ランダムな都市の人口+1</li></ul></td></tr>
+<tr><td><b>金の山を発見</b></td><td><ul class='exped-notes' style='margin:0'><li>(ゲームスピードによって調整される)、50〜100ゴールドを手に入れる</li></ul></td></tr>
+<tr><td><b>失われた技術を発見</b></td><td><ul class='exped-notes' style='margin:0'><li>研究可能な太古の技術からランダムに1個無償で得る</li></ul></td></tr>
+<tr><td><b>先進の武器</b></td><td><ul class='exped-notes' style='margin:0'><li>このユニットは特別なアップグレードを伴って無償でアップグレードする</li></ul></td></tr>
+<tr><td><b>近くの蛮族の野営地を発見</b></td><td><ul class='exped-notes' style='margin:0'><li>10タイル内のすべて野営地を明らかにする</li></ul></td></tr>
+<tr><td><b>粗野な地図を発見</b></td><td><ul class='exped-notes' style='margin:0'><li>遺跡から4タイル離れたランダムなタイルから4タイルのタイルを80%の確率で明らかにする</li></ul></td></tr>
+<tr><td><b>宗教の道具を発見</b></td><td><ul class='exped-notes' style='margin:0'><li>宗教が有効な場合、のみ利用可能</li><li>パンテオンに必要な信念を手に入れる</li><li>パンテオン信仰を創始前、のみ利用可能</li><li>20ターン以降、のみ利用可能</li></ul></td></tr>
+<tr><td><b>古の預言書</b></td><td><ul class='exped-notes' style='margin:0'><li>宗教が有効な場合、のみ利用可能</li><li>大預言者に必要な信念の33%を手に入れる</li><li>大預言者を獲得した後、利用不可</li><li>パンテオン信仰を創始後、のみ利用可能</li><li>20ターン以降、のみ利用可能</li></ul></td></tr>
+</tbody></table></div>
+<!-- /UNCIV-RUINS -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">遺跡から無償の労働者・開拓者が出るのは皇子未満の難易度だけ。数値はゲーム本体のデータファイル（Unciv同梱の Civ V Gods &amp; Kings ルールセット）を、2026年10月2日時点のソースから読み取ったもの。アップデートやMODで変わることがある。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>序盤を支える数値</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>事実</th><th>値</th><th>出典</th></tr></thead>
+        <tbody>
+        <tr><td>開拓者のコスト・条件</td><td>生産106、人口2以上</td><td>Units.json</td></tr>
+        <tr><td>人口1→2、2→3に必要な食料</td><td>15・24</td><td>CityPopulationManager.kt</td></tr>
+        <tr><td>最初の社会制度（文化力）</td><td>25、30、60、105、170…</td><td>PolicyManager.kt（1都市・標準速度・皇子）</td></tr>
+        <tr><td>都市1つごとの社会制度コスト</td><td>+10%（極小〜中）</td><td>PolicyManager.kt</td></tr>
+        <tr><td>都市・市民・高級資源ごとの幸福度</td><td>−3・−1・+4</td><td>CityStats.kt</td></tr>
+        <tr><td>蛮族の領土侵入</td><td>開拓者は侵入なし、酋長60ターン目、将軍20ターン目、皇子以上は最初から</td><td>Difficulties.json</td></tr>
+        </tbody>
+      </table>
+    </div>    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">式の全体は<a href='/ja/games/unciv/growth-happiness/'>成長と幸福度</a>・<a href='/ja/games/unciv/policies/'>社会制度</a>・<a href='/ja/games/unciv/difficulty/'>難易度</a>を参照。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">これが最善の序盤？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">数値が支持する序盤であって、試して確かめた手順ではない。マップ・文明・難易度で最善は変わる。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">最初は戦士の方がいい？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">高い難易度では蛮族が1ターン目から領土に入れるので、防衛役の重要度が上がる。データだけではすべてのマップについて決められない。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">何都市作ればいい？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">決まった答えはないが、コストははっきりしている。都市1つごとに社会制度+10%・技術+5%、幸福度は最低4減る。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/unciv/">Unciv 攻略ガイド</a>
+      <a href="/ja/games/unciv/policies/">社会制度</a>
+      <a href="/ja/games/unciv/growth-happiness/">成長と幸福度</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv ソースコード（yairm210/Unciv、MPL-2.0）</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv データファイル：Civ V Gods & Kings ルールセット（2026-10-02 時点）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/translations/Japanese.properties" target="_blank" rel="noopener">Unciv 公式日本語訳ファイル（Japanese.properties）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>
