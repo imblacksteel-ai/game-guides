@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unciv（オープンソース版シヴィライゼーション5）の通常の建物の一覧。ゲームのデータファイルから、必要な技術・建物、生産コスト、維持費、効果を時代別にまとめた。">
+<title>Unciv 建物一覧：全建物のコスト・維持費・効果</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/unciv/buildings/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/buildings/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/buildings/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/buildings/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Unciv 建物一覧：全建物のコスト・維持費・効果">
+<meta property="og:description" content="Unciv（オープンソース版シヴィライゼーション5）の通常の建物の一覧。ゲームのデータファイルから、必要な技術・建物、生産コスト、維持費、効果を時代別にまとめた。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/unciv/buildings/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv 建物一覧：全建物のコスト・維持費・効果">
+<meta name="twitter:description" content="Unciv（オープンソース版シヴィライゼーション5）の通常の建物の一覧。ゲームのデータファイルから、必要な技術・建物、生産コスト、維持費、効果を時代別にまとめた。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv 建物一覧：全建物のコスト・維持費・効果",
+      "description": "Unciv（オープンソース版シヴィライゼーション5）の通常の建物の一覧。ゲームのデータファイルから、必要な技術・建物、生産コスト、維持費、効果を時代別にまとめた。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/unciv/buildings/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv 建物一覧：全建物のコスト・維持費・効果",
+          "item": "https://kouryakulab.com/ja/games/unciv/buildings/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/unciv/"><span class="arrow">←</span> Unciv 攻略ガイド</a>
+    <div>
+      <span class="eyebrow">UNCIV ・ 建物</span>
+      <h1>全建物のコスト・維持費・効果</h1>
+      <p class="sub">通常の建物55種を、Uncivのデータから直接読み取った。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">Uncivの標準ルールセットの通常の建物は<b>55種</b>（遺産と文明固有の建物を除く）。各建物の技術・必要な建物・生産コスト・維持費（ゴールド）・効果をすべて載せた。</p>
+      <p style="margin:0;">遺産と同じく、多くの建物は解禁技術の列からコストが決まるので、同じ列の建物は同じコストになる。<b>維持費</b>の列には注意。毎ターンゴールドを払うので、全都市にすべて建てるのはタダではない。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事はUncivのBuildings・Techsのデータファイルを分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>時代別の全建物</h2></div>
+<!-- UNCIV-BUILDINGS -->
+<h3 style="margin:22px 0 8px;">技術不要</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>建物</th><th>技術</th><th>必要な建物</th><th>コスト</th><th>維持費</th><th>効果</th></tr></thead><tbody>
+<tr><td><b>大聖堂</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>文化力+3</li><li>信仰力+1</li><li>幸福度+1</li><li>芸術家の枠+1</li><li>建設不可</li><li>宗教が有効な場合、のみ利用可能</li></ul></td></tr>
+<tr><td><b>修道院</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>文化力+2</li><li>信仰力+2</li><li>この都市でワインタイルから文化力+1・信仰力+1</li><li>この都市で香料タイルから文化力+1・信仰力+1</li><li>建設不可</li><li>宗教が有効な場合、のみ利用可能</li><li>占領で破壊される</li></ul></td></tr>
+<tr><td><b>モスク</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>文化力+2</li><li>信仰力+3</li><li>幸福度+1</li><li>建設不可</li><li>宗教が有効な場合、のみ利用可能</li></ul></td></tr>
+<tr><td><b>パゴダ</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>文化力+2</li><li>信仰力+2</li><li>幸福度+2</li><li>建設不可</li><li>宗教が有効な場合、のみ利用可能</li></ul></td></tr>
+<tr><td><b>モニュメント</b></td><td>—</td><td>—</td><td>40</td><td>1</td><td><ul class='exped-notes' style='margin:0'><li>文化力+2</li><li>占領で破壊される</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">太古</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>建物</th><th>技術</th><th>必要な建物</th><th>コスト</th><th>維持費</th><th>効果</th></tr></thead><tbody>
+<tr><td><b>神殿</b></td><td>陶器</td><td>—</td><td>40</td><td>1</td><td><ul class='exped-notes' style='margin:0'><li>信仰力+1</li><li>宗教が有効な場合、のみ利用可能</li></ul></td></tr>
+<tr><td><b>穀物庫</b></td><td>陶器</td><td>—</td><td>60</td><td>1</td><td><ul class='exped-notes' style='margin:0'><li>食料+2</li><li>この都市で鹿タイルから食料+1</li><li>この都市でバナナタイルから食料+1</li><li>この都市で小麦タイルから食料+1</li></ul></td></tr>
+<tr><td><b>兵舎</b></td><td>青銅器</td><td>—</td><td>75</td><td>1</td><td><ul class='exped-notes' style='margin:0'><li>この都市で新たに訓練された軍事ユニットが経験値を15得る</li><li>占領で破壊される</li></ul></td></tr>
+<tr><td><b>サーカス</b></td><td>トラップ</td><td>—</td><td>75</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>幸福度+2</li></ul></td></tr>
+<tr><td><b>図書館</b></td><td>筆記</td><td>—</td><td>75</td><td>1</td><td><ul class='exped-notes' style='margin:0'><li>この都市で人口2あたりにつき科学力+1</li></ul></td></tr>
+<tr><td><b>石工所</b></td><td>暦</td><td>—</td><td>75</td><td>1</td><td><ul class='exped-notes' style='margin:0'><li>生産力+1</li><li>幸福度+1</li><li>平原の上ではできない</li><li>この都市で石材タイルから生産力+1</li><li>この都市で大理石タイルから生産力+1</li></ul></td></tr>
+<tr><td><b>防壁</b></td><td>石工術</td><td>—</td><td>75</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>都市の防御力+5</li><li>都市の耐久力+50</li><li>占領で破壊される</li></ul></td></tr>
+<tr><td><b>水車小屋</b></td><td>車輪</td><td>—</td><td>75</td><td>2</td><td><ul class='exped-notes' style='margin:0'><li>食料+2</li><li>生産力+1</li><li>川の上になければならない</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">古典</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>建物</th><th>技術</th><th>必要な建物</th><th>コスト</th><th>維持費</th><th>効果</th></tr></thead><tbody>
+<tr><td><b>灯台</b></td><td>光学</td><td>—</td><td>75</td><td>1</td><td><ul class='exped-notes' style='margin:0'><li>近海に隣接する必要がある</li><li>この都市で外洋タイルから食料+1</li><li>この都市で近海タイルから食料+1</li><li>この都市で魚タイルから食料+1</li></ul></td></tr>
+<tr><td><b>円形劇場</b></td><td>演劇と詩</td><td>モニュメント</td><td>100</td><td>2</td><td><ul class='exped-notes' style='margin:0'><li>文化力+3</li><li>芸術家の枠+1</li><li>占領で破壊される</li></ul></td></tr>
+<tr><td><b>用水路</b></td><td>工学</td><td>—</td><td>100</td><td>1</td><td><ul class='exped-notes' style='margin:0'><li>この都市で人口増加後40%の食料を持ち越す</li></ul></td></tr>
+<tr><td><b>コロシアム</b></td><td>建築学</td><td>—</td><td>100</td><td>1</td><td><ul class='exped-notes' style='margin:0'><li>幸福度+2</li></ul></td></tr>
+<tr><td><b>裁判所</b></td><td>数学</td><td>—</td><td>100</td><td>4</td><td><ul class='exped-notes' style='margin:0'><li>併合した都市の追加の不満を取り除く</li><li>併合都市で、のみ建設可能</li></ul></td></tr>
+<tr><td><b>市場</b></td><td>通貨</td><td>—</td><td>100</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>ゴールド+2</li><li>ゴールド+25%</li><li>商人の枠+1</li></ul></td></tr>
+<tr><td><b>造幣所</b></td><td>通貨</td><td>—</td><td>100</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>この都市で金鉱石タイルからゴールド+2</li><li>この都市で銀タイルからゴールド+2</li></ul></td></tr>
+<tr><td><b>厩舎</b></td><td>騎乗</td><td>—</td><td>100</td><td>1</td><td><ul class='exped-notes' style='margin:0'><li>この都市で騎乗ユニットの生産時に生産力+15%</li><li>この都市で牛タイルから生産力+1</li><li>この都市で馬タイルから生産力+1</li><li>この都市で羊タイルから生産力+1</li></ul></td></tr>
+<tr><td><b>寺院</b></td><td>哲学</td><td>神殿</td><td>100</td><td>2</td><td><ul class='exped-notes' style='margin:0'><li>信仰力+2</li><li>宗教が有効な場合、のみ利用可能</li><li>占領で破壊される</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">中世</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>建物</th><th>技術</th><th>必要な建物</th><th>コスト</th><th>維持費</th><th>効果</th></tr></thead><tbody>
+<tr><td><b>溶鉱炉</b></td><td>錬金</td><td>—</td><td>120</td><td>1</td><td><ul class='exped-notes' style='margin:0'><li>この都市で地上ユニットの生産時に生産力+15%</li><li>この都市で鉄タイルから生産力+1</li></ul></td></tr>
+<tr><td><b>庭園</b></td><td>神学</td><td>—</td><td>120</td><td>1</td><td><ul class='exped-notes' style='margin:0'><li>この都市で偉人生成+25%</li><li>淡水源に隣接する必要がある</li></ul></td></tr>
+<tr><td><b>港</b></td><td>羅針盤</td><td>—</td><td>120</td><td>3</td><td><ul class='exped-notes' style='margin:0'><li>この都市で水資源タイルから生産力+1</li><li>首都との海上交易路を形成</li><li>近海に隣接する必要がある</li></ul></td></tr>
+<tr><td><b>工房</b></td><td>錬金</td><td>—</td><td>120</td><td>2</td><td><ul class='exped-notes' style='margin:0'><li>生産力+2</li><li>生産力+10%</li><li>技術者の枠+1</li></ul></td></tr>
+<tr><td><b>武器庫</b></td><td>鉄鋼</td><td>兵舎</td><td>160</td><td>1</td><td><ul class='exped-notes' style='margin:0'><li>この都市で新たに訓練された軍事ユニットが経験値を15得る</li><li>占領で破壊される</li></ul></td></tr>
+<tr><td><b>城</b></td><td>騎士道</td><td>防壁</td><td>160</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>都市の防御力+7</li><li>都市の耐久力+25</li><li>占領で破壊される</li></ul></td></tr>
+<tr><td><b>大学</b></td><td>教育</td><td>図書館</td><td>160</td><td>2</td><td><ul class='exped-notes' style='margin:0'><li>科学力+33%</li><li>科学者の枠+2</li><li>この都市でジャングルタイルから科学力+2</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">ルネサンス</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>建物</th><th>技術</th><th>必要な建物</th><th>コスト</th><th>維持費</th><th>効果</th></tr></thead><tbody>
+<tr><td><b>交番</b></td><td>銀行</td><td>—</td><td>160</td><td>1</td><td><ul class='exped-notes' style='margin:0'><li>スパイ活動が有効な場合、のみ利用可能</li><li>この都市で敵のスパイ活動の効率が-25%</li></ul></td></tr>
+<tr><td><b>銀行</b></td><td>銀行</td><td>市場</td><td>200</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>ゴールド+2</li><li>ゴールド+25%</li><li>商人の枠+1</li></ul></td></tr>
+<tr><td><b>天文台</b></td><td>天文学</td><td>図書館</td><td>200</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>科学力+50%</li><li>山岳に隣接する必要がある</li></ul></td></tr>
+<tr><td><b>オペラハウス</b></td><td>音響学</td><td>円形劇場</td><td>200</td><td>2</td><td><ul class='exped-notes' style='margin:0'><li>文化力+4</li><li>芸術家の枠+1</li><li>占領で破壊される</li></ul></td></tr>
+<tr><td><b>劇場</b></td><td>活版印刷</td><td>コロシアム</td><td>200</td><td>2</td><td><ul class='exped-notes' style='margin:0'><li>幸福度+3</li></ul></td></tr>
+<tr><td><b>港湾</b></td><td>航海術</td><td>港</td><td>250</td><td>2</td><td><ul class='exped-notes' style='margin:0'><li>この都市で水資源タイルから生産力+1・ゴールド+1</li><li>近海に隣接する必要がある</li><li>この都市で水上ユニットの生産時に生産力+15%</li></ul></td></tr>
+<tr><td><b>風車</b></td><td>経済学</td><td>—</td><td>250</td><td>2</td><td><ul class='exped-notes' style='margin:0'><li>生産力+2</li><li>技術者の枠+1</li><li>丘陵の上ではできない</li><li>この都市ですべての建物の建築時に生産力+10%</li></ul></td></tr>
+<tr><td><b>備蓄</b></td><td>冶金</td><td>城</td><td>300</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>都市の防御力+9</li><li>都市の耐久力+25</li><li>占領で破壊される</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">産業時代</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>建物</th><th>技術</th><th>必要な建物</th><th>コスト</th><th>維持費</th><th>効果</th></tr></thead><tbody>
+<tr><td><b>士官学校</b></td><td>軍事学</td><td>武器庫</td><td>300</td><td>1</td><td><ul class='exped-notes' style='margin:0'><li>この都市で新たに訓練された軍事ユニットが経験値を15得る</li><li>占領で破壊される</li></ul></td></tr>
+<tr><td><b>博物館</b></td><td>考古学</td><td>オペラハウス</td><td>300</td><td>3</td><td><ul class='exped-notes' style='margin:0'><li>文化力+5</li><li>芸術家の枠+2</li><li>占領で破壊される</li></ul></td></tr>
+<tr><td><b>警察署</b></td><td>電気</td><td>交番</td><td>300</td><td>1</td><td><ul class='exped-notes' style='margin:0'><li>スパイ活動が有効な場合、のみ利用可能</li><li>この都市で敵のスパイ活動の効率が-25%</li></ul></td></tr>
+<tr><td><b>公立学校</b></td><td>科学理論</td><td>大学</td><td>300</td><td>3</td><td><ul class='exped-notes' style='margin:0'><li>科学力+3</li><li>科学者の枠+1</li><li>この都市で人口2あたりにつき科学力+1</li></ul></td></tr>
+<tr><td><b>工場</b></td><td>工業化</td><td>工房</td><td>360</td><td>3</td><td><ul class='exped-notes' style='margin:0'><li>生産力+4</li><li>生産力+10%</li><li>技術者の枠+2</li></ul></td></tr>
+<tr><td><b>病院</b></td><td>生物学</td><td>用水路</td><td>360</td><td>2</td><td><ul class='exped-notes' style='margin:0'><li>食料+5</li></ul></td></tr>
+<tr><td><b>水力発電所</b></td><td>電気</td><td>—</td><td>360</td><td>3</td><td><ul class='exped-notes' style='margin:0'><li>川の上になければならない</li><li>この都市で川タイルから生産力+1</li></ul></td></tr>
+<tr><td><b>証券取引所</b></td><td>電気</td><td>銀行</td><td>360</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>ゴールド+3</li><li>ゴールド+33%</li><li>商人の枠+2</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">現代</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>建物</th><th>技術</th><th>必要な建物</th><th>コスト</th><th>維持費</th><th>効果</th></tr></thead><tbody>
+<tr><td><b>放送塔</b></td><td>無線通信</td><td>博物館</td><td>500</td><td>3</td><td><ul class='exped-notes' style='margin:0'><li>文化力+3</li><li>文化力+33%</li><li>占領で破壊される</li></ul></td></tr>
+<tr><td><b>軍事基地</b></td><td>共通規格</td><td>備蓄</td><td>500</td><td>—</td><td><ul class='exped-notes' style='margin:0'><li>都市の防御力+12</li><li>都市の耐久力+25</li><li>占領で破壊される</li></ul></td></tr>
+<tr><td><b>研究所</b></td><td>プラスチック</td><td>公立学校</td><td>500</td><td>3</td><td><ul class='exped-notes' style='margin:0'><li>科学力+4</li><li>科学力+50%</li><li>科学者の枠+1</li></ul></td></tr>
+<tr><td><b>スタジアム</b></td><td>冷蔵技術</td><td>劇場</td><td>500</td><td>2</td><td><ul class='exped-notes' style='margin:0'><li>幸福度+4</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">原子力時代</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>建物</th><th>技術</th><th>必要な建物</th><th>コスト</th><th>維持費</th><th>効果</th></tr></thead><tbody>
+<tr><td><b>医学研究所</b></td><td>医薬品</td><td>病院</td><td>500</td><td>3</td><td><ul class='exped-notes' style='margin:0'><li>この都市で人口増加後25%の食料を持ち越す</li></ul></td></tr>
+<tr><td><b>原子力発電所</b></td><td>核分裂反応</td><td>工場</td><td>500</td><td>3</td><td><ul class='exped-notes' style='margin:0'><li>生産力+5</li><li>生産力+15%</li><li>太陽熱発電が無い都市で、のみ利用可能</li></ul></td></tr>
+<tr><td><b>リサイクルセンター</b></td><td>生態学</td><td>—</td><td>500</td><td>3</td><td><ul class='exped-notes' style='margin:0'><li>2のアルミニウムを改善</li><li>文明あたり5個まで生産できる</li></ul></td></tr>
+<tr><td><b>太陽熱発電</b></td><td>生態学</td><td>工場</td><td>500</td><td>3</td><td><ul class='exped-notes' style='margin:0'><li>生産力+5</li><li>生産力+15%</li><li>砂漠に隣接する必要がある</li><li>原子力発電所が無い都市で、のみ利用可能</li></ul></td></tr>
+</tbody></table></div>
+<h3 style="margin:22px 0 8px;">情報時代</h3>
+<div class="table-scroll"><table class="glossary"><thead><tr><th>建物</th><th>技術</th><th>必要な建物</th><th>コスト</th><th>維持費</th><th>効果</th></tr></thead><tbody>
+<tr><td><b>耐爆壕</b></td><td>遠距離通信</td><td>—</td><td>300</td><td>1</td><td><ul class='exped-notes' style='margin:0'><li>この都市で核攻撃からの人口減少-75%</li><li>この都市で核攻撃による駐屯ユニットへのダメージ-75%</li></ul></td></tr>
+<tr><td><b>宇宙船工場</b></td><td>ロボット工学</td><td>工場</td><td>360</td><td>3</td><td><ul class='exped-notes' style='margin:0'><li>生産力+3</li><li>この都市で宇宙船のパーツユニットの生産時に生産力+50%</li></ul></td></tr>
+</tbody></table></div>
+<!-- /UNCIV-BUILDINGS -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">コストは難易度とゲーム速度を掛ける前の基本の生産コスト。維持費は毎ターンのゴールド。固有の建物は<a href='/ja/games/unciv/civilizations/'>文明一覧</a>、遺産は<a href='/ja/games/unciv/wonders/'>遺産一覧</a>を参照。名称と効果文はゲームの公式日本語訳による。数値はゲーム本体のデータファイル（Unciv同梱の Civ V Gods &amp; Kings ルールセット）を、2026年10月2日時点のソースから読み取ったもの。アップデートやMODで変わることがある。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">技術もコストもない宗教建物があるのはなぜ？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">大聖堂・修道院・モスク・仏塔などは宗教由来（信仰力で購入）の建物で、技術ツリーには入っていない。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">難易度で建物のコストは変わる？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">あなたのコストは変わる。開拓者50%、酋長67%、将軍85%、皇子以上100%。<a href='/ja/games/unciv/difficulty/'>難易度の違い</a>を参照。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">固有の建物はどこ？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">各文明の固有の建物と置き換え対象は<a href='/ja/games/unciv/civilizations/'>文明一覧</a>に載せている。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/unciv/">Unciv 攻略ガイド</a>
+      <a href="/ja/games/unciv/wonders/">遺産一覧</a>
+      <a href="/ja/games/unciv/tech-tree/">技術ツリー</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv ソースコード（yairm210/Unciv、MPL-2.0）</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv データファイル：Civ V Gods & Kings ルールセット（2026-10-02 時点）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/translations/Japanese.properties" target="_blank" rel="noopener">Unciv 公式日本語訳ファイル（Japanese.properties）</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

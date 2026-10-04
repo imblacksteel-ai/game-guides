@@ -34,6 +34,7 @@ PAGES = {
     "wonders": {"en": "games/unciv/wonders/index.html", "ja": "ja/games/unciv/wonders/index.html"},
     "techs": {"en": "games/unciv/tech-tree/index.html", "ja": "ja/games/unciv/tech-tree/index.html"},
     "beliefs": {"en": "games/unciv/beliefs/index.html", "ja": "ja/games/unciv/beliefs/index.html"},
+    "buildings": {"en": "games/unciv/buildings/index.html", "ja": "ja/games/unciv/buildings/index.html"},
 }
 STATS = ["food", "production", "gold", "science", "culture", "faith", "happiness"]
 SKIP_UNIQUE = ("for AI decisions", "leader title", "global alert", "Comment", "hidden from users", "Never destroyed", "Indicates the capital")
@@ -364,6 +365,15 @@ def main():
             if v:
                 name = k.capitalize()
                 out.append(f"+{v:g} {name}" if lang == "en" else f"{ja(name)}+{v:g}")
+        for k, v in (x.get("percentStatBonus") or {}).items():
+            name = k.capitalize()
+            out.append(f"+{v:g}% {name}" if lang == "en" else f"{ja(name)}+{v:g}%")
+        for sp, v in (x.get("specialistSlots") or {}).items():
+            out.append(f"+{v} {sp} slot" + ("s" if v > 1 else "") if lang == "en" else f"{ja(sp)}の枠+{v}")
+        if x.get("cityStrength"):
+            out.append(f"+{x['cityStrength']:g} city defense" if lang == "en" else f"都市の防御力+{x['cityStrength']:g}")
+        if x.get("cityHealth"):
+            out.append(f"+{x['cityHealth']:g} city HP" if lang == "en" else f"都市の耐久力+{x['cityHealth']:g}")
         for gp, v in (x.get("greatPersonPoints") or {}).items():
             out.append(f"+{v} {gp} points" if lang == "en" else f"{ja(gp)}ポイント+{v}")
         return out
@@ -486,13 +496,34 @@ def main():
             out.append(tbl(["Belief", "Effect"] if lang == "en" else ["信仰", "効果"], rows))
         return "\n".join(out)
 
+    regular = [b for b in buildings if not b.get("isWonder") and not b.get("isNationalWonder") and not b.get("uniqueTo")]
+
+    def building_rows(lang):
+        out = []
+        for era in [None] + era_order:
+            bs = [b for b in regular if era_of.get(b.get("requiredTech")) == era]
+            if not bs:
+                continue
+            title = era if era else "No tech required"
+            title_ja = ja(era) if era else "技術不要"
+            out.append(f'<h3 style="margin:22px 0 8px;">{e(title if lang == "en" else title_ja)}</h3>')
+            rows = []
+            for b in sorted(bs, key=lambda b: (bcost(b), b["name"])):
+                req = b.get("requiredBuilding")
+                tech = b.get("requiredTech")
+                rows.append([f"<b>{e(b['name'] if lang == 'en' else ja(b['name']))}</b>", e((tech if lang == "en" else ja(tech)) if tech else "—"),
+                             e((req if lang == "en" else ja(req)) if req else "—"), bcost(b) or "—", b.get("maintenance", 0) or "—",
+                             ul(stats(b, lang) + uq(b.get("uniques"), lang))])
+            out.append(tbl(["Building", "Tech", "Requires", "Cost", "Upkeep", "Effects"] if lang == "en" else ["建物", "技術", "必要な建物", "コスト", "維持費", "効果"], rows))
+        return "\n".join(out)
+
     PAGES["uniq"] = PAGES["civs"]
     PAGES["policyai"] = PAGES["policies"]
     PAGES["policycalc"] = PAGES["policies"]
     PAGES["nwonders"] = PAGES["wonders"]
     for key, fn in (("civs", civ_rows), ("units", unit_rows), ("uniq", uniq_rows), ("diff", diff_rows),
                     ("policies", policy_rows), ("policyai", policy_ai), ("policycalc", policy_calc),
-                    ("wonders", wonder_rows), ("nwonders", nwonder_rows), ("techs", tech_rows), ("beliefs", belief_rows)):
+                    ("wonders", wonder_rows), ("nwonders", nwonder_rows), ("techs", tech_rows), ("beliefs", belief_rows), ("buildings", building_rows)):
         marker = "UNCIV-" + key.upper()
         for lang, rel in PAGES[key].items():
             p = os.path.join(ROOT, rel)
