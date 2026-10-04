@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How Unciv differs from Civilization V, from the developers' own list of intentional departures and the source code: naval melee vs shore units, workers, visibility, the Iroquois, and fixed combat rolls.">
+<title>Unciv vs Civilization V: Confirmed Differences</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/games/unciv/vs-civ5/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/vs-civ5/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/vs-civ5/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/vs-civ5/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kouryaku Lab">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:title" content="Unciv vs Civilization V: Confirmed Differences">
+<meta property="og:description" content="How Unciv differs from Civilization V, from the developers' own list of intentional departures and the source code: naval melee vs shore units, workers, visibility, the Iroquois, and fixed combat rolls.">
+<meta property="og:url" content="https://kouryakulab.com/games/unciv/vs-civ5/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv vs Civilization V: Confirmed Differences">
+<meta name="twitter:description" content="How Unciv differs from Civilization V, from the developers' own list of intentional departures and the source code: naval melee vs shore units, workers, visibility, the Iroquois, and fixed combat rolls.">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv vs Civilization V: Confirmed Differences",
+      "description": "How Unciv differs from Civilization V, from the developers' own list of intentional departures and the source code: naval melee vs shore units, workers, visibility, the Iroquois, and fixed combat rolls.",
+      "inLanguage": "en",
+      "url": "https://kouryakulab.com/games/unciv/vs-civ5/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kouryaku Lab",
+        "url": "https://kouryakulab.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kouryaku Lab",
+          "item": "https://kouryakulab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv vs Civilization V: Confirmed Differences",
+          "item": "https://kouryakulab.com/games/unciv/vs-civ5/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/games/unciv/"><span class="arrow">←</span> Unciv Guide</a>
+    <div>
+      <span class="eyebrow">UNCIV · VS CIV V</span>
+      <h1>Unciv vs Civilization V</h1>
+      <p class="sub">The differences the developers call intentional, plus what the code shows — for players coming from Civ V.</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="Language"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>Conclusion</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">Unciv follows Civilization V: Gods &amp; Kings closely, and most numbers are taken from Civ V references. But the developers list a few <b>intentional departures</b>, and the code shows some other differences — a fixed combat roll among them.</p>
+      <p style="margin:0;">If you come from Civ V, the one that changes play the most is <b>naval melee units attacking land units on the shore</b>.</p>
+    </div>
+    <div class="callout"><b>An analysis-based guide:</b> this guide is based on our analysis of Unciv's own documentation of intentional departures from Civ V and its source code. It describes what the data shows and is not a guarantee of results.</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>Confirmed Differences</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>Difference</th><th>What Unciv does</th><th>Source</th></tr></thead>
+        <tbody>
+        <tr><td>Naval melee vs land</td><td>Water melee units can attack land units on the shore — added because naval melee was considered too weak in Civ V.</td><td>Unciv docs (intentional departures)</td></tr>
+        <tr><td>Workers</td><td>Workers don't finish an improvement the turn they arrive; they receive orders and work on it, so you can change your mind.</td><td>Unciv docs</td></tr>
+        <tr><td>Visibility</td><td>Forests and jungles are visible one tile beyond your sight range, like hills — Civ V's behavior is treated as a bug.</td><td>Unciv docs</td></tr>
+        <tr><td>Iroquois (Great Warpath)</td><td>Forest and jungle tiles act as roads but don't give the railroad production bonus for connected cities.</td><td>Unciv docs</td></tr>
+        <tr><td>Combat roll</td><td>The random part of combat damage is fixed by the turn and tile, so reloading doesn't change the outcome.</td><td>BattleDamage.kt</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>The Developers' Stated Principles</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><b>“The AI plays to win.”</b> The project's guiding principles say the AI should play like a human opponent — including attacking you if your military is weak.</li>
+        <li><b>Modding by combination.</b> Uniques are designed to combine with conditions, so mods can mix effects freely — that's also why the game's text reads like building blocks (“+15% Strength &lt;when attacking&gt;”).</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Can I use Civ V guides for Unciv?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Mostly for strategy, but check numbers against Unciv's own data — this site's tables are read from it.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Is Brave New World content included?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">The built-in rulesets are Civ V Vanilla and Gods &amp; Kings. Other content comes from mods.</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">Why is the AI so aggressive?</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">It's by design: the developers want the AI to play to win, including attacking weak neighbors.</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>Continue reading</h3>
+    <div class="more-guides-links">
+      <a href="/games/unciv/">Unciv Guide</a>
+      <a href="/games/unciv/combat/">Combat</a>
+      <a href="/games/unciv/civilizations/">Civilizations</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">This is an unofficial, fan-made, analysis-based guide. It is not a guarantee of results, and game updates may change any of it.</div>
+    <div class="sources">
+      Sources:
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv source code (yairm210/Unciv, MPL-2.0)</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv data files — Civ V: Gods & Kings ruleset, commit of 2026-10-02</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/docs/Other/Intentional-departures-from-Civ-V.md" target="_blank" rel="noopener">Unciv docs: Intentional departures from Civ V</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="Site links"><a href="/about/">About</a> · <a href="/authors/">Authors</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>

@@ -626,4 +626,20 @@
   </url>
   <url><loc>https://kouryakulab.com/ja/games/unciv/opening/</loc></url>
 
+  <url>
+    <loc>https://kouryakulab.com/games/unciv/vs-civ5/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/vs-civ5/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/vs-civ5/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/vs-civ5/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/unciv/vs-civ5/</loc></url>
+
+  <url>
+    <loc>https://kouryakulab.com/games/unciv/best-civ/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/best-civ/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/best-civ/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/best-civ/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/unciv/best-civ/</loc></url>
+
 </urlset>

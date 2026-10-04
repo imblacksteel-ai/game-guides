@@ -104,7 +104,27 @@
     <div class="callout"><b>分析に基づく記事です：</b>この記事はUncivのTechsデータファイルとソースコードの技術コストの式を分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
   </section>
   <section style="padding-block:32px 0;">
-    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>時代別の全技術</h2></div>
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>研究コスト計算機</h2></div>
+    <div class="panel" id="tech-calc" data-lsettler="開拓者" data-lchieftain="酋長" data-lwarlord="将軍" data-lprince="皇子" data-lking="国王" data-lemperor="皇帝" data-limmortal="不死者" data-ldeity="創造主" data-lquick="クイック" data-lstandard="スタンダード" data-lepic="エピック" data-lmarathon="マラソン" data-ltiny="極小" data-lsmall="小" data-lmedium="中" data-llarge="大" data-lhuge="極大">
+      <label>技術<select id="tc-tech" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></select></label>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:12px;">
+        <label>都市数（傀儡を除く）<input id="tc-cities" type="number" min="1" value="4" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+        <label>残っている主要文明の数<input id="tc-civs" type="number" min="1" value="8" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+        <label>出会った文明のうち研究済みの数<input id="tc-known" type="number" min="0" value="0" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+        <label>あなたの毎ターンの科学力<input id="tc-sci" type="number" min="0" value="20" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+        <label>難易度<select id="tc-diff" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></select></label>
+        <label>ゲーム速度<select id="tc-speed" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></select></label>
+        <label>マップサイズ<select id="tc-map" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></select></label>
+      </div>
+      <p style="margin:16px 0 0;font-size:1.05rem;">研究コスト: <b id="tc-cost" class="tag-mono" style="font-size:1.4rem;">—</b> &nbsp; · &nbsp; 今の科学力でのターン数: <b id="tc-turns" class="tag-mono" style="font-size:1.4rem;">—</b></p>
+    </div>
+<!-- UNCIV-TECHCALC -->
+<script>window.UNCIV_TECH_CFG = {"techs": [["農業", 20, "太古"], ["陶器", 35, "太古"], ["畜産", 35, "太古"], ["弓術", 35, "太古"], ["採鉱", 35, "太古"], ["帆走", 55, "太古"], ["暦", 55, "太古"], ["筆記", 55, "太古"], ["トラップ", 55, "太古"], ["車輪", 55, "太古"], ["石工術", 55, "太古"], ["青銅器", 55, "太古"], ["光学", 85, "古典"], ["騎乗", 105, "古典"], ["数学", 105, "古典"], ["建築学", 105, "古典"], ["哲学", 175, "古典"], ["演劇と詩", 175, "古典"], ["通貨", 175, "古典"], ["工学", 175, "古典"], ["鉄器", 175, "古典"], ["神学", 275, "中世"], ["官吏", 275, "中世"], ["ギルド", 275, "中世"], ["錬金", 275, "中世"], ["羅針盤", 375, "中世"], ["教育", 485, "中世"], ["騎士道", 485, "中世"], ["機械", 485, "中世"], ["物理学", 485, "中世"], ["鉄鋼", 485, "中世"], ["天文学", 780, "ルネサンス"], ["音響学", 780, "ルネサンス"], ["銀行", 780, "ルネサンス"], ["活版印刷", 780, "ルネサンス"], ["火薬", 780, "ルネサンス"], ["航海術", 1150, "ルネサンス"], ["建築", 1150, "ルネサンス"], ["経済学", 1150, "ルネサンス"], ["冶金", 1150, "ルネサンス"], ["化学", 1150, "ルネサンス"], ["考古学", 1600, "産業時代"], ["科学理論", 1600, "産業時代"], ["工業化", 1600, "産業時代"], ["ライフリング", 1600, "産業時代"], ["軍事学", 1600, "産業時代"], ["肥料", 1600, "産業時代"], ["生物学", 2350, "産業時代"], ["電気", 2350, "産業時代"], ["蒸気機関", 2350, "産業時代"], ["ダイナマイト", 2350, "産業時代"], ["冷蔵技術", 3100, "現代"], ["無線通信", 3100, "現代"], ["共通規格", 3100, "現代"], ["飛行機", 3100, "現代"], ["鉄道", 3100, "現代"], ["プラスチック", 4100, "現代"], ["電子工学", 4100, "現代"], ["弾道学", 4100, "現代"], ["内燃機関", 4100, "現代"], ["医薬品", 5100, "原子力時代"], ["原子理論", 5100, "原子力時代"], ["レーダー", 5100, "原子力時代"], ["連合部隊", 5100, "原子力時代"], ["生態学", 6400, "原子力時代"], ["核分裂反応", 6400, "原子力時代"], ["ロケット工学", 6400, "原子力時代"], ["コンピュータ", 6400, "原子力時代"], ["遠距離通信", 7700, "情報時代"], ["機動戦術", 7700, "情報時代"], ["先進弾道学", 7700, "情報時代"], ["人工衛星", 7700, "情報時代"], ["ロボット工学", 7700, "情報時代"], ["レーザー", 7700, "情報時代"], ["グローバル化", 8800, "情報時代"], ["素粒子物理学", 8800, "情報時代"], ["核融合反応", 8800, "情報時代"], ["ナノテクノロジー", 8800, "情報時代"], ["ステルス", 8800, "情報時代"], ["未来技術", 9500, "未来"]], "diff": {"Settler": 0.9, "Chieftain": 0.95, "Warlord": 1, "Prince": 1, "King": 1, "Emperor": 1, "Immortal": 1, "Deity": 1}, "speed": {"Quick": 0.67, "Standard": 1.0, "Epic": 1.5, "Marathon": 3.0}, "map": {"Tiny": [1, 0.05], "Small": [1, 0.05], "Medium": [1.1, 0.05], "Large": [1.2, 0.0375], "Huge": [1.3, 0.025]}};</script>
+<!-- /UNCIV-TECHCALC -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">TechManager.ktの式を使っている。研究コストを変える社会制度・遺産・文明の能力は含めていない。</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>時代別の全技術</h2></div>
 <!-- UNCIV-TECHS -->
 <h3 style="margin:22px 0 8px;">太古</h3>
 <div class="table-scroll"><table class="glossary"><thead><tr><th>技術</th><th>基本コスト</th><th>前提技術</th><th>解禁されるもの</th></tr></thead><tbody>
@@ -217,7 +237,7 @@
     <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">「*」は文明固有のユニット・建物・タイル整備。基本コストは難易度・ゲーム速度・マップサイズ・都市数を掛ける前の値。名称はゲームの公式日本語訳による。数値はゲーム本体のデータファイル（Unciv同梱の Civ V Gods &amp; Kings ルールセット）を、2026年10月2日時点のソースから読み取ったもの。アップデートやMODで変わることがある。</p>
   </section>
   <section style="padding-block:32px 0;">
-    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>技術コストの計算方法</h2></div>
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>技術コストの計算方法</h2></div>
     <div class="table-scroll">
       <table class="glossary">
         <thead><tr><th>要素</th><th>効果（TechManager.ktより）</th></tr></thead>
@@ -232,7 +252,7 @@
     </div>
   </section>
   <section style="padding-block:32px 0;">
-    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>FAQ</h2></div>
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>FAQ</h2></div>
     <div class="panel">
       <h3 style="font-size:.98rem;margin:0 0 6px;">ツリーの数値より研究が遅いのはなぜ？</h3>
       <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">マップサイズと都市数が技術コストを上げるため。大マップだけで20%増え、さらに1都市ごとに3.75%増える。</p>
@@ -269,5 +289,6 @@
 </footer>
 
 <script src="/assets/lang-switch.js"></script>
+<script src="/assets/games/unciv-tech-cost.js"></script>
 </body>
 </html>

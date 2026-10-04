@@ -719,6 +719,16 @@ def main():
             rows.append([f"<b>{v['name'] if lang == 'en' else VJ.get(v['name'], v['name'])}</b>", ul(ms_t)])
         return tbl(["Victory", "Milestones (in order)"] if lang == "en" else ["勝利", "達成条件（順番に）"], rows)
 
+    def tech_calc(lang):
+        tl = []
+        for c in techs:
+            for t in sorted(c["techs"], key=lambda t: t["row"]):
+                tl.append([t["name"] if lang == "en" else ja(t["name"]), t.get("cost", c["techCost"]), c["era"] if lang == "en" else ja(c["era"])])
+        cfg = {"techs": tl, "diff": {x["name"]: x.get("researchCostModifier", 1) for x in diffs},
+               "speed": {x["name"]: x.get("scienceCostModifier", 1) for x in speeds},
+               "map": {"Tiny": [1, 0.05], "Small": [1, 0.05], "Medium": [1.1, 0.05], "Large": [1.2, 0.0375], "Huge": [1.3, 0.025]}}
+        return f'<script>window.UNCIV_TECH_CFG = {json.dumps(cfg, ensure_ascii=False)};</script>'
+
     PAGES["uniq"] = PAGES["civs"]
     PAGES["policyai"] = PAGES["policies"]
     PAGES["policycalc"] = PAGES["policies"]
@@ -727,6 +737,7 @@ def main():
         PAGES[k] = PAGES["terrain"]
     PAGES["quests"] = PAGES["citystates"]
     PAGES["eras"] = PAGES["speeds"]
+    PAGES["techcalc"] = PAGES["techs"]
     PAGES["specialists"] = PAGES["greatpeople"]
     PAGES["gpsources"] = PAGES["greatpeople"]
     for key, fn in (("civs", civ_rows), ("units", unit_rows), ("uniq", uniq_rows), ("diff", diff_rows),
@@ -735,7 +746,7 @@ def main():
                     ("promotions", promo_rows), ("terrain", lambda l: terr_rows(l, ("Land", "Water"))), ("features", lambda l: terr_rows(l, ("TerrainFeature",))),
                     ("naturalwonders", lambda l: terr_rows(l, ("NaturalWonder",))), ("resources", res_rows), ("improvements", imp_rows),
                     ("citystates", cs_rows), ("quests", quest_rows), ("greatpeople", gp_rows), ("specialists", spec_rows), ("gpsources", gp_src_rows),
-                    ("growth", growth_rows), ("speeds", speed_rows), ("eras", era_rows), ("ruins", ruin_rows), ("victory", victory_rows)):
+                    ("growth", growth_rows), ("speeds", speed_rows), ("eras", era_rows), ("ruins", ruin_rows), ("victory", victory_rows), ("techcalc", tech_calc)):
         marker = "UNCIV-" + key.upper()
         for lang, rel in PAGES[key].items():
             p = os.path.join(ROOT, rel)

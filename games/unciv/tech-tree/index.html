@@ -104,7 +104,27 @@
     <div class="callout"><b>An analysis-based guide:</b> this guide is based on our analysis of Unciv's Techs data file and the tech cost formula in its source code. It describes what the data shows and is not a guarantee of results.</div>
   </section>
   <section style="padding-block:32px 0;">
-    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>Every Tech by Era</h2></div>
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>Research Cost Calculator</h2></div>
+    <div class="panel" id="tech-calc" >
+      <label>Technology<select id="tc-tech" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></select></label>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:12px;">
+        <label>Cities (not counting puppets)<input id="tc-cities" type="number" min="1" value="4" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+        <label>Major civs still in the game<input id="tc-civs" type="number" min="1" value="8" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+        <label>Civs you know that already have it<input id="tc-known" type="number" min="0" value="0" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+        <label>Your science per turn<input id="tc-sci" type="number" min="0" value="20" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></label>
+        <label>Difficulty<select id="tc-diff" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></select></label>
+        <label>Game speed<select id="tc-speed" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></select></label>
+        <label>Map size<select id="tc-map" style="width:100%;margin-top:4px;padding:6px 8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink);font:inherit;"></select></label>
+      </div>
+      <p style="margin:16px 0 0;font-size:1.05rem;">Research cost: <b id="tc-cost" class="tag-mono" style="font-size:1.4rem;">—</b> &nbsp; · &nbsp; Turns at your science: <b id="tc-turns" class="tag-mono" style="font-size:1.4rem;">—</b></p>
+    </div>
+<!-- UNCIV-TECHCALC -->
+<script>window.UNCIV_TECH_CFG = {"techs": [["Agriculture", 20, "Ancient era"], ["Pottery", 35, "Ancient era"], ["Animal Husbandry", 35, "Ancient era"], ["Archery", 35, "Ancient era"], ["Mining", 35, "Ancient era"], ["Sailing", 55, "Ancient era"], ["Calendar", 55, "Ancient era"], ["Writing", 55, "Ancient era"], ["Trapping", 55, "Ancient era"], ["The Wheel", 55, "Ancient era"], ["Masonry", 55, "Ancient era"], ["Bronze Working", 55, "Ancient era"], ["Optics", 85, "Classical era"], ["Horseback Riding", 105, "Classical era"], ["Mathematics", 105, "Classical era"], ["Construction", 105, "Classical era"], ["Philosophy", 175, "Classical era"], ["Drama and Poetry", 175, "Classical era"], ["Currency", 175, "Classical era"], ["Engineering", 175, "Classical era"], ["Iron Working", 175, "Classical era"], ["Theology", 275, "Medieval era"], ["Civil Service", 275, "Medieval era"], ["Guilds", 275, "Medieval era"], ["Metal Casting", 275, "Medieval era"], ["Compass", 375, "Medieval era"], ["Education", 485, "Medieval era"], ["Chivalry", 485, "Medieval era"], ["Machinery", 485, "Medieval era"], ["Physics", 485, "Medieval era"], ["Steel", 485, "Medieval era"], ["Astronomy", 780, "Renaissance era"], ["Acoustics", 780, "Renaissance era"], ["Banking", 780, "Renaissance era"], ["Printing Press", 780, "Renaissance era"], ["Gunpowder", 780, "Renaissance era"], ["Navigation", 1150, "Renaissance era"], ["Architecture", 1150, "Renaissance era"], ["Economics", 1150, "Renaissance era"], ["Metallurgy", 1150, "Renaissance era"], ["Chemistry", 1150, "Renaissance era"], ["Archaeology", 1600, "Industrial era"], ["Scientific Theory", 1600, "Industrial era"], ["Industrialization", 1600, "Industrial era"], ["Rifling", 1600, "Industrial era"], ["Military Science", 1600, "Industrial era"], ["Fertilizer", 1600, "Industrial era"], ["Biology", 2350, "Industrial era"], ["Electricity", 2350, "Industrial era"], ["Steam Power", 2350, "Industrial era"], ["Dynamite", 2350, "Industrial era"], ["Refrigeration", 3100, "Modern era"], ["Radio", 3100, "Modern era"], ["Replaceable Parts", 3100, "Modern era"], ["Flight", 3100, "Modern era"], ["Railroads", 3100, "Modern era"], ["Plastics", 4100, "Modern era"], ["Electronics", 4100, "Modern era"], ["Ballistics", 4100, "Modern era"], ["Combustion", 4100, "Modern era"], ["Pharmaceuticals", 5100, "Atomic era"], ["Atomic Theory", 5100, "Atomic era"], ["Radar", 5100, "Atomic era"], ["Combined Arms", 5100, "Atomic era"], ["Ecology", 6400, "Atomic era"], ["Nuclear Fission", 6400, "Atomic era"], ["Rocketry", 6400, "Atomic era"], ["Computers", 6400, "Atomic era"], ["Telecommunications", 7700, "Information era"], ["Mobile Tactics", 7700, "Information era"], ["Advanced Ballistics", 7700, "Information era"], ["Satellites", 7700, "Information era"], ["Robotics", 7700, "Information era"], ["Lasers", 7700, "Information era"], ["Globalization", 8800, "Information era"], ["Particle Physics", 8800, "Information era"], ["Nuclear Fusion", 8800, "Information era"], ["Nanotechnology", 8800, "Information era"], ["Stealth", 8800, "Information era"], ["Future Tech", 9500, "Future era"]], "diff": {"Settler": 0.9, "Chieftain": 0.95, "Warlord": 1, "Prince": 1, "King": 1, "Emperor": 1, "Immortal": 1, "Deity": 1}, "speed": {"Quick": 0.67, "Standard": 1.0, "Epic": 1.5, "Marathon": 3.0}, "map": {"Tiny": [1, 0.05], "Small": [1, 0.05], "Medium": [1.1, 0.05], "Large": [1.2, 0.0375], "Huge": [1.3, 0.025]}};</script>
+<!-- /UNCIV-TECHCALC -->
+    <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">Uses the game's formula from TechManager.kt. Policies, wonders and abilities that change research cost aren't included.</p>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>Every Tech by Era</h2></div>
 <!-- UNCIV-TECHS -->
 <h3 style="margin:22px 0 8px;">Ancient era</h3>
 <div class="table-scroll"><table class="glossary"><thead><tr><th>Tech</th><th>Base cost</th><th>Requires</th><th>Unlocks</th></tr></thead><tbody>
@@ -217,7 +237,7 @@
     <p style="color:var(--ink-dim);font-size:.9rem;margin:10px 0 0;">“*” marks a civilization's unique unit, building or improvement. Base cost is before difficulty, game speed, map size and city count. Data from the game's own files (Civ V: Gods &amp; Kings ruleset that ships with Unciv), read from the source at the commit of 2026-10-02. Updates and mods can change these numbers.</p>
   </section>
   <section style="padding-block:32px 0;">
-    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>How Tech Cost Is Calculated</h2></div>
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>How Tech Cost Is Calculated</h2></div>
     <div class="table-scroll">
       <table class="glossary">
         <thead><tr><th>Factor</th><th>Effect (from TechManager.kt)</th></tr></thead>
@@ -232,7 +252,7 @@
     </div>
   </section>
   <section style="padding-block:32px 0;">
-    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>FAQ</h2></div>
+    <div class="sec-head"><span class="sec-num tag-mono">05</span><h2>FAQ</h2></div>
     <div class="panel">
       <h3 style="font-size:.98rem;margin:0 0 6px;">Why is my research slower than the tree suggests?</h3>
       <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">Map size and city count both raise tech cost. A Large map alone adds 20%, and each city adds 3.75% there.</p>
@@ -268,5 +288,6 @@
 </footer>
 
 <script src="/assets/lang-switch.js"></script>
+<script src="/assets/games/unciv-tech-cost.js"></script>
 </body>
 </html>

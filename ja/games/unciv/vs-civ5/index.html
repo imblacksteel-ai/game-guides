@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DMV4KX041"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/^(www\.)?kouryakulab\.com$/.test(location.hostname)) gtag('config', 'G-2DMV4KX041');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2939651190150074" crossorigin="anonymous"></script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="available-langs" content="en,ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unciv（オープンソース版シヴィライゼーション5）とシヴィライゼーション5の違い。開発者が挙げる意図的な変更点とソースコードから、海軍ユニットの陸上攻撃、労働者、視界、イロコイ、戦闘の乱数をまとめた。">
+<title>Unciv とシヴィライゼーション5の違い</title>
+<link rel="stylesheet" href="/assets/games/unciv.css">
+<link rel="canonical" href="https://kouryakulab.com/ja/games/unciv/vs-civ5/">
+<link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/unciv/vs-civ5/">
+<link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/unciv/vs-civ5/">
+<link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/unciv/vs-civ5/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="攻略ラボ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Unciv とシヴィライゼーション5の違い">
+<meta property="og:description" content="Unciv（オープンソース版シヴィライゼーション5）とシヴィライゼーション5の違い。開発者が挙げる意図的な変更点とソースコードから、海軍ユニットの陸上攻撃、労働者、視界、イロコイ、戦闘の乱数をまとめた。">
+<meta property="og:url" content="https://kouryakulab.com/ja/games/unciv/vs-civ5/">
+<meta property="og:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unciv とシヴィライゼーション5の違い">
+<meta name="twitter:description" content="Unciv（オープンソース版シヴィライゼーション5）とシヴィライゼーション5の違い。開発者が挙げる意図的な変更点とソースコードから、海軍ユニットの陸上攻撃、労働者、視界、イロコイ、戦闘の乱数をまとめた。">
+<meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-unciv.png">
+<meta name="theme-color" content="#12414d">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Unciv とシヴィライゼーション5の違い",
+      "description": "Unciv（オープンソース版シヴィライゼーション5）とシヴィライゼーション5の違い。開発者が挙げる意図的な変更点とソースコードから、海軍ユニットの陸上攻撃、労働者、視界、イロコイ、戦闘の乱数をまとめた。",
+      "inLanguage": "ja",
+      "url": "https://kouryakulab.com/ja/games/unciv/vs-civ5/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "攻略ラボ",
+        "url": "https://kouryakulab.com/ja/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "攻略ラボ",
+          "item": "https://kouryakulab.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unciv とシヴィライゼーション5の違い",
+          "item": "https://kouryakulab.com/ja/games/unciv/vs-civ5/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <a class="back-link" href="/ja/games/unciv/"><span class="arrow">←</span> Unciv 攻略ガイド</a>
+    <div>
+      <span class="eyebrow">UNCIV ・ シヴィ5との違い</span>
+      <h1>Unciv とシヴィライゼーション5の違い</h1>
+      <p class="sub">開発者が「意図的」とする変更点と、コードから分かる違い。シヴィ5から来た人向け。</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <div class="tabs-links"></div>
+    <nav id="lang-switch" aria-label="言語"></nav>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-block:36px 60px;">
+  <section style="padding-block:0;">
+    <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>結論</h2></div>
+    <div class="panel">
+      <p style="margin:0 0 8px;">Uncivはシヴィライゼーション5「神々と王」にかなり忠実で、数値の多くもシヴィ5の資料から取られている。ただ、開発者は<b>意図的に変えた点</b>をいくつか挙げていて、コードからも違いが分かる（戦闘の乱数が固定など）。</p>
+      <p style="margin:0;">シヴィ5から来た人のプレイに一番影響するのは、<b>白兵の海軍ユニットが沿岸の陸上ユニットを攻撃できる</b>こと。</p>
+    </div>
+    <div class="callout"><b>分析に基づく記事です：</b>この記事はUncivの公式ドキュメント（シヴィ5からの意図的な変更点）とソースコードを分析してまとめたもの。データ上の傾向を示すもので、結果を保証するものではない。</div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">02</span><h2>確認できた違い</h2></div>
+    <div class="table-scroll">
+      <table class="glossary">
+        <thead><tr><th>違い</th><th>Uncivでの仕様</th><th>出典</th></tr></thead>
+        <tbody>
+        <tr><td>白兵の海軍ユニットと陸上ユニット</td><td>白兵の海軍ユニットが、沿岸の陸上ユニットを攻撃できる。シヴィ5では白兵の海軍ユニットが弱すぎるとされたため（Discordの投票の結果）。</td><td>Unciv公式ドキュメント（意図的な変更点）</td></tr>
+        <tr><td>労働者</td><td>労働者は到着したターンにタイル整備を完了せず、命令を受けて作業する。途中で変更できる。</td><td>Unciv公式ドキュメント</td></tr>
+        <tr><td>視界</td><td>森林とジャングルは、丘陵と同じく視界の1タイル外まで見える。シヴィ5の挙動はバグとみなしている。</td><td>Unciv公式ドキュメント</td></tr>
+        <tr><td>イロコイ（偉大な出征路）</td><td>森林とジャングルは道として扱われるが、都市の接続による鉄道の生産ボーナスは得られない。</td><td>Unciv公式ドキュメント</td></tr>
+        <tr><td>戦闘の乱数</td><td>戦闘ダメージの乱数はターンとタイルで固定され、ロードし直しても結果は変わらない。</td><td>BattleDamage.kt</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">03</span><h2>開発者の基本方針</h2></div>
+    <div class="panel">
+      <ul class="exped-notes">
+        <li><b>「AIは勝つためにプレイする」。</b>プロジェクトの基本方針では、AIは人間の対戦相手のようにプレイすべきとされ、あなたの軍事力が弱ければ攻めてくる。</li>
+        <li><b>組み合わせによるMOD。</b>効果（unique）は条件と組み合わせられるように設計されていて、MODで自由に混ぜられる。ゲーム内の効果文が部品のような書き方なのはこのため。</li>
+      </ul>
+    </div>
+  </section>
+  <section style="padding-block:32px 0;">
+    <div class="sec-head"><span class="sec-num tag-mono">04</span><h2>FAQ</h2></div>
+    <div class="panel">
+      <h3 style="font-size:.98rem;margin:0 0 6px;">シヴィ5の攻略情報はUncivで使える？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">戦略面ではおおむね使えるが、数値はUncivのデータで確認しよう。このサイトの表はUncivのデータから読み取っている。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">「すばらしき新世界」の内容は入っている？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">同梱のルールセットはシヴィ5のバニラと「神々と王」。それ以外の内容はMODで追加する。</p>
+      <h3 style="font-size:.98rem;margin:0 0 6px;">AIが好戦的なのはなぜ？</h3>
+      <p style="color:var(--ink-dim);font-size:.93rem;margin:0 0 14px;">意図的なもの。開発者はAIが勝つためにプレイすること（弱い隣国を攻めることも含む）を目指している。</p>
+    </div>
+  </section>
+
+  <div class="more-guides" style="border-bottom:none;">
+    <h3>続けて読む</h3>
+    <div class="more-guides-links">
+      <a href="/ja/games/unciv/">Unciv 攻略ガイド</a>
+      <a href="/ja/games/unciv/combat/">戦闘の仕組み</a>
+      <a href="/ja/games/unciv/civilizations/">文明一覧</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">本ページは非公式のファンメイドで、分析に基づく記事です。結果を保証するものではなく、ゲームのアップデートで内容が変わる可能性があります。</div>
+    <div class="sources">
+      情報源：
+      <a href="https://github.com/yairm210/Unciv" target="_blank" rel="noopener">Unciv ソースコード（yairm210/Unciv、MPL-2.0）</a>
+      <a href="https://github.com/yairm210/Unciv/tree/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/Civ%20V%20-%20Gods%20%26%20Kings" target="_blank" rel="noopener">Unciv データファイル：Civ V Gods & Kings ルールセット（2026-10-02 時点）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/android/assets/jsons/translations/Japanese.properties" target="_blank" rel="noopener">Unciv 公式日本語訳ファイル（Japanese.properties）</a>
+      <a href="https://github.com/yairm210/Unciv/blob/31524beafbfdbcc6e07b5ca54d0b28fbe361e0dd/docs/Other/Intentional-departures-from-Civ-V.md" target="_blank" rel="noopener">Unciv公式ドキュメント：Intentional departures from Civ V</a>
+    </div>
+  </div>
+  <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>
+</footer>
+
+<script src="/assets/lang-switch.js"></script>
+</body>
+</html>
