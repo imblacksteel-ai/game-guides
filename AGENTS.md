@@ -50,6 +50,13 @@ CNAME, robots.txt, sitemap.xml       ドメイン・SEO設定
 - 書き出した後は `python3 scripts/seo_inject.py` → `python3 scripts/set_indexing.py` の順に実行する。
 - `.steps li` は横並び（flex）なので、本文に `<b>` などのタグを含む場合は `<li><span class="n">1</span><span>本文</span></li>` と本文を `<span>` で包む（包まないと太字部分が別の列に分かれて崩れる）。
 
+## 内部リンク・更新日・フォント（2026/10 のアクセス分析で追加）
+
+- **ページを追加・更新したら最後に必ず：** `python3 scripts/update_internal_links.py`（各記事の末尾に同じゲームの記事一覧、トップページに新着12件）→ コミット → `python3 scripts/update_dates.py`（sitemap の `<lastmod>` と JSON-LD の `datePublished`/`dateModified` を git の日付から）→ もう一度コミット。update_dates は直前のコミットまでの履歴を見るので、先にコミットしてから実行する。
+- **フォント：** ゲームCSSから `@import` を外し、各HTMLが直接読み込む。英語ページ（ルート）は `fonts-latin.css`（Space Grotesk・JetBrains Mono のみ、約8KB）、日本語など他言語は `fonts.css`（約450KB、gzip 118KB）。`head_from` は同じ言語の既存ページの head を流用するので、新ページは自動で正しい方を読む。英語ページの本文は日本語フォントを読まずシステムフォントで表示される（意図どおり）。
+- `404.html`（英日併記・noindex）を置いている。
+- トップページのタイトルは対応ゲームを並べた形（「Kouryaku Lab: Data-Based Game Guides & Calculators (KanColle, Unciv, Endless Sky…)」）。ゲームを追加したら説明文とツールのカードも更新する。
+
 ## SEO設定（実装済み・新ページにも自動適用される）
 
 - **hreflang**：各ページの`<head>`に8言語+x-defaultの`<link rel="alternate" hreflang="...">`を設置済み。新ページも手順5参照。

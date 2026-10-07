@@ -14,8 +14,9 @@
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="description" content="スマホゲームの攻略まとめと、面倒な計算を肩代わりするツールを一箇所に。">
-<title>攻略ラボ</title>
+<meta name="description" content="ゲームのデータやソースコードから作った攻略記事と計算ツール。艦これ・波乱水世界・Unciv・Endless Sky・Shattered Pixel Dungeon・Mindustry など。">
+<title>攻略ラボ：データで読み解くゲーム攻略と計算ツール（艦これ・波乱水世界・Unciv など）</title>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
 <link rel="stylesheet" href="/assets/site.css?v=2">
 <link rel="canonical" href="https://kouryakulab.com/ja/">
 <link rel="alternate" hreflang="en" href="https://kouryakulab.com/">
@@ -25,15 +26,15 @@
 <meta property="og:site_name" content="攻略ラボ">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:locale:alternate" content="en_US">
-<meta property="og:title" content="攻略ラボ">
-<meta property="og:description" content="スマホゲームの攻略まとめと、面倒な計算を肩代わりするツールを一箇所に。">
+<meta property="og:title" content="攻略ラボ：データで読み解くゲーム攻略と計算ツール（艦これ・波乱水世界・Unciv など）">
+<meta property="og:description" content="ゲームのデータやソースコードから作った攻略記事と計算ツール。艦これ・波乱水世界・Unciv・Endless Sky・Shattered Pixel Dungeon・Mindustry など。">
 <meta property="og:url" content="https://kouryakulab.com/ja/">
 <meta property="og:image" content="https://kouryakulab.com/assets/og/og-hub.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="攻略ラボ">
-<meta name="twitter:description" content="スマホゲームの攻略まとめと、面倒な計算を肩代わりするツールを一箇所に。">
+<meta name="twitter:title" content="攻略ラボ：データで読み解くゲーム攻略と計算ツール（艦これ・波乱水世界・Unciv など）">
+<meta name="twitter:description" content="ゲームのデータやソースコードから作った攻略記事と計算ツール。艦これ・波乱水世界・Unciv・Endless Sky・Shattered Pixel Dungeon・Mindustry など。">
 <meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-hub.png">
 <meta name="theme-color" content="#2f6f4f">
 <script type="application/ld+json">
@@ -43,7 +44,7 @@
   "name": "攻略ラボ",
   "url": "https://kouryakulab.com/ja/",
   "inLanguage": "ja",
-  "description": "スマホゲームの攻略まとめと、面倒な計算を肩代わりするツールを一箇所に。"
+  "description": "ゲームのデータやソースコードから作った攻略記事と計算ツール。艦これ・波乱水世界・Unciv・Endless Sky・Shattered Pixel Dungeon・Mindustry など。"
 }
 </script>
 </head>
@@ -54,7 +55,7 @@
     <div class="brand-block">
       <span class="brand">Game Guides &amp; Tools</span>
       <h1>攻略ラボ</h1>
-      <p class="lead">スマホゲームの攻略まとめと、面倒な計算を肩代わりするツールを一箇所に。</p>
+      <p class="lead">ゲームのデータやソースコードから作った攻略記事と計算ツール。艦これ・波乱水世界・Unciv・Endless Sky・Shattered Pixel Dungeon・Mindustry など。</p>
     </div>
     <nav id="lang-switch" aria-label="言語"></nav>
   </div>
@@ -97,6 +98,21 @@
       <span class="tag">学マス</span>
       <h3>評価値計算機</h3>
       <p>A+・Sなど各評価に必要な最終試験スコアを計算。レジェンドにも対応。</p>
+    </a>
+    <a class="card" href="/ja/games/unciv/combat/">
+      <span class="tag">Unciv</span>
+      <h3>戦闘ダメージ計算機</h3>
+      <p>Uncivのコードにある式で、与える・受けるダメージと撃破できるかを計算。</p>
+    </a>
+    <a class="card" href="/ja/games/unciv/policies/">
+      <span class="tag">Unciv</span>
+      <h3>社会制度コスト計算機</h3>
+      <p>都市数・難易度・速度・マップサイズから次の社会制度の文化力を計算。</p>
+    </a>
+    <a class="card" href="/ja/games/unciv/tech-tree/">
+      <span class="tag">Unciv</span>
+      <h3>研究コスト計算機</h3>
+      <p>技術のコストと研究ターン数を、都市数やマップサイズの隠れ補正込みで計算。</p>
     </a>
     <a class="card" href="/ja/games/mindustry/production-calculator/">
       <span class="tag">Mindustry</span>
@@ -153,6 +169,71 @@
       <p>最初の船、依頼と交易の本当の報酬、全船・全武器。オープンソースのゲームのデータとコードから。</p>
     </a>
   </div>
+<!-- LATEST:START -->
+  <h2 class="section-title" style="margin-top:34px;">新着記事</h2>
+  <div class="grid">
+    <a class="card" href="/ja/games/shattered-pixel-dungeon/weapons/">
+      <span class="tag">Shattered Pixel Dungeon</span>
+      <h3>全近接武器</h3>
+      <p>2026-10-07</p>
+    </a>
+    <a class="card" href="/ja/games/unciv/wonders/">
+      <span class="tag">Unciv</span>
+      <h3>全世界遺産と国家遺産</h3>
+      <p>2026-10-04</p>
+    </a>
+    <a class="card" href="/ja/games/unciv/vs-civ5/">
+      <span class="tag">Unciv</span>
+      <h3>Unciv とシヴィライゼーション5の違い</h3>
+      <p>2026-10-04</p>
+    </a>
+    <a class="card" href="/ja/games/unciv/victory/">
+      <span class="tag">Unciv</span>
+      <h3>勝利条件</h3>
+      <p>2026-10-04</p>
+    </a>
+    <a class="card" href="/ja/games/unciv/units/">
+      <span class="tag">Unciv</span>
+      <h3>時代別の全ユニット性能</h3>
+      <p>2026-10-04</p>
+    </a>
+    <a class="card" href="/ja/games/unciv/terrain/">
+      <span class="tag">Unciv</span>
+      <h3>地形・資源・タイル整備</h3>
+      <p>2026-10-04</p>
+    </a>
+    <a class="card" href="/ja/games/unciv/tech-tree/">
+      <span class="tag">Unciv</span>
+      <h3>技術ツリー：全技術と解禁内容</h3>
+      <p>2026-10-04</p>
+    </a>
+    <a class="card" href="/ja/games/unciv/promotions/">
+      <span class="tag">Unciv</span>
+      <h3>全昇進の効果</h3>
+      <p>2026-10-04</p>
+    </a>
+    <a class="card" href="/ja/games/unciv/policies/">
+      <span class="tag">Unciv</span>
+      <h3>社会制度とコスト計算</h3>
+      <p>2026-10-04</p>
+    </a>
+    <a class="card" href="/ja/games/unciv/opening/">
+      <span class="tag">Unciv</span>
+      <h3>序盤の進め方：最初のターン</h3>
+      <p>2026-10-04</p>
+    </a>
+    <a class="card" href="/ja/games/unciv/multiplayer/">
+      <span class="tag">Unciv</span>
+      <h3>マルチプレイのやり方</h3>
+      <p>2026-10-04</p>
+    </a>
+    <a class="card" href="/ja/games/unciv/mods/">
+      <span class="tag">Unciv</span>
+      <h3>MODの入れ方と人気MOD</h3>
+      <p>2026-10-04</p>
+    </a>
+  </div>
+<!-- LATEST:END -->
 </main>
 
 <footer>

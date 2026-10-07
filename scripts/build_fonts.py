@@ -81,6 +81,10 @@ def main():
               "   see OFL.txt in each font directory. */\n")
     with open(os.path.join(OUT, "fonts.css"), "w") as f:
         f.write(header + "\n".join(css_parts))
+    # English pages load only the Latin families (fonts-latin.css); other languages load fonts.css.
+    # Each HTML page links its file directly (no @import in the game CSS, to avoid a render-blocking chain).
+    with open(os.path.join(OUT, "fonts-latin.css"), "w") as f:
+        f.write(header + "\n".join(p for p in css_parts if "Zen Kaku" not in p))
 
     total = sum(os.path.getsize(p) for p in unique.values())
     print(f"{len(unique)} font files, {total / 1024 / 1024:.1f} MB -> {OUT}")
