@@ -1,6 +1,6 @@
 {
   "_note": "波乱水世界（日本版）の公開Tier表の集計元。手で転記したデータ。評価を見直したらここを更新して python3 scripts/build_www_tier.py を実行する。配信前の暫定表・中国/台湾サーバー基準の表は除外（excluded に理由を記録）。",
-  "checked": "2026-10-02",
+  "checked": "2026-10-07",
   "sources": [
     {"id": "pokemonza", "name": "ポケモナンザ / GameUpX", "date": "2026-09-02",
      "urls": ["https://pokemonza.hatenablog.jp/entry/2026/09/02/104425", "https://gameupx.com/611/"],
@@ -13,7 +13,7 @@
      "urls": ["https://pekuo-games.com/haranmizusekai-saikyo/"],
      "note": "5キャラのみ掲載",
      "tiers": {"SS": ["bob", "riker", "rex", "samuel"], "S": ["becky"]}},
-    {"id": "moriyama", "name": "もりやまブログ", "date": "2026-09-07",
+    {"id": "moriyama", "name": "もりやまブログ", "date": "2026-09-09",
      "urls": ["https://moriyama-blog.com/wildwaterworld-ranking/"],
      "tiers": {"SS": ["silas", "bob", "samuel", "zoey"], "S": ["kang", "cole", "curtis", "lee", "oliver", "jack", "diana"], "A": ["becky", "ken", "rex", "snow", "ray", "riker", "johnny", "skadi", "kyle", "mia"]}},
     {"id": "jpgamex", "name": "JPGamex", "date": "2026-09-23",
