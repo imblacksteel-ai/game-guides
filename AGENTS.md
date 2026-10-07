@@ -52,7 +52,7 @@ CNAME, robots.txt, sitemap.xml       ドメイン・SEO設定
 
 ## 内部リンク・更新日・フォント（2026/10 のアクセス分析で追加）
 
-- **ページを追加・更新したら最後に必ず：** `python3 scripts/update_internal_links.py`（各記事の末尾に同じゲームの記事一覧、トップページに新着12件）→ コミット → `python3 scripts/update_dates.py`（sitemap の `<lastmod>` と JSON-LD の `datePublished`/`dateModified` を git の日付から）→ もう一度コミット。update_dates は直前のコミットまでの履歴を見るので、先にコミットしてから実行する。
+- **ページを追加・更新したら最後に必ず：** `python3 scripts/update_internal_links.py`（各記事の末尾に同じゲームの記事一覧、トップページに新着12件）→ コミット → `python3 scripts/update_dates.py`（sitemap の `<lastmod>` と JSON-LD の `datePublished`/`dateModified` を git の日付から）→ もう一度コミット。update_dates は直前のコミットまでの履歴を見るので、先にコミットしてから実行する。 push して GitHub Pages の反映を確認したら `python3 scripts/indexnow.py --since <今日の日付>` で更新URLを IndexNow（Bing・Yandex 等）に通知する（キーは直下の `55afda98e6a9307967ba7c1b5731d9cf.txt`。消さない）。2026/10/07 に全180URLを送信済み（HTTP 202）。Google には効かない（Google は sitemap と Search Console）。
 - **フォント：** ゲームCSSから `@import` を外し、各HTMLが直接読み込む。英語ページ（ルート）は `fonts-latin.css`（Space Grotesk・JetBrains Mono のみ、約8KB）、日本語など他言語は `fonts.css`（約450KB、gzip 118KB）。`head_from` は同じ言語の既存ページの head を流用するので、新ページは自動で正しい方を読む。英語ページの本文は日本語フォントを読まずシステムフォントで表示される（意図どおり）。
 - `404.html`（英日併記・noindex）を置いている。
 - トップページのタイトルは対応ゲームを並べた形（「Kouryaku Lab: Data-Based Game Guides & Calculators (KanColle, Unciv, Endless Sky…)」）。ゲームを追加したら説明文とツールのカードも更新する。
