@@ -180,11 +180,15 @@ def render(tag, trinkets):
             n = len(t["stats"])
             for i, s in enumerate(t["stats"]):
                 vals = "".join(f'<td class="tag-mono">{fmt(v)}{s["unit"] if s["unit"] != "×" else ""}{"×" if s["unit"] == "×" else ""}</td>' for v in s["values"])
-                first = (f'<td rowspan="{n}">{e(nm)}<br><span class="romaji">{e(sub)}</span>'
+                slug = re.sub(r"[^a-z0-9]+", "-", t["name_en"].lower()).strip("-")
+                first = (f'<td rowspan="{n}" id="t-{slug}">{e(nm)}<br><span class="romaji">{e(sub)}</span>'
                          f'<br><span class="build-note">{e(t["note_" + lang])}</span></td>') if i == 0 else ""
                 last = f'<td class="tag-mono" rowspan="{n}">{costs}</td>' if i == 0 else ""
                 rows.append(f"<tr>{first}<td>{e(s[lang])}</td>{vals}{last}</tr>")
-        table = (f'<table class="glossary spd-table">\n<thead><tr>{"".join(f"<th>{h}</th>" for h in head[lang])}</tr></thead>\n<tbody>\n'
+        jump = ("Jump to: " if lang == "en" else "移動：") + " · ".join(
+            f'<a href="#t-{re.sub(r"[^a-z0-9]+", "-", t["name_en"].lower()).strip("-")}">{e(cap(t["name_en"]) if lang == "en" else t["name_ja"])}</a>' for t in trinkets)
+        table = (f'<p style="font-size:.88rem;line-height:1.9;margin:0 0 12px;">{jump}</p>\n'
+                 f'<table class="glossary spd-table">\n<thead><tr>{"".join(f"<th>{h}</th>" for h in head[lang])}</tr></thead>\n<tbody>\n'
                  + "\n".join(rows) + "\n</tbody>\n</table>")
         s = open(path, encoding="utf-8").read()
         s, k = re.subn(r"(<!-- SPD-TRINKETS:START -->\n).*?(<!-- SPD-TRINKETS:END -->)",

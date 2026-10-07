@@ -15,8 +15,8 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="available-langs" content="en,ja">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Shattered Pixel Dungeonの全トリンケットの+0・+1・+2・+3での効果量と、強化に必要な錬金エネルギーをゲームのソースコードから計算した一覧。">
-<title>Shattered Pixel Dungeon トリンケット全種の効果一覧（+0〜+3）</title>
+<meta name="description" content="Shattered Pixel Dungeonの全トリンケットの+0〜+3での効果量と強化に必要な錬金エネルギーを、ゲームのソースコードから計算した一覧。フェレットの毛束・塩の立方体・イモリの眼など全17種。">
+<title>Shattered Pixel Dungeon トリンケット全種の効果一覧（+0〜+3・フェレットの毛束・塩の立方体など）</title>
 <link rel="stylesheet" href="/assets/games/spd.css">
 <link rel="canonical" href="https://kouryakulab.com/ja/games/shattered-pixel-dungeon/trinkets/">
 <link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/shattered-pixel-dungeon/trinkets/">
@@ -26,15 +26,15 @@
 <meta property="og:site_name" content="攻略ラボ">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:locale:alternate" content="en_US">
-<meta property="og:title" content="Shattered Pixel Dungeon トリンケット全種の効果一覧（+0〜+3）">
-<meta property="og:description" content="Shattered Pixel Dungeonの全トリンケットの+0・+1・+2・+3での効果量と、強化に必要な錬金エネルギーをゲームのソースコードから計算した一覧。">
+<meta property="og:title" content="Shattered Pixel Dungeon トリンケット全種の効果一覧（+0〜+3・フェレットの毛束・塩の立方体など）">
+<meta property="og:description" content="Shattered Pixel Dungeonの全トリンケットの+0〜+3での効果量と強化に必要な錬金エネルギーを、ゲームのソースコードから計算した一覧。フェレットの毛束・塩の立方体・イモリの眼など全17種。">
 <meta property="og:url" content="https://kouryakulab.com/ja/games/shattered-pixel-dungeon/trinkets/">
 <meta property="og:image" content="https://kouryakulab.com/assets/og/og-shattered-pixel-dungeon.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Shattered Pixel Dungeon トリンケット全種の効果一覧（+0〜+3）">
-<meta name="twitter:description" content="Shattered Pixel Dungeonの全トリンケットの+0・+1・+2・+3での効果量と、強化に必要な錬金エネルギーをゲームのソースコードから計算した一覧。">
+<meta name="twitter:title" content="Shattered Pixel Dungeon トリンケット全種の効果一覧（+0〜+3・フェレットの毛束・塩の立方体など）">
+<meta name="twitter:description" content="Shattered Pixel Dungeonの全トリンケットの+0〜+3での効果量と強化に必要な錬金エネルギーを、ゲームのソースコードから計算した一覧。フェレットの毛束・塩の立方体・イモリの眼など全17種。">
 <meta name="twitter:image" content="https://kouryakulab.com/assets/og/og-shattered-pixel-dungeon.png">
 <meta name="theme-color" content="#12414d">
 <script type="application/ld+json">
@@ -43,8 +43,8 @@
   "@graph": [
     {
       "@type": "Article",
-      "headline": "Shattered Pixel Dungeon トリンケット全種の効果一覧（+0〜+3）",
-      "description": "Shattered Pixel Dungeonの全トリンケットの+0・+1・+2・+3での効果量と、強化に必要な錬金エネルギーをゲームのソースコードから計算した一覧。",
+      "headline": "Shattered Pixel Dungeon トリンケット全種の効果一覧（+0〜+3・フェレットの毛束・塩の立方体など）",
+      "description": "Shattered Pixel Dungeonの全トリンケットの+0〜+3での効果量と強化に必要な錬金エネルギーを、ゲームのソースコードから計算した一覧。フェレットの毛束・塩の立方体・イモリの眼など全17種。",
       "inLanguage": "ja",
       "url": "https://kouryakulab.com/ja/games/shattered-pixel-dungeon/trinkets/",
       "isPartOf": {
@@ -65,7 +65,7 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Shattered Pixel Dungeon トリンケット全種の効果一覧（+0〜+3）",
+          "name": "Shattered Pixel Dungeon トリンケット全種の効果一覧（+0〜+3・フェレットの毛束・塩の立方体など）",
           "item": "https://kouryakulab.com/ja/games/shattered-pixel-dungeon/trinkets/"
         }
       ]
@@ -106,37 +106,38 @@
 
   <section id="trinkets" style="padding-block:32px 0;">
     <div class="sec-head"><span class="sec-num tag-mono">01</span><h2>全トリンケット</h2></div>
-    <p class="sec-desc">強化段階ごとの効果と、各強化（+0→+1、+1→+2、+2→+3）に必要な錬金エネルギー。データは<span id="spd-version">v4.0.0</span>。</p>
+    <p class="sec-desc">強化段階ごとの効果と、各強化（+0→+1、+1→+2、+2→+3）に必要な錬金エネルギー。データは<span id="spd-version">v4.0.1</span>。</p>
     <div class="panel table-scroll">
 <!-- SPD-TRINKETS:START -->
+<p style="font-size:.88rem;line-height:1.9;margin:0 0 12px;">移動：<a href="#t-chaotic-censer">混沌の香炉</a> · <a href="#t-cracked-spyglass">割れた小型望遠鏡</a> · <a href="#t-dimensional-sundial">次元の日時計</a> · <a href="#t-exotic-crystals">奇抜な結晶</a> · <a href="#t-eye-of-newt">イモリの眼</a> · <a href="#t-ferret-tuft">フェレットの毛束</a> · <a href="#t-mimic-tooth">ミミックの牙</a> · <a href="#t-mossy-clump">苔の塊</a> · <a href="#t-parchment-scrap">羊皮紙の断片</a> · <a href="#t-petrified-seed">種の化石</a> · <a href="#t-rat-skull">鼠の頭蓋骨</a> · <a href="#t-salt-cube">塩の立方体</a> · <a href="#t-shard-of-oblivion">忘却の欠片</a> · <a href="#t-thirteen-leaf-clover">十三葉のクローバー</a> · <a href="#t-trap-mechanism">罠の機構</a> · <a href="#t-vial-of-blood">血の小瓶</a> · <a href="#t-wondrous-resin">不思議な樹脂</a></p>
 <table class="glossary spd-table">
 <thead><tr><th>トリンケット</th><th>効果</th><th>+0</th><th>+1</th><th>+2</th><th>+3</th><th>強化に必要なエネルギー</th></tr></thead>
 <tbody>
-<tr><td rowspan="1">混沌の香炉<br><span class="romaji">Chaotic Censer</span><br><span class="build-note">敵の近くに定期的に有害なガスを発生させる。</span></td><td>約Nターンごとに敵の近くにガス</td><td class="tag-mono">300</td><td class="tag-mono">150</td><td class="tag-mono">100</td><td class="tag-mono">75</td><td class="tag-mono" rowspan="1">6 → 8 → 10</td></tr>
-<tr><td rowspan="1">割れた小型望遠鏡<br><span class="romaji">Cracked Spyglass</span><br><span class="build-note">ボス以外の階層に隠しアイテムを追加（100%超は1個確定＋2個目の確率）。</span></td><td>階層ごとに隠しアイテムが増える確率</td><td class="tag-mono">37.5%</td><td class="tag-mono">75%</td><td class="tag-mono">112.5%</td><td class="tag-mono">150%</td><td class="tag-mono" rowspan="1">6 → 8 → 10</td></tr>
-<tr><td rowspan="2">次元の日時計<br><span class="romaji">Dimensional Sundial</span><br><span class="build-note">現実の時刻を使う：8時〜20時は敵が減り、夜は増える。</span></td><td>昼の敵出現の減少</td><td class="tag-mono">5%</td><td class="tag-mono">10%</td><td class="tag-mono">15%</td><td class="tag-mono">20%</td><td class="tag-mono" rowspan="2">6 → 8 → 10</td></tr>
+<tr><td rowspan="1" id="t-chaotic-censer">混沌の香炉<br><span class="romaji">Chaotic Censer</span><br><span class="build-note">敵の近くに定期的に有害なガスを発生させる。</span></td><td>約Nターンごとに敵の近くにガス</td><td class="tag-mono">300</td><td class="tag-mono">150</td><td class="tag-mono">100</td><td class="tag-mono">75</td><td class="tag-mono" rowspan="1">6 → 8 → 10</td></tr>
+<tr><td rowspan="1" id="t-cracked-spyglass">割れた小型望遠鏡<br><span class="romaji">Cracked Spyglass</span><br><span class="build-note">ボス以外の階層に隠しアイテムを追加（100%超は1個確定＋2個目の確率）。</span></td><td>階層ごとに隠しアイテムが増える確率</td><td class="tag-mono">37.5%</td><td class="tag-mono">75%</td><td class="tag-mono">112.5%</td><td class="tag-mono">150%</td><td class="tag-mono" rowspan="1">6 → 8 → 10</td></tr>
+<tr><td rowspan="2" id="t-dimensional-sundial">次元の日時計<br><span class="romaji">Dimensional Sundial</span><br><span class="build-note">現実の時刻を使う：8時〜20時は敵が減り、夜は増える。</span></td><td>昼の敵出現の減少</td><td class="tag-mono">5%</td><td class="tag-mono">10%</td><td class="tag-mono">15%</td><td class="tag-mono">20%</td><td class="tag-mono" rowspan="2">6 → 8 → 10</td></tr>
 <tr><td>夜の敵出現の増加</td><td class="tag-mono">25%</td><td class="tag-mono">50%</td><td class="tag-mono">75%</td><td class="tag-mono">100%</td></tr>
-<tr><td rowspan="1">奇抜な結晶<br><span class="romaji">Exotic Crystals</span><br><span class="build-note">ポーション・巻物の一部をエキゾチック版に置き換える。</span></td><td>ポーション・巻物がエキゾチックになる割合</td><td class="tag-mono">20%</td><td class="tag-mono">40%</td><td class="tag-mono">60%</td><td class="tag-mono">80%</td><td class="tag-mono" rowspan="1">6 → 8 → 10</td></tr>
-<tr><td rowspan="2">イモリの眼<br><span class="romaji">Eye of Newt</span><br><span class="build-note">視界は狭くなるが、近くの敵を壁越しに感知できる。</span></td><td>視界の縮小</td><td class="tag-mono">12.5%</td><td class="tag-mono">25%</td><td class="tag-mono">37.5%</td><td class="tag-mono">50%</td><td class="tag-mono" rowspan="2">6 → 8 → 10</td></tr>
+<tr><td rowspan="1" id="t-exotic-crystals">奇抜な結晶<br><span class="romaji">Exotic Crystals</span><br><span class="build-note">ポーション・巻物の一部をエキゾチック版に置き換える。</span></td><td>ポーション・巻物がエキゾチックになる割合</td><td class="tag-mono">20%</td><td class="tag-mono">40%</td><td class="tag-mono">60%</td><td class="tag-mono">80%</td><td class="tag-mono" rowspan="1">6 → 8 → 10</td></tr>
+<tr><td rowspan="2" id="t-eye-of-newt">イモリの眼<br><span class="romaji">Eye of Newt</span><br><span class="build-note">視界は狭くなるが、近くの敵を壁越しに感知できる。</span></td><td>視界の縮小</td><td class="tag-mono">12.5%</td><td class="tag-mono">25%</td><td class="tag-mono">37.5%</td><td class="tag-mono">50%</td><td class="tag-mono" rowspan="2">6 → 8 → 10</td></tr>
 <tr><td>敵を透視できる距離（タイル）</td><td class="tag-mono">2</td><td class="tag-mono">3</td><td class="tag-mono">4</td><td class="tag-mono">5</td></tr>
-<tr><td rowspan="1">フェレットの毛束<br><span class="romaji">Ferret Tuft</span><br><span class="build-note">自分にも敵にも回避を上げる。</span></td><td>全キャラクターの回避</td><td class="tag-mono">12.5%</td><td class="tag-mono">25%</td><td class="tag-mono">37.5%</td><td class="tag-mono">50%</td><td class="tag-mono" rowspan="1">6 → 8 → 10</td></tr>
-<tr><td rowspan="2">ミミックの牙<br><span class="romaji">Mimic Tooth</span><br><span class="build-note">ミミックが増えて見破りにくくなるが、ドロップも増える。</span></td><td>ミミックの出現</td><td class="tag-mono">1.5×</td><td class="tag-mono">2×</td><td class="tag-mono">2.5×</td><td class="tag-mono">3×</td><td class="tag-mono" rowspan="2">6 → 8 → 10</td></tr>
+<tr><td rowspan="1" id="t-ferret-tuft">フェレットの毛束<br><span class="romaji">Ferret Tuft</span><br><span class="build-note">自分にも敵にも回避を上げる。</span></td><td>全キャラクターの回避</td><td class="tag-mono">12.5%</td><td class="tag-mono">25%</td><td class="tag-mono">37.5%</td><td class="tag-mono">50%</td><td class="tag-mono" rowspan="1">6 → 8 → 10</td></tr>
+<tr><td rowspan="2" id="t-mimic-tooth">ミミックの牙<br><span class="romaji">Mimic Tooth</span><br><span class="build-note">ミミックが増えて見破りにくくなるが、ドロップも増える。</span></td><td>ミミックの出現</td><td class="tag-mono">1.5×</td><td class="tag-mono">2×</td><td class="tag-mono">2.5×</td><td class="tag-mono">3×</td><td class="tag-mono" rowspan="2">6 → 8 → 10</td></tr>
 <tr><td>階層ごとの黒檀ミミックの確率</td><td class="tag-mono">12.5%</td><td class="tag-mono">25%</td><td class="tag-mono">37.5%</td><td class="tag-mono">50%</td></tr>
-<tr><td rowspan="1">苔の塊<br><span class="romaji">Mossy Clump</span><br><span class="build-note">普通の階層の一部を水か草の階層にする。</span></td><td>水・草の階層に変わる割合</td><td class="tag-mono">25%</td><td class="tag-mono">50%</td><td class="tag-mono">75%</td><td class="tag-mono">100%</td><td class="tag-mono" rowspan="1">10 → 15 → 20</td></tr>
-<tr><td rowspan="2">羊皮紙の断片<br><span class="romaji">Parchment Scrap</span><br><span class="build-note">エンチャント付き装備が増える。呪いは最初は増えるが+3でゼロになる。</span></td><td>エンチャント・刻印</td><td class="tag-mono">2×</td><td class="tag-mono">4×</td><td class="tag-mono">7×</td><td class="tag-mono">10×</td><td class="tag-mono" rowspan="2">10 → 15 → 20</td></tr>
+<tr><td rowspan="1" id="t-mossy-clump">苔の塊<br><span class="romaji">Mossy Clump</span><br><span class="build-note">普通の階層の一部を水か草の階層にする。</span></td><td>水・草の階層に変わる割合</td><td class="tag-mono">25%</td><td class="tag-mono">50%</td><td class="tag-mono">75%</td><td class="tag-mono">100%</td><td class="tag-mono" rowspan="1">10 → 15 → 20</td></tr>
+<tr><td rowspan="2" id="t-parchment-scrap">羊皮紙の断片<br><span class="romaji">Parchment Scrap</span><br><span class="build-note">エンチャント付き装備が増える。呪いは最初は増えるが+3でゼロになる。</span></td><td>エンチャント・刻印</td><td class="tag-mono">2×</td><td class="tag-mono">4×</td><td class="tag-mono">7×</td><td class="tag-mono">10×</td><td class="tag-mono" rowspan="2">10 → 15 → 20</td></tr>
 <tr><td>武器・鎧の呪い</td><td class="tag-mono">1.5×</td><td class="tag-mono">2×</td><td class="tag-mono">1×</td><td class="tag-mono">0×</td></tr>
-<tr><td rowspan="2">種の化石<br><span class="romaji">Petrified Seed</span><br><span class="build-note">草から種の代わりにルーンストーンが出て、ドロップも増える。</span></td><td>踏んだ草がルーンストーンを落とす割合</td><td class="tag-mono">25%</td><td class="tag-mono">46%</td><td class="tag-mono">65%</td><td class="tag-mono">80%</td><td class="tag-mono" rowspan="2">6 → 8 → 10</td></tr>
+<tr><td rowspan="2" id="t-petrified-seed">種の化石<br><span class="romaji">Petrified Seed</span><br><span class="build-note">草から種の代わりにルーンストーンが出て、ドロップも増える。</span></td><td>踏んだ草がルーンストーンを落とす割合</td><td class="tag-mono">25%</td><td class="tag-mono">46%</td><td class="tag-mono">65%</td><td class="tag-mono">80%</td><td class="tag-mono" rowspan="2">6 → 8 → 10</td></tr>
 <tr><td>背の高い草からのドロップ増加</td><td class="tag-mono">0%</td><td class="tag-mono">8.33%</td><td class="tag-mono">16.67%</td><td class="tag-mono">25%</td></tr>
-<tr><td rowspan="1">鼠の頭蓋骨<br><span class="romaji">Rat Skull</span><br><span class="build-note">レアなエキゾチック版の敵が出やすくなる。</span></td><td>レアなエキゾチック敵の出現</td><td class="tag-mono">2×</td><td class="tag-mono">3×</td><td class="tag-mono">4×</td><td class="tag-mono">5×</td><td class="tag-mono" rowspan="1">6 → 8 → 10</td></tr>
-<tr><td rowspan="2">塩の立方体<br><span class="romaji">Salt Cube</span><br><span class="build-note">食料が長持ちするが、自然回復が遅くなる（ボス階の封鎖中は除く）。</span></td><td>空腹になるまでの時間の延長</td><td class="tag-mono">25%</td><td class="tag-mono">50%</td><td class="tag-mono">75%</td><td class="tag-mono">100%</td><td class="tag-mono" rowspan="2">6 → 8 → 10</td></tr>
+<tr><td rowspan="1" id="t-rat-skull">鼠の頭蓋骨<br><span class="romaji">Rat Skull</span><br><span class="build-note">レアなエキゾチック版の敵が出やすくなる。</span></td><td>レアなエキゾチック敵の出現</td><td class="tag-mono">2×</td><td class="tag-mono">3×</td><td class="tag-mono">4×</td><td class="tag-mono">5×</td><td class="tag-mono" rowspan="1">6 → 8 → 10</td></tr>
+<tr><td rowspan="2" id="t-salt-cube">塩の立方体<br><span class="romaji">Salt Cube</span><br><span class="build-note">食料が長持ちするが、自然回復が遅くなる（ボス階の封鎖中は除く）。</span></td><td>空腹になるまでの時間の延長</td><td class="tag-mono">25%</td><td class="tag-mono">50%</td><td class="tag-mono">75%</td><td class="tag-mono">100%</td><td class="tag-mono" rowspan="2">6 → 8 → 10</td></tr>
 <tr><td>体力回復の低下</td><td class="tag-mono">16%</td><td class="tag-mono">27%</td><td class="tag-mono">34%</td><td class="tag-mono">40%</td></tr>
-<tr><td rowspan="1">忘却の欠片<br><span class="romaji">Shard of Oblivion</span><br><span class="build-note">未識別の装備を使うほど敵のドロップが増え、使うことで識別もできる。</span></td><td>数える未識別装備の上限（1つにつき敵ドロップ+20%）</td><td class="tag-mono">1</td><td class="tag-mono">2</td><td class="tag-mono">3</td><td class="tag-mono">4</td><td class="tag-mono" rowspan="1">6 → 8 → 10</td></tr>
-<tr><td rowspan="2">十三葉のクローバー<br><span class="romaji">Thirteen Leaf Clover</span><br><span class="build-note">攻撃が最大か最小ダメージになりやすくなる（振れ幅が大きく、平均はやや上がる）。</span></td><td>最大ダメージになる確率</td><td class="tag-mono">15%</td><td class="tag-mono">30%</td><td class="tag-mono">45%</td><td class="tag-mono">60%</td><td class="tag-mono" rowspan="2">6 → 8 → 10</td></tr>
+<tr><td rowspan="1" id="t-shard-of-oblivion">忘却の欠片<br><span class="romaji">Shard of Oblivion</span><br><span class="build-note">未識別の装備を使うほど敵のドロップが増え、使うことで識別もできる。</span></td><td>数える未識別装備の上限（1つにつき敵ドロップ+20%）</td><td class="tag-mono">1</td><td class="tag-mono">2</td><td class="tag-mono">3</td><td class="tag-mono">4</td><td class="tag-mono" rowspan="1">6 → 8 → 10</td></tr>
+<tr><td rowspan="2" id="t-thirteen-leaf-clover">十三葉のクローバー<br><span class="romaji">Thirteen Leaf Clover</span><br><span class="build-note">攻撃が最大か最小ダメージになりやすくなる（振れ幅が大きく、平均はやや上がる）。</span></td><td>最大ダメージになる確率</td><td class="tag-mono">15%</td><td class="tag-mono">30%</td><td class="tag-mono">45%</td><td class="tag-mono">60%</td><td class="tag-mono" rowspan="2">6 → 8 → 10</td></tr>
 <tr><td>最小ダメージになる確率</td><td class="tag-mono">10%</td><td class="tag-mono">20%</td><td class="tag-mono">30%</td><td class="tag-mono">40%</td></tr>
-<tr><td rowspan="2">罠の機構<br><span class="romaji">Trap Mechanism</span><br><span class="build-note">罠の階層が増えるが、隠し罠の一部が見えるようになる。</span></td><td>罠・奈落の階層に変わる割合</td><td class="tag-mono">25%</td><td class="tag-mono">50%</td><td class="tag-mono">75%</td><td class="tag-mono">100%</td><td class="tag-mono" rowspan="2">6 → 8 → 10</td></tr>
+<tr><td rowspan="2" id="t-trap-mechanism">罠の機構<br><span class="romaji">Trap Mechanism</span><br><span class="build-note">罠の階層が増えるが、隠し罠の一部が見えるようになる。</span></td><td>罠・奈落の階層に変わる割合</td><td class="tag-mono">25%</td><td class="tag-mono">50%</td><td class="tag-mono">75%</td><td class="tag-mono">100%</td><td class="tag-mono" rowspan="2">6 → 8 → 10</td></tr>
 <tr><td>隠し罠が見える割合</td><td class="tag-mono">10%</td><td class="tag-mono">20%</td><td class="tag-mono">30%</td><td class="tag-mono">40%</td></tr>
-<tr><td rowspan="1">血の小瓶<br><span class="romaji">Vial of Blood</span><br><span class="build-note">合計の回復量は増えるが、回復にかかるターンが長くなる。</span></td><td>治癒ポーション・水袋・泉の回復量の増加</td><td class="tag-mono">12.5%</td><td class="tag-mono">25%</td><td class="tag-mono">37.5%</td><td class="tag-mono">50%</td><td class="tag-mono" rowspan="1">6 → 8 → 10</td></tr>
-<tr><td rowspan="2">不思議な樹脂<br><span class="romaji">Wondrous Resin</span><br><span class="build-note">呪われた杖の効果を穏やかにし、通常の杖にも追加のランダム効果を加える。</span></td><td>呪われた杖の効果が無害・有益になる確率</td><td class="tag-mono">25%</td><td class="tag-mono">50%</td><td class="tag-mono">75%</td><td class="tag-mono">100%</td><td class="tag-mono" rowspan="2">10 → 15 → 20</td></tr>
+<tr><td rowspan="1" id="t-vial-of-blood">血の小瓶<br><span class="romaji">Vial of Blood</span><br><span class="build-note">合計の回復量は増えるが、回復にかかるターンが長くなる。</span></td><td>治癒ポーション・水袋・泉の回復量の増加</td><td class="tag-mono">12.5%</td><td class="tag-mono">25%</td><td class="tag-mono">37.5%</td><td class="tag-mono">50%</td><td class="tag-mono" rowspan="1">6 → 8 → 10</td></tr>
+<tr><td rowspan="2" id="t-wondrous-resin">不思議な樹脂<br><span class="romaji">Wondrous Resin</span><br><span class="build-note">呪われた杖の効果を穏やかにし、通常の杖にも追加のランダム効果を加える。</span></td><td>呪われた杖の効果が無害・有益になる確率</td><td class="tag-mono">25%</td><td class="tag-mono">50%</td><td class="tag-mono">75%</td><td class="tag-mono">100%</td><td class="tag-mono" rowspan="2">10 → 15 → 20</td></tr>
 <tr><td>通常の杖から追加の有益な呪い効果</td><td class="tag-mono">12.5%</td><td class="tag-mono">25%</td><td class="tag-mono">37.5%</td><td class="tag-mono">50%</td></tr>
 </tbody>
 </table>
@@ -159,7 +160,7 @@
     <div class="disclaimer">本ページは非公式のファンメイド攻略です。数値と名称は上記バージョンのShattered Pixel Dungeonソースコード（GPL-3.0）から取得しており、説明は当サイト独自の要約でゲーム内の文章ではありません。</div>
     <div class="sources">
       情報源：
-      <a href="https://github.com/00-Evan/shattered-pixel-dungeon" target="_blank" rel="noopener">Shattered Pixel Dungeon source code (v4.0.0)</a>
+      <a href="https://github.com/00-Evan/shattered-pixel-dungeon" target="_blank" rel="noopener">Shattered Pixel Dungeon source code (v4.0.1)</a>
     </div>
   </div>
   <nav class="wrap site-links" aria-label="サイトリンク"><a href="/ja/about/">サイトについて</a> · <a href="/ja/authors/">執筆者について</a> · <a href="/ja/editorial-policy/">編集方針</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/terms/">利用規約</a> · <a href="/ja/privacy/">プライバシーポリシー</a></nav>

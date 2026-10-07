@@ -714,4 +714,12 @@
   </url>
   <url><loc>https://kouryakulab.com/ja/games/endless-sky/licenses/</loc></url>
 
+  <url>
+    <loc>https://kouryakulab.com/games/shattered-pixel-dungeon/weapons/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kouryakulab.com/games/shattered-pixel-dungeon/weapons/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kouryakulab.com/ja/games/shattered-pixel-dungeon/weapons/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kouryakulab.com/games/shattered-pixel-dungeon/weapons/"/>
+  </url>
+  <url><loc>https://kouryakulab.com/ja/games/shattered-pixel-dungeon/weapons/</loc></url>
+
 </urlset>

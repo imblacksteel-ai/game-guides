@@ -28,7 +28,8 @@ SRC = "core/src/main/java/com/shatteredpixel/shatteredpixeldungeon/items/weapon/
 MSG = "core/src/main/assets/messages/items"
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh) Chrome/131.0"}
 SKIP = {"MeleeWeapon"}
-PAGES = {"en": "games/shattered-pixel-dungeon/index.html", "ja": "ja/games/shattered-pixel-dungeon/index.html"}
+PAGES = {"en": "games/shattered-pixel-dungeon/index.html", "ja": "ja/games/shattered-pixel-dungeon/index.html",
+         "en_w": "games/shattered-pixel-dungeon/weapons/index.html", "ja_w": "ja/games/shattered-pixel-dungeon/weapons/index.html"}
 
 
 def get(url, as_json=False):
@@ -138,7 +139,8 @@ def fmt(v):
 
 
 def render(tag, weapons):
-    for lang, page in PAGES.items():
+    for key, page in PAGES.items():
+        lang = key.split("_")[0]
         path = os.path.join(ROOT, page)
         if not os.path.exists(path):
             print(f"  (page not created yet: {page})")
@@ -159,8 +161,9 @@ def render(tag, weapons):
             name = cap if lang == "en" else w["name_ja"]
             sub = w["name_ja"] if lang == "en" else cap
             avg = (w["min"] + w["max"]) / 2 / w["dly"]
+            slug = re.sub(r"[^a-z0-9]+", "-", w["name_en"].lower()).strip("-")
             rows.append(
-                f'<tr data-tier="{w["tier"]}"><td>{html.escape(name)}<br><span class="romaji">{html.escape(sub)}</span></td>'
+                f'<tr data-tier="{w["tier"]}" id="w-{slug}"><td>{html.escape(name)}<br><span class="romaji">{html.escape(sub)}</span></td>'
                 f'<td class="tag-mono">{w["tier"]}</td><td class="tag-mono">{w["str"]}</td>'
                 f'<td class="tag-mono">{w["min"]}–{w["max"]}</td>'
                 f'<td class="tag-mono">+{w["min_per_lvl"]} / +{w["max_per_lvl"]}</td>'
@@ -168,6 +171,13 @@ def render(tag, weapons):
         head = "".join(f"<th>{x}</th>" for x in t["head"])
         table = (f'<table class="glossary spd-table" id="spd-weapons">\n<thead><tr>{head}</tr></thead>\n<tbody>\n'
                  + "\n".join(rows) + "\n</tbody>\n</table>")
+        if key.endswith("_w"):
+            def nm(w):
+                c = " ".join(x if x == "of" else x[:1].upper() + x[1:] for x in w["name_en"].split())
+                return c if lang == "en" else w["name_ja"]
+            jump = ("Jump to: " if lang == "en" else "移動：") + " · ".join(
+                f'<a href="#w-{re.sub(r"[^a-z0-9]+", "-", w["name_en"].lower()).strip("-")}">{html.escape(nm(w))}</a>' for w in weapons)
+            table = f'<p style="font-size:.88rem;line-height:1.9;margin:0 0 12px;">{jump}</p>\n<div class="table-scroll">' + table + "</div>"
         s = open(path, encoding="utf-8").read()
         new, n = re.subn(r"(<!-- SPD-WEAPONS:START -->\n).*?(<!-- SPD-WEAPONS:END -->)",
                          lambda m: m.group(1) + table + "\n" + m.group(2), s, flags=re.S)
