@@ -170,6 +170,8 @@ def find_pages():
 def process(path):
     rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
     content = open(path, encoding="utf-8").read()
+    if 'http-equiv="refresh"' in content:  # retired page stub (scripts/retire_pages.py)
+        return
 
     lang = re.search(r'<html lang="([^"]+)"', content).group(1)
     # Read as plain text: esc() re-escapes for attributes and JSON-LD must not carry

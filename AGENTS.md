@@ -50,6 +50,12 @@ CNAME, robots.txt, sitemap.xml       ドメイン・SEO設定
 - 書き出した後は `python3 scripts/seo_inject.py` → `python3 scripts/set_indexing.py` の順に実行する。
 - `.steps li` は横並び（flex）なので、本文に `<b>` などのタグを含む場合は `<li><span class="n">1</span><span>本文</span></li>` と本文を `<span>` で包む（包まないと太字部分が別の列に分かれて崩れる）。
 
+## 薄い記事を作らない（2026/10、Redditでの指摘を受けて）
+
+- r/Unciv で「戦略記事の多くは当たり前か的外れ、計算機は役に立つ」と指摘された。運営者はプレイしていないので、**プレイ経験が必要な戦略・おすすめ記事は作らない**。作るのは、ソースコード・データ・公開資料から確認できる**事実の表と計算機**、および出典のある仕組みの解説。
+- 退役させたページは `scripts/retire_pages.py` の `RETIRED`（全言語で noindex＋meta refresh の転送ページに置き換え、sitemap とリンクから除外）：unciv/best-civ→civilizations、deresute/access→ハブ#access、srwdd/reroll→ハブ#reroll、srwdd/world-guide→ハブ。今後退役させるときもここに追記して実行する。
+- unciv/opening は「序盤の数値と古代遺跡」（事実のみ）に作り直した。
+
 ## 内部リンク・更新日・フォント（2026/10 のアクセス分析で追加）
 
 - **ページを追加・更新したら最後に必ず：** `python3 scripts/update_internal_links.py`（各記事の末尾に同じゲームの記事一覧、トップページに新着12件）→ コミット → `python3 scripts/update_dates.py`（sitemap の `<lastmod>` と JSON-LD の `datePublished`/`dateModified` を git の日付から）→ もう一度コミット。update_dates は直前のコミットまでの履歴を見るので、先にコミットしてから実行する。 push して GitHub Pages の反映を確認したら `python3 scripts/indexnow.py --since <今日の日付>` で更新URLを IndexNow（Bing・Yandex 等）に通知する（キーは直下の `55afda98e6a9307967ba7c1b5731d9cf.txt`。消さない）。2026/10/07 に全180URLを送信済み（HTTP 202）。Google には効かない（Google は sitemap と Search Console）。
