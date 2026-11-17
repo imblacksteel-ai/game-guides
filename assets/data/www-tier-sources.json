@@ -1,6 +1,6 @@
 {
   "_note": "波乱水世界（日本版）の公開Tier表の集計元。手で転記したデータ。評価を見直したらここを更新して python3 scripts/build_www_tier.py を実行する。配信前の暫定表・中国/台湾サーバー基準の表は除外（excluded に理由を記録）。",
-  "checked": "2026-10-07",
+  "checked": "2026-11-17",
   "sources": [
     {"id": "pokemonza", "name": "ポケモナンザ / GameUpX", "date": "2026-09-02",
      "urls": ["https://pokemonza.hatenablog.jp/entry/2026/09/02/104425", "https://gameupx.com/611/"],
@@ -15,12 +15,10 @@
      "tiers": {"SS": ["bob", "riker", "rex", "samuel"], "S": ["becky"]}},
     {"id": "moriyama", "name": "もりやまブログ", "date": "2026-09-09",
      "urls": ["https://moriyama-blog.com/wildwaterworld-ranking/"],
-     "tiers": {"SS": ["silas", "bob", "samuel", "zoey"], "S": ["kang", "cole", "curtis", "lee", "oliver", "jack", "diana"], "A": ["becky", "ken", "rex", "snow", "ray", "riker", "johnny", "skadi", "kyle", "mia"]}},
-    {"id": "jpgamex", "name": "JPGamex", "date": "2026-09-23",
-     "urls": ["https://jpgamex.hatenablog.jp/entry/2026/09/23/003602"],
-     "tiers": {"SS": ["silas", "bob", "samuel", "zoey", "oliver", "cole"], "S": ["lee", "curtis", "jack", "diana", "kang"], "A": ["becky", "ken", "rex"], "B": ["mia", "skadi", "ray", "riker"]}}
+     "tiers": {"SS": ["silas", "bob", "samuel", "zoey"], "S": ["kang", "cole", "curtis", "lee", "oliver", "jack", "diana"], "A": ["becky", "ken", "rex", "snow", "ray", "riker", "johnny", "skadi", "kyle", "mia"]}}
   ],
   "excluded": [
+    {"name": "JPGamex（9/23）", "date": "2026-09-23", "url": "https://jpgamex.hatenablog.jp/entry/2026/09/23/003602", "reason": "2026-11-17の確認時に記事が削除されていた（404）。確認できないため集計から外した"},
     {"name": "game-tier.com", "date": "2026-09-01", "url": "https://game-tier.com/haranmizu/haranmizu-tier/", "reason": "配信前の暫定表（本人が配信後に作り直すと明記）"},
     {"name": "JPGamex（9/13・9/14）", "url": "https://jpgamex.hatenablog.jp/entry/2026/09/13/211703", "reason": "中国サーバー基準で、日本版にまだいないキャラが中心"},
     {"name": "LDPlayer《瘋狂水世界》", "date": "2026-09-01", "url": "https://www.ldplayer.tw/blog/wild-water-world-tier-list.html", "reason": "台湾版の表で、キャラ構成・名称が日本版と一致しない"}
